@@ -1,3 +1,7 @@
+<ul class="breadcrumb">
+	{!$breadcrumbs}
+</ul>
+
 <h1>{$static_page->getTitle()}</h1>
 
 <div>

@@ -35,16 +35,22 @@ class Navigation{
 	 */
 	function addItem($item,$url = null,$options = array()){
 		$item = $this->_makeItem($item,$url,$options);
-		if($item->key){
-			$this->items[$item->key] = $item;
-		}else{
-			$this->items[] = $item;
-		}	
+		$this->items[] = $item;
 	}
 	/**
 	 * Alias for Navigation::addItem();
 	 */
 	function add($item,$url = null,$options = array()){ return $this->addItem($item,$url,$options); }
+
+	/**
+	 * Prepend given item to the beginning of the array of items
+	 */
+	function unshiftItem($item,$url = null,$options = array()){
+		$this->addItem($item,$url,$options);
+
+		$item = array_pop($this->items);
+		array_unshift($this->items,$item);
+	}
 
 	/**
 	 * $navigation->addHeader("User functions");
@@ -77,15 +83,11 @@ class Navigation{
 		if(is_array($url)){
 			$url = Atk14Url::BuildLink($url);
 		}
-		if(is_string($item) && is_string($url)){
-			$options += array(
-				"text" => $item,
-				"url" => $url
-			);
-			return $this->_makeItem($options);
-		}
-		if(is_array($item)){ $item = new NavigationItem($item); }
-		return $item;
+
+		if(is_string($url)){ $options["url"] = $url; }
+		if(is_string($item)){ $options["text"] = $item; }
+
+		return new NavigationItem($options);
 	}
 
 	function __toString(){
@@ -96,14 +98,12 @@ class Navigation{
 class NavigationItem{
 	function __construct($options = array()){
 		$options += array(
-			"key" => null,
 			"text" => "",
 			"title" => "",
 			"url" => "",
 			"active" => false,
 			"class" => "", // css class name of outer element (<li>)
 		);
-		$this->key = $options["key"];
 		$this->title = $options["title"];
 		$this->url = $options["url"];
 		$this->active = $options["active"];
