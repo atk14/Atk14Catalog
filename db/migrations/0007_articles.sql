@@ -1,8 +1,6 @@
 CREATE SEQUENCE seq_articles;
 CREATE TABLE articles(
 	id INT PRIMARY KEY DEFAULT NEXTVAL('seq_articles'),
-	title VARCHAR(255),
-	body TEXT,
 	author_id INT NOT NULL,
 	published_at TIMESTAMP NOT NULL DEFAULT NOW(),
 	--
