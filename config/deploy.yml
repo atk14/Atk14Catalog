@@ -8,15 +8,15 @@
 #
 
 production:
-  url: "http://skelet.atk14.net/"
-  server: "kajka"                                                             # we are deploying on this server
-  user: "devel"                                                               # we are deploying as this user
-  directory: "/home/devel/apps/skelet.atk14.net/production/"                  # in this directory is this application installed on the server
-  deploy_via: "git_push"                                                      # at the moment this is the only way how to deploy
-  deploy_repository: "devel@kajka:apps/skelet.atk14.net/repos/production.git" # this is the URL of deployment git repository with a proper post-receive hook
-  deploy_branch: "master"                                                     # the name of the branch in deployment repository
+  url: "http://catalog.atk14.net/"
+  server: "kajka"                                                              # we are deploying on this server
+  user: "devel"                                                                # we are deploying as this user
+  directory: "/home/devel/apps/catalog.atk14.net/production/"                  # in this directory is this application installed on the server
+  deploy_via: "git_push"                                                       # at the moment this is the only way how to deploy
+  deploy_repository: "devel@kajka:apps/catalog.atk14.net/repos/production.git" # this is the URL of deployment git repository with a proper post-receive hook
+  deploy_branch: "master"                                                      # the name of the branch in deployment repository
   rsync:
-  - "public/dist/"                                                            # since the directory public/dist is ignored in .gitignore we need to synchronize it by deployment process
+  - "public/dist/"                                                             # since the directory public/dist is ignored in .gitignore we need to synchronize it by deployment process
 
 # You can have another stage to deploy application on it (eg. preview).
 # In this recipe you can mention only items which differ from the first recipe.
