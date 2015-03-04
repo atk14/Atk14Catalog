@@ -1,17 +1,17 @@
 development:
   host: 127.0.0.1
-  database: atk14skelet_devel
-  username: atk14skelet_devel
-  password: skelet
+  database: atk14catalog_devel
+  username: atk14catalog_devel
+  password: catalog
 
 test:
   host: 127.0.0.1
-  database: atk14skelet_test
-  username: atk14skelet_test
-  password: skelet
+  database: atk14catalog_test
+  username: atk14catalog_test
+  password: catalog
 
 production:
   host: 127.0.0.1
-  database: atk14skelet_production
-  username: atk14skelet_production
+  database: atk14catalog_production
+  username: atk14catalog_production
   password: <?=sha1(SECRET_TOKEN."Very_Sophisticated_Production_Password_Hiding")?>
