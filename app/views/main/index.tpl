@@ -39,7 +39,7 @@
 			<li><a href="http://book.atk14.net/">{t}ATK14 Book{/t}</a></li>
 			<li><a href="http://api.atk14.net/">{t}API Reference{/t}</a></li>
 			<li><a href="https://github.com/atk14/Atk14">{t}ATK14 on GitHub{/t}</a></li>
-			<li><a href="https://github.com/atk14/Atk14Skelet">{t}ATK14 Skelet on GitHub{/t}</a></li>
+			<li><a href="https://github.com/atk14/Atk14Catalog">{t}ATK14 Catalog on GitHub{/t}</a></li>
 		</ul>
 	</div>
 
