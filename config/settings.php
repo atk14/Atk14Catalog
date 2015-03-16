@@ -24,6 +24,8 @@ define("ATK14_HTTP_HOST",PRODUCTION ? "catalog.atk14.net" : "atk14catalog.localh
 define("DBMOLE_COLLECT_STATICTICS",DEVELOPMENT);
 date_default_timezone_set('Europe/Prague');
 
+@define("PUPIQ_API_KEY","123.abcdefghijklmnopqrstuvwxyz");
+
 if(DEVELOPMENT || TEST){
 	// a place for development and testing environment settings
 

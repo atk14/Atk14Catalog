@@ -10,3 +10,5 @@ config/secret_token.txt
 public/dist
 vendor/*
 composer.lock
+!local_config/README.md
+local_config/*

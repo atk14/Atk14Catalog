@@ -2,8 +2,10 @@ CREATE SEQUENCE seq_brands;
 CREATE TABLE brands (
 	id INT PRIMARY KEY DEFAULT NEXTVAL('seq_brands'),
 	rank INTEGER DEFAULT 999 NOT NULL,
-	visible BOOLEAN NOT NULL DEFAULT 't',
+	name VARCHAR(255),
+	url VARCHAR(255),
 	logo_url VARCHAR(255),
+	visible BOOLEAN NOT NULL DEFAULT 't',
 	--
 	created_by_user_id INT,
 	updated_by_user_id INT,
