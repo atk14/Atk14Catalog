@@ -1,6 +1,7 @@
 {
     "require": {
         "atk14/dbmole-panel": "dev-master",
-        "atk14/mail-panel": "dev-master"
+        "atk14/mail-panel": "dev-master",
+        "atk14/pupiq-client": "dev-master"
     }
 }
