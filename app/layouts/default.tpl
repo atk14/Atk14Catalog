@@ -52,6 +52,8 @@
 			<script src="{$public}dist/vendor/js/html5shiv.js"></script>
 			<script src="{$public}dist/vendor/js/respond.min.js"></script>
 		<![endif]-->
+
+		{placeholder for=head} {* a place for <link rel="canonical" ...>, etc. *}
 	</head>
 
 	<body class="body_{$controller}_{$action}" data-controller="{$controller}" data-action="{$action}">

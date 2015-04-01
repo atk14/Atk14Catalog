@@ -8,7 +8,7 @@
 		<ul>
 		{foreach $cards as $card}
 			<li>
-				{$card->getName()}
+				{render partial="shared/card_item" card=$card}
 			</li>
 		{/foreach}
 		</ul>

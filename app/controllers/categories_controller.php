@@ -55,5 +55,9 @@ class CategoriesController extends ApplicationController{
 				"cards_count" => $_card_finder->getRecordsCount(),
 			);
 		}
+		$this->tpl_data["child_categories"] = $child_categories;
+
+		// TODO: compose relevant conditions
+		$this->tpl_data["cards_finder"] = Card::Finder("visible",true,"deleted",false);
 	}
 }
