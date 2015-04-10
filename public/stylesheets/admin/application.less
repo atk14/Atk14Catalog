@@ -138,6 +138,40 @@ label {
 	max-width: 480px;
 }
 
+/*
+================================
+=LISTS
+================================ */
+.list-sortable {
+	li {
+		cursor: grab;
+		padding-left: 28px;
+
+		&.ui-sortable-helper {
+			cursor: grabbing;
+		}
+
+		&.media {
+			margin-top: 0;
+		}
+
+		img {
+			.img-thumbnail();
+		}
+
+		strong {
+			cursor: text;
+		}
+
+		.glyphicon-align-justify {
+			position: absolute;
+			left: @font-size-base/2;
+			top: 50%;
+			margin-top: -@font-size-base/2;
+			color: #ddd;
+		}
+	}
+}
 
 /*
 ================================================================
