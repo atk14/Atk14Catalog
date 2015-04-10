@@ -5,7 +5,7 @@ class EditForm extends CardsForm {
 		$this->_add_fields(array(
 			"add_catalog_id_field" => !$this->controller->card->hasVariants(), // nema varianty -> menime catalog_id primo na karte
 		));
-		$this->add_translatable_field("slug",new SlugField());
+		$this->add_slug_field();
 	}
 
 	function clean() {

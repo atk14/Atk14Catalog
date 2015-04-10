@@ -52,6 +52,12 @@ class AdminForm extends ApplicationForm{
 		$this->add_field("rank",new RankField());
 	}
 
+	function add_slug_field(){
+		$this->add_translatable_field("slug",new SlugField(array(
+			"required" => false,
+		)));
+	}
+
 	function has_storno_button(){
 		if(isset($this->has_storno_button)){ return $this->has_storno_button; }
 		return false;

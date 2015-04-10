@@ -6,6 +6,8 @@ class Collection extends ApplicationModel implements Translatable, Rankable {
 		return array("name","teaser", "description");
 	}
 
+	function getSlugPattern($lang = null){ return $this->getName($lang); }
+
 	/**
 	 * Najde kategorie, ve kterych jsou produkty od teto znacky.
 	 */

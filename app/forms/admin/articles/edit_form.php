@@ -1,3 +1,7 @@
 <?php
-require_once(dirname(__FILE__)."/create_new_form.php");
-class EditForm extends CreateNewForm{ }
+class EditForm extends ArticlesForm{
+	function set_up(){
+		parent::set_up();
+		$this->add_slug_field();
+	}
+}

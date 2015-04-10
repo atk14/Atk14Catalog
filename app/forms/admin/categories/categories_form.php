@@ -17,6 +17,6 @@ class CategoriesForm extends AdminForm{
 	}
 
 	function _add_slug(){
-		$this->add_translatable_field("slug",new SlugField());
+		$this->add_slug_field();
 	}
 }
