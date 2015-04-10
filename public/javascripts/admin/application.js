@@ -5,6 +5,7 @@
 	ADMIN = {
 		common: {
 			init: function() {
+				ADMIN.utils.handleSortables();
 				// application-wide code
 			}
 		},
