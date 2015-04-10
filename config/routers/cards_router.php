@@ -1,0 +1,12 @@
+<?php
+/**
+ * Z {link_to controller="static_pages" action="detail" id="4"}
+ * udela
+ * /zvitezili-jsme-v-soutezi-prodejna-roku-2012/
+ */
+class CardsRouter extends SluggishRouter{
+	var $url_sections_by_lang = array(
+		"en" => "product",
+		"cs" => "produkt",
+	);
+}
