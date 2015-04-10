@@ -90,6 +90,7 @@ module.exports = function( grunt ) {
 					"public/assets/vendor/jquery-ui/ui/position.js",
 					"public/assets/vendor/jquery-ui/ui/menu.js",
 					"public/assets/vendor/jquery-ui/ui/autocomplete.js",
+					"public/assets/vendor/jquery-file-upload/js/jquery.fileupload.js",
 					"<%= concat.bootstrap.dest %>",
 					"public/assets/lib/atk14.js",
 					"public/javascripts/admin/application.js"
