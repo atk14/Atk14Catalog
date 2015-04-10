@@ -10,7 +10,7 @@
  * Router class
  *	// file: config/routers/articles_router.php
  * 	class ArticlesRouter extends SluggishRouter{
- *		var $url_sections_by_lang = array("en" => "article", "cs" => "clanek");
+ *		var $url_patterns_by_lang = array("en" => "article", "cs" => "clanek");
  * 	}
  *
  * Enable the router
@@ -25,7 +25,7 @@
  *
  */
 class SluggishRouter extends Atk14Router{
-	var $url_sections_by_lang = array(); // .e.g., array("en" => "article"), both keys and values must be unique
+	var $url_patterns_by_lang = array(); // .e.g., array("en" => "article"), both keys and values must be unique
 	var $model_class_name = null; // .e.g., "Article", by default it is determined automatically
 	var $target_controller_name = null; // .e.g, "articles", by default it is determined automatically
 	
@@ -43,9 +43,9 @@ class SluggishRouter extends Atk14Router{
 			$this->target_controller_name = (string)$cn->underscore(); // "articles"
 		}
 
-		if(!$this->url_sections_by_lang){
+		if(!$this->url_patterns_by_lang){
 			$lang = $ATK14_GLOBAL->getDefaultLang();
-			$this->url_sections_by_lang = array(
+			$this->url_patterns_by_lang = array(
 				"$lang" => (string)$cn->underscore()->singularize()->replace("_","-") // "en" => "article"
 			);
 		}
@@ -54,13 +54,13 @@ class SluggishRouter extends Atk14Router{
 	}
 
 	function recognize($uri){
-		$sections = join("|",$this->url_sections_by_lang);
+		$patterns = join("|",$this->url_patterns_by_lang);
 		$class = $this->model_class_name;
-		if($this->namespace=="" && preg_match('/^\/('.$sections.')\/([a-z0-9-_\/]+?)\/?$/',$uri,$matches) && ($c = $class::GetInstanceBySlug($matches[2],$lang))){
+		if($this->namespace=="" && preg_match('/^\/('.$patterns.')\/([a-z0-9-_\/]+?)\/?$/',$uri,$matches) && ($c = $class::GetInstanceBySlug($matches[2],$lang))){
 			$this->action = "detail";
 			$this->controller = $this->target_controller_name;
 			$this->params["id"] = $c->getId();
-			foreach($this->url_sections_by_lang as $l => $s){
+			foreach($this->url_patterns_by_lang as $l => $s){
 				if($s==$matches[1]){
 					$this->lang = $l;
 				}
@@ -69,13 +69,13 @@ class SluggishRouter extends Atk14Router{
 	}
 
 	function build(){
-		if($this->namespace!="" || $this->controller!=$this->target_controller_name || $this->action!="detail" || !isset($this->url_sections_by_lang[$this->lang])){ return; }
+		if($this->namespace!="" || $this->controller!=$this->target_controller_name || $this->action!="detail" || !isset($this->url_patterns_by_lang[$this->lang])){ return; }
 
 		$class = $this->model_class_name;
 		if($c = Cache::Get($class,$this->params->getInt("id"))){
 			$this->params->del("id");
-			$section = $this->url_sections_by_lang[$this->lang];
-			return sprintf('/%s/%s/',$section,$c->getSlug($this->lang));
+			$pattern = $this->url_patterns_by_lang[$this->lang];
+			return sprintf('/%s/%s/',$pattern,$c->getSlug($this->lang));
 		}
 	}
 }
