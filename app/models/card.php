@@ -324,7 +324,6 @@ class Card extends ApplicationModel implements Translatable{
 			$c->removeCard($this);
 		}
 
-		Fulltext::DeleteObjectRecord($this);
 		Slug::DeleteObjectSlugs($this);
 
 		$this->s(array(
@@ -462,17 +461,6 @@ class Card extends ApplicationModel implements Translatable{
 		$ary = parent::toArray();
 		$ary["collection_id"] = $this->getCollectionId();
 		return $ary;
-	}
-
-	function rebuildFulltext() {
-		return Fulltext::BuildFulltext($this);
-	}
-
-	/**
-	 * Vrati odpovidajici zaznam z tabulky fulltexts.
-	 */
-	function getFulltext() {
-		return Fulltext::GetFulltext($this);
 	}
 
 	/**

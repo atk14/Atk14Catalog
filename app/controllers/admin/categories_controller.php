@@ -142,15 +142,6 @@ class CategoriesController extends AdminController{
 		}
 	}
 
-	function _after_filter() {
-		if ($this->request->post() && in_array($this->action, array("edit","destroy"))) {
-			if ($this->category && ($cards=$this->category->getCards())) {
-				$this->dbmole->doQuery("update fulltexts set flag_rebuild='t' WHERE table_name='cards' AND record_id IN :cards", array(":cards" => $cards));
-				$this->dbmole->doQuery("update fulltexts set flag_rebuild='t' WHERE table_name='categories' AND record_id=:category", array(":category" => $this->category));
-			}
-		}
-	}
-
 	function _redirect_back($default = null){
 		if(!$default && isset($this->category)){
 			$default = array(
