@@ -14,4 +14,6 @@
 	{!$section->getBody()|markdown}
 
 	{render partial="shared/photo_gallery" object=$section}
+
+	{render partial="shared/attachments" object=$section}
 {/foreach}
