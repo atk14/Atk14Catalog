@@ -1,15 +1,15 @@
 <?php
 class  CardSectionsController extends AdminController{
 	function create_new(){
-		$this->page_title = sprintf(_("Nová textová sekce pro produkt %s"),h($this->card->getName()));
+		$this->page_title = sprintf(_("Add a textual section for the product %s"),h($this->card->getName()));
 
 		$this->_save_return_uri();
 
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
 			$d["card_id"] = $this->card;
 			$cs = CardSection::CreateNewRecord($d);
-			$this->flash->success(_("Sekce byla přidána"));
-			return $this->_redirect_to_action("edit", array("id" => $cs));
+			$this->flash->success(_("The section has been created").'<br><a href="'.$this->_link_to(array("action" => "card_sections/edit", "id" => $cs)).'">'._("It would be nice to add some more information")."</a>");
+			$this->_redirect_back();
 		}
 	}
 

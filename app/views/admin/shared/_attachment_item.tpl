@@ -2,20 +2,15 @@
  * Tato sablonka se vyrenderuje do jsonu pri XHR uploadu obrazku do adminu (viz controllers/admin/attachments_controller.php)
  *}
 <li class="list-group-item media clearfix" data-id="{$attachment->getId()}">
-	<div class="btn-group pull-right">
-		{capture assign="title"}{t}Odpojit přílohu{/t}{/capture}
-		{a_destroy action="attachments/destroy" id=$attachment _title=$title _class="confirm btn btn-danger btn-xs pull-right"}<span class="glyphicon glyphicon-remove"></span>{/a_destroy}
-	</div>
-
-	<a href="{link_to action="attachments/edit" id=$attachment}" title="{t}Editovat tuto přílohu{/t}" class="pull-left">{$attachment->getName()} ({$attachment->getFilename()})</a>
-
 	<div class="media-body">
-		{if $attachment->getName()}
-			<h4 class="media-heading">{$attachment->getName()}</h4>
-		{/if}
+			<ul class="list-inline pull-right">
+				<li>{a action="attachments/edit" id=$attachment}<i class="glyphicon glyphicon-edit"></i> {t}Edit{/t}{/a}</li>
 
-		{if $attachment->getDescription()}
-			<p>{$attachment->getDescription()}</p>
-		{/if}
+				{capture assign="confirm"}{t 1=$attachment->getName()|h escape=no}You are about to delete the attachment %1
+Are you sure about that?{/t}{/capture}
+				<li>{a_destroy action="attachments/destroy" id=$attachments _method=post _confirm=$confirm _class="btn btn-danger btn-xs"}<i class="glyphicon glyphicon-remove"></i>{/a_destroy}</li>
+			</ul>
+			<a href="{$attachment->getUrl()}">{$attachment->getName()} ({if $attachment->getName()!=$attachment->getFilename()}{$attachment->getFilename()}, {/if}{$attachment->getFilesize()|format_bytes})</a>
 	</div>
+
 </li>

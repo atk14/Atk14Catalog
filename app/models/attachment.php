@@ -1,7 +1,7 @@
 <?php
 class Attachment extends ApplicationModel implements Translatable,Rankable{
 
-	static function GetTranslatableFields(){ return array("name", "description"); }
+	static function GetTranslatableFields(){ return array("name"); }
 
 	/**
 	 * $attachments = Attachment::GetAttachments($card_section);

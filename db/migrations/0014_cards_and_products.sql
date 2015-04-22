@@ -32,7 +32,7 @@ INSERT INTO card_section_types VALUES (1,'Variants');
 INSERT INTO card_section_types VALUES (2,'Dimensions');
 INSERT INTO card_section_types VALUES (3,'Awards');
 INSERT INTO card_section_types VALUES (4,'Product brochure');
-INSERT INTO card_section_types VALUES (5,'Othee parts of the collection');
+INSERT INTO card_section_types VALUES (5,'Other parts of the collection');
 INSERT INTO card_section_types VALUES (6,'Information');
 --
 CREATE SEQUENCE seq_card_sections;
