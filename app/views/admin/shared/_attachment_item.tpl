@@ -8,7 +8,7 @@
 
 				{capture assign="confirm"}{t 1=$attachment->getName()|h escape=no}You are about to delete the attachment %1
 Are you sure about that?{/t}{/capture}
-				<li>{a_destroy action="attachments/destroy" id=$attachments _method=post _confirm=$confirm _class="btn btn-danger btn-xs"}<i class="glyphicon glyphicon-remove"></i>{/a_destroy}</li>
+				<li>{a_destroy action="attachments/destroy" id=$attachment _method=post _confirm=$confirm _class="btn btn-danger btn-xs"}<i class="glyphicon glyphicon-remove"></i>{/a_destroy}</li>
 			</ul>
 			<a href="{$attachment->getUrl()}">{$attachment->getName()} ({if $attachment->getName()!=$attachment->getFilename()}{$attachment->getFilename()}, {/if}{$attachment->getFilesize()|format_bytes})</a>
 	</div>
