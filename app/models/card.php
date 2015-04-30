@@ -78,6 +78,10 @@ class Card extends ApplicationModel implements Translatable{
 		return Image::GetImages($this,$options);
 	}
 
+	function getAttachments(){
+		return Attachment::GetAttachments($this);
+	}
+
 	/**
 	 * Najde obrazky z variant produktu.
 	 *

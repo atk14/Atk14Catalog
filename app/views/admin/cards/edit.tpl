@@ -12,6 +12,10 @@
 
 <hr>
 
+{render partial="shared/attachments" object=$card}
+
+<hr>
+
 {render partial="categories" card=$card categories=$categories form=$add_to_category_form}
 
 <hr>
