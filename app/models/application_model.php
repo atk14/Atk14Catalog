@@ -1,4 +1,7 @@
 <?php
+require_once(__DIR__ . "/translatable.php");
+require_once(__DIR__ . "/rankable.php");
+
 /**
  * The base class of all the application db table based models.
  * Do you have any common methods or attributes for all your models? Put them right here.
@@ -441,30 +444,4 @@ class ApplicationModel extends TableRecord{
 		}
 		return parent::FindFirst($options);
 	}
-}
-
-/**
- * Rozhrani pro modely s vicejazycnymi vlastnostmi
- *
- * Model, ktery toto rozhrani implementuje, musi obsahovat statickou metodu GetTranslatableFields
- * vracejici pole s nazvy db policek umoznujici pouzit vice jazyku.
- *
- * Priklad
- * 	class Category extends TableRecord implements Translatable {
- * 		static function GetTranslatableFields() {
- * 			return array("name", "description");
- * 		}
- * 	}
- */
-interface Translatable {
-	public static function GetTranslatableFields();
-}
-
-/**
- * Rozhrani pro objekty, ktere jsou trideny podle policka rank.
- *
- * Metody jako Class::FindAll(), Class::FindFirst(), Class::FindBySomething().... budou defaultne tridit podle policka rank
- */
-interface Rankable {
-	public function setRank($rank);
 }
