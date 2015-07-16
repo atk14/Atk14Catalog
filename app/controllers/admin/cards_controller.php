@@ -49,12 +49,7 @@ class CardsController extends AdminController{
 
 	function create_new() {
 		$this->page_title = _("Adding a product");
-		$this->_save_return_uri();
 		if ($this->request->post() && ($d=$this->form->validate($this->params))) {
-			/*
-			$category_ids = $d["category_ids"];
-			unset($d["category_ids"]); */
-
 			$tags = $d["tags"];
 			unset($d["tags"]);
 
@@ -70,10 +65,8 @@ class CardsController extends AdminController{
 				));
 			}
 
-			$url = $this->_link_to(array("action" => "edit", "id" => $product_card));
-			
-			$this->flash->success(_("The product has been created").'<br><a href="'.$url.'">'._("Would you like to edit the product and add some extra data?")."</a>");
-			$this->_redirect_back();
+			$this->flash->success(_("The product has been created. Now you can add some extra data to it."));
+			$this->_redirect_to(array("action" => "edit", "id" => $product_card));
 		}
 	}
 
