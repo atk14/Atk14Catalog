@@ -34,6 +34,13 @@ class Brand extends ApplicationModel implements Translatable, Rankable {
 		return Card::FindAll($options);
 	}
 
-	function toString() { return $this->getName(); }
+	function getImages($options = array()){
+		return Image::GetImages($this,$options);
+	}
 
+	function getAttachments(){
+		return Attachment::GetAttachments($this);
+	}
+
+	function toString() { return $this->getName(); }
 }

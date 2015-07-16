@@ -5,3 +5,7 @@
 <hr>
 
 {render partial="shared/image_gallery" object=$brand}
+
+<hr>
+
+{render partial="shared/attachments" object=$brand}
