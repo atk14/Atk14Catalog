@@ -4,6 +4,7 @@ class CreateNewForm extends CardsForm {
 		$this->_add_fields(array(
 			"add_catalog_id_field" => true,
 			"catalog_id_required" => false,
+			"add_information_fields" => true,
 		));
 	}
 

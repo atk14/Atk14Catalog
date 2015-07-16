@@ -44,7 +44,6 @@ class CardsController extends AdminController{
 			"order_by" => $this->sorting,
 			"offset" => $this->params->getInt("offset"),
 		));
-
 	}
 
 	function create_new() {
@@ -52,6 +51,15 @@ class CardsController extends AdminController{
 		if ($this->request->post() && ($d=$this->form->validate($this->params))) {
 			$tags = $d["tags"];
 			unset($d["tags"]);
+
+			$section_data = array();
+			foreach($GLOBALS["ATK14_GLOBAL"]->getSupportedLangs() as $l){
+				$k = "information_$l";
+				if(strlen(trim($d[$k]))){
+					$section_data["body_$l"] = $d[$k];
+				}
+				unset($d[$k]);
+			}
 
 			$catalog_id = $d["catalog_id"];
 			unset($d["catalog_id"]);
@@ -63,6 +71,12 @@ class CardsController extends AdminController{
 				$product_card->createProduct(array(
 					"catalog_id" => $catalog_id,
 				));
+			}
+
+			if($section_data){
+				$section_data["card_id"] = $product_card;
+				$section_data["card_section_type_id"] = CardSectionType::ID_INFORMATION;
+				CardSection::CreateNewRecord($section_data);
 			}
 
 			$this->flash->success(_("The product has been created. Now you can add some extra data to it."));
