@@ -10,7 +10,6 @@ class CategoryCardsController extends AdminController{
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
 			$this->category->addCard($d["card_id"]);
 
-			($ft = $d["card_id"]->getFulltext()) && $ft->s("flag_rebuild",true);
 			$this->flash->success(_("Produkt byl přidán"));
 			$this->_redirect_back();
 		}
@@ -35,12 +34,6 @@ class CategoryCardsController extends AdminController{
 
 		if($this->action=="create_new"){
 			$this->_find("category","category_id");
-		}
-	}
-
-	function _after_filter() {
-		if ($this->request->post() && in_array($this->action, array("destroy"))) {
-			$this->card && ($ft = $this->card->getFulltext()) && $ft->s("flag_rebuild",true);
 		}
 	}
 
