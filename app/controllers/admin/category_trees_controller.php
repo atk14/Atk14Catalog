@@ -37,14 +37,6 @@ class CategoryTreesController extends AdminController{
 		$this->root->destroy();
 	}
 
-	function _setup_breadcrumbs_filter() {
-		if ($this->action=="index") {
-			$this->breadcrumbs->addTextItem(_("Katalogové stromy"));
-		} else {
-			$this->breadcrumbs->addItem(_("Katalogové stromy"), $this->_link_to("category_trees/index"));
-		}
-	}
-
 	function _before_filter(){
 		if(in_array($this->action,array("detail","set_rank","destroy"))){
 			$this->_find("root", array("class_name" => "Category"));

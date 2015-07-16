@@ -49,16 +49,6 @@ class StaticPagesController extends AdminController {
 		}
 	}
 
-	function _setup_breadcrumbs_filter() {
-		if ($this->action=="index") {
-			$this->breadcrumbs->addTextItem(_("Statické stránky"));
-		} else {
-			$this->breadcrumbs->addItem(_("Statické stránky"), $this->_link_to("static_pages/index"));
-		}
-		($this->action=="edit") && $this->breadcrumbs->addTextItem($this->static_page->getTitle());
-		($this->action=="create_new") && $this->breadcrumbs->addTextItem(_("Nový článek"));
-	}
-
 	function _before_filter() {
 		if(in_array($this->action,array("edit","destroy"))){
 			$this->_find("static_page");

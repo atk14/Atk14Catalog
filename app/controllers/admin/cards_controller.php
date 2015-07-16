@@ -193,17 +193,6 @@ class CardsController extends AdminController{
 		}
 	}
 
-	function _setup_breadcrumbs_filter() {
-		if ($this->action=="index") {
-			$this->breadcrumbs->addTextItem(_("Produkty"));
-		} else {
-			$this->breadcrumbs->addItem(_("Produkty"), $this->_link_to("cards/index"));
-		}
-		if ($this->action=="edit") {
-			$this->breadcrumbs->addTextItem( sprintf(_("Karta produktu '%s' (id: %d)"), $this->card->getName(), $this->card->getId()) );
-		}
-	}
-
 	function _before_filter() {
 		if (in_array($this->action, array("edit","destroy","enable_variants","add_to_category","remove_from_category","append_external_source","remove_external_source"))) {
 			$this->_find("card");

@@ -39,16 +39,6 @@ class CollectionsController extends AdminController {
 		}
 	}
 
-	function _setup_breadcrumbs_filter() {
-		if ($this->action=="index") {
-			$this->breadcrumbs->addTextItem(_("Collections"));
-		} else {
-			$this->breadcrumbs->addItem(_("Collections"), $this->_link_to("collections/index"));
-		}
-		($this->action=="edit") && $this->breadcrumbs->addTextItem($this->collection->getName());
-		($this->action=="create_new") && $this->breadcrumbs->addTextItem(_("Nová kolekce"));
-	}
-
 	function _before_filter() {
 		if(in_array($this->action,array("edit","destroy","add_product","remove_product"))){
 			$this->_find("collection");

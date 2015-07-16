@@ -42,17 +42,6 @@ class ProductsController extends AdminController {
 		$this->product->setRank($this->params->getInt("rank"));
 	}
 
-	function _setup_breadcrumbs_filter() {
-		isset($this->card) && ($card = $this->card) || $card = null;
-		(!$card && $this->product) && ($card = $this->product->getCard());
-
-		$this->breadcrumbs->addItem(_("Produkty"), $this->_link_to("cards/index"));
-		$this->breadcrumbs->addItem(sprintf(_("Karta produktu '%s' (id: %d)"), $card->getName(), $card->getId()), $this->_link_to(array("controller" => "cards", "action" => "edit", "id" => $card)));
-
-		($this->action=="edit") && $this->breadcrumbs->addTextItem( sprintf(_("Varianta '%s'"), $this->product->getName()) );
-		($this->action=="create_new") && $this->breadcrumbs->addTextItem( _("Nová varianta") );
-	}
-
 	function _before_filter() {
 		if (in_array($this->action, array("create_new"))) {
 			$this->_find("card","card_id");

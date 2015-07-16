@@ -36,22 +36,4 @@ class CategoryCardsController extends AdminController{
 			$this->_find("category","category_id");
 		}
 	}
-
-	function _setup_breadcrumbs_filter() {
-		isset($this->category) && ($category = $this->category) || $category = null;
-
-		$this->breadcrumbs->addItem(_("Seznam stromů"), $this->_link_to("category_trees/index"));
-		$cats = array();
-		$cats[] = $category;
-		while($category = $category->getParentCategory()) {
-			array_unshift($cats,$category);
-		}
-		isset($this->category) && ($category = $this->category) || $category = null;
-
-		foreach($cats as $_c) {
-			$this->breadcrumbs->addItem($_c->getName(), $this->_link_to(array("controller" => "cards", "action" => "edit", "id" => $_c)));
-		}
-
-		($this->action=="create_new") && $this->breadcrumbs->addTextItem( _("Přidat produkt") );
-	}
 }

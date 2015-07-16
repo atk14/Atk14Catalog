@@ -41,18 +41,6 @@ class  CardSectionsController extends AdminController{
 		$this->card_section->setRank($this->params->getInt("rank"));
 	}
 
-	function _setup_breadcrumbs_filter() {
-		$card = null;
-		isset($this->card) && ($card = $this->card);
-		(!$card && $this->card_section) && ($card = $this->card_section->getCard());
-
-		$this->breadcrumbs->addItem(_("Produkty"), $this->_link_to("cards/index"));
-		$this->breadcrumbs->addItem(sprintf(_("Karta produktu '%s' (id: %d)"), $card->getName(),$card->getId()), $this->_link_to(array("controller" => "cards", "action" => "edit", "id" => $card)));
-
-		($this->action=="edit") && $this->breadcrumbs->addTextItem( sprintf(_("Textová sekce '%s'"), $this->card_section->getName()) );
-		($this->action=="create_new") && $this->breadcrumbs->addTextItem( _("Nová textová sekce") );
-	}
-
 	function _before_filter(){
 		$this->action=="create_new" && $this->_find("card","card_id");
 		in_array($this->action,array("edit","destroy","set_rank")) && $this->_find("card_section");

@@ -36,7 +36,4 @@ class CategoryRecommendedCardsController extends AdminController{
 			$this->_find("category","category_id");
 		}
 	}
-
-	function _setup_breadcrumbs_filter() {
-	}
 }

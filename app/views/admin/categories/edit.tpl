@@ -1,7 +1,5 @@
 <h1>{$page_title}</h1>
 
-{render partial="breadcrumbs"}
-
 {assign var=parent value=$category->getParentCategory()}
 
 <p>{a action=move_to_category id=$category _class="btn btn-primary"}<i class="glyphicon glyphicon-transfer"></i> {t}Přesunout kategorii{/t}{/a}

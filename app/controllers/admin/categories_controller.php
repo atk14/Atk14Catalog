@@ -9,18 +9,9 @@ class CategoriesController extends AdminController{
 
 			$this->flash->success(_("Změny byly uloženy"));
 			$this->_redirect_back();
-			return;
 		}
-
-		$ancestors = array();
-		$c = $this->category;
-		while($p = $c->getParentCategory()){
-			$ancestors[] = $p;
-			$c = $p;
-		}
-		$ancestors = array_reverse($ancestors);
-		$this->tpl_data["ancestors"] = $ancestors;
 	}
+
 
 	function move_to_category() {
 		$this->page_title = _("Přesun kategorie");
@@ -98,36 +89,38 @@ class CategoriesController extends AdminController{
 		}
 	}
 
-	# V kategoriich se to resi po svem; zatim
-	# Ale v nekterych akcich je treba breadcrumbs doplnit
-	function _setup_breadcrumbs_filter() {
-		if (in_array($this->action,array("move_to_category","create_alias"))) {
-			$this->breadcrumbs->addItem(_("Seznam stromů"), $this->_link_to("category_trees/ndex"));
-			$path = array();
-			$this_category = $this->category;
-			while ($this_category) {
-				$path[] = $this_category;
-				$this_category = $this_category->getParentCategory();
-			}
-			foreach(array_reverse($path) as $c) {
-				$this->breadcrumbs->addItem($c->getName(), $this->_link_to(array(
-				"controller" => "categories",
-				"action" => "edit",
-				"id" => $c,
-				)));
-			}
+	function _prepare_breadcrumbs($category,$add_self = false) {
+		if(!$category){ return; }
+		// breadcrumbs
+		$ancestors = array();
+		$c = $category;
+		while($p = $c->getParentCategory()){
+			$ancestors[] = $p;
+			$c = $p;
 		}
-		if ($this->action=="move_to_category") {
-			$this->breadcrumbs->addTextItem( _("Přesun kategorie") );
+		$ancestors = array_reverse($ancestors);
+		if($add_self){
+			$ancestors[] = $category;
 		}
-		if ($this->action=="create_alias") {
-			$this->breadcrumbs->addTextItem( _("Nový alias") );
+		foreach($ancestors as $a){
+			$this->breadcrumbs[] = array(
+				$this->_get_category_name($a),
+				$this->_link_to(array("action" => "edit", "id" => $a))
+			);
 		}
+	}
+
+	function _get_category_name($c){
+		$name = $c->getName();
+		if($c->isFilter()){ $name = _("filtr").": $mame"; }
+		if($c->isAlias()){ $name = _("alias").": $mame"; }
+		return $name;
 	}
 
 	function _before_filter(){
 		if(in_array($this->action,array("edit","add_card","set_rank","destroy","move_to_category","create_alias"))){
-			$this->_find("category");
+			$c = $this->_find("category");
+			$this->_prepare_breadcrumbs($c,$this->action!="edit");
 		}
 
 		if($this->action=="add_card"){
@@ -135,10 +128,11 @@ class CategoriesController extends AdminController{
 		}
 
 		if($this->action=="create_new"){
-			$this->_find("parent_category",array(
+			$c = $this->_find("parent_category",array(
 				"class_name" => "Category",
 				"key" => "parent_category_id",
 			));
+			$this->_prepare_breadcrumbs($c,true);
 		}
 	}
 
