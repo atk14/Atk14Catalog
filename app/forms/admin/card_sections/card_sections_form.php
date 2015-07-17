@@ -6,6 +6,7 @@ class CardSectionsForm extends AdminForm{
 		)));
 		$this->add_translatable_field("name",new CharField(array(
 			"label" => _("Název"),
+			"required" => false,
 		)));
 		$this->add_translatable_field("body",new WysiwygField(array(
 			"label" => _("Text"),

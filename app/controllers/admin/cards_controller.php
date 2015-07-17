@@ -85,7 +85,7 @@ class CardsController extends AdminController{
 	}
 
 	function edit(){
-		$this->page_title = _("Editing of the product");
+		$this->page_title = sprintf(_("Editing product %s"),strip_tags($this->card->getName()));
 
 		$first_product = $this->tpl_data["first_product"] = $this->card->getFirstProduct(array("visible" => null));
 

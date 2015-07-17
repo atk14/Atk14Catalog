@@ -4,6 +4,7 @@ class  CardSectionsController extends AdminController{
 		$this->page_title = sprintf(_("Add a textual section for the product %s"),h($this->card->getName()));
 
 		$this->_save_return_uri();
+		$this->_add_card_to_breadcrumbs($this->card);
 
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
 			$d["card_id"] = $this->card;
@@ -17,7 +18,9 @@ class  CardSectionsController extends AdminController{
 		$this->page_title = _("Editace textové sekce");
 
 		$this->form->set_initial($this->card_section);
+
 		$this->_save_return_uri();
+		$this->_add_card_to_breadcrumbs($this->card_section->getCard());
 
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
 			$this->card_section->s($d);
@@ -57,5 +60,9 @@ class  CardSectionsController extends AdminController{
 			);
 		}
 		return parent::_redirect_back($default);
+	}
+
+	function _add_card_to_breadcrumbs($card){
+		$this->breadcrumbs[] = array($card->getName(),$this->_link_to(array("action" => "cards/edit", "id" => $card)));
 	}
 }
