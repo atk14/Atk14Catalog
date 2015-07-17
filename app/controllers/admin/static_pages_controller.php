@@ -5,8 +5,6 @@ class StaticPagesController extends AdminController {
 		$this->page_title = _("Statické stránky");
 
 		$this->sorting->add("created_at");
-#		$this->sorting->add("updated_at");
-#		$this->sorting->add("title", array("order_by" => Translation::BuildOrderSqlForTranslatableField("static_pages", "title")));
 
 		$conditions = $bind_ar = array();
 		$conditions[] = "parent_static_page_id is null";
