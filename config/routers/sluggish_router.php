@@ -54,7 +54,13 @@ class SluggishRouter extends Atk14Router{
 	}
 
 	function recognize($uri){
-		$patterns = join("|",$this->url_patterns_by_lang);
+		$patterns = $this->url_patterns_by_lang;
+		// TODO: prepsat pomoci array_walk?
+		foreach($patterns as $k => $v){
+			$patterns[$k] = str_replace('/',"\\/",$v);
+		}
+
+		$patterns = join("|",$patterns);
 		$class = $this->model_class_name;
 		if($this->namespace=="" && preg_match('/^\/('.$patterns.')\/([a-z0-9-_\/]+?)\/?$/',$uri,$matches) && ($c = $class::GetInstanceBySlug($matches[2],$lang))){
 			$this->action = "detail";
