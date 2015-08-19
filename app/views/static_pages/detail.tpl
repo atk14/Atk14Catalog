@@ -1,6 +1,3 @@
-
-{render partial="shared/breadcrumbs"}
-
 <h1>{$static_page->getTitle()}</h1>
 
 <div>
