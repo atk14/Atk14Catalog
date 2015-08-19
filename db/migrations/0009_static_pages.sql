@@ -3,6 +3,7 @@ CREATE TABLE static_pages (
 	id INT PRIMARY KEY DEFAULT NEXTVAL('seq_static_pages'),
 	--
 	parent_static_page_id INT,
+	rank INT NOT NULL DEFAULT 999,
 	--
 	created_by_user_id INT,
 	updated_by_user_id INT,

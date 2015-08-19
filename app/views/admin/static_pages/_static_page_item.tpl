@@ -1,4 +1,4 @@
-<li class="list-group-item{if $static_page->getChildStaticPages()} has-child{/if}">
+<li class="list-group-item{if $static_page->getChildStaticPages()} has-child{/if}" data-id="{$static_page->getId()}">
 	{$static_page->getTitle()}
 
 	{a namespace="" controller=static_pages action=detail id=$static_page}{t 1=$lang}odkaz [%1]{/t}{/a}

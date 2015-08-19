@@ -3,21 +3,12 @@ class StaticPagesController extends AdminController {
 
 	function index() {
 		$this->page_title = _("Statické stránky");
-
-		$this->sorting->add("created_at");
-
-		$conditions = $bind_ar = array();
-		$conditions[] = "parent_static_page_id is null";
-		$this->tpl_data["finder"] = StaticPage::Finder(array(
-			"conditions" => $conditions,
-			"bind_ar" => $bind_ar,
-			"order_by" => $this->sorting,
-			"offset" => $this->params->getInt("offset"),
-		));
+		$this->tpl_data["root_static_pages"] = StaticPage::FindAll("parent_static_page_id",null);
 	}
 
 	function create_new() {
 		$this->page_title = _("Vytvoření statické stránky");
+		$this->request->get() && $this->form->set_initial($this->params);
 		$this->_save_return_uri();
 		if ($this->request->post() && ($d=$this->form->validate($this->params))) {
 			$static_page = StaticPage::CreateNewRecord($d);
@@ -28,13 +19,22 @@ class StaticPagesController extends AdminController {
 
 	function edit() {
 		$this->page_title = sprintf(_("Editace stránky '%s'"), $this->static_page->getTitle());
-		$this->_save_return_uri();
 		$this->form->set_initial($this->static_page);
 		if ($this->request->post() && ($d=$this->form->validate($this->params))) {
 			$this->static_page->s($d);
 			$this->flash->success(_("Stránka uložena"));
-			$this->_redirect_back();
+			$this->_redirect_to("index");
 		}
+
+		// kvuli trideni podstranek
+		$this->tpl_data["child_static_pages"] = $this->static_page->getChildStaticPages();
+	}
+
+	function set_rank(){
+		if(!$this->request->post()){ return $this->_execute_action("error404"); }
+
+		$this->render_template = false;
+		$this->static_page->setRank($this->params->getInt("rank"));
 	}
 
 	function destroy() {
@@ -48,7 +48,7 @@ class StaticPagesController extends AdminController {
 	}
 
 	function _before_filter() {
-		if(in_array($this->action,array("edit","destroy"))){
+		if(in_array($this->action,array("edit","destroy","set_rank"))){
 			$this->_find("static_page");
 		}
 	}

@@ -1,5 +1,5 @@
 <?php
-class StaticPage extends ApplicationModel implements Translatable {
+class StaticPage extends ApplicationModel implements Translatable, Rankable {
 
 	static $automatically_sluggable = true;
 
@@ -60,5 +60,11 @@ class StaticPage extends ApplicationModel implements Translatable {
 
 	function isDeletable() {
 		return false;
+	}
+
+	function setRank($new_rank){
+		return $this->_setRank($new_rank,array(
+			"parent_static_page_id" => $this->g("parent_static_page_id"),
+		));
 	}
 }
