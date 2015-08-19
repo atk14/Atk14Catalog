@@ -28,7 +28,7 @@ class ApplicationModel extends TableRecord{
 		}
 
 		$tr_strings = array();
-		if(in_array("Translatable", class_implements($class_name)) && $class_name::GetTranslatableFields()){
+		if($obj instanceof Translatable && $class_name::GetTranslatableFields()){
 			foreach($values as $k => $v){
 				if(preg_match('/^(.+)_([a-z]{2})$/',$k,$matches) && in_array($matches[1],$class_name::GetTranslatableFields())){
 					$tr_strings[$k] = $v;
@@ -49,7 +49,7 @@ class ApplicationModel extends TableRecord{
 			}
 		}
 
-		if($obj->hasKey("created_by_user_id") && !in_array("created_by_user_id",array_keys($values))){
+		if($obj->hasKey("created_by_user_id") && !array_key_exists("created_by_user_id",$values)){
 			$values["created_by_user_id"] = ApplicationModel::_GetLoggedUserId();
 		}
 
@@ -92,10 +92,10 @@ class ApplicationModel extends TableRecord{
 
 		return parent::toArray() + $slugs + Translation::GetObjectStrings($this) + $defaults;
 	}
-	
+
 	/**
 	 * Converts object into XML.
-	 * 
+	 *
 	 * @return string
 	 */
 	function toXml(){
@@ -112,7 +112,7 @@ class ApplicationModel extends TableRecord{
 
 	/**
 	 * Converts object into JSON.
-	 * 
+	 *
 	 * @return string
 	 */
 	function toJson(){
@@ -122,9 +122,9 @@ class ApplicationModel extends TableRecord{
 	/**
 	 * Returns associative array with object`s attributes and their values.
 	 * This array is used for exporting object as XML or JSON.
-	 * 
+	 *
 	 * Cover it in a given class if you want to return something else than just $object->toArray().
-	 * 
+	 *
 	 * @return array
 	 */
 	function toExportArray(){ return $this->toArray(); }
@@ -144,7 +144,7 @@ class ApplicationModel extends TableRecord{
 		if($this->hasKey("updated_by_user_id") && !in_array("updated_by_user_id",$v_keys)){
 			$values["updated_by_user_id"] = ApplicationModel::_GetLoggedUserId();
 		}
-		
+
 		$class_name = get_class($this);
 
 		if(in_array("Translatable", class_implements($this)) && ($translations = $class_name::GetTranslatableFields())){
@@ -157,7 +157,7 @@ class ApplicationModel extends TableRecord{
 			}
 			Translation::SetObjectStrings($this,$tr_strings);
 		}
-			
+
 		$slugs = $original_slugs = array();
 		$slug_segment = $this->getSlugSegment();
 		if($class_name::$automatically_sluggable){
@@ -207,18 +207,18 @@ class ApplicationModel extends TableRecord{
 		$length = 32;
 		return $this->getId().".".substr(md5(get_class($this).$this->getId().SECRET_TOKEN.$extra_salt),0,$length);
 	}
-	
+
 	/**
 	 * Instantiates an object according to a given token.
 	 *
 	 * Returns null when token is not valid.
-	 * 
+	 *
 	 * @see getToken
 	 */
 	static function GetInstanceByToken($token,$extra_salt = ""){
 		$class_name = get_called_class();
 		$ar = explode(".",$token);
-		
+
 		if(isset($ar[0]) && is_numeric($ar[0]) && ($obj = call_user_func(array($class_name,"GetInstanceById"),$ar[0])) && $obj->getToken($extra_salt)==$token){
 			return $obj;
 		}
@@ -309,7 +309,7 @@ class ApplicationModel extends TableRecord{
 	 *	$brand->getInfo();
 	 *	$brand->getInfo("en");
 	 *
-	 * Pokud je info policko z Brand::$translations, tak to zafunguje, podle ocekavani! 
+	 * Pokud je info policko z Brand::$translations, tak to zafunguje, podle ocekavani!
 	 */
 	function __call($name,$arguments){
 		global $ATK14_GLOBAL;
@@ -371,7 +371,7 @@ class ApplicationModel extends TableRecord{
 				$ranks[$id] = $new_rank;
 				continue;
 			}
-			
+
 			if($new_rank===$exp_rank){
 				$exp_rank++;
 			}
