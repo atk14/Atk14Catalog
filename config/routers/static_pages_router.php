@@ -19,7 +19,7 @@ class StaticPagesRouter extends Atk14Router{
 
 		if($sp = Cache::Get("StaticPage",$this->params->getInt("id"))){
     	$this->params->del("id");
-    	return sprintf('/%s/',$sp->getPath());
+    	return sprintf('/%s/',$sp->getPath($this->lang));
 		}
 	}
 }
