@@ -1,22 +1,27 @@
 /* global window */
-(function( window, $, undefined ) {
+( function( window, $, undefined ) {
 	var document = window.document,
 
 	ADMIN = {
 		common: {
+
+			// Application-wide code
 			init: function() {
 				ADMIN.utils.handleSortables();
-				// application-wide code
+
 			}
 		},
 
 		logins: {
+
+			// Controller-wide code
 			init: function() {
-				// controller-wide code
+
 			},
 
+			// Action-specific code
 			create_new: function() {
-				// action-specific code
+
 			}
 		},
 
@@ -63,18 +68,18 @@
 						"name": "files[]",
 						"data-url": url,
 						"multiple": "multiple"
-					});
+					} );
 
 				$input.insertBefore( $link );
 
-				$input.fileupload({
+				$input.fileupload( {
 					dataType: "json",
 					multipart: false,
 					start: function() {
 						$progress.show();
 					},
 					progressall: function( e, data ) {
-						var progress = parseInt(data.loaded / data.total * 100, 10);
+						var progress = parseInt( data.loaded / data.total * 100, 10 );
 
 						$progress.css(
 							"width",
@@ -98,7 +103,7 @@
 							"0"
 						);
 					}
-				});
+				} );
 			},
 
 			handleFormErrors: function( errors ) {
@@ -112,14 +117,14 @@
 
 					// Prepeare error messages list.
 					errorMsgs.push( "<ul class='help-block help-block-errors'>" );
-					$.each( errorList, function(i, errorMsg) {
+					$.each( errorList, function( i, errorMsg ) {
 						errorMsgs.push( "<li>" + errorMsg + "</li>" );
-					});
+					} );
 					errorMsgs.push( "</ul>" );
 
 					// Insert error messages list into form.
-					$( errorMsgs.join("") ).insertAfter( $field );
-				});
+					$( errorMsgs.join( "" ) ).insertAfter( $field );
+				} );
 			},
 
 			clearErrorMessages: function( $form ) {
@@ -132,7 +137,7 @@
 					$input = $( "#id_category" ),
 					$categies = $( "#categies" );
 
-				$form.on( "ajax:success", function(jqEv, json) {
+				$form.on( "ajax:success", function( jqEv, json ) {
 					ADMIN.utils.clearErrorMessages( $form );
 					$categies.html( json.snippet );
 
@@ -144,10 +149,11 @@
 
 					$input.focus().select();
 					ADMIN.utils.categoriesSuggest( "#id_category" );
-				});
+				} );
 			},
 
 			handleSortables: function() {
+
 				// Sortable lists.
 				var $sortable = $( ".list-sortable" ),
 					glyph = "<span class='glyphicon glyphicon-align-justify'></span>",
@@ -156,7 +162,7 @@
 				if ( $sortable.length ) {
 					$sortable.children( "li" ).prepend( glyph );
 
-					$sortable.sortable({
+					$sortable.sortable( {
 						cancel: "strong",
 						update: function( jqEv, ui ) {
 							$item = $( ui.item );
@@ -166,7 +172,7 @@
 								rank: $item.index()
 							};
 
-							$.ajax({
+							$.ajax( {
 								type: "POST",
 								url: url,
 								data: data,
@@ -174,9 +180,9 @@
 								},
 								error: function() {
 								}
-							});
+							} );
 						}
-					});
+					} );
 				}
 			},
 
@@ -198,7 +204,7 @@
 					return;
 				}
 
-				$input.autocomplete({
+				$input.autocomplete( {
 					minLength: 1,
 					source: function( request, response ) {
 						term = extractLast( request.term );
@@ -206,10 +212,10 @@
 						if ( term in cache ) {
 							response( cache[ term ] );
 						} else {
-							$.getJSON( url + term, function(data) {
+							$.getJSON( url + term, function( data ) {
 								cache[ term ] = data;
 								response( data );
-							});
+							} );
 						}
 					},
 					search: function() {
@@ -230,12 +236,12 @@
 						this.value = terms.join( " , " );
 						return false;
 					}
-				});
+				} );
 			},
 
 			categoriesSuggest: function( selector ) {
 				var $input = $( selector ),
-					url = $input.data("suggest_url"),
+					url = $input.data( "suggest_url" ),
 					cache = {},
 					term;
 
@@ -243,7 +249,7 @@
 					return;
 				}
 
-				$input.autocomplete({
+				$input.autocomplete( {
 					minLength: 1,
 					source: function( request, response ) {
 						term = request.term;
@@ -251,10 +257,10 @@
 						if ( term in cache ) {
 							response( cache[ term ] );
 						} else {
-							$.getJSON( url + term, function(data) {
+							$.getJSON( url + term, function( data ) {
 								cache[ term ] = data;
 								response( data );
-							});
+							} );
 						}
 					},
 					search: function() {
@@ -271,7 +277,7 @@
 						this.value = ui.item.value;
 						return false;
 					}
-				});
+				} );
 			}
 		}
 	};
@@ -290,8 +296,8 @@
 				a = "init";
 			}
 
-			if ( c !== "" && ns[c] && typeof ns[c][a] === "function" ) {
-				ns[c][a]();
+			if ( c !== "" && ns[ c ] && typeof ns[ c ][ a ] === "function" ) {
+				ns[ c ][ a ]();
 			}
 		},
 
@@ -311,4 +317,4 @@
 
 	// Initialize application.
 	$( document ).ready( ADMIN.UTIL.init );
-})( window, window.jQuery );
+} )( window, window.jQuery );

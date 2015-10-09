@@ -1,25 +1,31 @@
-ATK14 Skelet
+ATK14 Catalog
 ============
 
-Meaningful skeleton for a new installed ATK14 application.
+_ATK14 Catalog_ is an skeleton suitable for applications of kind like _Products introduction_, _E-shop_, etc. _ATK14 Catalog_ is built on top of _ATK14 Skelet_ — another great skeleton.
 
-Check out <http://skelet.atk14.net/> to see the skelet running.
+Check out <http://catalog.atk14.net/> to see the catalog running.
 
-What the Skeleton contains
+The Catalog contains mainly
 --------------------------
 
-* User registrations
-* Password recoveries
-* Articles (news)
-* Tags
-* A simple administration
-* JS & CSS libraries are installed by [Bower](http://bower.io/) and compilled by [Grunt](http://gruntjs.com/)
+* List of categories
+* List of brands
+* List of collections
+* Static pages with a hierarchical structure
+* Contact page with fast contact form
+* News section
+* User registration (with strong blowfish passwords hashing)
+* Basic administration
+* RESTful API
+* Sitemap (HTML, XML)
+* Localization (English, Czech)
+* Front-end tooling including [Bower](http://bower.io/), [Gulp](https://github.com/gulpjs/gulp) and [BrowserSync](https://github.com/BrowserSync/browser-sync)
 
 Installation
 ------------
 
 ```bash
-git clone https://github.com/atk14/Atk14Skelet.git
+git clone https://github.com/atk14/Atk14Catalog.git
 cd Atk14Skelet
 git submodule init
 git submodule update
@@ -37,7 +43,7 @@ composer update
 
 If you don't have the Composer installed, visit http://www.getcomposer.org/
 
-Starting the skeleton
+Starting the catalog
 ---------------------
 
 Start the development server
@@ -46,7 +52,7 @@ Start the development server
 ./scripts/server
 ```
 
-and you may find the running skeleton on http://localhost:8000/
+and you may find the running catalog on http://localhost:8000/
 
 Installing the skeleton as a virtual host on Apache web server
 --------------------------------------------------------------
@@ -59,7 +65,7 @@ sudo service apache2 reload
 chmod 777 tmp log
 ```
 
-Visit <http://atk14skelet.localhost/>. Is it running? Great!
+Visit <http://atk14catalog.localhost/>. Is it running? Great!
 
 If you have a trouble run the following command and follow instructions.
 
@@ -70,31 +76,20 @@ If you have a trouble run the following command and follow instructions.
 Front-end Assets Installation
 -----------------------------
 #### Install dependencies.
+With [Node.js](http://nodejs.org) and npm installed, run the following one liner from the root of your Skelet application:
 ```bash
-# Node Version manager
-wget -q -O - https://raw.github.com/creationix/nvm/master/install.sh | sh
-echo -e "\n. ~/.nvm/nvm.sh" >> ~/.bashrc && . ~/.nvm/nvm.sh
-# Node.js
-nvm install 0.10
-# Bower
-npm install -g bower
-# Grunt
-npm install -g grunt-cli
+$ npm install -g gulp && npm install -g bower && npm install && bower install
 ```
-#### Install skelet front-end dependencies via Bower.
+
+This will install all the tools you will need to serve and build your front-end assets.
+
+### Serve / watch
 ```bash
-bower install
+$ gulp serve
 ```
-#### Install build dependencies.
-```bash
-npm install
-```
-#### Build.
-```bash
-grunt dist
-```
-### You're done! Happy skeleting!
-From now on you only need to run `grunt dist` when you need to concatenate and minify JS and CSS for production.
-You can also run lint and other tasks via Grunt. To see available tasks run `grunt --help`.
+
+This outputs an IP address you can use to locally test and another that can be used on devices connected to your network.
+
+### You're done! Happy cataloging!
 
 Don't forget to list your new project on http://www.atk14sites.net/

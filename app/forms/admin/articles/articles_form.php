@@ -6,7 +6,7 @@ class ArticlesForm extends AdminForm{
 			"max_length" => 255,
 		)));
 
-		$this->add_translatable_field("body",new TextField(array(
+		$this->add_translatable_field("body",new MarkdownField(array(
 			"label" => _("Body"),
 			"help_text" => _("Mardown format is expected"),
 		)));
