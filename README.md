@@ -54,7 +54,7 @@ Start the development server
 
 and you may find the running catalog on http://localhost:8000/
 
-Installing the skeleton as a virtual host on Apache web server
+Installing the catalog as a virtual host on Apache web server
 --------------------------------------------------------------
 
 This is optional step. If you have Apache installed, you may want to install the application to a virtual server.
