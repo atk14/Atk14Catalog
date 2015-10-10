@@ -32,3 +32,7 @@
 
 	{render partial="shared/attachments" object=$section}
 {/foreach}
+
+<hr>
+<h3>{t}Related products{/t}</h3>
+{render partial="related_cards" card=$card}
