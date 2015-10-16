@@ -1,4 +1,5 @@
 {
 	"preset": "jquery",
-	"requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties"
+	"requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
+	"requireCapitalizedComments": { "allExcept": [ "global", "jshint", "jscs" ] }
 }
