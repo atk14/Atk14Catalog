@@ -12,11 +12,11 @@
  * {render partial="shared/form" form_class="search"}
  *}
 
-{if !isset($small_form)}
+{if isset($small_form)}
 	{assign var=small_form value=$form->is_small()}
 {/if}
 
-{if !$small_form}
+{if $small_form}
 	{assign var="form_layout" value="form-horizontal"}
 {/if}
 

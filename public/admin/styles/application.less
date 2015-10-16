@@ -1,4 +1,19 @@
-@import "../../assets/vendor/bootstrap/less/bootstrap.less";
+@vendorPath: "./bower_components";
+@bsPath: "@{vendorPath}/bootstrap/less";
+@appStylesPath: "../../styles";
+
+@import "@{bsPath}/bootstrap.less";
+
+// Project specific components
+@import "@{appStylesPath}/bootstrap-variables.less";
+@import "@{appStylesPath}/application-variables.less";
+
+//@import "@{appStylesPath}/header.less";
+//@import "@{appStylesPath}/footer.less";
+//@import "@{appStylesPath}/mixins.less";
+//@import "@{appStylesPath}/scaffolding.less";
+//@import "@{appStylesPath}/type.less";
+//@import "@{appStylesPath}/main.less";
 
 
 /*
