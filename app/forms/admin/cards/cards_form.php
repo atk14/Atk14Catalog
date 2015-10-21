@@ -18,14 +18,14 @@ class CardsForm extends AdminForm{
 			)));
 		}
 
-		$this->add_translatable_field("teaser", new TextField(array(
+		$this->add_translatable_field("teaser", new MarkdownField(array(
 			"label" => _("Teaser"),
 			"required" => false,
 			"help_text" => _("Brief description"),
 		)));
 
 		if($options["add_information_fields"]){
-			$this->add_translatable_field("information", new TextField(array(
+			$this->add_translatable_field("information", new MarkdownField(array(
 				"label" => _("Information"),
 				"required" => false,
 				"help_text" => _("Detailed description"),
