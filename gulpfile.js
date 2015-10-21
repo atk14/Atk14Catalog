@@ -90,7 +90,6 @@ gulp.task( "copy", function() {
 } );
 
 // Clean
-//gulp.task( "clean", require( "del" ).bind( null, [ "public/dist" ] ) );
 gulp.task( "clean", function() {
 	del( "dist" );
 } );
@@ -103,11 +102,11 @@ gulp.task( "serve", [ "styles" ], function() {
 
 	gulp.watch( [
 		"app/**/*.tpl",
+		"public/scripts/**/*.js",
 		"public/images/**/*"
 	] ).on( "change", browserSync.reload );
 
 	gulp.watch( "public/styles/**/*.less", [ "styles" ] );
-	gulp.watch( "public/scripts/**/*.js", [ "scripts" ] ).on( "change", browserSync.reload );
 } );
 
 // Build
