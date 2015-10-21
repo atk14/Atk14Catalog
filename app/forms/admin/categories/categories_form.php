@@ -5,12 +5,12 @@ class CategoriesForm extends AdminForm{
 		$this->add_translatable_field("name", new CharField(array(
 			"label" => _("Název"),
 		)));
-		$this->add_translatable_field("teaser", new TextField(array(
+		$this->add_translatable_field("teaser", new MarkdownField(array(
 			"label" => _("Teaser"),
 			"required" => false,
 			"help_text" => _("Brief description"),
 		)));
-		$this->add_translatable_field("description", new WysiwygField(array(
+		$this->add_translatable_field("description", new MarkdownField(array(
 			"label" => _("Popis"),
 			"required" => false,
 			"config" => "category",

@@ -4,11 +4,11 @@ class StaticPagesForm extends AdminForm {
 		$this->add_translatable_field("title", new CharField(array(
 			"label" => _("Title"),
 		)));
-		$this->add_translatable_field("teaser", new TextField(array(
+		$this->add_translatable_field("teaser", new MarkdownField(array(
 			"label" => _("Teaser"),
 			"required" => false,
 		)));
-		$this->add_translatable_field("body", new TextField(array(
+		$this->add_translatable_field("body", new MarkdownField(array(
 			"label" => _("Body"),
 		)));
 
