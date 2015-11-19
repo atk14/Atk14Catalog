@@ -97,22 +97,54 @@ class Translation extends ApplicationModel{
 		return "(SELECT body from translations where table_name='$table_name' and key='$field_name' and lang='$lang' and record_id=$table_name.id)";
 	}
 
+	/**
+	 * Vytvori zakladni tvar conditions a bind_ar,ktere lze pouzit pro hledani zaznamu podle vicejazycnych poli, predat finderu apod.
+	 *
+	 * Zakladni trida TableRecord, pripadne ApplicationModel neumi hledat zaznamy podle poli, ktera jsou oznacena jako translatable,
+	 * a hodnoty jsou ulozene v jine tabulce.
+	 *
+	 * Cili je treba nahradit sql typu select id from brands where upper(name) like upper(:name) slozitejsim dotazem
+	 * typu
+	 * SELECT brands.id FROM brands,translations where translations.record_id=brands.id and translations.table_name='brands' and translations.key='name' and upper(translations.body) like upper(:name) and lang='cs'
+	 *
+	 * Tato metoda vrati dve pole:
+	 * - $conditions - neco jako array(
+	 * "id IN (SELECT record_id FROM translations WHERE upper(translations.body) LIKE upper(:search) AND translations.key IN :search_fields AND translations.lang=:lang AND translations.table_name=:table_name_brands)",
+	 * )
+	 *
+	 * - $bind_ar - neco jako
+	 * array(3) {
+	 * 	':lang' => "cs",
+	 * 	':search_fields' => array (
+	 * 		"name",
+	 * 	 ),
+	 * 	 ':table_name_brands' => "brands",
+	 * }
+	 *
+	 * Do vraceneho pole bind_ar je treba doplnit klic :search a hodnotu, podle ktere hledame
+	 *
+	 * 	list($conditions,$bind_ar) = Translation::BuildConditionsForTranslatableFields("brands",array("name"));
+	 * 	$bind_ar[':search'] = "Sojuz";
+	 *
+	 * 	$brand = Brand::FindAll(array("conditions" => $conditions, "bind_ar" => $bind_ar));
+	 */
 	static function BuildConditionsForTranslatableFields($table_name, $fields=array(),&$conditions=array(),&$bind_ar=array()) {
 		global $ATK14_GLOBAL;
 
 		$subconditions = array();
-		$sub_conditions[] = "upper(body) LIKE upper(:search)";
-		$sub_conditions[] = "key IN :search_fields";
-		$sub_conditions[] = "lang=:lang";
-		$sub_conditions[] = "table_name=:table_name_$table_name";
+		$sub_conditions[] = "upper(translations.body) LIKE upper(:search)";
+		if($fields) {
+			$sub_conditions[] = "translations.key IN :search_fields";
+			$bind_ar[":search_fields"] = $fields;
+		}
+		$sub_conditions[] = "translations.lang=:lang";
+		$sub_conditions[] = "translations.table_name=:table_name_$table_name";
 		$conditions[] = sprintf("id IN (SELECT record_id FROM translations WHERE %s)",
 			join(" AND ", $sub_conditions)
 		);
 		$bind_ar[":lang"] = $ATK14_GLOBAL->getLang();
-		$bind_ar[":search_fields"] = $fields;
+
 		$bind_ar[":table_name_$table_name"] = $table_name;
-
 		return array($conditions, $bind_ar);
-
 	}
 }
