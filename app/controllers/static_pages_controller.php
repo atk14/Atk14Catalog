@@ -2,6 +2,8 @@
 class StaticPagesController extends ApplicationController {
 	function detail() {
 		$this->page_title = strip_tags($this->static_page->getTitle());
+		$smarty = $this->_get_smarty();
+		Atk14Require::Helper("modifier.markdown.php",$smarty);
 		$this->page_description = strip_tags($this->static_page->getTeaser());
 
 		$this->tpl_data["child_pages"] = $this->static_page->getChildStaticPages();

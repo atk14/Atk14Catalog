@@ -31,7 +31,7 @@
 				{/foreach}
 			</ul>
 		</nav>
-	</section>	
+	</section>
 {/if}
 
 <section class="products">

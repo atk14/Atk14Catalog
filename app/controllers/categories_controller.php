@@ -58,6 +58,6 @@ class CategoriesController extends ApplicationController{
 		$this->tpl_data["child_categories"] = $child_categories;
 
 		// TODO: compose relevant conditions
-		$this->tpl_data["cards_finder"] = Card::Finder("visible",true,"deleted",false);
+		$this->tpl_data["cards_finder"] = Card::GetFinderForCategory($category);
 	}
 }

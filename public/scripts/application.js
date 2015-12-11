@@ -1,36 +1,40 @@
 /* global window */
-(function( window, $, undefined ) {
+( function( window, $, undefined ) {
+	"use strict";
 	var document = window.document,
 
-	SKELET = {
+	CATALOG = {
 		common: {
+
+			// Application-wide code
 			init: function() {
-				// application-wide code
 
 				// Form hints.
 				$( ".help-hint" ).each( function() {
 					var $this = $( this ),
 						$field = $this.closest( ".form-group" ).find( ".form-control" ),
 						title = $this.data( "title" ) || "",
-						content = $this.html();
+						content = $this.html(),
+						popoverOptions = {
+							html: true,
+							trigger: "focus",
+							title: title,
+							content: content
+						};
 
-					$field.popover({
-						html: true,
-						trigger: "focus",
-						title: title,
-						content: content
-					});
-				});
+					$field.popover( popoverOptions );
+				} );
 			}
 		},
 
 		users: {
+
+			// Controller-wide code.
 			init: function() {
-				// controller-wide code
 			},
 
+			// Action-specific code
 			create_new: function() {
-				// action-specific code
 
 				/*
 				 * Check whether login is available.
@@ -39,14 +43,17 @@
 				var $login = $( "#id_login" ),
 					m = "Username is already taken.",
 					h = "<p class='alert alert-danger col-sm-4 col-sm-offset-2'>" + m + "</p>",
-					$status = $( h ).hide().appendTo( $login.closest(".form-group") );
+					$status = $( h ).hide().appendTo( $login.closest( ".form-group" ) );
 
 				$login.on( "change", function() {
+
 					// Login input value to check.
 					var value = $login.val(),
 						lang = $( "html" ).attr( "lang" ),
+
 					// API URL.
 						url = "/api/" + lang + "/login_availabilities/detail/",
+
 					// GET values for API. Available formats: xml, json, yaml, jsonp.
 						data = {
 							login: value,
@@ -55,7 +62,7 @@
 
 					// AJAX request to the API.
 					if ( value !== "" ) {
-						$.ajax({
+						$.ajax( {
 							dataType: "json",
 							url: url,
 							data: data,
@@ -66,9 +73,9 @@
 									$status.fadeOut();
 								}
 							}
-						});
+						} );
 					}
-				}).change();
+				} ).change();
 			}
 		}
 	};
@@ -77,9 +84,9 @@
 	 * Garber-Irish DOM-based routing.
 	 * See: http://goo.gl/z9dmd
 	 */
-	SKELET.UTIL = {
+	CATALOG.UTIL = {
 		exec: function( controller, action ) {
-			var ns = SKELET,
+			var ns = CATALOG,
 				c = controller,
 				a = action;
 
@@ -87,8 +94,8 @@
 				a = "init";
 			}
 
-			if ( c !== "" && ns[c] && typeof ns[c][a] === "function" ) {
-				ns[c][a]();
+			if ( c !== "" && ns[ c ] && typeof ns[ c ][ a ] === "function" ) {
+				ns[ c ][ a ]();
 			}
 		},
 
@@ -97,15 +104,15 @@
 			controller = body.getAttribute( "data-controller" ),
 			action = body.getAttribute( "data-action" );
 
-			SKELET.UTIL.exec( "common" );
-			SKELET.UTIL.exec( controller );
-			SKELET.UTIL.exec( controller, action );
+			CATALOG.UTIL.exec( "common" );
+			CATALOG.UTIL.exec( controller );
+			CATALOG.UTIL.exec( controller, action );
 		}
 	};
 
-	// Expose SKELET to the global object.
-	window.SKELET = SKELET;
+	// Expose CATALOG to the global object.
+	window.CATALOG = CATALOG;
 
 	// Initialize application.
-	$( document ).ready( SKELET.UTIL.init );
-})( window, window.jQuery );
+	CATALOG.UTIL.init();
+} )( window, window.jQuery );

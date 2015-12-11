@@ -1,12 +1,12 @@
 {
-  "name": "atk14-skelet",
-  "title": "ATK14 Skelet Application",
+  "name": "atk14-catalog",
+  "title": "ATK14 Catalog Application",
   "version": "0.1.0",
-  "description": "Front-end assets for ATK14 Skelet application.",
-  "homepage": "http://skelet.atk14.net/",
+  "description": "Front-end assets for ATK14 Catalog application.",
+  "homepage": "http://catalog.atk14.net/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/atk14/Atk14Skelet.git"
+    "url": "https://github.com/atk14/Atk14Catalog.git"
   },
   "contributors": [
     {
@@ -16,26 +16,35 @@
     {
       "name": "Bohdan Ganický",
       "email": "bohdan.ganicky@gmail.com"
+    },
+    {
+      "name": "Matěj Kříž",
+      "email": "matej.kriz@gmail.com"
     }
   ],
   "license": "WTFPL",
   "readmeFilename": "README.md",
   "gitHead": "08020875c22b1655ab0c9e5495a44df286687240",
   "bugs": {
-    "url": "https://github.com/atk14/Atk14Skelet/issues"
+    "url": "https://github.com/atk14/Atk14Catalog/issues"
   },
   "devDependencies": {
-    "grunt": "^0.4.4",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-concat": "^0.4.0",
-    "grunt-contrib-copy": "^0.5.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-less": "^0.11.0",
-    "grunt-contrib-uglify": "^0.4.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-jscs": "^0.6.1",
-    "jshint-stylish": "^0.1.5",
-    "load-grunt-tasks": "^0.4.0",
-    "time-grunt": "^0.3.1"
+    "browser-sync": "^2.9.3",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.2.0",
+    "gulp-debug": "^2.1.0",
+    "gulp-jscs": "^2.0.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-less": "^3.0.3",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-size": "^2.0.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.4.1",
+    "jshint-stylish": "^2.0.1"
   }
 }
