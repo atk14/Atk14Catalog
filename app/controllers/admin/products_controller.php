@@ -52,12 +52,6 @@ class ProductsController extends AdminController {
 		}
 	}
 
-	function _after_filter() {
-		if (in_array($this->action, array("create_new","edit","destroy"))) {
-			isset($this->product) && $this->product->getCard()->rebuildFulltext();
-		}
-	}
-
 	function _redirect_back($default = null){
 		if(is_null($default)){
 			isset($this->card) && ($card_id = $this->card->getId());
