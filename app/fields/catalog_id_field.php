@@ -5,7 +5,7 @@ class CatalogIdField extends RegexField {
 		$options = array_merge(array(
 			"label" => _("Katalogové číslo"),
 		), $options);
-		parent::__construct('/^[0-9a-z]{4,}$/', $options);
+		parent::__construct('/^[0-9a-zA-Z\/-]{1,}$/', $options);
 		$this->update_messages(array(
 			"invalid" => _("Toto nevypadá jako katalogové číslo"),
 		));
