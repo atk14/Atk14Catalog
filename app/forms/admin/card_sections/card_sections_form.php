@@ -8,7 +8,7 @@ class CardSectionsForm extends AdminForm{
 			"label" => _("Název"),
 			"required" => false,
 		)));
-		$this->add_translatable_field("body",new WysiwygField(array(
+		$this->add_translatable_field("body",new MarkdownField(array(
 			"label" => _("Text"),
 			"required" => false,
 		)));
