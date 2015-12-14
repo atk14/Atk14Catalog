@@ -47,13 +47,13 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.structure.min.css" type="text/css" media="all" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.theme.min.css" type="text/css" media="all" />
 
-		{stylesheet_link_tag file="../admin/dist/styles/vendor.min.css"}
-		{stylesheet_link_tag file="../admin/dist/styles/application.min.css"}
+		{stylesheet_link_tag file="{$public}/admin/dist/styles/vendor.min.css"}
+		{stylesheet_link_tag file="{$public}/admin/dist/styles/application.min.css"}
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
-			<script src="{$public}admin/dist/scripts/html5shiv.min.js"></script>
-			<script src="{$public}admin/dist/scripts/respond.min.js"></script>
+			{javascript_script_tag file="{$public}/admin/dist/scripts/html5shiv.min.js"}
+			{javascript_script_tag file="{$public}/admin/dist/scripts/respond.min.js"}
 		<![endif]-->
 	</head>
 
@@ -61,6 +61,9 @@
 		<div class="container{if $section_navigation} has-nav-section{/if}">
 			{render partial="shared/login"}
 			{render partial="shared/layout/header"}
+			{if $breadcrumbs && sizeof($breadcrumbs)>=2} {* It makes no sense to display breadcrumbs with just 1 or no element *}
+				{render partial="shared/breadcrumbs"}
+			{/if}
 
 			<div class="body">
 				{if $section_navigation}
@@ -75,10 +78,9 @@
 				</div>
 			</div>
 
-			{render partial="shared/layout/footer"}
 		</div>
 
-		<script src="{$public}admin/dist/scripts/vendor.min.js"></script>
-		<script src="{$public}admin/dist/scripts/application.min.js"></script>
+		{javascript_script_tag file="{$public}/admin/dist/scripts/vendor.min.js"}
+		{javascript_script_tag file="{$public}/admin/dist/scripts/application.min.js"}
 	</body>
 </html>
