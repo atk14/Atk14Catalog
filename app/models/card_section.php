@@ -14,6 +14,10 @@ class CardSection extends ApplicationModel implements Translatable, Rankable{
 		return EmbeddedVideo::GetEmbeddedVideos($this);
 	}
 
+	function getProducts(){
+		return Product::FindAll("card_id",$this);
+	}
+
 	function setRank($rank){
 		return $this->_setRank($rank,array(
 			"card_id" => $this->getCardId(),

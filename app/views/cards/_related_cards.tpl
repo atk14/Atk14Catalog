@@ -1,14 +1,15 @@
 {assign var=related_cards value=$card->getRelatedCards()}
+
 {if $related_cards}
+	<hr>
+	<h3>{t}Related products{/t}</h3>
 	<ul>
-		{foreach $related_cards as $rcard}
+		{foreach $related_cards as $c}
 			<li>
-			{a action="cards/detail" id=$rcard}
-				{$rcard->getName()}
-			{/a}
+				{a action="cards/detail" id=$c}
+					{$c->getName()}
+				{/a}
 			</li>
 		{/foreach}
 	</ul>
-{else}
-	{message}{t}Nejsou určené související produkty{/t}{/message}
 {/if}
