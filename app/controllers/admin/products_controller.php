@@ -50,6 +50,10 @@ class ProductsController extends AdminController {
 			$this->_find("product");
 			$this->card = $this->product->getCard();
 		}
+
+		if(isset($this->card)){
+			$this->_add_card_to_breadcrumbs($this->card);
+		}
 	}
 
 	function _redirect_back($default = null){
