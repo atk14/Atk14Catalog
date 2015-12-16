@@ -195,6 +195,10 @@ class Card extends ApplicationModel implements Translatable{
 		}
 	}
 
+	function toHumanReadableString(){
+		return $this->getName();
+	}
+
 	protected function _getProducts($options = array()){
 		$options += array(
 			"deleted" => false, // false, true, null

@@ -8,7 +8,7 @@
 			// Application-wide code
 			init: function() {
 				ADMIN.utils.handleSortables();
-
+				ADMIN.utils.handleSuggestions();
 			}
 		},
 
@@ -276,6 +276,23 @@
 					select: function( event, ui ) {
 						this.value = ui.item.value;
 						return false;
+					}
+				} );
+			},
+
+			handleSuggestions: function() {
+
+				// Naseptavani cehokoli
+				$( "[data-suggesting='yes']" ).autocomplete( {
+					source: function( request, response ) {
+						var $el = this.element,
+							url = $el.data( "suggesting_url" ),
+							term;
+						term = request.term;
+
+						$.getJSON( url, { q: term }, function( data ) {
+							response( data );
+						} );
 					}
 				} );
 			}
