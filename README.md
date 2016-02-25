@@ -1,6 +1,8 @@
 ATK14 Catalog
 ============
 
+[![Build Status](https://travis-ci.org/atk14/Atk14Catalog.svg?branch=master)](https://travis-ci.org/atk14/Atk14Catalog)
+
 _ATK14 Catalog_ is an skeleton suitable for applications of kind like _Products introduction_, _E-shop_, etc. _ATK14 Catalog_ is built on top of _ATK14 Skelet_ — another great skeleton.
 
 Check out <http://catalog.atk14.net/> to see the catalog running.
