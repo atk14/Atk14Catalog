@@ -29,11 +29,11 @@ class SuggestionsController extends ApiController{
 		);
 
 		if(!$options["class_name"]){
-			$options["class_name"] = String::ToObject($this->action)->singularize()->camelize()->toString(); // "people" -> "Person"
+			$options["class_name"] = String4::ToObject($this->action)->singularize()->camelize()->toString(); // "people" -> "Person"
 		}
 
 		if(!$options["field_class_name"]){
-			$options["field_class_name"] = String::ToObject($this->action)->singularize()->camelize()->toString()."Field"; // "people" -> "PersonField"
+			$options["field_class_name"] = String4::ToObject($this->action)->singularize()->camelize()->toString()."Field"; // "people" -> "PersonField"
 		}
 
 		$class_name = (string)$options["class_name"];

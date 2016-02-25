@@ -32,7 +32,7 @@ class SluggishRouter extends Atk14Router{
 	function __construct(){
 		global $ATK14_GLOBAL;
 
-		$cn = new String(get_class($this)); // "ArticlesRouter"
+		$cn = new String4(get_class($this)); // "ArticlesRouter"
 		$cn = $cn->gsub('/Router$/',''); // "Articles"
 
 		if(is_null($this->model_class_name)){

@@ -9,14 +9,14 @@ class ObjectField extends CharField{
 		);
 
 		if(!$options["class_name"]){
-			$options["class_name"] = String::ToObject(get_class($this))->gsub('/Field$/','')->toString(); // PersonField -> Person
+			$options["class_name"] = String4::ToObject(get_class($this))->gsub('/Field$/','')->toString(); // PersonField -> Person
 		}
 
 		$this->class_name = $options["class_name"];
 		unset($options["class_name"]);
 
 		if($options["suggesting"]){
-			$action = String::ToObject(get_class($this))->gsub('/Field$/','')->pluralize()->underscore()->toString(); // PersonField -> people
+			$action = String4::ToObject(get_class($this))->gsub('/Field$/','')->pluralize()->underscore()->toString(); // PersonField -> people
 
 			$options["widget"]->attrs["data-suggesting"] = "yes";
 			$options["widget"]->attrs["data-suggesting_url"] = Atk14Url::BuildLink(array("namespace" => "api", "controller" => "suggestions", "action" => $action, "format" => "json"));
