@@ -2,7 +2,8 @@
 class ImagesController extends AdminController{
 	function index(){
 		$this->page_title = sprintf(_("Photo gallery of the object %s#%s"),$this->table_name,$this->record_id);
-		$this->tpl_data["images"] = Image::FindAll("table_name",$this->table_name,"record_id",$this->record_id);
+		$class_name = $this->_get_class_name();
+		$this->tpl_data["images"] = $class_name::FindAll("table_name",$this->table_name,"record_id",$this->record_id);
 
 		$url_back = "";
 		switch($this->table_name){
@@ -30,7 +31,8 @@ class ImagesController extends AdminController{
 			$d["record_id"] = $this->record_id;
 			$d["url"] = $pupiq->getUrl();
 
-			$image = Image::CreateNewRecord($d);
+			$class_name = $this->_get_class_name();
+			$image = $class_name::CreateNewRecord($d);
 
 			if($this->request->xhr()){
 				$this->render_template = false;
@@ -90,7 +92,10 @@ class ImagesController extends AdminController{
 		}
 
 		if(in_array($this->action,array("destroy","set_rank","edit"))){
-			if(!$image = $this->_just_find("image")){
+			if(
+				!($image = $this->_just_find("image",array("class_name" => "ProductImage"))) &&
+				!($image = $this->_just_find("image"))
+			){
 				return $this->_execute_action("error404");
 			}
 			$this->image = $this->tpl_data["image"] = $image;
@@ -108,6 +113,10 @@ class ImagesController extends AdminController{
 			);
 		}
 		return parent::_redirect_back($default);
+	}
+
+	function _get_class_name(){
+		return $this->table_name=="products" ? "ProductImage" : "Image";
 	}
 
 	function _dump_image($image){

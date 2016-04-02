@@ -74,8 +74,17 @@ class Card extends ApplicationModel implements Translatable{
 	}
 
 	function getImages($options = array()){
-		// TODO: vracet i obrazky od produktu
-		return Image::GetImages($this,$options);
+		$images = Image::GetImages($this,$options);
+
+		if(!$this->hasVariants()){ return $images; }
+
+		foreach($this->getProducts() as $p){
+			foreach($p->getImages() as $i){
+				if($i->displayOnCard()){ $images[] = $i; }
+			}
+		}
+
+		return $images;
 	}
 
 	function getAttachments(){
@@ -184,6 +193,10 @@ class Card extends ApplicationModel implements Translatable{
 		if($products = $this->_getProducts($options)){
 			return $products[0];
 		}
+	}
+
+	function toHumanReadableString(){
+		return $this->getName();
 	}
 
 	protected function _getProducts($options = array()){

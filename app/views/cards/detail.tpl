@@ -31,8 +31,14 @@
 	{render partial="shared/photo_gallery" object=$section}
 
 	{render partial="shared/attachments" object=$section}
+
+	{*** Variants ***}
+	{if $section->getCardSectionTypeId()==CardSectionType::ID_VARIANTS}
+		<ul>
+			{render partial="product_item" from=$card->getProducts() item=product}
+		</ul>
+	{/if}
+
 {/foreach}
 
-<hr>
-<h3>{t}Related products{/t}</h3>
-{render partial="related_cards" card=$card}
+{render partial="related_cards"}

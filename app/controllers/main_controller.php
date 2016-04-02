@@ -12,8 +12,6 @@ class MainController extends ApplicationController{
 	}
 
 	function contact(){
-		$this->page_title = _("Contact");
-
 		if($this->logged_user){
 			$this->form->set_initial(array(
 				"name" => $this->logged_user->getName(),
@@ -22,10 +20,20 @@ class MainController extends ApplicationController{
 		}
 
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
-			$this->mailer->contact_message($d["email"],$d["name"],$d["body"]);
-			$this->flash->success(_("The message has been sent to us. We will reply as soon as we can."));
-			$this->_redirect_to("contact");
+			$this->mailer->contact_message($d,$this->request->getRemoteAddr(),$this->logged_user);
+			$this->session->s("contact_message_sent",1);
+			$this->_redirect_to("contact_message_sent");
 		}
+	}
+
+	function contact_message_sent(){
+		$this->page_title = _("Contact");
+
+		if(!$this->session->g("contact_message_sent")){
+			return $this->_redirect_to("contact");
+		}
+
+		$this->session->clear("contact_message_sent");
 	}
 
 	function robots_txt(){

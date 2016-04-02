@@ -20,7 +20,7 @@ class CategoriesSuggestionsController extends ApiController{
 		global $ATK14_GLOBAL;
 
 		if(!$this->params->isEmpty() && ($d = $this->form->validate($this->params))){
-			$d["q"] = new String($d["q"]);
+			$d["q"] = new String4($d["q"]);
 			$q = $d["q"]->copy();
 			$parent_path = $parent = null;
 
@@ -31,7 +31,7 @@ class CategoriesSuggestionsController extends ApiController{
 				// "/nabytek/jidelna" -> "/nabytek/jidelna/"
 				if($p = Category::GetInstanceByPath("$parent_path/$q")){
 					$parent_path = $p->getPath(); // "nabytek/jidelna"
-					$q = new String("");
+					$q = new String4("");
 				}
 			}
 			$conditions = $bind_ar = array();
@@ -100,12 +100,12 @@ class CategoriesSuggestionsController extends ApiController{
 				"limit" => 20,
 			));
 			foreach($categories as $c){
-				$name_path = new String($c->getNamePath());
-				$name_path = new String($name_path->lower());
-				$slug_path = new String($c->getPath());
-				$slug_path = new String($slug_path->lower());
-				$q = new String($d["q"]);
-				$q = new String($q->lower());
+				$name_path = new String4($c->getNamePath());
+				$name_path = new String4($name_path->lower());
+				$slug_path = new String4($c->getPath());
+				$slug_path = new String4($slug_path->lower());
+				$q = new String4($d["q"]);
+				$q = new String4($q->lower());
 
 				$levels = preg_split("/\//", $d["q"]);
 				if (sizeof($levels==1) or ((sizeof($levels>1)) && (mb_strpos("$name_path","$q")===0 || mb_strpos("$slug_path","$q")===0 ))) {

@@ -99,7 +99,7 @@ class ApplicationModel extends TableRecord{
 	 * @return string
 	 */
 	function toXml(){
-		$class_name = new String(get_class($this));
+		$class_name = new String4(get_class($this));
 		$root = $class_name->underscore(); // "LittleKitty" turns into "little_kitty"
 		$out = array();
 		$out[] = "<$root>";
@@ -320,7 +320,7 @@ class ApplicationModel extends TableRecord{
 			return parent::__call($name,$arguments);
 		}
 
-		$_name = new String($name);
+		$_name = new String4($name);
 		if($_name->match("/^get(.+)/",$matches)){
 			$key = $matches[1]->underscore();
 			if(in_array($key,$this_class::GetTranslatableFields())){

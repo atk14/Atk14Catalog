@@ -61,8 +61,4 @@ class  CardSectionsController extends AdminController{
 		}
 		return parent::_redirect_back($default);
 	}
-
-	function _add_card_to_breadcrumbs($card){
-		$this->breadcrumbs[] = array($card->getName(),$this->_link_to(array("action" => "cards/edit", "id" => $card)));
-	}
 }

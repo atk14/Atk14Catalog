@@ -50,11 +50,9 @@ class ProductsController extends AdminController {
 			$this->_find("product");
 			$this->card = $this->product->getCard();
 		}
-	}
 
-	function _after_filter() {
-		if (in_array($this->action, array("create_new","edit","destroy"))) {
-			isset($this->product) && $this->product->getCard()->rebuildFulltext();
+		if(isset($this->card)){
+			$this->_add_card_to_breadcrumbs($this->card);
 		}
 	}
 

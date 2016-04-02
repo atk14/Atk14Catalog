@@ -4,12 +4,12 @@ class CollectionsForm extends AdminForm {
 		$this->add_translatable_field("name", new CharField(array(
 			"label" => _("Name"),
 		)));
-		$this->add_translatable_field("teaser", new WysiwygField(array(
+		$this->add_translatable_field("teaser", new MarkdownField(array(
 			"label" => _("Teaser"),
 			"config" => "minimal",
 			"required" => false,
 		)));
-		$this->add_translatable_field("description", new WysiwygField(array(
+		$this->add_translatable_field("description", new MarkdownField(array(
 			"label" => _("Description"),
 			"required" => false,
 		)));

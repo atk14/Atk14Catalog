@@ -45,4 +45,9 @@ class AdminController extends ApplicationBaseController{
 		}
 		parent::_before_render();
 	}
+
+	function _add_card_to_breadcrumbs($card){
+		if(!$card){ return; }
+		$this->breadcrumbs[] = array($card->getName(),$this->_link_to(array("action" => "cards/edit", "id" => $card)));
+	}
 }

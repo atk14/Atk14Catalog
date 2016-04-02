@@ -137,7 +137,7 @@ class Slug extends ApplicationModel{
 	}
 
 	static function StringToSluggish($string) {
-		$_sluggish = new String($string);
+		$_sluggish = new String4($string);
 		return $_sluggish->toSlug();
 	}
 
