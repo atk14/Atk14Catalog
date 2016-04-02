@@ -38,7 +38,7 @@ class AttachmentsController extends AdminController{
 
 			Attachment::CreateNewRecord($d);
 
-			$this->flash->success(_("Příloha byla uložena"));
+			$this->flash->success(_("Attachment has been saved"));
 			$this->_redirect_back();
 		}
 	}

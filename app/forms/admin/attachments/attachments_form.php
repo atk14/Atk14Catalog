@@ -2,8 +2,8 @@
 class AttachmentsForm extends AdminForm{
 	function add_name_field($options = array()){
 		$options += array(
-			"label" => _("Název"),
-			"hint" => _("uživatelská příručka"),
+			"label" => _("Title"),
+			"hint" => _("User Manual"),
 			"max_length" => 255,
 			"required" => false,
 		);
