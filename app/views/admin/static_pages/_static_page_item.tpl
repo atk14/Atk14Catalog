@@ -8,7 +8,7 @@
 	{/foreach}
 
 	<div class="pull-right">
-		{a action=edit id=$static_page}<span class="glyphicon glyphicon-edit"></span> {t}Upravit{/t}{/a}
+		{a action=edit id=$static_page}<span class="glyphicon glyphicon-edit"></span> {t}Edit{/t}{/a}
 
 		{if true || $static_page->isDeletable()}
 			{capture assign="confirm"}{t 1=$static_page->getTitle()|h escape=no}Chystáte se smazat stránku %1

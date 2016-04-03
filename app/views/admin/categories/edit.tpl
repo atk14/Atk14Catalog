@@ -71,7 +71,7 @@ Opravdu to chcete?{/t}{/capture}
 						<li class="list-group-item" data-id="{$child->getId()}">
 							{$child->getName()}
 							<ul class="list-inline pull-right">
-								<li>{a action="edit" id=$child}<i class="glyphicon glyphicon-edit"></i> {t}Upravit{/t}{/a}</li>
+								<li>{a action="edit" id=$child}<i class="glyphicon glyphicon-edit"></i> {t}Edit{/t}{/a}</li>
 							</ul>
 						</li>
 					{/foreach}
