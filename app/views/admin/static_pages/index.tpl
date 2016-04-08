@@ -1,4 +1,6 @@
-<p>{a action=create_new _class="btn btn-primary"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Nová stránka{/t}{/a}</p>
+<h1>{$page_title}</h1>
+
+<p>{a action=create_new _class="btn btn-primary"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Add new static page{/t}{/a}</p>
 
 {if !$root_static_pages}
 	<p>{t}The list is empty.{/t}</p>

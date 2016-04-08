@@ -1,7 +1,7 @@
 <?php
 class StaticPageField extends ChoiceField {
 	function __construct($options=array()) {
-		$choices = array("" => "-- "._("Stránka")." --");
+		$choices = array("" => "-- "._("static page")." --");
 		$conditions = $bind_ar = array();
 		if ($options["static_page_id"]) {
 			$conditions[] = "id!=:static_page_id";
@@ -29,7 +29,7 @@ class StaticPageField extends ChoiceField {
 			return array(null,null);
 		}
 		if (is_null($_sp = StaticPage::FindById($value))) {
-			return array(_("Taková stránka neexistuje"), null);
+			return array(_("There is no such static page"), null);
 		}
 		return array(null, $_sp);
 	}
