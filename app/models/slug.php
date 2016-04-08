@@ -42,15 +42,21 @@ class Slug extends ApplicationModel{
 	/**
 	 * 
 	 */
-	static function SetObjectSlug($obj,$slug,$lang = null,$segment = ''){
+	static function SetObjectSlug($obj,$slug,$lang = null,$segment = '',$options = array()){
 		global $ATK14_GLOBAL;
 		if(!$lang){ $lang = $ATK14_GLOBAL->getDefaultLang(); } // !! default language
+		$options += array(
+			"reconstruct_missing_slugs" => false,
+		);
 
 		$table_name = $obj->getTableName();
 		$id = $obj->getId();
 
-		$tbl_name_sluggish = Slug::StringToSluggish($table_name);
-		if($slug=="$tbl_name_sluggish-$lang-$id"){ $slug = ""; } // pozor! toto je genericky slug, ten nebudeme ukladat
+		if(self::_IsGenericSlug($slug,$obj,$lang)){ $slug = ""; } // pozor! toto je genericky slug, ten nebudeme ukladat
+
+		if(!$slug && $options["reconstruct_missing_slugs"]){
+			$slug = self::_BuildSlug($obj,$lang);
+		}
 
 		$cache_key = "$table_name,$segment";
 		unset(Slug::$CACHE[$cache_key]);
@@ -147,7 +153,6 @@ class Slug extends ApplicationModel{
 	static function ComplementSlugs($object){
 		$id = $object->getId();
 		$table_name_sluggish = Slug::StringToSluggish($object->getTableName());
-		$class_name = get_class($object);
 
 		foreach($GLOBALS["ATK14_GLOBAL"]->getSupportedLangs() as $lang){
 			$current_slug = $object->getSlug($lang);
@@ -158,19 +163,37 @@ class Slug extends ApplicationModel{
 				continue;
 			}
 
-			if(!$pattern = $object->getSlugPattern($lang)){
-				// ha, object sam nevi, podle ceho se ma slug vytvorit
+			$slug = self::_BuildSlug($object,$lang);
+			if(!$slug){
 				continue;
-			}
-
-			$suffix = 0;
-			$slug = Slug::StringToSluggish($pattern);
-			while($class_name::GetInstanceBySlug($slug,$lang,$object->getSlugSegment())){
-				$suffix++;
-				$slug = Slug::StringToSluggish("$pattern $suffix");
 			}
 
 			$object->setSlug($slug,$lang,$object->getSlugSegment());
 		}
+	}
+
+	protected static function _BuildSlug($object,$lang){
+		$class_name = get_class($object);
+
+		if(!$pattern = $object->getSlugPattern($lang)){
+			// ha, object sam nevi, podle ceho se ma slug vytvorit
+			return;
+		}
+
+		$suffix = 0;
+		$slug = Slug::StringToSluggish($pattern);
+		while($class_name::GetInstanceBySlug($slug,$lang,$object->getSlugSegment())){
+			$suffix++;
+			$slug = Slug::StringToSluggish("$pattern $suffix");
+		}
+		return $slug;
+	}
+
+	protected static function _IsGenericSlug($slug,$object,$lang){
+		$table_name = $object->getTableName();
+		$id = $object->getId();
+
+		$tbl_name_sluggish = Slug::StringToSluggish($table_name);
+		return $slug=="$tbl_name_sluggish-$lang-$id";
 	}
 }

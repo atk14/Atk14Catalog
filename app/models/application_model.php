@@ -134,6 +134,12 @@ class ApplicationModel extends TableRecord{
 	 * Provides transparent updating of update_at field if such field exists.
 	 */
 	function setValues($values,$options = array()){
+		$options += array(
+			"reconstruct_missing_slugs" => false,	
+		);
+		$reconstruct_missing_slugs = $options["reconstruct_missing_slugs"];
+		unset($options["reconstruct_missing_slugs"]);
+
 		$v_keys = array_keys($values);
 		foreach(array("updated_at","updated_on","update_date") as $f){
 			if($this->hasKey($f) && !in_array($f,$v_keys)){
@@ -181,7 +187,7 @@ class ApplicationModel extends TableRecord{
 			}
 			if($slugs){
 				// slugy se nastavuji az tady, protoze se muzem volani setValues() zmenit segment
-				$this->setSlug($slugs);
+				$this->setSlug($slugs,null,null,array("reconstruct_missing_slugs" => $reconstruct_missing_slugs));
 			}
 		}
 
@@ -280,18 +286,18 @@ class ApplicationModel extends TableRecord{
 	 *	"en" => "computer-amiga-1200"
 	 * ));
 	 */
-	function setSlug($slug,$lang = null,$segment = null){
+	function setSlug($slug,$lang = null,$segment = null,$options = array()){
 		if(is_null($segment)){
 			$segment = $this->getSlugSegment();
 		}
 		$segment = (string)$segment;
 		if(is_array($slug)){
 			foreach($slug as $lang => $s){
-				Slug::SetObjectSlug($this,$s,$lang,$segment);
+				Slug::SetObjectSlug($this,$s,$lang,$segment,$options);
 			}
 			return;
 		}
-		Slug::SetObjectSlug($this,$slug,$lang,$segment);
+		Slug::SetObjectSlug($this,$slug,$lang,$segment,$options);
 	}
 
 	static function GetInstanceBySlug($slug,&$lang = null,$segment = ''){

@@ -171,5 +171,49 @@ class TcSlug extends TcBase{
 		$this->assertEquals("dior-parfemy",$dior->getSlug());
 		$this->assertEquals("dior-parfemy",$dior->getSlug("cs"));
 		$this->assertEquals("dior-parfumes",$dior->getSlug("en"));
+
+		$this->assertEquals(2,$this->dbmole->selectInt("SELECT COUNT(*) FROM slugs WHERE table_name=:table_name AND record_id=:record_id",array(":table_name" => "brands", ":record_id" => $dior)));
+
+		$dior_id = $dior->getId();
+
+		$dior->s(array(
+			"slug_cs" => "dior-parfemy",
+			"slug_en" => "brands-en-$dior_id",
+		));
+
+		$this->assertEquals(1,$this->dbmole->selectInt("SELECT COUNT(*) FROM slugs WHERE table_name=:table_name AND record_id=:record_id",array(":table_name" => "brands", ":record_id" => $dior)));
+
+		$dior->s(array("slug_cs" => ""));
+
+		$this->assertEquals(0,$this->dbmole->selectInt("SELECT COUNT(*) FROM slugs WHERE table_name=:table_name AND record_id=:record_id",array(":table_name" => "brands", ":record_id" => $dior)));
+
+		$this->assertEquals("brands-en-$dior_id",$dior->getSlug("en"));
+		$this->assertEquals("brands-cs-$dior_id",$dior->getSlug("cs"));
+
+		// testing reconstruct_missing_slugs option
+
+		$dior->s(array(
+			"name" => "Dior & Co",
+		),array(
+			"reconstruct_missing_slugs" => true
+		));
+
+		$this->assertEquals(0,$this->dbmole->selectInt("SELECT COUNT(*) FROM slugs WHERE table_name=:table_name AND record_id=:record_id",array(":table_name" => "brands", ":record_id" => $dior)));
+
+		$dior->s(array(
+			"slug_en" => "",
+		),array(
+			"reconstruct_missing_slugs" => true
+		));
+
+		$this->assertEquals(1,$this->dbmole->selectInt("SELECT COUNT(*) FROM slugs WHERE table_name=:table_name AND record_id=:record_id",array(":table_name" => "brands", ":record_id" => $dior)));
+
+		$dior->s(array(
+			"slug_cs" => null,
+		),array(
+			"reconstruct_missing_slugs" => true
+		));
+
+		$this->assertEquals(2,$this->dbmole->selectInt("SELECT COUNT(*) FROM slugs WHERE table_name=:table_name AND record_id=:record_id",array(":table_name" => "brands", ":record_id" => $dior)));
 	}
 }

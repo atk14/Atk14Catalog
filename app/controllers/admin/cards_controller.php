@@ -122,7 +122,7 @@ class CardsController extends AdminController{
 			}
 			unset($d["catalog_id"]);
 
-			$this->card->s($d);
+			$this->card->s($d,array("reconstruct_missing_slugs" => true));
 			$this->card->setTags($tags);
 
 			/*
