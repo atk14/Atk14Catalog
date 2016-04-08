@@ -29,6 +29,10 @@ class Attachment extends ApplicationModel implements Translatable,Rankable{
 		return preg_replace('/^.+\/([^\/]+)$/','\1',$this->getUrl());
 	}
 
+	function getSuffix(){
+		return $this->_getPupiq()->getSuffix();
+	}
+
 	static function AddAttachment($obj,$values){
 		if(is_string($values)){
 			$values = array("url" => $values);
@@ -36,5 +40,9 @@ class Attachment extends ApplicationModel implements Translatable,Rankable{
 		$values["table_name"] = $obj->getTableName();
 		$values["record_id"] = $obj->getId();
 		return Attachment::CreateNewRecord($values);
+	}
+
+	protected function _getPupiq(){
+		return new PupiqAttachment($this->getUrl());
 	}
 }
