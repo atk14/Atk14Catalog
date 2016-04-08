@@ -1,3 +1,2 @@
 <?php
-class CreateNewForm extends ArticlesForm{
-}
+class CreateNewForm extends ArticlesForm{ }

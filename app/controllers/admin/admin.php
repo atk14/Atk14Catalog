@@ -50,4 +50,30 @@ class AdminController extends ApplicationBaseController{
 		if(!$card){ return; }
 		$this->breadcrumbs[] = array($card->getName(),$this->_link_to(array("action" => "cards/edit", "id" => $card)));
 	}
+
+	/**
+	 * Generic method for deleting a record
+	 *
+	 * $this->_destroy($this->article);
+	 * $this->_destroy(); // the object for deletion will be determined by the controller name
+	 */
+	function _destroy($object = null){
+		if(!$this->request->post()){ return $this->_execute_action("error404"); }
+
+		if(!$object){
+			$cn = String4::ToObject(get_class($this));
+			$cn = $cn->gsub('/Controller$/',''); // "NiceImagesController" -> "NiceImages"
+			$cn = $cn->underscore(); // "nice_images"
+			$o_name = $cn->singularize()->toString(); // "nice_images" -> "nice_image"
+			$object = $this->$o_name; // $this->nice_image
+		}
+
+		$object->destroy();
+		$this->template_name = "application/destroy";
+
+		if(!$this->request->xhr()){
+			$this->flash->success(_("The entry has been deleted"));
+			$this->_redirect_to("index");
+		}
+	}
 }
