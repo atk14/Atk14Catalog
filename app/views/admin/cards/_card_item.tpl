@@ -6,16 +6,12 @@
 	<td>{$card->getCreatedAt()|format_datetime}</td>
 	<td>{$card->getUpdatedAt()|format_datetime}</td>
 	<td>
-		<div class="btn-group btn-group-sm">
+		{capture assign="confirm"}{t 1=$card->getName()|h escape=no}You are about to delete the product %1.
+Are you sure?{/t}{/capture}
+
+		{dropdown_menu}
 			{a action=edit id=$card _class="btn btn-default"}<i class="glyphicon glyphicon-edit"></i> {t}Edit{/t}{/a}
-			<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
-				<span class="caret"></span>
-				<span class="sr-only">{t}Zobrazit nabídku{/t}</span>
-			</button>
-			<ul class="dropdown-menu dropdown-menu-right">
-				{capture assign="confirm"}{t 1=$card->getName()|h escape=no}Chystáte se smazat produkt %1 Jste si jistý?{/t}{/capture}
-				<li>{a_destroy id=$card _confirm=$confirm}<i class="glyphicon glyphicon-remove"></i> {t}Smazat produkt{/t}{/a_destroy}</li>
-			</ul>
-		</div>
+			{a_destroy id=$card _confirm=$confirm}<i class="glyphicon glyphicon-remove"></i> {t}Delete product{/t}{/a_destroy}
+		{/dropdown_menu}
 	</td>
 </tr>
