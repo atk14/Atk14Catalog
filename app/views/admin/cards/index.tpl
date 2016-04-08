@@ -1,12 +1,8 @@
 <h1>{$page_title}</h1>
 
-<p class="pull-left">{a action=create_new _class="btn btn-primary"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Add a product{/t}{/a}</p>
+{render partial="shared/search_form"}
 
-{form _class="form-inline pull-right"}
-	{!$form.search}
-	<button type="submit" class="btn btn-default">{t}Search products{/t}</button>
-{/form}
-<hr class="cleaner">
+<p>{a action=create_new _class="btn btn-primary"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Add a product{/t}{/a}</p>
 
 {if $finder->isEmpty()}
 
