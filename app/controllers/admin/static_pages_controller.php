@@ -21,7 +21,7 @@ class StaticPagesController extends AdminController {
 		$this->page_title = sprintf(_("Editing static page '%s'"), strip_tags($this->static_page->getTitle()));
 		$this->form->set_initial($this->static_page);
 		if ($this->request->post() && ($d=$this->form->validate($this->params))) {
-			$this->static_page->s($d);
+			$this->static_page->s($d,array("reconstruct_missing_slugs" => true));
 			$this->flash->success(_("Changes have been saved"));
 			$this->_redirect_to("index");
 		}

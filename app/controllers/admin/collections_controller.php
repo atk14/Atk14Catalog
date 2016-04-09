@@ -23,7 +23,7 @@ class CollectionsController extends AdminController {
 
 		$this->form->set_initial($this->collection);
 		if ($this->request->post() && ($d = $this->form->validate($this->params))) {
-			$this->collection->setValues($d);
+			$this->collection->setValues($d,array("reconstruct_missing_slugs" => true));
 			$this->flash->success(_("Changes have been saved"));
 			return $this->_redirect_back();
 		}
