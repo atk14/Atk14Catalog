@@ -23,7 +23,7 @@ class BrandsController extends AdminController {
 		$this->form->set_initial($this->brand);
 
 		if ($this->request->post() && ($d=$this->form->validate($this->params))) {
-			$this->brand->s($d);
+			$this->brand->s($d,array("reconstruct_missing_slugs" => true));
 			$this->flash->success(_("The brand was saved"));
 			$this->_redirect_back();
 		}

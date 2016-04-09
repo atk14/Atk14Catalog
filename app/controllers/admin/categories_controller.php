@@ -5,7 +5,7 @@ class CategoriesController extends AdminController{
 		$this->form->set_initial($this->category);
 
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
-			$this->category->s($d);
+			$this->category->s($d,array("reconstruct_missing_slugs" => true));
 
 			$this->flash->success(_("Změny byly uloženy"));
 			$this->_redirect_back();

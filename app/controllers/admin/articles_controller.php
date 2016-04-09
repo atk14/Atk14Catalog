@@ -54,7 +54,7 @@ class ArticlesController extends AdminController{
 			$d["updated_by_user_id"] = $this->logged_user;
 			$this->article->setTags($d["tags"]);
 			unset($d["tags"]);
-			$this->article->s($d);
+			$this->article->s($d,array("reconstruct_missing_slugs" => true));
 			$this->flash->success(_("The article has been updated successfuly"));
 			$this->_redirect_back();
 		}
