@@ -24,6 +24,7 @@ class AdminController extends ApplicationBaseController{
 			array(_("Brands"),							"brands"),
 			array(_("Collections"),					"collections"),
 			array(_("Password recoveries"),	"password_recoveries"),
+			array(_("Newsletter subscribers"), "newsletter_subscribers"),
 		) as $item){
 			$_label = $item[0];
 			$_controllers = explode(',',$item[1]); // "products,cards" => array("products","cards");
