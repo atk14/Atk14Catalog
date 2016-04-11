@@ -42,3 +42,5 @@
 {/foreach}
 
 {render partial="related_cards"}
+
+{a action="information_requests/create_new" card_id=$card _class="btn btn-primary"}{t}Are you interested in this product?{/t}{/a}
