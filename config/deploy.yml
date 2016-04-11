@@ -16,12 +16,14 @@ production:
   deploy_repository: "devel@kajka:apps/catalog.atk14.net/repos/production.git" # this is the URL of deployment git repository with a proper post-receive hook
   deploy_branch: "master"                                                      # the name of the branch in deployment repository
   before_deploy:                                                               # some tasks may be run before deployment
-  - "@local composer.phar update"
-  - "@local grunt dist"
+  - "@local composer update"
+  - "@local bower update"
+  - "@local gulp"
+  - "@local gulp admin"
   rsync:
   - "public/dist/"                                                            # since the directory public/dist is ignored in .gitignore we need to synchronize it by deployment process
   - "public/admin/dist/"
-  - "vendor"
+  - "vendor/"
   after_deploy:
   - "./scripts/migrate && ./scripts/delete_temporary_files dbmole_cache"
 
