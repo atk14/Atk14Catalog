@@ -63,4 +63,19 @@ class ApplicationMailer extends Atk14Mailer {
 		$this->tpl_data["logged_user"] = $logged_user;
 		$this->render_layout = false;
 	}
+
+	function send_information_request($params,$remote_addr,$logged_user){
+		$this->to = DEFAULT_EMAIL;
+		$this->subject = _("Request for information");
+		$this->tpl_data += $params;
+		$this->tpl_data["remote_addr"] = $remote_addr;
+		$this->tpl_data["logged_user"] = $logged_user;
+		$this->render_layout = false;
+	}
+
+	function send_copy_of_information_request_to_customer($email,$text){
+		$this->to = $email;
+		$this->subject = _("Request for information");
+		$this->tpl_data["text"] = $text;
+	}
 }
