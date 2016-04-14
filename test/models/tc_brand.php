@@ -1,5 +1,13 @@
 <?php
 class TcBrand extends TcBase{
+
+	function setUp(){
+		parent::setUp();
+		DbMole::RegisterErrorHandler(function($dbmole){
+			throw new Exception($dbmole->getErrorMessage());
+		});
+	}
+
 	function test(){
 		$snake_oil = Brand::CreateNewRecord(array(
 			"name" => "Snake Oil"
@@ -43,5 +51,14 @@ class TcBrand extends TcBase{
 		$this->assertEquals($home_sweet_home->getId(),$tulip->getBrandId());
 
 		$this->assertEquals(null,Brand::GetInstanceById($snake_oil->getId())); // the Snake Oil has been really deleted from the database
+
+		// try to delete a brand with non-deleted cards should leads to an exception
+		try{
+			@$home_sweet_home->destroy();
+			$this->fail();
+		}catch(Exception $e){
+			$msg = $e->getMessage();
+			$this->assertContains("fk_cards_brands",$msg); // failed to execute SQL query pg_last_error: ERROR:  update or delete on table "brands" violates foreign key constraint "fk_cards_brands" on table "cards"
+		}
 	}
 }
