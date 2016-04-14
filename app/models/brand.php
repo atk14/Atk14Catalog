@@ -43,4 +43,9 @@ class Brand extends ApplicationModel implements Translatable, Rankable {
 	}
 
 	function toString() { return $this->getName(); }
+
+	function destroy(){
+		$this->dbmole->doQuery("UPDATE cards SET brand_id=NULL WHERE brand_id=:id AND deleted='t'",array(":id" => $this));
+		return parent::destroy();
+	}
 }
