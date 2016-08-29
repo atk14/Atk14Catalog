@@ -80,7 +80,7 @@ class TcTranslation extends TcBase{
 		$this->assertEquals("id IN (SELECT record_id FROM translations WHERE upper(translations.body) LIKE upper(:search) AND translations.key IN :search_fields AND translations.lang=:lang AND translations.table_name=:table_name_articles)", $conditions[0]);
 		$this->assertEquals(array(
 			":search_fields" => array("shortinfo","name"),
-			":lang"=> "cs",
+			":lang"=> "en",
 			":table_name_articles" => "articles",
 		), $bind_ar);
 
@@ -91,7 +91,7 @@ class TcTranslation extends TcBase{
 		$this->assertEquals("deleted='f'", $conditions[0]);
 		$this->assertEquals("id IN (SELECT record_id FROM translations WHERE upper(translations.body) LIKE upper(:search) AND translations.key IN :search_fields AND translations.lang=:lang AND translations.table_name=:table_name_articles)", $conditions[1]);
 		$this->assertEquals(array(
-			":lang"=> "cs",
+			":lang"=> "en",
 			":search_fields" => array("shortinfo","name"),
 			":table_name_articles"=> "articles",
 		), $bind_ar);
