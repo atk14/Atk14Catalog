@@ -82,6 +82,8 @@ class TcSlug extends TcBase{
 	function test_usage_in_models(){
 		global $ATK14_GLOBAL;
 
+		$ATK14_GLOBAL->setValue("lang","cs");
+
 		$dior = Brand::CreateNewRecord(array("name" => "Dior"));
 		$armani = Brand::CreateNewRecord(array("name" => "Armani"));
 
