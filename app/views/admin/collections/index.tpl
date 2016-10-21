@@ -1,6 +1,4 @@
-<h1>{$page_title}</h1>
-
-<p>{a action=create_new _class="btn btn-primary"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Add a collection{/t}{/a}</p>
+<h1>{button_create_new}{t}Add a collection{/t}{/button_create_new} {$page_title}</h1>
 
 {if $collections}
 
