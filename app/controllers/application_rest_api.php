@@ -159,7 +159,10 @@ class ApplicationRestApiController extends ApplicationBaseController{
 			$this->_display_output($this->api_data,array(
 				"status_code" => $this->api_status_code,
 			));
+			return;
 		}
+
+		parent::_before_render();
 	}
 
 	function error404(){
@@ -335,7 +338,7 @@ function _rest_api_dbmole_error_handler($dbmole){
 	$HTTP_RESPONSE->flushAll();
 	$dbmole->sendErrorReportToEmail(ATK14_ADMIN_EMAIL);
 	$dbmole->logErrorReport();
-	exit;
+	exit(1);
 }
 
 /**

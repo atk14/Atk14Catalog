@@ -15,7 +15,6 @@ class ApplicationModel extends TableRecord{
 	}
 
 	static function CreateNewRecord($values,$options = array()){
-		global $ATK14_GLOBAL;
 		$class_name = get_called_class();
 		$obj = new $class_name();
 

@@ -4,7 +4,9 @@ class NewsletterSubscribersController extends AdminController {
 		$this->page_title = _("Newsletter Subscribers");
 
 		$this->sorting->add("created_at",array("reverse" => true));
-		$this->sorting->add("email","UPPER(email)");
+		$this->sorting->add("email","LOWER(email)");
+		$this->sorting->add("name","COALESCE(LOWER(name),'')");
+		$this->sorting->add("id");
 
 		($d = $this->form->validate($this->params)) || ($d = $this->form->get_initial());
 		$conditions = $bind_ar = array();

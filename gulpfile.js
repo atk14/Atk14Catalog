@@ -4,8 +4,7 @@ var $ = require( "gulp-load-plugins" )();
 var browserSync = require( "browser-sync" ).create();
 require( "./gulpfile-admin" );
 
-var vendorStyles = [
-];
+var vendorStyles = [];
 
 var vendorScripts = [
 	"bower_components/jquery/dist/jquery.js",
