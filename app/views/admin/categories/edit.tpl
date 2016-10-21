@@ -2,8 +2,8 @@
 
 {assign var=parent value=$category->getParentCategory()}
 
-<p>{a action=move_to_category id=$category _class="btn btn-primary"}<i class="glyphicon glyphicon-transfer"></i> {t}Přesunout kategorii{/t}{/a}
-{a action=create_alias id=$category _class="btn btn-primary"}<i class="glyphicon glyphicon-share"></i> {t}Vytvořit alias{/t}{/a}</p>
+<p>{a action=move_to_category id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-transfer"></i> {t}Přesunout kategorii{/t}{/a}
+{a action=create_alias id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-share"></i> {t}Vytvořit alias{/t}{/a}</p>
 
 <table class="table">
 	<tbody>
@@ -79,7 +79,7 @@ Opravdu to chcete?{/t}{/capture}
 			</ul>
 		{else}
 			<div class="img-message">
-				{message}{t}Tato kategorie nemá podkategorie.{/t}{/message}
+				<p>{t}Tato kategorie nemá podkategorie.{/t}</p>
 			</div>
 		{/if}
 		<p>{a action="create_new" parent_category_id=$category _class="btn btn-default" _id="imageToCard"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Přidat novou podkategorii{/t}{/a}</p>
@@ -109,7 +109,7 @@ Opravdu to chcete?{/t}{/capture}
 		{if $category->allowProducts()}
 			<p>{a action="category_cards/create_new" category_id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Přidat produkt{/t}{/a}</p>
 		{else}
-			{message}{t}Do této kategorie nelze přidávat produkty.{/t}{/message}
+			<p>{t}Do této kategorie nelze přidávat produkty.{/t}</p>
 		{/if}
 	{/if}
 
@@ -136,7 +136,7 @@ Opravdu to chcete?{/t}{/capture}
 		{if $category->allowProducts()}
 			<p>{a action="category_recommended_cards/create_new" category_id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Přidat doporučený produkt{/t}{/a}</p>
 		{else}
-			{message}{t}Do této kategorie nelze přidávat produkty.{/t}{/message}
+			<p>{t}Do této kategorie nelze přidávat produkty.{/t}</p>
 		{/if}
 	{/if}
 

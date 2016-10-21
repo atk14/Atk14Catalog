@@ -14,7 +14,7 @@
 
 {if !$images}
 	<div class="img-message">
-		{message}{t}Currently there are no images{/t}{/message}
+		<p>{t}Currently there are no images{/t}</p>
 	</div>
 {/if}
 

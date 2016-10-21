@@ -1,7 +1,7 @@
 <h2>{t}Textual sections{/t}</h2>
 {assign var=sections value=$card->getCardSections()}
 {if !$sections}
-	{message}{t}U totoho produktu zatím není žádná sekce{/t}{/message}
+	<p>{t}U totoho produktu zatím není žádná sekce{/t}</p>
 {else}
 	<ul class="list-group list-sortable" data-sortable-url="{link_to action="card_sections/set_rank"}">
 	{foreach $sections as $section}

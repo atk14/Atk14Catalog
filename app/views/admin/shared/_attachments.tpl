@@ -10,7 +10,7 @@
 
 {if !$attachments}
 	<div class="img-message">
-		{message}{t}Currently there are no attachments{/t}{/message}
+		<p>{t}Currently there are no attachments{/t}</p>
 	</div>
 {/if}
 

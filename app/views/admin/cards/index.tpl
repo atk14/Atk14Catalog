@@ -4,7 +4,7 @@
 
 {if $finder->isEmpty()}
 
-	{message}{t}No product has been found.{/t}{/message}
+	<p>{t}No product has been found.{/t}</p>
 
 {else}
 	<table class="table table-striped">

@@ -2,6 +2,6 @@
 
 {render partial="shared/form"}
 
-{message}
+<p>
 	Fotogalerii lze přidat hned po vytvoření varianty produktu.
-{/message}
+</p>
