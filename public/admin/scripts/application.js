@@ -160,7 +160,8 @@
 
 				// Sortable lists.
 				var $sortable = $( ".list-sortable" ),
-					glyph = "<span class='glyphicon glyphicon-align-justify'></span>",
+					glyph = "<span class='glyphicon glyphicon-align-justify handle' " +
+						" title='sorting'></span>",
 					url, $item, data;
 
 				if ( $sortable.length ) {
@@ -168,6 +169,7 @@
 
 					$sortable.sortable( {
 						cancel: "strong",
+						handle: ".handle",
 						update: function( jqEv, ui ) {
 							$item = $( ui.item );
 							url = $item.closest( ".list-sortable" ).data( "sortable-url" );
