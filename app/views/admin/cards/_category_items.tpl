@@ -2,7 +2,7 @@
 {* assign var=categories value=$card->getCategories() *}
 
 {if !$categories}
-	{message}{t}Produkt zatím není zařazen v žádné kategorii.{/t}{/message}
+	<p>{t}Produkt zatím není zařazen v žádné kategorii.{/t}</p>
 {else}
 	<ul class="list-group">
 		{foreach $categories as $c}

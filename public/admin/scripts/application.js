@@ -3,25 +3,29 @@
 	var document = window.document,
 
 	ADMIN = {
+
 		common: {
 
-			// Application-wide code
+			// Application-wide code.
 			init: function() {
 				ADMIN.utils.handleSortables();
 				ADMIN.utils.handleSuggestions();
-			}
-		},
 
-		logins: {
+				// Form hints.
+				$( ".help-hint" ).each( function() {
+					var $this = $( this ),
+						$field = $this.closest( ".form-group" ).find( ".form-control" ),
+						title = $this.data( "title" ) || "",
+						content = $this.html(),
+						popoverOptions = {
+							html: true,
+							trigger: "focus",
+							title: title,
+							content: content
+						};
 
-			// Controller-wide code
-			init: function() {
-
-			},
-
-			// Action-specific code
-			create_new: function() {
-
+					$field.popover( popoverOptions );
+				} );
 			}
 		},
 
@@ -156,7 +160,8 @@
 
 				// Sortable lists.
 				var $sortable = $( ".list-sortable" ),
-					glyph = "<span class='glyphicon glyphicon-align-justify'></span>",
+					glyph = "<span class='glyphicon glyphicon-align-justify handle' " +
+						" title='sorting'></span>",
 					url, $item, data;
 
 				if ( $sortable.length ) {
@@ -164,6 +169,7 @@
 
 					$sortable.sortable( {
 						cancel: "strong",
+						handle: ".handle",
 						update: function( jqEv, ui ) {
 							$item = $( ui.item );
 							url = $item.closest( ".list-sortable" ).data( "sortable-url" );
@@ -333,5 +339,5 @@
 	window.ADMIN = ADMIN;
 
 	// Initialize application.
-	$( document ).ready( ADMIN.UTIL.init );
+	ADMIN.UTIL.init();
 } )( window, window.jQuery );

@@ -17,14 +17,22 @@
 define("SECRET_TOKEN",PRODUCTION ? Files::GetFileContent(dirname(__FILE__)."/secret_token.txt") : "_please_put_here_a_lot_of_random_chars_");
 
 define("DEFAULT_EMAIL","your@email.com");
+define("ATK14_ADMIN_EMAIL",DEFAULT_EMAIL); // the address for sending error reports and so on...
 
 define("ATK14_APPLICATION_NAME","ATK14 Catalog");
+define("ATK14_APPLICATION_DESCRIPTION","Yet another application running on ATK14 Framework");
+
 define("ATK14_HTTP_HOST",PRODUCTION ? "catalog.atk14.net" : "atk14catalog.localhost");
 
 define("DBMOLE_COLLECT_STATICTICS",DEVELOPMENT);
 date_default_timezone_set('Europe/Prague');
 
 @define("PUPIQ_API_KEY","123.abcdefghijklmnopqrstuvwxyz");
+
+// If you don't want to let users to register freely (e.g. your app is an closed alpha),
+// set the constant INVITATION_CODE_FOR_USER_REGISTRATION.
+// See app/forms/users/create_new_form.php for more info
+// define("INVITATION_CODE_FOR_USER_REGISTRATION","some great secret");
 
 if(DEVELOPMENT || TEST){
 	// a place for development and testing environment settings

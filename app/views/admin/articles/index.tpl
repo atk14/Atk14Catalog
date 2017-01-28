@@ -1,8 +1,6 @@
-<h1>{$page_title}</h1>
+<h1>{button_create_new}{t}Add new article{/t}{/button_create_new} {$page_title}</h1>
 
 {render partial="shared/search_form"}
-
-<p>{a action=create_new _class="btn btn-primary"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Add new article{/t}{/a}</p>
 
 {if $finder->isEmpty()}
 
@@ -13,8 +11,8 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
-				<th>#</th>
-				<th>{t}Title{/t}</th>
+				{sortable key=id}<th>#</th>{/sortable}
+				{sortable key=title}<th>{t}Title{/t}</th>{/sortable}
 				<th>{t}Author{/t}</th>
 				{sortable key=published_at}<th>{t}Date{/t}</th>{/sortable}
 				<th>{t}Tags{/t}</th>

@@ -6,7 +6,7 @@
 	CATALOG = {
 		common: {
 
-			// Application-wide code
+			// Application-wide code.
 			init: function() {
 
 				// Form hints.
@@ -35,7 +35,6 @@
 
 			// Action-specific code
 			create_new: function() {
-
 				/*
 				 * Check whether login is available.
 				 * Simple demo of working with an API.

@@ -39,8 +39,15 @@ class CollectionsController extends AdminController {
 		}
 	}
 
+	function set_rank() {
+		if(!$this->request->post()){ return $this->_execute_action("error404"); }
+
+		$this->render_template = false;
+		$this->collection->setRank($this->params->getInt("rank"));
+	}
+
 	function _before_filter() {
-		if(in_array($this->action,array("edit","destroy","add_product","remove_product"))){
+		if(in_array($this->action,array("edit","destroy","add_product","remove_product","set_rank"))){
 			$this->_find("collection");
 		}
 	}

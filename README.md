@@ -77,15 +77,27 @@ If you have a trouble run the following command and follow instructions.
 
 Front-end Assets Installation
 -----------------------------
+
 #### Install dependencies.
+
 With [Node.js](http://nodejs.org) and npm installed, run the following one liner from the root of your Skelet application:
+
 ```bash
 $ npm install -g gulp && npm install -g bower && npm install && bower install
 ```
 
 This will install all the tools you will need to serve and build your front-end assets.
 
+### Run initial build
+
+Run initial Gulp build process for presentation and admininstration.
+
+```bash
+$ gulp && gulp admin
+```
+
 ### Serve / watch
+
 ```bash
 $ gulp serve
 ```

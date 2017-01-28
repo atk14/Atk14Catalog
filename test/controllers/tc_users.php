@@ -23,7 +23,13 @@ class TcUsers extends TcBase{
 
 		$this->assertEquals(false,$controller->form->has_errors());
 		$this->assertEquals(303,$this->client->getStatusCode()); // redirecting...
-		$this->assertContains('You have been successfuly registered',$controller->flash->success());
+		$this->assertContains('You have been successfuly registered',(string)$controller->flash->success());
+
+		// testing outgoing email
+		$mailer = $controller->mailer;
+		$this->assertEquals('john@doe.com',$mailer->to);
+		$this->assertContains('Thanks for signing up',$mailer->body);
+		$this->assertContains('login: john.doe.tester',$mailer->body);
 
 		// we are visiting the front page again
 		$controller = $this->client->get("main/index");

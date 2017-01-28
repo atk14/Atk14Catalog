@@ -1,4 +1,9 @@
 <?php
+/**
+ * The base class for all PHP migrations
+ *
+ * The perfect place for common methods (e.g. lorem ipsum generator)
+ */
 class ApplicationMigration extends Atk14Migration{
 
 	/**
@@ -11,4 +16,5 @@ class ApplicationMigration extends Atk14Migration{
 		$lipsum = simplexml_load_string($uf->getContent())->lipsum;
 		return str_replace("\n",$connector,$lipsum);
 	}
+
 }

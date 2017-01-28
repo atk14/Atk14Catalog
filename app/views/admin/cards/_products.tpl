@@ -16,6 +16,6 @@
 
 {else}
 
-	{message}{t}Produkt zatím nemá žádnou variantu.{/t}{/message}
+	<p>{t}Produkt zatím nemá žádnou variantu.{/t}</p>
 
 {/if}

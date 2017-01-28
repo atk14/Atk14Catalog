@@ -50,6 +50,7 @@ gulp.task( "scripts-admin", function() {
 	gulp.src( vendorScripts )
 		.pipe( $.sourcemaps.init() )
 		.pipe( $.concat( "vendor.js" ) )
+		.pipe( $.uglify() )
 		.pipe( $.rename( { suffix: ".min" } ) )
 		.pipe( $.sourcemaps.write( "." ) )
 		.pipe( gulp.dest( "public/admin/dist/scripts" ) );

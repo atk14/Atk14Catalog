@@ -1,8 +1,6 @@
-<h1>{$page_title}</h1>
+<h1>{button_create_new}{t}Create new user{/t}{/button_create_new} {$page_title}</h1>
 
 {render partial="shared/search_form"}
-
-<p>{a action=create_new _class="btn btn-primary"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Create new user{/t}{/a}</p>
 
 {if $finder->isEmpty()}
 
@@ -13,10 +11,10 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
-				<th>#</th>
+				{sortable key=id}<th>#</th>{/sortable}
 				{sortable key=login}<th>{t}Username{/t}</th>{/sortable}
-				<th>{t}Name{/t}</th>
-				<th>{t}Email address{/t}</th>
+				{sortable key=name}<th>{t}Name{/t}</th>{/sortable}
+				{sortable key=email}<th>{t}Email address{/t}</th>{/sortable}
 				{sortable key=is_admin}<th>{t}Is admin?{/t}</th>{/sortable}
 				{sortable key=created_at}<th>{t}Created at{/t}</th>{/sortable}
 				{sortable key=updated_at}<th>{t}Updated at{/t}</th>{/sortable}

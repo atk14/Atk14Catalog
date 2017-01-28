@@ -12,7 +12,7 @@
 		{/foreach}
 	</ul>
 {else}
-	{message}{t}Nejsou určené související produkty{/t}{/message}
+	<p>{t}Nejsou určené související produkty{/t}</p>
 {/if}
 
 {a action="related_cards/create_new" card_id=$card _class="btn btn-default"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Přidat související produkt{/t}{/a}
