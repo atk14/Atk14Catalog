@@ -9,7 +9,7 @@ class Tag extends ApplicationModel{
 		if(!strlen($tag)){ return null; }
 
 		($out = Tag::FindByTag($tag)) ||
-		($out = Tag::CreateNewRecord(["tag" => $tag]));
+		($out = Tag::CreateNewRecord(array("tag" => $tag)));
 
 		return $out;
 	}
