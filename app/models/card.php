@@ -133,60 +133,10 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 	}
 
 	/**
-	 * Vrati produkty na sklade
-	 *
-	 * $products = $card->getProductsOnStock();
-	 */
-	function getProductsOnStock($options=array()){
-		$options["on_stockount"] = true;
-		return $this->_getProducts($options);
-	}
-
-	function getProductsOnStockOrOnRequest($options=array()){
-		$options["on_stock_or_on_request"] = true;
-		return $this->_getProducts($options);
-	}
-
-	/**
-	 * Test, jestli mame nektere varianty s nulovym mnozstvim na sklade
-	 */
-	function hasUnavailableProducts($options=array()) {
-		$options += array(
-			"ean_or_api_session" => null,
-			"on_stockount" => false,
-			"limit" => 1,
-		);
-		return !!$this->_getProducts($options);
-	}
-
-	/**
-	 * Vsechny varianty produktu nejsou standardne na sklade. Lze objednat na zavolani.
-	 */
-	function allProductsAvailableOnRequest($options=array()) {
-		$options += array(
-			"ean_or_api_session" => null,
-		);
-		foreach($this->getProducts($options) as $p) {
-			if (!$p->isAvailableOnRequest()) {
-				return false;
-			}
-		}
-		return true;
-	}
-
-	function isAvailableOnRequest($options=array()) {
-		$options += array(
-			"ean_or_api_session" => null,
-		);
-		return $this->allProductsAvailableOnRequest($options);
-	}
-
-	/**
 	 * $product = $card->getFirstProduct();
 	 */
 	function getFirstProduct($options=array()){
 		$options += array(
-			"ean_or_api_session" => null,
 			"limit" => 1,
 		);
 		if($products = $this->_getProducts($options)){
@@ -202,12 +152,8 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		$options += array(
 			"deleted" => false, // false, true, null
 			"visible" => true, // false, true, null
-			"on_stockount" => null,
 
-			# maji stockcount>0 nebo aspon priznak available_on_request='t'
-			"on_stock_or_on_request" => null,
 			"limit" => null,
-			"ean_or_api_session" => null,
 			"order" => "rank",
 		);
 
@@ -217,13 +163,6 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		foreach($products_lists as $item){
 			if(!is_null($options["deleted"]) && $item["deleted"]!=$options["deleted"]){ continue; }
 			if(!is_null($options["visible"]) && $item["visible"]!=$options["visible"]){ continue; }
-			if(!is_null($options["on_stock_or_on_request"]) && $item["on_stock_or_on_request"]!=$options["on_stock_or_on_request"]){ continue; }
-			if(!is_null($options["on_stockount"]) && (
-					($options["on_stockount"] && !$item["stockcount"]) ||
-					(!$options["on_stockount"] && $item["stockcount"])
-			)){
-				continue;
-			}
 
 			$ids[] = $item["id"];
 		}
@@ -434,7 +373,6 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 
 	function getAlternativeCards($options=array()) {
 		$options = array_merge(array(
-			"ean" => null, // pro viditelnost
 			"limit" => null,
 		), $options);
 		$cats = $this->getCategories();
@@ -446,8 +384,6 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 			foreach($this->getCategorySiblings($category) as $c){
 				if(in_array($c->getId(),$ids_taken)){ continue; }
 
-				if (!$c->getFirstProduct(array("ean_or_api_session" => $options["ean"]))){ continue; }
-
 				$ids_taken[] = $c->getId();
 				$alt_cards[] = $c;
 
@@ -458,10 +394,6 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		}
 
 		return $alt_cards;
-	}
-
-	function hasFreeDelivery() {
-		return false;
 	}
 
 	function setValues($values,$options=array()) {
@@ -500,7 +432,6 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		$options = array_merge(array(
 			"limit" => 50,
 			"offset" => 0,
-			"ean" => null, // ean prihlaseneho/neprihlaseneho uzivatele - muze mit nastavenou viditelnost
 			"order" => null,
 		),$options);
 
