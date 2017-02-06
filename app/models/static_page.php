@@ -1,7 +1,5 @@
 <?php
-class StaticPage extends ApplicationModel implements Translatable, Rankable {
-
-	static $automatically_sluggable = true;
+class StaticPage extends ApplicationModel implements Translatable, Rankable, iSlug {
 
 	static function GetTranslatableFields() { return array("title", "teaser", "body"); }
 

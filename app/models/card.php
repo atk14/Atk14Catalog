@@ -1,7 +1,6 @@
 <?php
-class Card extends ApplicationModel implements Translatable{
+class Card extends ApplicationModel implements Translatable, iSlug {
 
-	static $automatically_sluggable = true;
 	static function GetTranslatableFields(){ return array("name","teaser"); }
 
 	static function CreateNewRecord($values,$options = array()){

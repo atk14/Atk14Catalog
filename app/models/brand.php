@@ -1,7 +1,5 @@
 <?php
-class Brand extends ApplicationModel implements Translatable, Rankable {
-
-	static $automatically_sluggable = true;
+class Brand extends ApplicationModel implements Translatable, Rankable, iSlug {
 
 	/**
 	 * Translatable methods implementation.
@@ -44,8 +42,8 @@ class Brand extends ApplicationModel implements Translatable, Rankable {
 
 	function toString() { return $this->getName(); }
 
-	function destroy(){
+	function destroy($destroy_for_real = null){
 		$this->dbmole->doQuery("UPDATE cards SET brand_id=NULL WHERE brand_id=:id AND deleted='t'",array(":id" => $this));
-		return parent::destroy();
+		return parent::destroy($destroy_for_real);
 	}
 }

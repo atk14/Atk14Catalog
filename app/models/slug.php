@@ -153,10 +153,10 @@ class Slug extends ApplicationModel{
 	static function ComplementSlugs($object){
 		$id = $object->getId();
 		$table_name_sluggish = Slug::StringToSluggish($object->getTableName());
+		$class_name = get_class($object);
 
 		foreach($GLOBALS["ATK14_GLOBAL"]->getSupportedLangs() as $lang){
 			$current_slug = $object->getSlug($lang);
-
 			
 			if($current_slug!="$table_name_sluggish-$lang-$id"){
 				// nema genericky slug? - preskakujeme to

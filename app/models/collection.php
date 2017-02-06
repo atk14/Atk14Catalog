@@ -1,6 +1,5 @@
 <?php
-class Collection extends ApplicationModel implements Translatable, Rankable {
-	static $automatically_sluggable = true;
+class Collection extends ApplicationModel implements Translatable, Rankable, iSlug {
 
 	static function GetTranslatableFields() {
 		return array("name","teaser", "description");
