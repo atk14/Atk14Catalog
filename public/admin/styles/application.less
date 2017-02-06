@@ -91,6 +91,17 @@ label {
 .help-error {
 	.help-block;
 }
+ul.token-input-list {
+	border: 1px solid @input-border;
+	border-radius: @input-border-radius-small;
+	.box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+}
+ul.token-input-focused {
+  @color-rgba: rgba(red(@input-border-focus), green(@input-border-focus), blue(@input-border-focus), .6);
+  border-color: @input-border-focus;
+  outline: 0;
+  .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @{color-rgba}");
+}
 .form-horizontal {
 	label {
 		.make-sm-column(2);
@@ -117,6 +128,9 @@ label {
 			vertical-align: top;
 			text-align: left;
 		}
+	}
+	ul.token-input-list {
+		clear: none;
 	}
 	.checkbox {
 		padding-top: 0;
@@ -182,19 +196,6 @@ label {
 .form-search {
 	margin-bottom: 10px;
 	input, select {
-		width: 10em;
-		float: left;
-		margin-right: 10px;
-	}
-}
-
-/*
-================================
-=SEARCH FORMS
-================================ */
-.form-search {
-	margin-bottom: 10px;
-	input {
 		width: 10em;
 		float: left;
 		margin-right: 10px;
@@ -295,5 +296,21 @@ label {
 		text-decoration: none;
 		outline: 0;
 		background-color: @dropdown-link-active-bg;
+	}
+}
+
+.list-sortable {
+	.handle {
+		cursor: grab;
+		margin-right: 1em;
+	}
+}
+
+/*
+ * Yarriho fix pro Markdown Editor
+ */
+.md-editor {
+	textarea {
+		width: 100% !important; 
 	}
 }
