@@ -27,7 +27,7 @@ class FullTextSearchQueryLike extends FullTextSearchQuery{
 	*/
 	var	$_search_whole_words_only = false;
 
-	function FullTextSearchQueryLike($field_name = ""){
+	function __construct($field_name = ""){
 		$this->set_field_name($field_name);
 	}
 
