@@ -78,6 +78,7 @@ CREATE TABLE related_cards(
 	CONSTRAINT fk_related_cards_related_cards FOREIGN KEY (related_card_id) REFERENCES cards ON DELETE CASCADE
 );
 CREATE INDEX in_relatedcards_cardid ON related_cards(card_id);
+CREATE INDEX in_relatedcards_relatedcardid ON related_cards(related_card_id);
 
 CREATE SEQUENCE seq_products;
 CREATE TABLE products (

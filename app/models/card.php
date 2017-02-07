@@ -229,23 +229,69 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 	}
 
 	function addRelatedCard($card) {
+		return $this->_addRelatedCard($this->getRelatedCardsLister(),$card);
+	}
+
+	function removeRelatedCard($card) {
+		return $this->_removeRelatedCard($this->getRelatedCardsLister(),$card);
+	}
+
+	function getConsumablesLister() {
+		return $this->getLister("Card", array(
+			"table_name" => "consumables",
+			"owner_field_name" => "card_id",
+			"subject_field_name" => "consumable_id",
+		));
+	}
+
+	function getConsumables() {
+		return $this->getConsumablesLister()->getRecords();
+	}
+
+	function addConsumable($card) {
+		return $this->_addRelatedCard($this->getConsumablesLister(),$card);
+	}
+
+	function removeConsumable($card) {
+		return $this->_removeRelatedCard($this->getConsumablesLister(),$card);
+	}
+
+	function getAccessoriesLister() {
+		return $this->getLister("Card", array(
+			"table_name" => "accessories",
+			"owner_field_name" => "card_id",
+			"subject_field_name" => "accessory_id",
+		));
+	}
+
+	function getAccessories() {
+		return $this->getAccessoriesLister()->getRecords();
+	}
+
+	function addAccessory($card) {
+		return $this->_addRelatedCard($this->getAccessoriesLister(),$card);
+	}
+
+	function removeAccessory($card) {
+		return $this->_removeRelatedCard($this->getAccessoriesLister(),$card);
+	}
+
+	protected function _addRelatedCard($lister,$card){
 		if (!is_object($card)) {
 			$card = Card::GetInstanceById($card);
 		}
-		if ($card === $this) {
+		if ($card->getId() === $this->getId()) {
 			throw new SameCardException("Can't insert card $card into itself");
 		}
-		$lister = $this->getRelatedCardsLister();
 		if (!$lister->contains($card)) {
 			return $lister->append($card);
 		}
 	}
 
-	function removeRelatedCard($card) {
+	protected function _removeRelatedCard($lister,$card){
 		if (!is_object($card)) {
 			$card = Card::GetInstanceById($card);
 		}
-		$lister = $this->getRelatedCardsLister();
 		if ($lister->contains($card)) {
 			return $lister->remove($card);
 		}
