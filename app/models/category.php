@@ -1,7 +1,6 @@
 <?php
-class Category extends ApplicationModel implements Translatable, Rankable {
+class Category extends ApplicationModel implements Translatable, Rankable, iSlug {
 
-	static $automatically_sluggable = true;
 	static function GetTranslatableFields() { return array("name","teaser","description"); }
 
 	function setRank($new_rank){
@@ -275,11 +274,11 @@ class Category extends ApplicationModel implements Translatable, Rankable {
 		//return $this->getAllowProducts();
 	}
 
-	function destroy(){
+	function destroy($destroy_for_real = null){
 		foreach($this->getChildCategories() as $ch){
-			$ch->destroy();
+			$ch->destroy($destroy_for_real);
 		}
-		return parent::destroy();
+		return parent::destroy($destroy_for_real);
 	}
 
 	function removeCard($card){

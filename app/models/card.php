@@ -1,7 +1,6 @@
 <?php
-class Card extends ApplicationModel implements Translatable{
+class Card extends ApplicationModel implements Translatable, iSlug {
 
-	static $automatically_sluggable = true;
 	static function GetTranslatableFields(){ return array("name","teaser"); }
 
 	static function CreateNewRecord($values,$options = array()){
@@ -134,60 +133,10 @@ class Card extends ApplicationModel implements Translatable{
 	}
 
 	/**
-	 * Vrati produkty na sklade
-	 *
-	 * $products = $card->getProductsOnStock();
-	 */
-	function getProductsOnStock($options=array()){
-		$options["on_stockount"] = true;
-		return $this->_getProducts($options);
-	}
-
-	function getProductsOnStockOrOnRequest($options=array()){
-		$options["on_stock_or_on_request"] = true;
-		return $this->_getProducts($options);
-	}
-
-	/**
-	 * Test, jestli mame nektere varianty s nulovym mnozstvim na sklade
-	 */
-	function hasUnavailableProducts($options=array()) {
-		$options += array(
-			"ean_or_api_session" => null,
-			"on_stockount" => false,
-			"limit" => 1,
-		);
-		return !!$this->_getProducts($options);
-	}
-
-	/**
-	 * Vsechny varianty produktu nejsou standardne na sklade. Lze objednat na zavolani.
-	 */
-	function allProductsAvailableOnRequest($options=array()) {
-		$options += array(
-			"ean_or_api_session" => null,
-		);
-		foreach($this->getProducts($options) as $p) {
-			if (!$p->isAvailableOnRequest()) {
-				return false;
-			}
-		}
-		return true;
-	}
-
-	function isAvailableOnRequest($options=array()) {
-		$options += array(
-			"ean_or_api_session" => null,
-		);
-		return $this->allProductsAvailableOnRequest($options);
-	}
-
-	/**
 	 * $product = $card->getFirstProduct();
 	 */
 	function getFirstProduct($options=array()){
 		$options += array(
-			"ean_or_api_session" => null,
 			"limit" => 1,
 		);
 		if($products = $this->_getProducts($options)){
@@ -203,12 +152,8 @@ class Card extends ApplicationModel implements Translatable{
 		$options += array(
 			"deleted" => false, // false, true, null
 			"visible" => true, // false, true, null
-			"on_stockount" => null,
 
-			# maji stockcount>0 nebo aspon priznak available_on_request='t'
-			"on_stock_or_on_request" => null,
 			"limit" => null,
-			"ean_or_api_session" => null,
 			"order" => "rank",
 		);
 
@@ -218,13 +163,6 @@ class Card extends ApplicationModel implements Translatable{
 		foreach($products_lists as $item){
 			if(!is_null($options["deleted"]) && $item["deleted"]!=$options["deleted"]){ continue; }
 			if(!is_null($options["visible"]) && $item["visible"]!=$options["visible"]){ continue; }
-			if(!is_null($options["on_stock_or_on_request"]) && $item["on_stock_or_on_request"]!=$options["on_stock_or_on_request"]){ continue; }
-			if(!is_null($options["on_stockount"]) && (
-					($options["on_stockount"] && !$item["stockcount"]) ||
-					(!$options["on_stockount"] && $item["stockcount"])
-			)){
-				continue;
-			}
 
 			$ids[] = $item["id"];
 		}
@@ -291,23 +229,69 @@ class Card extends ApplicationModel implements Translatable{
 	}
 
 	function addRelatedCard($card) {
+		return $this->_addRelatedCard($this->getRelatedCardsLister(),$card);
+	}
+
+	function removeRelatedCard($card) {
+		return $this->_removeRelatedCard($this->getRelatedCardsLister(),$card);
+	}
+
+	function getConsumablesLister() {
+		return $this->getLister("Card", array(
+			"table_name" => "consumables",
+			"owner_field_name" => "card_id",
+			"subject_field_name" => "consumable_id",
+		));
+	}
+
+	function getConsumables() {
+		return $this->getConsumablesLister()->getRecords();
+	}
+
+	function addConsumable($card) {
+		return $this->_addRelatedCard($this->getConsumablesLister(),$card);
+	}
+
+	function removeConsumable($card) {
+		return $this->_removeRelatedCard($this->getConsumablesLister(),$card);
+	}
+
+	function getAccessoriesLister() {
+		return $this->getLister("Card", array(
+			"table_name" => "accessories",
+			"owner_field_name" => "card_id",
+			"subject_field_name" => "accessory_id",
+		));
+	}
+
+	function getAccessories() {
+		return $this->getAccessoriesLister()->getRecords();
+	}
+
+	function addAccessory($card) {
+		return $this->_addRelatedCard($this->getAccessoriesLister(),$card);
+	}
+
+	function removeAccessory($card) {
+		return $this->_removeRelatedCard($this->getAccessoriesLister(),$card);
+	}
+
+	protected function _addRelatedCard($lister,$card){
 		if (!is_object($card)) {
 			$card = Card::GetInstanceById($card);
 		}
-		if ($card === $this) {
+		if ($card->getId() === $this->getId()) {
 			throw new SameCardException("Can't insert card $card into itself");
 		}
-		$lister = $this->getRelatedCardsLister();
 		if (!$lister->contains($card)) {
 			return $lister->append($card);
 		}
 	}
 
-	function removeRelatedCard($card) {
+	protected function _removeRelatedCard($lister,$card){
 		if (!is_object($card)) {
 			$card = Card::GetInstanceById($card);
 		}
-		$lister = $this->getRelatedCardsLister();
 		if ($lister->contains($card)) {
 			return $lister->remove($card);
 		}
@@ -435,7 +419,6 @@ class Card extends ApplicationModel implements Translatable{
 
 	function getAlternativeCards($options=array()) {
 		$options = array_merge(array(
-			"ean" => null, // pro viditelnost
 			"limit" => null,
 		), $options);
 		$cats = $this->getCategories();
@@ -447,8 +430,6 @@ class Card extends ApplicationModel implements Translatable{
 			foreach($this->getCategorySiblings($category) as $c){
 				if(in_array($c->getId(),$ids_taken)){ continue; }
 
-				if (!$c->getFirstProduct(array("ean_or_api_session" => $options["ean"]))){ continue; }
-
 				$ids_taken[] = $c->getId();
 				$alt_cards[] = $c;
 
@@ -459,10 +440,6 @@ class Card extends ApplicationModel implements Translatable{
 		}
 
 		return $alt_cards;
-	}
-
-	function hasFreeDelivery() {
-		return false;
 	}
 
 	function setValues($values,$options=array()) {
@@ -501,7 +478,6 @@ class Card extends ApplicationModel implements Translatable{
 		$options = array_merge(array(
 			"limit" => 50,
 			"offset" => 0,
-			"ean" => null, // ean prihlaseneho/neprihlaseneho uzivatele - muze mit nastavenou viditelnost
 			"order" => null,
 		),$options);
 

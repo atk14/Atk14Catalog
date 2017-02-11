@@ -1,6 +1,7 @@
 <?php
 require_once(__DIR__ . "/translatable.php");
 require_once(__DIR__ . "/rankable.php");
+require_once(__DIR__ . "/i_slug.php");
 
 /**
  * The base class of all the application db table based models.
@@ -8,15 +9,13 @@ require_once(__DIR__ . "/rankable.php");
  */
 class ApplicationModel extends TableRecord{
 
-	static $automatically_sluggable = false; // pouziva tato trida slugy?
-
 	function __construct($table_name = null,$options = array()){
 		parent::__construct($table_name,$options);
 	}
 
 	static function CreateNewRecord($values,$options = array()){
-		$class_name = get_called_class();
-		$obj = new $class_name();
+		global $ATK14_GLOBAL,$HTTP_REQUEST;
+		$obj = new static();
 
 		// there is a auto setting of created_at, created_on or create_date field
 		$v_keys = array_keys($values);
@@ -26,10 +25,14 @@ class ApplicationModel extends TableRecord{
 			}
 		}
 
+		if($obj->hasKey("created_from_addr") && !in_array("created_from_addr",$v_keys)){
+			$values["created_from_addr"] = $HTTP_REQUEST->getRemoteAddr();
+		}
+
 		$tr_strings = array();
-		if($obj instanceof Translatable && $class_name::GetTranslatableFields()){
+		if($obj instanceof Translatable && ($fields = static::GetTranslatableFields())){
 			foreach($values as $k => $v){
-				if(preg_match('/^(.+)_([a-z]{2})$/',$k,$matches) && in_array($matches[1],$class_name::GetTranslatableFields())){
+				if(preg_match('/^(.+)_([a-z]{2})$/',$k,$matches) && in_array($matches[1], $fields)){
 					$tr_strings[$k] = $v;
 					unset($values[$k]);
 					continue;
@@ -38,7 +41,7 @@ class ApplicationModel extends TableRecord{
 		}
 
 		$slugs = array();
-		if($class_name::$automatically_sluggable){
+		if($obj instanceof iSlug){
 			foreach($values as $k => $v){
 				if(preg_match('/^slug_([a-z]{2})$/',$k,$matches)){
 					$slugs[$matches[1]] = $v;
@@ -62,7 +65,7 @@ class ApplicationModel extends TableRecord{
 			$out->setSlug($slugs);
 		}
 
-		if($class_name::$automatically_sluggable){
+		if($obj instanceof iSlug){
 			Slug::ComplementSlugs($out);
 		}
 
@@ -71,25 +74,24 @@ class ApplicationModel extends TableRecord{
 
 	function toArray(){
 		global $ATK14_GLOBAL;
-		$class_name = get_class($this);
 		$defaults = array();
 
-		if(in_array("Translatable", class_implements($class_name)) && $class_name::GetTranslatableFields()){
-			foreach($class_name::GetTranslatableFields() as $k){
-				foreach($ATK14_GLOBAL->getSupportedLangs() as $l){
+		if($this instanceof Translatable && ($fields = static::GetTranslatableFields())){
+			$langs = $ATK14_GLOBAL->getSupportedLangs();
+			foreach($fields as $k){
+				foreach($langs as $l){
 					$defaults["{$k}_$l"] = null;
 				}
 			}
 		}
 
-		$slugs = array();
-		if($class_name::$automatically_sluggable){
+		if($this instanceof iSlug){
 			foreach($ATK14_GLOBAL->getSupportedLangs() as $l){
 				$defaults["slug_$l"] = $this->getSlug($l);
 			}
 		}
 
-		return parent::toArray() + $slugs + Translation::GetObjectStrings($this) + $defaults;
+		return parent::toArray() + Translation::GetObjectStrings($this) + $defaults;
 	}
 
 	/**
@@ -164,8 +166,8 @@ class ApplicationModel extends TableRecord{
 		}
 
 		$slugs = $original_slugs = array();
-		$slug_segment = $this->getSlugSegment();
-		if($class_name::$automatically_sluggable){
+		if($this instanceof iSlug){
+			$slug_segment = $this->getSlugSegment();
 			$original_slugs = $this->getSlugs(); // array("cs" => "vitejte", "en" => "welcome")
 			$slugs = array();
 			foreach($values as $k => $v){
@@ -180,7 +182,7 @@ class ApplicationModel extends TableRecord{
 
 		$out = parent::setValues($values,$options);
 
-		if($class_name::$automatically_sluggable){
+		if($this instanceof iSlug){
 			if($slug_segment!==$this->getSlugSegment()){
 				$slugs += $original_slugs; // je nutne opetovne nastavit i slugy tech jazyku, ktere ve $values nejsou
 			}
@@ -208,9 +210,16 @@ class ApplicationModel extends TableRecord{
 	 * Album::GetInstanceByToken($token2); // null
 	 * </code>
 	 */
-	function getToken($extra_salt = ""){
+	function getToken($options = array()){
+		if(is_string($options)){
+			$options = array("extra_salt" => $options);
+		}
+		$options += array(
+			"salt" => SECRET_TOKEN,
+			"extra_salt" => "",
+		);
 		$length = 32;
-		return $this->getId().".".substr(md5(get_class($this).$this->getId().SECRET_TOKEN.$extra_salt),0,$length);
+		return $this->getId().".".substr(md5(get_class($this).$this->getId().$options["salt"].$options["extra_salt"]),0,$length);
 	}
 
 	/**
@@ -220,11 +229,11 @@ class ApplicationModel extends TableRecord{
 	 *
 	 * @see getToken
 	 */
-	static function GetInstanceByToken($token,$extra_salt = ""){
+	static function GetInstanceByToken($token,$options = array()){
 		$class_name = get_called_class();
 		$ar = explode(".",$token);
 
-		if(isset($ar[0]) && is_numeric($ar[0]) && ($obj = call_user_func(array($class_name,"GetInstanceById"),$ar[0])) && $obj->getToken($extra_salt)==$token){
+		if(isset($ar[0]) && is_numeric($ar[0]) && ($obj = call_user_func(array($class_name,"GetInstanceById"),$ar[0])) && $obj->getToken($options)==$token){
 			return $obj;
 		}
 	}
@@ -263,18 +272,6 @@ class ApplicationModel extends TableRecord{
 		}
 
 		return $slugs;
-	}
-
-	function getSlugSegment(){
-		return '';
-	}
-
-	/**
-	 * echo $product->getSlugPattern("cs"); // Růžové mýdlo
-	 * echo $product->getSlugPattern("en"); // Pink Soap
-	 */
-	function getSlugPattern($lang = null){
-		return '';
 	}
 
 	/**
@@ -319,16 +316,14 @@ class ApplicationModel extends TableRecord{
 	function __call($name,$arguments){
 		global $ATK14_GLOBAL;
 
-		$this_class = get_class($this);
-
-		if(!in_array("Translatable", class_implements($this_class))){
+		if(! $this instanceof Translatable) {
 			return parent::__call($name,$arguments);
 		}
 
 		$_name = new String4($name);
 		if($_name->match("/^get(.+)/",$matches)){
 			$key = $matches[1]->underscore();
-			if(in_array($key,$this_class::GetTranslatableFields())){
+			if(in_array($key,static::GetTranslatableFields())){
 				$tr_strings = Translation::GetObjectStrings($this);
 				$lang = isset($arguments[0]) ? $arguments[0] : $ATK14_GLOBAL->getLang();
 				$k = "{$key}_$lang";
@@ -339,9 +334,26 @@ class ApplicationModel extends TableRecord{
 		return parent::__call($name,$arguments);
 	}
 
-	function destroy(){
-		Translation::DeleteObjectStrings($this);
+	/**
+	 * $book->destroy(); // deleted is set to true
+	 * $book->destroy(true); // the book entry is being deleted
+	 */
+	function destroy($destroy_for_real = null){
+		$false_deletion = false;
+		if($this->hasKey("deleted") && (!isset($destroy_for_real) || $destroy_for_real==false)){
+			if(!$this->g("deleted")){
+				$this->s("deleted",true);
+			}
+			$false_deletion = true;
+		}
+
 		Slug::DeleteObjectSlugs($this);
+
+		if($false_deletion){
+			return;
+		}
+
+		Translation::DeleteObjectStrings($this);
 		return parent::destroy();
 	}
 
@@ -377,7 +389,7 @@ class ApplicationModel extends TableRecord{
 				continue;
 			}
 
-			if($new_rank===$exp_rank){
+			if($new_rank==$exp_rank){
 				$exp_rank++;
 			}
 
@@ -449,4 +461,12 @@ class ApplicationModel extends TableRecord{
 		}
 		return parent::FindFirst($options);
 	}
+
+	function getSlugSegment() { return '';}
+
+	/**
+	 * echo $product->getSlugPattern("cs"); // Růžové mýdlo
+	 * echo $product->getSlugPattern("en"); // Pink Soap
+	 */
+	function getSlugPattern( $lang = null ) { return '';}
 }

@@ -16,7 +16,7 @@ class fullTextSearchQuery{
 		$_custom_error_message = "",
 		$_TREE = array();
 		
-	function fullTextSearchQuery(){
+	function __construct(){
 
 	}
 

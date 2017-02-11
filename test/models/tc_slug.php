@@ -148,7 +148,7 @@ class TcSlug extends TcBase{
 		global $ATK14_GLOBAL;
 		$ATK14_GLOBAL->setValue("lang","cs");
 
-		// Brand ma nastaveno Brand::$automatically_sluggable na true
+		// Brand implements iSlug
 		$dior = Brand::CreateNewRecord(array(
 			"name" => "Dior",
 			"slug_cs" => "parfemy-dior",

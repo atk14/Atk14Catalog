@@ -1,8 +1,6 @@
 <?php
-class Article extends ApplicationModel implements Translatable{
+class Article extends ApplicationModel implements Translatable, iSlug {
 	
-	static $automatically_sluggable = true;
-
 	static function GetTranslatableFields() { return array("title", "body");}
 
 	function getSlugPattern($lang = null){ return $this->getTitle($lang); }
