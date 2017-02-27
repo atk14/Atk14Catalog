@@ -442,6 +442,10 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		return $alt_cards;
 	}
 
+	function getTechnicalSpecifications(){
+		return TechnicalSpecification::FindAll("card_id",$this);
+	}
+
 	function setValues($values,$options=array()) {
 		if (array_key_exists("collection_id", $values)) {
 			$collection_id = $values["collection_id"];

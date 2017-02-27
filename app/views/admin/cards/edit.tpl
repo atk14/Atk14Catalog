@@ -46,3 +46,8 @@
 
 <h2>{t}Accessories{/t}</h2>
 {render partial="cards_list" type="accessories" cards=$card->getAccessories() button_title="{t}Add accessory{/t}" empty_list_message="{t}There are no accessories{/t}"}
+
+<hr>
+
+{render partial="technical_specifications"}
+
