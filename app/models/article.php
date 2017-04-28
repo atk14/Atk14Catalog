@@ -33,7 +33,8 @@ class Article extends ApplicationModel implements Translatable, iSlug {
 
 	protected function _getNextArticle($newer,$tag_required = null){
 		$conditions = $bind_ar = array();
-		$conditions[] = "published_at<NOW()";
+		$conditions[] = "published_at<:now";
+		$bind_ar[":now"] = now();
 		if($newer){
 			$conditions[] = "published_at>:published_at OR (published_at=:published_at AND id>:id)";
 		}else{

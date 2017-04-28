@@ -6,8 +6,8 @@ class NewsController extends ApplicationController{
 	function index(){
 		$this->page_title = _("News");
 		$this->tpl_data["finder"] = Article::Finder(array(
-			"conditions" => "published_at<NOW() AND id IN (SELECT article_id FROM article_tags WHERE tag_id=:tag_id)",
-			"bind_ar" => array(":tag_id" => static::TAG_ID),
+			"conditions" => "published_at<:now AND id IN (SELECT article_id FROM article_tags WHERE tag_id=:tag_id)",
+			"bind_ar" => array(":tag_id" => static::TAG_ID, ":now" => now()),
 			"order_by" => "published_at DESC",
 			"offset" => $this->params->getInt("offset")
 		));
