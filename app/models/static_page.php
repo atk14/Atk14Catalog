@@ -37,9 +37,7 @@ class StaticPage extends ApplicationModel implements Translatable, Rankable, iSl
 		return (string)$this->getParentStaticPageId();
 	}
 
-	function getSlugPattern($lang = null){
-		return $this->getTitle($lang);
-	}
+	function getSlugPattern($lang){ return $this->g("title_$lang"); }
 
 	function getPath($lang = null){
 		$slugs = array($this->getSlug($lang));

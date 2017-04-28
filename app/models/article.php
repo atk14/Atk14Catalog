@@ -3,7 +3,7 @@ class Article extends ApplicationModel implements Translatable, iSlug {
 	
 	static function GetTranslatableFields() { return array("title", "body");}
 
-	function getSlugPattern($lang = null){ return $this->getTitle($lang); }
+	function getSlugPattern($lang){ return $this->g("title_$lang"); }
 
 	function isPublished(){
 		return strtotime($this->getPublishedAt())<time();

@@ -305,6 +305,21 @@ class ApplicationModel extends TableRecord{
 		return Cache::Get("$class_name",$record_id);
 	}
 
+	function getValue($field_name){
+		// getting value of a translatable field
+		if($this instanceof Translatable && preg_match('/^(.+)_([a-z]{2})$/',$field_name,$matches)){
+			$f = $matches[1]; // e.g. "title"
+			$lang = $matches[2]; // e.g. "en"
+			
+			if(in_array($f,static::GetTranslatableFields())){
+				$tr_strings = Translation::GetObjectStrings($this);
+				return isset($tr_strings[$field_name]) ? $tr_strings[$field_name] : null;
+			}
+		}
+
+		return parent::getValue($field_name);
+	}
+
 	/**
 	 * Tento __call zachytava tato volani:
 	 *
@@ -492,5 +507,5 @@ class ApplicationModel extends TableRecord{
 	 * echo $product->getSlugPattern("cs"); // Růžové mýdlo
 	 * echo $product->getSlugPattern("en"); // Pink Soap
 	 */
-	function getSlugPattern( $lang = null ) { return '';}
+	function getSlugPattern($lang){ return ''; }
 }
