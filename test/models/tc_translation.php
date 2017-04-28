@@ -80,14 +80,14 @@ class TcTranslation extends TcBase{
 			"description_en" => "Medicine that doesn't work"
 		));
 		$this->assertEquals("Medicine that doesn't work",$brand->getDescription("en"));
-		$this->assertEquals("Medicine that doesn't work",$brand->getDescription("cs"));
+		$this->assertEquals("Medicine that doesn't work",$brand->getDescription("cs")); // english is the fallback language for czech
 
 		$brand = Brand::CreateNewRecord(array(
 			"name" => "Snake Oil",
 			"description_cs" => "Medicína, která nefunguje!",
 			"description_en" => ""
 		));
-		$this->assertEquals("",$brand->getDescription("en"));
+		$this->assertEquals("",$brand->getDescription("en")); // no fallback language for english
 		$this->assertEquals("Medicína, která nefunguje!",$brand->getDescription("cs"));
 	}
 
