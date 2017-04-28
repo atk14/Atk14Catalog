@@ -72,6 +72,23 @@ class TcTranslation extends TcBase{
 		// -- po smazani zustanou data pro ostatni objekty nedknuta
 		$brand = Brand::GetInstanceById($brand_atk14->getId());
 		$this->assertEquals("PHP framework pro nebojácné chlapce a děvčata",$brand->getDescription());
+
+		// fallback language, see ../../config/locale.yml
+		$brand = Brand::CreateNewRecord(array(
+			"name" => "Snake Oil",
+			"description_cs" => "",
+			"description_en" => "Medicine that doesn't work"
+		));
+		$this->assertEquals("Medicine that doesn't work",$brand->getDescription("en"));
+		$this->assertEquals("Medicine that doesn't work",$brand->getDescription("cs"));
+
+		$brand = Brand::CreateNewRecord(array(
+			"name" => "Snake Oil",
+			"description_cs" => "Medicína, která nefunguje!",
+			"description_en" => ""
+		));
+		$this->assertEquals("",$brand->getDescription("en"));
+		$this->assertEquals("Medicína, která nefunguje!",$brand->getDescription("cs"));
 	}
 
 

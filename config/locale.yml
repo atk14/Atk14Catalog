@@ -6,3 +6,4 @@ en:
 
 cs:
   LANG: cs_CZ.UTF-8
+  fallback: "en" # for multi language objects it's possible to specify a fallback language

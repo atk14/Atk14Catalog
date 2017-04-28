@@ -327,6 +327,30 @@ class ApplicationModel extends TableRecord{
 				$tr_strings = Translation::GetObjectStrings($this);
 				$lang = isset($arguments[0]) ? $arguments[0] : $ATK14_GLOBAL->getLang();
 				$k = "{$key}_$lang";
+
+				// Fallback handling
+				//
+				// In config/locale.yml the fallback language could be specified this way:
+				//
+				//  en:
+				//    LANG: en_US.UTF-8
+				//
+				//  cs:
+				//    LANG: cs_CZ.UTF-8
+				//    fallback: "en"
+				//
+				//  sk:
+				//    LANG: sk_SK.UTF-8
+				//    fallback: "cs"
+				//
+				if(!isset($tr_strings[$k]) || !strlen($tr_strings[$k])){
+					$langs = $ATK14_GLOBAL->getConfig("locale");
+					$fallback = isset($langs[$lang]["fallback"]) ? $langs[$lang]["fallback"] : "";
+					if($fallback && $fallback!=$lang){
+						return self::__call($name,[$fallback]);
+					}
+				}
+
 				return isset($tr_strings[$k]) ? $tr_strings[$k] : null;
 			}
 		}
