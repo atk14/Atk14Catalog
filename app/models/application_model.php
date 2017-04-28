@@ -347,7 +347,7 @@ class ApplicationModel extends TableRecord{
 					$langs = $ATK14_GLOBAL->getConfig("locale");
 					$fallback = isset($langs[$lang]["fallback"]) ? $langs[$lang]["fallback"] : "";
 					if($fallback && $fallback!=$lang){
-						return self::__call($name,[$fallback]);
+						return self::__call($name,array($fallback));
 					}
 				}
 
