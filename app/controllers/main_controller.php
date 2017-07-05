@@ -13,6 +13,7 @@ class MainController extends ApplicationController{
 
 	function contact(){
 		$this->page_title = _("Contact");
+		$this->breadcrumbs[] = _("Contact");
 
 		if($this->logged_user){
 			$this->form->set_initial(array(

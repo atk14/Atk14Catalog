@@ -1,11 +1,3 @@
-<ol class="breadcrumb">
-	<li>{a action="main/index"}{t}Homepage{/t}{/a}</li>
-		{foreach $parent_categories as $pc}
-			<li>{a path=$pc.path}{$pc.name}{/a}</li>
-		{/foreach}
-	<li class="active">{$category->getName()}</li>
-</ol>
-
 <h1>{$page_title} ({$cards_finder->getRecordsCount()})</h1>
 
 <p class="lead">{$category->getTeaser()}</p>
