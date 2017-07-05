@@ -11,6 +11,7 @@ public/dist
 public/admin/dist
 vendor/*
 composer.lock
+local_config/*
 !i/.htaccess
 !i/error.php
 i/*
