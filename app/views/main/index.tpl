@@ -28,11 +28,11 @@
 		<h3>{t}Installation{/t}</h3>
 
 		<p>
-			{t escape=no}If you are brave enough to install the Skelet on your computer, check out <a href="https://github.com/atk14/Atk14Skelet/blob/master/README.md#installation">the installation instrunction.</a>{/t}
+			{t escape=no}If you are brave enough to install the Catalog on your computer, check out <a href="https://github.com/atk14/Atk14Catalog/blob/master/README.md#installation">the installation instrunction.</a>{/t}
 		</p>
 
 		<p>
-			{t escape=no}If you want to help us to improve the Skelet, <a href="https://github.com/atk14/Atk14Skelet">fork it on GitHub.</a>{/t}
+			{t escape=no}If you want to help us to improve the Catalog, <a href="https://github.com/atk14/Atk14Catalog">fork it on GitHub.</a>{/t}
 		</p>
 
 
