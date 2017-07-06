@@ -10,7 +10,7 @@
 			<li>{a controller="categories"}List of categories{/a}</li>
 			<li>{a controller="brands"}List of brands{/a}</li>
 			<li>{a controller="collections"}List of collections{/a}</li>
-			<li>{a action="static_pages/detail" id=1}Static pages with a hierarchical structure{/a}</li>
+			<li>{a action="pages/detail" id=1}Pages with a hierarchical structure{/a}</li>
 			<li>{a action="main/contact"}Contact page with fast contact form{/a}</li>
 			<li>{a action="news/index"}{t}News section{/t}{/a}</li>
 			<li>{a action="users/create_new"}{t}User registration{/t}{/a} ({t}with strong blowfish passwords hashing{/t})</li>

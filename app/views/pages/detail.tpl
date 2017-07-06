@@ -1,11 +1,11 @@
-<h1>{$static_page->getTitle()}</h1>
+<h1>{$page->getTitle()}</h1>
 
 <div>
-{!$static_page->getTeaser()}
+{!$page->getTeaser()}
 </div>
 
 <div>
-{!$static_page->getBody()|markdown}
+{!$page->getBody()|markdown}
 </div>
 
 {if $child_pages}

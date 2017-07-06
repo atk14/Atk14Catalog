@@ -153,8 +153,8 @@ class ApplicationBaseController extends Atk14Controller{
 	 *
 	 * <code>
 	 *	 $this->_find("user");
-	 *	 $this->_find("static_page","page_id");
-	 *	 $this->_find("static_page",array(
+	 *	 $this->_find("page","page_id");
+	 *	 $this->_find("page",array(
 	 *			"key" => "page_id",
 	 *			"execute_error404_if_not_found" => false,
 	 *	 ));
@@ -189,7 +189,7 @@ class ApplicationBaseController extends Atk14Controller{
 		);
 
 		if(!$options["class_name"]){
-			$options["class_name"] = String4::ToObject($object_name)->camelize()->toString(); // static_page -> StaticPage
+			$options["class_name"] = String4::ToObject($object_name)->camelize()->toString(); // page -> Page
 		}
 
 		$key = $options["key"];

@@ -1,4 +1,4 @@
 <?php
-class CreateNewForm extends StaticPagesForm {
+class CreateNewForm extends PagesForm {
 
 }

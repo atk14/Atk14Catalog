@@ -1,7 +1,7 @@
 <?php
-class FulfillingStaticPagesMigration extends Atk14Migration{
+class FulfillingPagesMigration extends Atk14Migration{
 	function up(){
-		$about = StaticPage::CreateNewRecord(array(
+		$about = Page::CreateNewRecord(array(
 			"id" => 1, // we just need that the page #1 is the About Page
 
 			"title_en" => "About ATK14 Skelet",
@@ -13,10 +13,10 @@ class FulfillingStaticPagesMigration extends Atk14Migration{
 			"body_cs" => "Všechno to začalo, když jeden mladý muž potkal...",
 		));
 
-		$this->dbmole->doQuery("ALTER SEQUENCE seq_static_pages RESTART WITH 2");
+		$this->dbmole->doQuery("ALTER SEQUENCE seq_pages RESTART WITH 2");
 
-		$media = StaticPage::CreateNewRecord(array(
-			"parent_static_page_id" => $about,
+		$media = Page::CreateNewRecord(array(
+			"parent_page_id" => $about,
 			
 			"title_en" => "For Media",
 			"body_en" => "Currently we have no information for media.",
@@ -25,8 +25,8 @@ class FulfillingStaticPagesMigration extends Atk14Migration{
 			"body_cs" => "V této chvíli nemáme pro média žádné informace."
 		));
 
-		$contact_data = StaticPage::CreateNewRecord(array(
-			"parent_static_page_id" => $about,
+		$contact_data = Page::CreateNewRecord(array(
+			"parent_page_id" => $about,
 			
 			"title_en" => "Contact Data",
 			"body_en" => trim("

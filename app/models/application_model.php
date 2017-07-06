@@ -251,9 +251,9 @@ class ApplicationModel extends TableRecord{
 	}
 
 	/**
-	 * $slugs = $static_page->getSlugs(); // array("cs" => "vitejte", "en" => "welcome")
-	 * $slugs = $static_page->getSlugs(array("prefix" => "slug_")); // array("slug_cs" => "vitejte", "slug_en" => "welcome")
-	 * $slugs = $static_page->getSlugs(array("segment" => "123"));
+	 * $slugs = $page->getSlugs(); // array("cs" => "vitejte", "en" => "welcome")
+	 * $slugs = $page->getSlugs(array("prefix" => "slug_")); // array("slug_cs" => "vitejte", "slug_en" => "welcome")
+	 * $slugs = $page->getSlugs(array("segment" => "123"));
 	 */
 	function getSlugs($options = array()){
 		global $ATK14_GLOBAL;

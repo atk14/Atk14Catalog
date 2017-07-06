@@ -1,7 +1,7 @@
 {*
  * Vyrenderuje seznam priloh pro dany object.
  *
- * {render partial="shared/attachments" object=$static_page}
+ * {render partial="shared/attachments" object=$page}
  *}
 
 <h2>{t}Attachments{/t}</h2>

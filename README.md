@@ -13,7 +13,7 @@ The Catalog contains mainly
 * List of categories
 * List of brands
 * List of collections
-* Static pages with a hierarchical structure
+* Pages with a hierarchical structure
 * Contact page with fast contact form
 * News section
 * User registration (with strong blowfish passwords hashing)

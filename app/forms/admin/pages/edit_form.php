@@ -1,5 +1,5 @@
 <?php
-class EditForm extends StaticPagesForm {
+class EditForm extends PagesForm {
 
 	function set_up() {
 		parent::set_up();

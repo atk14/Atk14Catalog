@@ -2,7 +2,7 @@
 CREATE SEQUENCE seq_slugs;
 CREATE TABLE slugs (
 	id INT PRIMARY KEY DEFAULT NEXTVAL('seq_slugs'),
-	table_name VARCHAR NOT NULL, -- static_pages, categories, brands...
+	table_name VARCHAR NOT NULL, -- pages, categories, brands...
 	record_id INT NOT NULL,
 	segment VARCHAR NOT NULL DEFAULT '', -- a differentiation for the uniqueness
 	slug VARCHAR NOT NULL, -- about-us, our-vision, our-mission

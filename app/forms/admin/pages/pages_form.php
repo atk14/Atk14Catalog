@@ -1,5 +1,5 @@
 <?php
-class StaticPagesForm extends AdminForm {
+class PagesForm extends AdminForm {
 	function set_up() {
 		$this->add_translatable_field("title", new CharField(array(
 			"label" => _("Title"),
@@ -12,18 +12,18 @@ class StaticPagesForm extends AdminForm {
 			"label" => _("Body"),
 		)));
 
-		$this->add_field("parent_static_page_id", new StaticPageField(array(
+		$this->add_field("parent_page_id", new PageField(array(
 			"label" => _("Parent page"),
 			"required" => false,
-			"static_page_id" => isset($this->controller->static_page) ? $this->controller->static_page : null,
+			"page_id" => isset($this->controller->page) ? $this->controller->page : null,
 		)));
 	}
 
 	function clean() {
 		$d = $this->cleaned_data;
 
-		if (isset($d["parent_static_page_id"]) && isset($this->controller->static_page) && ($d["parent_static_page_id"]->getId()==$this->controller->static_page->getId())) {
-			$this->set_error("parent_static_page_id", _("Pro aktuální stránku nelze použít stejnou stránku jako nadřízenou."));
+		if (isset($d["parent_page_id"]) && isset($this->controller->page) && ($d["parent_page_id"]->getId()==$this->controller->page->getId())) {
+			$this->set_error("parent_page_id", _("Pro aktuální stránku nelze použít stejnou stránku jako nadřízenou."));
 		}
 		return array(null, $d);
 	}
