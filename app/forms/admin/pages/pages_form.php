@@ -1,13 +1,16 @@
 <?php
 class PagesForm extends AdminForm {
 	function set_up() {
+
 		$this->add_translatable_field("title", new CharField(array(
 			"label" => _("Title"),
 		)));
+
 		$this->add_translatable_field("teaser", new MarkdownField(array(
 			"label" => _("Teaser"),
 			"required" => false,
 		)));
+
 		$this->add_translatable_field("body", new MarkdownField(array(
 			"label" => _("Body"),
 		)));
@@ -16,6 +19,14 @@ class PagesForm extends AdminForm {
 			"label" => _("Parent page"),
 			"required" => false,
 			"page_id" => isset($this->controller->page) ? $this->controller->page : null,
+		)));
+
+		$this->add_field("code", new CharField(array(
+			"label" => _("Code"),
+			"null_empty_output" => true,
+			"max_length" => 255,
+			"required" => false,
+			"help_text" => _("An alternative key. Leave empty if you are not sure.")
 		)));
 	}
 

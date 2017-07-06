@@ -2,6 +2,8 @@ CREATE SEQUENCE seq_pages;
 CREATE TABLE pages (
 	id INT PRIMARY KEY DEFAULT NEXTVAL('seq_pages'),
 	--
+	code VARCHAR(255), -- alternative key
+	--
 	parent_page_id INT,
 	rank INT NOT NULL DEFAULT 999,
 	--
@@ -15,3 +17,4 @@ CREATE TABLE pages (
 	CONSTRAINT fk_pages_cr_users FOREIGN KEY (created_by_user_id) REFERENCES users,
 	CONSTRAINT fk_pages_upd_users FOREIGN KEY (updated_by_user_id) REFERENCES users
 );
+CREATE UNIQUE INDEX unq_pages_code ON pages (code);
