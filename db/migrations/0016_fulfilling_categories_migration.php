@@ -3,8 +3,8 @@ class FulfillingCategoriesMigration extends ApplicationMigration{
 	function up(){
 		$yml = '
 ---
-- en: Toys, Children & Baby | Extraordinary toys for your extraordinary child
-  cs: Hračky, děti a miminka | Mimořádné hračky pro vaše mimořádné dítě
+- en: Toys, Children & Babies | Extraordinary toys for your extraordinary children
+  cs: Hračky, děti a miminka | Mimořádné hračky pro vaše mimořádné děti
   image_url: http://i.pupiq.net/i/65/65/a40/1a40/1489x1289/Tfmb1G_800x693_0aab5602365b4819.jpg
   sub:
   - en: Electronic Toys
