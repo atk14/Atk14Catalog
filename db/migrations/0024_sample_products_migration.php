@@ -23,7 +23,7 @@ class SampleProductsMigration extends ApplicationMigration {
 
 		$section = CardSection::CreateNewRecord(array(
 			'card_id' => $card,
-			'card_section_type_id' => 6,
+			'card_section_type_id' => CardSectionType::FindByCode("info"),
   		'body_cs' => '### Děj
 
 Kniha se zaměřuje na chlapce jménem Bastian Balthazar Bux, který v malém knihkupectví ukradne knihu s názvem Nekonečný příběh. Bastian většinou vystupuje jako čtenář příběhu jiného chlapce Átreje v zemi Fantazie - místa, kde se odehrávají příběhy lidské představivosti a setkávají se postavy z nich. Jak kniha pokračuje, vychází najevo, že někteří obyvatelé Fantázie jsou si vědomi Bastiana a že ten je klíčem k úkolu (zachránit Fantazii), o kterém zatím pouze čte. První část knihy je totiž v podstatě jen sledování cesty hrdiny Átreje. Skrz knihu se Bastian dostává do Fantázie a začíná tam hrát aktivní roli. Tak je zdramatizován zážitek „zachycení“ příběhem. V druhé polovině knihy se rozvíjí řada psychologicky bohatých témat: Bastian se musí vyrovnat s následky svých činů ve světě, který stvořil svými přáními, čelit své temné straně a vrátit se zpět do skutečného světa.
@@ -62,7 +62,7 @@ The story Bastian reads is set in the magical land of Fantastica, an unrealistic
 
 		$section = CardSection::CreateNewRecord(array(
 			'card_id' => $card,
-			'card_section_type_id' => 4,
+			'card_section_type_id' => CardSectionType::FindByCode("documentation"),
 			'name_cs' => 'Ukázka z knihy',
 			'name_en' => 'Book sample',
 		));
@@ -77,7 +77,7 @@ The story Bastian reads is set in the magical land of Fantastica, an unrealistic
 
 		$section = CardSection::CreateNewRecord(array(
 			'card_id' => $card,
-			'card_section_type_id' => 2,
+			'card_section_type_id' => CardSectionType::FindByCode("tech_spec"),
 			'body_cs' => '* šířka: 12cm
 * výška: 17cm',
 			'body_en' => '* width: 4.7 in
