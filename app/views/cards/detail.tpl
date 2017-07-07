@@ -33,7 +33,7 @@
 	{render partial="shared/attachments" object=$section}
 
 	{*** Variants ***}
-	{if $section->getCardSectionTypeId()==CardSectionType::ID_VARIANTS}
+	{if $section->getTypeCode()=="variants"}
 		<ul>
 			{render partial="product_item" from=$card->getProducts() item=product}
 		</ul>

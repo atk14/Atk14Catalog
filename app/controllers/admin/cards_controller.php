@@ -78,7 +78,7 @@ class CardsController extends AdminController{
 
 			if($section_data){
 				$section_data["card_id"] = $product_card;
-				$section_data["card_section_type_id"] = CardSectionType::ID_INFORMATION;
+				$section_data["card_section_type_id"] = CardSectionType::FindByCode("information");
 				CardSection::CreateNewRecord($section_data);
 			}
 

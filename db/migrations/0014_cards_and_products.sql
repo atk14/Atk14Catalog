@@ -26,14 +26,17 @@ CREATE TABLE cards (
 -- textual information for cards
 CREATE TABLE card_section_types (
 	id INT PRIMARY KEY,
-	name VARCHAR
+	name VARCHAR(255),
+	code VARCHAR(255) NOT NULL
 );
-INSERT INTO card_section_types VALUES (1,'Variants');
-INSERT INTO card_section_types VALUES (2,'Technical specification');
--- INSERT INTO card_section_types VALUES (3,'Awards'); -- reserved :)
-INSERT INTO card_section_types VALUES (4,'Product brochure');
-INSERT INTO card_section_types VALUES (5,'Other parts of the collection');
-INSERT INTO card_section_types VALUES (6,'Information');
+CREATE UNIQUE INDEX unq_cardsectiontypes_code ON card_section_types (code);
+
+INSERT INTO card_section_types VALUES (1,'Variants','variants');
+INSERT INTO card_section_types VALUES (2,'Technical specification','tech_spec');
+-- INSERT INTO card_section_types VALUES (3,'Awards','awards'); -- reserved :)
+INSERT INTO card_section_types VALUES (4,'Product brochure','documentation');
+INSERT INTO card_section_types VALUES (5,'Other parts of the collection','collection');
+INSERT INTO card_section_types VALUES (6,'Information','info');
 --
 CREATE SEQUENCE seq_card_sections;
 CREATE TABLE card_sections (

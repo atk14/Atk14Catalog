@@ -1,5 +1,6 @@
 <?php
 class CardSection extends ApplicationModel implements Translatable, Rankable{
+
 	static function GetTranslatableFields(){ return array("name","body"); }
 
 	function getImages(){
@@ -22,5 +23,13 @@ class CardSection extends ApplicationModel implements Translatable, Rankable{
 		return $this->_setRank($rank,array(
 			"card_id" => $this->getCardId(),
 		));
+	}
+
+	/**
+	 *
+	 *	echo $section->getTypeCode(); // e.g. "information"
+	 */
+	function getTypeCode(){
+		return $this->getCardSectionType()->getCode();
 	}
 }
