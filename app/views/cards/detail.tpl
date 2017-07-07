@@ -1,6 +1,6 @@
 {foreach $card->getCategories() as $category}
 	<ol class="breadcrumb">
-		<li>{a action="main/index"}{t}Homepage{/t}{/a}</li>
+		<li>{a action="main/index"}{"ATK14_APPLICATION_NAME"|dump_constant}{/a}</li>
 			{foreach $category->getPathOfCategories() as $c}
 				<li>
 					{a action="categories/detail" path=$c->getPath()}{$c->getName()}{/a}
