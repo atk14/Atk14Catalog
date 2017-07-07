@@ -43,8 +43,9 @@ class FulfillingCategoriesMigration extends ApplicationMigration{
 
 		// Creating an alias: "Toys, Children & Baby / Books" -> "Books / Children"
 		$lang = "en";
-		$parent = Category::GetInstanceByPath("toys-children-baby",$lang);
+		$parent = Category::GetInstanceByPath("toys-children-babies",$lang);
 		$category_to_pointing_to = Category::GetInstanceByPath("books/children",$lang);
+		myAssert(is_object($parent) && is_object($category_to_pointing_to));
 		$alias = $this->_createCategory(array(
 			"name_en" => "Books",
 			"name_cs" => "Knihy",
