@@ -26,10 +26,13 @@ The Catalog contains mainly
 Installation
 ------------
 
+3rd party libraries are being installed using the Composer. If you don't have the Composer installed, visit http://www.getcomposer.org/
+
     git clone https://github.com/atk14/Atk14Catalog.git
     cd Atk14Skelet
     git submodule init
     git submodule update
+    composer update
     ./scripts/create_database
     ./scripts/migrate
 
