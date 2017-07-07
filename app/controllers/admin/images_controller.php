@@ -25,7 +25,7 @@ class ImagesController extends AdminController{
 		$this->_save_return_uri();
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
 
-			$pupiq = $d["file"]; unset($d["file"]);
+			$pupiq = $d["url"];
 
 			$d["table_name"] = $this->table_name;
 			$d["record_id"] = $this->record_id;

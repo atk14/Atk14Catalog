@@ -1,5 +1,6 @@
 <?php
 class CreateNewForm extends CardsForm {
+
 	function set_up() {
 		$this->_add_fields(array(
 			"add_catalog_id_field" => true,

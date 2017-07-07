@@ -1,5 +1,6 @@
 <?php
 class CardsForm extends AdminForm{
+
 	function _add_fields($options = array()) {
 		$options += array(
 			"add_catalog_id_field" => true,
