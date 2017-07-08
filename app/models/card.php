@@ -68,8 +68,8 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		return $out;
 	}
 
-	function getSlugPattern($lang=null){
-		return sprintf("%s-%d", $this->getName($lang), $this->getId());
+	function getSlugPattern($lang){
+		return sprintf("%s-%d", $this->g("name_$lang"), $this->getId());
 	}
 
 	function getImages($options = array()){

@@ -13,7 +13,7 @@ The Catalog contains mainly
 * List of categories
 * List of brands
 * List of collections
-* Static pages with a hierarchical structure
+* Pages with a hierarchical structure
 * Contact page with fast contact form
 * News section
 * User registration (with strong blowfish passwords hashing)
@@ -26,22 +26,22 @@ The Catalog contains mainly
 Installation
 ------------
 
-```bash
-git clone https://github.com/atk14/Atk14Catalog.git
-cd Atk14Skelet
-git submodule init
-git submodule update
-./scripts/create_database
-./scripts/migrate
-```
+3rd party libraries are being installed using the Composer. If you don't have the Composer installed, visit http://www.getcomposer.org/
+
+    git clone https://github.com/atk14/Atk14Catalog.git
+    cd Atk14Skelet
+    git submodule init
+    git submodule update
+    composer update
+    ./scripts/create_database
+    ./scripts/migrate
+
 If you are experiencing a trouble make sure that all requirements are met: <http://book.atk14.net/czech/installation%3Arequirements/>
 
 Installing optional 3rd party libraries
 ---------------------------------------
 
-```bash
-composer update
-```
+    composer update
 
 If you don't have the Composer installed, visit http://www.getcomposer.org/
 
@@ -50,9 +50,7 @@ Starting the catalog
 
 Start the development server
 
-```bash
-./scripts/server
-```
+    ./scripts/server
 
 and you may find the running catalog on http://localhost:8000/
 
@@ -61,19 +59,15 @@ Installing the catalog as a virtual host on Apache web server
 
 This is optional step. If you have Apache installed, you may want to install the application to a virtual server.
 
-```bash
-./scripts/virtual_host_configuration -f
-sudo service apache2 reload
-chmod 777 tmp log
-```
+    ./scripts/virtual_host_configuration -f
+    sudo service apache2 reload
+    chmod 777 tmp log
 
 Visit <http://atk14catalog.localhost/>. Is it running? Great!
 
 If you have a trouble run the following command and follow instructions.
 
-```bash
-./scripts/virtual_host_configuration
-```
+    ./scripts/virtual_host_configuration
 
 Front-end Assets Installation
 -----------------------------
@@ -82,9 +76,7 @@ Front-end Assets Installation
 
 With [Node.js](http://nodejs.org) and npm installed, run the following one liner from the root of your Skelet application:
 
-```bash
-$ npm install -g gulp && npm install -g bower && npm install && bower install
-```
+    npm install -g gulp && npm install -g bower && npm install && bower install
 
 This will install all the tools you will need to serve and build your front-end assets.
 
@@ -92,15 +84,11 @@ This will install all the tools you will need to serve and build your front-end 
 
 Run initial Gulp build process for presentation and admininstration.
 
-```bash
-$ gulp && gulp admin
-```
+    gulp && gulp admin
 
 ### Serve / watch
 
-```bash
-$ gulp serve
-```
+    gulp serve
 
 This outputs an IP address you can use to locally test and another that can be used on devices connected to your network.
 

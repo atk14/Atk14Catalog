@@ -10,8 +10,7 @@
 			<li>{a controller="categories"}List of categories{/a}</li>
 			<li>{a controller="brands"}List of brands{/a}</li>
 			<li>{a controller="collections"}List of collections{/a}</li>
-			<li>{a action="static_pages/detail" id=1}Static pages with a hierarchical structure{/a}</li>
-			<li>{a action="main/about"}{t}About page{/t}{/a}</li>
+			<li>{a action="pages/detail" id=1}Pages with a hierarchical structure{/a}</li>
 			<li>{a action="main/contact"}Contact page with fast contact form{/a}</li>
 			<li>{a action="news/index"}{t}News section{/t}{/a}</li>
 			<li>{a action="users/create_new"}{t}User registration{/t}{/a} ({t}with strong blowfish passwords hashing{/t})</li>
@@ -29,11 +28,11 @@
 		<h3>{t}Installation{/t}</h3>
 
 		<p>
-			{t escape=no}If you are brave enough to install the Skelet on your computer, check out <a href="https://github.com/atk14/Atk14Skelet/blob/master/README.md#installation">the installation instrunction.</a>{/t}
+			{t escape=no}If you are brave enough to install the Catalog on your computer, check out <a href="https://github.com/atk14/Atk14Catalog/blob/master/README.md#installation">the installation instrunction.</a>{/t}
 		</p>
 
 		<p>
-			{t escape=no}If you want to help us to improve the Skelet, <a href="https://github.com/atk14/Atk14Skelet">fork it on GitHub.</a>{/t}
+			{t escape=no}If you want to help us to improve the Catalog, <a href="https://github.com/atk14/Atk14Catalog">fork it on GitHub.</a>{/t}
 		</p>
 
 

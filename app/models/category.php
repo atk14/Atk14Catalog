@@ -123,9 +123,7 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 		return (string)$this->getParentCategoryId();
 	}
 
-	function getSlugPattern($lang = null){
-		return $this->getName($lang);
-	}
+	function getSlugPattern($lang){ return $this->g("name_$lang"); }
 
 	function getParentCategory(){ return Cache::Get("Category",$this->getParentCategoryId()); }
 

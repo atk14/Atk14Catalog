@@ -1,6 +1,6 @@
 <?php
 /**
- * Z {link_to controller="static_pages" action="detail" id="4"}
+ * Z {link_to controller="pages" action="detail" id="4"}
  * udela
  * /zvitezili-jsme-v-soutezi-prodejna-roku-2012/
  */

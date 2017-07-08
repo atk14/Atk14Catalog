@@ -26,7 +26,7 @@ class AdminController extends ApplicationBaseController{
 		foreach(array(
 			array(_("Welcome screen"),			"main"),
 			array(_("Articles"),						"articles"),
-			array(_("Static pages"),				"static_pages"),
+			array(_("Pages"),								"pages"),
 			array(_("Tags"),								"tags"),
 			array(_("Users"),								"users"),
 			array(_("Products"),						"cards,products,card_sections,related_cards,consumables,accessories"),

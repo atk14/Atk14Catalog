@@ -1,4 +1,5 @@
 <div class="row">
+	{render partial="shared/langswitch"}
 	<ul class="nav nav-pills pull-right">
 		{if $logged_user}
 			{capture assign=user_profile_url}{link_to namespace="" controller=users action="detail"}{/capture}

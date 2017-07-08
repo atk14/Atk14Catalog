@@ -10,12 +10,12 @@ class BrandsFillingMigration extends ApplicationMigration{
 			"description_en" => $this->_lipsumParagraphs(),
 			"description_cs" => $this->_lipsumParagraphs(),
 
-			"logo_url" => "http://www.fillmurray.com/400/400"
+			"logo_url" => "http://i.pupiq.net/i/65/65/a3c/1a3c/330x250/TBIaGW_330x250_ef0d908d21a09b35.jpg"
 		));
 		Image::CreateNewRecord(array(
 			"table_name" => "brands",
 			"record_id" => $b,
-			"url" => "http://www.fillmurray.com/800/800",
+			"url" => "http://i.pupiq.net/i/65/65/a3d/1a3d/867x1024/UMGcNn_800x945_20d6ef34dd635fdd.jpg",
 
 			"name_en" => "Good choice",
 			"description_en" => "Snake Oil Co. is a good choice. There is not question about it.",
@@ -26,7 +26,7 @@ class BrandsFillingMigration extends ApplicationMigration{
 		Image::CreateNewRecord(array(
 			"table_name" => "brands",
 			"record_id" => $b,
-			"url" => "http://www.fillmurray.com/g/800/800",
+			"url" => "http://i.pupiq.net/i/65/65/a3e/1a3e/1024x683/qcBwAP_800x534_80aa59eb71cfa266.jpg",
 
 			"name_en" => "Huge variety of goods",
 			"description_en" => "Snake Oil Co. offers huge variery of goods.",
@@ -44,7 +44,7 @@ class BrandsFillingMigration extends ApplicationMigration{
 			"description_en" => $this->_lipsumParagraphs(),
 			"description_cs" => $this->_lipsumParagraphs(),
 
-			"logo_url" => "http://www.fillmurray.com/g/400/400"
+			"logo_url" => "http://i.pupiq.net/i/65/65/a3f/1a3f/960x840/G6rbqH_800x700_e713550de0b44678.jpg"
 		));
 	}
 }

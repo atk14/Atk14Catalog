@@ -1,17 +1,17 @@
 <?php
-class StaticPageField extends ChoiceField {
+class PageField extends ChoiceField {
 	function __construct($options=array()) {
-		$choices = array("" => "-- "._("static page")." --");
+		$choices = array("" => "-- "._("page")." --");
 		$conditions = $bind_ar = array();
-		if ($options["static_page_id"]) {
-			$conditions[] = "id!=:static_page_id";
-			$bind_ar[":static_page_id"] = $options["static_page_id"];
+		if ($options["page_id"]) {
+			$conditions[] = "id!=:page_id";
+			$bind_ar[":page_id"] = $options["page_id"];
 		};
 
-		foreach(StaticPage::FindAll(array(
+		foreach(Page::FindAll(array(
 			"conditions" => $conditions,
 			"bind_ar" => $bind_ar,
-			"order_by" => Translation::BuildOrderSqlForTranslatableField("static_pages","title")
+			"order_by" => Translation::BuildOrderSqlForTranslatableField("pages","title")
 		)) as $_b) {
 			$choices[$_b->getId()] = $_b->getTitle();
 		}
@@ -28,8 +28,8 @@ class StaticPageField extends ChoiceField {
 		if (is_null($value)) {
 			return array(null,null);
 		}
-		if (is_null($_sp = StaticPage::FindById($value))) {
-			return array(_("There is no such static page"), null);
+		if (is_null($_sp = Page::FindById($value))) {
+			return array(_("There is no such page"), null);
 		}
 		return array(null, $_sp);
 	}

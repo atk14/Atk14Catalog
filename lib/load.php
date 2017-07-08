@@ -18,3 +18,5 @@ if(
 ){
 	Tracy\Debugger::enable(PRODUCTION, __DIR__ . '/../log/',ATK14_ADMIN_EMAIL);
 }
+
+require(__DIR__."/functions.php");

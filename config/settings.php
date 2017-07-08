@@ -27,7 +27,7 @@ define("ATK14_HTTP_HOST",PRODUCTION ? "catalog.atk14.net" : "atk14catalog.localh
 define("DBMOLE_COLLECT_STATICTICS",DEVELOPMENT);
 date_default_timezone_set('Europe/Prague');
 
-@define("PUPIQ_API_KEY","123.abcdefghijklmnopqrstuvwxyz");
+define("PUPIQ_API_KEY","101.DemoApiKeyForAccountWithLimitedFunctions");
 
 // If you don't want to let users to register freely (e.g. your app is an closed alpha),
 // set the constant INVITATION_CODE_FOR_USER_REGISTRATION.

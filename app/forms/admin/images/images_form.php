@@ -1,6 +1,10 @@
 <?php
 class ImagesForm extends AdminForm{
 	function set_up(){
+		$this->add_field("url", new PupiqImageField(array(
+			"label" => _("Image"),
+		)));
+
 		$this->add_translatable_field("name",new CharField(array(
 			"label "=> _("Title"),
 			"required" => false,
