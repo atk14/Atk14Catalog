@@ -15,7 +15,7 @@ class TechnicalSpecificationKeyField extends CharField {
 			return $data->getKey();
 		}
 
-		if(is_numeric($data) && ($_key = TechnicalSpecificationKey::FingById($data))){
+		if(is_numeric($data) && ($_key = TechnicalSpecificationKey::FindById($data))){
 			return $_key->getKey();
 		}
 

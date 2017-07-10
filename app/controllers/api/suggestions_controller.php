@@ -16,6 +16,16 @@ class SuggestionsController extends ApiController{
 		));
 	}
 
+	/**
+	 * ### Suggestion of technical specification keys
+	 */
+	function technical_specification_keys(){
+		$this->_suggest(array(
+			"fields" => array("key"),
+			"order_by" => "key LIKE :q||'%' DESC, LOWER(key) LIKE LOWER(key)||'%' DESC, LOWER(key), key",
+		));
+	}
+
 	function _suggest($options = array()){
 		global $ATK14_GLOBAL;
 
@@ -46,11 +56,13 @@ class SuggestionsController extends ApiController{
 		if(!$this->params->isEmpty() && ($d = $this->form->validate($this->params))){
 			$q = $d["q"];
 			$q = preg_replace('/(\[|\[#.*)$/','',$q); // "Jan Brus, šéfredaktor [#123]" -> "Jan Brus, šéfredaktor"
-			$q = Translate::Lower($q); // "jan brus, šéfredaktor"
 
 			$this->api_data = array();
 			$conditions = $options["conditions"];
 			$bind_ar = $options["bind_ar"];
+			$bind_ar[":q"] = $q; 
+
+			$q = Translate::Lower($q); // "jan brus, šéfredaktor"
 
 			$_fields = array();
 			foreach($options["fields"] as $f){

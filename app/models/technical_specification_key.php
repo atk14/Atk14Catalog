@@ -1,6 +1,6 @@
 <?php
 class TechnicalSpecificationKey extends ApplicationModel implements Translatable {
-	public static function GetTranslatableFields(){ return array("name_localized"); }
+	public static function GetTranslatableFields(){ return array("name"); }
 
 	/**
 	 * $weight = TechnicalSpecificationKey::GetOrCreateKey("weight"); // nonlocalized key
@@ -9,20 +9,21 @@ class TechnicalSpecificationKey extends ApplicationModel implements Translatable
 	public static function GetOrCreateKey($key){
 		if(!strlen($key)){ return null; }
 
-		($out = self::FindFirst("LOWER(name)=LOWER(:name)",array(":name" => $key))) ||
-		($out = self::CreateNewRecord(array("name" => $key)));
+		($out = self::FindFirst("key=:key",array(":key" => $key))) ||
+		($out = self::FindFirst("LOWER(key)=LOWER(:key)",array(":key" => $key))) ||
+		($out = self::CreateNewRecord(array("key" => $key)));
 
 		return $out;
 	}
 
-	function getName($localized = false){
-		if($localized && !is_null($k = $this->getNameLocalized())){
-			return $k;
+	function getName(){
+		if(strlen($name = parent::getName())){
+			return $name;
 		}
-		return $this->g("name");
+		return $this->getKey();
 	}
 
 	function toString(){
-		return $this->getName(true);
+		return $this->getName();
 	}
 }
