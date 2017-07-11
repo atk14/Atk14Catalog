@@ -1,29 +1,33 @@
-<h2>{t}Technical specifications{/t}</h2>
-
 {assign var=tech_specs value=$card->getTechnicalSpecifications()}
 
-{if !$tech_specs}
+<div id="technical_specifications">
 
-	<p>{t}There is no record yet.{/t}</p>
+	<h2>{t}Technical specifications{/t}</h2>
 
-{else}
+	{render partial="add_technical_specification_form" form=$add_technical_specification_form}
 
-	<ul class="list-group list-sortable" data-sortable-url="{link_to action="technical_specifications/set_rank"}">
-	{foreach $tech_specs as $ts}
-		<li class="list-group-item" data-id="{$ts->getId()}">
-			<div class="pull-right">
-			{dropdown_menu}
-				{a action="technical_specifications/edit" id=$ts}{icon glyph=edit} {t}Edit{/t}{/a}
-				{a_destroy action="technical_specifications/destroy" id=$ts}{icon glyph=remove} {t}Delete{/t}{/a_destroy}
-			{/dropdown_menu}
-			</div>
+	{if !$tech_specs}
 
-			<strong>{$ts->getKey()}:</strong><br>
-			{!$ts->getContent()|h|nl2br}
-		</li>
-	{/foreach}
-	</ul>
+		<p>{t}There is no record yet.{/t}</p>
 
-{/if}
+	{else}
 
-<p>{a action="technical_specifications/create_new" card_id=$card _class="btn btn-default"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Add specification{/t}{/a}</p>
+		<ul class="list-group list-sortable" data-sortable-url="{link_to action="technical_specifications/set_rank"}">
+		{foreach $tech_specs as $ts}
+			<li class="list-group-item" data-id="{$ts->getId()}">
+				<div class="pull-right">
+				{dropdown_menu}
+					{a action="technical_specifications/edit" id=$ts}{icon glyph=edit} {t}Edit{/t}{/a}
+					{a action="technical_specification_keys/edit" id=$ts->getTechnicalSpecificationKeyId()}{icon glyph=edit} {t}Edit key{/t}{/a}
+					{a_destroy action="technical_specifications/destroy" id=$ts}{icon glyph=remove} {t}Delete{/t}{/a_destroy}
+				{/dropdown_menu}
+				</div>
+
+				<strong>{$ts->getKey()->getKey()}:</strong> {!$ts->getContent()|truncate:50|h}
+			</li>
+		{/foreach}
+		</ul>
+
+	{/if}
+
+</div>

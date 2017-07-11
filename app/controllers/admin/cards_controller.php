@@ -1,5 +1,6 @@
 <?php
 class CardsController extends AdminController{
+
 	function index(){
 		$this->page_title = _("List of Products");
 
@@ -103,6 +104,11 @@ class CardsController extends AdminController{
 		$this->_save_return_uri();
 
 		$this->tpl_data["add_to_category_form"] = $this->_get_form("AddToCategoryForm");
+		$this->tpl_data["add_technical_specification_form"] = $this->_get_form("AddTechnicalSpecificationForm");
+		$this->tpl_data["add_technical_specification_form"]->set_action($this->_link_to(array(
+			"action" => "add_technical_specification",
+			"id" => $this->card,
+		)));
 		$this->tpl_data["products"] = $this->card->getProducts(array("visible" => null));
 
 
@@ -180,6 +186,31 @@ class CardsController extends AdminController{
 		$this->_prepare_categories();
 	}
 
+	function add_technical_specification(){
+		if(!$this->request->post()){ return $this->_execute_action("error404"); }
+
+		if($d = $this->form->validate($this->params)){
+
+			if(TechnicalSpecification::FindFirst("card_id",$this->card,"technical_specification_key_id",$d["technical_specification_key_id"])){
+				$this->form->set_error("technical_specification_key_id",_("The product already has this specification"));
+				return;
+			}
+
+			$d["card_id"] = $this->card;
+			TechnicalSpecification::CreateNewRecord($d);
+
+			if(!$this->request->xhr()){
+				$this->_redirect_to(array(
+					"action" => "edit",
+					"id" => $this->card,
+				));
+				return;
+			}
+
+			$this->form = $this->_get_form("AddTechnicalSpecificationForm"); // fresh form
+		}
+	}
+
 	function remove_from_category(){
 		if(!$this->request->post()){ return $this->_execute_action("error404"); }
 
@@ -211,7 +242,7 @@ class CardsController extends AdminController{
 	}
 
 	function _before_filter() {
-		if (in_array($this->action, array("edit","destroy","enable_variants","add_to_category","remove_from_category","append_external_source","remove_external_source"))) {
+		if (in_array($this->action, array("edit","destroy","enable_variants","add_to_category","add_technical_specification","remove_from_category","append_external_source","remove_external_source"))) {
 			$this->_find("card");
 		}
 

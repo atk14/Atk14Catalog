@@ -9,5 +9,11 @@ class TechnicalSpecificationsForm extends AdminForm {
 			"label" => _("Value"),
 			"trim_value" => true,
 		)));
+
+		$this->add_translatable_field("content_localized", new TextField(array(
+			"label" => _("Localized value"),
+			"trim_value" => true,
+			"required" => false,
+		)));
 	}
 }

@@ -26,7 +26,16 @@ class TechnicalSpecificationsController extends AdminController {
 	}
 
 	function edit(){
-		$this->_edit();
+		$this->_edit(array(
+			"update_closure" => function($object,$d){
+				$existing_spec = TechnicalSpecification::FindFirst("card_id",$object->getCardId(),"technical_specification_key_id",$d["technical_specification_key_id"]);
+				if($existing_spec && $existing_spec->getId()!=$object->getId()){
+					$this->form->set_error("technical_specification_key_id",_("The product already has this specification"));
+					return;
+				}
+				$object->s($d);
+			}
+		));
 	}
 
 	function _before_filter(){
