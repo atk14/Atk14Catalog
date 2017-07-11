@@ -1,5 +1,6 @@
 <?php
 class CategoriesController extends AdminController{
+
 	function edit(){
 		$this->page_title = sprintf(_('Editace kategorie "%s"'),strip_tags($this->category->getName()));
 		$this->form->set_initial($this->category);
@@ -11,7 +12,6 @@ class CategoriesController extends AdminController{
 			$this->_redirect_back();
 		}
 	}
-
 
 	function move_to_category() {
 		$this->page_title = _("Přesun kategorie");

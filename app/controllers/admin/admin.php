@@ -291,7 +291,7 @@ class AdminController extends ApplicationBaseController{
 	 * $this->_destroy(); // the object for deletion will be determined by the controller name
 	 * $this->_destroy(array("prepare_object" => false, "destroy_closure" => function($object){ .... }));
 	 */
-	function _destroy($object = null){
+	function _destroy($object = null, $options = array()){
 		if(is_array($object)){
 			$options = $object;
 			$object = null;

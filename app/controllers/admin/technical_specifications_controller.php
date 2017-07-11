@@ -38,6 +38,10 @@ class TechnicalSpecificationsController extends AdminController {
 		));
 	}
 
+	function destroy(){
+		$this->_destroy();
+	}
+
 	function _before_filter(){
 		if($this->action=="create_new"){
 			$this->_find("card","card_id");
