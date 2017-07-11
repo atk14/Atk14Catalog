@@ -9,4 +9,11 @@ class TechnicalSpecification extends ApplicationModel implements Translatable, R
 	function getKey(){
 		return Cache::Get("TechnicalSpecificationKey",$this->getTechnicalSpecificationKeyId());
 	}
+
+	function getContentLocalized(){
+		if(strlen($content = parent::getContentLocalized())){
+			return $content;
+		}
+		return $this->getContent();
+	}
 }
