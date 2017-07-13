@@ -6,7 +6,7 @@ class AddTechnicalSpecificationForm extends AdminForm {
 			"label" => _("Specification name"),
 		)));
 
-		$this->add_field("content", new CharField(array(
+		$this->add_field("content_not_localized", new CharField(array(
 			"label" => _("Value"),
 			"max_length" => 255,
 		)));

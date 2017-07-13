@@ -1,6 +1,6 @@
 <?php
 class TechnicalSpecification extends ApplicationModel implements Translatable, Rankable {
-	public static function GetTranslatableFields(){ return array("content_localized"); }
+	public static function GetTranslatableFields(){ return array("content"); }
 
 	function setRank($rank){
 		return $this->_setRank($rank,array("card_id" => $this->g("card_id")));
@@ -10,10 +10,10 @@ class TechnicalSpecification extends ApplicationModel implements Translatable, R
 		return Cache::Get("TechnicalSpecificationKey",$this->getTechnicalSpecificationKeyId());
 	}
 
-	function getContentLocalized(){
-		if(strlen($content = parent::getContentLocalized())){
+	function getContent(){
+		if(strlen($content = parent::getContent())){
 			return $content;
 		}
-		return $this->getContent();
+		return $this->getContentNotLocalized();
 	}
 }

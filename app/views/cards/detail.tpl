@@ -41,7 +41,7 @@
 			{foreach $card->getTechnicalSpecifications() as $ts}
 				<tr>
 					<th>{$ts->getKey()}</th>
-					<td>{!$ts->getContentLocalized()|markdown}</td>
+					<td>{!$ts->getContent()|markdown}</td>
 				</tr>
 			{/foreach}
 		</table>
