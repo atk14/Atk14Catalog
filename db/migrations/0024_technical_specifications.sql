@@ -19,7 +19,7 @@ CREATE TABLE technical_specifications (
 	id INT PRIMARY KEY DEFAULT NEXTVAL('seq_technical_specifications'),
 	card_id INT NOT NULL,
 	technical_specification_key_id INT NOT NULL,
-	content_not_localized TEXT,
+	content TEXT,
 	rank INT DEFAULT 999 NOT NULL,
 	--
 	created_by_user_id INT,

@@ -1,4 +1,4 @@
 aroma:
   key: aroma
-  name_en: Aroma
-  name_cz: Vůně
+  key_localized_en: Aroma
+  key_localized_cz: Vůně

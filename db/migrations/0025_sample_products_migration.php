@@ -2,6 +2,18 @@
 class SampleProductsMigration extends ApplicationMigration {
 
 	function up(){
+		// Technical Specification Keys
+		$width = TechnicalSpecificationKey::CreateNewRecord(array(
+			"key" => "width",
+			"key_localized_en" => "Width",
+			"key_localized_cs" => "Šířka",
+		)); 
+		$height = TechnicalSpecificationKey::CreateNewRecord(array(
+			"key" => "height",
+			"key_localized_en" => "Height",
+			"key_localized_cs" => "Výška",
+		));
+
 		// Product Card
 		$card = Card::CreateNewRecord(array(
 			'name_cs' => 'Nekonečný příběh',
@@ -14,6 +26,20 @@ class SampleProductsMigration extends ApplicationMigration {
 
 		$card->addToCategory(Category::GetInstanceByPath("books"));
 		$card->addToCategory(Category::GetInstanceByPath("books/children"));
+
+		TechnicalSpecification::CreateNewRecord(array(
+			"card_id" => $card,
+			"technical_specification_key_id" => $width,
+			"content" => "4.7 in",
+			"content_localized_cs" => "12cm"
+		));
+
+		TechnicalSpecification::CreateNewRecord(array(
+			"card_id" => $card,
+			"technical_specification_key_id" => $height,
+			"content" => "7.1 in",
+			"content_localized_cs" => "17cm"
+		));
 
 		Image::AddImage($card,"http://i.pupiq.net/i/65/65/a53/1a53/756x1233/WSIRgf_756x1233_597a23f2092de822.jpg");
 		Image::AddImage($card,"http://i.pupiq.net/i/65/65/a54/1a54/757x1224/VAmo0b_757x1224_8305397b852b605b.jpg");

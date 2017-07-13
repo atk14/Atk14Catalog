@@ -23,7 +23,7 @@
 				{/dropdown_menu}
 				</div>
 
-				<strong>{$ts->getKey()->getKey()}:</strong> {!$ts->getContent()|truncate:50|h}
+				<strong>{$ts->getKey()->g("key")}:</strong> {!$ts->getContent()|truncate:50|h}
 			</li>
 		{/foreach}
 		</ul>

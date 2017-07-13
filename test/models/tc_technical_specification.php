@@ -9,8 +9,8 @@ class TcTechnicalSpecification extends TcBase {
 		$ts = TechnicalSpecification::CreateNewRecord(array(
 			"card_id" => $this->cards["coffee"],
 			"technical_specification_key_id" => $this->technical_specification_keys["aroma"],
-			"content_not_localized" => "Strong",
-			"content_cs" => "Silná",
+			"content" => "Strong",
+			"content_localized_cs" => "Silná",
 		));
 		
 		$lang = "en";

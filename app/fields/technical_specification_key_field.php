@@ -22,12 +22,13 @@ class TechnicalSpecificationKeyField extends CharField {
 	}
 
 	function format_initial_data($data){
+		// beware that $spec_key->getKey() and $spec_key->g("key") return different values
 		if(is_object($data)){
-			return $data->getKey();
+			return $data->g("key");
 		}
 
 		if(is_numeric($data) && ($_key = TechnicalSpecificationKey::FindById($data))){
-			return $_key->getKey();
+			return $_key->g("key");
 		}
 
 		return (string)$data;
