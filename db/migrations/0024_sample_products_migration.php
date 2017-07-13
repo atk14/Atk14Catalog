@@ -71,7 +71,7 @@ The story Bastian reads is set in the magical land of Fantastica, an unrealistic
 			"url" => "http://i.pupiq.net/a/65/65/9a3/9a3/1084697/never_ending_story_sample.pdf",
 			"mime_type" => "application/pdf",
 			"filesize" => "1084697",
-			"name_cs" => "Nekone#ný p#íb#h, ukázka z knihy",
+			"name_cs" => "Nekonečný příběh, ukázka z knihy",
 			"name_en" => "Neverending Story, book sample",
 		));
 
