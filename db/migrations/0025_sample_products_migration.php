@@ -104,13 +104,8 @@ The story Bastian reads is set in the magical land of Fantastica, an unrealistic
 		$section = CardSection::CreateNewRecord(array(
 			'card_id' => $card,
 			'card_section_type_id' => CardSectionType::FindByCode("tech_spec"),
-			'body_cs' => '* šířka: 12cm
-* výška: 17cm',
-			'body_en' => '* width: 4.7 in
-* height: 7.1 in
-',
-			'name_cs' => 'Rozměry',
-			'name_en' => 'Dimensions',
+			'name_cs' => 'Specifikace',
+			'name_en' => 'Specifications',
 		));
 
 		Image::AddImage($section,"http://i.pupiq.net/i/65/65/a58/1a58/375x500/Tc3kLF_375x500_45f99cf7011a6c69.jpg");
