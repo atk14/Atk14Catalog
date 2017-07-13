@@ -1,1 +1,1 @@
-{render partial="shared/form_remote" small_form=0}
+{render partial="shared/form_remote" form_layout="form-horizontal"}

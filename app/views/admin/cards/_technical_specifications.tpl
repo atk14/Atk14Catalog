@@ -4,8 +4,6 @@
 
 	<h2>{t}Technical specifications{/t}</h2>
 
-	{render partial="add_technical_specification_form" form=$add_technical_specification_form}
-
 	{if !$tech_specs}
 
 		<p>{t}There is no record yet.{/t}</p>
@@ -29,5 +27,7 @@
 		</ul>
 
 	{/if}
+
+	{render partial="add_technical_specification_form" form=$add_technical_specification_form}
 
 </div>
