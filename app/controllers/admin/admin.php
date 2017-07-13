@@ -115,17 +115,17 @@ class AdminController extends ApplicationBaseController{
 	 * Generic method for creating a record
 	 */
 	function _create_new($options = array()){
-		$options += [
+		$options += array(
 			"page_title" => "",
 			"class_name" => "",
 			"flash_message" => _("Záznam byl vytvořen"),
 			"redirect_to" => null, // null, "detail", "/admin/cs/articles/", function($record){ return ... }
 			"create_closure" => null,
-		];
+		);
 
-		$options += [
+		$options += array(
 			"save_return_uri" => !$options["redirect_to"],
-		];
+		);
 
 		if(!$options["class_name"]){
 			$options["class_name"] = String4::ToObject(get_class($this))->gsub('/Controller$/','')->singularize()->toString(); // "PeopleController" -> "Person" 
@@ -181,7 +181,7 @@ class AdminController extends ApplicationBaseController{
 	 * Generic method for editing a record
 	 */
 	function _edit($options = array()){
-		$options += [
+		$options += array(
 			"page_title" => "",
 			"object" => null,
 			"flash_message" => _("Změny byly uloženy"),
@@ -190,11 +190,11 @@ class AdminController extends ApplicationBaseController{
 			"has_attachments" => false,
 			"set_initial_closure" => null, // function($form,$object){...}
 			"update_closure" => null, // function($object,$d)
-		];
+		);
 
-		$options += [
+		$options += array(
 			"save_return_uri" => !$options["redirect_to"]
-		];
+		);
 
 		$object = $options["object"];
 		if(!$this->__prepare_object_for_action($object)){
