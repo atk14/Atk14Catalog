@@ -310,7 +310,7 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 
 	function destroy($delete_for_real = false){
 		if($delete_for_real){
-			return parent::destroy();
+			return parent::destroy($delete_for_real);
 		}
 
 		if($this->isDeleted()){
