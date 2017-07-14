@@ -103,7 +103,7 @@ CREATE TABLE products (
 	created_at TIMESTAMP NOT NULL DEFAULT NOW(),
 	updated_at TIMESTAMP,
 	--
-	CONSTRAINT fk_products_cards FOREIGN KEY (card_id) REFERENCES cards(id), 
+	CONSTRAINT fk_products_cards FOREIGN KEY (card_id) REFERENCES cards(id) ON DELETE CASCADE,
 	CONSTRAINT fk_products_cr_users FOREIGN KEY (created_by_user_id) REFERENCES users,
 	CONSTRAINT fk_products_upd_users FOREIGN KEY (updated_by_user_id) REFERENCES users
 );
