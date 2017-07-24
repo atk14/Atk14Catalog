@@ -52,14 +52,14 @@ With [Node.js](http://nodejs.org) and npm installed, run following commands to i
 all the tools you will need to serve and build your front-end assets.
 
     npm install -g gulp
-		npm install -g bower
-		npm install
-		bower install
+    npm install -g bower
+    npm install
+    bower install
 
 Run initial Gulp build process for the main presentation and the admininstration.
 
     gulp
-		gulp admin
+    gulp admin
 
 In order to serve the catalog & watch for file changes run the following command:
 
