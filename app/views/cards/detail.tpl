@@ -30,21 +30,12 @@
 
 	{*** Variants ***}
 	{if $section->getTypeCode()=="variants"}
-		<ul>
-			{render partial="product_item" from=$card->getProducts() item=product}
-		</ul>
+		{render partial=variants}
 	{/if}
 
 	{*** Technical Specifications ***}
 	{if $section->getTypeCode()=="tech_spec"}
-		<table class="table">
-			{foreach $card->getTechnicalSpecifications() as $ts}
-				<tr>
-					<th>{$ts->getKey()}</th>
-					<td>{!$ts->getContent()|markdown}</td>
-				</tr>
-			{/foreach}
-		</table>
+		{render partial="technical_specifications"}
 	{/if}
 
 	{render partial="shared/photo_gallery" object=$section}
