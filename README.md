@@ -45,19 +45,41 @@ Installing optional 3rd party libraries
 
 If you don't have the Composer installed, visit http://www.getcomposer.org/
 
+Front-end assets
+----------------
+
+With [Node.js](http://nodejs.org) and npm installed, run following commands to install
+all the tools you will need to serve and build your front-end assets.
+
+    npm install -g gulp
+		npm install -g bower
+		npm install
+		bower install
+
+Run initial Gulp build process for the main presentation and the admininstration.
+
+    gulp
+		gulp admin
+
+In order to serve the catalog & watch for file changes run the following command:
+
+    gulp serve
+
+This outputs an IP address you can use to locally test and another that can be used on devices connected to your network.
+
 Starting the catalog
 ---------------------
 
-Start the development server
+If you are not happy with *gulp serve*, you can start the development server this way:
 
     ./scripts/server
 
-and you may find the running catalog on http://localhost:8000/
+and you should find the running catalog on http://localhost:8000/
 
 Installing the catalog as a virtual host on Apache web server
 --------------------------------------------------------------
 
-This is optional step. If you have Apache installed, you may want to install the application to a virtual server.
+This is an optional step. If you have Apache installed, you may want to install the catalog as a virtual server.
 
     ./scripts/virtual_host_configuration -f
     sudo service apache2 reload
@@ -69,29 +91,7 @@ If you have a trouble run the following command and follow instructions.
 
     ./scripts/virtual_host_configuration
 
-Front-end Assets Installation
------------------------------
-
-#### Install dependencies.
-
-With [Node.js](http://nodejs.org) and npm installed, run the following one liner from the root of your Skelet application:
-
-    npm install -g gulp && npm install -g bower && npm install && bower install
-
-This will install all the tools you will need to serve and build your front-end assets.
-
-### Run initial build
-
-Run initial Gulp build process for presentation and admininstration.
-
-    gulp && gulp admin
-
-### Serve / watch
-
-    gulp serve
-
-This outputs an IP address you can use to locally test and another that can be used on devices connected to your network.
-
-### You're done! Happy cataloging!
+You're done! Happy cataloging!
+------------------------------
 
 Don't forget to list your new project on http://www.atk14sites.net/
