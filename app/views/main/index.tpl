@@ -3,15 +3,15 @@
 		<h1>{t}Welcome at ATK14 Catalog!{/t}</h1>
 		<p>
 			{t escape=no}<em>ATK14 Catalog</em> is an skeleton suitable for applications of kind like <em>Products introduction</em>, <em>E-shop</em>, etc.{/t}
-			{t escape=no}ATK14 Catalog is built on top of <em>ATK14 Skelet</em>{/t} &mdash; another great skeleton.</p>
+			{t escape=no}ATK14 Catalog is built on top of <em>ATK14 Skelet</em> &mdash; another great skeleton.{/t} </p>
 		<p>
 		<h3>{t}The Catalog contains mainly{/t}</h3>
 		<ul>
-			<li>{a controller="categories"}List of categories{/a}</li>
-			<li>{a controller="brands"}List of brands{/a}</li>
-			<li>{a controller="collections"}List of collections{/a}</li>
-			<li>{a action="pages/detail" id=1}Pages with a hierarchical structure{/a}</li>
-			<li>{a action="main/contact"}Contact page with fast contact form{/a}</li>
+			<li>{a controller="categories"}{t}List of categories{/t}{/a}</li>
+			<li>{a controller="brands"}{t}List of brands{/t}{/a}</li>
+			<li>{a controller="collections"}{t}List of collections{/t}{/a}</li>
+			<li>{a action="pages/detail" id=1}{t}Pages with a hierarchical structure{/t}{/a}</li>
+			<li>{a action="main/contact"}{t}Contact page with fast contact form{/t}{/a}</li>
 			<li>{a action="news/index"}{t}News section{/t}{/a}</li>
 			<li>{a action="users/create_new"}{t}User registration{/t}{/a} ({t}with strong blowfish passwords hashing{/t})</li>
 			<li>{a namespace="admin"}{t}Basic administration{/t}{/a}</li>

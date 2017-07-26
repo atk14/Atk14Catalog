@@ -6,10 +6,10 @@ class AddToCategoryForm extends AdminForm{
 			"action" => "add_to_category",
 			"id" => $this->controller->card,
 		)));
-		$this->set_button_text(_("Zařadit do kategorie"));
+		$this->set_button_text(_("Add to a category"));
 		$this->add_field("category",new CategoryField(array(
-			"label" => _("Kategorie"),
-			"help_text" => _("Napište lomítko, pokud chcete prohledat strom kategorií od kořene."),
+			"label" => _("Category"),
+			"help_text" => _("Type a slash if you want to search the tree of categories from the root."),
 		)));
 	}
 
@@ -17,7 +17,7 @@ class AddToCategoryForm extends AdminForm{
 		list($e,$d) = parent::clean();
 
 		if ($d["category"] && !$d["category"]->allowProducts()) {
-			$this->set_error("category", _("Do této kategorie nelze vkládat produkty"));
+			$this->set_error("category", _("You can not insert products into this category"));
 		}
 		return array($e,$d);
 	}

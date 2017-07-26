@@ -15,7 +15,7 @@ class TechnicalSpecificationsController extends AdminController {
 			$d["card_id"]	= $this->card;
 			TechnicalSpecification::CreateNewRecord($d);
 
-			$this->flash->success(_("New technical specification records has been created"));
+			$this->flash->success(_("New technical specification record has been created"));
 
 			$this->_redirect_back();
 		}

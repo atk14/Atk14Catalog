@@ -4,7 +4,7 @@ class CollectionField extends ChoiceField {
 		$options += array(
 			"required" => false,
 		);
-		$choices = array("" => "-- "._("Kolekce")." --");
+		$choices = array("" => "-- "._("collection")." --");
 		$conditions = $bind_ar = array();
 		if (isset($options["collection_id"])) {
 			$conditions[] = "id!=:collection_id";
@@ -32,7 +32,7 @@ class CollectionField extends ChoiceField {
 			return array(null,null);
 		}
 		if (is_null($_sp = Collection::FindById($value))) {
-			return array(_("Taková kolekce neexistuje"), null);
+			return array(_("There is no such collection"), null);
 		}
 		return array(null, $_sp);
 	}

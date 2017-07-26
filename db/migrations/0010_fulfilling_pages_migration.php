@@ -4,12 +4,12 @@ class FulfillingPagesMigration extends Atk14Migration{
 		$about = Page::CreateNewRecord(array(
 			"id" => 1, // we just need that the page #1 is the About Page
 
-			"title_en" => "About ATK14 Skelet",
-			"slug_en" => "about",
+			"title_en" => "About ATK14 Catalog",
+			"slug_en" => "about-atk14-catalog",
 			"body_en" => "It all begins when a young boy meets a ...",
 
-			"title_cs" => "O ATK14 Skeletu",
-			"slug_cs" => "o-nas",
+			"title_cs" => "O ATK14 Catalog",
+			"slug_cs" => "o-atk14-catalog",
 			"body_cs" => "Všechno to začalo, když jeden mladý muž potkal...",
 		));
 

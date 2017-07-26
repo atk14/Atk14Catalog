@@ -1,5 +1,5 @@
 <div id="categories">
-	<h2>{t}Zařazení produktu do katalogového stromu{/t}</h2>
+	<h2>{t}Product placement in the catalog tree{/t}</h2>
 
 
 	<div id="categies">
@@ -8,6 +8,6 @@
 
 	{form_remote _data-type="json"}
 		{render partial="shared/form_field" fields="category"}
-		<button type="submit" class="btn btn-primary">{t}Zařadit do kategorie{/t}</button>
+		<button type="submit" class="btn btn-primary">{t}Add product to a category{/t}</button>
 	{/form_remote}
 </div>

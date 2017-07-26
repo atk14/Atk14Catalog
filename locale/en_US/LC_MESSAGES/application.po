@@ -7,291 +7,1339 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-18 11:11+0100\n"
+"POT-Creation-Date: 2017-07-26 14:36+0200\n"
 "PO-Revision-Date: 2016-03-07 17:03+0100\n"
 "Last-Translator: Yarri <do-not-write-me@ever.com>\n"
 "Language-Team: Team <team@email.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: ../app/forms/users/edit_password_form.php:5
-#: ../app/forms/users/users_form.php:20
-#: ../app/forms/logins/create_new_form.php:9
-#: ../atk14/src/atk14/test/tc_locale.php:5
-#: ../atk14/src/atk14/test/tc_locale.php:8
-msgid "Password"
+msgid "Best regards"
 msgstr ""
 
-#: ../app/forms/users/edit_password_form.php:8
-#: ../app/forms/password_recoveries/recovery_form.php:7 smarty.c:71
-#: smarty.c:548
-msgid "Set new password"
+msgid "%1 Support Team"
 msgstr ""
 
-#: ../app/forms/users/edit_password_form.php:17
-msgid "The new password is the same as your current password"
+msgid "web"
 msgstr ""
 
-#: ../app/forms/users/users_form.php:5 ../app/forms/main/contact_form.php:5
-#: smarty.c:26 smarty.c:503
-msgid "Your name"
+msgid "email"
 msgstr ""
 
-#: ../app/forms/users/users_form.php:11
-#: ../app/forms/admin/users/users_form.php:10 smarty.c:95 smarty.c:572
-msgid "Email address"
+msgid ""
+"Best regards\n"
+"\n"
+"%1 Support Team\n"
+"web: %2\n"
+"email: %3"
 msgstr ""
 
-#: ../app/forms/users/users_form.php:14
-msgid "We will not disclose this address"
+msgid ""
+"Are you sure to delete article item\n"
+"%1?"
 msgstr ""
 
-#: ../app/forms/users/users_form.php:25
-msgid "Password (repeat)"
+msgid "Edit"
 msgstr ""
 
-#: ../app/forms/users/users_form.php:38
-msgid "Password doesn't match"
+msgid "Delete article"
 msgstr ""
 
-#: ../app/forms/users/create_new_form.php:5 smarty.c:23 smarty.c:500
-msgid "Username (login)"
+msgid "Add new article"
 msgstr ""
 
-#: ../app/forms/users/create_new_form.php:16
-msgid "In order to register you need to obtain an invitation code"
+msgid "The list is empty."
 msgstr ""
 
-#: ../app/forms/users/create_new_form.php:21 smarty.c:329 smarty.c:806
-msgid "Register"
-msgstr ""
-
-#: ../app/forms/users/create_new_form.php:28
-msgid "This is not a valid invitation code"
-msgstr ""
-
-#: ../app/forms/users/create_new_form.php:48
-msgid "This login has been already taken"
-msgstr ""
-
-#: ../app/forms/application_form.php:59
-msgid "Create"
-msgstr ""
-
-#: ../app/forms/application_form.php:61
-msgid "Show"
-msgstr ""
-
-#: ../app/forms/application_form.php:63
-#: ../app/forms/admin/users/index_form.php:5
-#: ../app/forms/admin/articles/index_form.php:5
-#: ../app/forms/admin/tags/index_form.php:5
-#: ../app/forms/admin/newsletter_subscribers/index_form.php:5
-msgid "Search"
-msgstr ""
-
-#: ../app/forms/application_form.php:65
-msgid "Update"
-msgstr ""
-
-#: ../app/forms/application_form.php:67 smarty.c:200 smarty.c:677
-msgid "Delete"
-msgstr ""
-
-#: ../app/forms/application_form.php:69
-msgid "Save"
-msgstr ""
-
-#: ../app/forms/logins/destroy_form.php:4
-#: ../app/controllers/logins_controller.php:32 smarty.c:323 smarty.c:800
-msgid "Sign out"
-msgstr ""
-
-#: ../app/forms/logins/create_new_form.php:5
-msgid "Login"
-msgstr ""
-
-#: ../app/forms/logins/create_new_form.php:13
-#: ../app/controllers/logins_controller.php:6 smarty.c:242 smarty.c:326
-#: smarty.c:464 smarty.c:719 smarty.c:803 smarty.c:941
-msgid "Sign in"
-msgstr ""
-
-#: ../app/forms/admin/users/edit_password_form.php:5 smarty.c:20 smarty.c:497
-msgid "New password"
-msgstr ""
-
-#: ../app/forms/admin/users/edit_password_form.php:11
-msgid "Set password"
-msgstr ""
-
-#: ../app/forms/admin/users/users_form.php:5 smarty.c:92 smarty.c:188
-#: smarty.c:275 smarty.c:569 smarty.c:665 smarty.c:752
-msgid "Name"
-msgstr ""
-
-#: ../app/forms/admin/users/users_form.php:15 smarty.c:98 smarty.c:575
-msgid "Is admin?"
-msgstr ""
-
-#: ../app/forms/admin/users/index_form.php:9
-msgid "Search users"
-msgstr ""
-
-#: ../app/forms/admin/articles/articles_form.php:5 smarty.c:146 smarty.c:623
+#: ../app/forms/admin/articles/articles_form.php:5
+#: ../app/forms/admin/attachments/attachments_form.php:5
+#: ../app/forms/admin/images/images_form.php:9
+#: ../app/forms/admin/pages/pages_form.php:6
 msgid "Title"
 msgstr ""
 
-#: ../app/forms/admin/articles/articles_form.php:10
-msgid "Body"
+msgid "Author"
 msgstr ""
 
-#: ../app/forms/admin/articles/articles_form.php:11
-msgid "Mardown format is expected"
+msgid "Date"
 msgstr ""
 
-#: ../app/forms/admin/articles/articles_form.php:15
-msgid "Published At"
-msgstr ""
-
+#: ../app/controllers/admin/admin.php:30
 #: ../app/forms/admin/articles/articles_form.php:20
-#: ../app/controllers/admin/admin.php:29 smarty.c:155 smarty.c:632
+#: ../app/forms/admin/cards/cards_form.php:44
 msgid "Tags"
 msgstr ""
 
-#: ../app/forms/admin/articles/articles_form.php:23
-#, php-format
+msgid "Actions"
+msgstr ""
+
 msgid ""
-"Mention tag <em>%s</em> when this article should be displayed in the news "
-"section"
+"You are about to permanently delete brand %1\n"
+"Are you sure about that?"
 msgstr ""
 
-#: ../app/forms/admin/articles/index_form.php:9
-msgid "Search articles"
+msgid "Add a new brand"
 msgstr ""
 
-#: ../app/forms/admin/tags/index_form.php:9
-msgid "Search tags"
+msgid "No record has been found."
 msgstr ""
 
-#: ../app/forms/admin/tags/create_new_form.php:7
-#: ../app/controllers/admin/tags_controller.php:51
-msgid "The same tag already exists"
+msgid ""
+"You are about to delete the product %1.\n"
+"Are you sure?"
 msgstr ""
 
-#: ../app/forms/admin/tags/tags_form.php:5 smarty.c:176 smarty.c:653
+msgid "Delete product"
+msgstr ""
+
+msgid "Add related product"
+msgstr ""
+
+msgid "There is no related product"
+msgstr ""
+
+msgid "You are going to remove a related product %1. Are you sure?"
+msgstr ""
+
+msgid "Product placement in the catalog tree"
+msgstr ""
+
+msgid "Add product to a category"
+msgstr ""
+
+msgid "Produkt zatím není zařazen v žádné kategorii."
+msgstr ""
+
+msgid "Smazat"
+msgstr ""
+
+msgid "Product variants (%1)"
+msgstr ""
+
+msgid "U tohoto produktu se neuvažují varianty"
+msgstr ""
+
+msgid "přepnout na variantový režim"
+msgstr ""
+
+msgid "Přidat novou variantu"
+msgstr ""
+
+msgid "Related products"
+msgstr ""
+
+msgid "Consumables"
+msgstr ""
+
+msgid "Add consumable"
+msgstr ""
+
+msgid "There are no consumables"
+msgstr ""
+
+msgid "Accessories"
+msgstr ""
+
+msgid "Add accessory"
+msgstr ""
+
+msgid "There are no accessories"
+msgstr ""
+
+msgid "Filters"
+msgstr ""
+
+msgid "This product is not included in any filter"
+msgstr ""
+
+msgid "Set up filters"
+msgstr ""
+
+msgid "Add a product"
+msgstr ""
+
+msgid "No product has been found."
+msgstr ""
+
+#: ../app/forms/admin/cards/cards_form.php:12
+#: ../app/forms/admin/collections/collections_form.php:5
+#: ../app/forms/admin/users/users_form.php:5
+msgid "Name"
+msgstr ""
+
+msgid "Has variants?"
+msgstr ""
+
+msgid "Created at"
+msgstr ""
+
+msgid "Updated at"
+msgstr ""
+
+msgid "Chystáte se smazat produkt %1. Jste si jistý/á?"
+msgstr ""
+
+msgid "Produkt zatím nemá žádnou variantu."
+msgstr ""
+
+msgid "Technical specifications"
+msgstr ""
+
+msgid "There is no record yet."
+msgstr ""
+
+msgid "Edit key"
+msgstr ""
+
+#: ../app/forms/application_form.php:67
+msgid "Delete"
+msgstr ""
+
+msgid "Textual sections"
+msgstr ""
+
+msgid "Currently there is no section"
+msgstr ""
+
+msgid "attachments"
+msgstr ""
+
+msgid "images"
+msgstr ""
+
+msgid ""
+"You are about to delete section %1\n"
+"Are you sure?"
+msgstr ""
+
+msgid "Create a new section"
+msgstr ""
+
+msgid "Vytvořit a editovat alias"
+msgstr ""
+
+msgid "Přesunout kategorii"
+msgstr ""
+
+msgid "Vytvořit alias"
+msgstr ""
+
+msgid "Cesta"
+msgstr ""
+
+msgid "Je kategorie viditelná?"
+msgstr ""
+
+msgid "Je to filtr?"
+msgstr ""
+
+msgid "Lze vkládat produkty?"
+msgstr ""
+
+msgid ""
+"Chystáte se smazat kategorii %1!\n"
+"Budou smazány i všechny její podkategorie. Smazání se nedá vrátit zpět.\n"
+"\n"
+"Opravdu to chcete?"
+msgstr ""
+
+msgid ""
+"Toto je virtuální kategorie, která ve skutečnosti ukazuje na <a href=\"%1\">/"
+"%2/</a>"
+msgstr ""
+
+msgid "Podkategorie"
+msgstr ""
+
+msgid "Tato kategorie nemá podkategorie."
+msgstr ""
+
+msgid "Přidat novou podkategorii"
+msgstr ""
+
+msgid "Produkty"
+msgstr ""
+
+msgid "Toto je filtr. Produkty zadávejte do jeho podkategorií."
+msgstr ""
+
+msgid "Odebrat"
+msgstr ""
+
+msgid "Přidat produkt"
+msgstr ""
+
+msgid "Do této kategorie nelze přidávat produkty."
+msgstr ""
+
+msgid "Doporučené produkty"
+msgstr ""
+
+msgid "Přidat doporučený produkt"
+msgstr ""
+
+msgid "Create new category tree"
+msgstr ""
+
+msgid ""
+"Chystáte se smazat katalogvý strom %1\n"
+"Jste si jistý/á?"
+msgstr ""
+
+msgid "Smazat strom"
+msgstr ""
+
+msgid ""
+"You are about to remove the product %1 from the collection.\n"
+"Are you sure about that?"
+msgstr ""
+
+msgid "Add a product into the collection"
+msgstr ""
+
+msgid ""
+"You are about to permanently delete collection %1\n"
+"Are you sure about that?"
+msgstr ""
+
+msgid "Products in the collection"
+msgstr ""
+
+msgid "Add a collection"
+msgstr ""
+
+msgid "The image was uploaded at:"
+msgstr ""
+
+msgid "The image was uploaded by:"
+msgstr ""
+
+msgid "The size of the original:"
+msgstr ""
+
+msgid "Zpět"
+msgstr ""
+
+msgid "Přidat obrázek"
+msgstr ""
+
+msgid "Welcome administrator!"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Subscribed since"
+msgstr ""
+
+msgid "IP address"
+msgstr ""
+
+msgid "Export emails in CSV"
+msgstr ""
+
+msgid "Subpages"
+msgstr ""
+
+msgid "This page has no subpages"
+msgstr ""
+
+msgid "Create new subpage"
+msgstr ""
+
+msgid "Add new page"
+msgstr ""
+
+msgid "odkaz [%1]"
+msgstr ""
+
+msgid "[%1]"
+msgstr ""
+
+msgid ""
+"Chystáte se smazat stránku %1\n"
+"Jste si jistý/á?"
+msgstr ""
+
+msgid "Smazat stránku"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "Created from address"
+msgstr ""
+
+msgid "Password recovered?"
+msgstr ""
+
+msgid "Recovered at"
+msgstr ""
+
+msgid "Recovered from address"
+msgstr ""
+
+msgid ""
+"You are about to delete the attachment %1\n"
+"Are you sure about that?"
+msgstr ""
+
+msgid "Attachments"
+msgstr ""
+
+msgid "Currently there are no attachments"
+msgstr ""
+
+msgid "Add an attachment"
+msgstr ""
+
+msgid "Odpojit obrázek."
+msgstr ""
+
+msgid "Editovat tento obrázek"
+msgstr ""
+
+msgid "Photo gallery"
+msgstr ""
+
+msgid "Currently there are no images"
+msgstr ""
+
+msgid "Add an image"
+msgstr ""
+
+msgid "ukázat obrázek ve větší velikosti"
+msgstr ""
+
+msgid "Fotka chybí"
+msgstr ""
+
+msgid "Add new tag"
+msgstr ""
+
+msgid "No tag has been found."
+msgstr ""
+
+#: ../app/forms/admin/tags/tags_form.php:5
 msgid "Tag"
 msgstr ""
 
-#: ../app/forms/password_recoveries/create_new_form.php:5
-msgid "Login or email address"
+msgid ""
+"You are about to permanently delete tag %1\n"
+"\tAre you sure about that?"
 msgstr ""
 
-#: ../app/forms/password_recoveries/create_new_form.php:9
-msgid "Send me a recovery link"
+msgid "Delete tag"
 msgstr ""
 
-#: ../app/forms/api/tags_suggestions/index_form.php:5
-msgid "Search term"
+msgid ""
+"At the moment no one knows the actual user's password because passwords are "
+"not stored in plain text form. In this form you can set a new password to "
+"the user <em>%1</em>"
 msgstr ""
 
-#: ../app/forms/main/contact_form.php:10 smarty.c:29 smarty.c:506
+#: ../app/controllers/admin/users_controller.php:32
+msgid "Create a new user"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+#: ../app/forms/admin/users/users_form.php:10
+#: ../app/forms/users/users_form.php:11
+msgid "Email address"
+msgstr ""
+
+#: ../app/forms/admin/users/users_form.php:15
+msgid "Is admin?"
+msgstr ""
+
+#: ../app/forms/password_recoveries/recovery_form.php:7
+#: ../app/forms/users/edit_password_form.php:8
+msgid "Set new password"
+msgstr ""
+
+msgid "Sign in as this user"
+msgstr ""
+
+msgid ""
+"You are about to permanently delete user %1\n"
+"\tAre you sure about that?"
+msgstr ""
+
+msgid "Delete user"
+msgstr ""
+
+msgid "Error 403: Forbidden"
+msgstr ""
+
+msgid "You don`t have a permission to access <em>%1</em> on this server."
+msgstr ""
+
+msgid "Go to the homepage"
+msgstr ""
+
+msgid "Currently you are not logged as an admin user."
+msgstr ""
+
+msgid "or"
+msgstr ""
+
+msgid "Sign in as an admin user"
+msgstr ""
+
+#: ../app/controllers/logins_controller.php:6
+#: ../app/forms/logins/create_new_form.php:13
+msgid "Sign in"
+msgstr ""
+
+msgid "Error 404: Page not found"
+msgstr ""
+
+msgid "We are deeply sorry, but the page on the URI <em>%1</em> wasn't found."
+msgstr ""
+
+msgid "Please, write us to %1 if you think this is our mistake."
+msgstr ""
+
+msgid "Brand:"
+msgstr ""
+
+msgid "Are you interested in this product?"
+msgstr ""
+
+msgid "Subcategories"
+msgstr ""
+
+#: ../app/controllers/admin/admin.php:32
+msgid "Products"
+msgstr ""
+
+msgid "Products in the collection %1"
+msgstr ""
+
+msgid "Greetings"
+msgstr ""
+
+msgid ""
+"I would like to know more about products and services you offered on the web "
+"site %1."
+msgstr ""
+
+msgid "I would like to know more about the product"
+msgstr ""
+
+msgid "Please contact me."
+msgstr ""
+
+msgid "The message has been sent. Thank you!"
+msgstr ""
+
+msgid "Have you forgotten password?"
+msgstr ""
+
+msgid ""
+"Please note that default administration access is admin/admin. Be a smart "
+"guy and change admin's password on production promptly."
+msgstr ""
+
+msgid "You are signed in as <em>%1</em>."
+msgstr ""
+
+msgid "Click on the button to sign out."
+msgstr ""
+
+msgid "Signing up for newsletter"
+msgstr ""
+
+msgid "Logged user:"
+msgstr ""
+
+msgid "Hello %1!"
+msgstr ""
+
+msgid ""
+"Have you forgotten your password? To reset your password, click on the "
+"following link"
+msgstr ""
+
+msgid "recovery link"
+msgstr ""
+
+msgid "Please note that this link is valid for 2 hours only."
+msgstr ""
+
+msgid ""
+"Hello %1!\n"
+"\n"
+"Have you forgotten your password? To reset your password, click on the "
+"following link\n"
+"\n"
+"%2\n"
+"\n"
+"Please note that this link is valid for 2 hours only."
+msgstr ""
+
+msgid "Your password was just updated in recovery mode."
+msgstr ""
+
+msgid "The update has been executed upon a request from IP address %1"
+msgstr ""
+
+msgid ""
+"Hello %1!\n"
+"\n"
+"Your password was just updated in recovery mode.\n"
+"\n"
+"The update has been executed upon a request from IP address %2"
+msgstr ""
+
+msgid ""
+"Thanks for signing up for %1!\n"
+"\n"
+"Here is your data summary\n"
+"\n"
+"login: %2\n"
+"email: %3\n"
+"name: %4\n"
+msgstr ""
+
+msgid ""
+"Hello,\n"
+"\n"
+"thank you for your interest in our products. We will contact you as soon as "
+"we can."
+msgstr ""
+
+msgid "Here is the message you sent to us:"
+msgstr ""
+
+msgid "Thank you and have a nice day!"
+msgstr ""
+
+#: ../app/forms/information_requests/create_new_form.php:15
+msgid "Phone"
+msgstr ""
+
+msgid "The message has been sent to us. We will reply as soon as we can."
+msgstr ""
+
+msgid ""
+"If you have any question, contact us through the following form. We will "
+"reply to you as soon as we can. Below the form you'll find other contact "
+"information."
+msgstr ""
+
+msgid "%1 Team"
+msgstr ""
+
+msgid "Opening hours"
+msgstr ""
+
+msgid "From dusk till dawn"
+msgstr ""
+
+msgid "Welcome at ATK14 Catalog!"
+msgstr ""
+
+msgid ""
+"<em>ATK14 Catalog</em> is an skeleton suitable for applications of kind like "
+"<em>Products introduction</em>, <em>E-shop</em>, etc."
+msgstr ""
+
+msgid ""
+"ATK14 Catalog is built on top of <em>ATK14 Skelet</em> &mdash; another great "
+"skeleton."
+msgstr ""
+
+msgid "The Catalog contains mainly"
+msgstr ""
+
+msgid "List of categories"
+msgstr ""
+
+msgid "List of brands"
+msgstr ""
+
+msgid "List of collections"
+msgstr ""
+
+msgid "Pages with a hierarchical structure"
+msgstr ""
+
+msgid "Contact page with fast contact form"
+msgstr ""
+
+msgid "News section"
+msgstr ""
+
+msgid "User registration"
+msgstr ""
+
+msgid "with strong blowfish passwords hashing"
+msgstr ""
+
+msgid "Basic administration"
+msgstr ""
+
+msgid "RESTful API"
+msgstr ""
+
+#: ../app/controllers/sitemaps_controller.php:10
+msgid "Sitemap"
+msgstr ""
+
+msgid "Localization"
+msgstr ""
+
+msgid "English"
+msgstr ""
+
+msgid "Czech"
+msgstr ""
+
+msgid "Installation"
+msgstr ""
+
+msgid ""
+"If you are brave enough to install the Catalog on your computer, check out "
+"<a href=\"https://github.com/atk14/Atk14Catalog/blob/master/README."
+"md#installation\">the installation instrunction.</a>"
+msgstr ""
+
+msgid ""
+"If you want to help us to improve the Catalog, <a href=\"https://github.com/"
+"atk14/Atk14Catalog\">fork it on GitHub.</a>"
+msgstr ""
+
+msgid "Further Reading & Resources"
+msgstr ""
+
+msgid "ATK14 Project"
+msgstr ""
+
+msgid "ATK14 Book"
+msgstr ""
+
+msgid "API Reference"
+msgstr ""
+
+msgid "ATK14 on GitHub"
+msgstr ""
+
+msgid "ATK14 Catalog on GitHub"
+msgstr ""
+
+msgid "The ATK14 Skelet at age 5"
+msgstr ""
+
+msgid "fig.1 <em>The Creature is pleading for forking on GitHub</em>"
+msgstr ""
+
+msgid "News archive"
+msgstr ""
+
+msgid "At the moment there are no news."
+msgstr ""
+
+msgid "Posted by <em>%1</em> on <time datetime=\"%2\">%3</time>"
+msgstr ""
+
+msgid "The address has expired or already been used."
+msgstr ""
+
+msgid "The URL is not valid."
+msgstr ""
+
+msgid "In the form bellow set the new password for user <em>%1</em>"
+msgstr ""
+
+msgid "The password recovery link has been sent to your email address."
+msgstr ""
+
+msgid ""
+"If you don't receive instructions within a few minutes, check your email's "
+"spam and junk filters."
+msgstr ""
+
+#: ../app/controllers/admin/cards_controller.php:5
+msgid "List of Products"
+msgstr ""
+
+msgid "The following difficulties have occurred during the form processing:"
+msgstr ""
+
+msgid ""
+"Some of the items were filled incorrectly. Please, check the form and "
+"correct the errors."
+msgstr ""
+
+msgid "Examples:"
+msgstr ""
+
+msgid "Show menu"
+msgstr ""
+
+msgid "Change language"
+msgstr ""
+
+msgid ""
+"This site runs on <a href=\"http://www.atk14.net/\">ATK14 Framework</a>, for "
+"now and ever after"
+msgstr ""
+
+msgid "Go to home page"
+msgstr ""
+
+msgid "administrator"
+msgstr ""
+
+msgid "Profile"
+msgstr ""
+
+#: ../app/controllers/admin/admin.php:8
+#: ../app/controllers/admin/main_controller.php:4
+msgid "Administration"
+msgstr ""
+
+#: ../app/controllers/logins_controller.php:32
+#: ../app/forms/logins/destroy_form.php:4
+msgid "Sign out"
+msgstr ""
+
+#: ../app/forms/users/create_new_form.php:21
+msgid "Register"
+msgstr ""
+
+msgid "Here you can find the list of all commands in <em>%1</em>."
+msgstr ""
+
+msgid "Homepage"
+msgstr ""
+
+msgid "The most important page in the whole universe"
+msgstr ""
+
+#: ../app/controllers/main_controller.php:15
+#: ../app/controllers/main_controller.php:16
+#: ../app/controllers/main_controller.php:39
+msgid "Contact"
+msgstr ""
+
+msgid "Contact data and quick contact form"
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "What is this site all about"
+msgstr ""
+
+#: ../app/controllers/users_controller.php:17
+msgid "New user registration"
+msgstr ""
+
+msgid ""
+"If you don't have yet an account on this site, this is absolutely must to do "
+"procedure"
+msgstr ""
+
+msgid "Sign in to our site"
+msgstr ""
+
+msgid "API"
+msgstr ""
+
+msgid "We offer an awesome restful API"
+msgstr ""
+
+msgid "Recent articles"
+msgstr ""
+
+#: ../app/forms/users/create_new_form.php:5
+msgid "Username (login)"
+msgstr ""
+
+#: ../app/forms/information_requests/create_new_form.php:5
+#: ../app/forms/main/contact_form.php:5 ../app/forms/users/users_form.php:5
+msgid "Your name"
+msgstr ""
+
+#: ../app/forms/information_requests/create_new_form.php:10
+#: ../app/forms/main/contact_form.php:10
 msgid "Your email"
 msgstr ""
 
-#: ../app/forms/main/contact_form.php:15
-msgid "Sign up for newsletter"
+msgid "Are you admin?"
 msgstr ""
 
-#: ../app/forms/main/contact_form.php:21
-msgid "Text"
+msgid "Yes, you are"
 msgstr ""
 
-#: ../app/forms/main/contact_form.php:26
-msgid "Send message"
+#: ../app/controllers/users_controller.php:36
+msgid "Change your account data"
 msgstr ""
 
-#: ../app/fields/login_field.php:6
-msgid ""
-"Only letters, numbers, dots and dashes are allowed. Up to 50 characters."
+#: ../app/controllers/users_controller.php:53
+msgid "Change your password"
 msgstr ""
 
-#: ../app/fields/login_field.php:18
-msgid "This username has been already taken"
+msgid "Current password"
 msgstr ""
 
-#: ../app/fields/tags_field.php:18
-msgid "Ensure that there are max %max% tags (now there are %count%)"
+#: ../app/forms/admin/users/edit_password_form.php:5
+msgid "New password"
 msgstr ""
 
-#: ../app/fields/tags_field.php:19
-#, php-format
-msgid "There is no tag <em>%s</em>"
+#: ../app/controllers/admin/accessories_controller.php:9
+msgid "Adding new accessory product"
 msgstr ""
 
-#: ../app/fields/tags_field.php:20
-#, php-format
-msgid "Tag <em>%s</em> is there more than once"
+#: ../app/controllers/admin/accessories_controller.php:10
+msgid "Accessory product has been added"
 msgstr ""
 
-#: ../app/helpers/function.paginator.php:89
-#: ../app/helpers/function.paginator.php:152
-msgid "items total"
+#: ../app/controllers/admin/admin.php:27
+msgid "Welcome screen"
 msgstr ""
 
-#: ../app/helpers/function.paginator.php:103
-msgid "Prev"
+#: ../app/controllers/admin/admin.php:28
+msgid "Articles"
 msgstr ""
 
-#: ../app/helpers/function.paginator.php:147
-msgid "Next"
+#: ../app/controllers/admin/admin.php:29
+#: ../app/controllers/admin/pages_controller.php:5
+msgid "Pages"
 msgstr ""
 
-#: ../app/helpers/modifier.display_bool.php:13
-msgid "Yes"
-msgstr ""
-
-#: ../app/helpers/modifier.display_bool.php:14
-msgid "No"
-msgstr ""
-
-#: ../app/controllers/password_recoveries_controller.php:10
-msgid "There is not such user with the given login or email"
-msgstr ""
-
-#: ../app/controllers/password_recoveries_controller.php:14
-msgid ""
-"To reset admins password use console like ATK14 ninja: $ ./scripts/migrate -"
-"f 0002_reset_admins_password_migration.php"
-msgstr ""
-
-#: ../app/controllers/password_recoveries_controller.php:53
-#: ../app/controllers/users_controller.php:64
-msgid "Your password has been updated successfuly"
-msgstr ""
-
-#: ../app/controllers/password_recoveries_controller.php:65
-msgid "Password recovery"
-msgstr ""
-
-#: ../app/controllers/admin/password_recoveries_controller.php:4
 #: ../app/controllers/admin/admin.php:31
+msgid "Users"
+msgstr ""
+
+#: ../app/controllers/admin/admin.php:33
+#: ../app/controllers/categories_controller.php:6
+#: ../app/controllers/categories_controller.php:16
+msgid "Categories"
+msgstr ""
+
+#: ../app/controllers/admin/admin.php:34
+#: ../app/controllers/brands_controller.php:6
+#: ../app/controllers/brands_controller.php:11
+msgid "Brands"
+msgstr ""
+
+#: ../app/controllers/admin/admin.php:35
+#: ../app/controllers/collections_controller.php:6
+#: ../app/controllers/collections_controller.php:11
+msgid "Collections"
+msgstr ""
+
+#: ../app/controllers/admin/admin.php:36
+#: ../app/controllers/admin/password_recoveries_controller.php:4
 msgid "Password recoveries"
+msgstr ""
+
+#: ../app/controllers/admin/admin.php:37
+msgid "Newsletter subscribers"
+msgstr ""
+
+#: ../app/controllers/admin/admin.php:92
+#, php-format
+msgid "Seznam objektů typu %s"
+msgstr ""
+
+#: ../app/controllers/admin/admin.php:121
+msgid "Záznam byl vytvořen"
+msgstr ""
+
+#: ../app/controllers/admin/admin.php:135
+#, php-format
+msgid "Vytvořit objekt typu %s"
+msgstr ""
+
+#: ../app/controllers/admin/admin.php:187
+#: ../app/controllers/admin/attachments_controller.php:54
+#: ../app/controllers/admin/card_sections_controller.php:27
+#: ../app/controllers/admin/categories_controller.php:11
+msgid "Změny byly uloženy"
+msgstr ""
+
+#: ../app/controllers/admin/admin.php:209
+#, php-format
+msgid "Editace objektu typu %s"
+msgstr ""
+
+#: ../app/controllers/admin/admin.php:329
+msgid "The entry has been deleted"
+msgstr ""
+
+#: ../app/controllers/admin/articles_controller.php:4
+msgid "Listing Articles"
+msgstr ""
+
+#: ../app/controllers/admin/articles_controller.php:28
+msgid "Create article"
+msgstr ""
+
+#: ../app/controllers/admin/articles_controller.php:38
+msgid "The article has been created successfuly"
+msgstr ""
+
+#: ../app/controllers/admin/articles_controller.php:44
+#, php-format
+msgid "Editing %s"
+msgstr ""
+
+#: ../app/controllers/admin/articles_controller.php:52
+#: ../app/controllers/admin/tags_controller.php:56
+#: ../app/controllers/admin/users_controller.php:51
+#: ../app/controllers/users_controller.php:42
+msgid "Nothing has been changed"
+msgstr ""
+
+#: ../app/controllers/admin/articles_controller.php:60
+msgid "The article has been updated successfuly"
+msgstr ""
+
+#: ../app/controllers/admin/attachments_controller.php:4
+#, php-format
+msgid "Přílohy k objektu %s#%s"
+msgstr ""
+
+#: ../app/controllers/admin/attachments_controller.php:22
+msgid "Přidání přílohy"
+msgstr ""
+
+#: ../app/controllers/admin/attachments_controller.php:41
+msgid "Attachment has been saved"
+msgstr ""
+
+#: ../app/controllers/admin/attachments_controller.php:47
+#, php-format
+msgid "Editace přílohy #%s"
+msgstr ""
+
+#: ../app/controllers/admin/attachments_controller.php:67
+msgid "Obrázek byl smazán."
+msgstr ""
+
+#: ../app/controllers/admin/brands_controller.php:5
+msgid "Listing brands"
+msgstr ""
+
+#: ../app/controllers/admin/brands_controller.php:10
+msgid "New brand"
+msgstr ""
+
+#: ../app/controllers/admin/brands_controller.php:21
+msgid "Editing of the brand"
+msgstr ""
+
+#: ../app/controllers/admin/brands_controller.php:27
+msgid "The brand was saved"
+msgstr ""
+
+#: ../app/controllers/admin/brands_controller.php:37
+msgid "The brand was deleted"
+msgstr ""
+
+#: ../app/controllers/admin/cards_controller.php:51
+msgid "Adding a product"
+msgstr ""
+
+#: ../app/controllers/admin/cards_controller.php:86
+msgid "The product has been created. Now you can add some extra data to it."
+msgstr ""
+
+#: ../app/controllers/admin/cards_controller.php:92
+#, php-format
+msgid "Editing product %s"
+msgstr ""
+
+#: ../app/controllers/admin/cards_controller.php:140
+#: ../app/controllers/admin/collections_controller.php:27
+#: ../app/controllers/admin/images_controller.php:58
+#: ../app/controllers/admin/pages_controller.php:25
+msgid "Changes have been saved"
+msgstr ""
+
+#: ../app/controllers/admin/cards_controller.php:172
+msgid "Varianty byly zaktivněny."
+msgstr ""
+
+#: ../app/controllers/admin/cards_controller.php:195
+#: ../app/controllers/admin/technical_specifications_controller.php:11
+#: ../app/controllers/admin/technical_specifications_controller.php:33
+msgid "The product already has this specification"
+msgstr ""
+
+#: ../app/controllers/admin/cards_controller.php:221
+msgid "Připojení odkazu k produktu"
+msgstr ""
+
+#: ../app/controllers/admin/cards_controller.php:239
+msgid "Odkaz odpojen"
+msgstr ""
+
+#: ../app/controllers/admin/card_sections_controller.php:4
+#, php-format
+msgid "Add a textual section for the product %s"
+msgstr ""
+
+#: ../app/controllers/admin/card_sections_controller.php:12
+msgid "The section has been created"
+msgstr ""
+
+#: ../app/controllers/admin/card_sections_controller.php:12
+msgid "It would be nice to add some more information"
+msgstr ""
+
+#: ../app/controllers/admin/card_sections_controller.php:18
+msgid "Editace textové sekce"
+msgstr ""
+
+#: ../app/controllers/admin/categories_controller.php:5
+#, php-format
+msgid "Editace kategorie \"%s\""
+msgstr ""
+
+#: ../app/controllers/admin/categories_controller.php:17
+msgid "Přesun kategorie"
+msgstr ""
+
+#: ../app/controllers/admin/categories_controller.php:22
+msgid "Kategorie byla přesunuta"
+msgstr ""
+
+#: ../app/controllers/admin/categories_controller.php:35
+msgid "Nová podkategorie"
+msgstr ""
+
+#: ../app/controllers/admin/categories_controller.php:42
+msgid "Nelze vytvořit novou kategorii, pokud je nadřazená kategorie alias."
+msgstr ""
+
+#: ../app/controllers/admin/categories_controller.php:48
+msgid "Na tomto místě už není možné založit novou kategorii"
+msgstr ""
+
+#: ../app/controllers/admin/categories_controller.php:54
+msgid "Filtr nelze založit, pokud nadřazená kategorie je rovněž filtr."
+msgstr ""
+
+#: ../app/controllers/admin/categories_controller.php:61
+msgid "Kategorie byla vytvořena"
+msgstr ""
+
+#: ../app/controllers/admin/categories_controller.php:72
+msgid "Kategorie byla smazána"
+msgstr ""
+
+#: ../app/controllers/admin/categories_controller.php:77
+msgid "Nový alias"
+msgstr ""
+
+#: ../app/controllers/admin/categories_controller.php:83
+msgid "Alias vytvořen"
+msgstr ""
+
+#: ../app/controllers/admin/categories_controller.php:115
+msgid "filtr"
+msgstr ""
+
+#: ../app/controllers/admin/categories_controller.php:116
+msgid "alias"
+msgstr ""
+
+#: ../app/controllers/admin/category_cards_controller.php:6
+#, php-format
+msgid "Přidání produktu do kategorie %s"
+msgstr ""
+
+#: ../app/controllers/admin/category_cards_controller.php:13
+#: ../app/controllers/admin/category_recommended_cards_controller.php:13
+msgid "Produkt byl přidán"
+msgstr ""
+
+#: ../app/controllers/admin/category_recommended_cards_controller.php:6
+#, php-format
+msgid "Přidání doporučeného produktu do kategorie %s"
+msgstr ""
+
+#: ../app/controllers/admin/category_trees_controller.php:4
+msgid "Katalogové stromy"
+msgstr ""
+
+#: ../app/controllers/admin/category_trees_controller.php:9
+msgid "Vytvořit nový katalogový strom"
+msgstr ""
+
+#: ../app/controllers/admin/category_trees_controller.php:16
+msgid "Katalogový strom byl vytvořen"
+msgstr ""
+
+#: ../app/controllers/admin/category_trees_controller.php:22
+msgid "Katalogový strom"
+msgstr ""
+
+#: ../app/controllers/admin/collection_cards_controller.php:5
+msgid "Adding a product into the collection"
+msgstr ""
+
+#: ../app/controllers/admin/collections_controller.php:5
+#: ../app/controllers/collections_controller.php:4
+msgid "List of Collections"
+msgstr ""
+
+#: ../app/controllers/admin/collections_controller.php:10
+msgid "New Collection"
+msgstr ""
+
+#: ../app/controllers/admin/collections_controller.php:15
+msgid "The collection has been saved."
+msgstr ""
+
+#: ../app/controllers/admin/collections_controller.php:15
+msgid "Do you want to add some products to the collection?"
+msgstr ""
+
+#: ../app/controllers/admin/collections_controller.php:21
+#, php-format
+msgid "Editing of the collection '%s'"
+msgstr ""
+
+#: ../app/controllers/admin/collections_controller.php:36
+msgid "The collection has been deleted"
+msgstr ""
+
+#: ../app/controllers/admin/consumables_controller.php:9
+msgid "Adding new consumable product"
+msgstr ""
+
+#: ../app/controllers/admin/consumables_controller.php:10
+msgid "Consumable product has been added"
+msgstr ""
+
+#: ../app/controllers/admin/images_controller.php:4
+#, php-format
+msgid "Photo gallery of the object %s#%s"
+msgstr ""
+
+#: ../app/controllers/admin/images_controller.php:23
+msgid "Adding an image into the photo gallery"
+msgstr ""
+
+#: ../app/controllers/admin/images_controller.php:44
+msgid "Image was created"
+msgstr ""
+
+#: ../app/controllers/admin/images_controller.php:50
+#, php-format
+msgid "Editing of the Image #%s"
+msgstr ""
+
+#: ../app/controllers/admin/images_controller.php:71
+msgid "The image has been deleted"
 msgstr ""
 
 #: ../app/controllers/admin/newsletter_subscribers_controller.php:4
 msgid "Newsletter Subscribers"
 msgstr ""
 
-#: ../app/controllers/admin/users_controller.php:4
-msgid "Users list"
+#: ../app/controllers/admin/pages_controller.php:10
+msgid "Create page"
 msgstr ""
 
-#: ../app/controllers/admin/users_controller.php:32
-msgid "Create a new user"
+#: ../app/controllers/admin/pages_controller.php:15
+msgid "The page has been created successfuly"
+msgstr ""
+
+#: ../app/controllers/admin/pages_controller.php:21
+#, php-format
+msgid "Editing page '%s'"
+msgstr ""
+
+#: ../app/controllers/admin/pages_controller.php:46
+msgid "The pages has been deleted"
+msgstr ""
+
+#: ../app/controllers/admin/products_controller.php:4
+msgid "Nová varianta produktu"
+msgstr ""
+
+#: ../app/controllers/admin/products_controller.php:10
+msgid "Varianta vytvořena"
+msgstr ""
+
+#: ../app/controllers/admin/products_controller.php:18
+#, php-format
+msgid "Úprava varianty produktu '%s - %s' ('%s')"
+msgstr ""
+
+#: ../app/controllers/admin/products_controller.php:22
+msgid "Varianta uložena"
+msgstr ""
+
+#: ../app/controllers/admin/related_cards_controller.php:17
+msgid "The same product cannot be added to the product itself"
+msgstr ""
+
+#: ../app/controllers/admin/related_cards_controller.php:53
+msgid "Adding new related product"
+msgstr ""
+
+#: ../app/controllers/admin/related_cards_controller.php:54
+msgid "Related product has been added"
+msgstr ""
+
+#: ../app/controllers/admin/tags_controller.php:4
+msgid "Listing Tags"
+msgstr ""
+
+#: ../app/controllers/admin/tags_controller.php:29
+msgid "Create a new tag"
+msgstr ""
+
+#: ../app/controllers/admin/tags_controller.php:36
+msgid "The tag has been created successfuly"
+msgstr ""
+
+#: ../app/controllers/admin/tags_controller.php:44
+#, php-format
+msgid "Editing tag %s"
+msgstr ""
+
+#: ../app/controllers/admin/tags_controller.php:51
+#: ../app/forms/admin/tags/create_new_form.php:7
+msgid "The same tag already exists"
+msgstr ""
+
+#: ../app/controllers/admin/tags_controller.php:62
+msgid "The tag has been updated"
+msgstr ""
+
+#: ../app/controllers/admin/technical_specification_keys_controller.php:6
+#, php-format
+msgid "Editace klíče %s"
+msgstr ""
+
+#: ../app/controllers/admin/technical_specification_keys_controller.php:10
+msgid "The same key already exists"
+msgstr ""
+
+#: ../app/controllers/admin/technical_specifications_controller.php:5
+msgid "Add new technical specification"
+msgstr ""
+
+#: ../app/controllers/admin/technical_specifications_controller.php:18
+msgid "New technical specification record has been created"
+msgstr ""
+
+#: ../app/controllers/admin/users_controller.php:4
+msgid "Users list"
 msgstr ""
 
 #: ../app/controllers/admin/users_controller.php:38
@@ -301,13 +1349,6 @@ msgstr ""
 #: ../app/controllers/admin/users_controller.php:44
 #, php-format
 msgid "Editing user %s"
-msgstr ""
-
-#: ../app/controllers/admin/users_controller.php:51
-#: ../app/controllers/admin/articles_controller.php:52
-#: ../app/controllers/admin/tags_controller.php:56
-#: ../app/controllers/users_controller.php:42
-msgid "Nothing has been changed"
 msgstr ""
 
 #: ../app/controllers/admin/users_controller.php:57
@@ -334,105 +1375,70 @@ msgstr ""
 msgid "Now you are logged as <em>%s</em>"
 msgstr ""
 
-#: ../app/controllers/admin/articles_controller.php:4
-msgid "Listing Articles"
+#: ../app/controllers/api/logins_controller.php:33
+msgid "Bad password"
 msgstr ""
 
-#: ../app/controllers/admin/articles_controller.php:28
-msgid "Create article"
+#: ../app/controllers/api/logins_controller.php:36
+msgid "There is no such user"
 msgstr ""
 
-#: ../app/controllers/admin/articles_controller.php:38
-msgid "The article has been created successfuly"
+#: ../app/controllers/application_base.php:20
+msgid "Page not found"
 msgstr ""
 
-#: ../app/controllers/admin/articles_controller.php:44
+#: ../app/controllers/application_base.php:30
+msgid "Forbidden"
+msgstr ""
+
+#: ../app/controllers/application_mailer.php:30
 #, php-format
-msgid "Editing %s"
+msgid "Welcome to %s"
 msgstr ""
 
-#: ../app/controllers/admin/articles_controller.php:60
-msgid "The article has been updated successfuly"
+#: ../app/controllers/application_mailer.php:39
+msgid "Reset Your Password"
 msgstr ""
 
-#: ../app/controllers/admin/admin.php:8
-#: ../app/controllers/admin/main_controller.php:4 smarty.c:320 smarty.c:797
-msgid "Administration"
+#: ../app/controllers/application_mailer.php:48
+msgid "Your password was updated"
 msgstr ""
 
-#: ../app/controllers/admin/admin.php:27
-msgid "Welcome screen"
+#: ../app/controllers/application_mailer.php:60
+msgid "Message sent from contact page"
 msgstr ""
 
-#: ../app/controllers/admin/admin.php:28
-msgid "Articles"
+#: ../app/controllers/application_mailer.php:71
+#: ../app/controllers/application_mailer.php:80
+#: ../app/controllers/information_requests_controller.php:5
+#: ../app/controllers/information_requests_controller.php:39
+msgid "Request for information"
 msgstr ""
 
-#: ../app/controllers/admin/admin.php:30
-msgid "Users"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:32
-msgid "Newsletter subscribers"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:76
-msgid "The entry has been deleted"
-msgstr ""
-
-#: ../app/controllers/admin/tags_controller.php:4
-msgid "Listing Tags"
-msgstr ""
-
-#: ../app/controllers/admin/tags_controller.php:29
-msgid "Create a new tag"
-msgstr ""
-
-#: ../app/controllers/admin/tags_controller.php:36
-msgid "The tag has been created successfuly"
-msgstr ""
-
-#: ../app/controllers/admin/tags_controller.php:44
+#: ../app/controllers/application_rest_api.php:73
 #, php-format
-msgid "Editing tag %s"
+msgid "Commands in %s"
 msgstr ""
 
-#: ../app/controllers/admin/tags_controller.php:62
-msgid "The tag has been updated"
-msgstr ""
-
-#: ../app/controllers/users_controller.php:4
-msgid "User profile"
-msgstr ""
-
-#: ../app/controllers/users_controller.php:9
-msgid "To register as a new user, sign out first"
-msgstr ""
-
-#: ../app/controllers/users_controller.php:17 smarty.c:458 smarty.c:935
-msgid "New user registration"
-msgstr ""
-
-#: ../app/controllers/users_controller.php:30
+#: ../app/controllers/application_rest_api.php:171
 #, php-format
-msgid ""
-"You have been successfuly registered and now you are logged in as <em>%s</em>"
+msgid "submit using method %s"
 msgstr ""
 
-#: ../app/controllers/users_controller.php:36 smarty.c:38 smarty.c:515
-msgid "Change your account data"
+#: ../app/controllers/application_rest_api.php:218
+msgid "Nothing has been found on this address"
 msgstr ""
 
-#: ../app/controllers/users_controller.php:47
-msgid "Your account data has been updated"
+#: ../app/controllers/application_rest_api.php:224
+msgid "Sorry, An internal error happened"
 msgstr ""
 
-#: ../app/controllers/users_controller.php:53 smarty.c:41 smarty.c:518
-msgid "Change your password"
+#: ../app/controllers/brands_controller.php:4
+msgid "List of Brands"
 msgstr ""
 
-#: ../app/controllers/users_controller.php:57
-msgid "This is not your current password"
+#: ../app/controllers/categories_controller.php:4
+msgid "List of Categories"
 msgstr ""
 
 #: ../app/controllers/logins_controller.php:15
@@ -455,65 +1461,8 @@ msgstr ""
 msgid "You have been successfuly logged out"
 msgstr ""
 
-#: ../app/controllers/application_rest_api.php:52
-#, php-format
-msgid "Commands in %s"
-msgstr ""
-
-#: ../app/controllers/application_rest_api.php:150
-#, php-format
-msgid "submit using method %s"
-msgstr ""
-
-#: ../app/controllers/application_rest_api.php:169
-msgid "Nothing has been found on this address"
-msgstr ""
-
-#: ../app/controllers/application_rest_api.php:175
-msgid "Sorry, An internal error happened"
-msgstr ""
-
-#: ../app/controllers/sitemaps_controller.php:10 smarty.c:395 smarty.c:872
-msgid "Sitemap"
-msgstr ""
-
-#: ../app/controllers/api/logins_controller.php:33
-msgid "Bad password"
-msgstr ""
-
-#: ../app/controllers/api/logins_controller.php:36
-msgid "There is no such user"
-msgstr ""
-
-#: ../app/controllers/application_mailer.php:30
-#, php-format
-msgid "Welcome to %s"
-msgstr ""
-
-#: ../app/controllers/application_mailer.php:39
-msgid "Reset Your Password"
-msgstr ""
-
-#: ../app/controllers/application_mailer.php:48
-msgid "Your password was updated"
-msgstr ""
-
-#: ../app/controllers/application_mailer.php:60
-msgid "Message sent from contact page"
-msgstr ""
-
-#: ../app/controllers/main_controller.php:11 smarty.c:365 smarty.c:842
+#: ../app/controllers/main_controller.php:11
 msgid "Welcome!"
-msgstr ""
-
-#: ../app/controllers/main_controller.php:15
-#, php-format
-msgid "About %s"
-msgstr ""
-
-#: ../app/controllers/main_controller.php:21
-#: ../app/controllers/main_controller.php:44 smarty.c:446 smarty.c:923
-msgid "Contact"
 msgstr ""
 
 #: ../app/controllers/news_controller.php:7
@@ -522,796 +1471,494 @@ msgstr ""
 msgid "News"
 msgstr ""
 
-#: ../app/controllers/application_base.php:20
-msgid "Page not found"
+#: ../app/controllers/password_recoveries_controller.php:10
+msgid "There is not such user with the given login or email"
 msgstr ""
 
-#: ../app/controllers/application_base.php:30
-msgid "Forbidden"
-msgstr ""
-
-#: ../vendor/atk14/mail-panel/src/MailPanel.php:44
-msgid "Headers"
-msgstr ""
-
-#: ../vendor/atk14/mail-panel/src/MailPanel.php:55
-msgid "HTML body"
-msgstr ""
-
-#: ../vendor/atk14/mail-panel/src/MailPanel.php:61
-msgid "Plain text body"
-msgstr ""
-
-#: ../vendor/atk14/mail-panel/src/MailPanel.php:71
-msgid "No mail has been sent"
-msgstr ""
-
-#: ../atk14/src/forms/test/custom_fields/url_field.php:12
-msgid "This doesn't look like an URL"
-msgstr ""
-
-#: ../atk14/src/forms/fields.php:235
-msgid "This field is required."
-msgstr ""
-
-#: ../atk14/src/forms/fields.php:236
-msgid "Enter a valid value."
-msgstr ""
-
-#: ../atk14/src/forms/fields/multiple_choice_field.php:21
-msgid "Select a valid choice. %(value)s is not one of the available choices."
-msgstr ""
-
-#: ../atk14/src/forms/fields/multiple_choice_field.php:22
-msgid "Enter a list of values."
-msgstr ""
-
-#: ../atk14/src/forms/fields/multiple_choice_field.php:23
-msgid "Please, choose the right options."
-msgstr ""
-
-#: ../atk14/src/forms/fields/float_field.php:22
-msgid "Enter a number."
-msgstr ""
-
-#: ../atk14/src/forms/fields/float_field.php:23
-#: ../atk14/src/forms/fields/integer_field.php:33
-msgid "Ensure this value is less than or equal to %value%."
-msgstr ""
-
-#: ../atk14/src/forms/fields/float_field.php:24
-#: ../atk14/src/forms/fields/integer_field.php:34
-msgid "Ensure this value is greater than or equal to %value%."
-msgstr ""
-
-#: ../atk14/src/forms/fields/integer_field.php:32
-msgid "Enter a whole number."
-msgstr ""
-
-#: ../atk14/src/forms/fields/date_time_with_seconds_field.php:14
-msgid "Enter a valid date, hours, minutes and seconds."
-msgstr ""
-
-#: ../atk14/src/forms/fields/date_field.php:17
-msgid "Enter a valid date."
-msgstr ""
-
-#: ../atk14/src/forms/fields/choice_field.php:19
-msgid "Select a valid choice. That choice is not one of the available choices."
-msgstr ""
-
-#: ../atk14/src/forms/fields/choice_field.php:20
-msgid "Please, choose the right option."
-msgstr ""
-
-#: ../atk14/src/forms/fields/char_field.php:24
-#: ../atk14/src/forms/fields/regex_field.php:25
-msgid "Ensure this value has at most %max% characters (it has %length%)."
-msgstr ""
-
-#: ../atk14/src/forms/fields/char_field.php:25
-#: ../atk14/src/forms/fields/regex_field.php:26
-msgid "Ensure this value has at least %min% characters (it has %length%)."
-msgstr ""
-
-#: ../atk14/src/forms/fields/char_field.php:26
-msgid "Ensure this value has at most %max% characters."
-msgstr ""
-
-#: ../atk14/src/forms/fields/char_field.php:27
-msgid "Ensure this value has at least %min% characters."
-msgstr ""
-
-#: ../atk14/src/forms/fields/char_field.php:28
-msgid "Ensure this value has between %min% and %max% characters."
-msgstr ""
-
-#: ../atk14/src/forms/fields/image_field.php:22
-msgid "Ensure this file is image."
-msgstr ""
-
-#: ../atk14/src/forms/fields/image_field.php:24
-msgid "Ensure this image is %width_required% pixels wide (it is %width%)."
-msgstr ""
-
-#: ../atk14/src/forms/fields/image_field.php:25
-msgid "Ensure this image is %height_required% pixels high (it is %height%)."
-msgstr ""
-
-#: ../atk14/src/forms/fields/image_field.php:27
-msgid "Ensure this image is at most %max% pixels wide (it is %width%)."
-msgstr ""
-
-#: ../atk14/src/forms/fields/image_field.php:28
-msgid "Ensure this image is at most %max% pixels high (it is %height%)."
-msgstr ""
-
-#: ../atk14/src/forms/fields/image_field.php:29
-msgid "Ensure this image is at least %min% pixels wide (it is %width%)."
-msgstr ""
-
-#: ../atk14/src/forms/fields/image_field.php:30
-msgid "Ensure this image is at least %min% pixels high (it is %height%)."
-msgstr ""
-
-#: ../atk14/src/forms/fields/image_field.php:32
-msgid "Ensure this image is in a required format"
-msgstr ""
-
-#: ../atk14/src/forms/fields/date_time_field.php:14
-msgid "Enter a valid date, hours and minutes."
-msgstr ""
-
-#: ../atk14/src/forms/fields/file_field.php:39
-msgid "Ensure this file has at most %max_file_size% bytes (it has %file_size%)"
-msgstr ""
-
-#: ../atk14/src/forms/fields/file_field.php:40
-msgid "Unsupported file type: %mime_type%"
-msgstr ""
-
-#: ../atk14/src/forms/fields/file_field.php:42
+#: ../app/controllers/password_recoveries_controller.php:14
 msgid ""
-"The uploaded file exceeds the max file size value that is set on the server "
-"(%upload_max_filesize%)"
+"To reset admins password use console like ATK14 ninja: $ ./scripts/migrate -"
+"f 0002_reset_admins_password_migration.php"
 msgstr ""
 
-#: ../atk14/src/forms/fields/file_field.php:43
-msgid ""
-"The uploaded file exceeds the max file size directive that was specified in "
-"the HTML form (%MAX_FILE_SIZE%)"
+#: ../app/controllers/password_recoveries_controller.php:53
+#: ../app/controllers/users_controller.php:64
+msgid "Your password has been updated successfuly"
 msgstr ""
 
-#: ../atk14/src/forms/fields/file_field.php:44
-msgid "The uploaded file was only partially uploaded"
+#: ../app/controllers/password_recoveries_controller.php:65
+msgid "Password recovery"
 msgstr ""
 
-#: ../atk14/src/forms/fields/file_field.php:45
-msgid "Missing a temporary folder"
+#: ../app/controllers/users_controller.php:4
+msgid "User profile"
 msgstr ""
 
-#: ../atk14/src/forms/fields/file_field.php:46
-msgid "Failed to write file to disk"
+#: ../app/controllers/users_controller.php:9
+msgid "To register as a new user, sign out first"
 msgstr ""
 
-#: ../atk14/src/forms/fields/file_field.php:47
-msgid "File upload stopped by an extension installed on the server"
-msgstr ""
-
-#: ../atk14/src/forms/fields/file_field.php:48
-msgid "An error occurred during file upload"
-msgstr ""
-
-#: ../atk14/src/forms/fields/email_field.php:20
-msgid "Enter a valid e-mail address."
-msgstr ""
-
-#: ../atk14/src/forms/fields/ip_address_field.php:26
-msgid "Enter a valid IP address."
-msgstr ""
-
-#: ../atk14/src/atk14/atk14_form.php:207
-msgid "The form contains errors, therefore it cannot be processed."
-msgstr ""
-
-#: ../atk14/src/atk14/atk14_form.php:492
-msgid "Please, submit the form again"
-msgstr ""
-
-#: ../atk14/src/atk14/atk14_sorting.php:146
-msgid "Sort table by this column"
-msgstr ""
-
-#: ../atk14/src/atk14/helpers/function.paginator.php:89
-#: ../atk14/src/atk14/helpers/function.paginator.php:152
+#: ../app/controllers/users_controller.php:30
 #, php-format
-msgid "%s items total"
-msgstr ""
-
-#: ../atk14/src/atk14/helpers/function.paginator.php:103
-msgid "prev"
-msgstr ""
-
-#: ../atk14/src/atk14/helpers/function.paginator.php:147
-msgid "next"
-msgstr ""
-
-#: ../atk14/src/atk14/helpers/block.a_destroy.php:33
-msgid "Are you sure?"
-msgstr ""
-
-#: ../atk14/src/atk14/helpers/function.to_sentence.php:13
-msgid "and"
-msgstr ""
-
-#: ../atk14/src/atk14/atk14_locale.php:59
-msgid "atk14.date_format"
-msgstr "m/d/Y"
-
-#: ../atk14/src/atk14/atk14_locale.php:79
-msgid "atk14.parse_date_pattern"
-msgstr "/^(?<month>[0-9]{1,2})\\/(?<day>[0-9]{1,2})\\/(?<year>[0-9]{4})$/"
-
-#: ../atk14/src/atk14/atk14_locale.php:113
-msgid "atk14.datetime_format"
-msgstr "m/d/Y H:i"
-
-#: ../atk14/src/atk14/atk14_locale.php:126
-msgid "atk14.parse_datetime_pattern"
-msgstr ""
-"/^(?<month>[0-9]{1,2})\\/(?<day>[0-9]{1,2})\\/(?<year>[0-9]{4}) (?"
-"<hours>[0-9]{2}):(?<minutes>[0-9]{2})$/"
-
-#: ../atk14/src/atk14/atk14_locale.php:139
-msgid "atk14.datetime_with_seconds_format"
-msgstr "m/d/Y H:i:s"
-
-#: ../atk14/src/atk14/atk14_locale.php:151
-msgid "atk14.parse_datetime_with_seconds_pattern"
-msgstr ""
-"/^(?<month>[0-9]{1,2})\\/(?<day>[0-9]{1,2})\\/(?<year>[0-9]{4}) (?"
-"<hours>[0-9]{2}):(?<minutes>[0-9]{2}):(?<seconds>[0-9]{2})$/"
-
-#: ../atk14/src/atk14/atk14_dispatcher.php:67
-msgid "Service Unavailable"
-msgstr ""
-
-#: ../atk14/src/atk14/atk14_dispatcher.php:68
-msgid "This site is in maintenance. Please come back later."
-msgstr ""
-
-#: smarty.c:2 smarty.c:479
-msgid "Best regards"
-msgstr ""
-
-#: smarty.c:5 smarty.c:482
-msgid "%1 Support Team"
-msgstr ""
-
-#: smarty.c:8 smarty.c:485
-msgid "web"
-msgstr ""
-
-#: smarty.c:11 smarty.c:488
-msgid "email"
-msgstr ""
-
-#: smarty.c:14 smarty.c:491
 msgid ""
-"Best regards\n"
-"\n"
-"%1 Support Team\n"
-"web: %2\n"
-"email: %3"
+"You have been successfuly registered and now you are logged in as <em>%s</em>"
 msgstr ""
 
-#: smarty.c:17 smarty.c:494
-msgid "Current password"
+#: ../app/controllers/users_controller.php:47
+msgid "Your account data has been updated"
 msgstr ""
 
-#: smarty.c:32 smarty.c:509
-msgid "Are you admin?"
+#: ../app/controllers/users_controller.php:57
+msgid "This is not your current password"
 msgstr ""
 
-#: smarty.c:35 smarty.c:512
-msgid "Yes, you are"
+#: ../app/fields/brand_field.php:4
+msgid "brand"
 msgstr ""
 
-#: smarty.c:44 smarty.c:308 smarty.c:521 smarty.c:785
-msgid "Posted by <em>%1</em> on <time datetime=\"%2\">%3</time>"
+#: ../app/fields/card_field.php:8
+msgid "There is no such product"
 msgstr ""
 
-#: smarty.c:47 smarty.c:524
-msgid "News archive"
+#: ../app/fields/card_section_type_field.php:4
+msgid "vyberte typ obsahu"
 msgstr ""
 
-#: smarty.c:50 smarty.c:527
-msgid "At the moment there are no news."
+#: ../app/fields/catalog_id_field.php:6
+#: ../app/forms/admin/products/products_form.php:6
+msgid "Katalogové číslo"
 msgstr ""
 
-#: smarty.c:53 smarty.c:530
-msgid "You are signed in as <em>%1</em>."
+#: ../app/fields/catalog_id_field.php:10
+msgid "Toto nevypadá jako katalogové číslo"
 msgstr ""
 
-#: smarty.c:56 smarty.c:533
-msgid "Click on the button to sign out."
+#: ../app/fields/collection_field.php:7
+msgid "collection"
 msgstr ""
 
-#: smarty.c:59 smarty.c:536
-msgid "Have you forgotten password?"
+#: ../app/fields/collection_field.php:35
+msgid "There is no such collection"
 msgstr ""
 
-#: smarty.c:62 smarty.c:539
+#: ../app/fields/login_field.php:6
 msgid ""
-"Please note that default administration access is admin/admin. Be a smart "
-"guy and change admin's password on production promptly."
+"Only letters, numbers, dots and dashes are allowed. Up to 50 characters."
 msgstr ""
 
-#: smarty.c:65 smarty.c:542
+#: ../app/fields/login_field.php:18
+msgid "This username has been already taken"
+msgstr ""
+
+#: ../app/fields/object_field.php:30
+msgid "There is no such record"
+msgstr ""
+
+#: ../app/fields/page_field.php:4
+msgid "page"
+msgstr ""
+
+#: ../app/fields/page_field.php:32
+msgid "There is no such page"
+msgstr ""
+
+#: ../app/fields/slug_field.php:5
+msgid "Slug"
+msgstr ""
+
+#: ../app/fields/slug_field.php:7
+msgid "funny-green-mug"
+msgstr ""
+
+#: ../app/fields/slug_field.php:17
+msgid "Write something like black-cat-white-cat"
+msgstr ""
+
+#: ../app/fields/tags_field.php:18
+msgid "Ensure that there are max %max% tags (now there are %count%)"
+msgstr ""
+
+#: ../app/fields/tags_field.php:19
+#, php-format
+msgid "There is no tag <em>%s</em>"
+msgstr ""
+
+#: ../app/fields/tags_field.php:20
+#, php-format
+msgid "Tag <em>%s</em> is there more than once"
+msgstr ""
+
+#: ../app/forms/admin/articles/articles_form.php:10
+#: ../app/forms/admin/pages/pages_form.php:15
+msgid "Body"
+msgstr ""
+
+#: ../app/forms/admin/articles/articles_form.php:11
+msgid "Mardown format is expected"
+msgstr ""
+
+#: ../app/forms/admin/articles/articles_form.php:15
+msgid "Published At"
+msgstr ""
+
+#: ../app/forms/admin/articles/articles_form.php:23
+#, php-format
 msgid ""
-"At the moment no one knows the actual user's password because passwords are "
-"not stored in plain text form. In this form you can set a new password to "
-"the user <em>%1</em>"
+"Mention tag <em>%s</em> when this article should be displayed in the news "
+"section"
 msgstr ""
 
-#: smarty.c:68 smarty.c:134 smarty.c:161 smarty.c:545 smarty.c:611 smarty.c:638
-msgid "Edit"
+#: ../app/forms/admin/articles/index_form.php:5
+#: ../app/forms/admin/cards/index_form.php:5
+#: ../app/forms/admin/newsletter_subscribers/index_form.php:5
+#: ../app/forms/admin/tags/index_form.php:5
+#: ../app/forms/admin/users/index_form.php:5
+#: ../app/forms/application_form.php:63
+msgid "Search"
 msgstr ""
 
-#: smarty.c:74 smarty.c:551
-msgid "Sign in as this user"
+#: ../app/forms/admin/articles/index_form.php:9
+msgid "Search articles"
 msgstr ""
 
-#: smarty.c:77 smarty.c:554
+#: ../app/forms/admin/attachments/attachments_form.php:6
+msgid "User Manual"
+msgstr ""
+
+#: ../app/forms/admin/attachments/create_new_form.php:6
+msgid "Soubor"
+msgstr ""
+
+#: ../app/forms/admin/brands/brands_form.php:5
+#: ../app/forms/admin/card_sections/card_sections_form.php:8
+#: ../app/forms/admin/categories/categories_form.php:6
+#: ../app/forms/admin/products/products_form.php:9
+msgid "Název"
+msgstr ""
+
+#: ../app/forms/admin/brands/brands_form.php:8
+#: ../app/forms/admin/cards/cards_form.php:23
+#: ../app/forms/admin/categories/categories_form.php:9
+#: ../app/forms/admin/collections/collections_form.php:8
+#: ../app/forms/admin/pages/pages_form.php:10
+msgid "Teaser"
+msgstr ""
+
+#: ../app/forms/admin/brands/brands_form.php:10
+#: ../app/forms/admin/cards/cards_form.php:25
+#: ../app/forms/admin/categories/categories_form.php:11
+msgid "Brief description"
+msgstr ""
+
+#: ../app/forms/admin/brands/brands_form.php:13
+msgid "Info"
+msgstr ""
+
+#: ../app/forms/admin/brands/brands_form.php:17
+msgid "Url"
+msgstr ""
+
+#: ../app/forms/admin/brands/brands_form.php:19
+msgid "Pages of the manufacturer"
+msgstr ""
+
+#: ../app/forms/admin/brands/brands_form.php:22
+msgid "Logo"
+msgstr ""
+
+#: ../app/forms/admin/cards/add_technical_specification_form.php:6
+msgid "Specification name"
+msgstr ""
+
+#: ../app/forms/admin/cards/add_technical_specification_form.php:10
+#: ../app/forms/admin/technical_specifications/technical_specifications_form.php:9
+msgid "Value"
+msgstr ""
+
+#: ../app/forms/admin/cards/add_technical_specification_form.php:14
+msgid "Add new specification"
+msgstr ""
+
+#: ../app/forms/admin/cards/add_to_category_form.php:9
+msgid "Add to a category"
+msgstr ""
+
+#: ../app/forms/admin/cards/add_to_category_form.php:11
+msgid "Category"
+msgstr ""
+
+#: ../app/forms/admin/cards/add_to_category_form.php:12
 msgid ""
-"You are about to permanently delete user %1\n"
-"\tAre you sure about that?"
+"Type a slash if you want to search the tree of categories from the root."
 msgstr ""
 
-#: smarty.c:80 smarty.c:557
-msgid "Delete user"
+#: ../app/forms/admin/cards/add_to_category_form.php:20
+msgid "You can not insert products into this category"
 msgstr ""
 
-#: smarty.c:83 smarty.c:560
-msgid "Create new user"
+#: ../app/forms/admin/cards/cards_form.php:17
+msgid "Catalog number"
 msgstr ""
 
-#: smarty.c:86 smarty.c:182 smarty.c:563 smarty.c:659
-msgid "No record has been found."
+#: ../app/forms/admin/cards/cards_form.php:30
+msgid "Information"
 msgstr ""
 
-#: smarty.c:89 smarty.c:566
-msgid "Username"
+#: ../app/forms/admin/cards/cards_form.php:32
+msgid "Detailed description"
 msgstr ""
 
-#: smarty.c:101 smarty.c:110 smarty.c:179 smarty.c:578 smarty.c:587
-#: smarty.c:656
-msgid "Created at"
+#: ../app/forms/admin/cards/cards_form.php:37
+msgid "Brand"
 msgstr ""
 
-#: smarty.c:104 smarty.c:581
-msgid "Updated at"
+#: ../app/forms/admin/cards/cards_form.php:41
+msgid "Collection"
 msgstr ""
 
-#: smarty.c:107 smarty.c:143 smarty.c:584 smarty.c:620
-msgid "The list is empty."
+#: ../app/forms/admin/cards/create_new_form.php:16
+#: ../app/forms/admin/cards/edit_form.php:16
+msgid "Zadané katalogové číslo je již použité"
 msgstr ""
 
-#: smarty.c:113 smarty.c:590
-msgid "User"
+#: ../app/forms/admin/card_sections/card_sections_form.php:5
+msgid "Typ obsahu"
 msgstr ""
 
-#: smarty.c:116 smarty.c:185 smarty.c:278 smarty.c:353 smarty.c:593
-#: smarty.c:662 smarty.c:755 smarty.c:830
-msgid "Email"
+#: ../app/forms/admin/card_sections/card_sections_form.php:12
+#: ../app/forms/information_requests/create_new_form.php:26
+#: ../app/forms/main/contact_form.php:21
+msgid "Text"
 msgstr ""
 
-#: smarty.c:119 smarty.c:596
-msgid "Created from address"
+#: ../app/forms/admin/categories/categories_form.php:14
+msgid "Popis"
 msgstr ""
 
-#: smarty.c:122 smarty.c:599
-msgid "Password recovered?"
+#: ../app/forms/admin/categories/categories_form.php:19
+msgid "Obrázek"
 msgstr ""
 
-#: smarty.c:125 smarty.c:602
-msgid "Recovered at"
+#: ../app/forms/admin/categories/create_alias_form.php:6
+msgid "Umístit do kategorie"
 msgstr ""
 
-#: smarty.c:128 smarty.c:605
-msgid "Recovered from address"
+#: ../app/forms/admin/categories/create_alias_form.php:7
+#: ../app/forms/admin/categories/move_to_category_form.php:6
+msgid "Napište lomítko, pokud chcete prohledat strom kategorií od kořene."
 msgstr ""
 
-#: smarty.c:131 smarty.c:608
-msgid ""
-"Are you sure to delete article item\n"
-"%1?"
+#: ../app/forms/admin/categories/create_new_form.php:6
+msgid "Bude to filtr?"
 msgstr ""
 
-#: smarty.c:137 smarty.c:614
-msgid "Delete article"
+#: ../app/forms/admin/categories/move_to_category_form.php:5
+msgid "Nadřazená kategorie"
 msgstr ""
 
-#: smarty.c:140 smarty.c:617
-msgid "Add new article"
+#: ../app/forms/admin/category_cards/create_new_form.php:5
+#: ../app/forms/admin/category_recommended_cards/create_new_form.php:5
+msgid "Produkt"
 msgstr ""
 
-#: smarty.c:149 smarty.c:626
-msgid "Author"
+#: ../app/forms/admin/collection_cards/create_new_form.php:12
+msgid "Tento produkt už je součástí této kolekce"
 msgstr ""
 
-#: smarty.c:152 smarty.c:629
-msgid "Date"
+#: ../app/forms/admin/collection_cards/create_new_form.php:14
+#, php-format
+msgid "Tento produkt už je součástí jiné kolekce [%s]"
 msgstr ""
 
-#: smarty.c:158 smarty.c:635
-msgid "Actions"
+#: ../app/forms/admin/collections/collections_form.php:13
+#: ../app/forms/admin/images/images_form.php:15
+msgid "Description"
 msgstr ""
 
-#: smarty.c:164 smarty.c:641
-msgid ""
-"You are about to permanently delete tag %1\n"
-"\tAre you sure about that?"
+#: ../app/forms/admin/collections/collections_form.php:17
+#: ../app/forms/admin/images/images_form.php:5
+msgid "Image"
 msgstr ""
 
-#: smarty.c:167 smarty.c:644
-msgid "Delete tag"
+#: ../app/forms/admin/pages/create_new_form.php:8
+#: ../app/forms/admin/pages/edit_form.php:13
+msgid "The same code is used on a different page"
 msgstr ""
 
-#: smarty.c:170 smarty.c:647
-msgid "Add new tag"
+#: ../app/forms/admin/pages/pages_form.php:19
+msgid "Parent page"
 msgstr ""
 
-#: smarty.c:173 smarty.c:650
-msgid "No tag has been found."
+#: ../app/forms/admin/pages/pages_form.php:25
+msgid "Code"
 msgstr ""
 
-#: smarty.c:191 smarty.c:668
-msgid "Subscribed since"
+#: ../app/forms/admin/pages/pages_form.php:29
+msgid "An alternative key. Leave empty if you are not sure."
 msgstr ""
 
-#: smarty.c:194 smarty.c:284 smarty.c:671 smarty.c:761
-msgid "IP address"
+#: ../app/forms/admin/pages/pages_form.php:37
+msgid "Pro aktuální stránku nelze použít stejnou stránku jako nadřízenou."
 msgstr ""
 
-#: smarty.c:197 smarty.c:674
-msgid "Export emails in CSV"
+#: ../app/forms/admin/products/create_new_form.php:9
+msgid "Toto katalogové číslo je již použité"
 msgstr ""
 
-#: smarty.c:203 smarty.c:680
-msgid "Welcome administrator!"
+#: ../app/forms/admin/products/products_form.php:12
+msgid "Krátký popis"
 msgstr ""
 
-#: smarty.c:206 smarty.c:683
-msgid "The URL is not valid."
+#: ../app/forms/admin/related_cards/create_new_form.php:5
+msgid "Product"
 msgstr ""
 
-#: smarty.c:209 smarty.c:686
-msgid "In the form bellow set the new password for user <em>%1</em>"
+#: ../app/forms/admin/related_cards/create_new_form.php:8
+msgid "Add product"
 msgstr ""
 
-#: smarty.c:212 smarty.c:689
-msgid "The address has expired or already been used."
+#: ../app/forms/admin/tags/index_form.php:9
+msgid "Search tags"
 msgstr ""
 
-#: smarty.c:215 smarty.c:692
-msgid "The password recovery link has been sent to your email address."
+#: ../app/forms/admin/technical_specification_keys/technical_specification_keys_form.php:5
+#: ../app/forms/admin/technical_specifications/technical_specifications_form.php:5
+msgid "Key"
 msgstr ""
 
-#: smarty.c:218 smarty.c:695
-msgid ""
-"If you don't receive instructions within a few minutes, check your email's "
-"spam and junk filters."
+#: ../app/forms/admin/technical_specification_keys/technical_specification_keys_form.php:10
+msgid "Lokalizovaný název"
 msgstr ""
 
-#: smarty.c:221 smarty.c:698
-msgid "Error 403: Forbidden"
+#: ../app/forms/admin/technical_specifications/technical_specifications_form.php:14
+msgid "Localized value"
 msgstr ""
 
-#: smarty.c:224 smarty.c:701
-msgid "You don`t have a permission to access <em>%1</em> on this server."
+#: ../app/forms/admin/users/edit_password_form.php:11
+msgid "Set password"
 msgstr ""
 
-#: smarty.c:227 smarty.c:254 smarty.c:704 smarty.c:731
-msgid "Go to the homepage"
+#: ../app/forms/admin/users/index_form.php:9
+msgid "Search users"
 msgstr ""
 
-#: smarty.c:230 smarty.c:707
-msgid "Currently you are not logged as an admin user."
+#: ../app/forms/api/categories_suggestions/index_form.php:5
+#: ../app/forms/api/suggestions/index_form.php:5
+#: ../app/forms/api/tags_suggestions/index_form.php:5
+msgid "Search term"
 msgstr ""
 
-#: smarty.c:233 smarty.c:239 smarty.c:710 smarty.c:716
-msgid "or"
+#: ../app/forms/application_form.php:59
+msgid "Create"
 msgstr ""
 
-#: smarty.c:236 smarty.c:713
-msgid "Sign in as an admin user"
+#: ../app/forms/application_form.php:61
+msgid "Show"
 msgstr ""
 
-#: smarty.c:245 smarty.c:722
-msgid "Error 404: Page not found"
+#: ../app/forms/application_form.php:65
+msgid "Update"
 msgstr ""
 
-#: smarty.c:248 smarty.c:725
-msgid "We are deeply sorry, but the page on the URI <em>%1</em> wasn't found."
+#: ../app/forms/application_form.php:69
+msgid "Save"
 msgstr ""
 
-#: smarty.c:251 smarty.c:728
-msgid "Please, write us to %1 if you think this is our mistake."
+#: ../app/forms/information_requests/create_new_form.php:20
+#: ../app/forms/main/contact_form.php:15
+msgid "Sign up for newsletter"
 msgstr ""
 
-#: smarty.c:257 smarty.c:734
-msgid ""
-"Thanks for signing up for %1!\n"
-"\n"
-"Here is your data summary\n"
-"\n"
-"login: %2\n"
-"email: %3\n"
-"name: %4\n"
+#: ../app/forms/information_requests/create_new_form.php:31
+#: ../app/forms/main/contact_form.php:26
+msgid "Send message"
 msgstr ""
 
-#: smarty.c:260 smarty.c:737
-msgid ""
-"Hello %1!\n"
-"\n"
-"Have you forgotten your password? To reset your password, click on the "
-"following link\n"
-"\n"
-"%2\n"
-"\n"
-"Please note that this link is valid for 2 hours only."
+#: ../app/forms/logins/create_new_form.php:5
+msgid "Login"
 msgstr ""
 
-#: smarty.c:263 smarty.c:290 smarty.c:740 smarty.c:767
-msgid "Hello %1!"
+#: ../app/forms/logins/create_new_form.php:9
+#: ../app/forms/users/edit_password_form.php:5
+#: ../app/forms/users/users_form.php:20
+msgid "Password"
 msgstr ""
 
-#: smarty.c:266 smarty.c:743
-msgid "Your password was just updated in recovery mode."
+#: ../app/forms/password_recoveries/create_new_form.php:5
+msgid "Login or email address"
 msgstr ""
 
-#: smarty.c:269 smarty.c:746
-msgid "The update has been executed upon a request from IP address %1"
+#: ../app/forms/password_recoveries/create_new_form.php:9
+msgid "Send me a recovery link"
 msgstr ""
 
-#: smarty.c:272 smarty.c:749
-msgid ""
-"Hello %1!\n"
-"\n"
-"Your password was just updated in recovery mode.\n"
-"\n"
-"The update has been executed upon a request from IP address %2"
+#: ../app/forms/users/create_new_form.php:16
+msgid "In order to register you need to obtain an invitation code"
 msgstr ""
 
-#: smarty.c:281 smarty.c:758
-msgid "Signing up for newsletter"
+#: ../app/forms/users/create_new_form.php:28
+msgid "This is not a valid invitation code"
 msgstr ""
 
-#: smarty.c:287 smarty.c:764
-msgid "Logged user:"
+#: ../app/forms/users/create_new_form.php:48
+msgid "This login has been already taken"
 msgstr ""
 
-#: smarty.c:293 smarty.c:770
-msgid ""
-"Have you forgotten your password? To reset your password, click on the "
-"following link"
+#: ../app/forms/users/edit_password_form.php:17
+msgid "The new password is the same as your current password"
 msgstr ""
 
-#: smarty.c:296 smarty.c:773
-msgid "recovery link"
+#: ../app/forms/users/users_form.php:14
+msgid "We will not disclose this address"
 msgstr ""
 
-#: smarty.c:299 smarty.c:776
-msgid "Please note that this link is valid for 2 hours only."
+#: ../app/forms/users/users_form.php:25
+msgid "Password (repeat)"
 msgstr ""
 
-#: smarty.c:302 smarty.c:779
-msgid ""
-"This site runs on <a href=\"http://www.atk14.net/\">ATK14 Framework</a>, for "
-"now and ever after"
+#: ../app/forms/users/users_form.php:38
+msgid "Password doesn't match"
 msgstr ""
 
-#: smarty.c:305 smarty.c:782
-msgid "Go to home page"
+#: ../app/helpers/function.paginator.php:89
+#: ../app/helpers/function.paginator.php:152
+msgid "items total"
 msgstr ""
 
-#: smarty.c:311 smarty.c:788
-msgid "Examples:"
+#: ../app/helpers/function.paginator.php:103
+msgid "Prev"
 msgstr ""
 
-#: smarty.c:314 smarty.c:791
-msgid "administrator"
+#: ../app/helpers/function.paginator.php:147
+msgid "Next"
 msgstr ""
 
-#: smarty.c:317 smarty.c:794
-msgid "Profile"
+#: ../app/helpers/modifier.display_bool.php:13
+msgid "Yes"
 msgstr ""
 
-#: smarty.c:332 smarty.c:809
-msgid "Here you can find the list of all commands in <em>%1</em>."
+#: ../app/helpers/modifier.display_bool.php:14
+msgid "No"
 msgstr ""
 
-#: smarty.c:335 smarty.c:812
-msgid "Show menu"
-msgstr ""
-
-#: smarty.c:338 smarty.c:815
-msgid "The following difficulties have occurred during the form processing:"
-msgstr ""
-
-#: smarty.c:341 smarty.c:818
-msgid ""
-"Some of the items were filled incorrectly. Please, check the form and "
-"correct the errors."
-msgstr ""
-
-#: smarty.c:344 smarty.c:821
-msgid "The message has been sent to us. We will reply as soon as we can."
-msgstr ""
-
-#: smarty.c:347 smarty.c:824
-msgid ""
-"If you have any question, contact us through the following form. We will "
-"reply to you as soon as we can. Below the form you'll find other contact "
-"information."
-msgstr ""
-
-#: smarty.c:350 smarty.c:827
-msgid "%1 Team"
-msgstr ""
-
-#: smarty.c:356 smarty.c:833
-msgid "Phone"
-msgstr ""
-
-#: smarty.c:359 smarty.c:836
-msgid "Opening hours"
-msgstr ""
-
-#: smarty.c:362 smarty.c:839
-msgid "From dusk till dawn"
-msgstr ""
-
-#: smarty.c:368 smarty.c:845
-msgid ""
-"<em>ATK14 Skelet</em> is a very basic application written on top of <a href="
-"\"http://atk14.net\">the ATK14 Framework</a>.\n"
-"\t\t\tAs the Skelet is simple and minimal it may be usefull for developers "
-"as a good start point for any other application."
-msgstr ""
-
-#: smarty.c:371 smarty.c:848
-msgid "The Skelet contains mainly"
-msgstr ""
-
-#: smarty.c:374 smarty.c:851
-msgid "About page"
-msgstr ""
-
-#: smarty.c:377 smarty.c:854
-msgid "Contact page with fast contact form"
-msgstr ""
-
-#: smarty.c:380 smarty.c:857
-msgid "News section"
-msgstr ""
-
-#: smarty.c:383 smarty.c:860
-msgid "User registration"
-msgstr ""
-
-#: smarty.c:386 smarty.c:863
-msgid "with strong blowfish passwords hashing"
-msgstr ""
-
-#: smarty.c:389 smarty.c:866
-msgid "Basic administration"
-msgstr ""
-
-#: smarty.c:392 smarty.c:869
-msgid "RESTful API"
-msgstr ""
-
-#: smarty.c:398 smarty.c:875
-msgid "Localization"
-msgstr ""
-
-#: smarty.c:401 smarty.c:878
-msgid "English"
-msgstr ""
+#~ msgid "atk14.date_format"
+#~ msgstr "m/d/Y"
 
-#: smarty.c:404 smarty.c:881
-msgid "Czech"
-msgstr ""
-
-#: smarty.c:407 smarty.c:884
-msgid "Installation"
-msgstr ""
-
-#: smarty.c:410 smarty.c:887
-msgid ""
-"If you are brave enough to install the Skelet on your computer, check out <a "
-"href=\"https://github.com/atk14/Atk14Skelet/blob/master/README."
-"md#installation\">the installation instrunction.</a>"
-msgstr ""
-
-#: smarty.c:413 smarty.c:890
-msgid ""
-"If you want to help us to improve the Skelet, <a href=\"https://github.com/"
-"atk14/Atk14Skelet\">fork it on GitHub.</a>"
-msgstr ""
-
-#: smarty.c:416 smarty.c:893
-msgid "Further Reading & Resources"
-msgstr ""
-
-#: smarty.c:419 smarty.c:896
-msgid "ATK14 Project"
-msgstr ""
-
-#: smarty.c:422 smarty.c:899
-msgid "ATK14 Book"
-msgstr ""
-
-#: smarty.c:425 smarty.c:902
-msgid "API Reference"
-msgstr ""
-
-#: smarty.c:428 smarty.c:905
-msgid "ATK14 on GitHub"
-msgstr ""
-
-#: smarty.c:431 smarty.c:908
-msgid "ATK14 Skelet on GitHub"
-msgstr ""
+#~ msgid "atk14.parse_date_pattern"
+#~ msgstr "/^(?<month>[0-9]{1,2})\\/(?<day>[0-9]{1,2})\\/(?<year>[0-9]{4})$/"
 
-#: smarty.c:434 smarty.c:911
-msgid "The ATK14 Skelet at age 5"
-msgstr ""
-
-#: smarty.c:437 smarty.c:914
-msgid "fig.1 <em>The Creature is pleading for forking on GitHub</em>"
-msgstr ""
-
-#: smarty.c:440 smarty.c:917
-msgid "Homepage"
-msgstr ""
-
-#: smarty.c:443 smarty.c:920
-msgid "The most important page in the whole universe"
-msgstr ""
-
-#: smarty.c:449 smarty.c:926
-msgid "Contact data and quick contact form"
-msgstr ""
-
-#: smarty.c:452 smarty.c:929
-msgid "About"
-msgstr ""
-
-#: smarty.c:455 smarty.c:932
-msgid "What is this site all about"
-msgstr ""
-
-#: smarty.c:461 smarty.c:938
-msgid ""
-"If you don't have yet an account on this site, this is absolutely must to do "
-"procedure"
-msgstr ""
+#~ msgid "atk14.datetime_format"
+#~ msgstr "m/d/Y H:i"
 
-#: smarty.c:467 smarty.c:944
-msgid "Sign in to our site"
-msgstr ""
-
-#: smarty.c:470 smarty.c:947
-msgid "API"
-msgstr ""
+#~ msgid "atk14.parse_datetime_pattern"
+#~ msgstr ""
+#~ "/^(?<month>[0-9]{1,2})\\/(?<day>[0-9]{1,2})\\/(?<year>[0-9]{4}) (?"
+#~ "<hours>[0-9]{2}):(?<minutes>[0-9]{2})$/"
 
-#: smarty.c:473 smarty.c:950
-msgid "We offer an awesome restful API"
-msgstr ""
+#~ msgid "atk14.datetime_with_seconds_format"
+#~ msgstr "m/d/Y H:i:s"
 
-#: smarty.c:476 smarty.c:953
-msgid "Recent articles"
-msgstr ""
+#~ msgid "atk14.parse_datetime_with_seconds_pattern"
+#~ msgstr ""
+#~ "/^(?<month>[0-9]{1,2})\\/(?<day>[0-9]{1,2})\\/(?<year>[0-9]{4}) (?"
+#~ "<hours>[0-9]{2}):(?<minutes>[0-9]{2}):(?<seconds>[0-9]{2})$/"
