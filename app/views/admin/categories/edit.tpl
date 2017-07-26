@@ -2,8 +2,8 @@
 
 {assign var=parent value=$category->getParentCategory()}
 
-<p>{a action=move_to_category id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-transfer"></i> {t}Přesunout kategorii{/t}{/a}
-{a action=create_alias id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-share"></i> {t}Vytvořit alias{/t}{/a}</p>
+<p>{a action=move_to_category id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-transfer"></i> {t}Move category{/t}{/a}
+{a action=create_alias id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-share"></i> {t}Create an alias{/t}{/a}</p>
 
 <table class="table">
 	<tbody>
@@ -11,17 +11,11 @@
 		<th>#</th><td>{$category->getId()}</td>
 	</tr>
 	<tr>	
-		<th>{t}Cesta{/t}</th><td>/{$category->getPath()}/</td>
+		<th>{t}Path{/t}</th><td>/{$category->getPath()}/</td>
 	</tr>
 
-	{* Zatim to skryjeme - na viditelnost stejne nehrajeme
 	<tr>
-		<th>{t}Je kategorie viditelná?{/t}</th>
-		<td>{$category->isVisible()|display_bool}</td>
-	</tr> *}
-
-	<tr>
-		<th>{t}Je to filtr?{/t}</th>
+		<th>{t}Is a filter?{/t}</th>
 		<td>{$category->isFilter()|display_bool}</td>
 	</tr>
 
@@ -40,11 +34,11 @@
 			<button type="submit" class="btn btn-primary">{$form->get_button_text()}</button>
 
 			{if $category->isDeletable()}
-			{capture assign=confirmation}{t name=$category->getName() escape=no}Chystáte se smazat kategorii %1!
-Budou smazány i všechny její podkategorie. Smazání se nedá vrátit zpět.
+			{capture assign=confirmation}{t name=$category->getName() escape=no}You are about to delete the category %1!
+Also all subcategories will be deleted. Deletion cannot be undone.
 
-Opravdu to chcete?{/t}{/capture}
-			{a_destroy id=$category _class="btn btn-danger" _confirm=$confirmation}{t}Smazat{/t}{/a_destroy}
+Do you really want this?{/t}{/capture}
+			{a_destroy id=$category _class="btn btn-danger" _confirm=$confirmation}{t}Delete{/t}{/a_destroy}
 			{/if}
 		</div>
 	</fieldset>
@@ -56,13 +50,13 @@ Opravdu to chcete?{/t}{/capture}
 
 	{assign var=ptc value=$category->getPointingToCategory()}
 	{capture assign=url}{link_to action=edit id=$ptc}{/capture}
-	<p>{t url=$url path=$ptc->getPath() escape=no}Toto je virtuální kategorie, která ve skutečnosti ukazuje na <a href="%1">/%2/</a>{/t}</p>
+	<p>{t url=$url path=$ptc->getPath() escape=no}This is a virtual category, which is actually pointing to <a href="%1">/%2/</a>{/t}</p>
 
 {else}
 
 	{if !$parent || !$parent->isFilter()}
 		{* Pokud je rodic filtr, nelze uz pridavat dalsi podkategorie *}
-		<h3>{t}Podkategorie{/t}</h3>
+		<h3>{t}Subcategories{/t}</h3>
 		{assign var=children value=$category->getChildCategories()}
 		{if $children}
 			<ul>
@@ -78,18 +72,24 @@ Opravdu to chcete?{/t}{/capture}
 				</ul>
 			</ul>
 		{else}
+
 			<div class="img-message">
 				<p>{t}Tato kategorie nemá podkategorie.{/t}</p>
 			</div>
+
 		{/if}
 		<p>{a action="create_new" parent_category_id=$category _class="btn btn-default" _id="imageToCard"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Přidat novou podkategorii{/t}{/a}</p>
 	{/if}
 
 
-	<h3>{t}Produkty{/t}</h3>
+	<h3>{t}Products{/t}</h3>
+
 	{if $category->isFilter()}
+
 		<p>{t}Toto je filtr. Produkty zadávejte do jeho podkategorií.{/t}</p>
+
 	{else}
+
 		{assign var=cards value=$category->getCards()}
 		{if !$cards}
 			<p>
@@ -111,9 +111,10 @@ Opravdu to chcete?{/t}{/capture}
 		{else}
 			<p>{t}Do této kategorie nelze přidávat produkty.{/t}</p>
 		{/if}
+
 	{/if}
 
-	<h3>{t}Doporučené produkty{/t}</h3>
+	<h3>{t}Recommended products{/t}</h3>
 	{if $category->isFilter()}
 		<p>{t}Toto je filtr. Produkty zadávejte do jeho podkategorií.{/t}</p>
 	{else}
