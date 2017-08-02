@@ -24,7 +24,6 @@ define("ATK14_APPLICATION_DESCRIPTION","Yet another application running on ATK14
 
 define("ATK14_HTTP_HOST",PRODUCTION ? "catalog.atk14.net" : "atk14catalog.localhost");
 
-define("DBMOLE_COLLECT_STATICTICS",DEVELOPMENT);
 date_default_timezone_set('Europe/Prague');
 
 define("PUPIQ_API_KEY","101.DemoApiKeyForAccountWithLimitedFunctions");
