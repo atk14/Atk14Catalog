@@ -1,5 +1,4 @@
 <li class="list-group-item" data-id="{$brand->getId()}">
-	{* {$brand->getVisible()|display_bool} *}
 
 	{render partial="shared/list_thumbnail" image=$brand->getLogoUrl()}
 
