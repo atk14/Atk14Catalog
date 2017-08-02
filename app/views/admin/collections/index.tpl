@@ -10,6 +10,6 @@
 
 {else}
 
-	<p class="alert alert-info cleaner">{t}No record has been found.{/t}</p>
+	<p>{t}No record has been found.{/t}</p>
 
 {/if}
