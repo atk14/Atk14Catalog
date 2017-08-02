@@ -10,6 +10,7 @@
 			<li>{a controller="categories"}{t}List of categories{/t}{/a}</li>
 			<li>{a controller="brands"}{t}List of brands{/t}{/a}</li>
 			<li>{a controller="collections"}{t}List of collections{/t}{/a}</li>
+			<li>{a controller="stores"}{t}List of stores{/t}{/a}</li>
 			<li>{a action="pages/detail" id=1}{t}Pages with a hierarchical structure{/t}{/a}</li>
 			<li>{a action="main/contact"}{t}Contact page with fast contact form{/t}{/a}</li>
 			<li>{a action="articles/index"}{t}Articles section{/t}{/a}</li>

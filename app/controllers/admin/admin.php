@@ -33,6 +33,7 @@ class AdminController extends ApplicationBaseController{
 			array(_("Categories"),					"category_trees,categories"),
 			array(_("Brands"),							"brands"),
 			array(_("Collections"),					"collections"),
+			array(_("Stores"),							"stores"),
 			array(_("Password recoveries"),	"password_recoveries"),
 			array(_("Newsletter subscribers"), "newsletter_subscribers"),
 		) as $item){
