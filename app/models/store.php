@@ -6,4 +6,6 @@ class Store extends ApplicationModel Implements Rankable, Translatable, iSlug {
 	function setRank($rank){
 		return $this->_setRank($static);
 	}
+
+	function getSlugPattern($lang){ return $this->g("name_$lang"); }
 }

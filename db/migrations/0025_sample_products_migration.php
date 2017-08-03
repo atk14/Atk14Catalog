@@ -7,7 +7,7 @@ class SampleProductsMigration extends ApplicationMigration {
 			"key" => "width",
 			"key_localized_en" => "Width",
 			"key_localized_cs" => "Šířka",
-		)); 
+		));
 		$height = TechnicalSpecificationKey::CreateNewRecord(array(
 			"key" => "height",
 			"key_localized_en" => "Height",
