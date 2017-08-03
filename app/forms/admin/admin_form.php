@@ -87,6 +87,18 @@ class AdminForm extends ApplicationForm{
 		)));
 	}
 
+	function add_code_field($options = array()){
+		$options += array(
+			"label" => _("Code"),
+			"null_empty_output" => true,
+			"max_length" => 255,
+			"required" => false,
+			"help_text" => _("An alternative key. Leave empty if you are not sure.")
+		);
+
+		$this->add_field("code", new CharField($options));
+	}
+
 	function has_storno_button(){
 		if(isset($this->has_storno_button)){ return $this->has_storno_button; }
 		return false;
