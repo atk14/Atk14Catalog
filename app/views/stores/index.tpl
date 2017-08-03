@@ -6,6 +6,8 @@
 
 {else}
 
-	{render partial="store_item" from=$stores item=store}
+	<ul>
+		{render partial="store_item" from=$stores item=store}
+	</ul>
 
 {/if}
