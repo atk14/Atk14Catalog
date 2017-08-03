@@ -27,9 +27,10 @@ CREATE TABLE cards (
 CREATE TABLE card_section_types (
 	id INT PRIMARY KEY,
 	code VARCHAR(255) NOT NULL,
-	name VARCHAR(255)
+	name VARCHAR(255),
+	--
+	CONSTRAINT unq_cardsectiontypes_code UNIQUE (code)
 );
-CREATE UNIQUE INDEX unq_cardsectiontypes_code ON card_section_types (code);
 
 INSERT INTO card_section_types VALUES (1,'variants','Variants');
 INSERT INTO card_section_types VALUES (2,'tech_spec','Technical specification');
