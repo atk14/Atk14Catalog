@@ -53,13 +53,12 @@ class CategoriesController extends AdminController{
 				return;
 			}
 
-			/*
 			if($d["is_filter"]){
 				if($this->parent_category->isFilter()){
 					$this->form->set_error(_("Filter cannot be created when the parent category is also a filter"));
 					return;
 				}
-			}*/
+			}
 			
 			$d["parent_category_id"] = $this->parent_category;
 

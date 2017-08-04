@@ -20,7 +20,7 @@
 	</tr>
 
 	<tr>
-		<th>{t}Lze vkládat produkty?{/t}</th>
+		<th>{t}Can products be inserted here?{/t}</th>
 		<td>{$category->allowProducts()|display_bool}</td>
 	</tr>
 	</tbody>
@@ -74,7 +74,7 @@ Do you really want this?{/t}{/capture}
 		{else}
 
 			<div class="img-message">
-				<p>{t}Tato kategorie nemá podkategorie.{/t}</p>
+				<p>{t}This category has no subcategories.{/t}</p>
 			</div>
 
 		{/if}
