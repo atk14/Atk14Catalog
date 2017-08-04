@@ -2,24 +2,24 @@
 class CategoriesController extends AdminController{
 
 	function edit(){
-		$this->page_title = sprintf(_('Editace kategorie "%s"'),strip_tags($this->category->getName()));
+		$this->page_title = sprintf(_('Editing category "%s"'),strip_tags($this->category->getName()));
 		$this->form->set_initial($this->category);
 
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
 			$this->category->s($d,array("reconstruct_missing_slugs" => true));
 
-			$this->flash->success(_("Změny byly uloženy"));
+			$this->flash->success(_("Changes have been saved"));
 			$this->_redirect_back();
 		}
 	}
 
 	function move_to_category() {
-		$this->page_title = _("Přesun kategorie");
+		$this->page_title = _("Moving category");
 		$this->form->set_initial("parent_category_id", $this->category->getParentCategory());
 		$this->_save_return_uri();
 			if ($this->request->post() && ($d=$this->form->validate($this->params))) {
 			$this->category->s("parent_category_id", $d["parent_category_id"]);
-			$this->flash->success(_("Kategorie byla přesunuta"));
+			$this->flash->success(_("The category was moved"));
 			return $this->_redirect_back();
 		}
 	}
@@ -32,33 +32,38 @@ class CategoriesController extends AdminController{
 	}
 
 	function create_new(){
-		$this->page_title = _("Nová podkategorie");
+		$this->page_title = _("New subcategory");
 
 		$this->_save_return_uri();
+
+		if($this->parent_category->isFilter()){
+			unset($this->form->fields["is_filter"]);
+		}
 
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
 
 			if($this->parent_category->isAlias()){
-				$this->form->set_error(_("Nelze vytvořit novou kategorii, pokud je nadřazená kategorie alias."));
+				$this->form->set_error(_("Category cannot be created when the parent category is an alias"));
 				return;
 			}
 
 			// pokud mame filtr, je mozne podkategorie zakladat do jedine urovne
 			if(($super_p = $this->parent_category->getParentCategory()) && $super_p->isFilter()){
-				$this->form->set_error(_("Na tomto místě už není možné založit novou kategorii"));
+				$this->form->set_error(_("On this place a new category cannot be created"));
 				return;
 			}
 
+			/*
 			if($d["is_filter"]){
 				if($this->parent_category->isFilter()){
-					$this->form->set_error(_("Filtr nelze založit, pokud nadřazená kategorie je rovněž filtr."));
+					$this->form->set_error(_("Filter cannot be created when the parent category is also a filter"));
 					return;
 				}
-			}
+			}*/
 			
 			$d["parent_category_id"] = $this->parent_category;
 
-			$this->flash->success(_("Kategorie byla vytvořena"));
+			$this->flash->success(_("Category has been created"));
 			$c = Category::CreateNewRecord($d);
 			return $this->_redirect_to_action("edit", array("id" => $c));
 		}
@@ -69,18 +74,18 @@ class CategoriesController extends AdminController{
 
 		$this->category->destroy();
 		
-		$this->flash->success(_("Kategorie byla smazána"));
+		$this->flash->success(_("The category was deleted"));
 		$this->_redirect_back();
 	}
 
 	function create_alias() {
-		$this->page_title = _("Nový alias");
+		$this->page_title = _("New alias");
 		$this->_save_return_uri();
 		$this->form->set_initial($this->category);
 		if ($this->request->post() && ($d=$this->form->validate($this->params))) {
 			$d["pointing_to_category_id"] = $this->category;
 			$c = Category::CreateNewRecord($d);
-			$this->flash->success(_("Alias vytvořen"));
+			$this->flash->success(_("Alias was created"));
 			$this->_redirect_to(array(
 				"controller" => "categories",
 				"action" => "edit",
@@ -112,8 +117,8 @@ class CategoriesController extends AdminController{
 
 	function _get_category_name($c){
 		$name = $c->getName();
-		if($c->isFilter()){ $name = _("filtr").": $mame"; }
-		if($c->isAlias()){ $name = _("alias").": $mame"; }
+		if($c->isFilter()){ $name = _("filtr").": $name"; }
+		if($c->isAlias()){ $name = _("alias").": $name"; }
 		return $name;
 	}
 

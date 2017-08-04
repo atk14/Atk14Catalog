@@ -78,67 +78,70 @@ Do you really want this?{/t}{/capture}
 			</div>
 
 		{/if}
-		<p>{a action="create_new" parent_category_id=$category _class="btn btn-default" _id="imageToCard"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Přidat novou podkategorii{/t}{/a}</p>
+		<p>{a action="create_new" parent_category_id=$category _class="btn btn-default" _id="imageToCard"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Add a new subcategory{/t}{/a}</p>
 	{/if}
 
 
 	<h3>{t}Products{/t}</h3>
-
 	{if $category->isFilter()}
 
-		<p>{t}Toto je filtr. Produkty zadávejte do jeho podkategorií.{/t}</p>
+		<p>{t}This is a filter. Add products into its subcategories.{/t}</p>
 
 	{else}
 
 		{assign var=cards value=$category->getCards()}
 		{if !$cards}
 			<p>
-				Momentálně tady není žádný produkt.
+				{t}There is currently no product here.{/t}
 			</p>
 		{else}
 			<ul class="list-group list-sortable" data-sortable-url="{link_to action="category_cards/set_rank" category_id=$category}">
 				{foreach $cards as $card}
 					<li class="list-group-item" data-id="{$card->getId()}">
 						{render partial="shared/list_thumbnail" image=$card->getImage()}
-						<a href="{link_to action="cards/edit" id=$card}" title="Editovat produkt">{$card->getName()}</a>
-						{a_destroy action="category_cards/destroy" id=$card category_id=$category _title="Odebrat produkt" _class="confirm btn btn-danger btn-xs"}<i class="glyphicon glyphicon-remove"></i> <span class="hide">{t}Odebrat{/t}</span>{/a_destroy}
+						<a href="{link_to action="cards/edit" id=$card}" title="{t}Edit product{/t}">{$card->getName()}</a>
+						{a_destroy action="category_cards/destroy" id=$card category_id=$category _title="{t}Remove product{/t}" _class="confirm btn btn-danger btn-xs"}<i class="glyphicon glyphicon-remove"></i> <span class="hide">{t}Remove{/t}</span>{/a_destroy}
 					</li>
 				{/foreach}
 			</ul>
 		{/if}
 		{if $category->allowProducts()}
-			<p>{a action="category_cards/create_new" category_id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Přidat produkt{/t}{/a}</p>
+			<p>{a action="category_cards/create_new" category_id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Add a product{/t}{/a}</p>
 		{else}
-			<p>{t}Do této kategorie nelze přidávat produkty.{/t}</p>
+			<p>{t}Into this category products cannot be added.{/t}</p>
 		{/if}
 
 	{/if}
 
 	<h3>{t}Recommended products{/t}</h3>
 	{if $category->isFilter()}
-		<p>{t}Toto je filtr. Produkty zadávejte do jeho podkategorií.{/t}</p>
+
+		<p>{t}This is a filter. Add products into its subcategories.{/t}</p>
+
 	{else}
+
 		{assign var=cards value=$category->getRecommendedCards()}
 		{if !$cards}
 			<p>
-				Momentálně tady není žádný produkt.
+				{t}There is currently no product here.{/t}
 			</p>
 		{else}
 			<ul class="list-group list-sortable" data-sortable-url="{link_to action="category_recommended_cards/set_rank" category_id=$category}">
 				{foreach $cards as $card}
 					<li class="list-group-item" data-id="{$card->getId()}">
 						{render partial="shared/list_thumbnail" image=$card->getImage()}
-						<a href="{link_to action="cards/edit" id=$card}" title="Editovat produkt">{$card->getName()}</a>
-						{a_destroy action="category_recommended_cards/destroy" id=$card category_id=$category _title="Odebrat produkt" _class="confirm btn btn-danger btn-xs"}<i class="glyphicon glyphicon-remove"></i> <span class="hide">{t}Odebrat{/t}</span>{/a_destroy}
+						<a href="{link_to action="cards/edit" id=$card}" title="{t}Edit product{/t}">{$card->getName()}</a>
+						{a_destroy action="category_recommended_cards/destroy" id=$card category_id=$category _title="{t}Remove product{/t}" _class="confirm btn btn-danger btn-xs"}<i class="glyphicon glyphicon-remove"></i> <span class="hide">{t}Remove{/t}</span>{/a_destroy}
 					</li>
 				{/foreach}
 			</ul>
 		{/if}
 		{if $category->allowProducts()}
-			<p>{a action="category_recommended_cards/create_new" category_id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Přidat doporučený produkt{/t}{/a}</p>
+			<p>{a action="category_recommended_cards/create_new" category_id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Add a recommended product{/t}{/a}</p>
 		{else}
-			<p>{t}Do této kategorie nelze přidávat produkty.{/t}</p>
+			<p>{t}Into this category products cannot be added.{/t}</p>
 		{/if}
+
 	{/if}
 
 {/if} {* $category->isAlias() *}

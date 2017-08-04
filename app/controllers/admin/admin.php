@@ -29,7 +29,7 @@ class AdminController extends ApplicationBaseController{
 			array(_("Pages"),								"pages"),
 			array(_("Tags"),								"tags"),
 			array(_("Users"),								"users"),
-			array(_("Products"),						"cards,products,card_sections,related_cards,consumables,accessories"),
+			array(_("Products"),						"cards,products,card_sections,related_cards,consumables,accessories,card_filters"),
 			array(_("Categories"),					"category_trees,categories"),
 			array(_("Brands"),							"brands"),
 			array(_("Collections"),					"collections"),

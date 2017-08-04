@@ -3,14 +3,14 @@ class CategoryCardsController extends AdminController{
 	// pridani produktu do kategorie probiha taky v cards/add_to_category
 
 	function create_new(){
-		$this->page_title = sprintf(_("Přidání produktu do kategorie %s"),strip_tags($this->category->getName()));
+		$this->page_title = sprintf(_("Adding product into the category %s"),strip_tags($this->category->getName()));
 
 		$this->_save_return_uri();
 
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
 			$this->category->addCard($d["card_id"]);
 
-			$this->flash->success(_("Produkt byl přidán"));
+			$this->flash->success(_("The product was added"));
 			$this->_redirect_back();
 		}
 	}
