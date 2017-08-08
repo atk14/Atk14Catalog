@@ -193,6 +193,14 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		return $this->getCategoryLister()->getRecords();
 	}
 
+	function getVisibleCategories(){
+		$out = array();
+		foreach($this->getCategories() as $c){
+			if($c->isVisible()){ $out[] = $c; }
+		}
+		return $out;
+	}
+
 	function getCardSections(){
 		return CardSection::FindAll("card_id",$this,array(
 			"order_by" => "rank, id",

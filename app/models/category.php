@@ -112,7 +112,13 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 	function hasChildCategories(){ return !!$this->getChildCategories(array("limit" => 1)); }
 
 	function isFilter(){ return $this->getIsFilter(); }
-	function isVisible(){ return $this->getVisible(); }
+	function isVisible(){
+		$visible = $this->getVisible();
+		if(!$visible){ return false; }
+		$parent = $this->getParentCategory();
+		if($parent){ return $parent->isVisible(); }
+		return true;
+	}
 
 	function isPointingToCategory(){ return !is_null($this->getPointingToCategoryId()); }
 	function isAlias(){ return $this->isPointingToCategory(); }
