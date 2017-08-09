@@ -1,8 +1,11 @@
 <h1>{$page_title} ({$cards_finder->getRecordsCount()})</h1>
 
-<p class="lead">{$category->getTeaser()}</p>
-
 {!$category->getImageUrl()|pupiq_img:"300x300"}
+
+{if $category->getTeaser()}
+	<div class="lead">{!$category->getTeaser()|markdown}</div>
+{/if}
+
 {!$category->getDescription()|markdown}
 
 {if $child_categories}
