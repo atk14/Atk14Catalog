@@ -93,7 +93,7 @@ class AdminForm extends ApplicationForm{
 			"null_empty_output" => true,
 			"max_length" => 255,
 			"required" => false,
-			"help_text" => _("An alternative key. Leave empty if you are not sure.")
+			"help_text" => _("An alternative key for system usage. Leave empty if you are not sure.")
 		);
 
 		$this->add_field("code", new CharField($options));
