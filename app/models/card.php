@@ -198,16 +198,36 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 			"consider_invisible_categories" => true,
 			"consider_filters" => true,
 			"root_category" => null,
+			"filters_only" => false,
 		);
 
 		$categories = array();
 		foreach($this->getCategoryLister()->getRecords() as $c){
 			if(!$options["consider_invisible_categories"] && !$c->isVisible()){ continue; }
 			if(!$options["consider_filters"] && ($c->isFilter() || ($c->getParentCategory() && $c->getParentCategory()->isFilter()))){ continue; }
+			if($options["filters_only"]){
+				if($c->getParentCategory() && !$c->getParentCategory()->isFilter()){ continue; }
+			}
 			if($options["root_category"] && !$c->isDescendantOf($options["root_category"])){ continue; }
 			$categories[] = $c;
 		}
 		return $categories;
+	}
+
+	function getActiveFilters(){
+		$categories = $this->getCategories(array(
+			"consider_invisible_categories" => false,
+			"filters_only" => true,
+		));
+
+		$filters = array();
+		foreach($categories as $c){
+			$filter = $c->getParentCategory();
+			$filters[$filter->getId()] = $filter;
+		}
+		$filters = array_values($filters);
+
+		return $filters;
 	}
 
 	function getCardSections(){
