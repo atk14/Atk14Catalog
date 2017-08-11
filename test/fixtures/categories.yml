@@ -34,7 +34,17 @@ usage_indoor:
   parent_category_id: 1005
   name_en: Indoor
 
-shoes:
+food_drinks:
   id: 1008
+  parent_category_id: 1001
+  name_en: Food & Drinks
+
+hot_drinks:
+  id: 1009
+  parent_category_id: 1008
+  name_en: Hot drinks
+
+shoes:
+  id: 1010
   parent_category_id: 1001
   name_en: Shoes
