@@ -189,16 +189,19 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		return $this->getCategoryLister()->getRecordIds();
 	}
 
-	function getCategories() {
-		return $this->getCategoryLister()->getRecords();
-	}
+	function getCategories($options = array()) {
+		$options += array(
+			"consider_invisible_categories" => true,
+			"consider_filters" => true,
+		);
 
-	function getVisibleCategories(){
-		$out = array();
-		foreach($this->getCategories() as $c){
-			if($c->isVisible()){ $out[] = $c; }
+		$categories = array();
+		foreach($this->getCategoryLister()->getRecords() as $c){
+			if(!$options["consider_invisible_categories"] && !$c->isVisible()){ continue; }
+			if(!$options["consider_filters"] && ($c->isFilter() || ($c->getParentCategory() && $c->getParentCategory()->isFilter()))){ continue; }
+			$categories[] = $c;
 		}
-		return $out;
+		return $categories;
 	}
 
 	function getCardSections(){
