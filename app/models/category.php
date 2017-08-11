@@ -133,6 +133,14 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 
 	function getParentCategory(){ return Cache::Get("Category",$this->getParentCategoryId()); }
 
+	function isDescendantOf($root_category){
+		if($root_category->getId()==$this->getId()){ return true; }
+		if($parent = $this->getParentCategory()){
+			return $parent->isDescendantOf($root_category);
+		}
+		return false;
+	}
+
 	/**
 	 * var_dump($category->getPathOfCategories()); // array($base,$parent,$category);
 	 */

@@ -1,4 +1,8 @@
 <?php
+/**
+ *
+ * @fixture categories
+ */
 class TcCategory extends TcBase {
 
 	function test_isVisible(){
@@ -21,5 +25,16 @@ class TcCategory extends TcBase {
 		$root->s("visible",false);
 		$this->assertFalse($root->isVisible());
 		$this->assertFalse($child->isVisible());
+	}
+
+	function test_isDescendantOf(){
+
+		$categories = $this->categories;
+
+		$this->assertTrue($categories["color_red"]->isDescendantOf($categories["catalog"]));
+		$this->assertTrue($categories["color_red"]->isDescendantOf($categories["color"]));
+		$this->assertTrue($categories["color_red"]->isDescendantOf($categories["color_red"]));
+
+		$this->assertFalse($categories["color_red"]->isDescendantOf($categories["shoes"]));
 	}
 }
