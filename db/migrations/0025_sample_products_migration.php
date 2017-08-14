@@ -20,8 +20,6 @@ class SampleProductsMigration extends ApplicationMigration {
 			'name_en' => 'Neverending Story',
 			'teaser_cs' => 'Nekonečný příběh (v německém originále Die Unendliche Geschichte) je fantasy román Michaela Endeho, poprvé vydaný v Německu roku 1979. V angličtině byl poprvé vydán roku 1983 v překladu Ralpha Manheima jako The Neverending Story. V češtině vydal Nekonečný příběh naposledy roku 2015 Albatros v překladu Evy Pátkové.',
 			'teaser_en' => 'The Neverending Story (German: Die unendliche Geschichte) is a German fantasy novel by Michael Ende that was first published in 1979. An English translation, by Ralph Manheim, was first published in 1983. The novel was later adapted into several films.',
-			'slug_en' => 'neverending-story',
-			'slug_cs' => 'nekonecny-pribeh',
 		));
 
 		$card->addToCategory(Category::GetInstanceByPath("books"));
