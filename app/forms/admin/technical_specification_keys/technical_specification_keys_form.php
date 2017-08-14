@@ -6,7 +6,7 @@ class TechnicalSpecificationKeysForm extends AdminForm {
 			"max_length" => 255,
 		)));
 
-		$this->add_translatable_field("name", new CharField(array(
+		$this->add_translatable_field("key_localized", new CharField(array(
 			"label" => _("Lokalizovaný název"),
 			"required" => false,
 		)));
