@@ -15,7 +15,7 @@
 			<li class="list-group-item" data-id="{$ts->getId()}">
 				<div class="pull-right">
 				{dropdown_menu}
-					{a action="technical_specifications/edit" id=$ts}{icon glyph=edit} {t}Edit{/t}{/a}
+					{a action="technical_specifications/edit" id=$ts}{icon glyph=edit} {t}Edit value{/t}{/a}
 					{a action="technical_specification_keys/edit" id=$ts->getTechnicalSpecificationKeyId()}{icon glyph=edit} {t}Edit key{/t}{/a}
 					{a_destroy action="technical_specifications/destroy" id=$ts}{icon glyph=remove} {t}Delete{/t}{/a_destroy}
 				{/dropdown_menu}
