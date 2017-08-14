@@ -369,6 +369,10 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 	function getBranchCategories(){
 		return Cache::Get("Category",$this->getBranchCategoryIds());
 	}
+
+	function toString(){
+		return (string)$this->getName();
+	}
 }
 
 class NestedAliasException extends Exception {}
