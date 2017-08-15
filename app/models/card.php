@@ -73,13 +73,19 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 	}
 
 	function getImages($options = array()){
+		$options += array(
+			"consider_product_images" => true,
+		);
+
 		$images = Image::GetImages($this,$options);
 
 		if(!$this->hasVariants()){ return $images; }
 
-		foreach($this->getProducts() as $p){
-			foreach($p->getImages() as $i){
-				if($i->displayOnCard()){ $images[] = $i; }
+		if($options["consider_product_images"]){
+			foreach($this->getProducts() as $p){
+				foreach($p->getImages() as $i){
+					if($i->displayOnCard()){ $images[] = $i; }
+				}
 			}
 		}
 

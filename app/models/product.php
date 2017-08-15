@@ -44,6 +44,11 @@ class Product extends ApplicationModel implements Translatable,Rankable{
 		if($images = $this->getImages()){
 			return $images[0];
 		}
+
+		$card = $this->getCard();
+		if($images = $card->getImages(array("consider_product_images" => false))){
+			return $images[0];
+		}
 	}
 
 	function setRank($new_rank){
