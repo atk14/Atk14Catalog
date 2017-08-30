@@ -3,7 +3,6 @@ class CategoriesController extends ApplicationController{
 	function index(){
 		$this->page_title = _("List of Categories");
 		$this->tpl_data["categories"] = Category::FindAll("parent_category_id",null,"visible",true);
-		$this->breadcrumbs[] = _("Categories");
 	}
 
 	function detail(){
@@ -12,8 +11,6 @@ class CategoriesController extends ApplicationController{
 		if(!($category = Category::GetInstanceByPath($path)) || !$category->isVisible() || $category->isFilter() || (($p = $category->getParentCategory()) && $p->isFilter())){
 			return $this->_execute_action("error404");
 		}
-
-		$this->breadcrumbs[] = array(_("Categories"),$this->_link_to("index"));
 
 		$this->tpl_data["category"] = $category;
 		$this->page_title = $category->getName();
@@ -66,5 +63,9 @@ class CategoriesController extends ApplicationController{
 
 		// TODO: compose relevant conditions
 		$this->tpl_data["cards_finder"] = Card::GetFinderForCategory($category,array(),array("offset" => $this->params->getInt("offset")));
+	}
+
+	function _before_filter(){
+		$this->breadcrumbs[] = array(_("Categories"),$this->_link_to("index"));
 	}
 }

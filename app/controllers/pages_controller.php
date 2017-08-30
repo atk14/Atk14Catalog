@@ -8,16 +8,16 @@ class PagesController extends ApplicationController {
 
 		$this->tpl_data["child_pages"] = $this->page->getChildPages();
 
-		$breadcrumbs = new Navigation();
-		$breadcrumbs->unshiftItem($this->page->getTitle());
-		$page = $this->page;
-		while($parent = $page->getParentPage()){
-			$breadcrumbs->unshiftItem($parent->getTitle(),array("action" => "detail", "id" => $parent));
-			$page = $parent;
+		$pages = array($this->page);
+		$p = $this->page;
+		while($parent = $p->getParentPage()){
+			$pages[] = $parent;
+			$p = $parent;
 		}
-		$breadcrumbs->unshiftItem(ATK14_APPLICATION_NAME,array("action" => "main/index"));
-
-		$this->tpl_data["breadcrumbs"] = $breadcrumbs;
+		$pages = array_reverse($pages);
+		foreach($pages as $p){
+			$this->breadcrumbs[] = array($p->getTitle(),$this->_link_to(array("action" => "detail", "id" => $p)));
+		}
 	}
 
 	function _before_filter(){
