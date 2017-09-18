@@ -1,15 +1,14 @@
 <li class="list-group-item" data-id="{$page->getId()}">
 	{$page->getTitle()}
 
-	{a namespace="" controller=pages action=detail id=$page}{t 1=$lang}odkaz [%1]{/t}{/a}
-
 	{foreach $secondary_langs as $sl}
 		{a namespace="" controller=pages action=detail id=$page lang=$sl}{t 1=$sl}[%1]{/t}{/a}
 	{/foreach}
 
 	<div class="pull-right">
 		{dropdown_menu}
-		{a action=edit id=$page}<span class="glyphicon glyphicon-edit"></span> {t}Edit{/t}{/a}
+		{a action=edit id=$page}{icon glyph="edit"} {t}Edit{/t}{/a}
+		{a namespace="" action="pages/detail" id=$page}{icon glyph="eye-open"} {t}Visit public link{/t}{/a}
 
 		{if $page->isDeletable()}
 			{capture assign="confirm"}{t 1=$page->getTitle()|h escape=no}You are about to delete page %1
