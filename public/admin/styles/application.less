@@ -313,4 +313,22 @@ ul.token-input-focused {
 	textarea {
 		width: 100% !important; 
 	}
+	.btn-group {
+		.btn-primary {
+			// neni duvod, aby buttonek [Preview] vypadal jako .btn-primary
+			.btn-default;
+		}
+	}
+	.md-preview {
+		cursor: not-allowed;
+	}
+}
+
+.md-fullscreen-mode {
+	// oprava toolbaru v md editoru ve fullscreenu
+	.btn-toolbar {
+		.btn-group {
+			float: left;
+		}
+	}
 }
