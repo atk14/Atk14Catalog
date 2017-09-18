@@ -119,7 +119,7 @@ class AdminController extends ApplicationBaseController{
 		$options += array(
 			"page_title" => "",
 			"class_name" => "",
-			"flash_message" => _("Záznam byl vytvořen"),
+			"flash_message" => _("The record has been created"),
 			"redirect_to" => null, // null, "detail", "/admin/cs/articles/", function($record){ return ... }
 			"create_closure" => null, // function($d){ }
 		);

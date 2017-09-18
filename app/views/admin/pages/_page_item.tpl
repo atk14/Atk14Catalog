@@ -11,7 +11,7 @@
 		{dropdown_menu}
 		{a action=edit id=$page}<span class="glyphicon glyphicon-edit"></span> {t}Edit{/t}{/a}
 
-		{if true || $page->isDeletable()}
+		{if $page->isDeletable()}
 			{capture assign="confirm"}{t 1=$page->getTitle()|h escape=no}You are about to delete page %1
 Are you sure?{/t}{/capture}
 			{a_remote action=destroy id=$page _method=post _confirm=$confirm}<span class="glyphicon glyphicon-remove"></span> {t}Delete page{/t}{/a_remote}

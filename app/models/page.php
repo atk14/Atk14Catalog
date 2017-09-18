@@ -55,7 +55,7 @@ class Page extends ApplicationModel implements Translatable, Rankable, iSlug {
 	}
 
 	function isDeletable() {
-		return false;
+		return !$this->hasSubpages();
 	}
 
 	function setRank($new_rank){
