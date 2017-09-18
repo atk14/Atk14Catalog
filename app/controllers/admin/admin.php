@@ -121,7 +121,7 @@ class AdminController extends ApplicationBaseController{
 			"class_name" => "",
 			"flash_message" => _("Záznam byl vytvořen"),
 			"redirect_to" => null, // null, "detail", "/admin/cs/articles/", function($record){ return ... }
-			"create_closure" => null,
+			"create_closure" => null, // function($d){ }
 		);
 
 		$options += array(
@@ -310,6 +310,10 @@ class AdminController extends ApplicationBaseController{
 			if(!$this->__prepare_object_for_action($object)){
 				return;
 			}
+		}
+
+		if(method_exists($object,"isDeletable") && !$object->isDeletable()){
+			return $this->_execute_action("error404");
 		}
 
 		if($options["destroy_closure"]){
