@@ -135,6 +135,8 @@ class ApplicationModel extends TableRecord{
 	 * Provides transparent updating of update_at field if such field exists.
 	 */
 	function setValues($values,$options = array()){
+		global $HTTP_REQUEST;
+
 		$options += array(
 			"reconstruct_missing_slugs" => false,	
 		);
@@ -150,6 +152,10 @@ class ApplicationModel extends TableRecord{
 
 		if($this->hasKey("updated_by_user_id") && !in_array("updated_by_user_id",$v_keys)){
 			$values["updated_by_user_id"] = ApplicationModel::_GetLoggedUserId();
+		}
+
+		if($this->hasKey("updated_from_addr") && !in_array("updated_from_addr",$v_keys)){
+			$values["updated_from_addr"] = $HTTP_REQUEST->getRemoteAddr();
 		}
 
 		$class_name = get_class($this);
