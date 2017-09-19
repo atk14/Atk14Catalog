@@ -11,12 +11,12 @@ class NewsletterSubscriber extends ApplicationModel{
 	 * NewsletterSubscriber::SignUp("john@doe",array("vocative" => "Mr.", "name" => "John Doe"));
 	 */
 	static function SignUp($user_or_email,$values = array()){
-		$values_create = [];
+		$values_create = array();
 		if(is_a($user_or_email,"User")){
 			$ns = NewsletterSubscriber::FindFirstByUserId($user_or_email);
 			$values_create["user_id"] = $user_or_email;
 		}else{
-			$ns = NewsletterSubscriber::FindFirst("LOWER(email)=LOWER(:email)",[":email" => "$user_or_email"]);
+			$ns = NewsletterSubscriber::FindFirst("LOWER(email)=LOWER(:email)",array(":email" => "$user_or_email"));
 			$values_create["email"] = $user_or_email;
 		}
 
