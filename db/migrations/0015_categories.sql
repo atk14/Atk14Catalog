@@ -23,6 +23,7 @@ CREATE TABLE categories (
 	CONSTRAINT fk_categories_upd_users FOREIGN KEY (updated_by_user_id) REFERENCES users,
 	CONSTRAINT fk_categories_pointingtocategories FOREIGN KEY (pointing_to_category_id) REFERENCES categories ON DELETE CASCADE
 );
+CREATE INDEX in_categories_parentcategoryid ON categories(parent_category_id);
 
 -- zarazeni produktove karty v kategorii
 CREATE SEQUENCE seq_category_cards;
@@ -31,9 +32,11 @@ CREATE TABLE category_cards(
 	category_id INTEGER NOT NULL,
 	card_id INTEGER NOT NULL,
 	rank INTEGER DEFAULT 999 NOT NULL,
-	CONSTRAINT fk_category_cards_categories FOREIGN KEY (category_id) REFERENCES categories ON DELETE CASCADE,
-	CONSTRAINT fk_category_cards_cards FOREIGN KEY (card_id) REFERENCES cards ON DELETE CASCADE
+	CONSTRAINT fk_categorycards_categories FOREIGN KEY (category_id) REFERENCES categories ON DELETE CASCADE,
+	CONSTRAINT fk_categorycards_cards FOREIGN KEY (card_id) REFERENCES cards ON DELETE CASCADE,
+	CONSTRAINT unq_categorycards UNIQUE (category_id,card_id)
 );
+CREATE INDEX in_categorycards_cardid ON category_cards(card_id,rank);
 
 -- zarazeni doporucene produktove karty v kategorii
 CREATE SEQUENCE seq_category_recommended_cards;
@@ -42,6 +45,8 @@ CREATE TABLE category_recommended_cards(
 	category_id INTEGER NOT NULL,
 	card_id INTEGER NOT NULL,
 	rank INTEGER DEFAULT 999 NOT NULL,
-	CONSTRAINT fk_category_recommended_cards_categories FOREIGN KEY (category_id) REFERENCES categories ON DELETE CASCADE,
-	CONSTRAINT fk_category_recommended_cards_cards FOREIGN KEY (card_id) REFERENCES cards ON DELETE CASCADE
+	CONSTRAINT fk_categoryrecommendedcards_categories FOREIGN KEY (category_id) REFERENCES categories ON DELETE CASCADE,
+	CONSTRAINT fk_categoryrecommendedcards_cards FOREIGN KEY (card_id) REFERENCES cards ON DELETE CASCADE,
+	CONSTRAINT unq_categoryrecommendedcards UNIQUE (category_id,card_id)
 );
+CREATE INDEX in_categoryrecommendedcards_cardid ON category_recommended_cards(card_id,rank);
