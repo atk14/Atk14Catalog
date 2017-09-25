@@ -1,5 +1,6 @@
 <?php
 class CategoryTreesController extends AdminController{
+
 	function index(){
 		$this->page_title = _("Katalogové stromy");
 		$this->tpl_data["roots"] = Category::GetCategories(null);
@@ -20,6 +21,7 @@ class CategoryTreesController extends AdminController{
 
 	function detail(){
 		$this->page_title = _("Katalogový strom");
+		Category::FindAll(array("use_cache" => true)); // Caching all categories
 	}
 
 	function set_rank() {
