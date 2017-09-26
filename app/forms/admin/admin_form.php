@@ -62,14 +62,19 @@ class AdminForm extends ApplicationForm{
 		if(!$field->required){ $required_langs = array(); }
 
 		foreach($langs as $lang){
+			$w = clone($field->widget);
+			$required = in_array($lang,$required_langs);
+			if(!$required){
+				unset($w->attrs["required"]);
+			}
 			$lang_field = new $class(array(
-				"required" => in_array($lang,$required_langs),
+				"required" => $required,
 				"label" => "$label [$lang]",
 				"initial" => $field->initial,
 				"help_text" => $field->help_text,
 				"hint" => $field->hint,
 				"disabled" => $field->disabled,
-				"widget" => $field->widget,
+				"widget" => $w,
 				"null_empty_output" => isset($field->null_empty_output)?$field->null_empty_output:false,
 			));
 
