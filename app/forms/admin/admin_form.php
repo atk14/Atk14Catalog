@@ -64,7 +64,9 @@ class AdminForm extends ApplicationForm{
 		foreach($langs as $lang){
 			$w = clone($field->widget);
 			$required = in_array($lang,$required_langs);
-			if(!$required){
+			if($required){
+				$w->attrs["required"] = "required";
+			}else{
 				unset($w->attrs["required"]);
 			}
 			$lang_field = new $class(array(
