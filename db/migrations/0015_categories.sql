@@ -36,7 +36,8 @@ CREATE TABLE category_cards(
 	CONSTRAINT fk_categorycards_cards FOREIGN KEY (card_id) REFERENCES cards ON DELETE CASCADE,
 	CONSTRAINT unq_categorycards UNIQUE (category_id,card_id)
 );
-CREATE INDEX in_categorycards_cardid ON category_cards(card_id,rank);
+CREATE INDEX in_categorycards_cardid ON category_cards(card_id);
+CREATE INDEX in_categorycards_categoryid_rank ON category_cards(category_id,rank);
 
 -- zarazeni doporucene produktove karty v kategorii
 CREATE SEQUENCE seq_category_recommended_cards;
