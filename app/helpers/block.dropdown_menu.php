@@ -6,7 +6,7 @@
  *
  * Usage:
  *
- *	{dropdown_menu}
+ *	{dropdown_menu pull_right=true}
  *		{a action="detail" id=$article}<i class="glyphicon glyphicon-eye-open"></i> Detail{/a}
  *		{a action="edit" id=$article}<i class="glyphicon glyphicon-edit"></i> Edit{/a}
  *		{a_destroy id=$article}<i class="glyphicon glyphicon-remove"></i> Delete{/a_destroy}
@@ -16,6 +16,17 @@
  */
 function smarty_block_dropdown_menu($params,$content,$template,&$repeat){
 	if($repeat){ return; }
+
+	$params += array(
+		"pull_right" => false,
+		"pull_left" => false,
+		"clearfix" => null,
+	);
+
+	if(!isset($params["clearfix"])){
+		$params["clearfix"] = $params["pull_right"];
+	}
+
 	$smarty = atk14_get_smarty_from_template($template);
 
 	$content = preg_replace('/(<\/a>)\s*(<a)/s','\1%SEPARATOR%\2',$content);
@@ -40,6 +51,9 @@ function smarty_block_dropdown_menu($params,$content,$template,&$repeat){
 	$original_smarty_vars = $smarty->getTemplateVars();
 	$smarty->assign("first_line",$first_line);
 	$smarty->assign("lines",$lines);
+	$smarty->assign("pull_right",$params["pull_right"]);
+	$smarty->assign("pull_left",$params["pull_left"]);
+	$smarty->assign("clearfix",$params["clearfix"]);
 	$out = $smarty->fetch("shared/helpers/_dropdown_menu.tpl");
 	$smarty->clearAllAssign();
 	$smarty->assign($original_smarty_vars);

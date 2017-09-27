@@ -1,4 +1,4 @@
-<div class="btn-group btn-group-sm">
+<div class="btn-group btn-group-sm{if $pull_right} pull-right{/if}{if $pull_left} pull-left{/if}">
 	{!$first_line}
 	{if $lines}
 		<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
@@ -12,3 +12,7 @@
 		</ul>
 	{/if}
 </div>
+
+{if $clearfix}
+<div class="clearfix"></div>
+{/if}
