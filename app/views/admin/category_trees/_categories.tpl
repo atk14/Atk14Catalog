@@ -7,6 +7,8 @@
 
 				{a action="categories/edit" id=$c}{$c->getName()}{/a}
 
+				{if !$c->g("visible")} <em>(invisible)</em>{/if}
+
 				{render partial=categories categories=$c->getChildCategories()}
 			</li>
 		{/foreach}

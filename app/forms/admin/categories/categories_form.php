@@ -19,6 +19,11 @@ class CategoriesForm extends AdminForm{
 			"label" => _("Image"),
 			"required" => false,
 		)));
+		$this->add_field("visible", new BooleanField(array(
+			"label" => _("Is visible?"),
+			"required" => false,
+			"initial" => true,
+		)));
 	}
 
 	function _add_slug(){
