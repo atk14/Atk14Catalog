@@ -64,9 +64,9 @@ Do you really want this?{/t}{/capture}
 					{foreach $children as $child}
 						<li class="list-group-item" data-id="{$child->getId()}">
 							{$child->getName()}
-							<ul class="list-inline pull-right">
-								<li>{a action="edit" id=$child}<i class="glyphicon glyphicon-edit"></i> {t}Edit{/t}{/a}</li>
-							</ul>
+							{dropdown_menu pull_right=true}
+								{a action="edit" id=$child}{icon glyph="edit"} {t}Edit{/t}{/a}
+							{/dropdown_menu}
 						</li>
 					{/foreach}
 				</ul>
