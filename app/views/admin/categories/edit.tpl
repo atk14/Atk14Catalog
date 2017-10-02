@@ -2,8 +2,17 @@
 
 {assign var=parent value=$category->getParentCategory()}
 
-<p>{a action=move_to_category id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-transfer"></i> {t}Move category{/t}{/a}
-{a action=create_alias id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-share"></i> {t}Create an alias{/t}{/a}</p>
+<p>
+	{a action=move_to_category id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-transfer"></i> {t}Move category{/t}{/a}
+	{a action=create_alias id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-share"></i> {t}Create an alias{/t}{/a}
+	{if $category->isDeletable()}
+		{capture assign=confirmation}{t name=$category->getName() escape=no}You are about to delete the category %1!
+Also all subcategories will be deleted. Deletion cannot be undone.
+
+Do you really want this?{/t}{/capture}
+		{a_destroy id=$category _class="btn btn-danger" _confirm=$confirmation}{t}Delete{/t}{/a_destroy}
+	{/if}
+</p>
 
 <table class="table">
 	<tbody>
@@ -32,14 +41,6 @@
 
 		<div class="form-group">
 			<button type="submit" class="btn btn-primary">{$form->get_button_text()}</button>
-
-			{if $category->isDeletable()}
-			{capture assign=confirmation}{t name=$category->getName() escape=no}You are about to delete the category %1!
-Also all subcategories will be deleted. Deletion cannot be undone.
-
-Do you really want this?{/t}{/capture}
-			{a_destroy id=$category _class="btn btn-danger" _confirm=$confirmation}{t}Delete{/t}{/a_destroy}
-			{/if}
 		</div>
 	</fieldset>
 {/form}
