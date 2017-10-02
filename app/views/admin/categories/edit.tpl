@@ -64,7 +64,7 @@ Do you really want this?{/t}{/capture}
 					{foreach $children as $child}
 						<li class="list-group-item" data-id="{$child->getId()}">
 							{$child->getName()}
-							{dropdown_menu pull_right=true}
+							{dropdown_menu}
 								{a action="edit" id=$child}{icon glyph="edit"} {t}Edit{/t}{/a}
 							{/dropdown_menu}
 						</li>
