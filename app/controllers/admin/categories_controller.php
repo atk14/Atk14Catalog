@@ -80,7 +80,9 @@ class CategoriesController extends AdminController{
 	function create_alias() {
 		$this->page_title = _("New alias");
 		$this->_save_return_uri();
-		$this->form->set_initial($this->category);
+		$initial = $this->category->toArray();
+		unset($initial["parent_category_id"]);
+		$this->form->set_initial($initial);
 		if ($this->request->post() && ($d=$this->form->validate($this->params))) {
 			$d["pointing_to_category_id"] = $this->category;
 			$c = Category::CreateNewRecord($d);

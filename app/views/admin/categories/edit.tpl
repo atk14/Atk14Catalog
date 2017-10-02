@@ -3,8 +3,10 @@
 {assign var=parent value=$category->getParentCategory()}
 
 <p>
-	{a action=move_to_category id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-transfer"></i> {t}Move category{/t}{/a}
+	{a action=move_to_category id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-transfer"></i> {t}Move the category{/t}{/a}
+	{if !$category->isAlias()}
 	{a action=create_alias id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-share"></i> {t}Create an alias{/t}{/a}
+	{/if}
 	{if $category->isDeletable()}
 		{capture assign=confirmation}{t name=$category->getName() escape=no}You are about to delete the category %1!
 Also all subcategories will be deleted. Deletion cannot be undone.
@@ -23,15 +25,29 @@ Do you really want this?{/t}{/capture}
 		<th>{t}Path{/t}</th><td>/{$category->getPath()}/</td>
 	</tr>
 
-	<tr>
-		<th>{t}Is a filter?{/t}</th>
-		<td>{$category->isFilter()|display_bool}</td>
-	</tr>
+	{if $category->isAlias()}
 
-	<tr>
-		<th>{t}Can products be inserted here?{/t}</th>
-		<td>{$category->allowProducts()|display_bool}</td>
-	</tr>
+		{assign pointing_to_category $category->getPointingToCategory()}
+
+		<tr>
+			<th>{t}Pointing to category{/t}</th>
+			<td>{a action="edit" id=$pointing_to_category}/{$pointing_to_category->getPath()}/{/a}</td>
+		</tr>
+
+	{else}
+
+		<tr>
+			<th>{t}Is a filter?{/t}</th>
+			<td>{$category->isFilter()|display_bool}</td>
+		</tr>
+
+		<tr>
+			<th>{t}Can products be inserted here?{/t}</th>
+			<td>{$category->allowProducts()|display_bool}</td>
+		</tr>
+
+	{/if}
+
 	</tbody>
 </table>
 
