@@ -236,10 +236,11 @@ class ApplicationModel extends TableRecord{
 	 * @see getToken
 	 */
 	static function GetInstanceByToken($token,$options = array()){
+		$token = (string)$token;
 		$class_name = get_called_class();
 		$ar = explode(".",$token);
 
-		if(isset($ar[0]) && is_numeric($ar[0]) && ($obj = call_user_func(array($class_name,"GetInstanceById"),$ar[0])) && $obj->getToken($options)==$token){
+		if(isset($ar[0]) && is_numeric($ar[0]) && ($obj = call_user_func(array($class_name,"GetInstanceById"),$ar[0])) && $obj->getToken($options)===$token){
 			return $obj;
 		}
 	}
