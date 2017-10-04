@@ -104,7 +104,9 @@ CREATE TABLE products (
 	created_at TIMESTAMP NOT NULL DEFAULT NOW(),
 	updated_at TIMESTAMP,
 	--
+	CONSTRAINT unq_products_catalogid UNIQUE (catalog_id),
 	CONSTRAINT fk_products_cards FOREIGN KEY (card_id) REFERENCES cards(id) ON DELETE CASCADE,
 	CONSTRAINT fk_products_cr_users FOREIGN KEY (created_by_user_id) REFERENCES users,
 	CONSTRAINT fk_products_upd_users FOREIGN KEY (updated_by_user_id) REFERENCES users
 );
+CREATE INDEX in_products_cardid ON products (card_id);
