@@ -2,7 +2,7 @@
 	<ul>
 		{foreach $categories as $c}
 			<li>
-				{if $c->isFilter()}<em>{t}filtr{/t}:</em>{/if}
+				{if $c->isFilter()}<em>{t}filter{/t}:</em>{/if}
 				{if $c->isPointingToCategory()}<em>{t}alias{/t}:</em>{/if}
 
 				{a action="categories/edit" id=$c}{$c->getName()}{/a}

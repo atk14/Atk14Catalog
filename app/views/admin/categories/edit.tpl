@@ -3,9 +3,12 @@
 {assign var=parent value=$category->getParentCategory()}
 
 <p>
+	{if !$category->isSubcategoryOfFilter()}
+		{a action="create_new" parent_category_id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Add a new subcategory{/t}{/a}
+	{/if}
 	{a action=move_to_category id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-transfer"></i> {t}Move the category{/t}{/a}
 	{if !$category->isAlias()}
-	{a action=create_alias id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-share"></i> {t}Create an alias{/t}{/a}
+		{a action=create_alias id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-share"></i> {t}Create an alias{/t}{/a}
 	{/if}
 	{if $category->isDeletable()}
 		{capture assign=confirmation}{t name=$category->getName() escape=no}You are about to delete the category %1!
@@ -51,15 +54,7 @@ Do you really want this?{/t}{/capture}
 	</tbody>
 </table>
 
-{form}
-	<fieldset>
-		{render partial="shared/form_field" fields=$form->get_field_keys()}
-
-		<div class="form-group">
-			<button type="submit" class="btn btn-primary">{$form->get_button_text()}</button>
-		</div>
-	</fieldset>
-{/form}
+{render partial="shared/form"}
 
 <hr>
 
@@ -71,9 +66,9 @@ Do you really want this?{/t}{/capture}
 
 {else}
 
-	{if !$parent || !$parent->isFilter()}
+	{if !$category->isSubcategoryOfFilter()}
 		{* Pokud je rodic filtr, nelze uz pridavat dalsi podkategorie *}
-		<h3>{t}Subcategories{/t}</h3>
+		<h3>{button_create_new parent_category_id=$category}{t}Add a new subcategory{/t}{/button_create_new}{t}Subcategories{/t}</h3>
 		{assign var=children value=$category->getChildCategories()}
 		{if $children}
 			<ul>
@@ -95,16 +90,15 @@ Do you really want this?{/t}{/capture}
 			</div>
 
 		{/if}
-		<p>{a action="create_new" parent_category_id=$category _class="btn btn-default" _id="imageToCard"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Add a new subcategory{/t}{/a}</p>
 	{/if}
 
-
-	<h3>{t}Products{/t}</h3>
-	{if $category->isFilter()}
-
-		<p>{t}This is a filter. Add products into its subcategories.{/t}</p>
-
-	{else}
+	{if !$category->isFilter()}
+		<h3>
+			{if $category->allowProducts()}
+				{button_create_new action="category_cards/create_new" category_id=$category}{t}Add a product{/t}{/button_create_new}
+			{/if}
+			{t}Products{/t}
+		</h3>
 
 		{assign var=cards value=$category->getCards()}
 		{if !$cards}
@@ -122,20 +116,18 @@ Do you really want this?{/t}{/capture}
 				{/foreach}
 			</ul>
 		{/if}
-		{if $category->allowProducts()}
-			<p>{a action="category_cards/create_new" category_id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Add a product{/t}{/a}</p>
-		{else}
+		{if !$category->allowProducts()}
 			<p>{t}Into this category products cannot be added.{/t}</p>
 		{/if}
-
 	{/if}
 
-	<h3>{t}Recommended products{/t}</h3>
-	{if $category->isFilter()}
-
-		<p>{t}This is a filter. Add products into its subcategories.{/t}</p>
-
-	{else}
+	{if !$category->isFilter() && !$category->isSubcategoryOfFilter()}
+		<h3>
+			{if $category->allowProducts()}
+				{button_create_new action="category_recommended_cards/create_new" category_id=$category}{t}Add a recommended product{/t}{/button_create_new}
+			{/if}
+			{t}Recommended products{/t}
+		</h3>
 
 		{assign var=cards value=$category->getRecommendedCards()}
 		{if !$cards}
@@ -153,12 +145,9 @@ Do you really want this?{/t}{/capture}
 				{/foreach}
 			</ul>
 		{/if}
-		{if $category->allowProducts()}
-			<p>{a action="category_recommended_cards/create_new" category_id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Add a recommended product{/t}{/a}</p>
-		{else}
+		{if !$category->allowProducts()}
 			<p>{t}Into this category products cannot be added.{/t}</p>
 		{/if}
-
 	{/if}
 
 {/if} {* $category->isAlias() *}
