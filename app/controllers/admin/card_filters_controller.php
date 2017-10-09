@@ -29,6 +29,7 @@ class CardFiltersController extends AdminController{
 				$this->form->add_field("category_".$c->getId(),new BooleanField(array(
 					"label" => strip_tags($c->getName()),
 					"initial" => in_array($c->getId(),$current_category_ids),
+					"required" => false,
 				)));
 				$_fields[] = "category_".$c->getId();
 				$available_category_ids[] = $c->getId();
@@ -60,12 +61,14 @@ class CardFiltersController extends AdminController{
 				!$value && $card->removeFromCategory($c_id);
 
 				$this->flash->success(_("Settings saved"));
+
 				$this->_redirect_back();
 			}
 		}
 	}
 
 	function no_filter_categories(){
+		$this->page_title = sprintf(_('Placing the product "%s" into filters'),$this->card->getName());
 	}
 
 	function _before_filter(){

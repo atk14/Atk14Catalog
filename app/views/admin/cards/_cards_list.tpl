@@ -5,6 +5,8 @@
  *
  *}
 
+<h2>{button_create_new action="$type/create_new" card_id=$card}{$button_title}{/button_create_new} {$title}</h2>
+
 {if $cards}
 
 	<ul class="list-group list-sortable" data-sortable-url="{link_to action="$type/set_rank" card_id=$card}">
@@ -24,5 +26,3 @@
 	<p>{$empty_list_message}</p>
 
 {/if}
-
-<p>{a action="$type/create_new" card_id=$card _class="btn btn-default"}<i class="glyphicon glyphicon-plus-sign"></i> {$button_title}{/a}</p>

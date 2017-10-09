@@ -18,9 +18,22 @@ function smarty_block_button_create_new($params,$content,$template,&$repeat){
 		"action" => "create_new"
 	);
 
+	$attrs = array();
+	foreach($params as $k => $v){
+		if(preg_match('/^_(.*)/',$k,$m)){
+			$attrs[$m[1]] = $v;
+			unset($params[$k]);
+		}
+	}
+
+	$attrs += array(
+		"class" => "btn btn-default",
+	);
+
 	$original_smarty_vars = $smarty->getTemplateVars();
 	$smarty->assign("title",$content);
 	$smarty->assign("create_new_url",Atk14Url::BuildLink($params));
+	$smarty->assign("attrs",$attrs);
 	$out = $smarty->fetch("shared/helpers/_button_create_new.tpl");
 	$smarty->clearAllAssign();
 	$smarty->assign($original_smarty_vars);
