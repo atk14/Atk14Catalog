@@ -303,6 +303,25 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 		return !$this->isSubcategoryOfFilter() && !$this->isAlias();
 	}
 
+	/**
+	 * Can this category be moved somewhere else?
+	 *
+	 */
+	function canBeMoved(){
+		return !$this->isSubcategoryOfFilter();
+	}
+
+	/**
+	 * Can a new category be created as an alias to this category?
+	 *
+	 */
+	function canBeAliased(){
+		return
+			!$this->isFilter() &&
+			!$this->isSubcategoryOfFilter() &&
+			!$this->isAlias();
+	}
+
 	function destroy($destroy_for_real = null){
 		foreach($this->getChildCategories() as $ch){
 			$ch->destroy($destroy_for_real);

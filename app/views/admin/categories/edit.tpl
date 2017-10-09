@@ -4,11 +4,13 @@
 
 <p>
 	{if $category->allowSubcategories()}
-		{a action="create_new" parent_category_id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Add a new subcategory{/t}{/a}
+		{a action="create_new" parent_category_id=$category _class="btn btn-default"}{icon glyph="plus-sign"} {t}Add a new subcategory{/t}{/a}
 	{/if}
-	{a action=move_to_category id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-transfer"></i> {t}Move the category{/t}{/a}
-	{if !$category->isAlias()}
-		{a action=create_alias id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-share"></i> {t}Create an alias{/t}{/a}
+	{if $category->canBeMoved()}
+		{a action=move_to_category id=$category _class="btn btn-default"}{icon glyph="transfer"} {t}Move the category{/t}{/a}
+	{/if}
+	{if $category->canBeAliased()}
+		{a action=create_alias id=$category _class="btn btn-default"}{icon glyph=shared} {t}Create an alias{/t}{/a}
 	{/if}
 	{if $category->isDeletable()}
 		{capture assign=confirmation}{t name=$category->getName() escape=no}You are about to delete the category %1!

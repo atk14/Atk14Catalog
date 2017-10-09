@@ -14,6 +14,10 @@ class CategoriesController extends AdminController{
 	}
 
 	function move_to_category() {
+		if(!$this->category->canBeMoved()){
+			return $this->_execute_action("error404");
+		}
+
 		$this->page_title = _("Moving category");
 		$this->form->set_initial("parent_category_id", $this->category->getParentCategory());
 		$this->_save_return_uri();
@@ -82,6 +86,10 @@ class CategoriesController extends AdminController{
 	}
 
 	function create_alias() {
+		if(!$this->category->canBeAliased()){
+			return $this->_execute_action("error404");
+		}
+
 		$this->page_title = _("New alias");
 		$this->_save_return_uri();
 		$initial = $this->category->toArray();
