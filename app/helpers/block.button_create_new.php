@@ -7,6 +7,7 @@
  * See app/views/shared/helpers/_button_create_new.tpl
  *
  *	<h1>{button_create_new}Create new article{/button_create_new} Articles</h1>
+ *	<h1>{button_create_new _class="btn btn-primary"}Create new article{/button_create_new} Articles</h1>
  *	...
  *	<h3>{button_create_new controller=attachments article_id=$article}Add attachment{/button_create_new} Attachments</h3>
  */
