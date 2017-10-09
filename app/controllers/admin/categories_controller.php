@@ -32,7 +32,7 @@ class CategoriesController extends AdminController{
 	}
 
 	function create_new(){
-		if($this->parent_category->isSubcategoryOfFilter()){
+		if(!$this->parent_category->allowSubcategories()){
 			return $this->_execute_action("error404");
 		}
 

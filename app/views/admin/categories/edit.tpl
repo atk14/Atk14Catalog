@@ -3,7 +3,7 @@
 {assign var=parent value=$category->getParentCategory()}
 
 <p>
-	{if !$category->isSubcategoryOfFilter()}
+	{if $category->allowSubcategories()}
 		{a action="create_new" parent_category_id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Add a new subcategory{/t}{/a}
 	{/if}
 	{a action=move_to_category id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-transfer"></i> {t}Move the category{/t}{/a}
@@ -68,13 +68,20 @@ Do you really want this?{/t}{/capture}
 
 	{if !$category->isSubcategoryOfFilter()}
 		{* Pokud je rodic filtr, nelze uz pridavat dalsi podkategorie *}
-		<h3>{button_create_new parent_category_id=$category}{t}Add a new subcategory{/t}{/button_create_new}{t}Subcategories{/t}</h3>
+		<h3>
+			{if $category->allowSubcategories()}
+				{button_create_new parent_category_id=$category}{t}Add a new subcategory{/t}{/button_create_new}
+			{/if}
+			{t}Subcategories{/t}
+		</h3>
 		{assign var=children value=$category->getChildCategories()}
 		{if $children}
 			<ul>
 				<ul class="list-group list-sortable" data-sortable-url="{link_to action="categories/set_rank"}">
 					{foreach $children as $child}
 						<li class="list-group-item" data-id="{$child->getId()}">
+							{if $child->isFilter()}<em>{t}filter{/t}:</em>{/if}
+							{if $child->isAlias()}<em>{t}alias{/t}:</em>{/if}
 							{$child->getName()}
 							{dropdown_menu}
 								{a action="edit" id=$child}{icon glyph="edit"} {t}Edit{/t}{/a}

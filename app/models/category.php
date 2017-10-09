@@ -287,9 +287,20 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 		return $this->getImageUrl();
 	}
 
+	/**
+	 * Can products be added to this category?
+	 *
+	 */
 	function allowProducts() {
-		return true; // TODO: what's this?
-		//return $this->getAllowProducts();
+		return !$this->isFilter() && !$this->isAlias();
+	}
+
+	/**
+	 * Can subcategories be added to this category?
+	 * 
+	 */
+	function allowSubcategories() {
+		return !$this->isSubcategoryOfFilter() && !$this->isAlias();
 	}
 
 	function destroy($destroy_for_real = null){
