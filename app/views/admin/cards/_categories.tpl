@@ -1,5 +1,5 @@
 <div id="categories">
-	<h2>{t}Product placement in the catalog tree{/t}</h2>
+	<h3>{t}Product placement in the catalog tree{/t}</h3>
 
 
 	<div id="categies">

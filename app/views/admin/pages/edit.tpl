@@ -4,7 +4,7 @@
 
 <hr>
 
-<h2>{t}Subpages{/t}</h2>
+<h3>{t}Subpages{/t}</h3>
 {if $child_pages}
 	<ul class="list-group list-sortable" data-sortable-url="{link_to action="pages/set_rank"}">
 	{foreach $child_pages as $sp}

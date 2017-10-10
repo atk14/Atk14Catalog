@@ -6,7 +6,7 @@
 
 {assign var=attachments value=Attachment::GetAttachments($object)}
 
-<h2 id="attachments">{button_create_new action="attachments/create_new" table_name=$object->getTableName() record_id=$object->getId() return_to_anchor=attachments}{t}Add an attachment{/t}{/button_create_new}{t}Attachments{/t}</h2>
+<h3 id="attachments">{button_create_new action="attachments/create_new" table_name=$object->getTableName() record_id=$object->getId() return_to_anchor=attachments}{t}Add an attachment{/t}{/button_create_new}{t}Attachments{/t}</h3>
 
 {if !$attachments}
 		<p>{t}Currently there are no attachments.{/t}</p>

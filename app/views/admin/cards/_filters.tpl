@@ -1,4 +1,4 @@
-<h2 id="filters">{t}Filters{/t}</h2>
+<h3 id="filters">{t}Filters{/t}</h3>
 {if $filters}
 	<ul>
 		{foreach $filters as $f}

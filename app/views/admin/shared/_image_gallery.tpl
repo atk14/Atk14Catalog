@@ -2,7 +2,7 @@
  * {render partial="shared/image_gallery" object=$brand}
  *}
 
-<h2>{t}Photo gallery{/t}</h2>
+<h3>{t}Photo gallery{/t}</h3>
 
 {assign var=images value=Image::GetImages($object)}
 

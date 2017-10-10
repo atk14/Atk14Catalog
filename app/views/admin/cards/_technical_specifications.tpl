@@ -2,7 +2,7 @@
 
 <div id="technical_specifications">
 
-	<h2>{t}Technical specifications{/t}</h2>
+	<h3>{t}Technical specifications{/t}</h3>
 
 	{if !$tech_specs}
 

@@ -1,4 +1,4 @@
-<h2>{button_create_new action="card_sections/create_new" card_id=$card}{t}Create a new section{/t}{/button_create_new} {t}Textual sections{/t}</h2>
+<h3>{button_create_new action="card_sections/create_new" card_id=$card}{t}Create a new section{/t}{/button_create_new} {t}Textual sections{/t}</h3>
 {assign var=sections value=$card->getCardSections()}
 {if !$sections}
 

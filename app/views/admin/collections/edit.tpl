@@ -8,5 +8,5 @@
 
 <hr>
 
-<h2>{t}Products in the collection{/t}</h2>
+<h3>{t}Products in the collection{/t}</h3>
 {render partial="collection_cards"}
