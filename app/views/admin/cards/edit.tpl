@@ -35,7 +35,7 @@
 	{t 1=$products|@count}Product variants (%1){/t}
 </h2>
 {if !$card->hasVariants()}
-	{t}U tohoto produktu se neuvažují varianty{/t} &rarr; {a action=enable_variants id=$card _method=post _confirm="Opravdu?"}{t}přepnout na variantový režim{/t}{/a}
+	{t}Variants are not considered for this product{/t} &rarr; {a action=enable_variants id=$card _method=post _confirm="{t}Are you sure?{/t}"}{t}switch to the variant mode{/t}{/a}
 {else}
 	{render partial="products"}
 {/if}
