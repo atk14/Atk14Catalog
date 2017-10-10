@@ -5,7 +5,7 @@
  *
  *}
 
-<h2>{button_create_new action="$type/create_new" card_id=$card}{$button_title}{/button_create_new} {$title}</h2>
+<h2 id="{$type}">{button_create_new action="$type/create_new" card_id=$card return_to_anchor=$type}{$button_title}{/button_create_new} {$title}</h2>
 
 {if $cards}
 

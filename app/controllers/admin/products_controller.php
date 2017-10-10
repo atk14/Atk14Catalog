@@ -1,14 +1,19 @@
 <?php
 class ProductsController extends AdminController {
+
 	function create_new() {
-		$this->page_title = _("Nová varianta produktu");
+		$this->page_title = _("New product variant");
 		$this->_save_return_uri();
 
 		if ($this->request->post() && ($d=$this->form->validate($this->params))) {
 			$product = $this->card->createProduct($d);
 			$this->card->s("has_variants",true);
 			$this->flash->success(_("Varianta vytvořena"));
-			$this->_redirect_to_action("edit", array("id" => $product));
+			$this->_redirect_to(array(
+				"action" => "edit",
+				"id" => $product,
+				"_return_uri_" => $this->_get_return_uri(),
+			));
 		}
 	}
 

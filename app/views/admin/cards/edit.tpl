@@ -28,9 +28,9 @@
 
 <hr>
 
-<h2>
+<h2 id="variants">
 	{if $card->hasVariants()}
-		{button_create_new action="products/create_new" card_id=$card}{t}Add a new variant{/t}{/button_create_new}
+		{button_create_new action="products/create_new" card_id=$card return_to_anchor=variants}{t}Add a new variant{/t}{/button_create_new}
 	{/if}
 	{t 1=$products|@count}Product variants (%1){/t}
 </h2>
