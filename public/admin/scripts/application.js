@@ -10,6 +10,7 @@
 			init: function() {
 				ADMIN.utils.handleSortables();
 				ADMIN.utils.handleSuggestions();
+				ADMIN.utils.handleCategoriesSuggestions();
 				ADMIN.utils.handleGalleryImagesUpload();
 
 				// Form hints.
@@ -44,18 +45,8 @@
 				ADMIN.utils.tagsSuggest( "#id_tags" );
 			},
 			edit: function() {
-				ADMIN.utils.categoriesSuggest( "#id_category" );
 				ADMIN.utils.handleCardToCategories();
 				ADMIN.utils.tagsSuggest( "#id_tags" );
-			}
-		},
-
-		categories: {
-			create_alias: function() {
-				ADMIN.utils.categoriesSuggest( "#id_parent_category_id" );
-			},
-			move_to_category: function() {
-				ADMIN.utils.categoriesSuggest( "#id_parent_category_id" );
 			}
 		},
 
@@ -159,7 +150,6 @@
 					}
 
 					$input.focus().select();
-					ADMIN.utils.categoriesSuggest( "#id_category" );
 				} );
 			},
 
@@ -254,7 +244,7 @@
 
 			categoriesSuggest: function( selector ) {
 				var $input = $( selector ),
-					url = $input.data( "suggest_url" ),
+					url = $input.data( "suggesting_url" ),
 					cache = {},
 					term;
 
@@ -308,6 +298,10 @@
 						} );
 					}
 				} );
+			},
+
+			handleCategoriesSuggestions: function() {
+				ADMIN.utils.categoriesSuggest( "[data-suggesting_categories='yes']" );
 			}
 		}
 	};
