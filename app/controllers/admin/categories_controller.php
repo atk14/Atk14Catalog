@@ -11,6 +11,11 @@ class CategoriesController extends AdminController{
 			$this->flash->success(_("Changes have been saved"));
 			$this->_redirect_back();
 		}
+
+		$MAX_CARDS = 100;
+		$count = $this->dbmole->selectInt("SELECT COUNT(*) FROM category_cards WHERE category_id=:category_id",[":category_id" => $this->category]);
+		$this->tpl_data["cards_in_category"] = $count;
+		$this->tpl_data["too_many_cards_in_category"] = $count>$MAX_CARDS;
 	}
 
 	function move_to_category() {

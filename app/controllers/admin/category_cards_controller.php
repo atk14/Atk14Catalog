@@ -2,6 +2,10 @@
 class CategoryCardsController extends AdminController{
 	// pridani produktu do kategorie probiha taky v cards/add_to_category
 
+	function index() {
+		$this->page_title = sprintf(_("Produkty v kategorii %s"),strip_tags($this->category->getName()));
+	}
+
 	function create_new(){
 		$this->page_title = sprintf(_("Adding product into the category %s"),strip_tags($this->category->getName()));
 
@@ -32,7 +36,7 @@ class CategoryCardsController extends AdminController{
 			$this->_find("card","id"); // takto to posila js udelatko pro trideni
 		}
 
-		if($this->action=="create_new"){
+		if(in_array($this->action,array("create_new","index"))){
 			$this->_find("category","category_id");
 		}
 	}

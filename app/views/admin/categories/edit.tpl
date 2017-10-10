@@ -107,24 +107,32 @@ Do you really want this?{/t}{/capture}
 			{t}Products{/t}
 		</h3>
 
-		{assign var=cards value=$category->getCards()}
-		{if !$cards}
-			<p>
-				{t}There is currently no product here.{/t}
-			</p>
+		{if $too_many_cards_in_category}
+
+			<p>{t count=$cards_in_category}V kategorii je příliš mnoho produktů (%1){/t} &rarr; {a action="category_cards/index" category_id=$category}{t}zobrazit produkty{/t}{/a}</p>
+
 		{else}
-			<ul class="list-group list-sortable" data-sortable-url="{link_to action="category_cards/set_rank" category_id=$category}">
-				{foreach $cards as $card}
-					<li class="list-group-item" data-id="{$card->getId()}">
-						{render partial="shared/list_thumbnail" image=$card->getImage()}
-						<a href="{link_to action="cards/edit" id=$card}" title="{t}Edit product{/t}">{$card->getName()}</a>
-						{a_destroy action="category_cards/destroy" id=$card category_id=$category _title="{t}Remove product{/t}" _class="confirm btn btn-danger btn-xs"}<i class="glyphicon glyphicon-remove"></i> <span class="hide">{t}Remove{/t}</span>{/a_destroy}
-					</li>
-				{/foreach}
-			</ul>
-		{/if}
-		{if !$category->allowProducts()}
-			<p>{t}Into this category products cannot be added.{/t}</p>
+
+			{assign var=cards value=$category->getCards()}
+			{if !$cards}
+				<p>
+					{t}There is currently no product here.{/t}
+				</p>
+			{else}
+				<ul class="list-group list-sortable" data-sortable-url="{link_to action="category_cards/set_rank" category_id=$category}">
+					{foreach $cards as $card}
+						<li class="list-group-item" data-id="{$card->getId()}">
+							{render partial="shared/list_thumbnail" image=$card->getImage()}
+							<a href="{link_to action="cards/edit" id=$card}" title="{t}Edit product{/t}">{$card->getName()}</a>
+							{a_destroy action="category_cards/destroy" id=$card category_id=$category _title="{t}Remove product{/t}" _class="confirm btn btn-danger btn-xs"}<i class="glyphicon glyphicon-remove"></i> <span class="hide">{t}Remove{/t}</span>{/a_destroy}
+						</li>
+					{/foreach}
+				</ul>
+			{/if}
+			{if !$category->allowProducts()}
+				<p>{t}Into this category products cannot be added.{/t}</p>
+			{/if}
+
 		{/if}
 	{/if}
 
