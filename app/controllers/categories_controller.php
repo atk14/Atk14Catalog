@@ -1,5 +1,6 @@
 <?php
 class CategoriesController extends ApplicationController{
+
 	function index(){
 		$this->page_title = _("List of Categories");
 		$this->tpl_data["categories"] = Category::FindAll("parent_category_id",null,"visible",true);

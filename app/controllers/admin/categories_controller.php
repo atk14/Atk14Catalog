@@ -72,7 +72,11 @@ class CategoriesController extends AdminController{
 
 			$this->flash->success(_("Category has been created"));
 			$c = Category::CreateNewRecord($d);
-			return $this->_redirect_to_action("edit", array("id" => $c));
+			return $this->_redirect_to(array(
+				"action" => "edit",
+				"id" => $c,
+				"_return_uri_" => $this->_get_return_uri(),
+			));
 		}
 	}
 

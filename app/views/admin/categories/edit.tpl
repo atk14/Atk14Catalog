@@ -70,15 +70,14 @@ Do you really want this?{/t}{/capture}
 
 	{if !$category->isSubcategoryOfFilter()}
 		{* Pokud je rodic filtr, nelze uz pridavat dalsi podkategorie *}
-		<h3>
+		<h3 id="subcategories">
 			{if $category->allowSubcategories()}
-				{button_create_new parent_category_id=$category}{t}Add a new subcategory{/t}{/button_create_new}
+				{button_create_new parent_category_id=$category return_to_anchor="subcategories"}{t}Add a new subcategory{/t}{/button_create_new}
 			{/if}
 			{t}Subcategories{/t}
 		</h3>
 		{assign var=children value=$category->getChildCategories()}
 		{if $children}
-			<ul>
 				<ul class="list-group list-sortable" data-sortable-url="{link_to action="categories/set_rank"}">
 					{foreach $children as $child}
 						<li class="list-group-item" data-id="{$child->getId()}">
@@ -91,7 +90,6 @@ Do you really want this?{/t}{/capture}
 						</li>
 					{/foreach}
 				</ul>
-			</ul>
 		{else}
 
 			<div class="img-message">
@@ -102,9 +100,9 @@ Do you really want this?{/t}{/capture}
 	{/if}
 
 	{if !$category->isFilter()}
-		<h3>
+		<h3 id="products">
 			{if $category->allowProducts()}
-				{button_create_new action="category_cards/create_new" category_id=$category}{t}Add a product{/t}{/button_create_new}
+				{button_create_new action="category_cards/create_new" category_id=$category return_to_anchor="products"}{t}Add a product{/t}{/button_create_new}
 			{/if}
 			{t}Products{/t}
 		</h3>
@@ -131,9 +129,9 @@ Do you really want this?{/t}{/capture}
 	{/if}
 
 	{if !$category->isFilter() && !$category->isSubcategoryOfFilter()}
-		<h3>
+		<h3 id="recommended_products">
 			{if $category->allowProducts()}
-				{button_create_new action="category_recommended_cards/create_new" category_id=$category}{t}Add a recommended product{/t}{/button_create_new}
+				{button_create_new action="category_recommended_cards/create_new" category_id=$category return_to_anchor="recommended_products"}{t}Add a recommended product{/t}{/button_create_new}
 			{/if}
 			{t}Recommended products{/t}
 		</h3>
