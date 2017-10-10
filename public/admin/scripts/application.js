@@ -10,6 +10,7 @@
 			init: function() {
 				ADMIN.utils.handleSortables();
 				ADMIN.utils.handleSuggestions();
+				ADMIN.utils.handleGalleryImagesUpload();
 
 				// Form hints.
 				$( ".help-hint" ).each( function() {
@@ -45,7 +46,6 @@
 			edit: function() {
 				ADMIN.utils.categoriesSuggest( "#id_category" );
 				ADMIN.utils.handleCardToCategories();
-				ADMIN.utils.handleCardImagesUpload();
 				ADMIN.utils.tagsSuggest( "#id_tags" );
 			}
 		},
@@ -60,9 +60,16 @@
 		},
 
 		utils: {
-			handleCardImagesUpload: function() {
-				var $link = $( "#imageToCard" ).hide(),
-					url = $link.attr( "href" ),
+			handleGalleryImagesUpload: function() {
+				var $link = $( "#imageToGallery" );
+
+				if ( $link.size() !== 1 ) {
+					return;
+				}
+
+				$link.hide();
+
+				var url = $link.attr( "href" ),
 					$progress = $( ".progress-bar" ),
 					$msg = $( ".img-message" ),
 					$list = $( ".list-group-images" ),

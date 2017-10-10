@@ -24,4 +24,4 @@
   </div>
 </div>
 
-<p>{a action="images/create_new" table_name=$object->getTableName() record_id=$object->getId() _class="btn btn-default" _id="imageToCard"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Add an image{/t}{/a}</p>
+<p>{a action="images/create_new" table_name=$object->getTableName() record_id=$object->getId() _class="btn btn-default" _id="imageToGallery"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Add an image{/t}{/a}</p>

@@ -9,9 +9,7 @@
 <h2 id="attachments">{button_create_new action="attachments/create_new" table_name=$object->getTableName() record_id=$object->getId() return_to_anchor=attachments}{t}Add an attachment{/t}{/button_create_new}{t}Attachments{/t}</h2>
 
 {if !$attachments}
-	<div class="img-message">
 		<p>{t}Currently there are no attachments.{/t}</p>
-	</div>
 {/if}
 
 <ul class="list-group list-group-attachments list-sortable" data-sortable-url="{link_to action="attachments/set_rank"}">
