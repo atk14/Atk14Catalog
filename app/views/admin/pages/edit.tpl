@@ -4,21 +4,17 @@
 
 <hr>
 
-<h3>{t}Subpages{/t}</h3>
+<h3 id="subpages">{button_create_new parent_page_id=$page return_to_anchor="subpages"}{/button_create_new} {t}Subpages{/t}</h3>
 {if $child_pages}
 	<ul class="list-group list-sortable" data-sortable-url="{link_to action="pages/set_rank"}">
 	{foreach $child_pages as $sp}
-		<li class="list-group-item media clearfix" data-id="{$sp->getId()}">
-			<div class="btn-group pull-right">
-				{a action=edit id=$sp}<span class="glyphicon glyphicon-edit"></span> {t}Edit{/t}{/a}
-			</div>
+		<li class="list-group-item" data-id="{$sp->getId()}">
 			{$sp->getTitle()}
+
+			{render partial="page_item_dropdown_menu" page=$sp}
 		</li>
 	{/foreach}
 	</ul>
 {else}
 	<p>{t}This page has no subpages{/t}</p>	
 {/if}
-
-<p>{a action="pages/create_new"  parent_page_id=$page _class="btn btn-default"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Create new subpage{/t}{/a}</p>
-
