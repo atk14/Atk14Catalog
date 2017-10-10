@@ -52,8 +52,8 @@ class ProductsController extends AdminController {
 			$this->_find("card","card_id");
 		}
 		if (in_array($this->action, array("edit","destroy","set_rank"))) {
-			$this->_find("product");
-			$this->card = $this->product->getCard();
+			$product = $this->_find("product");
+			$this->card = $product ? $product->getCard() : null;
 		}
 
 		if(isset($this->card)){
