@@ -63,6 +63,29 @@ class AdminController extends ApplicationBaseController{
 		$this->breadcrumbs[] = array($card->getName(),$this->_link_to(array("action" => "cards/edit", "id" => $card)));
 	}
 
+	function _add_category_to_breadcrumbs($category){
+		if(!$category){ return; }
+		// breadcrumbs
+		$ancestors = array();
+		$c = $category;
+		while($p = $c->getParentCategory()){
+			$ancestors[] = $p;
+			$c = $p;
+		}
+		$ancestors = array_reverse($ancestors);
+		$ancestors[] = $category;
+		foreach($ancestors as $a){
+			$name = $a->getName();
+			if($a->isFilter()){ $name = _("filtr").": $name"; }
+			if($a->isAlias()){ $name = _("alias").": $name"; }
+
+			$this->breadcrumbs[] = array(
+				$name,
+				$this->_link_to(array("action" => "categories/edit", "id" => $a))
+			);
+		}
+	}
+
 	/**
 	 * Generic method for listing objects
 	 *

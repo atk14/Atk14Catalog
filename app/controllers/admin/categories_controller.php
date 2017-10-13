@@ -118,30 +118,14 @@ class CategoriesController extends AdminController{
 
 	function _prepare_breadcrumbs($category,$add_self = false) {
 		if(!$category){ return; }
-		// breadcrumbs
-		$ancestors = array();
-		$c = $category;
-		while($p = $c->getParentCategory()){
-			$ancestors[] = $p;
-			$c = $p;
-		}
-		$ancestors = array_reverse($ancestors);
-		if($add_self){
-			$ancestors[] = $category;
-		}
-		foreach($ancestors as $a){
-			$this->breadcrumbs[] = array(
-				$this->_get_category_name($a),
-				$this->_link_to(array("action" => "edit", "id" => $a))
-			);
-		}
-	}
 
-	function _get_category_name($c){
-		$name = $c->getName();
-		if($c->isFilter()){ $name = _("filtr").": $name"; }
-		if($c->isAlias()){ $name = _("alias").": $name"; }
-		return $name;
+		if(!$add_self){
+			$parent = $category->getParentCategory();
+			$this->_add_category_to_breadcrumbs($parent);
+			return;
+		}
+
+		$this->_add_category_to_breadcrumbs($category);
 	}
 
 	function _before_filter(){

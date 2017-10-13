@@ -109,7 +109,7 @@ Do you really want this?{/t}{/capture}
 
 		{if $too_many_cards_in_category}
 
-			<p>{t count=$cards_in_category}V kategorii je příliš mnoho produktů (%1){/t} &rarr; {a action="category_cards/index" category_id=$category}{t}zobrazit produkty{/t}{/a}</p>
+			<p>{t count=$cards_in_category}There are too many products in the category (%1){/t} &rarr; {a action="category_cards/index" category_id=$category}{t}show product list{/t}{/a}</p>
 
 		{else}
 

@@ -1,1 +1,0 @@
-$link.parents("li").fadeOut();

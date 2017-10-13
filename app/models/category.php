@@ -244,7 +244,7 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 		}
 		$lister = $this->getCardsLister();
 		if(!$lister->contains($card)) {
-			return $lister->append($card);
+			return $lister->prepend($card);
 		}
 	}
 
