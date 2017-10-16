@@ -1,25 +1,31 @@
-<h1>{$page_title}</h1>
+<h1>
+	{$page_title}
 
-{assign var=parent value=$category->getParentCategory()}
-
-<p>
-	{if $category->allowSubcategories()}
-		{a action="create_new" parent_category_id=$category _class="btn btn-default"}{icon glyph="plus-sign"} {t}Add a new subcategory{/t}{/a}
-	{/if}
-	{if $category->canBeMoved()}
-		{a action=move_to_category id=$category _class="btn btn-default"}{icon glyph="transfer"} {t}Move the category{/t}{/a}
-	{/if}
-	{if $category->canBeAliased()}
-		{a action=create_alias id=$category _class="btn btn-default"}{icon glyph=shared} {t}Create an alias{/t}{/a}
-	{/if}
-	{if $category->isDeletable()}
-		{capture assign=confirmation}{t name=$category->getName() escape=no}You are about to delete the category %1!
+	{dropdown_menu clearfix=false}
+		{if $category->allowSubcategories()}
+			{a action="create_new" parent_category_id=$category}{icon glyph="plus-sign"} {t}Add a new subcategory{/t}{/a}
+		{/if}
+		{if $category->isVisible()}
+			{a namespace="" action="categories/detail" path=$category->getPath()}{icon glyph="eye-open"} {t}Show on web{/t}{/a}
+		{/if}
+		{if $category->canBeMoved()}
+			{a action=move_to_category id=$category}{icon glyph="transfer"} {t}Move the category{/t}{/a}
+		{/if}
+		{if $category->canBeAliased()}
+			{a action=create_alias id=$category}{icon glyph="share-alt"} {t}Create an alias{/t}{/a}
+		{/if}
+		{if $category->isDeletable()}
+			{capture assign=confirmation}{t name=$category->getName() escape=no}You are about to delete the category %1!
 Also all subcategories will be deleted. Deletion cannot be undone.
 
 Do you really want this?{/t}{/capture}
-		{a_destroy id=$category _class="btn btn-danger" _confirm=$confirmation}{t}Delete{/t}{/a_destroy}
-	{/if}
-</p>
+			{a_destroy id=$category _confirm=$confirmation}{icon glyph="remove"} {t}Delete{/t}{/a_destroy}
+		{/if}
+	{/dropdown_menu}
+</h1>
+
+
+{assign var=parent value=$category->getParentCategory()}
 
 <table class="table">
 	<tbody>
