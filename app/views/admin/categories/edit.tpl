@@ -5,7 +5,7 @@
 		{if $category->allowSubcategories()}
 			{a action="create_new" parent_category_id=$category}{icon glyph="plus-sign"} {t}Add a new subcategory{/t}{/a}
 		{/if}
-		{if $category->isVisible()}
+		{if $category->isVisible() && !$category->isFilter() && !$category->isSubcategoryOfFilter()}
 			{a namespace="" action="categories/detail" path=$category->getPath()}{icon glyph="eye-open"} {t}Show on web{/t}{/a}
 		{/if}
 		{if $category->canBeMoved()}
