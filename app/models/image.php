@@ -1,8 +1,7 @@
 <?php
-class Image extends ApplicationModel implements Rankable, Translatable{
+class Image extends LinkedObject implements Translatable{
 
 	static function GetTranslatableFields(){ return array("name","description"); }
-
 
 	static function CreateNewRecord($values,$options = array()){
 		assert(
@@ -16,12 +15,10 @@ class Image extends ApplicationModel implements Rankable, Translatable{
 	 * $images = Image::GetImages($product);
 	 */
 	static function GetImages($obj,$options = array()){
-		$options += array("use_cache" => true);
-
 		$class_name = "Image";
 		is_a($obj,"Product") && ($class_name = "ProductImage");
 
-		return $class_name::FindAll("table_name",$obj->getTableName(),"record_id",$obj->getId(),$options);
+		return $class_name::GetInstancesFor($obj,$options);
 	}
 
 	/**
@@ -30,15 +27,14 @@ class Image extends ApplicationModel implements Rankable, Translatable{
 	 *
 	 * Image::AddImage($product,"http://....");
 	 */
-	static function AddImage($obj,$values){
+	static function AddImage($obj,$values,$options = array()){
 		if(is_string($values)){
 			$values = array("url" => $values);
 		}
+
 		$class_name = "Image";
 		is_a($obj,"Product") && ($class_name = "ProductImage");
-		$values["table_name"] = $obj->getTableName();
-		$values["record_id"] = $obj->getId();
-		return $class_name::CreateNewRecord($values);
+		return $class_name::CreateNewFor($obj,$values,$options);
 	}
 
 	function toString(){ return $this->g("url"); }
@@ -49,13 +45,6 @@ class Image extends ApplicationModel implements Rankable, Translatable{
 
 	function getOriginalHeight(){
 		return $this->_getPupiq()->getOriginalHeight();
-	}
-
-	function setRank($new_rank){
-		return $this->_setRank($new_rank,array(
-			"table_name" => $this->g("table_name"),
-			"record_id" => $this->g("record_id"),
-		));
 	}
 
 	function _getPupiq(){

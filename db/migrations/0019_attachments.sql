@@ -4,6 +4,7 @@ CREATE TABLE attachments (
 	table_name VARCHAR(255) NOT NULL, -- card_sections
 	record_id INT NOT NULL,
 	url VARCHAR(255) NOT NULL,
+	filename VARCHAR(255) NOT NULL,
 	filesize INT NOT NULL,
 	mime_type VARCHAR(255) NOT NULL,
 	rank INT NOT NULL DEFAULT 999,
