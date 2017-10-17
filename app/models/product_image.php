@@ -7,7 +7,7 @@ class ProductImage extends Image{
 	}
 
 	static function CreateNewRecord($values,$options = array()){
-		assert($values["table_name"]=="products");
+		myAssert($values["table_name"]=="products");
 		return parent::CreateNewRecord($values,$options);
 	}
 

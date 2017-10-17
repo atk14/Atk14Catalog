@@ -4,7 +4,7 @@ class Image extends LinkedObject implements Translatable{
 	static function GetTranslatableFields(){ return array("name","description"); }
 
 	static function CreateNewRecord($values,$options = array()){
-		assert(
+		myAssert(
 			(get_called_class()=="Image" && $values["table_name"]!="products") ||
 			(get_called_class()=="ProductImage" && $values["table_name"]=="products")
 		);
