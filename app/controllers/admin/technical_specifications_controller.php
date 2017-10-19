@@ -5,6 +5,7 @@ class TechnicalSpecificationsController extends AdminController {
 		$this->page_title = _("Add new technical specification");
 
 		$this->_save_return_uri();
+		$this->_add_card_to_breadcrumbs($this->card);
 
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
 			if(TechnicalSpecification::FindFirst("card_id",$this->card,"technical_specification_key_id",$d["technical_specification_key_id"])){
@@ -26,6 +27,8 @@ class TechnicalSpecificationsController extends AdminController {
 	}
 
 	function edit(){
+		$this->_add_card_to_breadcrumbs($this->technical_specification->getCard());
+
 		$this->_edit(array(
 			"update_closure" => function($object,$d){
 				$existing_spec = TechnicalSpecification::FindFirst("card_id",$object->getCardId(),"technical_specification_key_id",$d["technical_specification_key_id"]);
@@ -45,6 +48,10 @@ class TechnicalSpecificationsController extends AdminController {
 	function _before_filter(){
 		if($this->action=="create_new"){
 			$this->_find("card","card_id");
+		}
+
+		if($this->action=="edit"){
+			$this->_find("technical_specification");
 		}
 	}
 }
