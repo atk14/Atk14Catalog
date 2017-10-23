@@ -41,6 +41,18 @@ function smarty_block_button_create_new($params,$content,$template,&$repeat){
 		"class" => "btn btn-default",
 	);
 
+	$attrs = array();
+	foreach($params as $k => $v){
+		if(preg_match('/^_(.*)/',$k,$m)){
+			$attrs[$m[1]] = $v;
+			unset($params[$k]);
+		}
+	}
+
+	$attrs += array(
+		"class" => "btn btn-default",
+	);
+
 	$original_smarty_vars = $smarty->getTemplateVars();
 	$smarty->assign("title",$content);
 	if($return_to_anchor){
