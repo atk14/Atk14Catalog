@@ -18,7 +18,7 @@ body {
 .alert {
 	margin-top: @line-height-computed;
 }
-body.loading, body.loading a, body.loading input, body.loading select, body.loading button {
+body.loading, body.loading a, body.loading input, body.loading select, body.loading button, body.loading label {
 	cursor: wait;
 }
 .pagination {
@@ -95,7 +95,7 @@ label {
 	label {
 		.make-sm-column(2);
 	}
-	.form-control {
+	.form-control, .checkboxes {
 		.make-sm-column(4);
 	}
 	.help-block {
