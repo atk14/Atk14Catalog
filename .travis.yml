@@ -6,8 +6,8 @@ language: php
 services:
   - postgresql
 
+# Atk14Catalog is no more compatible with PHP5.3
 php:
-  - 5.3
   - 5.4
   - 5.5
   - 5.6
