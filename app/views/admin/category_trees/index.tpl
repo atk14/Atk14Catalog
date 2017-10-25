@@ -3,14 +3,16 @@
 <ul class="list-group list-sortable" data-sortable-url="{link_to action="set_rank"}">
 	{foreach $roots as $root}
 		<li class="list-group-item" data-id="{$root->getId()}">
-			{a action="detail" id=$root}{$root->getName()}{/a}
+			{$root->getName()}
+			{if !$root->isVisible()}<em>({t}invisible{/t})</em>{/if}
+			{dropdown_menu}
+			{a action="detail" id=$root}{icon glyph="edit"} {t}Edit{/t}{/a}
 			{if $root->isDeletable()}
-				<div class="pull-right">
-					{capture assign="confirm"}{t 1=$root->getName()|h escape=no}Chystáte se smazat katalogvý strom %1
-Jste si jistý/á?{/t}{/capture}
-					{a_remote action=destroy id=$root _method=post _confirm=$confirm _title="{t}Smazat strom{/t}" _class="btn btn-danger btn-xs"}<span class="glyphicon glyphicon-remove"></span>{/a_remote}
-				</div>
+					{capture assign="confirm"}{t 1=$root->getName()|h escape=no}You are about to delete the catalog tree %1.
+Are you sure?{/t}{/capture}
+					{a_destroy action=destroy id=$root _method=post _confirm=$confirm}{icon glyph="remove"} {t}Delete{/t}{/a_destroy}
 			{/if}
+			{/dropdown_menu}
 		</li>
 	{/foreach}
 </ul>
