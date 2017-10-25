@@ -6,7 +6,7 @@
 			{$root->getName()}
 			{if !$root->isVisible()}<em>({t}invisible{/t})</em>{/if}
 			{dropdown_menu}
-			{a action="detail" id=$root}{icon glyph="edit"} {t}Edit{/t}{/a}
+			{a action="detail" id=$root}{t}Detail{/t}{/a}
 			{if $root->isDeletable()}
 					{capture assign="confirm"}{t 1=$root->getName()|h escape=no}You are about to delete the catalog tree %1.
 Are you sure?{/t}{/capture}
