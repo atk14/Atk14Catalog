@@ -212,7 +212,7 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 			if(!$options["consider_invisible_categories"] && !$c->isVisible()){ continue; }
 			if(!$options["consider_filters"] && ($c->isFilter() || ($c->getParentCategory() && $c->getParentCategory()->isFilter()))){ continue; }
 			if($options["filters_only"]){
-				if($c->getParentCategory() && !$c->getParentCategory()->isFilter()){ continue; }
+				if(!$c->getParentCategory() || !$c->getParentCategory()->isFilter()){ continue; }
 			}
 			if($options["root_category"] && !$c->isDescendantOf($options["root_category"])){ continue; }
 			$categories[] = $c;
