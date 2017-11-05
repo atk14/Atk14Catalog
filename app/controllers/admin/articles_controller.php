@@ -1,5 +1,6 @@
 <?php
 class ArticlesController extends AdminController{
+
 	function index(){
 		$this->page_title = _("Listing Articles");
 
@@ -8,13 +9,27 @@ class ArticlesController extends AdminController{
 		$conditions = $bind_ar = array();
 
 		if($d["search"]){
-			$conditions[] = "UPPER(id||' '||' '||COALESCE(title,'')||' '||COALESCE(body,'')) LIKE UPPER('%'||:search||'%')";
-			$bind_ar[":search"] = $d["search"];
+	
+			$q_up = Translate::Upper($d["search"]);
+
+			$_fields = array();
+			$_fields[] = "id";
+			foreach(array("title","body") as $_f){
+				$_fields[] = "COALESCE((SELECT body FROM translations WHERE record_id=articles.id AND table_name='articles' AND key='$_f' AND lang=:lang),'')";
+			}
+
+			$ft_cond = FullTextSearchQueryLike::GetQuery("UPPER(".join("||' '||",$_fields).")",$q_up);
+			if($ft_cond){
+				$conditions[] = $ft_cond;
+				$bind_ar[":search"] = $q_up;
+			}
 		}
 
 		$this->sorting->add("published_at",array("reverse" => true));
 		$this->sorting->add("id");
-		$this->sorting->add("title","LOWER(title)");
+		$this->sorting->add("title","UPPER(COALESCE((SELECT body FROM translations WHERE record_id=articles.id AND table_name='articles' AND key='title' AND lang=:lang),''))");
+		
+		$bind_ar[":lang"] = $this->lang;
 
 		$this->tpl_data["finder"] = Article::Finder(array(
 			"conditions" => $conditions,
