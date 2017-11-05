@@ -7,6 +7,7 @@
         "atk14/url-field": "dev-master",
         "atk14/phone-field": "dev-master",
         "atk14/drink-markdown": "dev-master",
-        "atk14/menu14": "^1.1.1"
+        "atk14/menu14": "^1.1.1",
+        "yarri/my-blowfish": "^1.0"
     }
 }
