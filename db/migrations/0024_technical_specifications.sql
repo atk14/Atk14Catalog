@@ -29,6 +29,7 @@ CREATE TABLE technical_specifications (
 	updated_at TIMESTAMP,
 	--
 	CONSTRAINT unq_technicalspecifications UNIQUE (card_id,technical_specification_key_id),
+	CONSTRAINT fk_technicalspecifications_cards FOREIGN KEY (card_id) REFERENCES cards ON DELETE CASCADE,
 	CONSTRAINT fk_technicalspecifications_keys FOREIGN KEY (technical_specification_key_id) REFERENCES technical_specification_keys ON DELETE CASCADE,
 	CONSTRAINT fk_technicalspecifications_cr_users FOREIGN KEY (created_by_user_id) REFERENCES users,
 	CONSTRAINT fk_technicalspecifications_upd_users FOREIGN KEY (updated_by_user_id) REFERENCES users
