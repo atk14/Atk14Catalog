@@ -9,7 +9,7 @@ class PagesController extends AdminController {
 	function create_new() {
 		$this->_create_new(array(
 			"page_title" => _("Create page"),
-			"flash_message" => _("The page has been created successfuly"),
+			"flash_message" => _("The page has been created successfully"),
 		));
 	}
 
