@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-23 22:57+0100\n"
-"PO-Revision-Date: 2017-05-10 14:51+0200\n"
+"PO-Revision-Date: 2017-11-23 23:51+0100\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: \n"
 "Language: cs_CZ\n"
@@ -19,15 +19,15 @@ msgstr ""
 
 #: ../vendor/atk14/mail-panel/src/MailPanel.php:44
 msgid "Headers"
-msgstr ""
+msgstr "Hlavičky"
 
 #: ../vendor/atk14/mail-panel/src/MailPanel.php:55
 msgid "HTML body"
-msgstr ""
+msgstr "HTML text"
 
 #: ../vendor/atk14/mail-panel/src/MailPanel.php:61
 msgid "Plain text body"
-msgstr ""
+msgstr "Prostý text"
 
 #: ../vendor/atk14/mail-panel/src/MailPanel.php:71
 msgid "No mail has been sent"
@@ -35,29 +35,29 @@ msgstr "Žádný e-mail nebyl odeslán"
 
 #: ../vendor/atk14/phone-field/src/phone_field.php:5
 msgid "Enter valid phone number (+420.605123456)"
-msgstr ""
+msgstr "Zadejte platné telefonní číslo (+420.605123456)"
 
 #: ../vendor/atk14/phone-field/src/phone_field.php:7
 msgid "Enter phone number in format +420.605123456"
-msgstr ""
+msgstr "Telefonní číslo zadejte ve formátu +420.605123456"
 
 #: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_attachment_input.php:18
 msgid "Download attachment"
-msgstr ""
+msgstr "Stáhnout přílohu"
 
 #: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_attachment_input.php:18
 #: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_image_input.php:22
 msgid "remove"
-msgstr ""
+msgstr "odstranit"
 
 #: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_image_input.php:22
 msgid "Display image"
-msgstr ""
+msgstr "Zobrazit obrázek"
 
 #: ../vendor/atk14/pupiq-client/src/lib/pupiq.php:66
 msgid "Unknown error"
-msgstr ""
+msgstr "Neznámá chyba"
 
 #: ../vendor/atk14/url-field/src/url_field.php:12
 msgid "This doesn't look like an URL"
-msgstr ""
+msgstr "Toto nevypadá jako nějaké URL"

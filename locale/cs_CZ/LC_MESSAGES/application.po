@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-23 22:57+0100\n"
-"PO-Revision-Date: 2017-07-26 14:40+0200\n"
+"PO-Revision-Date: 2017-11-23 23:49+0100\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: Team <team@email.com>\n"
 "Language: cs_CZ\n"
@@ -98,7 +98,7 @@ msgid "No record has been found."
 msgstr "Nebyl nalezen žádný záznam."
 
 msgid "The product is not yet placed in a category with a filter."
-msgstr ""
+msgstr "Produkt zatím nebyl zařazen do kategorie s filtrem."
 
 msgid ""
 "You are about to delete the product %1.\n"
@@ -117,13 +117,13 @@ msgid "There is no related product"
 msgstr "Není zde související produkt"
 
 msgid "Edit this product"
-msgstr ""
+msgstr "Editovat produkt"
 
 msgid "You are going to remove a related product %1. Are you sure?"
 msgstr "Chystáte se odebrat související produkt %1. Jste si jistý?"
 
 msgid "Remove"
-msgstr ""
+msgstr "Odstranit"
 
 msgid "Product placement in the catalog tree"
 msgstr "Zařazení produktu v katalogovém stromu"
@@ -132,25 +132,25 @@ msgid "Add product to a category"
 msgstr "Přidat produkt do kategorie"
 
 msgid "The product is not yet in any category."
-msgstr ""
+msgstr "Produkt ještě není v žádné kategorii."
 
 msgid "Remove from the category"
-msgstr ""
+msgstr "Odstranit z kategorie"
 
 msgid "Add a new variant"
-msgstr ""
+msgstr "Přidat novou variantu"
 
 msgid "Product variants (%1)"
 msgstr "Varianty produktů (%1)"
 
 msgid "Variants are not considered for this product"
-msgstr ""
+msgstr "Varianty nejsou pro tento produkt uvažovány"
 
 msgid "Are you sure?"
 msgstr "Jste si jistý?"
 
 msgid "switch to the variant mode"
-msgstr ""
+msgstr "přepnout do variantního režimu"
 
 msgid "Related products"
 msgstr "Související produkty"
@@ -206,10 +206,10 @@ msgid "Updated at"
 msgstr "Změněno"
 
 msgid "Chystáte se smazat produkt %1. Jste si jistý/á?"
-msgstr ""
+msgstr "Chystáte se smazat produkt %1. Jste si jistý/á?"
 
 msgid "Produkt zatím nemá žádnou variantu."
-msgstr ""
+msgstr "Produkt zatím nemá žádnou variantu."
 
 msgid "Technical specifications"
 msgstr "Technické specifikace"
@@ -218,7 +218,7 @@ msgid "There is no record yet."
 msgstr "Není zde žádný záznam"
 
 msgid "Edit value"
-msgstr ""
+msgstr "Upravit hodnotu"
 
 msgid "Edit key"
 msgstr "Upravit klíč"
@@ -246,19 +246,19 @@ msgstr ""
 "Jste si jistý?"
 
 msgid "Vytvořit a editovat alias"
-msgstr ""
+msgstr "Vytvořit a editovat alias"
 
 msgid "Add a new subcategory"
-msgstr ""
+msgstr "Přidat podkategorii"
 
 msgid "Show on web"
-msgstr ""
+msgstr "Zobrazit na webu"
 
 msgid "Move the category"
-msgstr ""
+msgstr "Přesunout kategorii"
 
 msgid "Create an alias"
-msgstr ""
+msgstr "Vytvořit alias"
 
 msgid ""
 "You are about to delete the category %1!\n"
@@ -266,89 +266,97 @@ msgid ""
 "\n"
 "Do you really want this?"
 msgstr ""
+"Chystáte se smazat kategorii %1!\n"
+"Také všechny podkategorie budou smazány. Vymazání nelze vrátit zpět.\n"
+"\n"
+"Opravdu to chcete?"
 
 msgid "Path"
-msgstr ""
+msgstr "Cesta"
 
 msgid "Pointing to category"
-msgstr ""
+msgstr "Ukazuje na kategorii"
 
 msgid "Is a filter?"
-msgstr ""
+msgstr "Je to filtr?"
 
 msgid "Can products be inserted here?"
-msgstr ""
+msgstr "Mohou zde být vloženy produkty?"
 
 msgid ""
 "This is a virtual category, which is actually pointing to <a href=\"%1\">/%2/"
 "</a>"
 msgstr ""
+"Jedná se o virtuální kategorii, která ve skutečnosti ukazuje na <a href="
+"\"%1\">/% 2/</a>"
 
 msgid "Subcategories"
 msgstr "Podkategorie"
 
 msgid "filter"
-msgstr ""
+msgstr "filtr"
 
 #: ../app/controllers/admin/admin.php:80
 msgid "alias"
-msgstr ""
+msgstr "alias"
 
 msgid "invisible"
-msgstr ""
+msgstr "neviditelné"
 
 msgid "This category has no subcategories."
-msgstr ""
+msgstr "Tato kategorie nemá žádné podkategorie."
 
 #: ../app/controllers/admin/admin.php:32
 msgid "Products"
 msgstr "Produkty"
 
 msgid "There are too many products in the category (%1)"
-msgstr ""
+msgstr "V této kategorii je příliš mnoho produktů (%1)"
 
 msgid "show product list"
-msgstr ""
+msgstr "zobrazit seznam produktů"
 
 msgid "There is currently no product here."
-msgstr ""
+msgstr "Momentálně tady není žádný produkt."
 
 msgid "Edit product"
-msgstr ""
+msgstr "Upravit produkt"
 
 msgid "Remove product"
-msgstr ""
+msgstr "Odstranit produkt"
 
 msgid "Into this category products cannot be added."
-msgstr ""
+msgstr "Do této kategorie nelze přidat produkty."
 
 msgid "Add a recommended product"
-msgstr ""
+msgstr "Přidat doporučený produkt"
 
 msgid "Recommended products"
-msgstr ""
+msgstr "Doporučené produkty"
 
 msgid "Přesunout kategorii"
-msgstr ""
+msgstr "Přesunout kategorii"
 
 msgid "Edit ranking"
-msgstr ""
+msgstr "Upravit pořadí"
 
 #: ../app/forms/admin/category_cards/edit_form.php:6
 msgid "Ranking"
-msgstr ""
+msgstr "Pořadí"
 
 #: ../app/controllers/admin/category_trees_controller.php:10
 msgid "Create new category tree"
 msgstr "Vytvořit nový katalogový strom"
 
 msgid "Detail"
-msgstr ""
+msgstr "Detail"
 
 msgid ""
 "You are about to delete the catalog tree %1.\n"
 "Are you sure?"
 msgstr ""
+"Chystáte se smazat katalogový strom %1. \n"
+"Jsi si jistý(á)?"
 
 msgid ""
 "You are about to remove the product %1 from the collection.\n"
@@ -383,10 +391,10 @@ msgid "The size of the original:"
 msgstr "Velikost originálu:"
 
 msgid "Zpět"
-msgstr ""
+msgstr "Zpět"
 
 msgid "Přidat obrázek"
-msgstr ""
+msgstr "Přidat obrázek"
 
 msgid "Welcome administrator!"
 msgstr "Vítejte administrátore!"
@@ -414,15 +422,17 @@ msgid "Add new page"
 msgstr "Přidat novou stránku"
 
 msgid "Visit public link"
-msgstr ""
+msgstr "Navštívit veřejný odkaz"
 
 msgid ""
 "You are about to delete page %1\n"
 "Are you sure?"
 msgstr ""
+"Chystáte se smazat stránku %1\n"
+"Jsi si jistý(á)?"
 
 msgid "Delete page"
-msgstr ""
+msgstr "Smazat stránku"
 
 msgid "[%1]"
 msgstr "[%1]"
@@ -456,10 +466,10 @@ msgid "Attachments"
 msgstr "Přílohy"
 
 msgid "Currently there are no attachments."
-msgstr ""
+msgstr "Momentálně tady nejsou žádné přílohy."
 
 msgid "Remove image"
-msgstr ""
+msgstr "Odstranit obrázek"
 
 msgid "Photo gallery"
 msgstr "Fotogalerie"
@@ -471,18 +481,20 @@ msgid "Add an image"
 msgstr "Přidat obrázek"
 
 msgid "Show larger image"
-msgstr ""
+msgstr "Zobrazit větší obrázek"
 
 msgid "no image"
-msgstr ""
+msgstr "bez obrázku"
 
 msgid "Add a store"
-msgstr ""
+msgstr "Přidat prodejnu"
 
 msgid ""
 "You are about to permanently delete store %1\n"
 "Are you sure about that?"
 msgstr ""
+"Chystáte se trvale smazat prodejnu %1\n"
+"Jsi si tím jistý(á)?"
 
 msgid "Add new tag"
 msgstr "Přidat nový štítek"
@@ -586,10 +598,10 @@ msgid "Posted by <em>%1</em> on <time datetime=\"%2\">%3</time>"
 msgstr "Zaslal <em>%1</em> dne <time datetime=\"%2\">%3</time>"
 
 msgid "older article"
-msgstr ""
+msgstr "starší článek"
 
 msgid "newer article"
-msgstr ""
+msgstr "novější článek"
 
 msgid "At the moment there are no news."
 msgstr "V této chvíli nejsou žádné novinky"
@@ -781,7 +793,7 @@ msgstr "Seznam kolekcí"
 #: ../app/controllers/admin/stores_controller.php:5
 #: ../app/controllers/stores_controller.php:5
 msgid "List of stores"
-msgstr ""
+msgstr "Seznam prodejen"
 
 msgid "Pages with a hierarchical structure"
 msgstr "Stránky s hierarchickou strukturou"
@@ -790,7 +802,7 @@ msgid "Contact page with fast contact form"
 msgstr "Kontaktní stránka s formulářem pro rychlý kontakt"
 
 msgid "Articles section"
-msgstr ""
+msgstr "Sekce s články"
 
 msgid "User registration"
 msgstr "Registrace uživatele"
@@ -824,12 +836,16 @@ msgid ""
 "Are you planning to kick up a new project from the Atk14Catalog? Great! Just "
 "run the following commands."
 msgstr ""
+"Chystáte se pustit do nového projektu na Atk14SCatalogu? Skvělé! Stačí "
+"spustit následující příkazy."
 
 msgid ""
 "You can find more information in <a href=\"https://github.com/atk14/"
 "Atk14Catalog/blob/master/README.md#installation\">the installation "
 "instructions.</a>"
 msgstr ""
+"Více informací naleznete v <a href=\"https://github.com/atk14/Atk14Catalog/"
+"blob/master/README.md#installation\">pokynech k instalaci.</a>"
 
 msgid ""
 "If you want to help us to improve the Catalog, <a href=\"https://github.com/"
@@ -983,10 +999,10 @@ msgstr "Nejnovější články"
 
 #: ../app/forms/admin/stores/stores_form.php:31
 msgid "Address"
-msgstr ""
+msgstr "Adresa"
 
 msgid "Currently we have no store."
-msgstr ""
+msgstr "V současné době nemáme žádnou prodejnu."
 
 #: ../app/forms/users/create_new_form.php:5
 msgid "Username (login)"
@@ -1068,7 +1084,7 @@ msgstr "Kolekce"
 #: ../app/controllers/admin/admin.php:36
 #: ../app/controllers/stores_controller.php:11
 msgid "Stores"
-msgstr ""
+msgstr "Prodejny"
 
 #: ../app/controllers/admin/admin.php:37
 #: ../app/controllers/admin/password_recoveries_controller.php:4
@@ -1081,32 +1097,32 @@ msgstr "Odběratelé newsletteru"
 
 #: ../app/controllers/admin/admin.php:79
 msgid "filtr"
-msgstr ""
+msgstr "filtr"
 
 #: ../app/controllers/admin/admin.php:116
 #, php-format
 msgid "Seznam objektů typu %s"
-msgstr ""
+msgstr "Seznam objektů typu %s"
 
 #: ../app/controllers/admin/admin.php:145
 msgid "The record has been created"
-msgstr ""
+msgstr "Záznam byl vytvořen"
 
 #: ../app/controllers/admin/admin.php:159
 #, php-format
 msgid "Vytvořit objekt typu %s"
-msgstr ""
+msgstr "Vytvořit objekt typu %s"
 
 #: ../app/controllers/admin/admin.php:211
 #: ../app/controllers/admin/attachments_controller.php:54
 #: ../app/controllers/admin/card_sections_controller.php:27
 msgid "Změny byly uloženy"
-msgstr ""
+msgstr "Změny byly uloženy"
 
 #: ../app/controllers/admin/admin.php:233
 #, php-format
 msgid "Editace objektu typu %s"
-msgstr ""
+msgstr "Editace objektu typu %s"
 
 #: ../app/controllers/admin/admin.php:357
 msgid "The entry has been deleted"
@@ -1143,11 +1159,11 @@ msgstr "Článek byl úspěšně aktualizován"
 #: ../app/controllers/admin/attachments_controller.php:4
 #, php-format
 msgid "Přílohy k objektu %s#%s"
-msgstr ""
+msgstr "Přílohy k objektu %s#%s"
 
 #: ../app/controllers/admin/attachments_controller.php:22
 msgid "Přidání přílohy"
-msgstr ""
+msgstr "Přidání přílohy"
 
 #: ../app/controllers/admin/attachments_controller.php:41
 msgid "Attachment has been saved"
@@ -1156,11 +1172,11 @@ msgstr "Příloha byla uložena"
 #: ../app/controllers/admin/attachments_controller.php:47
 #, php-format
 msgid "Editace přílohy #%s"
-msgstr ""
+msgstr "Editace přílohy #%s"
 
 #: ../app/controllers/admin/attachments_controller.php:67
 msgid "Obrázek byl smazán."
-msgstr ""
+msgstr "Obrázek byl smazán."
 
 #: ../app/controllers/admin/brands_controller.php:5
 msgid "Listing brands"
@@ -1186,11 +1202,11 @@ msgstr "Značka byla smazána"
 #: ../app/controllers/admin/card_filters_controller.php:71
 #, php-format
 msgid "Placing the product \"%s\" into filters"
-msgstr ""
+msgstr "Umístění produktu \"%s\" do filtrů"
 
 #: ../app/controllers/admin/card_filters_controller.php:63
 msgid "Settings saved"
-msgstr ""
+msgstr "Nastavení uloženo"
 
 #: ../app/controllers/admin/cards_controller.php:51
 msgid "Adding a product"
@@ -1214,7 +1230,7 @@ msgstr "Změny byly uloženy"
 
 #: ../app/controllers/admin/cards_controller.php:172
 msgid "Varianty byly zaktivněny."
-msgstr ""
+msgstr "Varianty byly zaktivněny."
 
 #: ../app/controllers/admin/cards_controller.php:195
 #: ../app/controllers/admin/technical_specifications_controller.php:12
@@ -1224,11 +1240,11 @@ msgstr "Tento produkt už má tuto specifikaci"
 
 #: ../app/controllers/admin/cards_controller.php:221
 msgid "Připojení odkazu k produktu"
-msgstr ""
+msgstr "Připojení odkazu k produktu"
 
 #: ../app/controllers/admin/cards_controller.php:239
 msgid "Odkaz odpojen"
-msgstr ""
+msgstr "Odkaz odpojen"
 
 #: ../app/controllers/admin/card_sections_controller.php:4
 #, php-format
@@ -1245,96 +1261,96 @@ msgstr "Bylo by pěkné doplnit nějaké další informace"
 
 #: ../app/controllers/admin/card_sections_controller.php:18
 msgid "Editace textové sekce"
-msgstr ""
+msgstr "Editace textové sekce"
 
 #: ../app/controllers/admin/categories_controller.php:5
 #, php-format
 msgid "Editing category \"%s\""
-msgstr ""
+msgstr "Editace kategorie \"%s\""
 
 #: ../app/controllers/admin/categories_controller.php:26
 msgid "Moving category"
-msgstr ""
+msgstr "Přesun kategorie"
 
 #: ../app/controllers/admin/categories_controller.php:31
 msgid "The category was moved"
-msgstr ""
+msgstr "Kategorie byla přesunuta"
 
 #: ../app/controllers/admin/categories_controller.php:48
 msgid "New subcategory"
-msgstr ""
+msgstr "Nová podkategorie"
 
 #: ../app/controllers/admin/categories_controller.php:59
 msgid "Category cannot be created when the parent category is an alias"
-msgstr ""
+msgstr "Kategorie nelze vytvořit, pokud je nadřazená kategorie alias"
 
 #: ../app/controllers/admin/categories_controller.php:65
 msgid "On this place a new category cannot be created"
-msgstr ""
+msgstr "Na tomto místě nemůže být vytvořena nová kategorie"
 
 #: ../app/controllers/admin/categories_controller.php:71
 msgid "Filter cannot be created when the parent category is also a filter"
-msgstr ""
+msgstr "Filtr nelze vytvořit, pokud je nadřazená kategorie také filtr"
 
 #: ../app/controllers/admin/categories_controller.php:78
 msgid "Category has been created"
-msgstr ""
+msgstr "Kategorie byla vytvořena"
 
 #: ../app/controllers/admin/categories_controller.php:93
 msgid "The category was deleted"
-msgstr ""
+msgstr "Kategorie byla smazána"
 
 #: ../app/controllers/admin/categories_controller.php:102
 msgid "New alias"
-msgstr ""
+msgstr "Nový alias"
 
 #: ../app/controllers/admin/categories_controller.php:110
 msgid "Alias was created"
-msgstr ""
+msgstr "Alias byl vytvořen"
 
 #: ../app/controllers/admin/category_cards_controller.php:6
 #, php-format
 msgid "Products in category %s"
-msgstr ""
+msgstr "Produkty v kategorii %s"
 
 #: ../app/controllers/admin/category_cards_controller.php:7
 msgid "Product list"
-msgstr ""
+msgstr "Seznam produktů"
 
 #: ../app/controllers/admin/category_cards_controller.php:28
 #, php-format
 msgid "Adding product into the category %s"
-msgstr ""
+msgstr "Přidání produktu do kategorie %s"
 
 #: ../app/controllers/admin/category_cards_controller.php:35
 msgid "The product was added"
-msgstr ""
+msgstr "Produkt byl přidán"
 
 #: ../app/controllers/admin/category_cards_controller.php:41
 #, php-format
 msgid "Edit ranking of %s"
-msgstr ""
+msgstr "Editace pořadí %s"
 
 #: ../app/controllers/admin/category_recommended_cards_controller.php:6
 #, php-format
 msgid "Přidání doporučeného produktu do kategorie %s"
-msgstr ""
+msgstr "Přidání doporučeného produktu do kategorie %s"
 
 #: ../app/controllers/admin/category_recommended_cards_controller.php:13
 msgid "Produkt byl přidán"
-msgstr ""
+msgstr "Produkt byl přidán"
 
 #: ../app/controllers/admin/category_trees_controller.php:5
 msgid "Category trees"
-msgstr ""
+msgstr "Stromy kategorií"
 
 #: ../app/controllers/admin/category_trees_controller.php:17
 msgid "The category tree has been created"
-msgstr ""
+msgstr "Strom kategorií byl vytvořen"
 
 #: ../app/controllers/admin/category_trees_controller.php:23
 msgid "Category tree"
-msgstr ""
+msgstr "Strom kategorií"
 
 #: ../app/controllers/admin/collection_cards_controller.php:5
 msgid "Adding a product into the collection"
@@ -1377,11 +1393,11 @@ msgstr "Spotřební materiál byl přidán"
 #: ../app/controllers/admin/images_controller.php:4
 #, php-format
 msgid "Photo gallery of the object %s#%s"
-msgstr ""
+msgstr "Fotogalerie objektu %s#%s"
 
 #: ../app/controllers/admin/images_controller.php:23
 msgid "Adding an image into the photo gallery"
-msgstr ""
+msgstr "Přidání obrázku do fotogalerie"
 
 #: ../app/controllers/admin/images_controller.php:44
 msgid "Image was created"
@@ -1410,24 +1426,24 @@ msgstr "Stránka byla úspěšně vytvořena"
 
 #: ../app/controllers/admin/pages_controller.php:18
 msgid "Edit page"
-msgstr ""
+msgstr "Editace stránky"
 
 #: ../app/controllers/admin/products_controller.php:5
 msgid "New product variant"
-msgstr ""
+msgstr "Nová varianta produktu"
 
 #: ../app/controllers/admin/products_controller.php:11
 msgid "Varianta vytvořena"
-msgstr ""
+msgstr "Varianta vytvořena"
 
 #: ../app/controllers/admin/products_controller.php:23
 #, php-format
 msgid "Úprava varianty produktu '%s - %s' ('%s')"
-msgstr ""
+msgstr "Úprava varianty produktu '%s - %s' ('%s')"
 
 #: ../app/controllers/admin/products_controller.php:27
 msgid "Varianta uložena"
-msgstr ""
+msgstr "Varianta uložena"
 
 #: ../app/controllers/admin/related_cards_controller.php:17
 msgid "The same product cannot be added to the product itself"
@@ -1443,11 +1459,11 @@ msgstr "Související produkt byl přidán"
 
 #: ../app/controllers/admin/stores_controller.php:11
 msgid "New store"
-msgstr ""
+msgstr "Nová prodejna"
 
 #: ../app/controllers/admin/stores_controller.php:17
 msgid "Edit store"
-msgstr ""
+msgstr "Editace prodejny"
 
 #: ../app/controllers/admin/tags_controller.php:4
 msgid "Listing Tags"
@@ -1478,7 +1494,7 @@ msgstr "Štítek byl aktualizován"
 #: ../app/controllers/admin/technical_specification_keys_controller.php:6
 #, php-format
 msgid "Editace klíče %s"
-msgstr ""
+msgstr "Editace klíče %s"
 
 #: ../app/controllers/admin/technical_specification_keys_controller.php:10
 msgid "The same key already exists"
@@ -1490,7 +1506,7 @@ msgstr "Přidat novou technickou specifikaci"
 
 #: ../app/controllers/admin/technical_specifications_controller.php:19
 msgid "New technical specification record has been created"
-msgstr ""
+msgstr "Byl vytvořen nový záznam technické specifikace"
 
 #: ../app/controllers/admin/users_controller.php:4
 msgid "Users list"
@@ -1587,7 +1603,7 @@ msgstr "Na této adrese nebylo nic nalezeno"
 
 #: ../app/controllers/application_rest_api.php:224
 msgid "You don't have access to the requested resource"
-msgstr ""
+msgstr "Nemáte přístup k požadovanému zdroji"
 
 #: ../app/controllers/application_rest_api.php:230
 msgid "Sorry, An internal error happened"
@@ -1596,7 +1612,7 @@ msgstr "Omlouváme se, nastala vnitřní chyba"
 #: ../app/controllers/articles_controller.php:15
 #, php-format
 msgid "Articles tagged with <em>%s</em>"
-msgstr ""
+msgstr "Články se štítkem <em>%s</em>"
 
 #: ../app/controllers/brands_controller.php:4
 msgid "List of Brands"
@@ -1631,7 +1647,7 @@ msgstr "Byl jste úspěšně odhlášen"
 #: ../app/controllers/logins_controller.php:37
 #, php-format
 msgid "You've stayed logged in as <em>%s</em>"
-msgstr ""
+msgstr "Zůstal jste přihlášený jako <em>%s</em>"
 
 #: ../app/controllers/main_controller.php:11
 msgid "Welcome!"
@@ -1692,7 +1708,7 @@ msgstr "Tento produkt neexistuje"
 
 #: ../app/fields/card_section_type_field.php:4
 msgid "vyberte typ obsahu"
-msgstr ""
+msgstr "vyberte typ obsahu"
 
 #: ../app/fields/catalog_id_field.php:18
 #: ../app/forms/admin/cards/cards_form.php:17
@@ -1701,15 +1717,15 @@ msgstr "Katalogové číslo"
 
 #: ../app/fields/catalog_id_field.php:23
 msgid "This doesn't look like a catalog number"
-msgstr ""
+msgstr "Toto nevypadá jako katalogové číslo"
 
 #: ../app/fields/category_field.php:29
 msgid "There is no such category"
-msgstr ""
+msgstr "Taková kategorie neexistuje"
 
 #: ../app/fields/category_field.php:30
 msgid "It's a filter. This category cannot be selected."
-msgstr ""
+msgstr "Toto je filtr. Tato kategorie nemůže být vybrána."
 
 #: ../app/fields/collection_field.php:7
 msgid "collection"
@@ -1777,6 +1793,8 @@ msgstr "Kód"
 msgid ""
 "An alternative key for system usage. Leave it unchanged if you are not sure."
 msgstr ""
+"Alternativní klíč pro systémové použití. Ponechte beze změny, pokud si "
+"nejste jisti."
 
 #: ../app/forms/admin/articles/articles_form.php:10
 #: ../app/forms/admin/pages/pages_form.php:15
@@ -1810,13 +1828,13 @@ msgstr "Uživatelský manuál"
 
 #: ../app/forms/admin/attachments/create_new_form.php:6
 msgid "Soubor"
-msgstr ""
+msgstr "Soubor"
 
 #: ../app/forms/admin/brands/brands_form.php:5
 #: ../app/forms/admin/card_sections/card_sections_form.php:8
 #: ../app/forms/admin/products/products_form.php:6
 msgid "Název"
-msgstr ""
+msgstr "Název"
 
 #: ../app/forms/admin/brands/brands_form.php:8
 #: ../app/forms/admin/cards/cards_form.php:23
@@ -1824,7 +1842,7 @@ msgstr ""
 #: ../app/forms/admin/collections/collections_form.php:8
 #: ../app/forms/admin/pages/pages_form.php:10
 msgid "Teaser"
-msgstr ""
+msgstr "Krátký popis"
 
 #: ../app/forms/admin/brands/brands_form.php:10
 #: ../app/forms/admin/cards/cards_form.php:25
@@ -1847,7 +1865,7 @@ msgstr "Stránky výrobce"
 
 #: ../app/forms/admin/brands/brands_form.php:22
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #: ../app/forms/admin/cards/add_technical_specification_form.php:6
 msgid "Specification name"
@@ -1868,7 +1886,7 @@ msgstr "Přidat do kategorie"
 
 #: ../app/forms/admin/cards/add_to_category_form.php:11
 msgid "Category"
-msgstr ""
+msgstr "Kategorie"
 
 #: ../app/forms/admin/cards/add_to_category_form.php:12
 msgid ""
@@ -1898,11 +1916,11 @@ msgstr "Kolekce"
 #: ../app/forms/admin/cards/create_new_form.php:16
 #: ../app/forms/admin/cards/edit_form.php:16
 msgid "Zadané katalogové číslo je již použité"
-msgstr ""
+msgstr "Zadané katalogové číslo je již použité"
 
 #: ../app/forms/admin/card_sections/card_sections_form.php:5
 msgid "Typ obsahu"
-msgstr ""
+msgstr "Typ obsahu"
 
 #: ../app/forms/admin/card_sections/card_sections_form.php:12
 #: ../app/forms/information_requests/create_new_form.php:26
@@ -1912,11 +1930,11 @@ msgstr "Text"
 
 #: ../app/forms/admin/categories/categories_form.php:15
 msgid "Is this a filter?"
-msgstr ""
+msgstr "Je to filtr?"
 
 #: ../app/forms/admin/categories/categories_form.php:16
 msgid "e.g. material or color"
-msgstr ""
+msgstr "např. materiál nebo barva"
 
 #: ../app/forms/admin/categories/categories_form.php:27
 #: ../app/forms/admin/collections/collections_form.php:13
@@ -1934,20 +1952,20 @@ msgstr "Obrázek"
 
 #: ../app/forms/admin/categories/categories_form.php:38
 msgid "Is visible?"
-msgstr ""
+msgstr "Je viditelné?"
 
 #: ../app/forms/admin/categories/create_alias_form.php:6
 msgid "Umístit do kategorie"
-msgstr ""
+msgstr "Umístit do kategorie"
 
 #: ../app/forms/admin/categories/create_alias_form.php:7
 #: ../app/forms/admin/categories/move_to_category_form.php:6
 msgid "Napište lomítko, pokud chcete prohledat strom kategorií od kořene."
-msgstr ""
+msgstr "Napište lomítko, pokud chcete prohledat strom kategorií od kořene."
 
 #: ../app/forms/admin/categories/move_to_category_form.php:5
 msgid "Nadřazená kategorie"
-msgstr ""
+msgstr "Nadřazená kategorie"
 
 #: ../app/forms/admin/category_cards/create_new_form.php:6
 #: ../app/forms/admin/related_cards/create_new_form.php:5
@@ -1961,20 +1979,20 @@ msgstr "Přidat produkt"
 
 #: ../app/forms/admin/category_cards/edit_form.php:7
 msgid "The ranking starts with 1"
-msgstr ""
+msgstr "Pořadí začíná 1"
 
 #: ../app/forms/admin/category_recommended_cards/create_new_form.php:5
 msgid "Produkt"
-msgstr ""
+msgstr "Produkt"
 
 #: ../app/forms/admin/collection_cards/create_new_form.php:12
 msgid "Tento produkt už je součástí této kolekce"
-msgstr ""
+msgstr "Tento produkt už je součástí této kolekce"
 
 #: ../app/forms/admin/collection_cards/create_new_form.php:14
 #, php-format
 msgid "Tento produkt už je součástí jiné kolekce [%s]"
-msgstr ""
+msgstr "Tento produkt už je součástí jiné kolekce [%s]"
 
 #: ../app/forms/admin/pages/create_new_form.php:8
 #: ../app/forms/admin/pages/edit_form.php:13
@@ -1987,19 +2005,19 @@ msgstr "Rodičovská stránka"
 
 #: ../app/forms/admin/pages/pages_form.php:31
 msgid "Pro aktuální stránku nelze použít stejnou stránku jako nadřízenou."
-msgstr ""
+msgstr "Pro aktuální stránku nelze použít stejnou stránku jako nadřízenou."
 
 #: ../app/forms/admin/products/create_new_form.php:9
 msgid "Toto katalogové číslo je již použité"
-msgstr ""
+msgstr "Toto katalogové číslo je již použité"
 
 #: ../app/forms/admin/products/products_form.php:9
 msgid "Katalogové číslo"
-msgstr ""
+msgstr "Katalogové číslo"
 
 #: ../app/forms/admin/products/products_form.php:12
 msgid "Krátký popis"
-msgstr ""
+msgstr "Krátký popis"
 
 #: ../app/forms/admin/tags/index_form.php:9
 msgid "Search tags"
@@ -2012,7 +2030,7 @@ msgstr "Klíč"
 
 #: ../app/forms/admin/technical_specification_keys/technical_specification_keys_form.php:10
 msgid "Lokalizovaný název"
-msgstr ""
+msgstr "Lokalizovaný název"
 
 #: ../app/forms/admin/technical_specifications/technical_specifications_form.php:14
 msgid "Localized value"
