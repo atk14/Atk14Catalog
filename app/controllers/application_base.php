@@ -354,7 +354,7 @@ class ApplicationBaseController extends Atk14Controller{
 		$object_name = String4::ToObject(get_class($this))->gsub('/Controller$/','')->singularize()->underscore()->toString(); // "PeopleController" -> "person"
 		if(!$object = $this->_find($object_name)){
 			$this->_execute_action("error404");
-			false;
+			return false;
 		}
 
 		return true;
