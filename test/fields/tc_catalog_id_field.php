@@ -2,7 +2,7 @@
 class TcCatalogIdField extends TcBase {
 
 	function test(){
-		$this->field = new CatalogIdField(array());
+		$this->field = $f = new CatalogIdField(array());
 
 		$catalog_id = $this->assertValid("PROD123");
 		$this->assertEquals("PROD123",$catalog_id);
@@ -11,6 +11,6 @@ class TcCatalogIdField extends TcBase {
 		$this->assertEquals("PROD123",$catalog_id);
 
 		$err = $this->assertInvalid("$$%");
-		$this->assertEquals("This doesn't look like a catalog number",$err);
+		$this->assertEquals($f->messages["invalid"],$err);
 	}
 }
