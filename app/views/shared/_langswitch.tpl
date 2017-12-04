@@ -7,7 +7,7 @@
 	<ul class="dropdown-menu" aria-labelledby="langswitch">
 		{foreach $supported_languages as $l}
 			<li>
-				<a href="{$l.sitch_url}">
+				<a href="{$l.switch_url}">
 					<img src="{$public}/images/languages/{$l.lang}.png" width="16" height="11" alt="">
 					{$l.name}
 				</a>

@@ -69,7 +69,7 @@ class ApplicationBaseController extends Atk14Controller{
 			$item = array(
 				"lang" => $l,
 				"name" => isset($locale["name"]) ? $locale["name"] : $l,
-				"sitch_url" => $this->_link_to($params)
+				"switch_url" => $this->_link_to($params)
 			);
 			if($this->lang==$l){
 				$current_language = $item;
