@@ -1,6 +1,6 @@
 <?php
 /**
- * {icon glyph="plus"}
+ *	{icon glyph="plus"}
  */
 function smarty_function_icon($params,$template){
 	$params += array(
