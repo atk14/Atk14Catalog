@@ -228,11 +228,11 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 	}
 
 	function getCardIds() {
-		return $this->getCardsLister()->getRecordIds();
+		return $this->getCardsLister()->getRecordIds(["preread_data" => false]);
 	}
 
 	function getCards(){
-		return $this->getCardsLister()->getRecords();
+		return $this->getCardsLister()->getRecords(["preread_data" => false]);
 	}
 
 	function addCard($card){
@@ -242,9 +242,18 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 		if($this->isAlias()){
 			throw new Exception("Can't insert card $card into alias category $this");
 		}
-		$lister = $this->getCardsLister();
-		if(!$lister->contains($card)) {
-			return $lister->prepend($card);
+
+		// Using CardsLister can consume very much memory in a large catalog
+		//$lister = $this->getCardsLister();
+		//if(!$lister->contains($card)) {
+		//	return $lister->prepend($card);
+		//}
+
+		if(0===$this->dbmole->selectInt("SELECT COUNT(*) FROM category_cards WHERE category_id=:category_id AND card_id=:card_id",[":category_id" => $this, ":card_id" => $card])){
+			$this->dbmole->insertIntoTable("category_cards",[
+				"category_id" => $this,
+				"card_id" => $card,
+			]);
 		}
 	}
 
@@ -365,7 +374,7 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 				"lang" => $lang,
 			),
 		));
-		return $class_name::GetInstanceById($record->getRecordId());
+		return static::GetInstanceById($record->getRecordId());
 	}
 
 	/**
