@@ -55,6 +55,11 @@ class SluggishRouter extends Atk14Router{
 
 	function recognize($uri){
 		$patterns = $this->url_patterns_by_lang;
+		$patterns_rev = array_combine(array_values($patterns),array_keys($patterns));
+		if(sizeof($patterns)!=sizeof($patterns_rev)){
+			throw new Exception(get_class($this).': non-unique values in $url_patterns_by_lang');
+		}
+
 		// TODO: prepsat pomoci array_walk?
 		foreach($patterns as $k => $v){
 			$patterns[$k] = str_replace('/',"\\/",$v);
@@ -62,14 +67,13 @@ class SluggishRouter extends Atk14Router{
 
 		$patterns = join("|",$patterns);
 		$class = $this->model_class_name;
-		if($this->namespace=="" && preg_match('/^\/('.$patterns.')\/([a-z0-9-_\/]+?)\/?$/',$uri,$matches) && ($c = $class::GetInstanceBySlug($matches[2],$lang))){
-			$this->action = "detail";
-			$this->controller = $this->target_controller_name;
-			$this->params["id"] = $c->getId();
-			foreach($this->url_patterns_by_lang as $l => $s){
-				if($s==$matches[1]){
-					$this->lang = $l;
-				}
+		if($this->namespace=="" && preg_match('/^\/('.$patterns.')\/([a-z0-9-_\/]+?)\/?$/',$uri,$matches)){
+			$lang = $patterns_rev[$matches[1]];
+			if($c = $class::GetInstanceBySlug($matches[2],$lang)){
+				$this->action = "detail";
+				$this->controller = $this->target_controller_name;
+				$this->params["id"] = $c->getId();
+				$this->lang = $lang;
 			}
 		}
 	}
