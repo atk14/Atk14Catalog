@@ -11,7 +11,7 @@ class SuggestionsController extends ApiController{
 
 			"conditions" => array(
 				"deleted='f'",
-				"visible='t'",
+				//"visible='t'", // during the preparation of a new category we sometimes need to suggest even invisible cards
 			)
 		));
 	}
