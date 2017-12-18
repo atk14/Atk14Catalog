@@ -234,7 +234,12 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 	function getCards(){
 		return $this->getCardsLister()->getRecords(["preread_data" => false]);
 	}
-
+	
+	/**
+	 * Adds a card into this category
+	 *
+	 * Actually it inserts the card at the beginning of the card list.
+	 */
 	function addCard($card){
 		if($this->isFilter()){
 			throw new Exception("Can't insert card $card into filter category $this");
@@ -253,6 +258,7 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 			$this->dbmole->insertIntoTable("category_cards",[
 				"category_id" => $this,
 				"card_id" => $card,
+				"rank" => $this->dbmole->selectInt("SELECT COALESCE(MIN(rank)-1,0) FROM category_cards WHERE category_id=:category_id",[":category_id" => $this]),
 			]);
 		}
 	}
