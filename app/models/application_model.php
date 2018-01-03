@@ -133,20 +133,27 @@ class ApplicationModel extends TableRecord{
 	/**
 	 *
 	 * Provides transparent updating of update_at field if such field exists.
+	 *
+	 * @param array $values
+	 * @param array $options
+	 * - set_update_time if true is passed the method does not set fields updated_at, updated_on, update_date [default: true]
 	 */
 	function setValues($values,$options = array()){
 		global $HTTP_REQUEST;
 
 		$options += array(
 			"reconstruct_missing_slugs" => false,	
+			"set_update_time" => true,
 		);
 		$reconstruct_missing_slugs = $options["reconstruct_missing_slugs"];
 		unset($options["reconstruct_missing_slugs"]);
 
 		$v_keys = array_keys($values);
-		foreach(array("updated_at","updated_on","update_date") as $f){
-			if($this->hasKey($f) && !in_array($f,$v_keys)){
-				$values[$f] = date("Y-m-d H:i:s");
+		if ($options["set_update_time"]===true) {
+			foreach(array("updated_at","updated_on","update_date") as $f){
+				if($this->hasKey($f) && !in_array($f,$v_keys)){
+					$values[$f] = date("Y-m-d H:i:s");
+				}
 			}
 		}
 
