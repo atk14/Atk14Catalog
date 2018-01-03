@@ -358,4 +358,107 @@ class AdminController extends ApplicationBaseController{
 			$this->_redirect_to($options["redirect_to"]);
 		}
 	}
+
+	/**
+	 * Compiles search conditions for SQL query with LIKE operator
+	 *
+	 * $q = "John Rambo";
+	 * $this->_prepare_search_conditions("id,name,description",$q,$conditions,$bind_ar);
+	 *
+	 * $finder = Person::Finder(array(
+	 *	"conditions" => $conditions,
+	 *	"bind_ar" => $bind_ar,
+	 * ));
+	 */
+	function _prepare_search_conditions($fields,$q,&$conditions,&$bind_ar){
+		if(is_string($fields)){
+			$fields = explode(",",$fields); // "id,name" -> array("id","name")
+		}
+		if(!isset($conditions)){ $conditions = array(); }
+		if(!isset($bind_ar)){ $bind_ar = array(); }
+
+		$q = trim($q);
+		if(!$q){ return; }
+
+		$unaccent_installed = $this->dbmole->selectInt("SELECT COUNT(*) FROM pg_extension WHERE extname=:extname",array(":extname" => "unaccent"));
+
+		$q = Translate::Lower($q);
+		$fields = "LOWER(COALESCE(''||".join(",'')||' '||COALESCE(''||",$fields).",''))";
+		if($unaccent_installed && Translate::CheckEncoding($q,"ASCII")){
+			$fields = "UNACCENT($fields)";
+		}
+
+		($cond = FullTextSearchQueryLike::GetQuery($fields,$q,$bind_ar)) ||
+		($cond = "'invalid'='search_query'"); // it causes that nothing will be found
+
+		$conditions[] = $cond;
+
+		return $cond;
+	}
+
+	/**
+	 * Adds into the $this->sorting prearranged sorting schemas
+	 *
+	 * $this->_initialize_prepared_sorting("name");
+	 * $this->_initialize_prepared_sorting("name,created_at,updated_at");
+	 */
+	function _initialize_prepared_sorting($keys){
+		if(is_string($keys)){
+			if(strlen($keys)==0){ return; }
+			$keys = explode(",",$keys);
+		}
+
+		foreach($keys as $key){
+			switch($key){
+				case "created_at":
+					$this->sorting->add("created_at",array("reverse" => true));
+					break;
+				case "login":
+				case "name":
+				case "title":
+					$this->sorting->add("$key","UPPER($key), $key, id DESC","UPPER($key) DESC, $key DESC, id ASC");
+					break;
+				case "updated_at":
+					$this->sorting->add("updated_at","COALESCE(updated_at,'2000-01-01') DESC, id DESC","COALESCE(updated_at,'2000-01-01') ASC, id ASC");
+					break;
+				case "published_at":
+					$this->sorting->add("published_at",array("reverse" => true));
+					break;
+				case "is_admin":
+					$this->sorting->add("is_admin","is_admin DESC, UPPER(login)","is_admin ASC, UPPER(login)");
+					break;
+				default:
+					throw new Exception("Unknown key for sorting: $key");
+			}
+		}
+	}
+
+	/**
+	 * Creates a finder for the given class with specific conditions
+	 */
+	function _prepare_finder($options = array()){
+		$options += array(
+			"conditions" => array(),
+			"bind_ar" => array(),
+			"class_name" => null,
+			"limit" => 20,
+		);
+
+		if(!$options["class_name"]){
+			$options["class_name"] = String4::ToObject(get_class($this))->gsub('/Controller$/','')->singularize()->toString(); // "PeopleController" -> "Person" 
+		}
+
+		$class_name = $options["class_name"];
+
+		$this->tpl_data["finder"] = $finder = $class_name::Finder(array(
+			"conditions" => $options["conditions"],
+			"bind_ar" => $options["bind_ar"],
+			"offset" => $this->params->getInt("offset"),
+			"order_by" => $this->sorting,
+			"limit" => $options["limit"],
+			"use_cache" => true,
+		));
+
+		return $finder;
+	}
 }
