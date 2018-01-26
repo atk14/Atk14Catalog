@@ -4,7 +4,7 @@
 $link.closest( "tr" ).fadeOut();
 
 // ... or it can be inside a <ul> or <ol> list
-if ( $link.closest( "ul.dropdown-menu" ).size() ) {
+if ( $link.closest( "ul.dropdown-menu" ).length > 0 ) {
 
 	// It's a destroy link in a dropdown-menu
 	$link.closest( "ul.dropdown-menu" ).closest( "li" ).fadeOut();
