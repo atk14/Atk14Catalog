@@ -177,7 +177,7 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 	}
 
 
-	function getCategoryLister() {
+	function getCategoriesLister() {
 		return $this->getLister("category", array("table_name" => "category_cards"));
 	}
 
@@ -192,7 +192,7 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 	}
 
 	function getCategoryIds() {
-		return $this->getCategoryLister()->getRecordIds();
+		return $this->getCategoriesLister()->getRecordIds();
 	}
 
 	/**
@@ -208,7 +208,7 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		);
 
 		$categories = array();
-		foreach($this->getCategoryLister()->getRecords() as $c){
+		foreach($this->getCategoriesLister()->getRecords() as $c){
 			if(!$options["consider_invisible_categories"] && !$c->isVisible()){ continue; }
 			if(!$options["consider_filters"] && ($c->isFilter() || ($c->getParentCategory() && $c->getParentCategory()->isFilter()))){ continue; }
 			if($options["filters_only"]){

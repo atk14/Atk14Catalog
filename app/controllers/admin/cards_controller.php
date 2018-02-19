@@ -132,7 +132,7 @@ class CardsController extends AdminController{
 			$this->card->setTags($tags);
 
 			/*
-			$this->card->getCategoryLister()->clear();
+			$this->card->getCategoriesLister()->clear();
 			foreach($category_ids as $cat) {
 				$this->card->addToCategory($cat);
 			}*/
