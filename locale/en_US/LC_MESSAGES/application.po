@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-23 22:57+0100\n"
+"POT-Creation-Date: 2018-03-09 16:08+0100\n"
 "PO-Revision-Date: 2016-03-07 17:03+0100\n"
 "Last-Translator: Yarri <do-not-write-me@ever.com>\n"
 "Language-Team: Team <team@email.com>\n"
@@ -35,490 +35,6 @@ msgid ""
 "%1 Support Team\n"
 "web: %2\n"
 "email: %3"
-msgstr ""
-
-msgid ""
-"Are you sure to delete article item\n"
-"%1?"
-msgstr ""
-
-msgid "Edit"
-msgstr ""
-
-msgid "Delete article"
-msgstr ""
-
-msgid "Add new article"
-msgstr ""
-
-msgid "The list is empty."
-msgstr ""
-
-#: ../app/forms/admin/articles/articles_form.php:5
-#: ../app/forms/admin/attachments/attachments_form.php:5
-#: ../app/forms/admin/images/images_form.php:9
-#: ../app/forms/admin/pages/pages_form.php:6
-msgid "Title"
-msgstr ""
-
-msgid "Author"
-msgstr ""
-
-msgid "Date"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:30
-#: ../app/forms/admin/articles/articles_form.php:20
-#: ../app/forms/admin/cards/cards_form.php:44
-msgid "Tags"
-msgstr ""
-
-msgid ""
-"You are about to permanently delete brand %1\n"
-"Are you sure about that?"
-msgstr ""
-
-#: ../app/forms/application_form.php:67
-msgid "Delete"
-msgstr ""
-
-msgid "Add a new brand"
-msgstr ""
-
-msgid "No record has been found."
-msgstr ""
-
-msgid "The product is not yet placed in a category with a filter."
-msgstr ""
-
-msgid ""
-"You are about to delete the product %1.\n"
-"Are you sure?"
-msgstr ""
-
-msgid "Delete product"
-msgstr ""
-
-msgid "Add related product"
-msgstr ""
-
-msgid "There is no related product"
-msgstr ""
-
-msgid "Edit this product"
-msgstr ""
-
-msgid "You are going to remove a related product %1. Are you sure?"
-msgstr ""
-
-msgid "Remove"
-msgstr ""
-
-msgid "Product placement in the catalog tree"
-msgstr ""
-
-msgid "Add product to a category"
-msgstr ""
-
-msgid "The product is not yet in any category."
-msgstr ""
-
-msgid "Remove from the category"
-msgstr ""
-
-msgid "Add a new variant"
-msgstr ""
-
-msgid "Product variants (%1)"
-msgstr ""
-
-msgid "Variants are not considered for this product"
-msgstr ""
-
-msgid "Are you sure?"
-msgstr ""
-
-msgid "switch to the variant mode"
-msgstr ""
-
-msgid "Related products"
-msgstr ""
-
-msgid "Consumables"
-msgstr ""
-
-msgid "Add consumable"
-msgstr ""
-
-msgid "There are no consumables"
-msgstr ""
-
-msgid "Accessories"
-msgstr ""
-
-msgid "Add accessory"
-msgstr ""
-
-msgid "There are no accessories"
-msgstr ""
-
-msgid "Filters"
-msgstr ""
-
-msgid "This product is not included in any filter"
-msgstr ""
-
-msgid "Set up filters"
-msgstr ""
-
-msgid "Add a product"
-msgstr ""
-
-msgid "No product has been found."
-msgstr ""
-
-#: ../app/forms/admin/cards/cards_form.php:12
-#: ../app/forms/admin/categories/categories_form.php:11
-#: ../app/forms/admin/collections/collections_form.php:5
-#: ../app/forms/admin/stores/stores_form.php:6
-#: ../app/forms/admin/users/users_form.php:5
-msgid "Name"
-msgstr ""
-
-msgid "Has variants?"
-msgstr ""
-
-msgid "Created at"
-msgstr ""
-
-msgid "Updated at"
-msgstr ""
-
-msgid "Chystáte se smazat produkt %1. Jste si jistý/á?"
-msgstr ""
-
-msgid "Produkt zatím nemá žádnou variantu."
-msgstr ""
-
-msgid "Technical specifications"
-msgstr ""
-
-msgid "There is no record yet."
-msgstr ""
-
-msgid "Edit value"
-msgstr ""
-
-msgid "Edit key"
-msgstr ""
-
-msgid "Create a new section"
-msgstr ""
-
-msgid "Textual sections"
-msgstr ""
-
-msgid "Currently there is no section"
-msgstr ""
-
-msgid "attachments"
-msgstr ""
-
-msgid "images"
-msgstr ""
-
-msgid ""
-"You are about to delete section %1\n"
-"Are you sure?"
-msgstr ""
-
-msgid "Vytvořit a editovat alias"
-msgstr ""
-
-msgid "Add a new subcategory"
-msgstr ""
-
-msgid "Show on web"
-msgstr ""
-
-msgid "Move the category"
-msgstr ""
-
-msgid "Create an alias"
-msgstr ""
-
-msgid ""
-"You are about to delete the category %1!\n"
-"Also all subcategories will be deleted. Deletion cannot be undone.\n"
-"\n"
-"Do you really want this?"
-msgstr ""
-
-msgid "Path"
-msgstr ""
-
-msgid "Pointing to category"
-msgstr ""
-
-msgid "Is a filter?"
-msgstr ""
-
-msgid "Can products be inserted here?"
-msgstr ""
-
-msgid ""
-"This is a virtual category, which is actually pointing to <a href=\"%1\">/%2/"
-"</a>"
-msgstr ""
-
-msgid "Subcategories"
-msgstr ""
-
-msgid "filter"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:80
-msgid "alias"
-msgstr ""
-
-msgid "invisible"
-msgstr ""
-
-msgid "This category has no subcategories."
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:32
-msgid "Products"
-msgstr ""
-
-msgid "There are too many products in the category (%1)"
-msgstr ""
-
-msgid "show product list"
-msgstr ""
-
-msgid "There is currently no product here."
-msgstr ""
-
-msgid "Edit product"
-msgstr ""
-
-msgid "Remove product"
-msgstr ""
-
-msgid "Into this category products cannot be added."
-msgstr ""
-
-msgid "Add a recommended product"
-msgstr ""
-
-msgid "Recommended products"
-msgstr ""
-
-msgid "Přesunout kategorii"
-msgstr ""
-
-msgid "Edit ranking"
-msgstr ""
-
-#: ../app/forms/admin/category_cards/edit_form.php:6
-msgid "Ranking"
-msgstr ""
-
-#: ../app/controllers/admin/category_trees_controller.php:10
-msgid "Create new category tree"
-msgstr ""
-
-msgid "Detail"
-msgstr ""
-
-msgid ""
-"You are about to delete the catalog tree %1.\n"
-"Are you sure?"
-msgstr ""
-
-msgid ""
-"You are about to remove the product %1 from the collection.\n"
-"Are you sure about that?"
-msgstr ""
-
-msgid "Add a product into the collection"
-msgstr ""
-
-msgid ""
-"You are about to permanently delete collection %1\n"
-"Are you sure about that?"
-msgstr ""
-
-msgid "Products in the collection"
-msgstr ""
-
-msgid "Add a collection"
-msgstr ""
-
-msgid "The image was uploaded at:"
-msgstr ""
-
-msgid "The image was uploaded by:"
-msgstr ""
-
-msgid "The size of the original:"
-msgstr ""
-
-msgid "Zpět"
-msgstr ""
-
-msgid "Přidat obrázek"
-msgstr ""
-
-msgid "Welcome administrator!"
-msgstr ""
-
-#: ../app/forms/admin/stores/stores_form.php:20
-msgid "Email"
-msgstr ""
-
-msgid "Subscribed since"
-msgstr ""
-
-msgid "IP address"
-msgstr ""
-
-msgid "Export emails in CSV"
-msgstr ""
-
-msgid "Subpages"
-msgstr ""
-
-msgid "This page has no subpages"
-msgstr ""
-
-msgid "Add new page"
-msgstr ""
-
-msgid "Visit public link"
-msgstr ""
-
-msgid ""
-"You are about to delete page %1\n"
-"Are you sure?"
-msgstr ""
-
-msgid "Delete page"
-msgstr ""
-
-msgid "[%1]"
-msgstr ""
-
-msgid "User"
-msgstr ""
-
-msgid "Created from address"
-msgstr ""
-
-msgid "Password recovered?"
-msgstr ""
-
-msgid "Recovered at"
-msgstr ""
-
-msgid "Recovered from address"
-msgstr ""
-
-msgid ""
-"You are about to delete the attachment %1\n"
-"Are you sure about that?"
-msgstr ""
-
-msgid "Add an attachment"
-msgstr ""
-
-msgid "Attachments"
-msgstr ""
-
-msgid "Currently there are no attachments."
-msgstr ""
-
-msgid "Remove image"
-msgstr ""
-
-msgid "Photo gallery"
-msgstr ""
-
-msgid "Currently there are no images"
-msgstr ""
-
-msgid "Add an image"
-msgstr ""
-
-msgid "Show larger image"
-msgstr ""
-
-msgid "no image"
-msgstr ""
-
-msgid "Add a store"
-msgstr ""
-
-msgid ""
-"You are about to permanently delete store %1\n"
-"Are you sure about that?"
-msgstr ""
-
-msgid "Add new tag"
-msgstr ""
-
-msgid "No tag has been found."
-msgstr ""
-
-#: ../app/forms/admin/tags/tags_form.php:5
-msgid "Tag"
-msgstr ""
-
-msgid ""
-"You are about to permanently delete tag %1\n"
-"\tAre you sure about that?"
-msgstr ""
-
-msgid "Delete tag"
-msgstr ""
-
-msgid ""
-"At the moment no one knows the actual user's password because passwords are "
-"not stored in plain text form. In this form you can set a new password to "
-"the user <em>%1</em>"
-msgstr ""
-
-#: ../app/controllers/admin/users_controller.php:32
-msgid "Create a new user"
-msgstr ""
-
-msgid "Username"
-msgstr ""
-
-#: ../app/forms/admin/users/users_form.php:10
-#: ../app/forms/users/users_form.php:11
-msgid "Email address"
-msgstr ""
-
-#: ../app/forms/admin/users/users_form.php:15
-msgid "Is admin?"
-msgstr ""
-
-#: ../app/forms/password_recoveries/recovery_form.php:7
-#: ../app/forms/users/edit_password_form.php:8
-msgid "Set new password"
-msgstr ""
-
-msgid "Sign in as this user"
-msgstr ""
-
-msgid ""
-"You are about to permanently delete user %1\n"
-"\tAre you sure about that?"
-msgstr ""
-
-msgid "Delete user"
 msgstr ""
 
 msgid "Error 403: Forbidden"
@@ -566,10 +82,28 @@ msgstr ""
 msgid "At the moment there are no news."
 msgstr ""
 
+msgid "Accessories"
+msgstr ""
+
+msgid "Consumables"
+msgstr ""
+
 msgid "Brand:"
 msgstr ""
 
 msgid "Are you interested in this product?"
+msgstr ""
+
+msgid "Related products"
+msgstr ""
+
+msgid "Subcategories"
+msgstr ""
+
+msgid "Products"
+msgstr ""
+
+msgid "No product has been found."
 msgstr ""
 
 msgid "Products in the collection %1"
@@ -601,7 +135,16 @@ msgstr ""
 msgid "Click on the button to sign out."
 msgstr ""
 
+msgid "Name"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
 msgid "Signing up for newsletter"
+msgstr ""
+
+msgid "IP address"
 msgstr ""
 
 msgid "Logged user:"
@@ -669,7 +212,6 @@ msgstr ""
 msgid "Thank you and have a nice day!"
 msgstr ""
 
-#: ../app/forms/admin/stores/stores_form.php:26
 #: ../app/forms/information_requests/create_new_form.php:15
 msgid "Phone"
 msgstr ""
@@ -686,7 +228,6 @@ msgstr ""
 msgid "%1 Team"
 msgstr ""
 
-#: ../app/forms/admin/stores/stores_form.php:36
 msgid "Opening hours"
 msgstr ""
 
@@ -718,7 +259,6 @@ msgstr ""
 msgid "List of collections"
 msgstr ""
 
-#: ../app/controllers/admin/stores_controller.php:5
 #: ../app/controllers/stores_controller.php:5
 msgid "List of stores"
 msgstr ""
@@ -800,6 +340,9 @@ msgstr ""
 msgid "fig.1 <em>The Creature is pleading for forking on GitHub</em>"
 msgstr ""
 
+msgid "Subpages"
+msgstr ""
+
 msgid "The address has expired or already been used."
 msgstr ""
 
@@ -817,7 +360,15 @@ msgid ""
 "spam and junk filters."
 msgstr ""
 
-#: ../app/controllers/admin/cards_controller.php:5
+msgid "Attachments"
+msgstr ""
+
+msgid "no image"
+msgstr ""
+
+msgid "Products in the collection"
+msgstr ""
+
 msgid "List of Products"
 msgstr ""
 
@@ -830,6 +381,9 @@ msgid ""
 msgstr ""
 
 msgid "Examples:"
+msgstr ""
+
+msgid "Create a new record"
 msgstr ""
 
 msgid "Show menu"
@@ -852,8 +406,6 @@ msgstr ""
 msgid "Profile"
 msgstr ""
 
-#: ../app/controllers/admin/admin.php:8
-#: ../app/controllers/admin/main_controller.php:4
 msgid "Administration"
 msgstr ""
 
@@ -864,6 +416,9 @@ msgstr ""
 
 #: ../app/forms/users/create_new_form.php:21
 msgid "Register"
+msgstr ""
+
+msgid "Photo gallery"
 msgstr ""
 
 msgid "Here you can find the list of all commands in <em>%1</em>."
@@ -911,7 +466,6 @@ msgstr ""
 msgid "Recent articles"
 msgstr ""
 
-#: ../app/forms/admin/stores/stores_form.php:31
 msgid "Address"
 msgstr ""
 
@@ -949,514 +503,7 @@ msgstr ""
 msgid "Current password"
 msgstr ""
 
-#: ../app/forms/admin/users/edit_password_form.php:5
 msgid "New password"
-msgstr ""
-
-#: ../app/controllers/admin/accessories_controller.php:9
-msgid "Adding new accessory product"
-msgstr ""
-
-#: ../app/controllers/admin/accessories_controller.php:10
-msgid "Accessory product has been added"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:27
-msgid "Welcome screen"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:28
-#: ../app/controllers/articles_controller.php:11
-#: ../app/controllers/articles_controller.php:60
-msgid "Articles"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:29
-#: ../app/controllers/admin/pages_controller.php:5
-msgid "Pages"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:31
-msgid "Users"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:33
-#: ../app/controllers/categories_controller.php:70
-msgid "Categories"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:34
-#: ../app/controllers/brands_controller.php:14
-msgid "Brands"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:35
-#: ../app/controllers/collections_controller.php:14
-msgid "Collections"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:36
-#: ../app/controllers/stores_controller.php:11
-msgid "Stores"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:37
-#: ../app/controllers/admin/password_recoveries_controller.php:4
-msgid "Password recoveries"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:38
-msgid "Newsletter subscribers"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:79
-msgid "filtr"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:116
-#, php-format
-msgid "Seznam objektů typu %s"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:145
-msgid "The record has been created"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:159
-#, php-format
-msgid "Vytvořit objekt typu %s"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:211
-#: ../app/controllers/admin/attachments_controller.php:54
-#: ../app/controllers/admin/card_sections_controller.php:27
-msgid "Změny byly uloženy"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:233
-#, php-format
-msgid "Editace objektu typu %s"
-msgstr ""
-
-#: ../app/controllers/admin/admin.php:357
-msgid "The entry has been deleted"
-msgstr ""
-
-#: ../app/controllers/admin/articles_controller.php:5
-msgid "Listing Articles"
-msgstr ""
-
-#: ../app/controllers/admin/articles_controller.php:43
-msgid "Create article"
-msgstr ""
-
-#: ../app/controllers/admin/articles_controller.php:53
-msgid "The article has been created successfully"
-msgstr ""
-
-#: ../app/controllers/admin/articles_controller.php:59
-#, php-format
-msgid "Editing %s"
-msgstr ""
-
-#: ../app/controllers/admin/articles_controller.php:67
-#: ../app/controllers/admin/tags_controller.php:56
-#: ../app/controllers/admin/users_controller.php:51
-#: ../app/controllers/users_controller.php:42
-msgid "Nothing has been changed"
-msgstr ""
-
-#: ../app/controllers/admin/articles_controller.php:75
-msgid "The article has been updated successfully"
-msgstr ""
-
-#: ../app/controllers/admin/attachments_controller.php:4
-#, php-format
-msgid "Přílohy k objektu %s#%s"
-msgstr ""
-
-#: ../app/controllers/admin/attachments_controller.php:22
-msgid "Přidání přílohy"
-msgstr ""
-
-#: ../app/controllers/admin/attachments_controller.php:41
-msgid "Attachment has been saved"
-msgstr ""
-
-#: ../app/controllers/admin/attachments_controller.php:47
-#, php-format
-msgid "Editace přílohy #%s"
-msgstr ""
-
-#: ../app/controllers/admin/attachments_controller.php:67
-msgid "Obrázek byl smazán."
-msgstr ""
-
-#: ../app/controllers/admin/brands_controller.php:5
-msgid "Listing brands"
-msgstr ""
-
-#: ../app/controllers/admin/brands_controller.php:10
-msgid "New brand"
-msgstr ""
-
-#: ../app/controllers/admin/brands_controller.php:21
-msgid "Editing of the brand"
-msgstr ""
-
-#: ../app/controllers/admin/brands_controller.php:27
-msgid "The brand was saved"
-msgstr ""
-
-#: ../app/controllers/admin/brands_controller.php:37
-msgid "The brand was deleted"
-msgstr ""
-
-#: ../app/controllers/admin/card_filters_controller.php:9
-#: ../app/controllers/admin/card_filters_controller.php:71
-#, php-format
-msgid "Placing the product \"%s\" into filters"
-msgstr ""
-
-#: ../app/controllers/admin/card_filters_controller.php:63
-msgid "Settings saved"
-msgstr ""
-
-#: ../app/controllers/admin/cards_controller.php:51
-msgid "Adding a product"
-msgstr ""
-
-#: ../app/controllers/admin/cards_controller.php:86
-msgid "The product has been created. Now you can add some extra data to it."
-msgstr ""
-
-#: ../app/controllers/admin/cards_controller.php:92
-#, php-format
-msgid "Editing product %s"
-msgstr ""
-
-#: ../app/controllers/admin/cards_controller.php:140
-#: ../app/controllers/admin/categories_controller.php:11
-#: ../app/controllers/admin/collections_controller.php:27
-#: ../app/controllers/admin/images_controller.php:58
-msgid "Changes have been saved"
-msgstr ""
-
-#: ../app/controllers/admin/cards_controller.php:172
-msgid "Varianty byly zaktivněny."
-msgstr ""
-
-#: ../app/controllers/admin/cards_controller.php:195
-#: ../app/controllers/admin/technical_specifications_controller.php:12
-#: ../app/controllers/admin/technical_specifications_controller.php:36
-msgid "The product already has this specification"
-msgstr ""
-
-#: ../app/controllers/admin/cards_controller.php:221
-msgid "Připojení odkazu k produktu"
-msgstr ""
-
-#: ../app/controllers/admin/cards_controller.php:239
-msgid "Odkaz odpojen"
-msgstr ""
-
-#: ../app/controllers/admin/card_sections_controller.php:4
-#, php-format
-msgid "Add a textual section for the product %s"
-msgstr ""
-
-#: ../app/controllers/admin/card_sections_controller.php:12
-msgid "The section has been created"
-msgstr ""
-
-#: ../app/controllers/admin/card_sections_controller.php:12
-msgid "It would be nice to add some more information"
-msgstr ""
-
-#: ../app/controllers/admin/card_sections_controller.php:18
-msgid "Editace textové sekce"
-msgstr ""
-
-#: ../app/controllers/admin/categories_controller.php:5
-#, php-format
-msgid "Editing category \"%s\""
-msgstr ""
-
-#: ../app/controllers/admin/categories_controller.php:26
-msgid "Moving category"
-msgstr ""
-
-#: ../app/controllers/admin/categories_controller.php:31
-msgid "The category was moved"
-msgstr ""
-
-#: ../app/controllers/admin/categories_controller.php:48
-msgid "New subcategory"
-msgstr ""
-
-#: ../app/controllers/admin/categories_controller.php:59
-msgid "Category cannot be created when the parent category is an alias"
-msgstr ""
-
-#: ../app/controllers/admin/categories_controller.php:65
-msgid "On this place a new category cannot be created"
-msgstr ""
-
-#: ../app/controllers/admin/categories_controller.php:71
-msgid "Filter cannot be created when the parent category is also a filter"
-msgstr ""
-
-#: ../app/controllers/admin/categories_controller.php:78
-msgid "Category has been created"
-msgstr ""
-
-#: ../app/controllers/admin/categories_controller.php:93
-msgid "The category was deleted"
-msgstr ""
-
-#: ../app/controllers/admin/categories_controller.php:102
-msgid "New alias"
-msgstr ""
-
-#: ../app/controllers/admin/categories_controller.php:110
-msgid "Alias was created"
-msgstr ""
-
-#: ../app/controllers/admin/category_cards_controller.php:6
-#, php-format
-msgid "Products in category %s"
-msgstr ""
-
-#: ../app/controllers/admin/category_cards_controller.php:7
-msgid "Product list"
-msgstr ""
-
-#: ../app/controllers/admin/category_cards_controller.php:28
-#, php-format
-msgid "Adding product into the category %s"
-msgstr ""
-
-#: ../app/controllers/admin/category_cards_controller.php:35
-msgid "The product was added"
-msgstr ""
-
-#: ../app/controllers/admin/category_cards_controller.php:41
-#, php-format
-msgid "Edit ranking of %s"
-msgstr ""
-
-#: ../app/controllers/admin/category_recommended_cards_controller.php:6
-#, php-format
-msgid "Přidání doporučeného produktu do kategorie %s"
-msgstr ""
-
-#: ../app/controllers/admin/category_recommended_cards_controller.php:13
-msgid "Produkt byl přidán"
-msgstr ""
-
-#: ../app/controllers/admin/category_trees_controller.php:5
-msgid "Category trees"
-msgstr ""
-
-#: ../app/controllers/admin/category_trees_controller.php:17
-msgid "The category tree has been created"
-msgstr ""
-
-#: ../app/controllers/admin/category_trees_controller.php:23
-msgid "Category tree"
-msgstr ""
-
-#: ../app/controllers/admin/collection_cards_controller.php:5
-msgid "Adding a product into the collection"
-msgstr ""
-
-#: ../app/controllers/admin/collections_controller.php:5
-#: ../app/controllers/collections_controller.php:4
-msgid "List of Collections"
-msgstr ""
-
-#: ../app/controllers/admin/collections_controller.php:10
-msgid "New Collection"
-msgstr ""
-
-#: ../app/controllers/admin/collections_controller.php:15
-msgid "The collection has been saved."
-msgstr ""
-
-#: ../app/controllers/admin/collections_controller.php:15
-msgid "Do you want to add some products to the collection?"
-msgstr ""
-
-#: ../app/controllers/admin/collections_controller.php:21
-#, php-format
-msgid "Editing of the collection '%s'"
-msgstr ""
-
-#: ../app/controllers/admin/collections_controller.php:36
-msgid "The collection has been deleted"
-msgstr ""
-
-#: ../app/controllers/admin/consumables_controller.php:9
-msgid "Adding new consumable product"
-msgstr ""
-
-#: ../app/controllers/admin/consumables_controller.php:10
-msgid "Consumable product has been added"
-msgstr ""
-
-#: ../app/controllers/admin/images_controller.php:4
-#, php-format
-msgid "Photo gallery of the object %s#%s"
-msgstr ""
-
-#: ../app/controllers/admin/images_controller.php:23
-msgid "Adding an image into the photo gallery"
-msgstr ""
-
-#: ../app/controllers/admin/images_controller.php:44
-msgid "Image was created"
-msgstr ""
-
-#: ../app/controllers/admin/images_controller.php:50
-#, php-format
-msgid "Editing of the Image #%s"
-msgstr ""
-
-#: ../app/controllers/admin/images_controller.php:71
-msgid "The image has been deleted"
-msgstr ""
-
-#: ../app/controllers/admin/newsletter_subscribers_controller.php:4
-msgid "Newsletter Subscribers"
-msgstr ""
-
-#: ../app/controllers/admin/pages_controller.php:11
-msgid "Create page"
-msgstr ""
-
-#: ../app/controllers/admin/pages_controller.php:12
-msgid "The page has been created successfully"
-msgstr ""
-
-#: ../app/controllers/admin/pages_controller.php:18
-msgid "Edit page"
-msgstr ""
-
-#: ../app/controllers/admin/products_controller.php:5
-msgid "New product variant"
-msgstr ""
-
-#: ../app/controllers/admin/products_controller.php:11
-msgid "Varianta vytvořena"
-msgstr ""
-
-#: ../app/controllers/admin/products_controller.php:23
-#, php-format
-msgid "Úprava varianty produktu '%s - %s' ('%s')"
-msgstr ""
-
-#: ../app/controllers/admin/products_controller.php:27
-msgid "Varianta uložena"
-msgstr ""
-
-#: ../app/controllers/admin/related_cards_controller.php:17
-msgid "The same product cannot be added to the product itself"
-msgstr ""
-
-#: ../app/controllers/admin/related_cards_controller.php:53
-msgid "Adding new related product"
-msgstr ""
-
-#: ../app/controllers/admin/related_cards_controller.php:54
-msgid "Related product has been added"
-msgstr ""
-
-#: ../app/controllers/admin/stores_controller.php:11
-msgid "New store"
-msgstr ""
-
-#: ../app/controllers/admin/stores_controller.php:17
-msgid "Edit store"
-msgstr ""
-
-#: ../app/controllers/admin/tags_controller.php:4
-msgid "Listing Tags"
-msgstr ""
-
-#: ../app/controllers/admin/tags_controller.php:29
-msgid "Create a new tag"
-msgstr ""
-
-#: ../app/controllers/admin/tags_controller.php:36
-msgid "The tag has been created successfully"
-msgstr ""
-
-#: ../app/controllers/admin/tags_controller.php:44
-#, php-format
-msgid "Editing tag %s"
-msgstr ""
-
-#: ../app/controllers/admin/tags_controller.php:51
-#: ../app/forms/admin/tags/create_new_form.php:7
-msgid "The same tag already exists"
-msgstr ""
-
-#: ../app/controllers/admin/tags_controller.php:62
-msgid "The tag has been updated"
-msgstr ""
-
-#: ../app/controllers/admin/technical_specification_keys_controller.php:6
-#, php-format
-msgid "Editace klíče %s"
-msgstr ""
-
-#: ../app/controllers/admin/technical_specification_keys_controller.php:10
-msgid "The same key already exists"
-msgstr ""
-
-#: ../app/controllers/admin/technical_specifications_controller.php:5
-msgid "Add new technical specification"
-msgstr ""
-
-#: ../app/controllers/admin/technical_specifications_controller.php:19
-msgid "New technical specification record has been created"
-msgstr ""
-
-#: ../app/controllers/admin/users_controller.php:4
-msgid "Users list"
-msgstr ""
-
-#: ../app/controllers/admin/users_controller.php:38
-msgid "The user has been created successfully"
-msgstr ""
-
-#: ../app/controllers/admin/users_controller.php:44
-#, php-format
-msgid "Editing user %s"
-msgstr ""
-
-#: ../app/controllers/admin/users_controller.php:57
-msgid "The user entry has been updated"
-msgstr ""
-
-#: ../app/controllers/admin/users_controller.php:63
-#, php-format
-msgid "Setting a new password to the user %s"
-msgstr ""
-
-#: ../app/controllers/admin/users_controller.php:72
-msgid ""
-"The new password has been set to the user <em>%user%</em>.<br>Would be nice "
-"to let him know at email address <a href=\"mailto:%email%\">%email%</a>."
-msgstr ""
-
-#: ../app/controllers/admin/users_controller.php:88
-msgid "The user entry has been deleted"
-msgstr ""
-
-#: ../app/controllers/admin/users_controller.php:99
-#, php-format
-msgid "Now you are logged as <em>%s</em>"
 msgstr ""
 
 #: ../app/controllers/api/logins_controller.php:33
@@ -1499,26 +546,31 @@ msgstr ""
 msgid "Request for information"
 msgstr ""
 
-#: ../app/controllers/application_rest_api.php:73
+#: ../app/controllers/application_rest_api.php:75
 #, php-format
 msgid "Commands in %s"
 msgstr ""
 
-#: ../app/controllers/application_rest_api.php:171
+#: ../app/controllers/application_rest_api.php:173
 #, php-format
 msgid "submit using method %s"
 msgstr ""
 
-#: ../app/controllers/application_rest_api.php:218
+#: ../app/controllers/application_rest_api.php:220
 msgid "Nothing has been found on this address"
 msgstr ""
 
-#: ../app/controllers/application_rest_api.php:224
+#: ../app/controllers/application_rest_api.php:226
 msgid "You don't have access to the requested resource"
 msgstr ""
 
-#: ../app/controllers/application_rest_api.php:230
+#: ../app/controllers/application_rest_api.php:232
 msgid "Sorry, An internal error happened"
+msgstr ""
+
+#: ../app/controllers/articles_controller.php:11
+#: ../app/controllers/articles_controller.php:60
+msgid "Articles"
 msgstr ""
 
 #: ../app/controllers/articles_controller.php:15
@@ -1530,8 +582,24 @@ msgstr ""
 msgid "List of Brands"
 msgstr ""
 
+#: ../app/controllers/brands_controller.php:14
+msgid "Brands"
+msgstr ""
+
 #: ../app/controllers/categories_controller.php:5
 msgid "List of Categories"
+msgstr ""
+
+#: ../app/controllers/categories_controller.php:70
+msgid "Categories"
+msgstr ""
+
+#: ../app/controllers/collections_controller.php:4
+msgid "List of Collections"
+msgstr ""
+
+#: ../app/controllers/collections_controller.php:14
+msgid "Collections"
 msgstr ""
 
 #: ../app/controllers/logins_controller.php:16
@@ -1582,6 +650,10 @@ msgstr ""
 msgid "Password recovery"
 msgstr ""
 
+#: ../app/controllers/stores_controller.php:11
+msgid "Stores"
+msgstr ""
+
 #: ../app/controllers/users_controller.php:4
 #: ../app/controllers/users_controller.php:77
 msgid "User profile"
@@ -1596,6 +668,10 @@ msgstr ""
 msgid ""
 "You have been successfully registered and now you are logged in as <em>%s</"
 "em>"
+msgstr ""
+
+#: ../app/controllers/users_controller.php:42
+msgid "Nothing has been changed"
 msgstr ""
 
 #: ../app/controllers/users_controller.php:47
@@ -1619,7 +695,6 @@ msgid "vyberte typ obsahu"
 msgstr ""
 
 #: ../app/fields/catalog_id_field.php:18
-#: ../app/forms/admin/cards/cards_form.php:17
 msgid "Catalog number"
 msgstr ""
 
@@ -1690,263 +765,6 @@ msgstr ""
 msgid "Tag <em>%s</em> is there more than once"
 msgstr ""
 
-#: ../app/forms/admin/admin_form.php:99
-msgid "Code"
-msgstr ""
-
-#: ../app/forms/admin/admin_form.php:103
-msgid ""
-"An alternative key for system usage. Leave it unchanged if you are not sure."
-msgstr ""
-
-#: ../app/forms/admin/articles/articles_form.php:10
-#: ../app/forms/admin/pages/pages_form.php:15
-msgid "Body"
-msgstr ""
-
-#: ../app/forms/admin/articles/articles_form.php:11
-msgid "Mardown format is expected"
-msgstr ""
-
-#: ../app/forms/admin/articles/articles_form.php:15
-msgid "Published At"
-msgstr ""
-
-#: ../app/forms/admin/articles/index_form.php:5
-#: ../app/forms/admin/cards/index_form.php:5
-#: ../app/forms/admin/newsletter_subscribers/index_form.php:5
-#: ../app/forms/admin/tags/index_form.php:5
-#: ../app/forms/admin/users/index_form.php:5
-#: ../app/forms/application_form.php:63
-msgid "Search"
-msgstr ""
-
-#: ../app/forms/admin/articles/index_form.php:9
-msgid "Search articles"
-msgstr ""
-
-#: ../app/forms/admin/attachments/attachments_form.php:6
-msgid "User Manual"
-msgstr ""
-
-#: ../app/forms/admin/attachments/create_new_form.php:6
-msgid "Soubor"
-msgstr ""
-
-#: ../app/forms/admin/brands/brands_form.php:5
-#: ../app/forms/admin/card_sections/card_sections_form.php:8
-#: ../app/forms/admin/products/products_form.php:6
-msgid "Název"
-msgstr ""
-
-#: ../app/forms/admin/brands/brands_form.php:8
-#: ../app/forms/admin/cards/cards_form.php:23
-#: ../app/forms/admin/categories/categories_form.php:21
-#: ../app/forms/admin/collections/collections_form.php:8
-#: ../app/forms/admin/pages/pages_form.php:10
-msgid "Teaser"
-msgstr ""
-
-#: ../app/forms/admin/brands/brands_form.php:10
-#: ../app/forms/admin/cards/cards_form.php:25
-#: ../app/forms/admin/categories/categories_form.php:23
-#: ../app/forms/admin/stores/stores_form.php:10
-msgid "Brief description"
-msgstr ""
-
-#: ../app/forms/admin/brands/brands_form.php:13
-msgid "Info"
-msgstr ""
-
-#: ../app/forms/admin/brands/brands_form.php:17
-msgid "Url"
-msgstr ""
-
-#: ../app/forms/admin/brands/brands_form.php:19
-msgid "Pages of the manufacturer"
-msgstr ""
-
-#: ../app/forms/admin/brands/brands_form.php:22
-msgid "Logo"
-msgstr ""
-
-#: ../app/forms/admin/cards/add_technical_specification_form.php:6
-msgid "Specification name"
-msgstr ""
-
-#: ../app/forms/admin/cards/add_technical_specification_form.php:10
-#: ../app/forms/admin/technical_specifications/technical_specifications_form.php:9
-msgid "Value"
-msgstr ""
-
-#: ../app/forms/admin/cards/add_technical_specification_form.php:14
-msgid "Add new specification"
-msgstr ""
-
-#: ../app/forms/admin/cards/add_to_category_form.php:9
-msgid "Add to a category"
-msgstr ""
-
-#: ../app/forms/admin/cards/add_to_category_form.php:11
-msgid "Category"
-msgstr ""
-
-#: ../app/forms/admin/cards/add_to_category_form.php:12
-msgid ""
-"Type a slash if you want to search the tree of categories from the root."
-msgstr ""
-
-#: ../app/forms/admin/cards/add_to_category_form.php:20
-msgid "You can not insert products into this category"
-msgstr ""
-
-#: ../app/forms/admin/cards/cards_form.php:30
-msgid "Information"
-msgstr ""
-
-#: ../app/forms/admin/cards/cards_form.php:32
-msgid "Detailed description"
-msgstr ""
-
-#: ../app/forms/admin/cards/cards_form.php:37
-msgid "Brand"
-msgstr ""
-
-#: ../app/forms/admin/cards/cards_form.php:41
-msgid "Collection"
-msgstr ""
-
-#: ../app/forms/admin/cards/create_new_form.php:16
-#: ../app/forms/admin/cards/edit_form.php:16
-msgid "Zadané katalogové číslo je již použité"
-msgstr ""
-
-#: ../app/forms/admin/card_sections/card_sections_form.php:5
-msgid "Typ obsahu"
-msgstr ""
-
-#: ../app/forms/admin/card_sections/card_sections_form.php:12
-#: ../app/forms/information_requests/create_new_form.php:26
-#: ../app/forms/main/contact_form.php:21
-msgid "Text"
-msgstr ""
-
-#: ../app/forms/admin/categories/categories_form.php:15
-msgid "Is this a filter?"
-msgstr ""
-
-#: ../app/forms/admin/categories/categories_form.php:16
-msgid "e.g. material or color"
-msgstr ""
-
-#: ../app/forms/admin/categories/categories_form.php:27
-#: ../app/forms/admin/collections/collections_form.php:13
-#: ../app/forms/admin/images/images_form.php:15
-#: ../app/forms/admin/stores/stores_form.php:41
-msgid "Description"
-msgstr ""
-
-#: ../app/forms/admin/categories/categories_form.php:33
-#: ../app/forms/admin/collections/collections_form.php:17
-#: ../app/forms/admin/images/images_form.php:5
-#: ../app/forms/admin/stores/stores_form.php:15
-msgid "Image"
-msgstr ""
-
-#: ../app/forms/admin/categories/categories_form.php:38
-msgid "Is visible?"
-msgstr ""
-
-#: ../app/forms/admin/categories/create_alias_form.php:6
-msgid "Umístit do kategorie"
-msgstr ""
-
-#: ../app/forms/admin/categories/create_alias_form.php:7
-#: ../app/forms/admin/categories/move_to_category_form.php:6
-msgid "Napište lomítko, pokud chcete prohledat strom kategorií od kořene."
-msgstr ""
-
-#: ../app/forms/admin/categories/move_to_category_form.php:5
-msgid "Nadřazená kategorie"
-msgstr ""
-
-#: ../app/forms/admin/category_cards/create_new_form.php:6
-#: ../app/forms/admin/related_cards/create_new_form.php:5
-msgid "Product"
-msgstr ""
-
-#: ../app/forms/admin/category_cards/create_new_form.php:9
-#: ../app/forms/admin/related_cards/create_new_form.php:8
-msgid "Add product"
-msgstr ""
-
-#: ../app/forms/admin/category_cards/edit_form.php:7
-msgid "The ranking starts with 1"
-msgstr ""
-
-#: ../app/forms/admin/category_recommended_cards/create_new_form.php:5
-msgid "Produkt"
-msgstr ""
-
-#: ../app/forms/admin/collection_cards/create_new_form.php:12
-msgid "Tento produkt už je součástí této kolekce"
-msgstr ""
-
-#: ../app/forms/admin/collection_cards/create_new_form.php:14
-#, php-format
-msgid "Tento produkt už je součástí jiné kolekce [%s]"
-msgstr ""
-
-#: ../app/forms/admin/pages/create_new_form.php:8
-#: ../app/forms/admin/pages/edit_form.php:13
-msgid "The same code is used on a different page"
-msgstr ""
-
-#: ../app/forms/admin/pages/pages_form.php:19
-msgid "Parent page"
-msgstr ""
-
-#: ../app/forms/admin/pages/pages_form.php:31
-msgid "Pro aktuální stránku nelze použít stejnou stránku jako nadřízenou."
-msgstr ""
-
-#: ../app/forms/admin/products/create_new_form.php:9
-msgid "Toto katalogové číslo je již použité"
-msgstr ""
-
-#: ../app/forms/admin/products/products_form.php:9
-msgid "Katalogové číslo"
-msgstr ""
-
-#: ../app/forms/admin/products/products_form.php:12
-msgid "Krátký popis"
-msgstr ""
-
-#: ../app/forms/admin/tags/index_form.php:9
-msgid "Search tags"
-msgstr ""
-
-#: ../app/forms/admin/technical_specification_keys/technical_specification_keys_form.php:5
-#: ../app/forms/admin/technical_specifications/technical_specifications_form.php:5
-msgid "Key"
-msgstr ""
-
-#: ../app/forms/admin/technical_specification_keys/technical_specification_keys_form.php:10
-msgid "Lokalizovaný název"
-msgstr ""
-
-#: ../app/forms/admin/technical_specifications/technical_specifications_form.php:14
-msgid "Localized value"
-msgstr ""
-
-#: ../app/forms/admin/users/edit_password_form.php:11
-msgid "Set password"
-msgstr ""
-
-#: ../app/forms/admin/users/index_form.php:9
-msgid "Search users"
-msgstr ""
-
 #: ../app/forms/api/categories_suggestions/index_form.php:5
 #: ../app/forms/api/suggestions/index_form.php:5
 #: ../app/forms/api/tags_suggestions/index_form.php:5
@@ -1961,8 +779,16 @@ msgstr ""
 msgid "Show"
 msgstr ""
 
+#: ../app/forms/application_form.php:63
+msgid "Search"
+msgstr ""
+
 #: ../app/forms/application_form.php:65
 msgid "Update"
+msgstr ""
+
+#: ../app/forms/application_form.php:67
+msgid "Delete"
 msgstr ""
 
 #: ../app/forms/application_form.php:69
@@ -1972,6 +798,11 @@ msgstr ""
 #: ../app/forms/information_requests/create_new_form.php:20
 #: ../app/forms/main/contact_form.php:15
 msgid "Sign up for newsletter"
+msgstr ""
+
+#: ../app/forms/information_requests/create_new_form.php:26
+#: ../app/forms/main/contact_form.php:21
+msgid "Text"
 msgstr ""
 
 #: ../app/forms/information_requests/create_new_form.php:31
@@ -1997,6 +828,11 @@ msgstr ""
 msgid "Send me a recovery link"
 msgstr ""
 
+#: ../app/forms/password_recoveries/recovery_form.php:7
+#: ../app/forms/users/edit_password_form.php:8
+msgid "Set new password"
+msgstr ""
+
 #: ../app/forms/users/create_new_form.php:16
 msgid "In order to register you need to obtain an invitation code"
 msgstr ""
@@ -2011,6 +847,10 @@ msgstr ""
 
 #: ../app/forms/users/edit_password_form.php:17
 msgid "The new password is the same as your current password"
+msgstr ""
+
+#: ../app/forms/users/users_form.php:11
+msgid "Email address"
 msgstr ""
 
 #: ../app/forms/users/users_form.php:14

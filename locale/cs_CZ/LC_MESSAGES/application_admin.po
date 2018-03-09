@@ -1,0 +1,2623 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-09 16:08+0100\n"
+"PO-Revision-Date: 2017-11-23 23:49+0100\n"
+"Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
+"Language-Team: Team <team@email.com>\n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+msgid ""
+"Are you sure to delete article item\n"
+"%1?"
+msgstr ""
+"Určitě chcete smazat článek\n"
+"%1?"
+
+msgid "Edit"
+msgstr "Upravit"
+
+msgid "Delete article"
+msgstr "Smazat článek"
+
+msgid "Add new article"
+msgstr "Přidat nový článek"
+
+msgid "The list is empty."
+msgstr "Seznam je prázdný."
+
+#: ../app/forms/admin/articles/articles_form.php:5
+#: ../app/forms/admin/attachments/attachments_form.php:5
+#: ../app/forms/admin/images/images_form.php:9
+#: ../app/forms/admin/pages/pages_form.php:6
+msgid "Title"
+msgstr "Název"
+
+msgid "Author"
+msgstr "Autor"
+
+msgid "Date"
+msgstr "Datum"
+
+#: ../app/controllers/admin/admin.php:30
+#: ../app/forms/admin/articles/articles_form.php:20
+#: ../app/forms/admin/cards/cards_form.php:44
+msgid "Tags"
+msgstr "Štítky"
+
+msgid ""
+"You are about to permanently delete brand %1\n"
+"Are you sure about that?"
+msgstr ""
+"Chystáte se trvale smazat značku %1\n"
+"Jste si o tom jistý?"
+
+msgid "Delete"
+msgstr "Smazat"
+
+msgid "Add a new brand"
+msgstr "Přidat novou značku"
+
+msgid "No record has been found."
+msgstr "Nebyl nalezen žádný záznam."
+
+msgid "The product is not yet placed in a category with a filter."
+msgstr "Produkt zatím nebyl zařazen do kategorie s filtrem."
+
+msgid ""
+"You are about to delete the product %1.\n"
+"Are you sure?"
+msgstr ""
+"Chystáte se smazat produkt %1.\n"
+"Jste si jistý?"
+
+msgid "Delete product"
+msgstr "Smazat produkt"
+
+msgid "Add related product"
+msgstr "Přidat související produkt"
+
+msgid "There is no related product"
+msgstr "Není zde související produkt"
+
+msgid "Edit this product"
+msgstr "Editovat produkt"
+
+msgid "You are going to remove a related product %1. Are you sure?"
+msgstr "Chystáte se odebrat související produkt %1. Jste si jistý?"
+
+msgid "Remove"
+msgstr "Odstranit"
+
+msgid "Product placement in the catalog tree"
+msgstr "Zařazení produktu v katalogovém stromu"
+
+msgid "Add product to a category"
+msgstr "Přidat produkt do kategorie"
+
+msgid "The product is not yet in any category."
+msgstr "Produkt ještě není v žádné kategorii."
+
+msgid "invisible"
+msgstr "neviditelné"
+
+msgid "Remove from the category"
+msgstr "Odstranit z kategorie"
+
+msgid "Add a new variant"
+msgstr "Přidat novou variantu"
+
+msgid "Product variants (%1)"
+msgstr "Varianty produktů (%1)"
+
+msgid "Variants are not considered for this product"
+msgstr "Varianty nejsou pro tento produkt uvažovány"
+
+msgid "Are you sure?"
+msgstr "Jste si jistý?"
+
+msgid "switch to the variant mode"
+msgstr "přepnout do variantního režimu"
+
+msgid "Related products"
+msgstr "Související produkty"
+
+msgid "Consumables"
+msgstr "Spotřební materiál"
+
+msgid "Add consumable"
+msgstr "Přidat spotřební materiál"
+
+msgid "There are no consumables"
+msgstr "Není zde žádný spotřební materiál"
+
+msgid "Accessories"
+msgstr "Příslušenství"
+
+msgid "Add accessory"
+msgstr "Přidat příslušenství"
+
+msgid "There are no accessories"
+msgstr "Není zde žádné příslušenství"
+
+msgid "Filters"
+msgstr "Filtry"
+
+msgid "This product is not included in any filter"
+msgstr "Tento produkt není zařazen do žádného filtru"
+
+msgid "Set up filters"
+msgstr "Nastavit filtry"
+
+msgid "Add a product"
+msgstr "Přidat produkt"
+
+msgid "No product has been found."
+msgstr "Žádný produkt nebyl nalezen."
+
+#: ../app/forms/admin/cards/cards_form.php:12
+#: ../app/forms/admin/categories/categories_form.php:11
+#: ../app/forms/admin/collections/collections_form.php:5
+#: ../app/forms/admin/stores/stores_form.php:6
+#: ../app/forms/admin/users/users_form.php:5
+msgid "Name"
+msgstr "Jméno"
+
+msgid "Has variants?"
+msgstr "Má varianty?"
+
+msgid "Created at"
+msgstr "Vytvořeno"
+
+msgid "Updated at"
+msgstr "Změněno"
+
+msgid "Chystáte se smazat produkt %1. Jste si jistý/á?"
+msgstr "Chystáte se smazat produkt %1. Jste si jistý/á?"
+
+msgid "Produkt zatím nemá žádnou variantu."
+msgstr "Produkt zatím nemá žádnou variantu."
+
+msgid "Technical specifications"
+msgstr "Technické specifikace"
+
+msgid "There is no record yet."
+msgstr "Není zde žádný záznam"
+
+msgid "Edit value"
+msgstr "Upravit hodnotu"
+
+msgid "Edit key"
+msgstr "Upravit klíč"
+
+msgid "Create a new section"
+msgstr "Vytvořit novou sekci"
+
+msgid "Textual sections"
+msgstr "Textové sekce"
+
+msgid "Currently there is no section"
+msgstr "Momentálně tady není žádná sekce"
+
+msgid "attachments"
+msgstr "přílohy"
+
+msgid "images"
+msgstr "obrázky"
+
+msgid ""
+"You are about to delete section %1\n"
+"Are you sure?"
+msgstr ""
+"Chystáte se smazat sekci %1\n"
+"Jste si jistý?"
+
+msgid "Vytvořit a editovat alias"
+msgstr "Vytvořit a editovat alias"
+
+msgid "Add a new subcategory"
+msgstr "Přidat podkategorii"
+
+msgid "Show on web"
+msgstr "Zobrazit na webu"
+
+msgid "Move the category"
+msgstr "Přesunout kategorii"
+
+msgid "Create an alias"
+msgstr "Vytvořit alias"
+
+msgid ""
+"You are about to delete the category %1!\n"
+"Also all subcategories will be deleted. Deletion cannot be undone.\n"
+"\n"
+"Do you really want this?"
+msgstr ""
+"Chystáte se smazat kategorii %1!\n"
+"Také všechny podkategorie budou smazány. Vymazání nelze vrátit zpět.\n"
+"\n"
+"Opravdu to chcete?"
+
+msgid "Path"
+msgstr "Cesta"
+
+msgid "Pointing to category"
+msgstr "Ukazuje na kategorii"
+
+msgid "Is a filter?"
+msgstr "Je to filtr?"
+
+msgid "Can products be inserted here?"
+msgstr "Mohou zde být vloženy produkty?"
+
+msgid ""
+"This is a virtual category, which is actually pointing to <a href=\"%1\">/%2/"
+"</a>"
+msgstr ""
+"Jedná se o virtuální kategorii, která ve skutečnosti ukazuje na <a href="
+"\"%1\">/% 2/</a>"
+
+msgid "Subcategories"
+msgstr "Podkategorie"
+
+msgid "filter"
+msgstr "filtr"
+
+#: ../app/controllers/admin/admin.php:80
+msgid "alias"
+msgstr "alias"
+
+msgid "This category has no subcategories."
+msgstr "Tato kategorie nemá žádné podkategorie."
+
+#: ../app/controllers/admin/admin.php:32
+msgid "Products"
+msgstr "Produkty"
+
+msgid "There are too many products in the category (%1)"
+msgstr "V této kategorii je příliš mnoho produktů (%1)"
+
+msgid "show product list"
+msgstr "zobrazit seznam produktů"
+
+msgid "There is currently no product here."
+msgstr "Momentálně tady není žádný produkt."
+
+msgid "Edit product"
+msgstr "Upravit produkt"
+
+msgid "Remove product"
+msgstr "Odstranit produkt"
+
+msgid "Into this category products cannot be added."
+msgstr "Do této kategorie nelze přidat produkty."
+
+msgid "Add a recommended product"
+msgstr "Přidat doporučený produkt"
+
+msgid "Recommended products"
+msgstr "Doporučené produkty"
+
+msgid "Přesunout kategorii"
+msgstr "Přesunout kategorii"
+
+msgid "Edit ranking"
+msgstr "Upravit pořadí"
+
+#: ../app/forms/admin/category_cards/edit_form.php:6
+msgid "Ranking"
+msgstr "Pořadí"
+
+#: ../app/controllers/admin/category_trees_controller.php:10
+msgid "Create new category tree"
+msgstr "Vytvořit nový katalogový strom"
+
+msgid "Detail"
+msgstr "Detail"
+
+msgid ""
+"You are about to delete the catalog tree %1.\n"
+"Are you sure?"
+msgstr ""
+"Chystáte se smazat katalogový strom %1. \n"
+"Jsi si jistý(á)?"
+
+msgid ""
+"You are about to remove the product %1 from the collection.\n"
+"Are you sure about that?"
+msgstr ""
+"Chystáte se odebrat produkt %1 z kolekce.\n"
+"Jste si tím jistý?"
+
+msgid "Add a product into the collection"
+msgstr "Přidat produkt do kolekce"
+
+msgid ""
+"You are about to permanently delete collection %1\n"
+"Are you sure about that?"
+msgstr ""
+"Chystáte se trvale smazat kolekci %1\n"
+"Jste si tím jistý?"
+
+msgid "Products in the collection"
+msgstr "Produkty v kolekci"
+
+msgid "Add a collection"
+msgstr "Přidat kolekci"
+
+msgid "The image was uploaded at:"
+msgstr "Obrázek byl nahrán:"
+
+msgid "The image was uploaded by:"
+msgstr "Obrázek nahrál:"
+
+msgid "The size of the original:"
+msgstr "Velikost originálu:"
+
+msgid "Zpět"
+msgstr "Zpět"
+
+msgid "Přidat obrázek"
+msgstr "Přidat obrázek"
+
+msgid "Welcome administrator!"
+msgstr "Vítejte administrátore!"
+
+#: ../app/forms/admin/stores/stores_form.php:20
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Subscribed since"
+msgstr "Přihlášen od"
+
+msgid "IP address"
+msgstr "IP adresa"
+
+msgid "Export emails in CSV"
+msgstr "Export e-mailů v CSV"
+
+msgid "Subpages"
+msgstr "Podstránky"
+
+msgid "This page has no subpages"
+msgstr "Tato stránka nemá podstránky"
+
+msgid "Add new page"
+msgstr "Přidat novou stránku"
+
+msgid "Visit public link"
+msgstr "Navštívit veřejný odkaz"
+
+msgid ""
+"You are about to delete page %1\n"
+"Are you sure?"
+msgstr ""
+"Chystáte se smazat stránku %1\n"
+"Jsi si jistý(á)?"
+
+msgid "Delete page"
+msgstr "Smazat stránku"
+
+msgid "[%1]"
+msgstr "[%1]"
+
+msgid "User"
+msgstr "Uživatel"
+
+msgid "Created from address"
+msgstr "Vytvořeno z adresy"
+
+msgid "Password recovered?"
+msgstr "Heslo obnoveno?"
+
+msgid "Recovered at"
+msgstr "Obnoveno dne"
+
+msgid "Recovered from address"
+msgstr "Obnoveno z adresy"
+
+msgid ""
+"You are about to delete the attachment %1\n"
+"Are you sure about that?"
+msgstr ""
+"Chystáte se smazat přílohu %1\n"
+"Jste si tím jistý?"
+
+msgid "Add an attachment"
+msgstr "Přidat přílohu"
+
+msgid "Attachments"
+msgstr "Přílohy"
+
+msgid "Currently there are no attachments."
+msgstr "Momentálně tady nejsou žádné přílohy."
+
+msgid "Remove image"
+msgstr "Odstranit obrázek"
+
+msgid "Photo gallery"
+msgstr "Fotogalerie"
+
+msgid "Currently there are no images"
+msgstr "Momentálně tady není žádný obrázek"
+
+msgid "Add an image"
+msgstr "Přidat obrázek"
+
+msgid "Show larger image"
+msgstr "Zobrazit větší obrázek"
+
+msgid "no image"
+msgstr "bez obrázku"
+
+msgid "Add a store"
+msgstr "Přidat prodejnu"
+
+msgid ""
+"You are about to permanently delete store %1\n"
+"Are you sure about that?"
+msgstr ""
+"Chystáte se trvale smazat prodejnu %1\n"
+"Jsi si tím jistý(á)?"
+
+msgid "Add new tag"
+msgstr "Přidat nový štítek"
+
+msgid "No tag has been found."
+msgstr "Nebyl nalezen žádný štítek."
+
+#: ../app/forms/admin/tags/tags_form.php:5
+msgid "Tag"
+msgstr "Štítek"
+
+msgid ""
+"You are about to permanently delete tag %1\n"
+"\tAre you sure about that?"
+msgstr ""
+"Chystáte se smazat štítek %1\n"
+"\tUrčite to chcete?"
+
+msgid "Delete tag"
+msgstr "Smazat štítek"
+
+msgid ""
+"At the moment no one knows the actual user's password because passwords are "
+"not stored in plain text form. In this form you can set a new password to "
+"the user <em>%1</em>"
+msgstr ""
+"Momentálně nikdo nezná heslo uživatele, protože hesla nejsou ukládána v "
+"čitelné podobě. V tomto formuláři můžete nastavit nové heslo uživateli <em>"
+"%1</em>"
+
+#: ../app/controllers/admin/users_controller.php:32
+msgid "Create a new user"
+msgstr "Vytvořit nového uživatele"
+
+msgid "Username"
+msgstr "Uživatelské jméno"
+
+#: ../app/forms/admin/users/users_form.php:10
+msgid "Email address"
+msgstr "E-mailová adresa"
+
+#: ../app/forms/admin/users/users_form.php:15
+msgid "Is admin?"
+msgstr "Je administrátor?"
+
+msgid "Set new password"
+msgstr "Nastavit nové heslo"
+
+msgid "Sign in as this user"
+msgstr "Přihlásit se jako tento uživatel"
+
+msgid ""
+"You are about to permanently delete user %1\n"
+"\tAre you sure about that?"
+msgstr ""
+"Chystáte se nevratně smazat uživatele %1\n"
+"\tJste si skutečně jistý?"
+
+msgid "Delete user"
+msgstr "Smazat uživatele"
+
+#: ../app/controllers/admin/accessories_controller.php:9
+msgid "Adding new accessory product"
+msgstr "Přidání nového příslušenství"
+
+#: ../app/controllers/admin/accessories_controller.php:10
+msgid "Accessory product has been added"
+msgstr "Příslušenství bylo přidáno"
+
+#: ../app/controllers/admin/admin.php:8
+#: ../app/controllers/admin/main_controller.php:4
+msgid "Administration"
+msgstr "Administrace"
+
+#: ../app/controllers/admin/admin.php:27
+msgid "Welcome screen"
+msgstr "Vítací obrazovka"
+
+#: ../app/controllers/admin/admin.php:28
+msgid "Articles"
+msgstr "Články"
+
+#: ../app/controllers/admin/admin.php:29
+#: ../app/controllers/admin/pages_controller.php:5
+msgid "Pages"
+msgstr "Stránky"
+
+#: ../app/controllers/admin/admin.php:31
+msgid "Users"
+msgstr "Uživatelé"
+
+#: ../app/controllers/admin/admin.php:33
+msgid "Categories"
+msgstr "Kategorie"
+
+#: ../app/controllers/admin/admin.php:34
+msgid "Brands"
+msgstr "Značky"
+
+#: ../app/controllers/admin/admin.php:35
+msgid "Collections"
+msgstr "Kolekce"
+
+#: ../app/controllers/admin/admin.php:36
+msgid "Stores"
+msgstr "Prodejny"
+
+#: ../app/controllers/admin/admin.php:37
+#: ../app/controllers/admin/password_recoveries_controller.php:4
+msgid "Password recoveries"
+msgstr "Obnovy hesel"
+
+#: ../app/controllers/admin/admin.php:38
+msgid "Newsletter subscribers"
+msgstr "Odběratelé newsletteru"
+
+#: ../app/controllers/admin/admin.php:79
+msgid "filtr"
+msgstr "filtr"
+
+#: ../app/controllers/admin/admin.php:116
+#, php-format
+msgid "Seznam objektů typu %s"
+msgstr "Seznam objektů typu %s"
+
+#: ../app/controllers/admin/admin.php:145
+msgid "The record has been created"
+msgstr "Záznam byl vytvořen"
+
+#: ../app/controllers/admin/admin.php:159
+#, php-format
+msgid "Vytvořit objekt typu %s"
+msgstr "Vytvořit objekt typu %s"
+
+#: ../app/controllers/admin/admin.php:211
+#: ../app/controllers/admin/attachments_controller.php:54
+#: ../app/controllers/admin/card_sections_controller.php:27
+msgid "Změny byly uloženy"
+msgstr "Změny byly uloženy"
+
+#: ../app/controllers/admin/admin.php:233
+#, php-format
+msgid "Editace objektu typu %s"
+msgstr "Editace objektu typu %s"
+
+#: ../app/controllers/admin/admin.php:357
+msgid "The entry has been deleted"
+msgstr "Záznam byl smazán"
+
+#: ../app/controllers/admin/articles_controller.php:5
+msgid "Listing Articles"
+msgstr "Výpis článků"
+
+#: ../app/controllers/admin/articles_controller.php:43
+msgid "Create article"
+msgstr "Vytvořit článek"
+
+#: ../app/controllers/admin/articles_controller.php:53
+msgid "The article has been created successfully"
+msgstr "Článek byl úspěšně vytvořen"
+
+#: ../app/controllers/admin/articles_controller.php:59
+#, php-format
+msgid "Editing %s"
+msgstr "Editace %s"
+
+#: ../app/controllers/admin/articles_controller.php:67
+#: ../app/controllers/admin/tags_controller.php:56
+#: ../app/controllers/admin/users_controller.php:51
+msgid "Nothing has been changed"
+msgstr "Nic nebylo změněno"
+
+#: ../app/controllers/admin/articles_controller.php:75
+msgid "The article has been updated successfully"
+msgstr "Článek byl úspěšně aktualizován"
+
+#: ../app/controllers/admin/attachments_controller.php:4
+#, php-format
+msgid "Přílohy k objektu %s#%s"
+msgstr "Přílohy k objektu %s#%s"
+
+#: ../app/controllers/admin/attachments_controller.php:22
+msgid "Přidání přílohy"
+msgstr "Přidání přílohy"
+
+#: ../app/controllers/admin/attachments_controller.php:41
+msgid "Attachment has been saved"
+msgstr "Příloha byla uložena"
+
+#: ../app/controllers/admin/attachments_controller.php:47
+#, php-format
+msgid "Editace přílohy #%s"
+msgstr "Editace přílohy #%s"
+
+#: ../app/controllers/admin/attachments_controller.php:67
+msgid "Obrázek byl smazán."
+msgstr "Obrázek byl smazán."
+
+#: ../app/controllers/admin/brands_controller.php:5
+msgid "Listing brands"
+msgstr "Seznam značek"
+
+#: ../app/controllers/admin/brands_controller.php:10
+msgid "New brand"
+msgstr "Nová značka"
+
+#: ../app/controllers/admin/brands_controller.php:21
+msgid "Editing of the brand"
+msgstr "Editace značky"
+
+#: ../app/controllers/admin/brands_controller.php:27
+msgid "The brand was saved"
+msgstr "Značka byla uložena"
+
+#: ../app/controllers/admin/brands_controller.php:37
+msgid "The brand was deleted"
+msgstr "Značka byla smazána"
+
+#: ../app/controllers/admin/card_filters_controller.php:9
+#: ../app/controllers/admin/card_filters_controller.php:71
+#, php-format
+msgid "Placing the product \"%s\" into filters"
+msgstr "Umístění produktu \"%s\" do filtrů"
+
+#: ../app/controllers/admin/card_filters_controller.php:63
+msgid "Settings saved"
+msgstr "Nastavení uloženo"
+
+#: ../app/controllers/admin/cards_controller.php:5
+msgid "List of Products"
+msgstr "Seznam produktů"
+
+#: ../app/controllers/admin/cards_controller.php:51
+msgid "Adding a product"
+msgstr "Přidat produkt"
+
+#: ../app/controllers/admin/cards_controller.php:86
+msgid "The product has been created. Now you can add some extra data to it."
+msgstr "Produkt byl vytvořen. Nyní k němu můžete přidat další údaje."
+
+#: ../app/controllers/admin/cards_controller.php:92
+#, php-format
+msgid "Editing product %s"
+msgstr "Editace produktu %s"
+
+#: ../app/controllers/admin/cards_controller.php:140
+#: ../app/controllers/admin/categories_controller.php:11
+#: ../app/controllers/admin/collections_controller.php:27
+#: ../app/controllers/admin/images_controller.php:58
+msgid "Changes have been saved"
+msgstr "Změny byly uloženy"
+
+#: ../app/controllers/admin/cards_controller.php:172
+msgid "Varianty byly zaktivněny."
+msgstr "Varianty byly zaktivněny."
+
+#: ../app/controllers/admin/cards_controller.php:195
+#: ../app/controllers/admin/technical_specifications_controller.php:12
+#: ../app/controllers/admin/technical_specifications_controller.php:36
+msgid "The product already has this specification"
+msgstr "Tento produkt už má tuto specifikaci"
+
+#: ../app/controllers/admin/cards_controller.php:221
+msgid "Připojení odkazu k produktu"
+msgstr "Připojení odkazu k produktu"
+
+#: ../app/controllers/admin/cards_controller.php:239
+msgid "Odkaz odpojen"
+msgstr "Odkaz odpojen"
+
+#: ../app/controllers/admin/card_sections_controller.php:4
+#, php-format
+msgid "Add a textual section for the product %s"
+msgstr "Přidat textovou sekci k produktu %s"
+
+#: ../app/controllers/admin/card_sections_controller.php:12
+msgid "The section has been created"
+msgstr "Sekce byla vytvořena"
+
+#: ../app/controllers/admin/card_sections_controller.php:12
+msgid "It would be nice to add some more information"
+msgstr "Bylo by pěkné doplnit nějaké další informace"
+
+#: ../app/controllers/admin/card_sections_controller.php:18
+msgid "Editace textové sekce"
+msgstr "Editace textové sekce"
+
+#: ../app/controllers/admin/categories_controller.php:5
+#, php-format
+msgid "Editing category \"%s\""
+msgstr "Editace kategorie \"%s\""
+
+#: ../app/controllers/admin/categories_controller.php:26
+msgid "Moving category"
+msgstr "Přesun kategorie"
+
+#: ../app/controllers/admin/categories_controller.php:31
+msgid "The category was moved"
+msgstr "Kategorie byla přesunuta"
+
+#: ../app/controllers/admin/categories_controller.php:48
+msgid "New subcategory"
+msgstr "Nová podkategorie"
+
+#: ../app/controllers/admin/categories_controller.php:59
+msgid "Category cannot be created when the parent category is an alias"
+msgstr "Kategorie nelze vytvořit, pokud je nadřazená kategorie alias"
+
+#: ../app/controllers/admin/categories_controller.php:65
+msgid "On this place a new category cannot be created"
+msgstr "Na tomto místě nemůže být vytvořena nová kategorie"
+
+#: ../app/controllers/admin/categories_controller.php:71
+msgid "Filter cannot be created when the parent category is also a filter"
+msgstr "Filtr nelze vytvořit, pokud je nadřazená kategorie také filtr"
+
+#: ../app/controllers/admin/categories_controller.php:78
+msgid "Category has been created"
+msgstr "Kategorie byla vytvořena"
+
+#: ../app/controllers/admin/categories_controller.php:93
+msgid "The category was deleted"
+msgstr "Kategorie byla smazána"
+
+#: ../app/controllers/admin/categories_controller.php:102
+msgid "New alias"
+msgstr "Nový alias"
+
+#: ../app/controllers/admin/categories_controller.php:110
+msgid "Alias was created"
+msgstr "Alias byl vytvořen"
+
+#: ../app/controllers/admin/category_cards_controller.php:6
+#, php-format
+msgid "Products in category %s"
+msgstr "Produkty v kategorii %s"
+
+#: ../app/controllers/admin/category_cards_controller.php:7
+msgid "Product list"
+msgstr "Seznam produktů"
+
+#: ../app/controllers/admin/category_cards_controller.php:28
+#, php-format
+msgid "Adding product into the category %s"
+msgstr "Přidání produktu do kategorie %s"
+
+#: ../app/controllers/admin/category_cards_controller.php:35
+msgid "The product was added"
+msgstr "Produkt byl přidán"
+
+#: ../app/controllers/admin/category_cards_controller.php:41
+#, php-format
+msgid "Edit ranking of %s"
+msgstr "Editace pořadí %s"
+
+#: ../app/controllers/admin/category_recommended_cards_controller.php:6
+#, php-format
+msgid "Přidání doporučeného produktu do kategorie %s"
+msgstr "Přidání doporučeného produktu do kategorie %s"
+
+#: ../app/controllers/admin/category_recommended_cards_controller.php:13
+msgid "Produkt byl přidán"
+msgstr "Produkt byl přidán"
+
+#: ../app/controllers/admin/category_trees_controller.php:5
+msgid "Category trees"
+msgstr "Stromy kategorií"
+
+#: ../app/controllers/admin/category_trees_controller.php:17
+msgid "The category tree has been created"
+msgstr "Strom kategorií byl vytvořen"
+
+#: ../app/controllers/admin/category_trees_controller.php:23
+msgid "Category tree"
+msgstr "Strom kategorií"
+
+#: ../app/controllers/admin/collection_cards_controller.php:5
+msgid "Adding a product into the collection"
+msgstr "Přidání produktu do kolekce"
+
+#: ../app/controllers/admin/collections_controller.php:5
+msgid "List of Collections"
+msgstr "Seznam kolekcí"
+
+#: ../app/controllers/admin/collections_controller.php:10
+msgid "New Collection"
+msgstr "Nová kolekce"
+
+#: ../app/controllers/admin/collections_controller.php:15
+msgid "The collection has been saved."
+msgstr "Kolekce byla uložena."
+
+#: ../app/controllers/admin/collections_controller.php:15
+msgid "Do you want to add some products to the collection?"
+msgstr "Chcete přidat nějaké produkty do této kolekce?"
+
+#: ../app/controllers/admin/collections_controller.php:21
+#, php-format
+msgid "Editing of the collection '%s'"
+msgstr "Editace kolekce '%s'"
+
+#: ../app/controllers/admin/collections_controller.php:36
+msgid "The collection has been deleted"
+msgstr "Kolekce byla smazána"
+
+#: ../app/controllers/admin/consumables_controller.php:9
+msgid "Adding new consumable product"
+msgstr "Přidat nový spotřební materiál"
+
+#: ../app/controllers/admin/consumables_controller.php:10
+msgid "Consumable product has been added"
+msgstr "Spotřební materiál byl přidán"
+
+#: ../app/controllers/admin/images_controller.php:4
+#, php-format
+msgid "Photo gallery of the object %s#%s"
+msgstr "Fotogalerie objektu %s#%s"
+
+#: ../app/controllers/admin/images_controller.php:23
+msgid "Adding an image into the photo gallery"
+msgstr "Přidání obrázku do fotogalerie"
+
+#: ../app/controllers/admin/images_controller.php:44
+msgid "Image was created"
+msgstr "Obrázek byl vytvořen"
+
+#: ../app/controllers/admin/images_controller.php:50
+#, php-format
+msgid "Editing of the Image #%s"
+msgstr "Editace obrázku #%s"
+
+#: ../app/controllers/admin/images_controller.php:71
+msgid "The image has been deleted"
+msgstr "Obrázek byl smazán"
+
+#: ../app/controllers/admin/newsletter_subscribers_controller.php:4
+msgid "Newsletter Subscribers"
+msgstr "Odběratelé newsletteru"
+
+#: ../app/controllers/admin/pages_controller.php:11
+msgid "Create page"
+msgstr "Vytvořit stránku"
+
+#: ../app/controllers/admin/pages_controller.php:12
+msgid "The page has been created successfully"
+msgstr "Stránka byla úspěšně vytvořena"
+
+#: ../app/controllers/admin/pages_controller.php:18
+msgid "Edit page"
+msgstr "Editace stránky"
+
+#: ../app/controllers/admin/products_controller.php:5
+msgid "New product variant"
+msgstr "Nová varianta produktu"
+
+#: ../app/controllers/admin/products_controller.php:11
+msgid "Varianta vytvořena"
+msgstr "Varianta vytvořena"
+
+#: ../app/controllers/admin/products_controller.php:23
+#, php-format
+msgid "Úprava varianty produktu '%s - %s' ('%s')"
+msgstr "Úprava varianty produktu '%s - %s' ('%s')"
+
+#: ../app/controllers/admin/products_controller.php:27
+msgid "Varianta uložena"
+msgstr "Varianta uložena"
+
+#: ../app/controllers/admin/related_cards_controller.php:17
+msgid "The same product cannot be added to the product itself"
+msgstr "Stejný produkt nemůže být přidán sám do sebe"
+
+#: ../app/controllers/admin/related_cards_controller.php:53
+msgid "Adding new related product"
+msgstr "Přidání nového souvisejícího produktu"
+
+#: ../app/controllers/admin/related_cards_controller.php:54
+msgid "Related product has been added"
+msgstr "Související produkt byl přidán"
+
+#: ../app/controllers/admin/stores_controller.php:5
+msgid "List of stores"
+msgstr "Seznam prodejen"
+
+#: ../app/controllers/admin/stores_controller.php:11
+msgid "New store"
+msgstr "Nová prodejna"
+
+#: ../app/controllers/admin/stores_controller.php:17
+msgid "Edit store"
+msgstr "Editace prodejny"
+
+#: ../app/controllers/admin/tags_controller.php:4
+msgid "Listing Tags"
+msgstr "Přehled štítků"
+
+#: ../app/controllers/admin/tags_controller.php:29
+msgid "Create a new tag"
+msgstr "Vytvořit nový štítek"
+
+#: ../app/controllers/admin/tags_controller.php:36
+msgid "The tag has been created successfully"
+msgstr "Štítek byl úspěšně vytvořen"
+
+#: ../app/controllers/admin/tags_controller.php:44
+#, php-format
+msgid "Editing tag %s"
+msgstr "Editace štítku %s"
+
+#: ../app/controllers/admin/tags_controller.php:51
+#: ../app/forms/admin/tags/create_new_form.php:7
+msgid "The same tag already exists"
+msgstr "Stejný štítek již existuje"
+
+#: ../app/controllers/admin/tags_controller.php:62
+msgid "The tag has been updated"
+msgstr "Štítek byl aktualizován"
+
+#: ../app/controllers/admin/technical_specification_keys_controller.php:6
+#, php-format
+msgid "Editace klíče %s"
+msgstr "Editace klíče %s"
+
+#: ../app/controllers/admin/technical_specification_keys_controller.php:10
+msgid "The same key already exists"
+msgstr "Stejný klíč již existuje"
+
+#: ../app/controllers/admin/technical_specifications_controller.php:5
+msgid "Add new technical specification"
+msgstr "Přidat novou technickou specifikaci"
+
+#: ../app/controllers/admin/technical_specifications_controller.php:19
+msgid "New technical specification record has been created"
+msgstr "Byl vytvořen nový záznam technické specifikace"
+
+#: ../app/controllers/admin/users_controller.php:4
+msgid "Users list"
+msgstr "Seznam uživatelů"
+
+#: ../app/controllers/admin/users_controller.php:38
+msgid "The user has been created successfully"
+msgstr "Uživatel byl úspěšně vytvořen"
+
+#: ../app/controllers/admin/users_controller.php:44
+#, php-format
+msgid "Editing user %s"
+msgstr "Editace uživatele %s"
+
+#: ../app/controllers/admin/users_controller.php:57
+msgid "The user entry has been updated"
+msgstr "Záznam o uživateli byl aktualizován"
+
+#: ../app/controllers/admin/users_controller.php:63
+#, php-format
+msgid "Setting a new password to the user %s"
+msgstr "Nastavit nové heslo uživateli %s"
+
+#: ../app/controllers/admin/users_controller.php:72
+msgid ""
+"The new password has been set to the user <em>%user%</em>.<br>Would be nice "
+"to let him know at email address <a href=\"mailto:%email%\">%email%</a>."
+msgstr ""
+"Nové heslo bylo nastaveno uživateli <em>%user%</em>.<br>Bude hezké, když mu "
+"o tom napíšete na e-mail <a href=\"mailto:%email%\">%email%</a>."
+
+#: ../app/controllers/admin/users_controller.php:88
+msgid "The user entry has been deleted"
+msgstr "Uživatel byl smazán"
+
+#: ../app/controllers/admin/users_controller.php:99
+#, php-format
+msgid "Now you are logged as <em>%s</em>"
+msgstr "Nyní jste přihlášen jako <em>%s</em>"
+
+#: ../app/forms/admin/admin_form.php:99
+msgid "Code"
+msgstr "Kód"
+
+#: ../app/forms/admin/admin_form.php:103
+msgid ""
+"An alternative key for system usage. Leave it unchanged if you are not sure."
+msgstr ""
+"Alternativní klíč pro systémové použití. Ponechte beze změny, pokud si "
+"nejste jisti."
+
+#: ../app/forms/admin/articles/articles_form.php:10
+#: ../app/forms/admin/pages/pages_form.php:15
+msgid "Body"
+msgstr "Tělo"
+
+#: ../app/forms/admin/articles/articles_form.php:11
+msgid "Mardown format is expected"
+msgstr "Je očekáván formát Markdown"
+
+#: ../app/forms/admin/articles/articles_form.php:15
+msgid "Published At"
+msgstr "Publikováno dne"
+
+#: ../app/forms/admin/articles/index_form.php:5
+#: ../app/forms/admin/cards/index_form.php:5
+#: ../app/forms/admin/newsletter_subscribers/index_form.php:5
+#: ../app/forms/admin/tags/index_form.php:5
+#: ../app/forms/admin/users/index_form.php:5
+msgid "Search"
+msgstr "Hledat"
+
+#: ../app/forms/admin/articles/index_form.php:9
+msgid "Search articles"
+msgstr "Vyhledat články"
+
+#: ../app/forms/admin/attachments/attachments_form.php:6
+msgid "User Manual"
+msgstr "Uživatelský manuál"
+
+#: ../app/forms/admin/attachments/create_new_form.php:6
+msgid "Soubor"
+msgstr "Soubor"
+
+#: ../app/forms/admin/brands/brands_form.php:5
+#: ../app/forms/admin/card_sections/card_sections_form.php:8
+#: ../app/forms/admin/products/products_form.php:6
+msgid "Název"
+msgstr "Název"
+
+#: ../app/forms/admin/brands/brands_form.php:8
+#: ../app/forms/admin/cards/cards_form.php:23
+#: ../app/forms/admin/categories/categories_form.php:21
+#: ../app/forms/admin/collections/collections_form.php:8
+#: ../app/forms/admin/pages/pages_form.php:10
+msgid "Teaser"
+msgstr "Krátký popis"
+
+#: ../app/forms/admin/brands/brands_form.php:10
+#: ../app/forms/admin/cards/cards_form.php:25
+#: ../app/forms/admin/categories/categories_form.php:23
+#: ../app/forms/admin/stores/stores_form.php:10
+msgid "Brief description"
+msgstr "Stručný popis"
+
+#: ../app/forms/admin/brands/brands_form.php:13
+msgid "Info"
+msgstr "Informace"
+
+#: ../app/forms/admin/brands/brands_form.php:17
+msgid "Url"
+msgstr "Url"
+
+#: ../app/forms/admin/brands/brands_form.php:19
+msgid "Pages of the manufacturer"
+msgstr "Stránky výrobce"
+
+#: ../app/forms/admin/brands/brands_form.php:22
+msgid "Logo"
+msgstr "Logo"
+
+#: ../app/forms/admin/cards/add_technical_specification_form.php:6
+msgid "Specification name"
+msgstr "Název specifikace"
+
+#: ../app/forms/admin/cards/add_technical_specification_form.php:10
+#: ../app/forms/admin/technical_specifications/technical_specifications_form.php:9
+msgid "Value"
+msgstr "Hodnota"
+
+#: ../app/forms/admin/cards/add_technical_specification_form.php:14
+msgid "Add new specification"
+msgstr "Přidat novou specifikaci"
+
+#: ../app/forms/admin/cards/add_to_category_form.php:9
+msgid "Add to a category"
+msgstr "Přidat do kategorie"
+
+#: ../app/forms/admin/cards/add_to_category_form.php:11
+msgid "Category"
+msgstr "Kategorie"
+
+#: ../app/forms/admin/cards/add_to_category_form.php:12
+msgid ""
+"Type a slash if you want to search the tree of categories from the root."
+msgstr "Napište lomítko, pokud chcete prohledat strom kategorií od kořene."
+
+#: ../app/forms/admin/cards/add_to_category_form.php:20
+msgid "You can not insert products into this category"
+msgstr "Do této kategorie nelze umisťovat produkty"
+
+#: ../app/forms/admin/cards/cards_form.php:17
+msgid "Catalog number"
+msgstr "Katalogové číslo"
+
+#: ../app/forms/admin/cards/cards_form.php:30
+msgid "Information"
+msgstr "Informace"
+
+#: ../app/forms/admin/cards/cards_form.php:32
+msgid "Detailed description"
+msgstr "Detailní popis"
+
+#: ../app/forms/admin/cards/cards_form.php:37
+msgid "Brand"
+msgstr "Značka"
+
+#: ../app/forms/admin/cards/cards_form.php:41
+msgid "Collection"
+msgstr "Kolekce"
+
+#: ../app/forms/admin/cards/create_new_form.php:16
+#: ../app/forms/admin/cards/edit_form.php:16
+msgid "Zadané katalogové číslo je již použité"
+msgstr "Zadané katalogové číslo je již použité"
+
+#: ../app/forms/admin/card_sections/card_sections_form.php:5
+msgid "Typ obsahu"
+msgstr "Typ obsahu"
+
+#: ../app/forms/admin/card_sections/card_sections_form.php:12
+msgid "Text"
+msgstr "Text"
+
+#: ../app/forms/admin/categories/categories_form.php:15
+msgid "Is this a filter?"
+msgstr "Je to filtr?"
+
+#: ../app/forms/admin/categories/categories_form.php:16
+msgid "e.g. material or color"
+msgstr "např. materiál nebo barva"
+
+#: ../app/forms/admin/categories/categories_form.php:27
+#: ../app/forms/admin/collections/collections_form.php:13
+#: ../app/forms/admin/images/images_form.php:15
+#: ../app/forms/admin/stores/stores_form.php:41
+msgid "Description"
+msgstr "Popis"
+
+#: ../app/forms/admin/categories/categories_form.php:33
+#: ../app/forms/admin/collections/collections_form.php:17
+#: ../app/forms/admin/images/images_form.php:5
+#: ../app/forms/admin/stores/stores_form.php:15
+msgid "Image"
+msgstr "Obrázek"
+
+#: ../app/forms/admin/categories/categories_form.php:38
+msgid "Is visible?"
+msgstr "Je viditelné?"
+
+#: ../app/forms/admin/categories/create_alias_form.php:6
+msgid "Umístit do kategorie"
+msgstr "Umístit do kategorie"
+
+#: ../app/forms/admin/categories/create_alias_form.php:7
+#: ../app/forms/admin/categories/move_to_category_form.php:6
+msgid "Napište lomítko, pokud chcete prohledat strom kategorií od kořene."
+msgstr "Napište lomítko, pokud chcete prohledat strom kategorií od kořene."
+
+#: ../app/forms/admin/categories/move_to_category_form.php:5
+msgid "Nadřazená kategorie"
+msgstr "Nadřazená kategorie"
+
+#: ../app/forms/admin/category_cards/create_new_form.php:6
+#: ../app/forms/admin/related_cards/create_new_form.php:5
+msgid "Product"
+msgstr "Produkt"
+
+#: ../app/forms/admin/category_cards/create_new_form.php:9
+#: ../app/forms/admin/related_cards/create_new_form.php:8
+msgid "Add product"
+msgstr "Přidat produkt"
+
+#: ../app/forms/admin/category_cards/edit_form.php:7
+msgid "The ranking starts with 1"
+msgstr "Pořadí začíná 1"
+
+#: ../app/forms/admin/category_recommended_cards/create_new_form.php:5
+msgid "Produkt"
+msgstr "Produkt"
+
+#: ../app/forms/admin/collection_cards/create_new_form.php:12
+msgid "Tento produkt už je součástí této kolekce"
+msgstr "Tento produkt už je součástí této kolekce"
+
+#: ../app/forms/admin/collection_cards/create_new_form.php:14
+#, php-format
+msgid "Tento produkt už je součástí jiné kolekce [%s]"
+msgstr "Tento produkt už je součástí jiné kolekce [%s]"
+
+#: ../app/forms/admin/pages/create_new_form.php:8
+#: ../app/forms/admin/pages/edit_form.php:13
+msgid "The same code is used on a different page"
+msgstr "Stejný kód je použit u jiné stránky"
+
+#: ../app/forms/admin/pages/pages_form.php:19
+msgid "Parent page"
+msgstr "Rodičovská stránka"
+
+#: ../app/forms/admin/pages/pages_form.php:31
+msgid "Pro aktuální stránku nelze použít stejnou stránku jako nadřízenou."
+msgstr "Pro aktuální stránku nelze použít stejnou stránku jako nadřízenou."
+
+#: ../app/forms/admin/products/create_new_form.php:9
+msgid "Toto katalogové číslo je již použité"
+msgstr "Toto katalogové číslo je již použité"
+
+#: ../app/forms/admin/products/products_form.php:9
+msgid "Katalogové číslo"
+msgstr "Katalogové číslo"
+
+#: ../app/forms/admin/products/products_form.php:12
+msgid "Krátký popis"
+msgstr "Krátký popis"
+
+#: ../app/forms/admin/stores/stores_form.php:26
+msgid "Phone"
+msgstr "Telefon"
+
+#: ../app/forms/admin/stores/stores_form.php:31
+msgid "Address"
+msgstr "Adresa"
+
+#: ../app/forms/admin/stores/stores_form.php:36
+msgid "Opening hours"
+msgstr "Otevírací hodiny"
+
+#: ../app/forms/admin/tags/index_form.php:9
+msgid "Search tags"
+msgstr "Vyhledat štítky"
+
+#: ../app/forms/admin/technical_specification_keys/technical_specification_keys_form.php:5
+#: ../app/forms/admin/technical_specifications/technical_specifications_form.php:5
+msgid "Key"
+msgstr "Klíč"
+
+#: ../app/forms/admin/technical_specification_keys/technical_specification_keys_form.php:10
+msgid "Lokalizovaný název"
+msgstr "Lokalizovaný název"
+
+#: ../app/forms/admin/technical_specifications/technical_specifications_form.php:14
+msgid "Localized value"
+msgstr "Lokalizovaná hodnota"
+
+#: ../app/forms/admin/users/edit_password_form.php:5
+msgid "New password"
+msgstr "Nové heslo"
+
+#: ../app/forms/admin/users/edit_password_form.php:11
+msgid "Set password"
+msgstr "Nastavit heslo"
+
+#: ../app/forms/admin/users/index_form.php:9
+msgid "Search users"
+msgstr "Hledat uživatele"
+
+#~ msgid "Best regards"
+#~ msgstr "S pozdravem"
+
+#~ msgid "%1 Support Team"
+#~ msgstr "Tým podpory %1"
+
+#~ msgid "web"
+#~ msgstr "web"
+
+#~ msgid "email"
+#~ msgstr "e-mail"
+
+#~ msgid ""
+#~ "Best regards\n"
+#~ "\n"
+#~ "%1 Support Team\n"
+#~ "web: %2\n"
+#~ "email: %3"
+#~ msgstr ""
+#~ "S pozdravem\n"
+#~ "\n"
+#~ "%1 Support Team\n"
+#~ "web: %2\n"
+#~ "e-mail: %3"
+
+#~ msgid "Error 403: Forbidden"
+#~ msgstr "Chyba 403: Zakázáno"
+
+#~ msgid "You don`t have a permission to access <em>%1</em> on this server."
+#~ msgstr "Nemáte oprávnění k přístupu <em>%1</em> na tomto serveru."
+
+#~ msgid "Go to the homepage"
+#~ msgstr "Jděte na homepage"
+
+#~ msgid "Currently you are not logged as an admin user."
+#~ msgstr "Momentálně nejste přihlášen jako administrátor"
+
+#~ msgid "or"
+#~ msgstr "nebo"
+
+#~ msgid "Sign in as an admin user"
+#~ msgstr "Přihlaste se jako administrátor"
+
+#~ msgid "Sign in"
+#~ msgstr "Přihlásit se"
+
+#~ msgid "Error 404: Page not found"
+#~ msgstr "Chyba 404: Stránka nebyla nalezena."
+
+#~ msgid ""
+#~ "We are deeply sorry, but the page on the URI <em>%1</em> wasn't found."
+#~ msgstr ""
+#~ "Je nám velmi líto, ale stránka s touto adresou URI <em>%1</em> nebyla "
+#~ "nalezena."
+
+#~ msgid "Please, write us to %1 if you think this is our mistake."
+#~ msgstr "Napište nám na adresu %1, pokud si myslíte, že je to naše chyba."
+
+#~ msgid "Posted by <em>%1</em> on <time datetime=\"%2\">%3</time>"
+#~ msgstr "Zaslal <em>%1</em> dne <time datetime=\"%2\">%3</time>"
+
+#~ msgid "older article"
+#~ msgstr "starší článek"
+
+#~ msgid "newer article"
+#~ msgstr "novější článek"
+
+#~ msgid "At the moment there are no news."
+#~ msgstr "V této chvíli nejsou žádné novinky"
+
+#~ msgid "Brand:"
+#~ msgstr "Značka:"
+
+#~ msgid "Are you interested in this product?"
+#~ msgstr "Zajímá vás tento produkt?"
+
+#~ msgid "Products in the collection %1"
+#~ msgstr "Produkty v kolekci %1"
+
+#~ msgid "Greetings"
+#~ msgstr "Dobrý den"
+
+#~ msgid ""
+#~ "I would like to know more about products and services you offered on the "
+#~ "web site %1."
+#~ msgstr ""
+#~ "Rád bych se dozvěděl více o produktech a službách, které nabízíte na "
+#~ "webových stránkách %1."
+
+#~ msgid "I would like to know more about the product"
+#~ msgstr "Rád bych se dozvěděl více o produktu"
+
+#~ msgid "Please contact me."
+#~ msgstr "Prosím kontaktujte mě."
+
+#~ msgid "The message has been sent. Thank you!"
+#~ msgstr "Zpráva byla odeslána. Děkujeme!"
+
+#~ msgid "Have you forgotten password?"
+#~ msgstr "Zapomněl jste heslo?"
+
+#~ msgid "You are signed in as <em>%1</em>."
+#~ msgstr "Jste přihlášen jako <em>%1</em>."
+
+#~ msgid "Click on the button to sign out."
+#~ msgstr "Pro odhlášení klikněte na tlačítko"
+
+#~ msgid "Signing up for newsletter"
+#~ msgstr "Přihlásit se k newsletteru"
+
+#~ msgid "Logged user:"
+#~ msgstr "Přihlášený uživatel:"
+
+#~ msgid "Hello %1!"
+#~ msgstr "Dobrý den %1!"
+
+#~ msgid ""
+#~ "Have you forgotten your password? To reset your password, click on the "
+#~ "following link"
+#~ msgstr ""
+#~ "Zapomněl(a) jste své heslo? Pro reset hesla klikněte na následující odkaz"
+
+#~ msgid "recovery link"
+#~ msgstr "odkaz pro obnovu"
+
+#~ msgid "Please note that this link is valid for 2 hours only."
+#~ msgstr "Vezměte prosím na vědomí, že tento odkaz je platný pouze 2 hodiny."
+
+#~ msgid ""
+#~ "Hello %1!\n"
+#~ "\n"
+#~ "Have you forgotten your password? To reset your password, click on the "
+#~ "following link\n"
+#~ "\n"
+#~ "%2\n"
+#~ "\n"
+#~ "Please note that this link is valid for 2 hours only."
+#~ msgstr ""
+#~ "Dobrý den %1!\n"
+#~ "\n"
+#~ "Zapomněl(a) jste své heslo? Pro reset hesla klikněte na následující "
+#~ "odkaz\n"
+#~ "\n"
+#~ "%2\n"
+#~ "\n"
+#~ "Vezměte prosím na vědomí, že tento odkaz je platný pouze 2 hodiny."
+
+#~ msgid "Your password was just updated in recovery mode."
+#~ msgstr "Vaše heslo bylo právě změněno v režimu obnovení zapomenutého hesla."
+
+#~ msgid "The update has been executed upon a request from IP address %1"
+#~ msgstr "Změna byla realizována na základě požadavku z IP adresy %1"
+
+#~ msgid ""
+#~ "Hello %1!\n"
+#~ "\n"
+#~ "Your password was just updated in recovery mode.\n"
+#~ "\n"
+#~ "The update has been executed upon a request from IP address %2"
+#~ msgstr ""
+#~ "Dobrý den %1!\n"
+#~ "\n"
+#~ "Vaše heslo bylo právě změněno v režimu obnovení zapomenutého hesla.\n"
+#~ "\n"
+#~ "Změna byla realizována na základě požadavku z IP adresy %2"
+
+#~ msgid ""
+#~ "Thanks for signing up for %1!\n"
+#~ "\n"
+#~ "Here is your data summary\n"
+#~ "\n"
+#~ "login: %2\n"
+#~ "email: %3\n"
+#~ "name: %4\n"
+#~ msgstr ""
+#~ "Děkujeme za registraci na %1!\n"
+#~ "\n"
+#~ "Zde je rekapitulace vašich údajů\n"
+#~ "\n"
+#~ "login: %2\n"
+#~ "e-mail: %3\n"
+#~ "jméno: %4\n"
+
+#~ msgid ""
+#~ "Hello,\n"
+#~ "\n"
+#~ "thank you for your interest in our products. We will contact you as soon "
+#~ "as we can."
+#~ msgstr ""
+#~ "Dobrý den,\n"
+#~ "\n"
+#~ "děkujeme, že se zajímáte o naše produkty. Co nejdříve Vás budeme "
+#~ "kontaktovat."
+
+#~ msgid "Here is the message you sent to us:"
+#~ msgstr "Zde je zpráva, kterou jste nám zaslal:"
+
+#~ msgid "Thank you and have a nice day!"
+#~ msgstr "Děkujeme a přejeme hezký den!"
+
+#~ msgid "The message has been sent to us. We will reply as soon as we can."
+#~ msgstr "Zpráva nám byla odeslána. Odpovíme vám jak nejrychleji umíme."
+
+#~ msgid ""
+#~ "If you have any question, contact us through the following form. We will "
+#~ "reply to you as soon as we can. Below the form you'll find other contact "
+#~ "information."
+#~ msgstr ""
+#~ "Pokud máte nějaký dotaz, napište nám prostřednictvím tohoto formuláře. "
+#~ "Odpovíme, jak nejdříve to bude možné. Pod formulářem najdete naše další "
+#~ "kontaktní údaje."
+
+#~ msgid "%1 Team"
+#~ msgstr "%1 Tým"
+
+#~ msgid "From dusk till dawn"
+#~ msgstr "Od soumraku do úsvitu"
+
+#~ msgid "Welcome at ATK14 Catalog!"
+#~ msgstr "Vítejte v ATK14 Katalogu!"
+
+#~ msgid ""
+#~ "<em>ATK14 Catalog</em> is an skeleton suitable for applications of kind "
+#~ "like <em>Products introduction</em>, <em>E-shop</em>, etc."
+#~ msgstr ""
+#~ "<em>ATK14 Katalog</em> je skelet vhodný pro aplikace typu <em>produktový "
+#~ "katalog</em>, <em>e-shop</em> atd."
+
+#~ msgid ""
+#~ "ATK14 Catalog is built on top of <em>ATK14 Skelet</em> &mdash; another "
+#~ "great skeleton."
+#~ msgstr ""
+#~ "ATK14 Katalog je postaven na <em>ATK14 Skeletu</em> &mdash; dalším "
+#~ "skvělém skeletu."
+
+#~ msgid "The Catalog contains mainly"
+#~ msgstr "Katalog obsahuje zejména"
+
+#~ msgid "List of categories"
+#~ msgstr "Seznam kategorií"
+
+#~ msgid "List of brands"
+#~ msgstr "Seznam značek"
+
+#~ msgid "List of collections"
+#~ msgstr "Seznam kolekcí"
+
+#~ msgid "Pages with a hierarchical structure"
+#~ msgstr "Stránky s hierarchickou strukturou"
+
+#~ msgid "Contact page with fast contact form"
+#~ msgstr "Kontaktní stránka s formulářem pro rychlý kontakt"
+
+#~ msgid "Articles section"
+#~ msgstr "Sekce s články"
+
+#~ msgid "User registration"
+#~ msgstr "Registrace uživatele"
+
+#~ msgid "with strong blowfish passwords hashing"
+#~ msgstr "se silným hashováním hesel pomocí Blowfish"
+
+#~ msgid "Basic administration"
+#~ msgstr "Základní administrace"
+
+#~ msgid "RESTful API"
+#~ msgstr "RESTful API"
+
+#~ msgid "Sitemap"
+#~ msgstr "Mapa stránek"
+
+#~ msgid "Localization"
+#~ msgstr "Lokalizace"
+
+#~ msgid "English"
+#~ msgstr "Anglicky"
+
+#~ msgid "Czech"
+#~ msgstr "Česky"
+
+#~ msgid "Installation"
+#~ msgstr "Instalace"
+
+#~ msgid ""
+#~ "Are you planning to kick up a new project from the Atk14Catalog? Great! "
+#~ "Just run the following commands."
+#~ msgstr ""
+#~ "Chystáte se pustit do nového projektu na Atk14SCatalogu? Skvělé! Stačí "
+#~ "spustit následující příkazy."
+
+#~ msgid ""
+#~ "You can find more information in <a href=\"https://github.com/atk14/"
+#~ "Atk14Catalog/blob/master/README.md#installation\">the installation "
+#~ "instructions.</a>"
+#~ msgstr ""
+#~ "Více informací naleznete v <a href=\"https://github.com/atk14/"
+#~ "Atk14Catalog/blob/master/README.md#installation\">pokynech k instalaci.</"
+#~ "a>"
+
+#~ msgid ""
+#~ "If you want to help us to improve the Catalog, <a href=\"https://github."
+#~ "com/atk14/Atk14Catalog\">fork it on GitHub.</a>"
+#~ msgstr ""
+#~ "Pokud chcete pomoci s vylepšováním ATK14 katalogu, <a href=\"https://"
+#~ "github.com/atk14/Atk14Catalog\">forkněte si ho na GitHubu.</a>"
+
+#~ msgid "Further Reading & Resources"
+#~ msgstr "Další čtení a zdroje"
+
+#~ msgid "ATK14 Project"
+#~ msgstr "ATK14 Projekt"
+
+#~ msgid "ATK14 Book"
+#~ msgstr "Kniha ATK14"
+
+#~ msgid "API Reference"
+#~ msgstr "API reference"
+
+#~ msgid "ATK14 on GitHub"
+#~ msgstr "ATK14 na GitHubu"
+
+#~ msgid "ATK14 Catalog on GitHub"
+#~ msgstr "ATK14 Katalog na GitHubu"
+
+#~ msgid "The ATK14 Skelet at age 5"
+#~ msgstr "ATK14 Skelet ve věku 5 let"
+
+#~ msgid "fig.1 <em>The Creature is pleading for forking on GitHub</em>"
+#~ msgstr "obr.1 <em>Stvoření prosí o fork na GitHubu</em>"
+
+#~ msgid "The address has expired or already been used."
+#~ msgstr "Tato adresa už není platné nebo již byla použita."
+
+#~ msgid "The URL is not valid."
+#~ msgstr "Toto URL není platné"
+
+#~ msgid "In the form bellow set the new password for user <em>%1</em>"
+#~ msgstr "Do formuláře níže zadejte nové heslo pro uživatele <em>%1</em>"
+
+#~ msgid "The password recovery link has been sent to your email address."
+#~ msgstr "Odkaz pro obnovení hesla byl odeslán na vaši e-mailovou adresu."
+
+#~ msgid ""
+#~ "If you don't receive instructions within a few minutes, check your "
+#~ "email's spam and junk filters."
+#~ msgstr ""
+#~ "Pokud neobdržíte instrukce do několika minut, zkontrolujte spamovou "
+#~ "složku a spamová filtry."
+
+#~ msgid "The following difficulties have occurred during the form processing:"
+#~ msgstr "Během zpracování formuláře došlo k následujícím chybám:"
+
+#~ msgid ""
+#~ "Some of the items were filled incorrectly. Please, check the form and "
+#~ "correct the errors."
+#~ msgstr ""
+#~ "Některé položky nebyly vyplněny správně. Zkontrolujte formulář a opravte "
+#~ "chyby."
+
+#~ msgid "Examples:"
+#~ msgstr "Příklady"
+
+#~ msgid "Show menu"
+#~ msgstr "Ukázat nabídku"
+
+#~ msgid "Change language"
+#~ msgstr "Změnit jazyk"
+
+#~ msgid ""
+#~ "This site runs on <a href=\"http://www.atk14.net/\">ATK14 Framework</a>, "
+#~ "for now and ever after"
+#~ msgstr ""
+#~ "Tato aplikace běží na <a href=\"http://www.atk14.net/\">frameworku ATK14</"
+#~ "a> až na věky"
+
+#~ msgid "Go to home page"
+#~ msgstr "Přejděte na úvodní stránku"
+
+#~ msgid "administrator"
+#~ msgstr "administrátor"
+
+#~ msgid "Profile"
+#~ msgstr "Profil"
+
+#~ msgid "Sign out"
+#~ msgstr "Odhlásit se"
+
+#~ msgid "Register"
+#~ msgstr "Registrovat"
+
+#~ msgid "Here you can find the list of all commands in <em>%1</em>."
+#~ msgstr "Zde neleznete seznam příkazů v <em>%1</em>."
+
+#~ msgid "Homepage"
+#~ msgstr "Úvodní stránka"
+
+#~ msgid "The most important page in the whole universe"
+#~ msgstr "Vůbec nejdůležitější stránka v celém vesmíru"
+
+#~ msgid "Contact"
+#~ msgstr "Kontakt"
+
+#~ msgid "Contact data and quick contact form"
+#~ msgstr "Kontaktní údaje a formulář pro rychlý kontakt"
+
+#~ msgid "About"
+#~ msgstr "O nás"
+
+#~ msgid "What is this site all about"
+#~ msgstr "O čem jsou tyto stránky"
+
+#~ msgid "New user registration"
+#~ msgstr "Registrace nového uživatele"
+
+#~ msgid ""
+#~ "If you don't have yet an account on this site, this is absolutely must to "
+#~ "do procedure"
+#~ msgstr ""
+#~ "Pokud ješte nemáte účet na těchto stránkách, měli byste se rozhodně "
+#~ "zaregistrovat "
+
+#~ msgid "Sign in to our site"
+#~ msgstr "Přihlaste se na naše stránky"
+
+#~ msgid "API"
+#~ msgstr "API"
+
+#~ msgid "We offer an awesome restful API"
+#~ msgstr "Nabízíme skvělé restful API"
+
+#~ msgid "Recent articles"
+#~ msgstr "Nejnovější články"
+
+#~ msgid "Currently we have no store."
+#~ msgstr "V současné době nemáme žádnou prodejnu."
+
+#~ msgid "Username (login)"
+#~ msgstr "Uživatelské jméno (login)"
+
+#~ msgid "Your name"
+#~ msgstr "Vaše jméno"
+
+#~ msgid "Your email"
+#~ msgstr "Váš e-mail"
+
+#~ msgid "Are you admin?"
+#~ msgstr "Jste administrátor?"
+
+#~ msgid "Yes, you are"
+#~ msgstr "Ano, jste"
+
+#~ msgid "Change your account data"
+#~ msgstr "Změnit vaše údaje"
+
+#~ msgid "Change your password"
+#~ msgstr "Změna vašeho hesla"
+
+#~ msgid "Current password"
+#~ msgstr "Aktuální heslo"
+
+#~ msgid "Bad password"
+#~ msgstr "Špatné heslo"
+
+#~ msgid "There is no such user"
+#~ msgstr "Takový uživatel tady není"
+
+#~ msgid "Page not found"
+#~ msgstr "Stránka nebyla nalezena"
+
+#~ msgid "Forbidden"
+#~ msgstr "Zakázáno"
+
+#~ msgid "Welcome to %s"
+#~ msgstr "Vítejte na %s"
+
+#~ msgid "Reset Your Password"
+#~ msgstr "Obnova vašeho hesla"
+
+#~ msgid "Your password was updated"
+#~ msgstr "Vaše heslo bylo změněno"
+
+#~ msgid "Message sent from contact page"
+#~ msgstr "Zpráva zaslaná z kontaktní stránky"
+
+#~ msgid "Request for information"
+#~ msgstr "Žádost o informaci"
+
+#~ msgid "Commands in %s"
+#~ msgstr "Přikazy v %s"
+
+#~ msgid "submit using method %s"
+#~ msgstr "Odeslat metodou %s"
+
+#~ msgid "Nothing has been found on this address"
+#~ msgstr "Na této adrese nebylo nic nalezeno"
+
+#~ msgid "You don't have access to the requested resource"
+#~ msgstr "Nemáte přístup k požadovanému zdroji"
+
+#~ msgid "Sorry, An internal error happened"
+#~ msgstr "Omlouváme se, nastala vnitřní chyba"
+
+#~ msgid "Articles tagged with <em>%s</em>"
+#~ msgstr "Články se štítkem <em>%s</em>"
+
+#~ msgid "List of Brands"
+#~ msgstr "Seznam značek"
+
+#~ msgid "List of Categories"
+#~ msgstr "Seznam kategorií"
+
+#~ msgid ""
+#~ "Wrong login and password combination. <a href=\"%s\">Have you forgotten "
+#~ "your password?</a>"
+#~ msgstr ""
+#~ "Nesprávna kombinace loginu a hesla. <a href=\"%s\">Zapomněl jste své "
+#~ "heslo?</a>"
+
+#~ msgid "Wrong login and password combination"
+#~ msgstr "Nesprávna kombinace loginu a hesla"
+
+#~ msgid "You have been successfully logged in as <em>%s</em>"
+#~ msgstr "Byl jste úspěšně přihlášen jako <em>%s</em>"
+
+#~ msgid "You have been successfully logged out"
+#~ msgstr "Byl jste úspěšně odhlášen"
+
+#~ msgid "You've stayed logged in as <em>%s</em>"
+#~ msgstr "Zůstal jste přihlášený jako <em>%s</em>"
+
+#~ msgid "Welcome!"
+#~ msgstr "Vítejte"
+
+#~ msgid "There is not such user with the given login or email"
+#~ msgstr "Tady není uživatel s tímto loginem nebo e-mailem"
+
+#~ msgid ""
+#~ "To reset admins password use console like ATK14 ninja: $ ./scripts/"
+#~ "migrate -f 0002_reset_admins_password_migration.php"
+#~ msgstr ""
+#~ "Resetujte adminovo heslo v konzoli jako správný ATK14 ninja: $ ./scripts/"
+#~ "migrate -f 0002_reset_admins_password_migration.php"
+
+#~ msgid "Your password has been updated successfully"
+#~ msgstr "Vaše heslo bylo úspěšně změněno"
+
+#~ msgid "Password recovery"
+#~ msgstr "Obnovení hesla"
+
+#~ msgid "User profile"
+#~ msgstr "Profil uživatele"
+
+#~ msgid "To register as a new user, sign out first"
+#~ msgstr "Abyste se mohl zaregistrovat, napřed se odhlaste"
+
+#~ msgid ""
+#~ "You have been successfully registered and now you are logged in as <em>"
+#~ "%s</em>"
+#~ msgstr ""
+#~ "Byl jste úspěšně zaregistrován a teď jste přihlášen jako <em>%s</em>"
+
+#~ msgid "Your account data has been updated"
+#~ msgstr "Údaje vašeho účtu byly změněny"
+
+#~ msgid "This is not your current password"
+#~ msgstr "Toto neni vaše aktuální heslo"
+
+#~ msgid "brand"
+#~ msgstr "značka"
+
+#~ msgid "There is no such product"
+#~ msgstr "Tento produkt neexistuje"
+
+#~ msgid "vyberte typ obsahu"
+#~ msgstr "vyberte typ obsahu"
+
+#~ msgid "This doesn't look like a catalog number"
+#~ msgstr "Toto nevypadá jako katalogové číslo"
+
+#~ msgid "There is no such category"
+#~ msgstr "Taková kategorie neexistuje"
+
+#~ msgid "It's a filter. This category cannot be selected."
+#~ msgstr "Toto je filtr. Tato kategorie nemůže být vybrána."
+
+#~ msgid "collection"
+#~ msgstr "kolekce"
+
+#~ msgid "There is no such collection"
+#~ msgstr "Taková kolekce neexistuje"
+
+#~ msgid ""
+#~ "Only letters, numbers, dots and dashes are allowed. Up to 50 characters."
+#~ msgstr ""
+#~ "Zadávejte pouze písmena, číslice, tečky a pomlčky. Max. délka je omezena "
+#~ "na 50 znaků."
+
+#~ msgid "This username has been already taken"
+#~ msgstr "Toto uživatelské jméno je již zabráno"
+
+#~ msgid "There is no such record"
+#~ msgstr "Takový záznam neexistuje"
+
+#~ msgid "page"
+#~ msgstr "stránka"
+
+#~ msgid "There is no such page"
+#~ msgstr "Taková stránka neexistuje"
+
+#~ msgid "Slug"
+#~ msgstr "Slug"
+
+#~ msgid "funny-green-mug"
+#~ msgstr "vtipny-zeleny-hrnecek"
+
+#~ msgid "Write something like black-cat-white-cat"
+#~ msgstr "Napište něco ve stylu cerna-kocka-bila-kocka"
+
+#~ msgid "Ensure that there are max %max% tags (now there are %count%)"
+#~ msgstr ""
+#~ "Ujistěte se, že je zde nejvýše %max% štítků (nyní je tady %count% štítků) "
+
+#~ msgid "There is no tag <em>%s</em>"
+#~ msgstr "Štítek <em>%s</em> neexistuje"
+
+#~ msgid "Tag <em>%s</em> is there more than once"
+#~ msgstr "Štítek <em>%s</em> je uveden vícekrát"
+
+#~ msgid "Search term"
+#~ msgstr "Hledat výraz"
+
+#~ msgid "Create"
+#~ msgstr "Vytvořit"
+
+#~ msgid "Show"
+#~ msgstr "Ukázat"
+
+#~ msgid "Update"
+#~ msgstr "Aktualizovat"
+
+#~ msgid "Save"
+#~ msgstr "Uložit"
+
+#~ msgid "Sign up for newsletter"
+#~ msgstr "Přihlásit se k odběru newsletteru"
+
+#~ msgid "Send message"
+#~ msgstr "Poslat zprávu"
+
+#~ msgid "Login"
+#~ msgstr "Přihlásit se"
+
+#~ msgid "Password"
+#~ msgstr "Heslo"
+
+#~ msgid "Login or email address"
+#~ msgstr "Login nebo e-mailová adresa"
+
+#~ msgid "Send me a recovery link"
+#~ msgstr "Pošli mi odkaz pro obnovu"
+
+#~ msgid "In order to register you need to obtain an invitation code"
+#~ msgstr "Pro registraci musíte znát kód platné pozvánky"
+
+#~ msgid "This is not a valid invitation code"
+#~ msgstr "Toto neni kód platné pozvánky"
+
+#~ msgid "This login has been already taken"
+#~ msgstr "Tento login je již zabrán"
+
+#~ msgid "The new password is the same as your current password"
+#~ msgstr "Nové heslo je stejné jako to současné"
+
+#~ msgid "We will not disclose this address"
+#~ msgstr "Tuto adresu nebudeme zvěřejňovat"
+
+#~ msgid "Password (repeat)"
+#~ msgstr "Heslo (opakování)"
+
+#~ msgid "Password doesn't match"
+#~ msgstr "Heslo se neshoduje"
+
+#~ msgid "items total"
+#~ msgstr "Položek celkem"
+
+#~ msgid "Prev"
+#~ msgstr "Předchozí"
+
+#~ msgid "Next"
+#~ msgstr "Následující"
+
+#~ msgid "Yes"
+#~ msgstr "Ano"
+
+#~ msgid "No"
+#~ msgstr "Ne"
+
+#~ msgid "Actions"
+#~ msgstr "Akce"
+
+#~ msgid "Create new subpage"
+#~ msgstr "Vytvořit novou podstránku"
+
+#~ msgid "Currently there are no attachments"
+#~ msgstr "Momentálně tady nejsou žádné přílohy"
+
+#~ msgid ""
+#~ "Please note that default administration access is admin/admin. Be a smart "
+#~ "guy and change admin's password on production promptly."
+#~ msgstr ""
+#~ "Mějte prosím na paměti, že administrátorský přístup je admin/admin. Buďtě "
+#~ "chytrý chlapík a v produkčním prostředí změnte okamžitě adminovo heslo."
+
+#~ msgid "News section"
+#~ msgstr "Sekce s novinkama"
+
+#~ msgid ""
+#~ "If you are brave enough to install the Catalog on your computer, check "
+#~ "out <a href=\"https://github.com/atk14/Atk14Catalog/blob/master/README."
+#~ "md#installation\">the installation instrunction.</a>"
+#~ msgstr ""
+#~ "Pokud máte dost odvahy nainstalovat si ATK14 katalog na svůj počítač, "
+#~ "podívejte se na <a href=\"https://github.com/atk14/Atk14Catalog/blob/"
+#~ "master/README.md#installation\">návod k instalaci.</a>"
+
+#~ msgid "News archive"
+#~ msgstr "Archív novinek"
+
+#~ msgid "Editing page '%s'"
+#~ msgstr "Editace stránky '%s'"
+
+#~ msgid "The pages has been deleted"
+#~ msgstr "Stránka byla smazána"
+
+#~ msgid "News"
+#~ msgstr "Novinky"
+
+#~ msgid ""
+#~ "Mention tag <em>%s</em> when this article should be displayed in the news "
+#~ "section"
+#~ msgstr ""
+#~ "Uveďte štítek <em>%s</em>, pokud se má tento článek objevit mezi novinkama"
+
+#~ msgid "An alternative key. Leave empty if you are not sure."
+#~ msgstr "Alternativní klíč. Pokud si nejste jistý, ponechte prázdné."
+
+#~ msgid "ATK14 Catalog is built on top of <em>ATK14 Skelet</em>"
+#~ msgstr "ATK14 Katalog je postaven na <em>ATK14 Skeletu</em>"
+
+#~ msgid "Značka"
+#~ msgstr "Brand"
+
+#~ msgid "About %s"
+#~ msgstr "O %s"
+
+#~ msgid "Headers"
+#~ msgstr "Hlavičky"
+
+#~ msgid "HTML body"
+#~ msgstr "HTML část zprávy"
+
+#~ msgid "Plain text body"
+#~ msgstr "Textová část"
+
+#~ msgid "No mail has been sent"
+#~ msgstr "Žádný e-mail nebyl odeslán"
+
+#~ msgid "This doesn't look like an URL"
+#~ msgstr "Toto nevypadá jako URL"
+
+#~ msgid "This field is required."
+#~ msgstr "Toto pole je povinné"
+
+#~ msgid "Enter a valid value."
+#~ msgstr "Vložte správnou hodnotu."
+
+#~ msgid ""
+#~ "Select a valid choice. %(value)s is not one of the available choices."
+#~ msgstr "Vyberte platnou hodnotu. %(value) není jedna z nabízených možností."
+
+#~ msgid "Enter a list of values."
+#~ msgstr "Zadejte seznam hodnot."
+
+#~ msgid "Please, choose the right options."
+#~ msgstr "Prosím, vyberte správné možnosti."
+
+#~ msgid "Enter a number."
+#~ msgstr "Zadejte číslo."
+
+#~ msgid "Ensure this value is less than or equal to %value%."
+#~ msgstr "Hodnota musí být rovna nebo  menší než %value%."
+
+#~ msgid "Ensure this value is greater than or equal to %value%."
+#~ msgstr "Hodnota musí být rovna nebo větší než %value%."
+
+#~ msgid "Enter a whole number."
+#~ msgstr "Zadejte celé číslo."
+
+#~ msgid "Enter a valid date, hours, minutes and seconds."
+#~ msgstr "Zadejte platné datum, hodiny, minuty a sekundy."
+
+#~ msgid "Enter a valid date."
+#~ msgstr "Zadejde platné datum."
+
+#~ msgid ""
+#~ "Select a valid choice. That choice is not one of the available choices."
+#~ msgstr ""
+#~ "Vyberte platnou hodnotu. Vybraná hodnota není ani jedna z nabízených "
+#~ "hodnot."
+
+#~ msgid "Please, choose the right option."
+#~ msgstr "Prosím, vyberte správnou možnost."
+
+#~ msgid "Ensure this value has at most %max% characters (it has %length%)."
+#~ msgstr "Hodnota musí být dlouhá nejvýše %max% znaků (teď má %length%)."
+
+#~ msgid "Ensure this value has at least %min% characters (it has %length%)."
+#~ msgstr "Hodnota musí mít alespoň %min% znaků (teď má %length%)."
+
+#~ msgid "Ensure this value has at most %max% characters."
+#~ msgstr "Tato hodnota "
+
+#~ msgid "Ensure this value has at least %min% characters."
+#~ msgstr "Hodnota musí mít alespoň %min% znaků."
+
+#~ msgid "Ensure this value has between %min% and %max% characters."
+#~ msgstr "Délka řetězce musí být mezi %min% a %max% znaky."
+
+#~ msgid "Ensure this file is image."
+#~ msgstr "Ověřte, že tento soubor je obrázek."
+
+#~ msgid "Ensure this image is %width_required% pixels wide (it is %width%)."
+#~ msgstr ""
+#~ "Ujistěte se, že je šířka obrázku %width_required% bodů (teď je šířoký "
+#~ "%width%)."
+
+#~ msgid "Ensure this image is %height_required% pixels high (it is %height%)."
+#~ msgstr ""
+#~ "Ujistěte se, že výška obrázku je %height_required% bodů (teď je vysoký "
+#~ "%height%)."
+
+#~ msgid "Ensure this image is at most %max% pixels wide (it is %width%)."
+#~ msgstr ""
+#~ "Ujistěte se, že šířka obrázku nepřekročí %max% bodů (teď je šíroký %width"
+#~ "%)."
+
+#~ msgid "Ensure this image is at most %max% pixels high (it is %height%)."
+#~ msgstr ""
+#~ "Ujistěte se, že výška obrázku nepřekročí %max% bodů (teď je vysoký %height"
+#~ "%)."
+
+#~ msgid "Ensure this image is at least %min% pixels wide (it is %width%)."
+#~ msgstr "Obrázek musí mít alespoň %min% bodů na šířku (nyní má %width%). "
+
+#~ msgid "Ensure this image is at least %min% pixels high (it is %height%)."
+#~ msgstr "Obrázek musí mít alespoň %min% bodů na výšku (nyní má %height%). "
+
+#~ msgid "Ensure this image is in a required format"
+#~ msgstr "Ujistěte se, že je obrázek v požadovaném formátu"
+
+#~ msgid "Enter a valid date, hours and minutes."
+#~ msgstr "Zadejte platné datum, hodiny a minuty."
+
+#~ msgid ""
+#~ "Ensure this file has at most %max_file_size% bytes (it has %file_size%)"
+#~ msgstr ""
+#~ "Ujistěte se, že velikost souboru nepřekročí %max_file_size% bytů (teď má "
+#~ "%file_size%)"
+
+#~ msgid "Unsupported file type: %mime_type%"
+#~ msgstr "Nepodporovaný typ souboru: %mime_type%"
+
+#~ msgid ""
+#~ "The uploaded file exceeds the max file size value that is set on the "
+#~ "server (%upload_max_filesize%)"
+#~ msgstr ""
+#~ "Nahraný soubor překračuje maximální velikost souboru, která je nastavena "
+#~ "na serveru (%upload_max_filesize%)"
+
+#~ msgid ""
+#~ "The uploaded file exceeds the max file size directive that was specified "
+#~ "in the HTML form (%MAX_FILE_SIZE%)"
+#~ msgstr ""
+#~ "Velikost nahraného souboru přesahuje maximální velikost, která je "
+#~ "nastavena v HTML formuláři (%MAX_FILE_SIZE%)"
+
+#~ msgid "The uploaded file was only partially uploaded"
+#~ msgstr "Nahraný soubor byl nahrán jen částečně"
+
+#~ msgid "Missing a temporary folder"
+#~ msgstr "Adresář pro dočasné soubory chybí"
+
+#~ msgid "Failed to write file to disk"
+#~ msgstr "Soubor se nepodařilo zapsat na disk"
+
+#~ msgid "File upload stopped by an extension installed on the server"
+#~ msgstr ""
+#~ "Nahrávání souboru bylo zastaveno rozšířením nainstalovaným na serveru"
+
+#~ msgid "An error occurred during file upload"
+#~ msgstr "Během nahrávání souboru došlo k chybě"
+
+#~ msgid "Enter a valid e-mail address."
+#~ msgstr "Zadejte platnou e-mailovou adresu."
+
+#~ msgid "Enter a valid IP address."
+#~ msgstr "Vložte platnou IP adresu."
+
+#~ msgid "The form contains errors, therefore it cannot be processed."
+#~ msgstr "Formulář obsahuje chyby, proto nemůže být zpracován."
+
+#~ msgid "Please, submit the form again"
+#~ msgstr "Prosím, odešlete formulář znovu."
+
+#~ msgid "Sort table by this column"
+#~ msgstr "Třídit tabulku podle tohoto sloupce"
+
+#~ msgid "%s items total"
+#~ msgstr "%s položek celkem"
+
+#~ msgid "prev"
+#~ msgstr "předchozí"
+
+#~ msgid "next"
+#~ msgstr "následující"
+
+#~ msgid "and"
+#~ msgstr "a"
+
+#~ msgid "atk14.date_format"
+#~ msgstr "j.n.Y"
+
+#~ msgid "atk14.parse_date_pattern"
+#~ msgstr "/^(?<day>[0-9]{1,2})\\.(?<month>[0-9]{1,2})\\.(?<year>[0-9]{4})$/"
+
+#~ msgid "atk14.datetime_format"
+#~ msgstr "j.n.Y H:i"
+
+#~ msgid "atk14.parse_datetime_pattern"
+#~ msgstr ""
+#~ "/^(?<day>[0-9]{1,2})\\.(?<month>[0-9]{1,2})\\.(?<year>[0-9]{4}) (?"
+#~ "<hours>[0-9]{2}):(?<minutes>[0-9]{2})$/"
+
+#~ msgid "atk14.datetime_with_seconds_format"
+#~ msgstr "j.n.Y H:i:s"
+
+#~ msgid "atk14.parse_datetime_with_seconds_pattern"
+#~ msgstr ""
+#~ "/^(?<day>[0-9]{1,2})\\.(?<month>[0-9]{1,2})\\.(?<year>[0-9]{4}) (?"
+#~ "<hours>[0-9]{2}):(?<minutes>[0-9]{2}):(?<seconds>[0-9]{2})$/"
+
+#~ msgid "Service Unavailable"
+#~ msgstr "Služba je nedostupná"
+
+#~ msgid "This site is in maintenance. Please come back later."
+#~ msgstr "Probíhá údržba této stránky. Přijďte prosím později."
+
+#~ msgid "Create new user"
+#~ msgstr "Vytvořit nového uživatele"
+
+#~ msgid ""
+#~ "<em>ATK14 Skelet</em> is a very basic application written on top of <a "
+#~ "href=\"http://atk14.net\">the ATK14 Framework</a>.\n"
+#~ "\t\t\tAs the Skelet is simple and minimal it may be usefull for "
+#~ "developers as a good start point for any other application."
+#~ msgstr ""
+#~ "<em>ATK14 Skelet</em> je základní aplikace napsaná ve <a href=\"http://"
+#~ "atk14.net\">frameworku ATK14</a>.\n"
+#~ "\t\t\tSkelet je jednoduchý a minimalistický, proto může být pro webového "
+#~ "vývojáře dobrým startovacím místem pro jakoukoli další aplikaci."
+
+#~ msgid "The Skelet contains mainly"
+#~ msgstr "Skelet obsahuje hlavně"
+
+#~ msgid "About page"
+#~ msgstr "Stránka O nás"
+
+#~ msgid ""
+#~ "If you are brave enough to install the Skelet on your computer, check out "
+#~ "<a href=\"https://github.com/atk14/Atk14Skelet/blob/master/README."
+#~ "md#installation\">the installation instrunction.</a>"
+#~ msgstr ""
+#~ "Pokud jste dost odvážný, nainstalujte si Skelet na svůj počítač. Mrkněte "
+#~ "na <a href=\"https://github.com/atk14/Atk14Skelet/blob/master/README."
+#~ "md#installation\">navod k instalaci.</a>"
+
+#~ msgid ""
+#~ "If you want to help us to improve the Skelet, <a href=\"https://github."
+#~ "com/atk14/Atk14Skelet\">fork it on GitHub.</a>"
+#~ msgstr ""
+#~ "Pokud chcete pomoct při zlepšování Skeletu, <a href=\"https://github.com/"
+#~ "atk14/Atk14Skelet\">forkněte si ho na GitHubu.</a>"
+
+#~ msgid "ATK14 Skelet on GitHub"
+#~ msgstr "ATK14 Skelet na GitHubu"
+
+#~ msgid "Add New"
+#~ msgstr "Přidat novinku"
+
+#~ msgid "The article has been deleted"
+#~ msgstr "Článek byl smazán"
+
+#~ msgid "Current Password"
+#~ msgstr "Aktuální heslo"
+
+#~ msgid "New Password"
+#~ msgstr "Nové heslo"
+
+#~ msgid "Search records"
+#~ msgstr "Hledat záznamy"
+
+#~ msgid "Disallowed file type (%mime_type%)"
+#~ msgstr "Nepovolený typ souboru (%mime_type%)"
+
+#~ msgid ""
+#~ "Hello %1!\n"
+#~ "\n"
+#~ "Have you forgotten you password? To reset your password, click on the "
+#~ "link below\n"
+#~ "\n"
+#~ "%2\n"
+#~ "\n"
+#~ "Please note that this link is valid for 2 hours only."
+#~ msgstr ""
+#~ "Dobrý den %1!\n"
+#~ "\n"
+#~ "Zapoměl jste přihlašovací heslo? Pro nastavení nového hesla klikněte na "
+#~ "odkaz\n"
+#~ "\n"
+#~ "%2\n"
+#~ "\n"
+#~ "Mějte prosím na paměti, ze tento odkaz je platný pouze 2 hodiny."
+
+#~ msgid "Image URL"
+#~ msgstr "URL obrázku"
+
+#~ msgid "The Creature Show"
+#~ msgstr "Přehlídka příšer"
+
+#~ msgid "Creating new creature"
+#~ msgstr "Vytvoření nové příšerky"
+
+#~ msgid "A new creature has been successfully created"
+#~ msgstr "Nová příšerka byla vytvořena"
+
+#~ msgid "Detail of the creature #%s"
+#~ msgstr "Podrobnosti o příšerce #%s"
+
+#~ msgid "Editing the creature #%s"
+#~ msgstr "Editovat příšerku #%s"
+
+#~ msgid "The creature has been changed successfully."
+#~ msgstr "Příšerka byla úspěšně změněna."
+
+#~ msgid "my beautiful application"
+#~ msgstr "moje nádherná aplikace"
+
+#~ msgid ""
+#~ "If you are brave enough to install the Skelet on your computer, check out "
+#~ "<a href=\"https://github.com/yarri/Atk14Skelet/blob/master/README."
+#~ "md#installation\">the installation instrunction.</a>"
+#~ msgstr ""
+#~ "Pokud si troufáte na instalaci Skeletu na váš počítač, přečtěte si <a "
+#~ "href=\"https://github.com/yarri/Atk14Skelet/blob/master/README."
+#~ "md#installation\">instalační instrukce.</a>"
+
+#~ msgid ""
+#~ "If you want to help us to improve the Skelet, <a href=\"https://github."
+#~ "com/yarri/Atk14Skelet\">fork it on GitHub.</a>"
+#~ msgstr ""
+#~ "Pokud nám chcete pomoct s vývojem Skeletu, <a href=\"https://github.com/"
+#~ "yarri/Atk14Skelet\">forkněte si ho na GitHubu.</a>"
+
+#~ msgid "E-mail address"
+#~ msgstr "E-mailová adresa"
+
+#~ msgid "Login or e-mail address"
+#~ msgstr "Login nebo e-mailová adresa"
+
+#~ msgid "Your e-mail"
+#~ msgstr "Váš e-mail"
+
+#~ msgid "There is not such user with the given login or e-mail"
+#~ msgstr "Tady není uživatel s takovým loginem nebo e-mailem."
+
+#~ msgid "Access denied"
+#~ msgstr "Přístup byl odmítnut"
+
+#~ msgid "Listing News"
+#~ msgstr "Sezam novinek"
+
+#~ msgid "Create news entry"
+#~ msgstr "Vytvořit nový záznam"
+
+#~ msgid "The news entry has been created successfully"
+#~ msgstr "Novinka byla úspěšně vytvořena"
+
+#~ msgid "The news entry has been updated successfully"
+#~ msgstr "Novinka byla úspěšně změněna"
+
+#~ msgid "The news entry has been deleted"
+#~ msgstr "Novinka byla smazána"
+
+#~ msgid "The form contains errors, therefor it cannot be processed."
+#~ msgstr "Formulář obsahuje chyby, proto nemůže být zpracován."
+
+#~ msgid "No record has been found"
+#~ msgstr "Nebyl nalezen žádný záznam"
+
+#~ msgid ""
+#~ "Are you sure to delete news item\n"
+#~ "%1?"
+#~ msgstr ""
+#~ "Jste si jistý smazáním novinky\n"
+#~ "%1?"
+
+#~ msgid "Delete news"
+#~ msgstr "Smazat novinku"
+
+#~ msgid "Search news items"
+#~ msgstr "Hladat v novinkách"
+
+#~ msgid "The list is empty"
+#~ msgstr "Seznam je prázdný"
+
+#~ msgid "No records found."
+#~ msgstr "Nebyl nalezen žádný záznam."
+
+#~ msgid "E-mail"
+#~ msgstr "E-mail"
+
+#~ msgid "The password recovery link has been sent to your e-mail address."
+#~ msgstr "Odkaz pro obnovu hesla byl odeslán na vaší e-mailovou adresu"
+
+#~ msgid "We are deeply sorry but you are not authorized to see this page!"
+#~ msgstr ""
+#~ "Je nám nesmírně líto, ale nejste autorizován k prohlížení této stránky!"
+
+#~ msgid ""
+#~ "Best regards\n"
+#~ "\n"
+#~ "%1 Support Team\n"
+#~ "web: %2\n"
+#~ "e-mail: %3"
+#~ msgstr ""
+#~ "S pozdravem\n"
+#~ "\n"
+#~ "%1 Support Team\n"
+#~ "web: %2\n"
+#~ "e-mail: %3"
+
+#~ msgid ""
+#~ "If you have any question, contact us through the following form. We will "
+#~ "reply to you as soon as we can."
+#~ msgstr ""
+#~ "Pokud máte nějakou otázku, kontaktujte nás prostřednictvím tohoto "
+#~ "formuláře. Odpovíme vám, jak nejdříve budeme moct."
+
+#~ msgid "Below the form you'll find other contact information."
+#~ msgstr "Pod tímto formulářem najdete další kontaktní informace"
+
+#~ msgid "Create a new creature"
+#~ msgstr "Vytvořit novou příšeru"
+
+#~ msgid "No creature was found."
+#~ msgstr "Nebyla nalezena žádná příšerka."
+
+#~ msgid "Id"
+#~ msgstr "Id"
+
+#~ msgid ""
+#~ "<em>The Creature Show</em> gives you a opportunity to inspect a "
+#~ "functional ATK14 code immediatelly after a new web-app installation."
+#~ msgstr ""
+#~ "<em>Přehlídka příšer</em> slouží k prozkoumání funkčního kódu právě "
+#~ "nainstalované ATK14 aplikace."
+
+#~ msgid ""
+#~ "For a beginner there is a lot of things to study. Inspect following files "
+#~ "and direcories."
+#~ msgstr ""
+#~ "Pro začátečníka je tady spousta věcí ke studiu. Prohlédněte si například "
+#~ "následující soubory a adresáře."
+
+#~ msgid "Update creature"
+#~ msgstr "Aktualizovat příšerku"
+
+#~ msgid "Are you sure to destroy the creature #%1?"
+#~ msgstr "Jste si jistý smazáním příšerky #%1?"
+
+#~ msgid "detail"
+#~ msgstr "podrobnosti"
+
+#~ msgid "edit"
+#~ msgstr "editovat"
+
+#~ msgid "destroy"
+#~ msgstr "smazat"
+
+#~ msgid "An image of the creature"
+#~ msgstr "Obrázek příšerky"
+
+#~ msgid "Get the creature as JSON"
+#~ msgstr "Příšerka ve formátu JSON"
+
+#~ msgid "Get the creature as XML"
+#~ msgstr "Příšerka ve formátu XML"
+
+#~ msgid "Create new creature"
+#~ msgstr "Vytvořit novou příšerku"
+
+#~ msgid "This is app/views/application/error404.tpl template"
+#~ msgstr "Toto je šablona app/views/application/error404.tpl"
+
+#~ msgid "required"
+#~ msgstr "povinné"
+
+#~ msgid "Example:"
+#~ msgstr "Příklad"
+
+#~ msgid "It's working!"
+#~ msgstr "Fachá to!"
+
+#~ msgid "Hi there, it's nice to see you!"
+#~ msgstr "Ahoj. Je pěkné, že jste tady!"
+
+#~ msgid "What you see is a freshly installed ATK14 application."
+#~ msgstr "To, co vidíte, je čerstvě nainstalovaná ATK14 aplikace."
+
+#~ msgid ""
+#~ "This HTTP request is handled by the <code>app/controllers/main_controller."
+#~ "php</code> and the <code>index()</code> action."
+#~ msgstr ""
+#~ "Tento HTTP požadavek je obsloužen kontrolerem <code>app/controllers/"
+#~ "main_controller.php</code> a jeho akcí <code>index()</code>."
+
+#~ msgid "This is <code>app/views/main/index.tpl</code> template."
+#~ msgstr "Toto je šablona <code>app/views/main/index.tpl</code>."
+
+#~ msgid "Where to go?"
+#~ msgstr "Kam zajít?"
+
+#~ msgid "visit the Creatures show"
+#~ msgstr "navštívit Přehlídku příšer"
+
+#~ msgid "check out 404 error page"
+#~ msgstr "prověřte chybovou stránku 404"
+
+#~ msgid ""
+#~ "switch the language: <a href=\"%1\">english</a> or <a href=\"%2\">czech</"
+#~ "a>"
+#~ msgstr ""
+#~ "Změnit jazyk: <a href=\"%1\">angličtina</a> nebo <a href=\"%2\">čeština</"
+#~ "a>"
+
+#~ msgid "gettext dictionaries are placed in <code>locale/</code> directory"
+#~ msgstr "gettextové slovníky jsou umístěny v adresáři <code>locale/</code>"
+
+#~ msgid "External links"
+#~ msgstr "Externí odkazy"
+
+#~ msgid "ATK14 project website"
+#~ msgstr "Stránky projektu ATK14"
+
+#~ msgid "The ATK14 Book"
+#~ msgstr "Kniha ATK14"
+
+#~ msgid "The API reference"
+#~ msgstr "API reference"
+
+#~ msgid "ATK14 project page on Github"
+#~ msgstr "stránky projektu ATK14 na Githubu"
+
+#~ msgid ""
+#~ "This HTTP request is handled by the MainController and the index() action."
+#~ msgstr ""
+#~ "Tento HTTP požadavek je obsloužen kontrolerem MainController a jeho akcí "
+#~ "index()."
+
+#~ msgid "This is app/views/main/index.tpl template."
+#~ msgstr "Toto je šablona app/views/main/index.tpl."
+
+#~ msgid "gettext dictionaries are placed in locale/ directory"
+#~ msgstr "gettextove slovníky jsou umístěny v adresáři locale/"
+
+#~ msgid "Listing creatures"
+#~ msgstr "Seznam příšer"
+
+#~ msgid "ATK14 Powered Website"
+#~ msgstr "Webové místo pohání ATK14"
+
+#~ msgid "Nothing was found."
+#~ msgstr "Nic nebylo nalezeno."
+
+#~ msgid "New Creature Form"
+#~ msgstr "Formulář pro vytvoření nové příšerky"
+
+#~ msgid "Nice to see you."
+#~ msgstr "Rád vás vidím."
+
+#~ msgid "Where to go"
+#~ msgstr "Kam zajít"
