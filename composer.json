@@ -3,12 +3,12 @@
         "atk14/dbmole-panel": "^1.0",
         "atk14/mail-panel": "^1.0",
         "atk14/templates-panel": "^1.0",
-        "atk14/pupiq-client": "dev-master",
+        "atk14/pupiq-client": "1.* >=1.4.1",
         "atk14/url-field": "dev-master",
         "atk14/phone-field": "dev-master",
-        "atk14/drink-markdown": "dev-master",
+        "atk14/drink-markdown": "0.* >=0.2",
         "atk14/menu14": "^1.1.1",
         "yarri/my-blowfish": ">=1.1 <2.0",
-        "yarri/full-text-search-query-like": "dev-master"
+        "yarri/full-text-search-query-like": "0.* >=0.1"
     }
 }
