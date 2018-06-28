@@ -167,6 +167,7 @@
 					$sortable.sortable( {
 						cancel: "strong",
 						handle: ".handle",
+						opacity: 0.9,
 						update: function( jqEv, ui ) {
 							$item = $( ui.item );
 							url = $item.closest( ".list-sortable" ).data( "sortable-url" );
