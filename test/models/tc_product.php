@@ -1,7 +1,6 @@
 <?php
 /**
  *
- * @fixture cards
  * @fixture products
  */
 class TcProduct extends TcBase {
