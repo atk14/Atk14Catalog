@@ -226,6 +226,10 @@ class AdminController extends ApplicationBaseController{
 			return;
 		}
 
+		if(method_exists($object,"isEditable") && !$object->isEditable()){
+			return $this->_execute_action("error404");
+		}
+
 		$this->tpl_data["object"] = $object;
 		$this->tpl_data["has_image_gallery"] = $options["has_image_gallery"];
 		$this->tpl_data["has_attachments"] = $options["has_attachments"];
