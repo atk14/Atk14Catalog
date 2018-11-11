@@ -21,7 +21,7 @@ The Catalog contains mainly
 * RESTful API
 * Sitemap (HTML, XML)
 * Localization (English, Czech)
-* Front-end tooling including [Bower](http://bower.io/), [Gulp](https://github.com/gulpjs/gulp) and [BrowserSync](https://github.com/BrowserSync/browser-sync)
+* Front-end tooling including [Gulp](https://github.com/gulpjs/gulp) and [BrowserSync](https://github.com/BrowserSync/browser-sync)
 
 Installation
 ------------
@@ -52,9 +52,7 @@ With [Node.js](http://nodejs.org) and npm installed, run following commands to i
 all the tools you will need to serve and build your front-end assets.
 
     npm install -g gulp
-    npm install -g bower
     npm install
-    bower install
 
 Run initial Gulp build process for the main presentation and the admininstration.
 
