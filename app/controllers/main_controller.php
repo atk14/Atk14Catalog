@@ -12,8 +12,7 @@ class MainController extends ApplicationController{
 	}
 
 	function contact(){
-		$this->page_title = _("Contact");
-		$this->breadcrumbs[] = _("Contact");
+		$this->page_title = $this->breadcrumbs[] = _("Contact");
 
 		if($this->logged_user){
 			$this->form->set_initial(array(
@@ -36,7 +35,7 @@ class MainController extends ApplicationController{
 	}
 
 	function contact_message_sent(){
-		$this->page_title = _("Contact");
+		$this->page_title = $this->breadcrumbs[] = _("Contact");
 
 		if(!$this->session->g("contact_message_sent")){
 			return $this->_redirect_to("contact");

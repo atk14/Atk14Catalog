@@ -29,6 +29,9 @@ define("PUPIQ_API_KEY","101.DemoApiKeyForAccountWithLimitedFunctions");
 define("CATALOG_ID_REGEXP",'/^[0-9A-Z_.\/-]{1,}$/i'); // see app/fields/catalog_id_field.php
 define("CATALOG_ID_AUTO_UPPERIZE",true);
 
+define("USING_BOOTSTRAP4",true);
+define("USING_FONTAWESOME",true);
+
 // If you don't want to let users to register freely (e.g. your app is an closed alpha),
 // set the constant INVITATION_CODE_FOR_USER_REGISTRATION.
 // See app/forms/users/create_new_form.php for more info
