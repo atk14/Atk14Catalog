@@ -64,7 +64,7 @@
 			handleGalleryImagesUpload: function() {
 				var $link = $( "#imageToGallery" );
 
-				if ( $link.size() !== 1 ) {
+				if ( $link.length !== 1 ) {
 					return;
 				}
 
