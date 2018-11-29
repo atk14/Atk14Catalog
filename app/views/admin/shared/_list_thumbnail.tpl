@@ -7,7 +7,7 @@
  * {render partial="shared/list_thumbnail" image=$card->getImage() align="left"}
  *}
 {if $image}
-	<a href="{$image|img_url:800x800}" title="{t}Show larger image{/t}"><img {!$image|img_attrs:"!80x80"}{if $align} align="{$align}"{/if}></a>
+	<a class="list-thumbnail" href="{$image|img_url:800x800}" title="{t}Show larger image{/t}"><img {!$image|img_attrs:"!80x80"}{if $align} align="{$align}"{/if}></a>
 {else}
-	<img src="{$public}images/camera.svg" width="80" height="80" title="{t}no image{/t}"{if $align} align="{$align}"{/if}>
+	<span class="list-thumbnail"><img src="{$public}images/camera.svg" width="80" height="80" title="{t}no image{/t}"{if $align} align="{$align}"{/if}></span>
 {/if}

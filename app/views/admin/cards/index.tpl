@@ -7,9 +7,9 @@
 	<p>{t}No product has been found.{/t}</p>
 
 {else}
-	<table class="table table-striped">
+	<table class="table table-sm table-striped">
 		<thead>
-			<tr>
+			<tr class="table-dark">
 				<th>#</th>
 				{sortable key=name}<th>{t}Name{/t}</th>{/sortable}
 				{sortable key=has_variants}<th>{t}Has variants?{/t}</th>{/sortable}

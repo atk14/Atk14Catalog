@@ -4,7 +4,7 @@
 	<p>{t}The list is empty.{/t}</p>
 {else}
 
-	<ul class="list-group list-sortable" data-sortable-url="{link_to action="pages/set_rank"}">
+	<ul class="list-group list-group-flush list-sortable" data-sortable-url="{link_to action="pages/set_rank"}">
 		{render partial="page_item" from=$root_pages item=page}
 	</ul>
 {/if}

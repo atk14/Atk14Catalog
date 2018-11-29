@@ -3,7 +3,7 @@
 
 {if $stores}
 
-	<ul class="list-group list-sortable" data-sortable-url="{link_to action="set_rank"}">
+	<ul class="list-group list-group-flush list-sortable" data-sortable-url="{link_to action="set_rank"}">
 		{foreach $stores as $store}
 			{render partial="store_item"}
 		{/foreach}

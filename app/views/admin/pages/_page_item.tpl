@@ -1,4 +1,5 @@
 <li class="list-group-item" data-id="{$page->getId()}">
+	<div class="d-flex justify-content-between align-items-center">
 	{$page->getTitle()}
 
 	{foreach $secondary_langs as $sl}
@@ -6,10 +7,9 @@
 	{/foreach}
 
 	{render partial="page_item_dropdown_menu" page=$page}
-
+	</div>
 	{if $page->getChildPages()}
-		<div class="clearfix"><br></div>
-		<ul class="list-group list-sortable" data-sortable-url="{link_to action="pages/set_rank"}">
+		<ul class="list-group  list-group-flush list-sortable" data-sortable-url="{link_to action="pages/set_rank"}">
 			{render partial="page_item" from=$page->getChildPages() item=page}
 		</ul>
 	{else}	

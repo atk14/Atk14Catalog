@@ -10,8 +10,8 @@
 Are you sure?{/t}{/capture}
 
 		{dropdown_menu}
-			{a action=edit id=$card _class="btn btn-default"}<i class="glyphicon glyphicon-edit"></i> {t}Edit{/t}{/a}
-			{a_destroy id=$card _confirm=$confirm}<i class="glyphicon glyphicon-remove"></i> {t}Delete product{/t}{/a_destroy}
+			{a action=edit id=$card _class="btn btn-default"}{icon glyph="pencil-alt"} {t}Edit{/t}{/a}
+			{a_destroy id=$card _confirm=$confirm}{icon glyph="trash-alt"} {t}Delete product{/t}{/a_destroy}
 		{/dropdown_menu}
 	</td>
 </tr>
