@@ -1,12 +1,12 @@
 {foreach $categories as $category}
 	<ol class="breadcrumb">
-		<li>{a action="main/index"}{"ATK14_APPLICATION_NAME"|dump_constant}{/a}</li>
+		<li class="breadcrumb-item">{a action="main/index"}{"ATK14_APPLICATION_NAME"|dump_constant}{/a}</li>
 			{foreach $category->getPathOfCategories() as $c}
-				<li>
+				<li class="breadcrumb-item">
 					{a action="categories/detail" path=$c->getPath()}{$c->getName()}{/a}
 				</li>
 			{/foreach}
-		<li class="active">{$card->getName()}</li>
+		<li class="breadcrumb-item active">{$card->getName()}</li>
 	</ol>
 {/foreach}
 

@@ -7,16 +7,16 @@
 	<p>{t}No product has been found.{/t}</p>
 
 {else}
-	<table class="table table-sm table-striped">
+	<table class="table table-sm table-striped table--products">
 		<thead>
 			<tr class="table-dark">
-				<th>#</th>
-				{sortable key=name}<th>{t}Name{/t}</th>{/sortable}
-				{sortable key=has_variants}<th>{t}Has variants?{/t}</th>{/sortable}
-				<th>{t}Tags{/t}</th>
-				{sortable key=created_at}<th>{t}Created at{/t}</th>{/sortable}
-				{sortable key=updated_at}<th>{t}Updated at{/t}</th>{/sortable}
-				<th></th>
+				<th class="item-id">#</th>
+				{sortable key=name}<th class="item-title">{t}Name{/t}</th>{/sortable}
+				{sortable key=has_variants}<th class="item-hasvariants">{t}Has variants?{/t}</th>{/sortable}
+				<th class="item-tags">{t}Tags{/t}</th>
+				{sortable key=created_at}<th class="item-created">{t}Created at{/t}</th>{/sortable}
+				{sortable key=updated_at}<th class="item-updated">{t}Updated at{/t}</th>{/sortable}
+				<th class="item-actions"></th>
 			</tr>
 		</thead>
 
