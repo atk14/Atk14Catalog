@@ -5,14 +5,10 @@
 {if $cards}
 	<section class="card-list">
 		<h4>{$title|default:"{t}List of Products{/t}"}</h4>
-		<ul>
+		<div class="card-deck card-deck--sized">
 		{foreach $cards as $card}
-			<li>
-				{render partial="shared/card_item" card=$card}
-			</li>
+			{render partial="shared/card_item" card=$card}
 		{/foreach}
-		</ul>
+		</div>
 	</section>
 {/if}
-
-

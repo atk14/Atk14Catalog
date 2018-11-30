@@ -22,7 +22,7 @@ ul.list--tree {
 	$lineColor: $gray-300;
 	$lineRadius: 12px;
 	$bulletWidth: 20px;
-	$itemPaddingY: 0.25em;
+	$itemPaddingY: 0.15em;
 	
 	list-style: none;
 	padding: 0;
@@ -30,7 +30,7 @@ ul.list--tree {
 	
 	li {
 		position: relative;
-		padding: $itemPaddingY 0 $itemPaddingY 0.5em;
+		padding: $itemPaddingY 0 $itemPaddingY*4 0.5em;
 		margin: 0;
 		
 		&:before {
@@ -59,6 +59,10 @@ ul.list--tree {
 		&:last-child:after {
 			border-left: none;
 		}
+	}
+	
+	h1, h2, h3, h4, p {
+		margin-bottom: 0;
 	}
 	
 }

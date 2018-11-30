@@ -34,13 +34,13 @@
 	{if $cards_finder->isEmpty()}
 		<p>{t}No product has been found.{/t}</p>
 	{else}
-		<ul class="list product-list" data-record_count="{$cards_finder->getRecordsCount()}">
+		<div class="card-deck card-deck--sized product-list" data-record_count="{$cards_finder->getRecordsCount()}">
 
 			{foreach $cards_finder->getRecords() as $card}
-				<li class="list-item">{render partial="shared/card_item" card=$card}</li>
+				{render partial="shared/card_item" card=$card}
 			{/foreach}
 			
-		</ul>
+		</div>
 		{paginator finder=$cards_finder}
 	{/if}
 </section>

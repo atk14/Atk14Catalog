@@ -1,0 +1,59 @@
+.card {
+	
+	// override height attribute
+	.card-img-top, .card-img-bottom {
+		height: auto;
+	}
+}
+
+ul.card-deck {
+	@extend .list-unstyled;
+}
+
+// When displaying lists as card decks, groups or columns 
+// we need to unstyle list styling and restyle as .card-*
+ul.card-deck, ol.card-deck {
+	@extend .list-unstyled;
+	@extend .card-deck;
+}
+ul.card-group, ol.card-group {
+	@extend .list-unstyled;
+	@extend .card-group;
+}
+ul.card-column, ol.card-column {
+	@extend .list-unstyled;
+	@extend .card-column;
+}
+
+// Whole card as a single ling
+a.card {
+	.card-body {
+		color: $body-color;
+	}
+	&:hover {
+		text-decoration: none;
+		.card-title {
+			color: $link-color;
+		}
+	}
+}
+
+
+// Controlled widths for card
+.card-deck--sized {
+	.card {
+		// 2 cols on SM up
+		@include media-breakpoint-up(sm){
+			flex-shrink: 0;
+			flex-grow: 0;
+			flex-basis: calc(50% - #{$card-deck-margin} * 2);
+			min-width: calc(50% - #{$card-deck-margin} * 2);
+			margin-bottom: $card-deck-margin * 2;
+		}
+		// 3 cols on LG up
+		@include media-breakpoint-up(lg){
+			flex-basis: calc(33.333% - #{$card-deck-margin} * 2);
+			min-width: calc(33.333% - #{$card-deck-margin} * 2);
+		}
+	}
+}

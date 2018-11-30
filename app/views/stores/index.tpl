@@ -6,8 +6,8 @@
 
 {else}
 
-	<ul>
+	<div class="card-deck card-deck--sized">
 		{render partial="store_item" from=$stores item=store}
-	</ul>
+	</div>
 
 {/if}
