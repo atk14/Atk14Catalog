@@ -3,13 +3,13 @@
 
 	{dropdown_menu clearfix=false}
 		{if $category->allowSubcategories()}
-			{a action="create_new" parent_category_id=$category}{icon glyph="plus-sign"} {t}Add a new subcategory{/t}{/a}
+			{a action="create_new" parent_category_id=$category}{icon glyph="plus-circle"} {t}Add a new subcategory{/t}{/a}
 		{/if}
 		{if $category->isVisible() && !$category->isFilter() && !$category->isSubcategoryOfFilter()}
 			{a namespace="" action="categories/detail" path=$category->getPath()}{icon glyph="eye-open"} {t}Show on web{/t}{/a}
 		{/if}
 		{if $category->canBeMoved()}
-			{a action=move_to_category id=$category}{icon glyph="transfer"} {t}Move the category{/t}{/a}
+			{a action=move_to_category id=$category}{icon glyph="arrows-alt"} {t}Move the category{/t}{/a}
 		{/if}
 		{if $category->canBeAliased()}
 			{a action=create_alias id=$category}{icon glyph="share-alt"} {t}Create an alias{/t}{/a}
@@ -19,7 +19,7 @@
 Also all subcategories will be deleted. Deletion cannot be undone.
 
 Do you really want this?{/t}{/capture}
-			{a_destroy id=$category _confirm=$confirmation}{icon glyph="remove"} {t}Delete{/t}{/a_destroy}
+			{a_destroy id=$category _confirm=$confirmation}{icon glyph="trash-alt"} {t}Delete{/t}{/a_destroy}
 		{/if}
 	{/dropdown_menu}
 </h1>

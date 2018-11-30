@@ -7,11 +7,11 @@
 			</div>
 			<div class="">
 				{dropdown_menu}
-					{a action="edit" id=$store}{icon glyph="pencil-alt"} {t}Edit{/t}{/a}
+					{a action="edit" id=$store}{!"pencil-alt"|icon} {t}Edit{/t}{/a}
 
 					{capture assign="confirm"}{t 1=$store->getName()|h escape=no}You are about to permanently delete store %1
 		Are you sure about that?{/t}{/capture}
-					{a_destroy id=$store _confirm=$confirm}{icon glyph="trash-alt"} {t}Delete{/t}{/a_destroy}
+					{a_destroy id=$store _confirm=$confirm}{!"trash-alt"|icon} {t}Delete{/t}{/a_destroy}
 				{/dropdown_menu}
 			</div>
 	</div>	

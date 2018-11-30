@@ -1,0 +1,64 @@
+// List for tree-view of categories
+
+// Parent list with root item
+ul.list--categories {
+	
+	@extend .list-unstyled;
+	
+	em, .fa, .fas, .far  {
+		font-size: 0.9em;
+		color: $gray-600;
+	}
+	
+	> li > ul.list--tree {
+		margin-left: 0.5rem;
+	}
+}
+
+// Draw tree branches in nested lists
+ul.list--tree {
+	
+	$lineWidth: 3px;
+	$lineColor: $gray-300;
+	$lineRadius: 12px;
+	$bulletWidth: 20px;
+	$itemPaddingX: 0.25em;
+	
+	list-style: none;
+	padding: 0;
+	padding-left: $bulletWidth + 5px;
+	
+	li {
+		position: relative;
+		padding: $itemPaddingX 0 $itemPaddingX 0.5em;
+		margin: 0;
+		
+		&:before {
+			position: absolute;
+			left: 0-$bulletWidth;
+			top: 0;
+			content: '';
+			width: $bulletWidth;
+			height: 16px;
+			border-left: $lineWidth solid $lineColor;
+			border-bottom: $lineWidth solid $lineColor;
+			border-radius: 0 0 0 $lineRadius;
+		}
+		
+		&:after {
+			position: absolute;
+			left: 0-$bulletWidth;
+			top: 0;
+			content: '';
+			width: $bulletWidth;
+			height: 100%;
+			border-left: $lineWidth solid $lineColor;
+		}
+		
+		
+		&:last-child:after {
+			border-left: none;
+		}
+	}
+	
+}
