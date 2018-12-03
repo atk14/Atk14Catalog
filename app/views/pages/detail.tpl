@@ -1,7 +1,7 @@
 <h1>{$page->getTitle()}</h1>
 
 <div>
-{!$page->getTeaser()}
+{!$page->getTeaser()|markdown}
 </div>
 
 <div>

@@ -10,20 +10,23 @@
 	</ol>
 {/foreach}
 
-<h1>{$page_title}</h1>
+<section class="product-basic-info border-top-0">
+	<h1>{$page_title}</h1>
 
-<p class="lead">{$card->getTeaser()}</p>
+	<p class="lead">{$card->getTeaser()}</p>
 
-{assign brand $card->getBrand()}
-{if $brand}
-	{t}Brand:{/t} {a action="brands/detail" id=$brand}{$brand->getName()}{/a}
-{/if}
+	{assign brand $card->getBrand()}
+	{if $brand}
+		{t}Brand:{/t} {a action="brands/detail" id=$brand}{$brand->getName()}{/a}
+	{/if}
+</section>
 
 {render partial="shared/photo_gallery" object=$card}
 
 {render partial="shared/attachments" object=$card}
 
 {foreach $card->getCardSections() as $section}
+	<section>
 	<h3>{$section->getName()}</h3>
 
 	{!$section->getBody()|markdown}
@@ -41,7 +44,7 @@
 	{render partial="shared/photo_gallery" object=$section}
 
 	{render partial="shared/attachments" object=$section}
-
+	</section>
 {/foreach}
 
 {render partial="related_cards"}

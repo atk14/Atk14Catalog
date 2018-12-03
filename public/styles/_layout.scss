@@ -29,3 +29,21 @@
 footer {
 	margin-top: $grid-gutter-width*2;
 }
+
+section {
+	margin-bottom: $grid-gutter-width * 2;
+	border-right: 4px dotted rgba(red,0.3);
+	padding-top: 1rem;
+	border-top: 1px solid $gray-300;
+}
+
+section.store-properties {
+	@include media-breakpoint-up(md){
+		.store-properties-column {
+			border-left: 1px solid $gray-300;
+			&:first-child {
+				border-left: none;
+			}
+		}
+	}
+}
