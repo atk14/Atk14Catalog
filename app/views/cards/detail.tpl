@@ -10,7 +10,7 @@
 	</ol>
 {/foreach}
 
-<section class="product-basic-info border-top-0">
+<header>
 	<h1>{$page_title}</h1>
 
 	<p class="lead">{$card->getTeaser()}</p>
@@ -19,7 +19,7 @@
 	{if $brand}
 		{t}Brand:{/t} {a action="brands/detail" id=$brand}{$brand->getName()}{/a}
 	{/if}
-</section>
+</header>
 
 {render partial="shared/photo_gallery" object=$card}
 

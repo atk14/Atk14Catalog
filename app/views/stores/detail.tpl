@@ -1,4 +1,4 @@
-<section class="border-top-0">
+<header>
 	<div class="jumbotron bg-transparent border border-secondary">
 		<div class="row">
 			<div class="col-12 col-md-6 d-md-flex flex-column justify-content-center">
@@ -12,7 +12,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</header>
 
 <section class="store-properties">
 	<div class="row">

@@ -1,4 +1,6 @@
-<h1>{$page_title}</h1>
+<header>
+	<h1>{$page_title}</h1>
+</header>
 
 <div class="card-deck card-deck--sized">
 {foreach $collections as $collection}
