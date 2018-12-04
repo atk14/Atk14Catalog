@@ -36,14 +36,24 @@ form {
 
 .form-horizontal, .fieldset-horizontal {
 	.form-group {
+		border-bottom: 1px solid $gray-200;
+		&:first-child {
+			border-top: 1px solid $gray-200;
+		}
 		@include media-breakpoint-up(sm){
 			display: grid;
-			grid-template-columns: 3fr 4fr 5fr;
+			/*grid-template-columns: 3fr 4fr 5fr;
 			grid-template-rows: auto auto auto;
 			grid-template-areas: 
 				'label control help'
 				'middleleft instantfeedback instantfeedback'
-				'bottomleft feedback feedback';
+				'bottomleft feedback feedback';*/
+			grid-template-columns: 1fr 4fr;
+			grid-template-rows: auto auto auto;
+			grid-template-areas:
+				'label control'
+				'help feedback'
+				'help instantfeedback';
 			grid-gap: 0 $grid-gutter-width/2;
 			margin: 0;
 			padding: 8px 0;
