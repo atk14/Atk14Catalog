@@ -66,7 +66,7 @@
 
 	{capture assign=help_text}
 		{if $field->help_text}
-			<div class="help-block">{!$field->help_text}</div>
+			<div class="help-block form-text">{!$field->help_text}</div>
 		{/if}
 	{/capture}
 

@@ -33,13 +33,8 @@ form {
 }
 
 // Applies CSS grid to .form-group to create horizontal form.
-
 .form-horizontal, .fieldset-horizontal {
 	.form-group {
-		border-bottom: 1px solid $gray-200;
-		&:first-child {
-			border-top: 1px solid $gray-200;
-		}
 		@include media-breakpoint-up(sm){
 			display: grid;
 			grid-template-columns: 1fr 4fr;
@@ -54,22 +49,25 @@ form {
 		}
 		@include media-breakpoint-up(lg){
 			display: grid;
-			grid-template-columns: 1fr 8fr 1fr;
+			grid-template-columns: 2fr 8fr 2fr;
 			grid-template-rows: auto auto auto;
 			grid-template-areas:
 				'label control help'
-				'middleleft feedback feedback'
-				'bottomleft instantfeedback instantfeedback';
+				'middleleft feedback help'
+				'bottomleft instantfeedback help';
 			grid-gap: 0 $grid-gutter-width/2;
 			margin: 0;
 			padding: 8px 0;
+		}
+		@include media-breakpoint-up(xl){
+			grid-template-columns: 2fr 8fr 3fr;
 		}
 		> label {
 			padding-top: calc(.375rem + 1px);
 			line-height: 1.5;
 			grid-area: label;
 		}
-		> .form-control, .custom-control, > .btn {
+		> .form-control, .custom-control, > .btn, > .button-container {
 			grid-area: control;
 		}
 		> ul.list--radios, > ul.list--checkboxes {
@@ -81,6 +79,7 @@ form {
 		> .help-block {
 			grid-area: help;
 			padding-top: 0.75rem;
+			margin-top: 0;
 		}
 		> .alert {
 			grid-area: instantfeedback;
@@ -93,6 +92,17 @@ form {
 		> .dummy-222  {
 			grid-area: middleleft;
 		}
+		.button-container {
+			display: inline-block;
+		}
+	}
+}
+
+// Lines between form-groups for better readiblity
+form {
+	.form-group {
+		border-top: 1px solid $gray-200;
+		padding-top: 0.5rem;
 	}
 }
 
