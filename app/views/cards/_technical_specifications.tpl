@@ -1,7 +1,7 @@
 {assign technical_specifications $card->getTechnicalSpecifications()}
 
 {if $technical_specifications}
-	<table class="table">
+	<table class="table table-sm">
 		{foreach $technical_specifications as $ts}
 			<tr>
 				<th>{$ts->getKey()}</th>

@@ -1,29 +1,32 @@
 {foreach $categories as $category}
 	<ol class="breadcrumb">
-		<li>{a action="main/index"}{"ATK14_APPLICATION_NAME"|dump_constant}{/a}</li>
+		<li class="breadcrumb-item">{a action="main/index"}{"ATK14_APPLICATION_NAME"|dump_constant}{/a}</li>
 			{foreach $category->getPathOfCategories() as $c}
-				<li>
+				<li class="breadcrumb-item">
 					{a action="categories/detail" path=$c->getPath()}{$c->getName()}{/a}
 				</li>
 			{/foreach}
-		<li class="active">{$card->getName()}</li>
+		<li class="breadcrumb-item active">{$card->getName()}</li>
 	</ol>
 {/foreach}
 
-<h1>{$page_title}</h1>
+<header>
+	<h1>{$page_title}</h1>
 
-<p class="lead">{$card->getTeaser()}</p>
+	<p class="lead">{$card->getTeaser()}</p>
 
-{assign brand $card->getBrand()}
-{if $brand}
-	{t}Brand:{/t} {a action="brands/detail" id=$brand}{$brand->getName()}{/a}
-{/if}
+	{assign brand $card->getBrand()}
+	{if $brand}
+		{t}Brand:{/t} {a action="brands/detail" id=$brand}{$brand->getName()}{/a}
+	{/if}
+</header>
 
 {render partial="shared/photo_gallery" object=$card}
 
 {render partial="shared/attachments" object=$card}
 
 {foreach $card->getCardSections() as $section}
+	<section>
 	<h3>{$section->getName()}</h3>
 
 	{!$section->getBody()|markdown}
@@ -41,7 +44,7 @@
 	{render partial="shared/photo_gallery" object=$section}
 
 	{render partial="shared/attachments" object=$section}
-
+	</section>
 {/foreach}
 
 {render partial="related_cards"}

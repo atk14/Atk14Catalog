@@ -8,11 +8,11 @@
 	{if !isset($photo_gallery_title)}{capture assign="photo_gallery_title"}{t}Photo gallery{/t}{/capture}{/if}
 	<section class="image-gallery">
 		{if $photo_gallery_title}<h4>{$photo_gallery_title}</h4>{/if}
-		<ul class="row list-unstyled">
+		<ul class="list-inline">
 			{foreach $images as $image}
-				<li class="col-xs-2">
+				<li class="list-inline-item mb-3">
 					<a href="{$image|img_url:"1024"}" title="{if $image->getDescription()}{$image->getDescription()}{/if}">
-						<img {!$image|img_attrs:"!120x120"} alt="{$image->getName()}" class="img-thumbnail">
+						<img {!$image|img_attrs:"!200x200"} alt="{$image->getName()}" class="img-thumbnail">
 					</a>
 				</li>
 			{/foreach}

@@ -1,13 +1,17 @@
-<h1>{$page_title}</h1>
+<header>
+	<h1>{$page_title}</h1>
+</header>
 
-<ul>
+<div class="card-deck card-deck--sized">
 {foreach $brands as $brand}
-	<li>
-		{a action="detail" id=$brand}
-		{!$brand->getLogoUrl()|pupiq_img:"!100x100"}
-		<h3>{$brand->getName()}</h3>
-		{/a}
-		<p>{$brand->getTeaser()}</p>
-	</li>
+	
+	{a action="detail" id=$brand _class="card"}
+		{!$brand->getLogoUrl()|pupiq_img:"!400x400":"class='card-img-top'"}
+		<div class="card-body">
+			<h4 class="card-title">{$brand->getName()}</h4>
+			<div class="card-text">{$brand->getTeaser()}</div>
+		</div>
+	{/a}
+	
 {/foreach}
-</ul>
+</div>

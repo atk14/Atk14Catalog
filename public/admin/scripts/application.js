@@ -28,6 +28,18 @@
 
 					$field.popover( popoverOptions );
 				} );
+
+				// Markdown Editor requires Ace
+				ace.config.set( "basePath", "/public/admin/dist/scripts/ace/" );
+				$.each( $( "textarea[data-provide=markdown]" ), function( i, el ) {
+					$( el ).markdownEditor( {
+						preview: true,
+						onPreview: function( content, callback ) {
+							var html = markdown.toHTML( content );
+							callback( html );
+						}
+					} );
+				} );
 			}
 		},
 
@@ -54,7 +66,7 @@
 			handleGalleryImagesUpload: function() {
 				var $link = $( "#imageToGallery" );
 
-				if ( $link.size() !== 1 ) {
+				if ( $link.length !== 1 ) {
 					return;
 				}
 
