@@ -20,7 +20,7 @@ class Attachment extends LinkedObject implements Translatable{
 	}
 
 	function getSuffix(){
-		return $this->_getPupiq()->getSuffix();
+		return $this->_getPupiqAttachment()->getSuffix();
 	}
 
 	static function AddAttachment($obj,$values,$options = array()){
@@ -28,9 +28,5 @@ class Attachment extends LinkedObject implements Translatable{
 			$values = array("url" => $values);
 		}
 		return Attachment::CreateNewFor($obj,$values,$options);
-	}
-
-	protected function _getPupiq(){
-		return new PupiqAttachment($this->getUrl());
 	}
 }

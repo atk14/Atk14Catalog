@@ -246,8 +246,9 @@ class ApplicationModel extends TableRecord{
 		$options += array(
 			"salt" => SECRET_TOKEN,
 			"extra_salt" => "",
+			"hash_length" => 32, // max. 32
 		);
-		$length = 32;
+		$length = $options["hash_length"];
 		return $this->getId().".".substr(md5(get_class($this).$this->getId().$options["salt"].$options["extra_salt"]),0,$length);
 	}
 

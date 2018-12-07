@@ -25,6 +25,8 @@ trait TraitPupiqAttachment {
 	}
 
 	function getUrl($pupiq_url = false){
+		global $ATK14_GLOBAL;
+
 		if($pupiq_url){
 			return $this->_getPupiqAttachment()->getUrl(); // tady je transparentni prevod na URL s PUPIQ_PROXY_HOSTNAME
 		}
@@ -34,9 +36,9 @@ trait TraitPupiqAttachment {
 		return Atk14Url::BuildLink(array(
 			"namespace" => "",
 			"controller" => $controller,
-			"lang" => "cs",
+			"lang" => $ATK14_GLOBAL->getDefaultLang(),
 			"action" => "detail",
-			"id" => $this->getId(),
+			"token" => $this->getToken(array("hash_length" => 10, "extra_salt" => "detail")),
 			"filename" => $this->getFilename(),
 		),array(
 			"with_hostname" => true,
