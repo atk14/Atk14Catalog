@@ -3,11 +3,11 @@
 </header>
 
 <section>
-	{if $documentation}
-		{!$documentation}
-	{else}
-		<p>{!$page_description|trim|nl2br}</p>
-	{/if}
+{if $documentation}
+	{!$documentation}
+{else}
+	<p>{!$page_description|trim|nl2br}</p>
+{/if}
 
-	{render partial="shared/form"}
+{render partial="shared/form"}
 </section>

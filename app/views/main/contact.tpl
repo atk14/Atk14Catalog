@@ -2,10 +2,10 @@
 	<header>
 		<h1>{$page_title}</h1>
 	</header>
-
+	
 	<section>
 		<div class="row">
-			<div class="col-12">
+			<div class="col-sm-12">
 				<p class="lead mb-5">
 					{t}If you have any question, contact us through the following form. We will reply to you as soon as we can. Below the form you'll find other contact information.{/t}
 				</p>

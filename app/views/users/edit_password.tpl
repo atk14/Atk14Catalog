@@ -3,7 +3,7 @@
 </header>
 
 <section>
-	{form}
+	{form _class="form-horizontal" _novalidate="novalidate"}
 	{render partial="shared/form_error"}
 	<fieldset>
 		<legend>{t}Current password{/t}</legend>
