@@ -10,7 +10,7 @@
 Atk14Url::AddRouter("CategoriesRouter");
 Atk14Url::AddRouter("PagesRouter");
 Atk14Url::AddRouter("CardsRouter");
-Atk14Url::AddRouter("NewsRouter");
+Atk14Url::AddRouter("ArticlesRouter");
 Atk14Url::AddRouter("BrandsRouter");
 Atk14Url::AddRouter("CollectionsRouter");
 

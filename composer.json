@@ -10,6 +10,7 @@
         "atk14/menu14": "^1.1.1",
         "yarri/my-blowfish": ">=1.1 <2.0",
         "yarri/full-text-search-query-like": "0.* >=0.1",
-        "atk14/confirmation-field": "^1.0"
+        "atk14/confirmation-field": "^1.0",
+        "atk14/sluggish-router": "^1.0"
     }
 }

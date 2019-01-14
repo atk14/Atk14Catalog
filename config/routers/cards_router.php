@@ -5,8 +5,8 @@
  * /zvitezili-jsme-v-soutezi-prodejna-roku-2012/
  */
 class CardsRouter extends SluggishRouter{
-	var $url_patterns_by_lang = array(
-		"en" => "product",
-		"cs" => "produkt",
+	var $patterns = array(
+		"en" => "/product/<slug>/",
+		"cs" => "/produkt/<slug>/",
 	);
 }
