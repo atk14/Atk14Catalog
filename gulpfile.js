@@ -72,7 +72,6 @@ gulp.task( "scripts", function() {
 // Lint & Code style
 gulp.task( "lint", function() {
 	return gulp.src( [ "public/scripts/**/*.js", "gulpfile.js" ] )
-		//.pipe( $.jshint() )
 		.pipe( $.eslint() )
 		.pipe( $.eslint.format() )
 		.pipe( $.eslint.failAfterError() );
