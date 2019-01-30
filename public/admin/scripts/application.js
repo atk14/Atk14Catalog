@@ -10,6 +10,8 @@
 			init: function() {
 				ADMIN.utils.handleSortables();
 				ADMIN.utils.handleSuggestions();
+				ADMIN.utils.handleCategoriesSuggestions();
+				ADMIN.utils.handleGalleryImagesUpload();
 
 				// Form hints.
 				$( ".help-hint" ).each( function() {
@@ -25,6 +27,18 @@
 						};
 
 					$field.popover( popoverOptions );
+				} );
+
+				// Markdown Editor requires Ace
+				ace.config.set( "basePath", "/public/admin/dist/scripts/ace/" );
+				$.each( $( "textarea[data-provide=markdown]" ), function( i, el ) {
+					$( el ).markdownEditor( {
+						preview: true,
+						onPreview: function( content, callback ) {
+							var html = markdown.toHTML( content );
+							callback( html );
+						}
+					} );
 				} );
 			}
 		},
@@ -43,26 +57,22 @@
 				ADMIN.utils.tagsSuggest( "#id_tags" );
 			},
 			edit: function() {
-				ADMIN.utils.categoriesSuggest( "#id_category" );
 				ADMIN.utils.handleCardToCategories();
-				ADMIN.utils.handleCardImagesUpload();
 				ADMIN.utils.tagsSuggest( "#id_tags" );
 			}
 		},
 
-		categories: {
-			create_alias: function() {
-				ADMIN.utils.categoriesSuggest( "#id_parent_category_id" );
-			},
-			move_to_category: function() {
-				ADMIN.utils.categoriesSuggest( "#id_parent_category_id" );
-			}
-		},
-
 		utils: {
-			handleCardImagesUpload: function() {
-				var $link = $( "#imageToCard" ).hide(),
-					url = $link.attr( "href" ),
+			handleGalleryImagesUpload: function() {
+				var $link = $( "#imageToGallery" );
+
+				if ( $link.length !== 1 ) {
+					return;
+				}
+
+				$link.hide();
+
+				var url = $link.attr( "href" ),
 					$progress = $( ".progress-bar" ),
 					$msg = $( ".img-message" ),
 					$list = $( ".list-group-images" ),
@@ -152,7 +162,6 @@
 					}
 
 					$input.focus().select();
-					ADMIN.utils.categoriesSuggest( "#id_category" );
 				} );
 			},
 
@@ -170,6 +179,7 @@
 					$sortable.sortable( {
 						cancel: "strong",
 						handle: ".handle",
+						opacity: 0.9,
 						update: function( jqEv, ui ) {
 							$item = $( ui.item );
 							url = $item.closest( ".list-sortable" ).data( "sortable-url" );
@@ -247,7 +257,7 @@
 
 			categoriesSuggest: function( selector ) {
 				var $input = $( selector ),
-					url = $input.data( "suggest_url" ),
+					url = $input.data( "suggesting_url" ),
 					cache = {},
 					term;
 
@@ -301,6 +311,10 @@
 						} );
 					}
 				} );
+			},
+
+			handleCategoriesSuggestions: function() {
+				ADMIN.utils.categoriesSuggest( "[data-suggesting_categories='yes']" );
 			}
 		}
 	};

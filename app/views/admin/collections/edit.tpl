@@ -4,5 +4,9 @@
 
 <hr>
 
-<h2>{t}Products in the collection{/t}</h2>
+{render partial="shared/image_gallery" object=$collection}
+
+<hr>
+
+<h3>{t}Products in the collection{/t}</h3>
 {render partial="collection_cards"}

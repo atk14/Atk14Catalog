@@ -24,29 +24,11 @@ class CreateNewForm extends UsersForm{
 	function clean(){
 		list($err,$d) = parent::clean();
 
-		if(isset($d["invitation_code"]) && $d["invitation_code"]!==INVITATION_CODE_FOR_USER_REGISTRATION){
+		if(defined("INVITATION_CODE_FOR_USER_REGISTRATION") && strlen(INVITATION_CODE_FOR_USER_REGISTRATION) && isset($d["invitation_code"]) && $d["invitation_code"]!==INVITATION_CODE_FOR_USER_REGISTRATION){
 			$this->set_error("invitation_code",_("This is not a valid invitation code"));
 		}
 		unset($d["invitation_code"]);
 
 		return array($err,$d);
-	}
-
-
-	function js_validator(){
-		$js_v = parent::js_validator();
-
-		//$js_v->validators["login"]->add_rule("remote",Atk14Url::BuildLink(array("controller" => "sign_up_js_validation", "action" => "check_login_availability")));
-		//$js_v->validators["login"]->add_message("remote",_("The login has been already taken"));
-
-		$js_v->validators["login"]->add_rule("remote",Atk14Url::BuildLink(array(
-			"namespace" => "api",
-			"controller" => "login_availabilities",
-			"action" => "detail",
-			"format" => "simple_boolean",
-		))."&login=");
-		$js_v->validators["login"]->add_message("remote",_("This login has been already taken"));
-	
-		return $js_v;
 	}
 }

@@ -23,7 +23,7 @@
  * $DEVELOPMENT
  *}
 <!DOCTYPE html>
-<html lang="{$lang}">
+<html lang="{$lang}" class="no-js">
 
 	<head>
 		<meta charset="utf-8">
@@ -32,7 +32,7 @@
 			{if $controller=="main" && $action=="index" && $namespace==""}
 				{"ATK14_APPLICATION_NAME"|dump_constant}
 			{else}
-				{$page_title} | {"ATK14_APPLICATION_NAME"|dump_constant}
+				{$page_title|strip_tags} | {"ATK14_APPLICATION_NAME"|dump_constant}
 			{/if}
 		{/trim}</title>
 
@@ -42,6 +42,11 @@
 		{if $DEVELOPMENT}
 			{render partial="shared/layout/dev_info"}
 		{/if}
+
+		{* Indication of active javascript *}
+		{javascript_tag}
+			document.documentElement.className = document.documentElement.className.replace( /\bno-js\b/, "js" );
+		{/javascript_tag}
 
 		{stylesheet_link_tag file="$public/dist/styles/vendor.min.css" hide_when_file_not_found=true}
 		{stylesheet_link_tag file="$public/dist/styles/application.min.css"}
@@ -56,9 +61,9 @@
 	</head>
 
 	<body class="body_{$controller}_{$action}" data-controller="{$controller}" data-action="{$action}">
+		{render partial="shared/login"}
 		<div class="container{if $section_navigation} has-nav-section{/if}">
-			{render partial="shared/login"}
-			{render partial="shared/layout/header"}
+			
 			{if $breadcrumbs && sizeof($breadcrumbs)>=2} {* It makes no sense to display breadcrumbs with just 1 or no element *}
 				{render partial="shared/breadcrumbs"}
 			{/if}

@@ -1,4 +1,4 @@
-<h2>Filtry</h2>
+<h3 id="filters">{t}Filters{/t}</h3>
 {if $filters}
 	<ul>
 		{foreach $filters as $f}
@@ -10,6 +10,8 @@
 		{/foreach}
 	</ul>
 {else}
-	<p>{t}Tento produkt není zařazen v žádném filtru.{/t}</p>
+
+	<p>{t}This product is not included in any filter{/t}</p>
+
 {/if}
-{a action="card_filters/edit" id=$card _class="btn btn-default"}{t}Nastavit filtry{/t} ({$filter_categories_count}){/a}
+{a action="card_filters/edit" id=$card _class="btn btn-default"}{t}Set up filters{/t} ({$filter_categories_count}){/a}

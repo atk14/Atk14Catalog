@@ -9,6 +9,12 @@
 			// Application-wide code.
 			init: function() {
 
+				// Restores email addresses misted by the no_spam helper
+				$( ".atk14_no_spam" ).unobfuscate( {
+					atstring: "[at-sign]",
+					dotstring: "[dot-sign]"
+				} );
+
 				// Form hints.
 				$( ".help-hint" ).each( function() {
 					var $this = $( this ),
@@ -27,6 +33,12 @@
 			}
 		},
 
+		logins: {
+			create_new: function() {
+				$( "#id_login" ).focus();
+			}
+		},
+
 		users: {
 
 			// Controller-wide code.
@@ -41,7 +53,7 @@
 				 */
 				var $login = $( "#id_login" ),
 					m = "Username is already taken.",
-					h = "<p class='alert alert-danger col-sm-4 col-sm-offset-2'>" + m + "</p>",
+					h = "<p class='alert alert-danger'>" + m + "</p>",
 					$status = $( h ).hide().appendTo( $login.closest( ".form-group" ) );
 
 				$login.on( "change", function() {

@@ -1,25 +1,27 @@
 <?php
 class CategoryTreesController extends AdminController{
+
 	function index(){
-		$this->page_title = _("Katalogové stromy");
+		$this->page_title = _("Category trees");
 		$this->tpl_data["roots"] = Category::GetCategories(null);
 	}
 
 	function create_new(){
-		$this->page_title = _("Vytvořit nový katalogový strom");
+		$this->page_title = _("Create new category tree");
 
 		$this->_save_return_uri();
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
 			$d["created_by_user_id"] = $this->logged_user;
 			Category::CreateNewRecord($d);
 			
-			$this->flash->success(_("Katalogový strom byl vytvořen"));
+			$this->flash->success(_("The category tree has been created"));
 			$this->_redirect_back();
 		}
 	}
 
 	function detail(){
-		$this->page_title = _("Katalogový strom");
+		$this->page_title = _("Category tree");
+		Category::FindAll(array("use_cache" => true)); // Caching all categories
 	}
 
 	function set_rank() {

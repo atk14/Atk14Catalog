@@ -35,7 +35,7 @@ class UsersController extends AdminController{
 
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
 			User::CreateNewRecord($d);
-			$this->flash->success(_("The user has been created successfuly"));
+			$this->flash->success(_("The user has been created successfully"));
 			$this->_redirect_back();
 		}
 	}
@@ -84,6 +84,7 @@ class UsersController extends AdminController{
 
 		$this->user->destroy();
 
+		$this->template_name = "application/destroy";
 		if(!$this->request->xhr()){
 			$this->flash->success(_("The user entry has been deleted"));
 			$this->_redirect_to("index");

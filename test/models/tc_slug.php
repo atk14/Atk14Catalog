@@ -48,35 +48,35 @@ class TcSlug extends TcBase{
 
 		$ATK14_GLOBAL->setValue("lang","cs");
 
-		$parent_page = StaticPage::CreateNewRecord(array(
+		$parent_page = Page::CreateNewRecord(array(
 			"title_cs" => "Hlavní stránka",
 			"title_en" => "Main page"
 		));
 		$this->assertEquals(array("cs" => "hlavni-stranka", "en" => "main-page"),$parent_page->getSlugs());
 		$this->assertEquals(array("slug_cs" => "hlavni-stranka", "slug_en" => "main-page"),$parent_page->getSlugs(array("prefix" => "slug_")));
 
-		$static_page = StaticPage::CreateNewRecord(array(
-			"title_cs" => "Statická stránka",
-			"parent_static_page_id" => $parent_page,
+		$page = Page::CreateNewRecord(array(
+			"title_cs" => "Stránka",
+			"parent_page_id" => $parent_page,
 		));
-		$this->assertEquals("staticka-stranka",$static_page->getSlug());
-		$this->assertEquals("hlavni-stranka/staticka-stranka",$static_page->getPath());
+		$this->assertEquals("stranka",$page->getSlug());
+		$this->assertEquals("hlavni-stranka/stranka",$page->getPath());
 
-		$static_page->s("parent_static_page_id",null);
-		$this->assertEquals("staticka-stranka",$static_page->getSlug());
-		$this->assertEquals("staticka-stranka",$static_page->getPath());
+		$page->s("parent_page_id",null);
+		$this->assertEquals("stranka",$page->getSlug());
+		$this->assertEquals("stranka",$page->getPath());
 
-		$static_page->s("slug_cs","staticka-stranecka");
-		$this->assertEquals("staticka-stranecka",$static_page->getSlug());
-		$this->assertEquals("staticka-stranecka",$static_page->getPath());
+		$page->s("slug_cs","staticka-stranecka");
+		$this->assertEquals("staticka-stranecka",$page->getSlug());
+		$this->assertEquals("staticka-stranecka",$page->getPath());
 
-		$static_page->s(array("slug_cs" => "staticka-stranecicka", "parent_static_page_id" => $parent_page));
-		$this->assertEquals("staticka-stranecicka",$static_page->getSlug());
-		$this->assertEquals("hlavni-stranka/staticka-stranecicka",$static_page->getPath());
+		$page->s(array("slug_cs" => "staticka-stranecicka", "parent_page_id" => $parent_page));
+		$this->assertEquals("staticka-stranecicka",$page->getSlug());
+		$this->assertEquals("hlavni-stranka/staticka-stranecicka",$page->getPath());
 		
-		Slug::DeleteObjectSlugs($static_page);
+		Slug::DeleteObjectSlugs($page);
 
-		$this->assertTrue(!!preg_match("/^static-pages-cs-\d+/", (string)Slug::GetObjectSlug($static_page)));
+		$this->assertTrue(!!preg_match("/^pages-cs-\d+/", (string)Slug::GetObjectSlug($page)));
 	}
 
 	function test_usage_in_models(){

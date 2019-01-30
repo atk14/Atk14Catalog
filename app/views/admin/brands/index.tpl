@@ -2,7 +2,7 @@
 
 {if $brands}
 
-	<ul class="list-group list-sortable" data-sortable-url="{link_to action="set_rank"}">
+	<ul class="list-group list-group-flush list-sortable" data-sortable-url="{link_to action="set_rank"}">
 		{foreach $brands as $brand}
 			{render partial="brand_item"}
 		{/foreach}
@@ -10,6 +10,6 @@
 
 {else}
 
-	<p class="alert alert-info cleaner">{t}No record has been found.{/t}</p>
+	<p>{t}No record has been found.{/t}</p>
 
 {/if}

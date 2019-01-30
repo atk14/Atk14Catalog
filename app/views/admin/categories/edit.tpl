@@ -1,9 +1,31 @@
-<h1>{$page_title}</h1>
+<h1>
+	{$page_title}
+
+	{dropdown_menu clearfix=false}
+		{if $category->allowSubcategories()}
+			{a action="create_new" parent_category_id=$category}{icon glyph="plus-circle"} {t}Add a new subcategory{/t}{/a}
+		{/if}
+		{if $category->isVisible() && !$category->isFilter() && !$category->isSubcategoryOfFilter()}
+			{a namespace="" action="categories/detail" path=$category->getPath()}{icon glyph="eye-open"} {t}Show on web{/t}{/a}
+		{/if}
+		{if $category->canBeMoved()}
+			{a action=move_to_category id=$category}{icon glyph="arrows-alt"} {t}Move the category{/t}{/a}
+		{/if}
+		{if $category->canBeAliased()}
+			{a action=create_alias id=$category}{icon glyph="share-alt"} {t}Create an alias{/t}{/a}
+		{/if}
+		{if $category->isDeletable()}
+			{capture assign=confirmation}{t name=$category->getName() escape=no}You are about to delete the category %1!
+Also all subcategories will be deleted. Deletion cannot be undone.
+
+Do you really want this?{/t}{/capture}
+			{a_destroy id=$category _confirm=$confirmation}{icon glyph="trash-alt"} {t}Delete{/t}{/a_destroy}
+		{/if}
+	{/dropdown_menu}
+</h1>
+
 
 {assign var=parent value=$category->getParentCategory()}
-
-<p>{a action=move_to_category id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-transfer"></i> {t}Přesunout kategorii{/t}{/a}
-{a action=create_alias id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-share"></i> {t}Vytvořit alias{/t}{/a}</p>
 
 <table class="table">
 	<tbody>
@@ -11,44 +33,36 @@
 		<th>#</th><td>{$category->getId()}</td>
 	</tr>
 	<tr>	
-		<th>{t}Cesta{/t}</th><td>/{$category->getPath()}/</td>
+		<th>{t}Path{/t}</th><td>/{$category->getPath()}/</td>
 	</tr>
 
-	{* Zatim to skryjeme - na viditelnost stejne nehrajeme
-	<tr>
-		<th>{t}Je kategorie viditelná?{/t}</th>
-		<td>{$category->isVisible()|display_bool}</td>
-	</tr> *}
+	{if $category->isAlias()}
 
-	<tr>
-		<th>{t}Je to filtr?{/t}</th>
-		<td>{$category->isFilter()|display_bool}</td>
-	</tr>
+		{assign pointing_to_category $category->getPointingToCategory()}
 
-	<tr>
-		<th>{t}Lze vkládat produkty?{/t}</th>
-		<td>{$category->allowProducts()|display_bool}</td>
-	</tr>
+		<tr>
+			<th>{t}Pointing to category{/t}</th>
+			<td>{a action="edit" id=$pointing_to_category}/{$pointing_to_category->getPath()}/{/a}</td>
+		</tr>
+
+	{else}
+
+		<tr>
+			<th>{t}Is a filter?{/t}</th>
+			<td>{$category->isFilter()|display_bool}</td>
+		</tr>
+
+		<tr>
+			<th>{t}Can products be inserted here?{/t}</th>
+			<td>{$category->allowProducts()|display_bool}</td>
+		</tr>
+
+	{/if}
+
 	</tbody>
 </table>
 
-{form}
-	<fieldset>
-		{render partial="shared/form_field" fields=$form->get_field_keys()}
-
-		<div class="form-group">
-			<button type="submit" class="btn btn-primary">{$form->get_button_text()}</button>
-
-			{if $category->isDeletable()}
-			{capture assign=confirmation}{t name=$category->getName() escape=no}Chystáte se smazat kategorii %1!
-Budou smazány i všechny její podkategorie. Smazání se nedá vrátit zpět.
-
-Opravdu to chcete?{/t}{/capture}
-			{a_destroy id=$category _class="btn btn-danger" _confirm=$confirmation}{t}Smazat{/t}{/a_destroy}
-			{/if}
-		</div>
-	</fieldset>
-{/form}
+{render partial="shared/form"}
 
 <hr>
 
@@ -56,87 +70,105 @@ Opravdu to chcete?{/t}{/capture}
 
 	{assign var=ptc value=$category->getPointingToCategory()}
 	{capture assign=url}{link_to action=edit id=$ptc}{/capture}
-	<p>{t url=$url path=$ptc->getPath() escape=no}Toto je virtuální kategorie, která ve skutečnosti ukazuje na <a href="%1">/%2/</a>{/t}</p>
+	<p>{t url=$url path=$ptc->getPath() escape=no}This is a virtual category, which is actually pointing to <a href="%1">/%2/</a>{/t}</p>
 
 {else}
 
-	{if !$parent || !$parent->isFilter()}
+	{if !$category->isSubcategoryOfFilter()}
 		{* Pokud je rodic filtr, nelze uz pridavat dalsi podkategorie *}
-		<h3>{t}Podkategorie{/t}</h3>
+		<h3 id="subcategories">
+			{if $category->allowSubcategories()}
+				{button_create_new parent_category_id=$category return_to_anchor="subcategories"}{t}Add a new subcategory{/t}{/button_create_new}
+			{/if}
+			{t}Subcategories{/t}
+		</h3>
 		{assign var=children value=$category->getChildCategories()}
 		{if $children}
-			<ul>
 				<ul class="list-group list-sortable" data-sortable-url="{link_to action="categories/set_rank"}">
 					{foreach $children as $child}
 						<li class="list-group-item" data-id="{$child->getId()}">
+							{if $child->isFilter()}<em>{t}filter{/t}:</em>{/if}
+							{if $child->isAlias()}<em>{t}alias{/t}:</em>{/if}
 							{$child->getName()}
-							<ul class="list-inline pull-right">
-								<li>{a action="edit" id=$child}<i class="glyphicon glyphicon-edit"></i> {t}Edit{/t}{/a}</li>
-							</ul>
+							{if !$child->isVisible()}<em>({t}invisible{/t})</em>{/if}
+							{dropdown_menu}
+								{a action="edit" id=$child}{icon glyph="edit"} {t}Edit{/t}{/a}
+							{/dropdown_menu}
 						</li>
 					{/foreach}
 				</ul>
-			</ul>
 		{else}
+
 			<div class="img-message">
-				<p>{t}Tato kategorie nemá podkategorie.{/t}</p>
+				<p>{t}This category has no subcategories.{/t}</p>
 			</div>
-		{/if}
-		<p>{a action="create_new" parent_category_id=$category _class="btn btn-default" _id="imageToCard"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Přidat novou podkategorii{/t}{/a}</p>
-	{/if}
 
-
-	<h3>{t}Produkty{/t}</h3>
-	{if $category->isFilter()}
-		<p>{t}Toto je filtr. Produkty zadávejte do jeho podkategorií.{/t}</p>
-	{else}
-		{assign var=cards value=$category->getCards()}
-		{if !$cards}
-			<p>
-				Momentálně tady není žádný produkt.
-			</p>
-		{else}
-			<ul class="list-group list-sortable" data-sortable-url="{link_to action="category_cards/set_rank" category_id=$category}">
-				{foreach $cards as $card}
-					<li class="list-group-item" data-id="{$card->getId()}">
-						{render partial="shared/list_thumbnail" image=$card->getImage()}
-						<a href="{link_to action="cards/edit" id=$card}" title="Editovat produkt">{$card->getName()}</a>
-						{a_destroy action="category_cards/destroy" id=$card category_id=$category _title="Odebrat produkt" _class="confirm btn btn-danger btn-xs"}<i class="glyphicon glyphicon-remove"></i> <span class="hide">{t}Odebrat{/t}</span>{/a_destroy}
-					</li>
-				{/foreach}
-			</ul>
-		{/if}
-		{if $category->allowProducts()}
-			<p>{a action="category_cards/create_new" category_id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Přidat produkt{/t}{/a}</p>
-		{else}
-			<p>{t}Do této kategorie nelze přidávat produkty.{/t}</p>
 		{/if}
 	{/if}
 
-	<h3>{t}Doporučené produkty{/t}</h3>
-	{if $category->isFilter()}
-		<p>{t}Toto je filtr. Produkty zadávejte do jeho podkategorií.{/t}</p>
-	{else}
+	{if !$category->isFilter()}
+		<h3 id="products">
+			{if $category->allowProducts()}
+				{button_create_new action="category_cards/create_new" category_id=$category return_to_anchor="products"}{t}Add a product{/t}{/button_create_new}
+			{/if}
+			{t}Products{/t}
+		</h3>
+
+		{if $too_many_cards_in_category}
+
+			<p>{t count=$cards_in_category}There are too many products in the category (%1){/t} &rarr; {a action="category_cards/index" category_id=$category}{t}show product list{/t}{/a}</p>
+
+		{else}
+
+			{assign var=cards value=$category->getCards()}
+			{if !$cards}
+				<p>
+					{t}There is currently no product here.{/t}
+				</p>
+			{else}
+				<ul class="list-group list-sortable" data-sortable-url="{link_to action="category_cards/set_rank" category_id=$category}">
+					{foreach $cards as $card}
+						<li class="list-group-item" data-id="{$card->getId()}">
+							{render partial="shared/list_thumbnail" image=$card->getImage()}
+							<a href="{link_to action="cards/edit" id=$card}" title="{t}Edit product{/t}">{$card->getName()}</a>
+							{a_destroy action="category_cards/destroy" id=$card category_id=$category _title="{t}Remove product{/t}" _class="confirm btn btn-danger btn-xs"}<i class="glyphicon glyphicon-remove"></i> <span class="hide">{t}Remove{/t}</span>{/a_destroy}
+						</li>
+					{/foreach}
+				</ul>
+			{/if}
+			{if !$category->allowProducts()}
+				<p>{t}Into this category products cannot be added.{/t}</p>
+			{/if}
+
+		{/if}
+	{/if}
+
+	{if !$category->isFilter() && !$category->isSubcategoryOfFilter()}
+		<h3 id="recommended_products">
+			{if $category->allowProducts()}
+				{button_create_new action="category_recommended_cards/create_new" category_id=$category return_to_anchor="recommended_products"}{t}Add a recommended product{/t}{/button_create_new}
+			{/if}
+			{t}Recommended products{/t}
+		</h3>
+
 		{assign var=cards value=$category->getRecommendedCards()}
 		{if !$cards}
 			<p>
-				Momentálně tady není žádný produkt.
+				{t}There is currently no product here.{/t}
 			</p>
 		{else}
 			<ul class="list-group list-sortable" data-sortable-url="{link_to action="category_recommended_cards/set_rank" category_id=$category}">
 				{foreach $cards as $card}
 					<li class="list-group-item" data-id="{$card->getId()}">
 						{render partial="shared/list_thumbnail" image=$card->getImage()}
-						<a href="{link_to action="cards/edit" id=$card}" title="Editovat produkt">{$card->getName()}</a>
-						{a_destroy action="category_recommended_cards/destroy" id=$card category_id=$category _title="Odebrat produkt" _class="confirm btn btn-danger btn-xs"}<i class="glyphicon glyphicon-remove"></i> <span class="hide">{t}Odebrat{/t}</span>{/a_destroy}
+						<a href="{link_to action="cards/edit" id=$card}" title="{t}Edit product{/t}">{$card->getName()}</a>
+						{a_destroy action="category_recommended_cards/destroy" id=$card category_id=$category _title="{t}Remove product{/t}" _class="confirm btn btn-danger btn-xs"}<i class="glyphicon glyphicon-remove"></i> <span class="hide">{t}Remove{/t}</span>{/a_destroy}
 					</li>
 				{/foreach}
 			</ul>
 		{/if}
-		{if $category->allowProducts()}
-			<p>{a action="category_recommended_cards/create_new" category_id=$category _class="btn btn-default"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Přidat doporučený produkt{/t}{/a}</p>
-		{else}
-			<p>{t}Do této kategorie nelze přidávat produkty.{/t}</p>
+		{if !$category->allowProducts()}
+			<p>{t}Into this category products cannot be added.{/t}</p>
 		{/if}
 	{/if}
 

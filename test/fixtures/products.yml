@@ -1,0 +1,11 @@
+mint_tea:
+  catalog_id: TEA_MINT
+  card_id: "<?php echo $cards["tea"]->getId() ?>"
+
+black_tea:
+  catalog_id: TEA_BLACK
+  card_id: "<?php echo $cards["tea"]->getId() ?>"
+
+green_tea:
+  catalog_id: TEA_GREEN
+  card_id: "<?php echo $cards["tea"]->getId() ?>"

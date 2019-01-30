@@ -1,0 +1,11 @@
+coffee:
+  name_en: Coffee
+  name_cs: Káva
+
+tea:
+  name_en: Tea
+  name_cs: Čaj
+
+peanuts:
+  name_en: Peanuts
+  name_cs: Arašídy

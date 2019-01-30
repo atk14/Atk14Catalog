@@ -5,11 +5,12 @@
 			<li class="list-group-item" data-id="{$product->getId()}">
 				{render partial="shared/list_thumbnail" image=$product->getImage()}
 				<strong>{$product->getCatalogId()}</strong> {$product->getName()}
-				<ul class="list-inline pull-right">
-					<li>{a action="products/edit" id=$product}<i class="glyphicon glyphicon-edit"></i> {t}Edit{/t}{/a}</li>
+
+				{dropdown_menu}
+					{a action="products/edit" id=$product}{icon glyph="edit"} {t}Edit{/t}{/a}
 					{capture assign="confirm"}{t 1=$product->getName()|h escape=no}Chystáte se smazat produkt %1. Jste si jistý/á?{/t}{/capture}
-					<li>{a_remote action="products/destroy" id=$product _method=post _confirm=$confirm _class="btn btn-danger btn-xs"}<i class="glyphicon glyphicon-remove"></i>{/a_remote}</li>
-				</ul>
+					{a_destroy action="products/destroy" id=$product _confirm=$confirm}{icon glyph="remove"} {t}Delete{/t}{/a_destroy}
+				{/dropdown_menu}
 			</li>
 		{/foreach}
 	</ul>

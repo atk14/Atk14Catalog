@@ -50,18 +50,23 @@ class PasswordRecoveriesController extends ApplicationController{
 
 			$this->mailer->notify_password_update_in_recovery($password_recovery);
 
-			$this->flash->success(_("Your password has been updated successfuly"));
+			$this->flash->success(_("Your password has been updated successfully"));
 			$this->_redirect_to_action("logins/create_new",array("login" => $user->getLogin()));
 		}
 	}
 
 	function sent(){ }
 
-	function invalid_url(){ }
+	function invalid_url(){
+		$this->response->setStatusCode(404);
+	}
 
-	function expired_recovery(){ }
+	function expired_recovery(){
+		$this->response->setStatusCode(404);
+	}
 
 	function _before_filter(){
-		$this->page_title = _("Password recovery");
+		$this->breadcrumbs[] = array(_("Sign in"),$this->_link_to("logins/create_new"));
+		$this->page_title = $this->breadcrumbs[] = _("Password recovery");
 	}
 }

@@ -1,12 +1,12 @@
 <?php
 class CreateAliasForm extends CategoriesForm {
-	function set_up() {
 
+	function set_up() {
 		$this->add_field("parent_category_id", new CategoryField(array(
 			"label" => _("Umístit do kategorie"),
 			"help_text" => _("Napište lomítko, pokud chcete prohledat strom kategorií od kořene."),
 		)));
-		$this->_add_name();
+		$this->_add_fields();
 	}
 
 	function clean() {

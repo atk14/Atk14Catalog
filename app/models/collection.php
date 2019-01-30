@@ -5,7 +5,7 @@ class Collection extends ApplicationModel implements Translatable, Rankable, iSl
 		return array("name","teaser", "description");
 	}
 
-	function getSlugPattern($lang = null){ return $this->getName($lang); }
+	function getSlugPattern($lang){ return $this->g("name_$lang"); }
 
 	/**
 	 * Najde kategorie, ve kterych jsou produkty od teto znacky.

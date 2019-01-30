@@ -1,7 +1,7 @@
 <?php
 class BrandField extends ChoiceField {
 	function __construct($options=array()) {
-		$choices = array("" => "-- "._("Značka")." --");
+		$choices = array("" => "-- "._("brand")." --");
 		foreach(Brand::FindAll(array("order_by" => Translation::BuildOrderSqlForTranslatableField("brands","name"))) as $_b) {
 			$choices[$_b->getId()] = $_b->getName();
 		}

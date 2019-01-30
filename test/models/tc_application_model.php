@@ -1,6 +1,8 @@
 <?php
 /**
  * Put here tests for model`s base class when needed.
+ *
+ * @fixture users
  */
 class TcApplicationModel extends TcBase{
 
@@ -9,10 +11,7 @@ class TcApplicationModel extends TcBase{
 	}
 
 	function test_GetInstanceByToken(){
-		$user = User::CreateNewRecord(array(
-			"login" => "la_unity_testeur",
-			"password" => "Primavera",
-		));
+		$user = $this->users["rambo_tester"];
 
 		$token = $user->getToken();
 		$token_salted = $user->getToken("Extra_Spicy_Salt");
@@ -30,5 +29,16 @@ class TcApplicationModel extends TcBase{
 		$this->assertNull(User::GetInstanceByToken($token."a_hacking_attempt"));
 		$this->assertNull(User::GetInstanceByToken($token_salted));
 		$this->assertNull(User::GetInstanceByToken($token,"Extra_Spicy_Salt"));
+	}
+
+	function test_do_not_set_update_time() {
+		$user = $this->users["rambo_tester"];
+		$this->assertNull($user->getUpdatedAt());
+
+		$user->s("email", "rambouch@email.com", array("set_update_time" => false));
+		$this->assertNull($user->getUpdatedAt());
+
+		$user->s("email", "rambouch@gmail.com");
+		$this->assertNotNull($user->getUpdatedAt());
 	}
 }

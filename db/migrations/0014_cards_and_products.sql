@@ -26,14 +26,18 @@ CREATE TABLE cards (
 -- textual information for cards
 CREATE TABLE card_section_types (
 	id INT PRIMARY KEY,
-	name VARCHAR
+	code VARCHAR(255) NOT NULL,
+	name VARCHAR(255),
+	--
+	CONSTRAINT unq_cardsectiontypes_code UNIQUE (code)
 );
-INSERT INTO card_section_types VALUES (1,'Variants');
-INSERT INTO card_section_types VALUES (2,'Technical specification');
--- INSERT INTO card_section_types VALUES (3,'Awards'); -- reserved :)
-INSERT INTO card_section_types VALUES (4,'Product brochure');
-INSERT INTO card_section_types VALUES (5,'Other parts of the collection');
-INSERT INTO card_section_types VALUES (6,'Information');
+
+INSERT INTO card_section_types VALUES (1,'variants','Variants');
+INSERT INTO card_section_types VALUES (2,'tech_spec','Technical specification');
+-- INSERT INTO card_section_types VALUES (3,'awards','Awards'); -- reserved :)
+INSERT INTO card_section_types VALUES (4,'documentation','Product brochure');
+INSERT INTO card_section_types VALUES (5,'collection','Other parts of the collection');
+INSERT INTO card_section_types VALUES (6,'info','Information');
 --
 CREATE SEQUENCE seq_card_sections;
 CREATE TABLE card_sections (
@@ -100,7 +104,9 @@ CREATE TABLE products (
 	created_at TIMESTAMP NOT NULL DEFAULT NOW(),
 	updated_at TIMESTAMP,
 	--
-	CONSTRAINT fk_products_cards FOREIGN KEY (card_id) REFERENCES cards(id), 
+	CONSTRAINT unq_products_catalogid UNIQUE (catalog_id),
+	CONSTRAINT fk_products_cards FOREIGN KEY (card_id) REFERENCES cards(id) ON DELETE CASCADE,
 	CONSTRAINT fk_products_cr_users FOREIGN KEY (created_by_user_id) REFERENCES users,
 	CONSTRAINT fk_products_upd_users FOREIGN KEY (updated_by_user_id) REFERENCES users
 );
+CREATE INDEX in_products_cardid ON products (card_id);

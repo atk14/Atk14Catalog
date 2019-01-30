@@ -1,37 +1,45 @@
 var gulp = require( "gulp" );
+var del = require( "del" );
 var $ = require( "gulp-load-plugins" )();
-var browserSync = require( "browser-sync" );
+var browserSync = require( "browser-sync" ).create();
 
 var vendorStyles = [
-	"bower_components/jquery-file-upload/css/jquery.fileupload.css",
-	"bower_components/bootstrap-markdown/css/bootstrap-markdown.min.css",
-	"bower_components/jquery-ui/themes/base/all.css"
+	"node_modules/blueimp-file-upload/css/jquery.fileupload.css",
+	"node_modules/bootstrap-markdown-editor-4/dist/css/bootstrap-markdown-editor.min.css",
+	"node_modules/jquery-ui-bundle/jquery-ui.css",
+	"node_modules/@fortawesome/fontawesome-free/css/all.css"
 ];
 var vendorScripts = [
-	"bower_components/jquery/dist/jquery.js",
-	"bower_components/jquery-ui/jquery-ui.js",
-	"bower_components/jquery-file-upload/js/jquery.fileupload.js",
-	"bower_components/markdown-js/dist/markdown.js",
-	"bower_components/to-markdown/dist/to-markdown.js",
-	"bower_components/bootstrap-markdown/js/bootstrap-markdown.js",
-	"bower_components/bootstrap/dist/js/bootstrap.js",
-	"bower_components/atk14js/src/atk14.js"
+	"node_modules/jquery/dist/jquery.js",
+	"node_modules/jquery-ui-bundle/jquery-ui.js",
+	"node_modules/blueimp-file-upload/js/jquery.fileupload.js",
+	"node_modules/markdown/lib/markdown.js",
+	"node_modules/ace-builds/src/ace.js",
+	"node_modules/bootstrap-markdown-editor-4/dist/js/bootstrap-markdown-editor.min.js",
+	"node_modules/bootstrap/dist/js/bootstrap.bundle.js", // Bootstrap + Popper
+	"node_modules/atk14js/src/atk14.js",
+	"node_modules/unobfuscatejs/src/jquery.unobfuscate.js"
 ];
+
 var applicationScripts = [
 	"public/admin/scripts/application.js"
 ];
 
 // CSS
 gulp.task( "styles-admin", function() {
-	return gulp.src( "public/admin/styles/application.less" )
+	return gulp.src( "public/admin/styles/application.scss" )
 		.pipe( $.sourcemaps.init() )
-		.pipe( $.less() )
-		.pipe( $.autoprefixer() )
-		.pipe( $.cleanCss() )
+		.pipe( $.sass( {
+			includePaths: [
+				"public/admin/styles"
+			]
+		} ) )
+		.pipe( $.autoprefixer( { grid: true } ) )
+		.pipe( $.cssnano() )
 		.pipe( $.rename( { suffix: ".min" } ) )
-		.pipe( $.sourcemaps.write( "." ) )
+		.pipe( $.sourcemaps.write( ".", { sourceRoot: null } ) )
 		.pipe( gulp.dest( "public/admin/dist/styles" ) )
-		.pipe( browserSync.stream() );
+		.pipe( browserSync.stream( { match: "**/*.css" } ) );
 } );
 
 gulp.task( "styles-vendor-admin", function() {
@@ -39,11 +47,11 @@ gulp.task( "styles-vendor-admin", function() {
 		.pipe( $.sourcemaps.init() )
 		.pipe( $.concatCss( "vendor.css", { rebaseUrls: false } ) )
 		.pipe( $.autoprefixer() )
-		.pipe( $.cleanCss() )
+		.pipe( $.cssnano() )
 		.pipe( $.rename( { suffix: ".min" } ) )
-		.pipe( $.sourcemaps.write( "." ) )
+		.pipe( $.sourcemaps.write( ".", { sourceRoot: null } ) )
 		.pipe( gulp.dest( "public/admin/dist/styles" ) )
-		.pipe( browserSync.stream() );
+		.pipe( browserSync.stream( { match: "**/*.css" } ) );
 } );
 
 // JS
@@ -80,22 +88,26 @@ gulp.task( "jscs-admin", function() {
 
 // Copy
 gulp.task( "copy-admin", function() {
-	gulp.src( "bower_components/html5shiv/dist/html5shiv.min.js" )
+	gulp.src( "node_modules/html5shiv/dist/html5shiv.min.js" )
 		.pipe( gulp.dest( "public/admin/dist/scripts" ) );
-	gulp.src( "bower_components/respond/dest/respond.min.js" )
+	gulp.src( "node_modules/respond.js/dest/respond.min.js" )
 		.pipe( gulp.dest( "public/admin/dist/scripts" ) );
-	gulp.src( "bower_components/bootstrap/dist/fonts/*" )
-		.pipe( gulp.dest( "public/admin/dist/fonts" ) );
-	gulp.src( "bower_components/jquery-ui/themes/base/images/*" )
+	gulp.src( "node_modules/@fortawesome/fontawesome-free/webfonts/*" )
+		.pipe( gulp.dest( "public/admin/dist/webfonts" ) );
+	gulp.src( "node_modules/jquery-ui-bundle/images/*" )
 		.pipe( gulp.dest( "public/admin/dist/styles/images" ) );
 	gulp.src( "public/admin/fonts/*" )
 		.pipe( gulp.dest( "public/admin/dist/fonts" ) );
 	gulp.src( "public/admin/images/*" )
 		.pipe( gulp.dest( "public/admin/dist/images" ) );
+	gulp.src( "node_modules/ace-builds/src-min/**" )
+		.pipe( gulp.dest( "public/admin/dist/scripts/ace" ) );
 } );
 
 // Clean
-gulp.task( "clean-admin", require( "del" ).bind( null, [ "public/admin/dist" ] ) );
+gulp.task( "clean-admin", function() {
+	del( "admin/dist" );
+} );
 
 // Server
 gulp.task( "serve-admin", [ "styles-admin", "styles-vendor-admin" ], function() {
@@ -103,13 +115,18 @@ gulp.task( "serve-admin", [ "styles-admin", "styles-vendor-admin" ], function() 
 		proxy: "atk14catalog.localhost/admin/"
 	} );
 
+	// If these files change = reload browser
 	gulp.watch( [
 		"app/**/*.tpl",
-		"public/admin/scripts/**/*.js",
 		"public/admin/images/**/*"
 	] ).on( "change", browserSync.reload );
 
-	gulp.watch( "public/admin/styles/**/*.less", [ "styles" ] );
+	// If javascript files change = run 'scripts' task, then reload browser
+	gulp.watch( "public/admin/scripts/**/*.js", [ "scripts-admin" ] )
+		.on( "change", browserSync.reload );
+
+	// If styles files change = run 'styles' task with style injection
+	gulp.watch( "public/admin/styles/**/*.scss", [ "styles-admin" ] );
 } );
 
 // Build

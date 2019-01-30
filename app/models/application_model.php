@@ -29,6 +29,14 @@ class ApplicationModel extends TableRecord{
 			$values["created_from_addr"] = $HTTP_REQUEST->getRemoteAddr();
 		}
 
+		if($obj->hasKey("created_from_hostname") && !in_array("created_from_hostname",$v_keys)){
+			$values["created_from_hostname"] = $HTTP_REQUEST->getRemoteHostname();
+		}
+
+		if($obj->hasKey("created_from_user_agent") && !in_array("created_from_user_agent",$v_keys)){
+			$values["created_from_user_agent"] = String4::ToObject($HTTP_REQUEST->getUserAgent())->truncate(1000)->toString();
+		}
+
 		$tr_strings = array();
 		if($obj instanceof Translatable && ($fields = static::GetTranslatableFields())){
 			foreach($values as $k => $v){
@@ -133,23 +141,44 @@ class ApplicationModel extends TableRecord{
 	/**
 	 *
 	 * Provides transparent updating of update_at field if such field exists.
+	 *
+	 * @param array $values
+	 * @param array $options
+	 * - set_update_time if true is passed the method does not set fields updated_at, updated_on, update_date [default: true]
 	 */
 	function setValues($values,$options = array()){
+		global $HTTP_REQUEST;
+
 		$options += array(
 			"reconstruct_missing_slugs" => false,	
+			"set_update_time" => true,
 		);
 		$reconstruct_missing_slugs = $options["reconstruct_missing_slugs"];
 		unset($options["reconstruct_missing_slugs"]);
 
 		$v_keys = array_keys($values);
-		foreach(array("updated_at","updated_on","update_date") as $f){
-			if($this->hasKey($f) && !in_array($f,$v_keys)){
-				$values[$f] = date("Y-m-d H:i:s");
+		if ($options["set_update_time"]) {
+			foreach(array("updated_at","updated_on","update_date") as $f){
+				if($this->hasKey($f) && !in_array($f,$v_keys)){
+					$values[$f] = date("Y-m-d H:i:s");
+				}
 			}
 		}
 
 		if($this->hasKey("updated_by_user_id") && !in_array("updated_by_user_id",$v_keys)){
 			$values["updated_by_user_id"] = ApplicationModel::_GetLoggedUserId();
+		}
+
+		if($this->hasKey("updated_from_addr") && !in_array("updated_from_addr",$v_keys)){
+			$values["updated_from_addr"] = $HTTP_REQUEST->getRemoteAddr();
+		}
+
+		if($this->hasKey("updated_from_hostname") && !in_array("updated_from_hostname",$v_keys)){
+			$values["updated_from_hostname"] = $HTTP_REQUEST->getRemoteHostname();
+		}
+
+		if($this->hasKey("updated_from_user_agent") && !in_array("updated_from_user_agent",$v_keys)){
+			$values["updated_from_user_agent"] = String4::ToObject($HTTP_REQUEST->getUserAgent())->truncate(1000)->toString();
 		}
 
 		$class_name = get_class($this);
@@ -217,8 +246,9 @@ class ApplicationModel extends TableRecord{
 		$options += array(
 			"salt" => SECRET_TOKEN,
 			"extra_salt" => "",
+			"hash_length" => 32, // max. 32
 		);
-		$length = 32;
+		$length = $options["hash_length"];
 		return $this->getId().".".substr(md5(get_class($this).$this->getId().$options["salt"].$options["extra_salt"]),0,$length);
 	}
 
@@ -230,10 +260,11 @@ class ApplicationModel extends TableRecord{
 	 * @see getToken
 	 */
 	static function GetInstanceByToken($token,$options = array()){
+		$token = (string)$token;
 		$class_name = get_called_class();
 		$ar = explode(".",$token);
 
-		if(isset($ar[0]) && is_numeric($ar[0]) && ($obj = call_user_func(array($class_name,"GetInstanceById"),$ar[0])) && $obj->getToken($options)==$token){
+		if(isset($ar[0]) && is_numeric($ar[0]) && ($obj = call_user_func(array($class_name,"GetInstanceById"),$ar[0])) && $obj->getToken($options)===$token){
 			return $obj;
 		}
 	}
@@ -251,9 +282,9 @@ class ApplicationModel extends TableRecord{
 	}
 
 	/**
-	 * $slugs = $static_page->getSlugs(); // array("cs" => "vitejte", "en" => "welcome")
-	 * $slugs = $static_page->getSlugs(array("prefix" => "slug_")); // array("slug_cs" => "vitejte", "slug_en" => "welcome")
-	 * $slugs = $static_page->getSlugs(array("segment" => "123"));
+	 * $slugs = $page->getSlugs(); // array("cs" => "vitejte", "en" => "welcome")
+	 * $slugs = $page->getSlugs(array("prefix" => "slug_")); // array("slug_cs" => "vitejte", "slug_en" => "welcome")
+	 * $slugs = $page->getSlugs(array("segment" => "123"));
 	 */
 	function getSlugs($options = array()){
 		global $ATK14_GLOBAL;
@@ -305,6 +336,21 @@ class ApplicationModel extends TableRecord{
 		return Cache::Get("$class_name",$record_id);
 	}
 
+	function getValue($field_name){
+		// getting value of a translatable field
+		if($this instanceof Translatable && preg_match('/^(.+)_([a-z]{2})$/',$field_name,$matches)){
+			$f = $matches[1]; // e.g. "title"
+			$lang = $matches[2]; // e.g. "en"
+			
+			if(in_array($f,static::GetTranslatableFields())){
+				$tr_strings = Translation::GetObjectStrings($this);
+				return isset($tr_strings[$field_name]) ? $tr_strings[$field_name] : null;
+			}
+		}
+
+		return parent::getValue($field_name);
+	}
+
 	/**
 	 * Tento __call zachytava tato volani:
 	 *
@@ -327,6 +373,30 @@ class ApplicationModel extends TableRecord{
 				$tr_strings = Translation::GetObjectStrings($this);
 				$lang = isset($arguments[0]) ? $arguments[0] : $ATK14_GLOBAL->getLang();
 				$k = "{$key}_$lang";
+
+				// Fallback handling
+				//
+				// In config/locale.yml the fallback language could be specified this way:
+				//
+				//  en:
+				//    LANG: en_US.UTF-8
+				//
+				//  cs:
+				//    LANG: cs_CZ.UTF-8
+				//    fallback: "en"
+				//
+				//  sk:
+				//    LANG: sk_SK.UTF-8
+				//    fallback: "cs"
+				//
+				if(!isset($tr_strings[$k]) || !strlen($tr_strings[$k])){
+					$langs = $ATK14_GLOBAL->getConfig("locale");
+					$fallback = isset($langs[$lang]["fallback"]) ? $langs[$lang]["fallback"] : "";
+					if($fallback && $fallback!=$lang){
+						return self::__call($name,array($fallback));
+					}
+				}
+
 				return isset($tr_strings[$k]) ? $tr_strings[$k] : null;
 			}
 		}
@@ -468,5 +538,5 @@ class ApplicationModel extends TableRecord{
 	 * echo $product->getSlugPattern("cs"); // Růžové mýdlo
 	 * echo $product->getSlugPattern("en"); // Pink Soap
 	 */
-	function getSlugPattern( $lang = null ) { return '';}
+	function getSlugPattern($lang){ return ''; }
 }

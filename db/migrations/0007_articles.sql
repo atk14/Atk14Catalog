@@ -1,7 +1,7 @@
 CREATE SEQUENCE seq_articles;
 CREATE TABLE articles(
 	id INT PRIMARY KEY DEFAULT NEXTVAL('seq_articles'),
-	author_id INT NOT NULL,
+	author_id INT,
 	published_at TIMESTAMP NOT NULL DEFAULT NOW(),
 	--
 	created_by_user_id INT,

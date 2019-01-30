@@ -8,7 +8,7 @@ class ArticlesForm extends AdminForm {
 
 		$this->add_translatable_field("body",new MarkdownField(array(
 			"label" => _("Body"),
-			"help_text" => _("Mardown format is expected"),
+			"help_text" => _("Markdown format is expected"),
 		)));
 
 		$this->add_field("published_at",new DateTimeField(array(
@@ -20,7 +20,7 @@ class ArticlesForm extends AdminForm {
 			"label" => _("Tags"),
 			"required" => false,
 			"hint" => "news , webdesign",
-			"help_text" => sprintf(_("Mention tag <em>%s</em> when this article should be displayed in the news section"),h(Tag::FindById(Tag::ID_NEWS)))
+			"create_tag_if_not_found" => true,
 		)));
 	}
 }

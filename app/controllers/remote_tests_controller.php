@@ -37,22 +37,30 @@ class RemoteTestsController extends ApplicationController{
 	 * Checks for existence of stale locks from robots
 	 */
 	function stale_locks(){
-		$cmd = "cd ".LOCK_DIR."; find . -type f -mmin +20 | grep -v README.md";
-		$out = `$cmd`;
-		if($out){
-			$this->_fail($out);
-		}
+		$this->_check_for_files(LOCK_DIR,array(
+			"max_mtime" => time() - 20 * 60, // older than 20 minutes
+			"invert_pattern" => '/(README|\.gitkeep)/'
+		));
 	}
 
 	/**
 	 * Filters out Tracy's log files which are no older than 30 minutes
 	 */
 	function php_errors(){
-		$cmd = "cd ".ATK14_DOCUMENT_ROOT."log/ && find . -type f -mmin -30 | egrep '(php_error.log|exception|error.log)'";
-		$out = `$cmd`;
-		if($out){
-			$this->_fail($out);
-		}
+		$this->_check_for_files(ATK14_DOCUMENT_ROOT."log/",array(
+			"pattern" => '/(php_error\.log|exception|error\.log)/',
+			"min_mtime" => time() - 30 * 60, // not older than 30 minutes
+		));
+	}
+
+	/**
+	 * Filters out Tracy's exception log files which are no older than 30 minutes
+	 */
+	function php_exceptions(){
+		$this->_check_for_files(ATK14_DOCUMENT_ROOT."log/",array(
+			"pattern" => '/exception/',
+			"min_mtime" => time() - 30 * 60, // not older than 30 minutes
+		));
 	}
 	
 	function _before_filter(){
@@ -85,6 +93,19 @@ class RemoteTestsController extends ApplicationController{
 		}
 	}
 
+	function _check_for_files($directory,$check_options){
+		$cwd = getcwd();
+
+		chdir($directory);
+		$files = Files::FindFiles(".",$check_options);
+
+		if($files){
+			$this->_fail(join("\n",$files));
+		}
+
+		chdir($cwd);
+	}
+
 	function _before_render(){
 		parent::_before_render();
 
@@ -106,4 +127,5 @@ class RemoteTestsController extends ApplicationController{
 
 		$this->response->write(join("\n",$this->test_messages));
 	}
+
 }

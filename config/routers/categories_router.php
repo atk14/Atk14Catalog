@@ -16,10 +16,21 @@ class CategoriesRouter extends Atk14Router{
 	}
 
 	function build(){
+		global $ATK14_GLOBAL;
+		$current_lang = $ATK14_GLOBAL->getLang();
+
 		if($this->namespace!="" || $this->controller!="categories" || $this->action!="detail" || !$this->params["path"]){ return; }
 
-		$uri = "/".$this->params["path"]."/";
+		$path = $this->params["path"];
 		unset($this->params["path"]);
+
+		if($this->lang!=$current_lang){
+			if($c = Category::GetInstanceByPath($path)){
+				$path = $c->getPath($this->lang);
+			}
+		}
+
+		$uri = "/$path/";
 		
 		return $uri;
 	}

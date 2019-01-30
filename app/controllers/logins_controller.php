@@ -1,9 +1,10 @@
 <?php
 class LoginsController extends ApplicationController{
+
 	function create_new(){
 		if($this->logged_user){ return $this->_redirect_to("destroy"); }
 
-		$this->page_title = _("Sign in");
+		$this->page_title = $this->breadcrumbs[] = _("Sign in");
 
 		if($this->request->get()){ $this->form->set_initial($this->params); }
 
@@ -21,7 +22,7 @@ class LoginsController extends ApplicationController{
 
 			$this->_login_user($user);
 
-			$this->flash->success(sprintf(_("You have been successfuly logged in as <em>%s</em>"),h($user->getLogin())));
+			$this->flash->success(sprintf(_("You have been successfully logged in as <em>%s</em>"),h($user->getLogin())));
 			$this->_redirect_after_login_or_logout();
 		}
 	}
@@ -29,11 +30,11 @@ class LoginsController extends ApplicationController{
 	function destroy(){
 		if(!$this->logged_user){ return $this->_redirect_to("create_new"); }
 
-		$this->page_title = _("Sign out");
+		$this->page_title = $this->breadcrumbs[] = _("Sign out");
 		if($this->logged_user){
 			if($this->request->post()){
-				$this->_logout_user();
-				$this->flash->success(_("You have been successfuly logged out"));
+				$this->_logout_user($stayed_logged_as_user);
+				$this->flash->success(_("You have been successfully logged out").($stayed_logged_as_user ? "<br>".sprintf(_("You've stayed logged in as <em>%s</em>"),h($stayed_logged_as_user->getLogin())) : ""));
 				$this->_redirect_after_login_or_logout();
 			}
 		}else{

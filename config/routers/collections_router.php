@@ -1,7 +1,7 @@
 <?php
 class CollectionsRouter extends SluggishRouter{
-	var $url_patterns_by_lang = array(
-		"en" => "collection",
-		"cs" => "kolekce",
+	var $patterns = array(
+		"en" => "/collection/<slug>/",
+		"cs" => "/kolekce/<slug>/",
 	);
 }

@@ -1,15 +1,39 @@
 <?php
-// TODO: vsechny hlasky do anglictiny a pak lokalizovat gettextem
-
+/**
+ * Base class for other Rest API controllers
+ */
 class ApplicationRestApiController extends ApplicationBaseController{
-	var $api_status_code = null; // automaticky je status code nastaven na 200 resp. 400 pri neuspechu; zde je to mozne zmenit
-	var $api_root_element = null; // pokud nevyhovuje automaticke urceni root elementu pro XML, timto je mozne nastavit (napr. u kontroleru ActiveUsersControllers muzeme nastavit api_root_element na users)
-	var $api_data = null; // pole dat, ktere ma byt vyrenderovano
+
+	var $api_status_code = null; // status code is set automatically to 200 or 400, in some cases it may be useful to set a special status code
+	var $api_status_message = ""; // "Ok", "Created Gracefully", "Resource Busy"; by default the status messages is set automatically
+	var $api_root_element = null; // root element for XML output; by default it is set automatically according to a controller name (e.g. for controller UsersController the api_root_element will be <users> or <user>)
+	var $api_data = null; // output data; Array
 
 	var $api_internal_charset = DEFAULT_CHARSET;
 
 	/**
-	 * Vygeneruje seznam prikazu.
+	 * Username and password to prevent an anonymous user from reading the auto-generated documentation
+	 *
+	 * Be aware that only documentation is protected, not the action call itself. 
+	 *	
+	 * documentation:     http://myapp.localhost/api/en/articles/detail/
+	 * not documentation: http://myapp.localhost/api/en/articles/detail/?id=1&format=json
+	 *
+	 *	// just one username and password for the whole documentation
+	 *	var $doc_basic_auth = "aladdin:openSesame";
+	 *
+	 *	// more passwords can be also set
+	 *	var $doc_basic_auth = array(
+	 *		'/./' => "aladdin:openSesame",
+	 *		'/^articles\//' => "", // a special password for all actions in articles controller
+	 *		'/^newsletter_subscriptions\/(create_new|destroy)$/' => "", // no password for newsletter_subscriptions/create_new and newsletter_subscriptions/destroy
+	 *	);
+	 */
+	var $doc_basic_auth = "";
+	var $doc_basic_auth_realm = "Documentation Restricted Area";
+
+	/**
+	 * Renders list of all commands in the API
 	 *
 	 * $this->_render_command_list("/home/user/www/project/app/controllers/api/");
 	 */
@@ -105,8 +129,6 @@ class ApplicationRestApiController extends ApplicationBaseController{
 		return $out;
 	}
 
-	//function _get_session(){ return null; }
-
 	function _application_before_filter(){
 		parent::_application_before_filter();
 
@@ -163,11 +185,45 @@ class ApplicationRestApiController extends ApplicationBaseController{
 		}
 
 		parent::_before_render();
+
+		if($this->doc_basic_auth){
+			// doc_basic_auth is set so we may sacure the api documentation
+
+			if($this->render_template){
+				if(is_array($this->doc_basic_auth)){
+					$auth_ar = $this->doc_basic_auth;
+				}else{
+					$auth_ar = array(
+						'/^.*\/.*$/' => "$this->doc_basic_auth",
+					);
+				}
+
+				$authorized = false;
+				foreach($auth_ar as $pattern => $auth_string){
+					if(($this->request->getBasicAuthString()==$auth_string || $auth_string==="") && preg_match($pattern,"$this->controller/$this->action")){
+						$authorized = true;
+						break;
+					}
+				}
+
+				if(!$authorized){
+					$this->response->authorizationRequired($this->doc_basic_auth_realm ? $this->doc_basic_auth_realm : "Private Area");
+					$this->render_template = false;
+					return;
+				}
+			}
+		}
 	}
 
 	function error404(){
 		return $this->_report_fail(_("Nothing has been found on this address"),array(
 			"status_code" => 404,
+		));
+	}
+
+	function error403(){
+		return $this->_report_fail(_("You don't have access to the requested resource"),array(
+			"status_code" => 403,
 		));
 	}
 
@@ -243,7 +299,7 @@ class ApplicationRestApiController extends ApplicationBaseController{
 			"raw_data" => null,
 
 			"status_code" => (isset($this->api_status_code) ? $this->api_status_code : 200), // Found
-			"status_message" => null,
+			"status_message" => $this->api_status_message,
 		),$options);
 
 		$this->render_template = false;
@@ -265,7 +321,8 @@ class ApplicationRestApiController extends ApplicationBaseController{
 			case "html":
 				$this->render_template = true;
 				$this->template_name = "shared/rest_api/html_output";
-				$this->tpl_data["status_code"] = $options["status_code"];
+				$this->tpl_data["status_code"] = $this->response->getStatusCode();
+				$this->tpl_data["status_message"] = $this->response->getStatusMessage();
 				$this->tpl_data["data"] = $data;
 				break;
 			case "yaml":
@@ -310,7 +367,7 @@ class ApplicationRestApiController extends ApplicationBaseController{
 }
 
 
-// zachycovani DbMole chyb... TODO: slocit kod s generovanim odpovedi v kontroleru
+// zachycovani DbMole chyb... TODO: sloucit kod s generovanim odpovedi v kontroleru
 DbMole::RegisterErrorHandler("_rest_api_dbmole_error_handler");
 function _rest_api_dbmole_error_handler($dbmole){
 	global $HTTP_RESPONSE,$HTTP_REQUEST;

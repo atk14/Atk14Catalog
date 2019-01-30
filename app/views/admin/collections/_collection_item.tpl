@@ -1,16 +1,19 @@
 <li class="list-group-item" data-id="{$collection->getId()}">
-	{* {$collection->getVisible()|display_bool} *}
+	<div class="d-flex justify-content-between align-items-center">
+		<div>
+			{render partial="shared/list_thumbnail" image=$collection->getImageUrl()}
+			{$collection->getName()}
+		</div>
+		<div>
+			{dropdown_menu}
+				{a action=edit id=$collection}{!"pencil-alt"|icon} {t}Edit{/t}{/a}
 
-	{render partial="shared/list_thumbnail" image=$collection->getImageUrl()}
-
-	{$collection->getName()}
-	<ul class="list-inline pull-right">
-		<li>{a action=edit id=$collection}<i class="glyphicon glyphicon-edit"></i> {t}Edit{/t}{/a}</li>
-
-		{if $collection->isDeletable()}
-			{capture assign="confirm"}{t 1=$collection->getName()|h escape=no}You are about to permanently delete collection %1
-Are you sure about that?{/t}{/capture}
-			<li>{a_remote action=destroy id=$collection _method=post _confirm=$confirm _class="btn btn-danger btn-xs"}<i class="glyphicon glyphicon-remove"></i>{/a_remote}</li>
-		{/if}
-	</ul>
+				{if $collection->isDeletable()}
+					{capture assign="confirm"}{t 1=$collection->getName()|h escape=no}You are about to permanently delete collection %1
+	Are you sure about that?{/t}{/capture}
+					{a_destroy id=$collection _confirm=$confirm}{!"trash-alt"|icon} {t}Delete{/t}{/a_destroy}
+				{/if}
+			{/dropdown_menu}	
+		</div>
+	</div>
 </li>

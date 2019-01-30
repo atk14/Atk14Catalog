@@ -68,18 +68,24 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		return $out;
 	}
 
-	function getSlugPattern($lang=null){
-		return sprintf("%s-%d", $this->getName($lang), $this->getId());
+	function getSlugPattern($lang){
+		return $this->g("name_$lang");
 	}
 
 	function getImages($options = array()){
+		$options += array(
+			"consider_product_images" => true,
+		);
+
 		$images = Image::GetImages($this,$options);
 
 		if(!$this->hasVariants()){ return $images; }
 
-		foreach($this->getProducts() as $p){
-			foreach($p->getImages() as $i){
-				if($i->displayOnCard()){ $images[] = $i; }
+		if($options["consider_product_images"]){
+			foreach($this->getProducts() as $p){
+				foreach($p->getImages() as $i){
+					if($i->displayOnCard()){ $images[] = $i; }
+				}
 			}
 		}
 
@@ -171,7 +177,7 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 	}
 
 
-	function getCategoryLister() {
+	function getCategoriesLister() {
 		return $this->getLister("category", array("table_name" => "category_cards"));
 	}
 
@@ -186,11 +192,48 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 	}
 
 	function getCategoryIds() {
-		return $this->getCategoryLister()->getRecordIds();
+		return $this->getCategoriesLister()->getRecordIds();
 	}
 
-	function getCategories() {
-		return $this->getCategoryLister()->getRecords();
+	/**
+	 *	$color_filter = Category::FindByCode("filter:color");
+	 *	$colors = $card->getCategories(array("root_category" => $color_filter));
+	 */
+	function getCategories($options = array()) {
+		$options += array(
+			"consider_invisible_categories" => true,
+			"consider_filters" => true,
+			"root_category" => null,
+			"filters_only" => false,
+		);
+
+		$categories = array();
+		foreach($this->getCategoriesLister()->getRecords() as $c){
+			if(!$options["consider_invisible_categories"] && !$c->isVisible()){ continue; }
+			if(!$options["consider_filters"] && ($c->isFilter() || ($c->getParentCategory() && $c->getParentCategory()->isFilter()))){ continue; }
+			if($options["filters_only"]){
+				if(!$c->getParentCategory() || !$c->getParentCategory()->isFilter()){ continue; }
+			}
+			if($options["root_category"] && !$c->isDescendantOf($options["root_category"])){ continue; }
+			$categories[] = $c;
+		}
+		return $categories;
+	}
+
+	function getActiveFilters(){
+		$categories = $this->getCategories(array(
+			"consider_invisible_categories" => false,
+			"filters_only" => true,
+		));
+
+		$filters = array();
+		foreach($categories as $c){
+			$filter = $c->getParentCategory();
+			$filters[$filter->getId()] = $filter;
+		}
+		$filters = array_values($filters);
+
+		return $filters;
 	}
 
 	function getCardSections(){
@@ -310,7 +353,7 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 
 	function destroy($delete_for_real = false){
 		if($delete_for_real){
-			return parent::destroy();
+			return parent::destroy($delete_for_real);
 		}
 
 		if($this->isDeleted()){
@@ -440,6 +483,10 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		}
 
 		return $alt_cards;
+	}
+
+	function getTechnicalSpecifications(){
+		return TechnicalSpecification::FindAll("card_id",$this);
 	}
 
 	function setValues($values,$options=array()) {

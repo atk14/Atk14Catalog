@@ -1,10 +1,12 @@
 <?php
 /**
- * Lze zadat id nebo path
- * 	123
- *	/mistnosti/jidelna/
+ *
+ * Either Id or Path of a category can be inserted to this field:
+ * - 123
+ * - /rooms/dining-room/
  */
 class CategoryField extends CharField{
+
 	function __construct($options = array()){
 		$options["null_empty_output"] = true;
 		$options += array(
@@ -12,7 +14,8 @@ class CategoryField extends CharField{
 			"follow_pointing_category" => true,
 			"widget" => new TextInput(array(
 				"attrs" => array(
-					"data-suggest_url" => Atk14Url::BuildLink(array("namespace" => "api", "controller" => "categories_suggestions","action" => "index"))."?format=json&q=",
+					"data-suggesting_url" => Atk14Url::BuildLink(array("namespace" => "api", "controller" => "categories_suggestions","action" => "index"))."?format=json&q=",
+					"data-suggesting_categories" => "yes",
 				),
 			))
 		);
@@ -23,8 +26,8 @@ class CategoryField extends CharField{
 		parent::__construct($options);
 
 		$this->update_messages(array(
-			"no_such_category" => "Taková kategorie neexistuje",
-			"filter" => "Toto je filtr. Takovou kategorii nelze zvolit.",
+			"no_such_category" => _("There is no such category"),
+			"filter" => _("It's a filter. This category cannot be selected."),
 		));
 	}
 

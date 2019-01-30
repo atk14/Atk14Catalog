@@ -8,7 +8,7 @@ class Brand extends ApplicationModel implements Translatable, Rankable, iSlug {
 		return array("teaser","description");
 	}
 
-	function getSlugPattern($lang = null){ return $this->getName(); }
+	function getSlugPattern($lang){ return $this->getName(); }
 
 	function hasCards() {
 		return !!$this->getCards(array("limit" => 1));

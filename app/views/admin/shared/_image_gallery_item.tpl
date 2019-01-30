@@ -1,21 +1,16 @@
 {*
  * Tato sablonka se vyrenderuje do jsonu pri XHR uploadu obrazku do adminu (viz controllers/admin/images_controller.php)
  *}
-<li class="list-group-item media clearfix" data-id="{$image->getId()}">
-	<div class="btn-group pull-right">
-		{capture assign="title"}{t}Odpojit obrázek.{/t}{/capture}
-		{a_destroy action="images/destroy" id=$image _title=$title _class="confirm btn btn-danger btn-xs pull-right"}<span class="glyphicon glyphicon-remove"></span>{/a_destroy}
-	</div>
+<li class="list-group-item clearfix" data-id="{$image->getId()}">
 
-	<a href="{link_to action="images/edit" id=$image}" title="{t}Editovat tento obrázek{/t}" class="pull-left">{!$image|pupiq_img:"!80x80"}</a>
+	{render partial="shared/list_thumbnail" image=$image align="left"}
 
-	<div class="media-body">
-		{if $image->getName()}
-			<h4 class="media-heading">{$image->getName()}</h4>
-		{/if}
+	{dropdown_menu clearfix=false}
+		{a action="images/edit" id=$image}{icon glyph=edit} {t}Edit{/t}{/a}
+		{a_destroy action="images/destroy" id=$image}{icon glyph=remove} {t}Remove image{/t}{/a_destroy}
+	{/dropdown_menu}
 
-		{if $image->getDescription()}
-			<p>{$image->getDescription()}</p>
-		{/if}
-	</div>
+	{if $image->getName()}<strong>{$image->getName()}</strong><br>{/if}
+	{$image->getDescription()}
+
 </li>

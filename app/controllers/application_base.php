@@ -7,7 +7,7 @@ class ApplicationBaseController extends Atk14Controller{
 	var $logged_user;
 
 	/**
-	 * @var Navigation
+	 * @var Menu14
 	 */
 	var $breadcrumbs;
 
@@ -17,6 +17,14 @@ class ApplicationBaseController extends Atk14Controller{
 	}
 
 	function error404(){
+		if($this->request->get() && !$this->request->xhr() && ($redirection = ErrorRedirection::GetInstanceByHttpRequest($this->request))){
+			$redirection->touch();
+			$this->_redirect_to($redirection->getDestinationUrl(),array(
+        "moved_permanently" => $redirection->movedPermanently(),
+      ));
+			return;
+		}
+
 		$this->page_title = _("Page not found");
 		$this->response->setStatusCode(404);
 		$this->template_name = "application/error404"; // see app/views/application/error404.tpl
@@ -53,9 +61,32 @@ class ApplicationBaseController extends Atk14Controller{
 	}
 
 	function _before_render(){
+		global $ATK14_GLOBAL;
+
 		if(!isset($this->tpl_data["breadcrumbs"]) && isset($this->breadcrumbs)){
 			$this->tpl_data["breadcrumbs"] = $this->breadcrumbs;
 		}
+
+		// data for language swith, see app/views/shared/_langswitch.tpl
+		$languages = array();
+		$current_language = null;
+		$params_homepage = array("namespace" => "", "controller" => "main", "action" => "index");
+		$params = ($this->request->get() && !preg_match('/^error/',$this->action)) ? $this->params->toArray() : $params_homepage;
+		foreach($ATK14_GLOBAL->getConfig("locale") as $l => $locale){
+			$params["lang"] = $l;
+			$item = array(
+				"lang" => $l,
+				"name" => isset($locale["name"]) ? $locale["name"] : $l,
+				"switch_url" => $this->_link_to($params)
+			);
+			if($this->lang==$l){
+				$current_language = $item;
+				continue;
+			}
+			$languages[] = $item;
+		}
+		$this->tpl_data["current_language"] = $current_language;
+		$this->tpl_data["supported_languages"] = $languages;
 	}
 
 	function _application_before_filter(){
@@ -64,8 +95,13 @@ class ApplicationBaseController extends Atk14Controller{
 		$this->response->setHeader("Cache-Control","private, max-age=0, must-revalidate");
 		$this->response->setHeader("Pragma","no-cache");
 
-		// following header helps to avoid clickjacking attacks
-		$this->response->setHeader("X-Frame-Options","SAMEORIGIN"); // SAMEORIGIN, DENY
+		// security headers
+		$this->response->setHeader("X-Frame-Options","SAMEORIGIN"); // avoiding clickjacking attacks; "SAMEORIGIN", "DENY"
+		$this->response->setHeader("X-XSS-Protection","1; mode=block");
+		$this->response->setHeader("Referrer-Policy","same-origin"); // "same-origin", "strict-origin", "strict-origin-when-cross-origin"...
+		$this->response->setHeader("X-Content-Type-Options","nosniff");
+		//$this->response->setHeader("Content-Security-Policy","default-src 'self' data: 'unsafe-inline' 'unsafe-eval'");
+
 		$this->response->setHeader("X-Powered-By","ATK14 Framework");
 
 		if(PRODUCTION && $this->request->get() && !$this->request->xhr() && ("www.".$this->request->getHttpHost()==ATK14_HTTP_HOST || $this->request->getHttpHost()=="www.".ATK14_HTTP_HOST)){
@@ -77,8 +113,8 @@ class ApplicationBaseController extends Atk14Controller{
 		// logged in user
 		$this->logged_user = $this->tpl_data["logged_user"] = $this->_get_logged_user();
 
-		$this->breadcrumbs = new Navigation();
-		$this->breadcrumbs[] = array(ATK14_APPLICATION_NAME,$this->_link_to(array("namespace" => "", "action" => "main/index")));
+		$this->breadcrumbs = new Menu14();
+		$this->breadcrumbs[] = array(_("Home"),$this->_link_to(array("namespace" => "", "action" => "main/index")));
 
 		if($this->_logged_user_required() && !$this->logged_user){
 			return $this->_execute_action("error403");
@@ -106,20 +142,30 @@ class ApplicationBaseController extends Atk14Controller{
 		$this->session->s($key,$user->getId());
 		$this->session->changeSecretToken(); // prevent from session fixation
 
-		$this->logger->info("user $user just logged in from ".$this->request->getRemoteAddr());
+		if($options["fake_login"]){
+			$this->logger->info(sprintf("User#%s (%s) just logged in administratively as User#%s (%s) from %s",$this->logged_user->getId(),"$this->logged_user",$user->getId(),"$user",$this->request->getRemoteAddr()));
+		}else{
+			$this->logger->info(sprintf("User#%s (%s) just logged in from %s",$user->getId(),"$user",$this->request->getRemoteAddr()));
+		}
 	}
 
-	function _logout_user(){
-		if($this->session->g("fake_logged_user_id")){
+	function _logout_user(&$stayed_logged_as_user = null){
+		$stayed_logged_as_user = null;
+		$logged_user = $this->_get_logged_user($really_logged_user);
+
+		if(!$logged_user){
+			// just for sure
+			$this->session->clear("logged_user_id");
 			$this->session->clear("fake_logged_user_id");
-			return;
+		}elseif($logged_user->getId()!=$really_logged_user->getId()){
+			$stayed_logged_as_user = $really_logged_user;
+			$this->session->clear("fake_logged_user_id");
+			$this->logger->info(sprintf("User#%s (%s) logged out administratively as User#%s (%s) from %s",$really_logged_user->getId(),"$really_logged_user",$logged_user->getId(),"$logged_user",$this->request->getRemoteAddr()));
+		}else{
+			$this->session->clear("logged_user_id");
+			$this->session->clear("fake_logged_user_id"); // just for sure
+			$this->logger->info(sprintf("User#%s (%s) logged out from %s",$logged_user->getId(),"$logged_user",$this->request->getRemoteAddr()));
 		}
-
-		if($user = User::FindById($this->session->g("logged_user_id"))){
-			$this->logger->info("user $user logged out from ".$this->request->getRemoteAddr());
-		}
-
-		$this->session->clear("logged_user_id");
 	}
 
 	function _begin_database_transaction(){
@@ -138,10 +184,14 @@ class ApplicationBaseController extends Atk14Controller{
 		$this->_begin_database_transaction();
 	}
 
-	function _get_logged_user(){
-		($user_id = $this->session->g("fake_logged_user_id")) ||
-		($user_id = $this->session->g("logged_user_id"));
-		return User::GetInstanceById($user_id);
+	function _get_logged_user(&$really_logged_user = null){
+		$really_logged_user = User::GetInstanceById($this->session->g("logged_user_id"));
+
+		if($really_logged_user && $really_logged_user->isAdmin()){
+			$fakely_logged_user = User::GetInstanceById($this->session->g("fake_logged_user_id"));
+		}
+
+		return isset($fakely_logged_user) ? $fakely_logged_user : $really_logged_user;
 	}
 
 	function _logged_user_required(){
@@ -153,8 +203,8 @@ class ApplicationBaseController extends Atk14Controller{
 	 *
 	 * <code>
 	 *	 $this->_find("user");
-	 *	 $this->_find("static_page","page_id");
-	 *	 $this->_find("static_page",array(
+	 *	 $this->_find("page","page_id");
+	 *	 $this->_find("page",array(
 	 *			"key" => "page_id",
 	 *			"execute_error404_if_not_found" => false,
 	 *	 ));
@@ -189,7 +239,7 @@ class ApplicationBaseController extends Atk14Controller{
 		);
 
 		if(!$options["class_name"]){
-			$options["class_name"] = String4::ToObject($object_name)->camelize()->toString(); // static_page -> StaticPage
+			$options["class_name"] = String4::ToObject($object_name)->camelize()->toString(); // page -> Page
 		}
 
 		$key = $options["key"];
@@ -249,6 +299,18 @@ class ApplicationBaseController extends Atk14Controller{
 	 *	}
 	 */
 	function _save_return_uri(&$form = null){
+
+		// An experiment: let's utilize the session for better "redirect back" ability
+		if($this->request->get()){
+			($return_uris = $this->session->g("return_uris")) || ($return_uris = array());
+			$key = md5($this->request->getRequestUri());
+			if(!isset($return_uris[$key])){
+				if(sizeof($return_uris)>50){ array_shift($return_uris); } // for safety reasons there is a max limit
+				$return_uris[$key] = $this->_get_return_uri();
+				$this->session->s("return_uris",$return_uris);
+			}
+		}
+
 		if(!isset($form)){ $form = $this->form; }
 		$return_uri = $this->_get_return_uri();
 		$form->set_hidden_field("_return_uri_",$return_uri);
@@ -257,12 +319,19 @@ class ApplicationBaseController extends Atk14Controller{
 	/**
 	 * Returns current return uri
 	 *
-	 * In fact this returns a previously saved uri (by calling $this->_save_return_uri()) or http referer
+	 * In fact this returns a previously saved uri (by calling $this->_save_return_uri()), value of parameter _return_uri_ (eventually return_uri) or the http referer
 	 */
-	function _get_return_uri(){
-		return $this->params->defined("_return_uri_") ? $this->params->getString("_return_uri_") : $this->request->getHttpReferer();
-	}
+	function _get_return_uri($default = "index"){
+		$key = md5($this->request->getRequestUri());
+		($return_uris = $this->session->g("return_uris")) || ($return_uris = array());
 
+		($return_uri = $this->params->getString("_return_uri_")) ||
+		($return_uri = isset($return_uris[$key]) ? $return_uris[$key] : null) ||
+		($return_uri = $this->params->getString("return_uri")) ||
+		($return_uri = $this->request->getHttpReferer()) ||
+		($return_uri = $this->_link_to($default));
+		return $return_uri;
+	}
 
 	/**
 	 * Redirects user back to return_uri, when it is know.
@@ -276,12 +345,49 @@ class ApplicationBaseController extends Atk14Controller{
 	 * $this->_redirect_to_return_uri("http://www.atk14.net");
 	 */
 	function _redirect_back($default = "index"){
-		if($return_uri = $this->params->g("_return_uri_")){
-			return $this->_redirect_to($return_uri);
+		$key = md5($this->request->getRequestUri());
+		($return_uris = $this->session->g("return_uris")) || ($return_uris = array());
+
+		if(isset($return_uris[$key])){
+			$return_uri = $return_uris[$key];
+			unset($return_uris[$key]);
+			$this->session->s("return_uris",$return_uris);
+		}else{
+			$return_uri = $this->_get_return_uri($default);
 		}
-		if(is_array($default)){
-			$default = $this->_link_to($default);
+
+		return $this->_redirect_to($return_uri);
+	}
+
+	/**
+	 * Prepares a object for the current action
+	 *
+	 * It's used in generic methods
+	 */
+	function __prepare_object_for_action(&$object){
+		if($object){ return true; }
+
+		$object_name = String4::ToObject(get_class($this))->gsub('/Controller$/','')->singularize()->underscore()->toString(); // "PeopleController" -> "person"
+		if(!$object = $this->_find($object_name)){
+			$this->_execute_action("error404");
+			return false;
 		}
-		return $this->_redirect_to($default);
+
+		return true;
+	}
+
+	/**
+	 * Sets the proper template for the current action
+	 *
+	 * It's used in generic methods
+	 */
+	function __set_template_name_for_action(){
+		$smarty = $this->_get_smarty();
+		if(!(
+			(!$this->request->xhr() && $smarty->templateExists("$this->namespace/$this->controller/$this->action.tpl")) ||
+			($this->request->xhr() && $smarty->templateExists("$this->namespace/$this->controller/$this->action.xhr.tpl"))
+		)){
+			$this->template_name = "application/$this->action";
+		}
 	}
 }

@@ -14,8 +14,6 @@
  *	$ ./scripts/dump_settings DEFAULT_EMAIL
  */
 
-define("SECRET_TOKEN",PRODUCTION ? Files::GetFileContent(dirname(__FILE__)."/secret_token.txt") : "_please_put_here_a_lot_of_random_chars_");
-
 define("DEFAULT_EMAIL","your@email.com");
 define("ATK14_ADMIN_EMAIL",DEFAULT_EMAIL); // the address for sending error reports and so on...
 
@@ -24,10 +22,15 @@ define("ATK14_APPLICATION_DESCRIPTION","Yet another application running on ATK14
 
 define("ATK14_HTTP_HOST",PRODUCTION ? "catalog.atk14.net" : "atk14catalog.localhost");
 
-define("DBMOLE_COLLECT_STATICTICS",DEVELOPMENT);
 date_default_timezone_set('Europe/Prague');
 
-@define("PUPIQ_API_KEY","123.abcdefghijklmnopqrstuvwxyz");
+define("PUPIQ_API_KEY","101.DemoApiKeyForAccountWithLimitedFunctions");
+
+define("CATALOG_ID_REGEXP",'/^[0-9A-Z_.\/-]{1,}$/i'); // see app/fields/catalog_id_field.php
+define("CATALOG_ID_AUTO_UPPERIZE",true);
+
+define("USING_BOOTSTRAP4",true);
+define("USING_FONTAWESOME",true);
 
 // If you don't want to let users to register freely (e.g. your app is an closed alpha),
 // set the constant INVITATION_CODE_FOR_USER_REGISTRATION.

@@ -1,5 +1,7 @@
 <?php
-class Attachment extends ApplicationModel implements Translatable,Rankable{
+class Attachment extends LinkedObject implements Translatable{
+
+	use TraitPupiqAttachment;
 
 	static function GetTranslatableFields(){ return array("name"); }
 
@@ -10,13 +12,6 @@ class Attachment extends ApplicationModel implements Translatable,Rankable{
 		return Attachment::FindAll("table_name",$obj->getTableName(),"record_id",$obj->getId());
 	}
 
-	function setRank($new_rank){
-		return $this->_setRank($new_rank,array(
-			"table_name" => $this->g("table_name"),
-			"record_id" => $this->g("record_id"),
-		));
-	}
-
 	function getName($lang = null){
 		if($name = parent::getName($lang)){
 			return $name;
@@ -24,25 +19,14 @@ class Attachment extends ApplicationModel implements Translatable,Rankable{
 		return $this->getFilename();
 	}
 
-	function getFilename(){
-		// http://a.pupiq.net/priloha/31/DSC_0078.JPG -> DSC_0078.JPG
-		return preg_replace('/^.+\/([^\/]+)$/','\1',$this->getUrl());
-	}
-
 	function getSuffix(){
-		return $this->_getPupiq()->getSuffix();
+		return $this->_getPupiqAttachment()->getSuffix();
 	}
 
-	static function AddAttachment($obj,$values){
+	static function AddAttachment($obj,$values,$options = array()){
 		if(is_string($values)){
 			$values = array("url" => $values);
 		}
-		$values["table_name"] = $obj->getTableName();
-		$values["record_id"] = $obj->getId();
-		return Attachment::CreateNewRecord($values);
-	}
-
-	protected function _getPupiq(){
-		return new PupiqAttachment($this->getUrl());
+		return Attachment::CreateNewFor($obj,$values,$options);
 	}
 }

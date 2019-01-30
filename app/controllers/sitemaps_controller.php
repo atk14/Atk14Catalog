@@ -10,7 +10,10 @@ class SitemapsController extends ApplicationController{
 		$this->page_title = _("Sitemap");
 
 		$this->tpl_data["articles"] = Article::FindAll(array(
-			"condition" => "published_at<NOW()",
+			"condition" => "published_at<:now",
+			"bind_ar" => array(
+				":now" => now(),
+			),
 			"order_by" => "published_at DESC",
 			"limit" => 20,
 		));

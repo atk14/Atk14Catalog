@@ -14,12 +14,11 @@ class UsersController extends ApplicationController{
 			));
 			return;
 		}
-		$this->page_title = _("New user registration");
-
-		$this->tpl_data["js_validator"] = $jv = $this->form->js_validator();
+		$this->page_title = $this->breadcrumbs[] = _("New user registration");
 
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
 			$d["registered_from_ip_addr"] = $this->request->getRemoteAddr();
+			$d["password"] = MyBlowfish::GetHash($d["password"]); // Make sure to encrypt password which even looks like a proper blowfish hash! :)
 			$user = User::CreateNewRecord($d);
 			$this->logger->info("user $user just registered from ".$this->request->getRemoteAddr());
 
@@ -27,13 +26,13 @@ class UsersController extends ApplicationController{
 
 			$this->_login_user($user);
 
-			$this->flash->success(sprintf(_("You have been successfuly registered and now you are logged in as <em>%s</em>"),h("$user")));
+			$this->flash->success(sprintf(_("You have been successfully registered and now you are logged in as <em>%s</em>"),h("$user")));
 			$this->_redirect_to("main/index");
 		}
 	}
 
 	function edit(){
-		$this->page_title = _("Change your account data");
+		$this->page_title = $this->breadcrumbs[] = _("Change your account data");
 
 		$this->form->set_initial($this->logged_user);
 
@@ -50,18 +49,21 @@ class UsersController extends ApplicationController{
 	}
 
 	function edit_password(){
-		$this->page_title = _("Change your password");
+		$this->page_title = $this->breadcrumbs[] = _("Change your password");
 
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
 			if(!$this->logged_user->isPasswordCorrect($d["current_password"])){
 				$this->form->set_error("current_password",_("This is not your current password"));
 				return;
 			}
+
+			$d["password"] = MyBlowfish::GetHash($d["password"]); // Make sure to encrypt password which even looks like a proper blowfish hash! :)
+
 			$this->logged_user->s(array(
 				"password" => $d["password"],
 				"updated_by_user_id" => $this->logged_user
 			));
-			$this->flash->success(_("Your password has been updated successfuly"));
+			$this->flash->success(_("Your password has been updated successfully"));
 			$this->_redirect_to("detail");
 		}
 	}
@@ -71,6 +73,10 @@ class UsersController extends ApplicationController{
 			if(!$this->logged_user){
 				$this->_execute_action("error403");
 				return;
+			}
+
+			if(preg_match('/^(edit|detail)/',$this->action)){
+				$this->breadcrumbs[] = array(_("User profile"),$this->_link_to("detail"));
 			}
 		}
 	}

@@ -23,7 +23,7 @@
  * $DEVELOPMENT
  *}
 <!DOCTYPE html>
-<html lang="{$lang}">
+<html lang="{$lang}" class="no-js">
 
 	<head>
 		<meta charset="utf-8">
@@ -43,6 +43,11 @@
 			{render partial="shared/layout/dev_info"}
 		{/if}
 
+		{* Indication of active javascript *}
+		{javascript_tag}
+			document.documentElement.className = document.documentElement.className.replace( /\bno-js\b/, "js" );
+		{/javascript_tag}
+
 		{stylesheet_link_tag file="$public/admin/dist/styles/vendor.min.css"}
 		{stylesheet_link_tag file="$public/admin/dist/styles/application.min.css"}
 
@@ -54,9 +59,8 @@
 	</head>
 
 	<body class="body_{$controller}_{$action}" data-controller="{$controller}" data-action="{$action}">
-		<div class="container{if $section_navigation} has-nav-section{/if}">
-			{render partial="shared/login"}
-			{render partial="shared/layout/header"}
+		{render partial="shared/login"}
+		<div class="container-fluid{if $section_navigation} has-nav-section{/if}">
 			{if $breadcrumbs && sizeof($breadcrumbs)>=2} {* It makes no sense to display breadcrumbs with just 1 or no element *}
 				{render partial="shared/breadcrumbs"}
 			{/if}

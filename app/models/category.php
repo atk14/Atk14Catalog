@@ -112,7 +112,19 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 	function hasChildCategories(){ return !!$this->getChildCategories(array("limit" => 1)); }
 
 	function isFilter(){ return $this->getIsFilter(); }
-	function isVisible(){ return $this->getVisible(); }
+
+	function isSubcategoryOfFilter(){
+		$parent = $this->getParentCategory();
+		return $parent && $parent->isFilter();
+	}
+
+	function isVisible(){
+		$visible = $this->getVisible();
+		if(!$visible){ return false; }
+		$parent = $this->getParentCategory();
+		if($parent){ return $parent->isVisible(); }
+		return true;
+	}
 
 	function isPointingToCategory(){ return !is_null($this->getPointingToCategoryId()); }
 	function isAlias(){ return $this->isPointingToCategory(); }
@@ -123,11 +135,17 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 		return (string)$this->getParentCategoryId();
 	}
 
-	function getSlugPattern($lang = null){
-		return $this->getName($lang);
-	}
+	function getSlugPattern($lang){ return $this->g("name_$lang"); }
 
 	function getParentCategory(){ return Cache::Get("Category",$this->getParentCategoryId()); }
+
+	function isDescendantOf($root_category){
+		if($root_category->getId()==$this->getId()){ return true; }
+		if($parent = $this->getParentCategory()){
+			return $parent->isDescendantOf($root_category);
+		}
+		return false;
+	}
 
 	/**
 	 * var_dump($category->getPathOfCategories()); // array($base,$parent,$category);
@@ -210,13 +228,18 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 	}
 
 	function getCardIds() {
-		return $this->getCardsLister()->getRecordIds();
+		return $this->getCardsLister()->getRecordIds(["preread_data" => false]);
 	}
 
 	function getCards(){
-		return $this->getCardsLister()->getRecords();
+		return $this->getCardsLister()->getRecords(["preread_data" => false]);
 	}
-
+	
+	/**
+	 * Adds a card into this category
+	 *
+	 * Actually it inserts the card at the beginning of the card list.
+	 */
 	function addCard($card){
 		if($this->isFilter()){
 			throw new Exception("Can't insert card $card into filter category $this");
@@ -224,9 +247,19 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 		if($this->isAlias()){
 			throw new Exception("Can't insert card $card into alias category $this");
 		}
-		$lister = $this->getCardsLister();
-		if(!$lister->contains($card)) {
-			return $lister->append($card);
+
+		// Using CardsLister can consume very much memory in a large catalog
+		//$lister = $this->getCardsLister();
+		//if(!$lister->contains($card)) {
+		//	return $lister->prepend($card);
+		//}
+
+		if(0===$this->dbmole->selectInt("SELECT COUNT(*) FROM category_cards WHERE category_id=:category_id AND card_id=:card_id",[":category_id" => $this, ":card_id" => $card])){
+			$this->dbmole->insertIntoTable("category_cards",[
+				"category_id" => $this,
+				"card_id" => $card,
+				"rank" => $this->dbmole->selectInt("SELECT COALESCE(MIN(rank)-1,0) FROM category_cards WHERE category_id=:category_id",[":category_id" => $this]),
+			]);
 		}
 	}
 
@@ -269,9 +302,39 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 		return $this->getImageUrl();
 	}
 
+	/**
+	 * Can products be added to this category?
+	 *
+	 */
 	function allowProducts() {
-		return true; // TODO: what's this?
-		//return $this->getAllowProducts();
+		return !$this->isFilter() && !$this->isAlias();
+	}
+
+	/**
+	 * Can subcategories be added to this category?
+	 * 
+	 */
+	function allowSubcategories() {
+		return !$this->isSubcategoryOfFilter() && !$this->isAlias();
+	}
+
+	/**
+	 * Can this category be moved somewhere else?
+	 *
+	 */
+	function canBeMoved(){
+		return !$this->isSubcategoryOfFilter();
+	}
+
+	/**
+	 * Can a new category be created as an alias to this category?
+	 *
+	 */
+	function canBeAliased(){
+		return
+			!$this->isFilter() &&
+			!$this->isSubcategoryOfFilter() &&
+			!$this->isAlias();
 	}
 
 	function destroy($destroy_for_real = null){
@@ -317,7 +380,7 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 				"lang" => $lang,
 			),
 		));
-		return $class_name::GetInstanceById($record->getRecordId());
+		return static::GetInstanceById($record->getRecordId());
 	}
 
 	/**
@@ -356,6 +419,10 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 
 	function getBranchCategories(){
 		return Cache::Get("Category",$this->getBranchCategoryIds());
+	}
+
+	function toString(){
+		return (string)$this->getName();
 	}
 }
 
