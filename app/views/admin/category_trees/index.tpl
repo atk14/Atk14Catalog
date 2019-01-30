@@ -3,8 +3,8 @@
 <ul class="list-group list-group-flush list-sortable" data-sortable-url="{link_to action="set_rank"}">
 	{foreach $roots as $root}
 		<li class="list-group-item" data-id="{$root->getId()}">
-			<div class="d-flex justify-content-between align-items-center">
-				<div>
+			<div class="d-flex align-items-center js--list-sortable-item">
+				<div class="flex-grow-1">
 					{$root->getName()}
 					{if !$root->isVisible()}<em>( {!"eye-slash"|icon} {t}invisible{/t})</em>{/if}
 				</div>

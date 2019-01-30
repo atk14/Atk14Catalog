@@ -62,3 +62,13 @@ ul.list--tree {
 	}
 	
 }
+
+// TODO: move this to better place.
+.list-sortable .handle {
+	&:hover {
+		cursor: grab;
+	}
+}
+.list-sortable .ui-sortable-helper .handle {
+	cursor: grabbing;
+}
