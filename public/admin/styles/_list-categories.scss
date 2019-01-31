@@ -64,11 +64,22 @@ ul.list--tree {
 }
 
 // TODO: move this to better place.
-.list-sortable .handle {
-	&:hover {
-		cursor: grab;
+.list-sortable {
+	> .list-group-item {
+		display: flex;
+		align-items: center;
+		> div { // protoze to nema zadnou konkretni CLASS delam to takhle prasacky
+			flex-grow: 1;
+		}
 	}
-}
-.list-sortable .ui-sortable-helper .handle {
-	cursor: grabbing;
+	// drag and drop cursor
+	.handle {
+		&:hover {
+			cursor: grab;
+		}
+	}
+	// cursor when dragging
+	.ui-sortable-helper .handle {
+		cursor: grabbing;
+	}
 }

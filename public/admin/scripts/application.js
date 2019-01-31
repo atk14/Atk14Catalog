@@ -176,7 +176,7 @@
 					url, $item, data;
 
 				if ( $sortable.length ) {
-					$sortable.find( ".js--list-sortable-item" ).prepend( glyph );
+					$sortable.find( ".list-group-item" ).prepend( glyph );
 
 					$sortable.sortable( {
 						cancel: "strong",
