@@ -25,3 +25,25 @@
 	margin-right: 0.5rem;
 	border: 1px solid $gray-300;
 }
+
+
+// TODO: move this to better place.
+.list-sortable {
+	> .list-group-item {
+		display: flex;
+		align-items: center;
+		> div { // protoze to nema zadnou konkretni CLASS delam to takhle prasacky
+			flex-grow: 1;
+		}
+	}
+	// drag and drop cursor
+	.handle {
+		&:hover {
+			cursor: grab;
+		}
+	}
+	// cursor when dragging
+	.ui-sortable-helper .handle {
+		cursor: grabbing;
+	}
+}

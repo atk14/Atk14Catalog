@@ -171,12 +171,12 @@
 
 				// Sortable lists.
 				var $sortable = $( ".list-sortable" ),
-					glyph = "<span class='glyphicon glyphicon-align-justify handle' " +
+					glyph = "<span class='fas fa-grip-vertical text-secondary handle pr-3' " +
 						" title='sorting'></span>",
 					url, $item, data;
 
 				if ( $sortable.length ) {
-					$sortable.children( "li" ).prepend( glyph );
+					$sortable.find( ".list-group-item" ).prepend( glyph );
 
 					$sortable.sortable( {
 						cancel: "strong",
