@@ -107,7 +107,7 @@ gulp.task( "clean-admin", function() {
 // Server
 gulp.task( "serve-admin", [ "styles-admin", "styles-vendor-admin" ], function() {
 	browserSync.init( {
-		proxy: "atk14catalog.localhost/admin/"
+		proxy: "localhost:8000/admin/"
 	} );
 
 	// If these files change = reload browser

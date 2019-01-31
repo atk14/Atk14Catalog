@@ -114,7 +114,7 @@ gulp.task( "clean", function() {
 // Server
 gulp.task( "serve", [ "styles" ], function() {
 	browserSync.init( {
-		proxy: "atk14catalog.localhost"
+		proxy: "localhost:8000"
 	} );
 
 	// If these files change = reload browser
