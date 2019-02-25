@@ -173,7 +173,7 @@
 				var $sortable = $( ".list-sortable" ),
 					glyph = "<span class='fas fa-grip-vertical text-secondary handle pr-3' " +
 						" title='sorting'></span>",
-					url, $item, data;
+					url, $item, data, $list, id;
 
 				if ( $sortable.length ) {
 					$sortable.find( ".list-group-item" ).prepend( glyph );
@@ -184,11 +184,13 @@
 						opacity: 0.9,
 						update: function( jqEv, ui ) {
 							$item = $( ui.item );
-							url = $item.closest( ".list-sortable" ).data( "sortable-url" );
+							$list = $item.closest( ".list-sortable" );
+							url = $list.data( "sortable-url" );
+							id = $list.data( "sortable-param" ) || "id";
 							data = {
-								id: $item.data( "id" ),
 								rank: $item.index()
 							};
+							data[ id ] = $item.data( "id" );
 
 							$.ajax( {
 								type: "POST",

@@ -178,7 +178,7 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 
 
 	function getCategoriesLister() {
-		return $this->getLister("category", array("table_name" => "category_cards"));
+		return $this->getLister("category", array("table_name" => "category_cards", "rank_field_name" => "rank_rev"));
 	}
 
 	function addToCategory($category) {
@@ -218,6 +218,16 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 			$categories[] = $c;
 		}
 		return $categories;
+	}
+
+	function getPrimaryCategory(){
+		$categories = $this->getCategories(array(
+			"consider_invisible_categories" => false,
+			"consider_filters" => false
+		));
+		if($categories){
+			return $categories[0];
+		}
 	}
 
 	function getActiveFilters(){

@@ -211,6 +211,12 @@ class CardsController extends AdminController{
 		}
 	}
 
+	function set_category_rank() {
+		if(!$this->request->post()){ return $this->_execute_action("error404"); }
+		$this->card->getCategoriesLister()->setRecordRank($this->category, $this->params["rank"]);
+		$this->render_template = false;
+	}
+
 	function remove_from_category(){
 		if(!$this->request->post()){ return $this->_execute_action("error404"); }
 
@@ -242,11 +248,11 @@ class CardsController extends AdminController{
 	}
 
 	function _before_filter() {
-		if (in_array($this->action, array("edit","destroy","enable_variants","add_to_category","add_technical_specification","remove_from_category","append_external_source","remove_external_source"))) {
+		if (in_array($this->action, array("edit","destroy","enable_variants","add_to_category","add_technical_specification","remove_from_category","append_external_source","remove_external_source", "set_category_rank"))) {
 			$this->_find("card");
 		}
 
-		if ($this->action=="remove_from_category"){
+		if (in_array($this->action, array("remove_from_category", "set_category_rank"))) {
 			$this->_find("category","category_id");
 		}
 	}

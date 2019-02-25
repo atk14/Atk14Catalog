@@ -1,15 +1,3 @@
-{foreach $categories as $category}
-	<ol class="breadcrumb">
-		<li class="breadcrumb-item">{a action="main/index"}{"ATK14_APPLICATION_NAME"|dump_constant}{/a}</li>
-			{foreach $category->getPathOfCategories() as $c}
-				<li class="breadcrumb-item">
-					{a action="categories/detail" path=$c->getPath()}{$c->getName()}{/a}
-				</li>
-			{/foreach}
-		<li class="breadcrumb-item active">{$card->getName()}</li>
-	</ol>
-{/foreach}
-
 <header>
 	<h1>{$page_title}</h1>
 
@@ -19,7 +7,10 @@
 	{if $brand}
 		{t}Brand:{/t} {a action="brands/detail" id=$brand}{$brand->getName()}{/a}
 	{/if}
+
 </header>
+
+{render partial="categories"}
 
 {render partial="shared/photo_gallery" object=$card}
 
