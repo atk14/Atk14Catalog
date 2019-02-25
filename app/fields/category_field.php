@@ -12,6 +12,7 @@ class CategoryField extends CharField{
 		$options += array(
 			"consider_filter" => false,
 			"follow_pointing_category" => true,
+			"help_text" => _("Start with a slash if you want to search the catalog tree from the root"),
 			"widget" => new TextInput(array(
 				"attrs" => array(
 					"data-suggesting_url" => Atk14Url::BuildLink(array("namespace" => "api", "controller" => "categories_suggestions","action" => "index"))."?format=json&q=",

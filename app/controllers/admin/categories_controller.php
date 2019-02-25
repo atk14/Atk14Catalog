@@ -23,10 +23,14 @@ class CategoriesController extends AdminController{
 			return $this->_execute_action("error404");
 		}
 
-		$this->page_title = _("Moving category");
+		$this->page_title = sprintf(_("Moving category %s"),strip_tags($this->category->getName()));
 		$this->form->set_initial("parent_category_id", $this->category->getParentCategory());
 		$this->_save_return_uri();
-			if ($this->request->post() && ($d=$this->form->validate($this->params))) {
+		if ($this->request->post() && ($d=$this->form->validate($this->params))) {
+			if($d["parent_category_id"]->getId()==$this->category->getId()){
+				$this->form->set_error("parent_category_id",_("The category can not be moved under itself"));
+				return;
+			}
 			$this->category->s("parent_category_id", $d["parent_category_id"]);
 			$this->flash->success(_("The category was moved"));
 			return $this->_redirect_back();

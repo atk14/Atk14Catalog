@@ -1,3 +1,10 @@
 <h1>{$page_title}</h1>
 
-{render partial="shared/form" button_text="{t}Přesunout kategorii{/t}"}
+<dl>
+	<dt>{t}Id{/t}</dt>
+	<dd>{$category->getId()}</dd>
+	<dt>{t}Path{/t}</dt>
+	<dd>/{$category->getPath()}</dd>
+</dl>
+
+{render partial="shared/form"}
