@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-09 16:08+0100\n"
+"POT-Creation-Date: 2019-03-05 12:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,20 +41,20 @@ msgstr ""
 msgid "Enter phone number in format +420.605123456"
 msgstr ""
 
-#: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_attachment_input.php:18
-msgid "Download attachment"
-msgstr ""
-
-#: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_attachment_input.php:18
-#: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_image_input.php:22
+#: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_attachment_input.php:31
+#: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_image_input.php:35
 msgid "remove"
 msgstr ""
 
-#: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_image_input.php:22
+#: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_attachment_input.php:32
+msgid "Download attachment"
+msgstr ""
+
+#: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_image_input.php:36
 msgid "Display image"
 msgstr ""
 
-#: ../vendor/atk14/pupiq-client/src/lib/pupiq.php:66
+#: ../vendor/atk14/pupiq-client/src/lib/pupiq.php:81
 msgid "Unknown error"
 msgstr ""
 

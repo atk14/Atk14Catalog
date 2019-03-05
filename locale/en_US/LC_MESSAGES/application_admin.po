@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-09 16:08+0100\n"
+"POT-Creation-Date: 2019-03-05 12:10+0100\n"
 "PO-Revision-Date: 2016-03-07 17:03+0100\n"
 "Last-Translator: Yarri <do-not-write-me@ever.com>\n"
 "Language-Team: Team <team@email.com>\n"
@@ -55,7 +55,7 @@ msgstr ""
 
 msgid ""
 "You are about to permanently delete brand %1\n"
-"Are you sure about that?"
+"\tAre you sure about that?"
 msgstr ""
 
 msgid "Delete"
@@ -259,7 +259,7 @@ msgstr ""
 msgid "filter"
 msgstr ""
 
-#: ../app/controllers/admin/admin.php:80
+#: ../app/controllers/admin/admin.php:81
 msgid "alias"
 msgstr ""
 
@@ -294,7 +294,7 @@ msgstr ""
 msgid "Recommended products"
 msgstr ""
 
-msgid "Přesunout kategorii"
+msgid "Id"
 msgstr ""
 
 msgid "Edit ranking"
@@ -313,7 +313,7 @@ msgstr ""
 
 msgid ""
 "You are about to delete the catalog tree %1.\n"
-"Are you sure?"
+"\t\tAre you sure?"
 msgstr ""
 
 msgid ""
@@ -326,13 +326,27 @@ msgstr ""
 
 msgid ""
 "You are about to permanently delete collection %1\n"
-"Are you sure about that?"
+"\tAre you sure about that?"
 msgstr ""
 
 msgid "Products in the collection"
 msgstr ""
 
 msgid "Add a collection"
+msgstr ""
+
+msgid "Add new redirection"
+msgstr ""
+
+#: ../app/forms/admin/error_redirections/error_redirections_form.php:6
+msgid "Source URL"
+msgstr ""
+
+#: ../app/forms/admin/error_redirections/error_redirections_form.php:15
+msgid "Target URL"
+msgstr ""
+
+msgid "Last access"
 msgstr ""
 
 msgid "The image was uploaded at:"
@@ -441,7 +455,7 @@ msgstr ""
 
 msgid ""
 "You are about to permanently delete store %1\n"
-"Are you sure about that?"
+"\t\tAre you sure about that?"
 msgstr ""
 
 msgid "Add new tag"
@@ -552,36 +566,41 @@ msgstr ""
 msgid "Newsletter subscribers"
 msgstr ""
 
-#: ../app/controllers/admin/admin.php:79
+#: ../app/controllers/admin/admin.php:39
+#: ../app/controllers/admin/error_redirections_controller.php:5
+msgid "404 Redirections"
+msgstr ""
+
+#: ../app/controllers/admin/admin.php:80
 msgid "filtr"
 msgstr ""
 
-#: ../app/controllers/admin/admin.php:116
+#: ../app/controllers/admin/admin.php:117
 #, php-format
 msgid "Seznam objektů typu %s"
 msgstr ""
 
-#: ../app/controllers/admin/admin.php:145
+#: ../app/controllers/admin/admin.php:146
 msgid "The record has been created"
 msgstr ""
 
-#: ../app/controllers/admin/admin.php:159
+#: ../app/controllers/admin/admin.php:160
 #, php-format
 msgid "Vytvořit objekt typu %s"
 msgstr ""
 
-#: ../app/controllers/admin/admin.php:211
+#: ../app/controllers/admin/admin.php:212
 #: ../app/controllers/admin/attachments_controller.php:54
 #: ../app/controllers/admin/card_sections_controller.php:27
 msgid "Změny byly uloženy"
 msgstr ""
 
-#: ../app/controllers/admin/admin.php:233
+#: ../app/controllers/admin/admin.php:238
 #, php-format
 msgid "Editace objektu typu %s"
 msgstr ""
 
-#: ../app/controllers/admin/admin.php:357
+#: ../app/controllers/admin/admin.php:362
 msgid "The entry has been deleted"
 msgstr ""
 
@@ -698,11 +717,11 @@ msgstr ""
 msgid "The product already has this specification"
 msgstr ""
 
-#: ../app/controllers/admin/cards_controller.php:221
+#: ../app/controllers/admin/cards_controller.php:227
 msgid "Připojení odkazu k produktu"
 msgstr ""
 
-#: ../app/controllers/admin/cards_controller.php:239
+#: ../app/controllers/admin/cards_controller.php:245
 msgid "Odkaz odpojen"
 msgstr ""
 
@@ -729,42 +748,47 @@ msgid "Editing category \"%s\""
 msgstr ""
 
 #: ../app/controllers/admin/categories_controller.php:26
-msgid "Moving category"
+#, php-format
+msgid "Moving category %s"
 msgstr ""
 
 #: ../app/controllers/admin/categories_controller.php:31
+msgid "The category can not be moved under itself"
+msgstr ""
+
+#: ../app/controllers/admin/categories_controller.php:35
 msgid "The category was moved"
 msgstr ""
 
-#: ../app/controllers/admin/categories_controller.php:48
+#: ../app/controllers/admin/categories_controller.php:52
 msgid "New subcategory"
 msgstr ""
 
-#: ../app/controllers/admin/categories_controller.php:59
+#: ../app/controllers/admin/categories_controller.php:63
 msgid "Category cannot be created when the parent category is an alias"
 msgstr ""
 
-#: ../app/controllers/admin/categories_controller.php:65
+#: ../app/controllers/admin/categories_controller.php:69
 msgid "On this place a new category cannot be created"
 msgstr ""
 
-#: ../app/controllers/admin/categories_controller.php:71
+#: ../app/controllers/admin/categories_controller.php:75
 msgid "Filter cannot be created when the parent category is also a filter"
 msgstr ""
 
-#: ../app/controllers/admin/categories_controller.php:78
+#: ../app/controllers/admin/categories_controller.php:82
 msgid "Category has been created"
 msgstr ""
 
-#: ../app/controllers/admin/categories_controller.php:93
+#: ../app/controllers/admin/categories_controller.php:97
 msgid "The category was deleted"
 msgstr ""
 
-#: ../app/controllers/admin/categories_controller.php:102
+#: ../app/controllers/admin/categories_controller.php:106
 msgid "New alias"
 msgstr ""
 
-#: ../app/controllers/admin/categories_controller.php:110
+#: ../app/controllers/admin/categories_controller.php:114
 msgid "Alias was created"
 msgstr ""
 
@@ -847,6 +871,27 @@ msgstr ""
 
 #: ../app/controllers/admin/consumables_controller.php:10
 msgid "Consumable product has been added"
+msgstr ""
+
+#: ../app/controllers/admin/error_redirections_controller.php:27
+msgid "Create redirection"
+msgstr ""
+
+#: ../app/controllers/admin/error_redirections_controller.php:33
+#: ../app/controllers/admin/error_redirections_controller.php:51
+msgid "Another redirection with the same source URL already exists"
+msgstr ""
+
+#: ../app/controllers/admin/error_redirections_controller.php:38
+msgid "The redirection has been created successfully"
+msgstr ""
+
+#: ../app/controllers/admin/error_redirections_controller.php:44
+msgid "Editing redirection"
+msgstr ""
+
+#: ../app/controllers/admin/error_redirections_controller.php:56
+msgid "The redirection has been updated successfully"
 msgstr ""
 
 #: ../app/controllers/admin/images_controller.php:4
@@ -999,11 +1044,11 @@ msgid ""
 "to let him know at email address <a href=\"mailto:%email%\">%email%</a>."
 msgstr ""
 
-#: ../app/controllers/admin/users_controller.php:88
+#: ../app/controllers/admin/users_controller.php:89
 msgid "The user entry has been deleted"
 msgstr ""
 
-#: ../app/controllers/admin/users_controller.php:99
+#: ../app/controllers/admin/users_controller.php:100
 #, php-format
 msgid "Now you are logged as <em>%s</em>"
 msgstr ""
@@ -1017,6 +1062,15 @@ msgid ""
 "An alternative key for system usage. Leave it unchanged if you are not sure."
 msgstr ""
 
+#: ../app/forms/admin/admin_form.php:117
+#: ../app/forms/admin/articles/index_form.php:5
+#: ../app/forms/admin/cards/index_form.php:5
+#: ../app/forms/admin/newsletter_subscribers/index_form.php:5
+#: ../app/forms/admin/tags/index_form.php:5
+#: ../app/forms/admin/users/index_form.php:5
+msgid "Search"
+msgstr ""
+
 #: ../app/forms/admin/articles/articles_form.php:10
 #: ../app/forms/admin/pages/pages_form.php:15
 msgid "Body"
@@ -1028,14 +1082,6 @@ msgstr ""
 
 #: ../app/forms/admin/articles/articles_form.php:15
 msgid "Published At"
-msgstr ""
-
-#: ../app/forms/admin/articles/index_form.php:5
-#: ../app/forms/admin/cards/index_form.php:5
-#: ../app/forms/admin/newsletter_subscribers/index_form.php:5
-#: ../app/forms/admin/tags/index_form.php:5
-#: ../app/forms/admin/users/index_form.php:5
-msgid "Search"
 msgstr ""
 
 #: ../app/forms/admin/articles/index_form.php:9
@@ -1181,12 +1227,15 @@ msgid "Umístit do kategorie"
 msgstr ""
 
 #: ../app/forms/admin/categories/create_alias_form.php:7
-#: ../app/forms/admin/categories/move_to_category_form.php:6
 msgid "Napište lomítko, pokud chcete prohledat strom kategorií od kořene."
 msgstr ""
 
-#: ../app/forms/admin/categories/move_to_category_form.php:5
-msgid "Nadřazená kategorie"
+#: ../app/forms/admin/categories/move_to_category_form.php:6
+msgid "Parent category"
+msgstr ""
+
+#: ../app/forms/admin/categories/move_to_category_form.php:9
+msgid "Move category"
 msgstr ""
 
 #: ../app/forms/admin/category_cards/create_new_form.php:6
@@ -1214,6 +1263,10 @@ msgstr ""
 #: ../app/forms/admin/collection_cards/create_new_form.php:14
 #, php-format
 msgid "Tento produkt už je součástí jiné kolekce [%s]"
+msgstr ""
+
+#: ../app/forms/admin/error_redirections/error_redirections_form.php:24
+msgid "Moved permanently?"
 msgstr ""
 
 #: ../app/forms/admin/pages/create_new_form.php:8
