@@ -34,8 +34,8 @@ class CardsController extends AdminController{
 			$conditions[] = '('.join(') OR (',$ft_cond).')';
 		}
 
-		$this->sorting->add("name", array("order_by" => Translation::BuildOrderSqlForTranslatableField("cards", "name")));
 		$this->sorting->add("created_at",array("reverse" => true));
+		$this->sorting->add("name", array("order_by" => Translation::BuildOrderSqlForTranslatableField("cards", "name")));
 		$this->sorting->add("updated_at","COALESCE(updated_at,'2000-01-01') DESC, created_at DESC, id DESC","COALESCE(updated_at,'2099-01-01'), created_at, id");
 		$this->sorting->add("has_variants");
 
@@ -67,24 +67,23 @@ class CardsController extends AdminController{
 
 			$catalog_id = $d["catalog_id"];
 			unset($d["catalog_id"]);
-			$d["has_variants"] = !$catalog_id; // pokud je catalog_id vyplneno - predpokladame, ze varianty nejsou
 
-			$product_card = Card::CreateNewRecord($d);
-			$product_card->setTags($tags);
+			$card = Card::CreateNewRecord($d);
+			$card->setTags($tags);
 			if($catalog_id){
-				$product_card->createProduct(array(
+				$card->createProduct(array(
 					"catalog_id" => $catalog_id,
 				));
 			}
 
 			if($section_data){
-				$section_data["card_id"] = $product_card;
+				$section_data["card_id"] = $card;
 				$section_data["card_section_type_id"] = CardSectionType::FindByCode("info");
 				CardSection::CreateNewRecord($section_data);
 			}
 
 			$this->flash->success(_("The product has been created. Now you can add some extra data to it."));
-			$this->_redirect_to(array("action" => "edit", "id" => $product_card, "_return_uri_" => $this->_get_return_uri()));
+			$this->_redirect_to(array("action" => "edit", "id" => $card, "_return_uri_" => $this->_get_return_uri()));
 		}
 	}
 
@@ -96,10 +95,15 @@ class CardsController extends AdminController{
 		$this->form->set_initial($this->card);
 		$this->form->set_initial("tags",$this->card->getTags());
 		//$this->form->set_initial("category_ids", $this->card->getCategories());
-		if(!$this->card->hasVariants() && $first_product){
-			$this->form->set_initial(array(
-				"catalog_id" => $first_product->getCatalogId(),
-			));
+		if(!$this->card->hasVariants()){
+			if($first_product){
+				$this->form->set_initial(array(
+					"catalog_id" => $first_product->getCatalogId(),
+				));
+				$this->form->fields["catalog_id"]->required = true;
+			}else{
+				$this->form->fields["catalog_id"]->required = false;
+			}
 		}
 		$this->_save_return_uri();
 
@@ -121,10 +125,14 @@ class CardsController extends AdminController{
 			unset($d["tags"]);
 
 			if(!$this->card->hasVariants()){
-				$first_product_d = array(
-					"catalog_id" => $d["catalog_id"],
-				);
-				$first_product->s($first_product_d);
+				if(!$first_product){
+					$first_product = Product::CreateNewRecord(array(
+						"card_id" => $this->card,
+						"catalog_id" => $d["catalog_id"],
+					));
+				}else{
+					$first_product->s("catalog_id",$d["catalog_id"]);
+				}
 			}
 			unset($d["catalog_id"]);
 
