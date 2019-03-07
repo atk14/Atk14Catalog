@@ -60,12 +60,6 @@ class Product extends ApplicationModel implements Translatable,Rankable{
 
 	function isDeleted(){ return $this->getDeleted(); }
 	function isVisible(){ return $this->getVisible(); }
-	function assemblyIsAvailable() {
-		return $this->getAssembly()==true;
-	}
-	function assemblyCanBeOrdered() {
-		return $this->assemblyIsAvailable();
-	}
 
 	function destroy($delete_for_real = false){
 		if($delete_for_real){
@@ -92,41 +86,6 @@ class Product extends ApplicationModel implements Translatable,Rankable{
 			$_siblings[] = $_p;
 		}
 		return $_siblings;
-	}
-
-	function isOnlyForIndividualTransport() {
-		return $this->getIndividualTransport();
-	}
-
-	function isNewItem() {
-		return $this->getNewItem()==true;
-	}
-
-	function getBannedShippings() {
-		$types = preg_split("/[\s,]/", $this->g("banned_shipping"), -1, PREG_SPLIT_NO_EMPTY);
-		return $types;
-	}
-
-	/**
-	 * Produkt neni standardne na sklade. Lze objednat na zavolani
-	 */
-	function isAvailableOnRequest() {
-		return $this->getAvailableOnRequest()==true;
-	}
-
-	function isClubItem() {
-		return $this->getIsClubItem()==true;
-	}
-
-	/**
-	 * TODO: asi by se to jeste mohlo otestovat na viditelnost.
-	 */
-	function canBeOrdered() {
-		$c = $this->getCard();
-		return (
-			$this->isVisible() && !$this->isDeleted() && ($this->getStockcount()>0 || $this->isAvailableOnRequest()) &&
-			$c->isVisible() && !$c->isDeleted()
-		);
 	}
 
 	function getSuppliesLister() {
