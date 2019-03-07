@@ -11,11 +11,6 @@ class ApplicationBaseController extends Atk14Controller{
 	 */
 	var $breadcrumbs;
 
-	function index(){
-		// acts like there's no index action by default
-		$this->_execute_action("error404");
-	}
-
 	function error404(){
 		if($this->request->get() && !$this->request->xhr() && ($redirection = ErrorRedirection::GetInstanceByHttpRequest($this->request))){
 			$redirection->touch();
@@ -87,6 +82,12 @@ class ApplicationBaseController extends Atk14Controller{
 		}
 		$this->tpl_data["current_language"] = $current_language;
 		$this->tpl_data["supported_languages"] = $languages;
+
+		// It's better to write
+		//	{$val|default:$mdash}
+		// than
+		//	{!$val|h|default:"&mdash;"}
+		$this->tpl_data["mdash"] = "—";
 	}
 
 	function _application_before_filter(){
