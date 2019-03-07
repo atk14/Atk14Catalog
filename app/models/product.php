@@ -6,7 +6,7 @@ class Product extends ApplicationModel implements Translatable,Rankable{
 	static function GetInstanceByCatalogId($catalog_id){
 		($product = Product::FindByCatalogId($catalog_id,array("use_cache" => true))) ||
 		($product = Product::FindFirst(array(
-			"conditions" => "deleted='t' AND catalog_id LIKE '%-'||:catalog_id",
+			"conditions" => "deleted='t' AND catalog_id LIKE :catalog_id||'~%'",
 			"bind_ar" => array(":catalog_id" => $catalog_id),
 			"use_cache" => true
 		)));
@@ -30,8 +30,8 @@ class Product extends ApplicationModel implements Translatable,Rankable{
 	function getCatalogId(){
 		$catalog_id = $this->g("catalog_id");
 		if($this->isDeleted()){
-			// deleted-444-123/456789 -> 123/456789
-			$catalog_id = preg_replace('/^deleted-\d+-/','',$catalog_id);
+			// 123/456789~deleted-444 -> 123/456789
+			$catalog_id = preg_replace('/~deleted-\d+$/','',$catalog_id);
 		}
 		return $catalog_id;
 	}
@@ -78,7 +78,7 @@ class Product extends ApplicationModel implements Translatable,Rankable{
 
 		$this->s(array(
 			"deleted" => true,
-			"catalog_id" => sprintf("deleted-%s-%s",$this->getId(),$this->getCatalogId()),
+			"catalog_id" => sprintf("%s~deleted-%s",$this->getCatalogId(),$this->getId()),
 		));
 	}
 

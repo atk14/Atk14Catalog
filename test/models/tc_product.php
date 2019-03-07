@@ -19,11 +19,17 @@ class TcProduct extends TcBase {
 		$this->assertTrue(is_object($green_tea));
 		$this->assertEquals(true,$green_tea->isDeleted());
 		$this->assertEquals("TEA_GREEN",$green_tea->getCatalogId());
-		$this->assertEquals("deleted-$green_tea_id-TEA_GREEN",$green_tea->g("catalog_id"));
+		$this->assertEquals("TEA_GREEN~deleted-$green_tea_id",$green_tea->g("catalog_id"));
+
+		$gt = Product::GetInstanceByCatalogId("TEA_GREEN");
+		$this->assertEquals($green_tea,$gt);
 
 		$green_tea->destroy(true);
 
 		$green_tea = Product::GetInstanceById($green_tea_id);
 		$this->assertNull($green_tea);
+
+		$gt = Product::GetInstanceByCatalogId("TEA_GREEN");
+		$this->assertNull($gt);
 	}
 }
