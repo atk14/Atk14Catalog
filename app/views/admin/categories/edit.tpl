@@ -93,6 +93,9 @@ Do you really want this?{/t}{/capture}
 							{if !$child->isVisible()}<em>({t}invisible{/t})</em>{/if}
 							{dropdown_menu}
 								{a action="edit" id=$child}{icon glyph="edit"} {t}Edit{/t}{/a}
+								{if $child->isDeletable()}
+										{a_destroy action="categories/destroy" id=$child}{!"remove"|icon} {t}Delete{/t}{/a_destroy}
+								{/if}
 							{/dropdown_menu}
 						</li>
 					{/foreach}
@@ -130,8 +133,11 @@ Do you really want this?{/t}{/capture}
 					{foreach $cards as $card}
 						<li class="list-group-item" data-id="{$card->getId()}">
 							{render partial="shared/list_thumbnail" image=$card->getImage()}
-							<a href="{link_to action="cards/edit" id=$card}" title="{t}Edit product{/t}">{$card->getName()}</a>
-							{a_destroy action="category_cards/destroy" id=$card category_id=$category _title="{t}Remove product{/t}" _class="confirm btn btn-danger btn-xs"}<i class="glyphicon glyphicon-remove"></i> <span class="hide">{t}Remove{/t}</span>{/a_destroy}
+							{$card->getName()}
+							{dropdown_menu}
+								{a action="cards/edit" id=$card}{!"edit"|icon} {t}Edit product{/t}{/a}
+								{a_destroy action="category_cards/destroy" id=$card category_id=$category}{!"remove"|icon} {t}Remove product{/t}{/a_destroy}
+							{/dropdown_menu}
 						</li>
 					{/foreach}
 				</ul>
@@ -161,8 +167,11 @@ Do you really want this?{/t}{/capture}
 				{foreach $cards as $card}
 					<li class="list-group-item" data-id="{$card->getId()}">
 						{render partial="shared/list_thumbnail" image=$card->getImage()}
-						<a href="{link_to action="cards/edit" id=$card}" title="{t}Edit product{/t}">{$card->getName()}</a>
-						{a_destroy action="category_recommended_cards/destroy" id=$card category_id=$category _title="{t}Remove product{/t}" _class="confirm btn btn-danger btn-xs"}<i class="glyphicon glyphicon-remove"></i> <span class="hide">{t}Remove{/t}</span>{/a_destroy}
+						{$card->getName()}
+						{dropdown_menu}
+							{a action="cards/edit" id=$card}{!"edit"|icon} {t}Edit product{/t}{/a}
+							{a_destroy action="category_recommended_cards/destroy" id=$card category_id=$category}{!"remove"|icon} {t}Remove product{/t}{/a_destroy}
+						{/dropdown_menu}
 					</li>
 				{/foreach}
 			</ul>
