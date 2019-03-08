@@ -9,19 +9,14 @@ class ArticlesController extends AdminController{
 		$conditions = $bind_ar = array();
 
 		if($d["search"]){
-	
-			$q_up = Translate::Upper($d["search"]);
-
 			$_fields = array();
 			$_fields[] = "id";
 			foreach(array("title","body") as $_f){
 				$_fields[] = "COALESCE((SELECT body FROM translations WHERE record_id=articles.id AND table_name='articles' AND key='$_f' AND lang=:lang),'')";
 			}
 
-			$ft_cond = FullTextSearchQueryLike::GetQuery("UPPER(".join("||' '||",$_fields).")",$q_up);
-			if($ft_cond){
+			if($ft_cond = FullTextSearchQueryLike::GetQuery("UPPER(".join("||' '||",$_fields).")",Translate::Upper($d["search"]),$bind_ar)){
 				$conditions[] = $ft_cond;
-				$bind_ar[":search"] = $q_up;
 			}
 		}
 
