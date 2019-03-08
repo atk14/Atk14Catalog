@@ -1,6 +1,4 @@
-<header>
-	<h1>{$page_title}</h1>
-</header>
+<h1>{$page_title}</h1>
 
 <table class="table table-auto">
 	<tbody>
@@ -25,7 +23,5 @@
 	</tbody>
 </table>
 
-<ul>
-	<li>{a action="edit"}{t}Change your account data{/t}{/a}</li>
-	<li>{a action="edit_password"}{t}Change your password{/t}{/a}</li>
-</ul>
+{a action="edit" _class="btn btn-outline-primary"}{t}Change your account data{/t}{/a}</li>
+{a action="edit_password" _class="btn btn-outline-primary"}{t}Change your password{/t}{/a}</li>
