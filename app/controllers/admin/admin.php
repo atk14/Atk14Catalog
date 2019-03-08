@@ -66,6 +66,10 @@ class AdminController extends ApplicationBaseController{
 
 	function _add_category_to_breadcrumbs($category){
 		if(!$category){ return; }
+
+		$root = $category->getRootCategory();
+		$this->breadcrumbs[] = array(_("Category tree"),$this->_link_to(array("action" => "category_trees/detail", "id" => $root)));
+
 		// breadcrumbs
 		$ancestors = array();
 		$c = $category;

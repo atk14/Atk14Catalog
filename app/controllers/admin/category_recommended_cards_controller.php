@@ -3,14 +3,14 @@ class CategoryRecommendedCardsController extends AdminController{
 	// pridani doporucovaneho produktu do kategorie probiha taky v cards/add_to_category
 
 	function create_new(){
-		$this->page_title = sprintf(_("Přidání doporučeného produktu do kategorie %s"),strip_tags($this->category->getName()));
+		$this->page_title = _("Add recommended product to the category");
 
 		$this->_save_return_uri();
 
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
 			$this->category->addRecommendedCard($d["card_id"]);
 
-			$this->flash->success(_("Produkt byl přidán"));
+			$this->flash->success(_("Product has been added"));
 			$this->_redirect_back();
 		}
 	}
@@ -34,6 +34,10 @@ class CategoryRecommendedCardsController extends AdminController{
 
 		if($this->action=="create_new"){
 			$this->_find("category","category_id");
+		}
+
+		if(in_array($this->action,array("create_new")) && isset($this->category)){
+			$this->_add_category_to_breadcrumbs($this->category);
 		}
 	}
 }
