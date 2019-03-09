@@ -177,11 +177,11 @@ class CardsController extends AdminController{
 			$first_product->s($d);
 		}
 
-		$this->flash->success(_("Varianty byly zaktivněny."));
-		$this->_redirect_to(array(
+		$this->flash->success(_("Variants mode has been activated"));
+		$this->_redirect_to($this->_link_to(array(
 			"action" => "edit",
 			"id" => $this->card,
-		));
+		))."#variants");
 	}
 
 	function add_to_category(){
