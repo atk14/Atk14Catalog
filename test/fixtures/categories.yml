@@ -1,6 +1,8 @@
 catalog:
   id: 1001
+  code: "catalog"
   name_en: Catalog
+  name_cs: Katalog 
 
 color:
   id: 1002
@@ -36,8 +38,10 @@ usage_indoor:
 
 food_drinks:
   id: 1008
+  code: "food_drinks"
   parent_category_id: 1001
   name_en: Food & Drinks
+  name_cs: Jídlo a nápoje
 
 hot_drinks:
   id: 1009
