@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @fixture pages 
+ * @fixture pages
  */
 class TcLinkToPage extends TcBase {
 
@@ -11,8 +11,19 @@ class TcLinkToPage extends TcBase {
 		Atk14Require::Helper("modifier.link_to_page");
 
 		$ATK14_GLOBAL->setValue("lang","en");
-		$this->assertEquals("/testing-page/",smarty_modifier_link_to_page("testing"));
 
-		$this->assertEquals("#",smarty_modifier_link_to_page("non_existing_page"));
+		$link = smarty_modifier_link_to_page("testing_page");
+		$this->assertEquals("/testing-page/",$link);
+
+		$link = smarty_modifier_link_to_page("weird_code");
+		$this->assertEquals("/en/main/page_not_found/?page=weird_code",$link);
+
+		$ATK14_GLOBAL->setValue("lang","cs");
+
+		$link = smarty_modifier_link_to_page("testing_page");
+		$this->assertEquals("/testovaci-stranka/",$link);
+
+		$link = smarty_modifier_link_to_page("weird_code");
+		$this->assertEquals("/cs/main/page_not_found/?page=weird_code",$link);
 	}
 }

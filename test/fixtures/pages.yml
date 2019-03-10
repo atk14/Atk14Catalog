@@ -1,4 +1,6 @@
 testing_page:
-  code: "testing"
+  code: "testing_page"
   title_en: "Testing Page"
+  title_cs: "Testovací Stránka"
   slug_en: "testing-page"
+  slug_cs: "testovaci-stranka"
