@@ -1,5 +1,5 @@
 # vim:ts=2:sw=2:et
-dist: precise
+dist: tracy
 
 language: php
 
@@ -14,6 +14,7 @@ php:
   - 7.0
   - 7.1
   - 7.2
+  - 7.3
 
 before_install:
   - echo 'en_US.UTF-8 UTF-8' | sudo tee --append /var/lib/locales/supported.d/local
