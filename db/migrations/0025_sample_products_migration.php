@@ -62,7 +62,7 @@ Kniha se zaměřuje na chlapce jménem Bastian Balthazar Bux, který v malém kn
 - Ygramul, pavoučice
 - Morlor, želva
 - kamenožrout',
-			'body_en' => '### Plor summary
+			'body_en' => '### Plot summary
 
 The book centers on a boy, Bastian Balthazar Bux, a small and strange child who is neglected by his father after the death of Bastian\'s mother. While escaping from some bullies, Bastian bursts into the antique book store of Carl Conrad Coreander, where he finds his interest held by a book called The Neverending Story. Unable to resist, he steals the book and hides in his school\'s attic, where he begins to read.
 
