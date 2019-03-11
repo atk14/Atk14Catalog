@@ -4,7 +4,7 @@
 		{foreach $products as $product}
 			<li class="list-group-item" data-id="{$product->getId()}">
 				{render partial="shared/list_thumbnail" image=$product->getImage()}
-				<strong>{$product->getCatalogId()}</strong> {$product->getName()}
+				<strong>{$product->getCatalogId()}</strong> {$product->getLabel()}
 
 				{dropdown_menu}
 					{a action="products/edit" id=$product}{icon glyph="edit"} {t}Edit{/t}{/a}

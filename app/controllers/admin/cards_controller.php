@@ -166,17 +166,6 @@ class CardsController extends AdminController{
 
 		$this->card->s("has_variants",true);
 		
-		// zde se nakopiruje name a shortinfo do prvni varianty
-		$d = array();
-		$card_ar = $this->card->toArray();
-		foreach($GLOBALS["ATK14_GLOBAL"]->getSupportedLangs() as $l){
-			$d["name_$l"] = $card_ar["name_$l"];
-			$d["shortinfo_$l"] = $card_ar["shortinfo_$l"];
-		}
-		if($first_product = $this->card->getFirstProduct()){
-			$first_product->s($d);
-		}
-
 		$this->flash->success(_("Variants mode has been activated"));
 		$this->_redirect_to($this->_link_to(array(
 			"action" => "edit",

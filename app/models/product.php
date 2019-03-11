@@ -1,7 +1,13 @@
 <?php
 class Product extends ApplicationModel implements Translatable,Rankable{
 	
-	static function GetTranslatableFields(){ return array("name", "shortinfo", "action_info"); }
+	static function GetTranslatableFields(){
+		return array(
+			"label", // označení varianty, e.g "XL", "50g", "32GB"
+			"name",
+			"description",
+		);
+	}
 
 	static function GetInstanceByCatalogId($catalog_id){
 		($product = Product::FindByCatalogId($catalog_id,array("use_cache" => true))) ||
@@ -13,10 +19,21 @@ class Product extends ApplicationModel implements Translatable,Rankable{
 		return $product;
 	}
 
+	function getLabel($lang = null){
+		$label = parent::getLabel($lang);
+		if(strlen($label)){
+			return $label;
+		}
+		return _("Variant");
+	}
+
 	function getName($lang = null){
+		$name = parent::getName($lang);
+		if(strlen($name)){
+			return $name;
+		}
 		$card = $this->getCard();
-		if(!$card->hasVariants()){ return $card->getName($lang); }
-		return parent::getName($lang);
+		return $card->getName($lang);
 	}
 
 	function getShortinfo($lang = null){
