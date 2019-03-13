@@ -1,6 +1,5 @@
 <article>
 	<header>
-		<h1>{$article->getTitle()}</h1>
 		{if $tags}
 			<p class="article-tags">
 			{!"tag"|icon}
@@ -10,9 +9,17 @@
 			{/foreach}
 			</p>
 		{/if}
-		<p class="muted">{t author=$article->getAuthor()->getName()|h date=$article->getPublishedAt() date_human=$article->getPublishedAt()|format_date escape=no}Posted by <em>%1</em> on <time datetime="%2">%3</time>{/t}</p>
+		<h1>{$article->getTitle()}</h1>
+		{if $article->getTeaser()}
+			<p class="lead">
+				{$article->getTeaser()}
+			</p>
+		{/if}
+		<p class="text-muted">{t author=$article->getAuthor()->getName()|h date=$article->getPublishedAt() date_human=$article->getPublishedAt()|format_date escape=no}Posted by <em>%1</em> on <time datetime="%2">%3</time>{/t}</p>
 	</header>
+
 	<section class="article-body">
+
 		{!$article->getBody()|markdown}
 	</section>
 </article>

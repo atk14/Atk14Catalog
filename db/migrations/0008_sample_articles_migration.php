@@ -7,6 +7,8 @@ class SampleArticlesMigration extends Atk14Migration{
 			"author_id" => 1,
 			"published_at" => "2001-01-01",
 
+			"image_url" => "http://i.pupiq.net/i/65/65/27e/2927e/1272x920/9cUpr1_800x578_26254b6a433fc4a9.jpg",
+
 			// english version
 			"title_en" => "Happy Millenium",
 			"body_en" => "We wish you Happy 21st Millenium!\n\nMay all ATK14 developers are doing their job in peace.\n\nATK14 Development Team",
@@ -21,9 +23,12 @@ class SampleArticlesMigration extends Atk14Migration{
 		$article = Article::CreateNewRecord(array(
 			"author_id" => 1,
 			"published_at" => "2013-04-12",
+
+			"image_url" => "http://i.pupiq.net/i/65/65/27c/2927c/1272x920/JuSG6C_800x578_0cecc732df82ad65.jpg",
 			
 			// english version
 			"title_en" => "Welcome to ATK14 Skelet",
+			"teaser_en" => "Watch out! ATK14 Skelet is out now!",
 			"body_en" => trim("
 We are happy to announce the availability of ATK14 Skelet. This is a carefully selected & minimalistic set of functionality you may require at the start of your next web project.
 

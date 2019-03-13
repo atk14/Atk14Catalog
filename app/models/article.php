@@ -1,7 +1,7 @@
 <?php
 class Article extends ApplicationModel implements Translatable, iSlug {
 	
-	static function GetTranslatableFields() { return array("title", "body");}
+	static function GetTranslatableFields() { return array("title", "teaser", "body");}
 
 	function getSlugPattern($lang){ return $this->g("title_$lang"); }
 
