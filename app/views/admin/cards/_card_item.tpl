@@ -1,5 +1,6 @@
 <tr>
 	<td class="item-id">{$card->getId()}</td>
+	<td class="item-thumbnail">{render partial="shared/list_thumbnail" image=$card->getImage()}</td>
 	<td class="item-title">{$card->getName()}</td>
 	<td class="item-hasvariants">{$card->hasVariants()|display_bool}</td>
 	<td class="item-tags">{to_sentence var=$card->getTags() words_connector=" , " last_word_connector=" , "}</td>

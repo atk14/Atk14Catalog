@@ -10,7 +10,8 @@
 	<table class="table table-sm table-striped table--products">
 		<thead>
 			<tr class="table-dark">
-				<th class="item-id">#</th>
+				{sortable key=id}<th class="item-id">#</th>{/sortable}
+				<th></th>
 				{sortable key=name}<th class="item-title">{t}Name{/t}</th>{/sortable}
 				{sortable key=has_variants}<th class="item-hasvariants">{t}Has variants?{/t}</th>{/sortable}
 				<th class="item-tags">{t}Tags{/t}</th>
