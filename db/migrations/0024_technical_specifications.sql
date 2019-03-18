@@ -1,6 +1,9 @@
 CREATE SEQUENCE seq_technical_specification_keys;
 CREATE TABLE technical_specification_keys (
 	id INT PRIMARY KEY DEFAULT NEXTVAL('seq_technical_specification_keys'),
+	--
+	code VARCHAR(255), -- alternative key
+	--
 	key VARCHAR(255) NOT NULL,
 	--
 	created_by_user_id INT,
@@ -9,6 +12,7 @@ CREATE TABLE technical_specification_keys (
 	created_at TIMESTAMP NOT NULL DEFAULT NOW(),
 	updated_at TIMESTAMP,
 	--
+	CONSTRAINT unq_technicalspecificationkeys_code UNIQUE (code),
 	CONSTRAINT unq_technicalspecificationkeys_key UNIQUE (key),
 	CONSTRAINT fk_technicalspecificationkeys_cr_users FOREIGN KEY (created_by_user_id) REFERENCES users,
 	CONSTRAINT fk_technicalspecificationkeys_upd_users FOREIGN KEY (updated_by_user_id) REFERENCES users
