@@ -111,13 +111,4 @@ class AdminForm extends ApplicationForm{
 		return false;
 #		return $this->get_method()=="post";
 	}
-
-	function add_search_field($values = array()){
-		$values += array(
-			"label" => _("Search"),
-			"required" => false,
-		);
-
-		$this->add_field("search",new SearchField($values));
-	}
 }
