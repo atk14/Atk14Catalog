@@ -1,8 +1,10 @@
 <?php
 class FulfillingPagesMigration extends Atk14Migration{
+
 	function up(){
 		$about = Page::CreateNewRecord(array(
 			"id" => 1, // we just need that the page #1 is the About Page
+			"code" => "about_us",
 
 			"title_en" => "About Us",
 			"body_en" => "It all begins when a young boy meets a ...",
@@ -25,6 +27,7 @@ class FulfillingPagesMigration extends Atk14Migration{
 
 		$contact_data = Page::CreateNewRecord(array(
 			"parent_page_id" => $about,
+			"code" => "contact",
 			
 			"title_en" => "Contact Data",
 			"body_en" => trim("
