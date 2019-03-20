@@ -6,7 +6,7 @@
 		{a namespace="" controller=pages action=detail id=$page lang=$sl}{t 1=$sl}[%1]{/t}{/a}
 	{/foreach}
 
-	{render partial="page_item_dropdown_menu" page=$page}
+	{render partial="page_item_dropdown_menu" page=$page pull=""}
 	</div>
 	{if $page->getChildPages()}
 		<ul class="list-group  list-group-flush list-sortable" data-sortable-url="{link_to action="pages/set_rank"}">
