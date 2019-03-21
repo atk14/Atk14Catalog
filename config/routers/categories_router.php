@@ -23,6 +23,12 @@ class CategoriesRouter extends Atk14Router{
 
 		$path = $this->params["path"];
 		unset($this->params["path"]);
+	
+		// $path may vary when the $this->lang changes
+		$category = Category::GetInstanceByPath($path);
+		if($category){
+			$path = $category->getPath($this->lang);
+		}
 
 		if($this->lang!=$current_lang){
 			if($c = Category::GetInstanceByPath($path)){
