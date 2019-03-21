@@ -14,7 +14,7 @@
 					{if $root->isDeletable()}
 							{capture assign="confirm"}{t 1=$root->getName()|h escape=no}You are about to delete the catalog tree %1.
 		Are you sure?{/t}{/capture}
-							{a_destroy action=destroy id=$root _method=post _confirm=$confirm}{!"trash-alt"|icon}{t}Delete{/t}{/a_destroy}
+							{a_destroy action=destroy id=$root _method=post _confirm=$confirm}{!"trash-alt"|icon} {t}Delete{/t}{/a_destroy}
 					{/if}
 					{/dropdown_menu}
 				</div>
