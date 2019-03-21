@@ -52,3 +52,4 @@ shoes:
   id: 1010
   parent_category_id: 1001
   name_en: Shoes
+  name_cs: Obuv
