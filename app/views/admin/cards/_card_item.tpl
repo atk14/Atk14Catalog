@@ -11,7 +11,8 @@
 Are you sure?{/t}{/capture}
 
 		{dropdown_menu}
-			{a action=edit id=$card _class="btn btn-default"}{!"pencil-alt"|icon} {t}Edit{/t}{/a}
+			{a action=edit id=$card}{!"pencil-alt"|icon} {t}Edit{/t}{/a}
+			{a namespace="" action="cards/detail" id=$card}{!"eye"|icon} {t}Show on web{/t}{/a}
 			{a_destroy id=$card _confirm=$confirm}{!"trash-alt"|icon} {t}Delete product{/t}{/a_destroy}
 		{/dropdown_menu}
 	</td>
