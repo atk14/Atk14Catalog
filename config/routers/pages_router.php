@@ -5,11 +5,12 @@
  * /zvitezili-jsme-v-soutezi-prodejna-roku-2012/
  */
 class PagesRouter extends Atk14Router{
+
 	function recognize($uri){
-		if($this->namespace=="" && preg_match('/^\/([a-z0-9-_\/]+?)\/?$/',$uri,$matches) && ($sp = Page::GetInstanceByPath($matches[1],$lang))){
+		if($this->namespace=="" && preg_match('/^\/([a-z0-9-_\/]+?)\/?$/',$uri,$matches) && ($page = Page::GetInstanceByPath($matches[1],$lang))){
 			$this->action = "detail";
 			$this->controller = "pages";
-			$this->params["id"] = $sp->getId();
+			$this->params["id"] = $page->getId();
 			$this->lang = $lang;
 		}
 	}
@@ -17,9 +18,18 @@ class PagesRouter extends Atk14Router{
 	function build(){
 		if($this->namespace!="" || $this->controller!="pages" || $this->action!="detail"){ return; }
 
-		if($sp = Cache::Get("Page",$this->params->getInt("id"))){
+		if($page = Cache::Get("Page",$this->params->getInt("id"))){
     	$this->params->del("id");
-    	return sprintf('/%s/',$sp->getPath($this->lang));
+			
+			if($page->getCode()=="homepage"){
+				return Atk14Url::BuildLink(array(
+					"controller" => "main",
+					"action" => "index",
+					"lang" => $this->lang,
+				));
+			}
+
+    	return sprintf('/%s/',$page->getPath($this->lang));
 		}
 	}
 }
