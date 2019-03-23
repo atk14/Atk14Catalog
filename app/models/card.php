@@ -530,29 +530,27 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 	 * - f - seznam id filtru (tab. categories s priznakem is_filter='t')
 	 * 	- ve tvaru f[0-9]+ => array(integer,integer, ...) ; hodnota u f je id kategorie s nazvem filtru, hodnota/y v poli je seznam hodnot filtru (id podrizenych  kategorii)
 	 */
-	static function GetFinderForCategory($category, $filter_d=array(), $options=array()) {
+	static function GetFinderForCategory($category, $filter_d = array(), $options = array()) {
 
 		$options = array_merge(array(
 			"limit" => 50,
 			"offset" => 0,
-			"order" => null,
+			"order" => "default", // "default", "price_asc", "price_desc"
 		),$options);
 
-		# toto je jen priprava na moznost razeni vysledku filtru
-		$order = "
+		$ORDERS = array(
+			"default" => "
 				category_cards.category_id=:this_category DESC, -- napred karty zarazene primo v dane kategorii
 				category_cards.rank,
-				category_cards.id";
+				category_cards.id
+			",
+			// TODO:
+			//"price_asc" => "...",
+			//"price_desc" => "..."
+		);
 
-		$order_outer = "";
-		if (strlen($options["order"])>0) {
-			if ($options["order"]=="price_asc") {
-				//$order_outer = "end_price ASC"; # -- od nejnizsi ceny";
-			}
-			if ($options["order"]=="price_desc") {
-				//$order_outer = "end_price DESC"; # -- od nejvyssi ceny";
-			}
-		}
+		$order = $options["order"];
+		$order = isset($ORDERS[$order]) ? $ORDERS[$order] : $ORDERS["default"];
 
 		$filter_d += array(
 			"b" => array(), # brands
@@ -563,6 +561,8 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 
 		$conditions = $bind_ar = array();
 		$tables = array("category_cards","cards");
+
+		$bind_ar[":this_category"] = $category;
 		
 		$conditions[] = "category_cards.category_id IN :categories";
 		$bind_ar[":categories"] = $category->getBranchCategoryIds();
@@ -570,14 +570,6 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		$conditions[] = "cards.id=category_cards.card_id";
 		$conditions[] = "cards.visible='t'";
 		$conditions[] = "cards.deleted='f'";
-
-		# subquery qq vraci kartu vicekrat, pokud se nachazi ve vice kategoriich, s tim, ze karta zarazena v aktualni kategorii je na zacatku
-		# select distinct(card_id) ale vyhodi duplicity v neurcitem poradi.
-		#
-		# proto pouzijeme tuto podminku, ktera vyhodi karty, ktere jsou jeste v jine nez aktualni kategorii (:this_category).
-		# ta tam tedy zustane jen jednou a to na zacatku
-		#
-		$conditions[] = "(category_id!=:this_category AND category_cards.card_id IN (SELECT card_id FROM category_cards WHERE category_id=:this_category))=false";
 
 		if($filter_d["d"]){
 			$conditions[] = "cards.designer_id IN :designers";
@@ -603,29 +595,34 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 			}
 		}
 
-		$bind_ar[":this_category"] = $category;
-
-		if ($order_outer) {
-			$order_outer = "ORDER BY $order_outer";
-		}
+		$tables = join(",",$tables);
+		$conditions = "(".join(") AND\n(",$conditions).")";
+		$order = trim($order);
 
 		$query = "
-			SELECT DISTINCT(card_id)
-			FROM
-				".join(",",$tables)."
-			WHERE
-				(".join(") AND\n(",$conditions).")
+			SELECT card_id FROM (
+				SELECT card_id,MIN(rownum) AS rownum FROM (
+					SELECT card_id, ROW_NUMBER() OVER (ORDER BY\n$order\n) AS rownum
+					FROM $tables
+					WHERE $conditions
+				)q GROUP BY card_id
+			)q_grouped ORDER BY rownum
 		";
-				//-- ORDER BY $order
+
+		$query_count = "
+			SELECT COUNT(DISTINCT card_id)
+			FROM $tables
+			WHERE $conditions
+		";
 	
 		/*
 		echo $query;
 		print_r($bind_ar);
-		exit; */
+		exit; //*/
 
 		return Card::Finder(array(
 			"query" => $query,
-			"query_count" => "SELECT COUNT(*) FROM ($query)q",
+			"query_count" => $query_count,
 			"bind_ar" => $bind_ar,
 			"offset" => $options["offset"],
 			"limit" => $options["limit"],
