@@ -1,21 +1,23 @@
 <article>
-	<header>
-		<div class="jumbotron border border-secondary bg-transparent my-5">
-			<div class="row">
-				<div class="col-md-6 d-md-flex flex-column justify-content-center">
-					<h2 class="display-4">{t}Welcome at ATK14 Catalog!{/t}</h2>
-					<p class="lead">
-						{t escape=no}<em>ATK14 Catalog</em> is an skeleton suitable for applications of kind like <em>Products introduction</em>, <em>E-shop</em>, etc.{/t}
-						{t escape=no}ATK14 Catalog is built on top of <em>ATK14 Skelet</em> &mdash; another great skeleton.{/t}
-					</p>
-				</div>
-				<div class="col-md-6">
-					<img src="{$public}images/skelet.png" alt="ATK14 Skelet" title="{t}The ATK14 Skelet at age 5{/t}" class="img-fluid">
-					<p style="font-size: 0.7em; text-align: center;">{t escape=no}fig.1 <em>The Creature is pleading for forking on GitHub</em>{/t}</p>
-				</div>
+
+	{if $page}
+
+		<header>
+			<h1>{$page->getTitle()}</h1>
+			<div class="teaser">
+			{!$page->getTeaser()|markdown}
 			</div>
-		</div>
-	</header>
+		</header>
+		
+		{!$page->getBody()|markdown}
+			
+	{else}
+
+		<header>
+			<h1>{$page_title}</h1>
+		</header>
+
+	{/if}
 
 	<section class="border-top-0">
 		<h3>{t}The Catalog contains mainly{/t}</h3>
