@@ -4,6 +4,10 @@
 
 <hr>
 
+{render partial="shared/image_gallery" object=$page}
+
+<hr>
+
 <h3 id="subpages">{button_create_new parent_page_id=$page return_to_anchor="subpages"}{/button_create_new} {t}Subpages{/t}</h3>
 {if $child_pages}
 	<ul class="list-group list-sortable" data-sortable-url="{link_to action="pages/set_rank"}">
