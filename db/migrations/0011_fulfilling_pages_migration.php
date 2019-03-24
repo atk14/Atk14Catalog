@@ -16,6 +16,29 @@ class FulfillingPagesMigration extends Atk14Migration{
 			"body_cs" => "",
 		));
 
+		// Slided on homepage
+		Image::AddImage($homepage,array(
+			"url" => "http://i.pupiq.net/i/65/65/2a2/292a2/1920x540/tckDHp_800x225_b1df7659b264d1cc.jpg",
+			"name_en" => "Lorem ipsum",
+			"description_en" => "Dolor sit amet, consectetur adipiscing elit. Quisque odio neque, convallis sed sollicitudin in, egestas non tortor.",
+			"name_cs" => "Lorem ipsum",
+			"description_cs" => "Dolor sit amet, consectetur adipiscing elit. Quisque odio neque, convallis sed sollicitudin in, egestas non tortor.",
+		));
+		Image::AddImage($homepage,array(
+			"url" => "http://i.pupiq.net/i/65/65/2a3/292a3/1920x540/l24vUy_800x225_5559ff585698c82f.jpg",
+			"name_en" => "Lorem ipsum",
+			"description_en" => "Dolor sit amet, consectetur adipiscing elit. Quisque odio neque, convallis sed sollicitudin in, egestas non tortor.",
+			"name_cs" => "Lorem ipsum",
+			"description_cs" => "Dolor sit amet, consectetur adipiscing elit. Quisque odio neque, convallis sed sollicitudin in, egestas non tortor.",
+		));
+		Image::AddImage($homepage,array(
+			"url" => "http://i.pupiq.net/i/65/65/2a4/292a4/1920x540/qkWiHB_800x225_936547d285be0d0c.jpg",
+			"name_en" => "Lorem ipsum",
+			"description_en" => "Dolor sit amet, consectetur adipiscing elit. Quisque odio neque, convallis sed sollicitudin in, egestas non tortor.",
+			"name_cs" => "Lorem ipsum",
+			"description_cs" => "Dolor sit amet, consectetur adipiscing elit. Quisque odio neque, convallis sed sollicitudin in, egestas non tortor.",
+		));
+
 		$about = Page::CreateNewRecord(array(
 			"code" => "about_us",
 
