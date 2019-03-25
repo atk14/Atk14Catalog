@@ -1,5 +1,6 @@
 <?php
 class SitemapsController extends ApplicationController{
+
 	function index(){
 		$this->render_layout = false;
 		$this->response->setContentType("text/xml");
@@ -9,6 +10,17 @@ class SitemapsController extends ApplicationController{
 	function detail(){
 		$this->page_title = _("Sitemap");
 
+		$this->tpl_data["pages"] = Page::FindAll("parent_page_id IS NULL");
+
+		$this->tpl_data["categories"] = Category::FindAll(array(
+			"conditions" => array(
+				"parent_category_id IS NULL",
+				"visible",
+				"NOT is_filter",
+				"pointing_to_category_id IS NULL" // is not alias
+			)
+		));
+	
 		$this->tpl_data["articles"] = Article::FindAll(array(
 			"condition" => "published_at<:now",
 			"bind_ar" => array(
@@ -17,6 +29,7 @@ class SitemapsController extends ApplicationController{
 			"order_by" => "published_at DESC",
 			"limit" => 20,
 		));
+
 
 		if($this->params->getString("format")=="xml"){
 			$this->render_template = false;
