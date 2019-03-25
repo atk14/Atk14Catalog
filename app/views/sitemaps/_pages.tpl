@@ -4,7 +4,7 @@
 {foreach $pages as $page}
 
 	<li>
-		<h4>{a action="pages/detail" id=$page _with_hostname=1}{$page->getTitle()}{/a}</h4>
+		{a action="pages/detail" id=$page _with_hostname=1}{$page->getTitle()}{/a}
 		<p>
 			{$page->getTeaser()|markdown|strip_tags|truncate:200}
 		</p>

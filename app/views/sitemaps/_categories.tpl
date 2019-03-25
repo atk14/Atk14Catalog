@@ -6,7 +6,7 @@
 	{if $category->isVisible() && !$category->isFilter() && !$category->isAlias()}
 
 	<li>
-		{a action="categories/detail" path=$category->getPath() _with_hostname=1}<h4>{$category->getName()}</h4>{/a}
+		{a action="categories/detail" path=$category->getPath() _with_hostname=1}{$category->getName()}{/a}
 		<p>
 			{$category->getTeaser()|markdown|strip_tags|truncate:200}
 		</p>
