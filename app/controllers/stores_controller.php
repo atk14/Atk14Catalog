@@ -8,7 +8,7 @@ class StoresController extends ApplicationController {
 	}
 
 	function detail(){
-		$this->breadcrumbs[] = array(_("Stores"),"index");
+		$this->breadcrumbs[] = array(_("Stores"),"stores/index");
 		$this->page_title = $this->breadcrumbs[] = $this->store->getName();
 	}
 
