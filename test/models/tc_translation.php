@@ -97,10 +97,10 @@ class TcTranslation extends TcBase{
 
 
 	function test_build_conditions() {
-		list($conditions, $bind_ar) = Translation::BuildConditionsForTranslatableFields("articles",array("shortinfo","name"));
+		list($conditions, $bind_ar) = Translation::BuildConditionsForTranslatableFields("articles",array("teaser","name"));
 		$this->assertEquals("id IN (SELECT record_id FROM translations WHERE upper(translations.body) LIKE upper(:search) AND translations.key IN :search_fields AND translations.lang=:lang AND translations.table_name=:table_name_articles)", $conditions[0]);
 		$this->assertEquals(array(
-			":search_fields" => array("shortinfo","name"),
+			":search_fields" => array("teaser","name"),
 			":lang"=> "en",
 			":table_name_articles" => "articles",
 		), $bind_ar);
@@ -108,12 +108,12 @@ class TcTranslation extends TcBase{
 
 		$conditions = array("deleted='f'");
 		$bind_ar = array();
-		list($conditions, $bind_ar) = Translation::BuildConditionsForTranslatableFields("articles",array("shortinfo","name"),$conditions,$bind_ar);
+		list($conditions, $bind_ar) = Translation::BuildConditionsForTranslatableFields("articles",array("teaser","name"),$conditions,$bind_ar);
 		$this->assertEquals("deleted='f'", $conditions[0]);
 		$this->assertEquals("id IN (SELECT record_id FROM translations WHERE upper(translations.body) LIKE upper(:search) AND translations.key IN :search_fields AND translations.lang=:lang AND translations.table_name=:table_name_articles)", $conditions[1]);
 		$this->assertEquals(array(
 			":lang"=> "en",
-			":search_fields" => array("shortinfo","name"),
+			":search_fields" => array("teaser","name"),
 			":table_name_articles"=> "articles",
 		), $bind_ar);
 	}

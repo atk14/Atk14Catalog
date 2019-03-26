@@ -7,10 +7,6 @@ CREATE TABLE cards (
 	deleted BOOLEAN NOT NULL DEFAULT 'f',
 	has_variants BOOLEAN NOT NULL DEFAULT 'f', -- pokud je false, tak musi byt aplikacne zajisteno, ze v products bude pro tuto kartu prave 1 produkt
 	brand_id INT,
-	-- predpokladana textova pole:
-	-- 	name
-	-- 	shortinfo
-	-- 	longinfo
 	--
 	created_by_user_id INT,
 	updated_by_user_id INT,
@@ -95,9 +91,7 @@ CREATE TABLE products (
 	catalog_id VARCHAR(255) NOT NULL,
 	visible BOOLEAN NOT NULL DEFAULT 't',
 	deleted BOOLEAN NOT NULL DEFAULT 'f',
-	-- predpokladana textova pole
-	--	name
-	--	shortinfo
+	--
 	created_by_user_id INT,
 	updated_by_user_id INT,
 	--

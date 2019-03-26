@@ -36,12 +36,6 @@ class Product extends ApplicationModel implements Translatable,Rankable{
 		return $card->getName($lang);
 	}
 
-	function getShortinfo($lang = null){
-		$card = $this->getCard();
-		if(!$card->hasVariants()){ return $card->getTeaser($lang); }
-		return parent::getShortinfo($lang);
-	}
-
 	function getCard(){ return Cache::Get("Card",$this->getCardId()); }
 
 	function getCatalogId(){

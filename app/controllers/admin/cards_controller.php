@@ -14,7 +14,7 @@ class CardsController extends AdminController{
 		if($ft_cond = FullTextSearchQueryLike::GetQuery("UPPER(".join("||' '||",array(
 				"id",
 				"COALESCE((SELECT body FROM translations WHERE record_id=cards.id AND table_name='cards' AND key='name' AND lang=:lang),'')",
-				"COALESCE((SELECT body FROM translations WHERE record_id=cards.id AND table_name='cards' AND key='shortinfo' AND lang=:lang),'')",
+				"COALESCE((SELECT body FROM translations WHERE record_id=cards.id AND table_name='cards' AND key='teaser' AND lang=:lang),'')",
 			)).")",$q_up,$bind_ar)
 		){
 			$bind_ar[":lang"] = $this->lang;
@@ -23,7 +23,8 @@ class CardsController extends AdminController{
 			$ft_cond[] = "cards.id IN (SELECT card_id FROM products WHERE ".FullTextSearchQueryLike::GetQuery("UPPER(".join("||' '||",array(
 				"catalog_id",
 				"COALESCE((SELECT body FROM translations WHERE record_id=products.id AND table_name='products' AND key='name' AND lang=:lang),'')",
-				"COALESCE((SELECT body FROM translations WHERE record_id=products.id AND table_name='products' AND key='shortinfo' AND lang=:lang),'')",
+				"COALESCE((SELECT body FROM translations WHERE record_id=products.id AND table_name='products' AND key='label' AND lang=:lang),'')",
+				"COALESCE((SELECT body FROM translations WHERE record_id=products.id AND table_name='products' AND key='description' AND lang=:lang),'')",
 			)).")",$q_up,$bind_ar).")";
 
 			$ft_cond[] = "cards.id IN (SELECT card_id FROM card_sections WHERE ".FullTextSearchQueryLike::GetQuery("UPPER(".join("||' '||",array(
