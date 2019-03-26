@@ -9,6 +9,7 @@
 			{/foreach}
 			</p>
 		{/if}
+		{admin_menu for=$article}
 		<h1>{$article->getTitle()}</h1>
 		{if $article->getTeaser()}
 			<p class="lead">

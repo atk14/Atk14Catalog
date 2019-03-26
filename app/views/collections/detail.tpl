@@ -2,6 +2,7 @@
 	<div class="jumbotron bg-transparent border border-secondary">
 		<div class="row">
 			<div class="col-12 col-md-6 d-md-flex flex-column justify-content-center">
+				{admin_menu for=$collection}
 				<h1>{$page_title} </h1>
 				{if $collection->getTeaser()}
 					<div class="lead">{!$collection->getTeaser()|markdown}</div>
