@@ -361,6 +361,12 @@ class ApplicationBaseController extends Atk14Controller{
 		return $this->_redirect_to($return_uri);
 	}
 
+	function _add_something_to_breadcrumbs($title,$link){
+		$title = strip_tags($title);
+		if(is_array($link)){ $link = $this->_link_to($link); }
+		$this->breadcrumbs[] = array($title,$link);
+	}
+
 	/**
 	 * Prepares a object for the current action
 	 *

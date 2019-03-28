@@ -368,6 +368,16 @@ class AdminController extends ApplicationBaseController{
 		}
 	}
 
+	function _add_gallery_to_breadcrumbs($gallery){
+		if(!$gallery){ return; }
+		$title = _("Fotogalerie");
+		if($gallery->getTitle()){
+			$title .= ": ".$gallery->getTitle();
+		}
+		$link = ["action" => "galleries/detail", "id" => $gallery];
+		$this->_add_something_to_breadcrumbs($title,$link);
+	}
+
 	/**
 	 * Compiles search conditions for SQL query with LIKE operator
 	 *

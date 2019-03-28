@@ -1,6 +1,8 @@
 <?php
 class AdminForm extends ApplicationForm{
 
+	var $clean_code_automatically = true;
+
 	/**
 	 * Prida policka pro podporovane jazykove mutace.
 	 *
@@ -94,6 +96,23 @@ class AdminForm extends ApplicationForm{
 		)));
 	}
 
+	function add_title_field($options = array()){
+		$options += array(
+			"label" => _("Titulek"),
+			"required" => false,
+			"max_legth" => 255
+		);
+		$this->add_translatable_field("title",new CharField($options));
+	}
+
+	function add_description_field($options = array()){
+		$options += array(
+			"label" => _("Popis"),
+			"required" => false,
+		);
+		$this->add_translatable_field("description",new CharField($options));
+	}
+
 	function add_code_field($options = array()){
 		$options += array(
 			"label" => _("Code"),
@@ -106,9 +125,50 @@ class AdminForm extends ApplicationForm{
 		$this->add_field("code", new CharField($options));
 	}
 
+	function add_visible_field($options = array()){
+		$options += [
+			"label" => _("Is visible?"),
+			"required" => false,
+			"initial" => true,
+		];
+
+		$this->add_field("visible", new BooleanField($options));
+	}
+
 	function has_storno_button(){
 		if(isset($this->has_storno_button)){ return $this->has_storno_button; }
 		return false;
 #		return $this->get_method()=="post";
+	}
+
+	function clean(){
+		list($err,$data) = parent::clean();
+
+		$this->clean_code_automatically && $this->_clean_code($data);
+
+		return [$err,$data];
+	}
+
+	function _clean_code(&$data){
+		if(!is_array($data) || !isset($data["code"])){ return; }
+
+		$object_class_name = String4::ToObject(get_class($this->controller))->gsub('/Controller$/','')->singularize()->toString();  // "StaticPagesController" -> "StaticPage"
+		$form_class = get_class($this);
+
+		if(preg_match('/CreateNewForm/',$form_class)){
+
+			if($object_class_name::FindByCode($data["code"])){
+				$this->set_error("code",_("Stejný kód je již použit pro jiný záznam"));
+			}
+
+		}elseif(preg_match('/EditForm/',$form_class)){
+			
+			$editing_object = $object_class_name::GetInstanceById($this->controller->params->getInt("id"));
+			if(($o = $object_class_name::FindByCode($data["code"])) && $o->getId()!=$editing_object->getId()){
+				$this->set_error("code",_("Stejný kód je již použit pro jiný záznam"));
+			}
+
+		}
+
 	}
 }
