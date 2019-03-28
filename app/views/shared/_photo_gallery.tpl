@@ -1,8 +1,14 @@
 {*
- * {render partial="shared/photo_gallery" object=$brand}
+ * Usage:
+ *
+ *	{render partial="shared/photo_gallery" object=$brand}
+ *	or
+ *	{render partial="shared/photo_gallery" images=$object->getImages()}
  *}
 
-{assign var=images value=Image::GetImages($object)}
+{if !$images && $object}
+	{assign var=images value=Image::GetImages($object)}
+{/if}
 
 {if $images}
 	{if !isset($photo_gallery_title)}{capture assign="photo_gallery_title"}{t}Photo gallery{/t}{/capture}{/if}
