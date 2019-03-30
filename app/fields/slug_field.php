@@ -1,5 +1,6 @@
 <?php
 class SlugField extends RegexField{
+
 	function __construct($options = array()){
 		$options += array(
 			"label" => _("Slug"),
@@ -11,7 +12,7 @@ class SlugField extends RegexField{
 		$this->auto_slugify = $options["auto_slugify"];
 		unset($options["auto_slugify"]);
 
-		parent::__construct('/^[a-z](|-?[a-z0-9]+)*$/',$options);
+		parent::__construct('/^[a-z0-9](|-?[a-z0-9]+)*$/',$options);
 
 		$this->update_messages(array(
 			"invalid" => _("Write something like black-cat-white-cat")
