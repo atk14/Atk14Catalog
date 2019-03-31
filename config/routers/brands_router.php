@@ -1,7 +1,8 @@
 <?php
 class BrandsRouter extends SluggishRouter{
+
 	var $patterns = array(
-		"en" => "/brand/<slug>/",
-		"cs" => "/znacka/<slug>",
+		"en" => array("index" => "/brands/", "detail" => "/brands/<slug>/"),
+		"cs" => array("index" => "/znacky/", "detail" => "/znacky/<slug>"),
 	);
 }
