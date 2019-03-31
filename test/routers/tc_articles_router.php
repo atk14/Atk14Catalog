@@ -16,7 +16,7 @@ class TcArticlesRouter extends TcBase {
 			"action" => "detail",
 			"id" => $this->articles["testing_article"]->getId(),
 		));
-		$this->assertEquals("/article/testing-article/",$uri);
+		$this->assertEquals("/articles/testing-article/",$uri);
 
 		$uri = $this->assertBuildable(array(
 			"lang" => "cs",
@@ -24,7 +24,7 @@ class TcArticlesRouter extends TcBase {
 			"action" => "detail",
 			"id" => $this->articles["testing_article"]->getId(),
 		));
-		$this->assertEquals("/clanek/testovaci-clanek/",$uri);
+		$this->assertEquals("/clanky/testovaci-clanek/",$uri);
 
 		$this->assertNotBuildable(array(
 			"lang" => "cs",
@@ -32,9 +32,24 @@ class TcArticlesRouter extends TcBase {
 			"action" => "detail",
 		));
 
+		$uri = $this->assertBuildable(array(
+			"lang" => "en",
+			"controller" => "articles",
+			"action" => "index",
+		));
+		$this->assertEquals("/articles/",$uri);
+
+		$uri = $this->assertBuildable(array(
+			"lang" => "cs",
+			"controller" => "articles",
+			"action" => "index",
+		));
+		$this->assertEquals("/clanky/",$uri);
+
 		// Recognizing
 
-		$ret = $this->assertRecognizable("/article/testing-article/",$params);
+		$params = array();
+		$ret = $this->assertRecognizable("/articles/testing-article/",$params);
 		$this->assertEquals("articles",$ret["controller"]);
 		$this->assertEquals("detail",$ret["action"]);
 		$this->assertEquals("en",$ret["lang"]);
@@ -42,6 +57,20 @@ class TcArticlesRouter extends TcBase {
 
 		$ret = $this->assertNotRecognizable("/bad-prefix/testing-article/");
 
-		$ret = $this->assertNotRecognizable("/article/non-existing-article/");
+		$ret = $this->assertNotRecognizable("/articles/non-existing-article/");
+
+		$params = array();
+		$ret = $this->assertRecognizable("/articles/",$params);
+		$this->assertEquals("articles",$ret["controller"]);
+		$this->assertEquals("index",$ret["action"]);
+		$this->assertEquals("en",$ret["lang"]);
+		$this->assertEquals(array(),$params);
+
+		$params = array();
+		$ret = $this->assertRecognizable("/clanky/",$params);
+		$this->assertEquals("articles",$ret["controller"]);
+		$this->assertEquals("index",$ret["action"]);
+		$this->assertEquals("cs",$ret["lang"]);
+		$this->assertEquals(array(),$params);
 	}
 }
