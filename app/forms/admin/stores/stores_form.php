@@ -53,6 +53,8 @@ class StoresForm extends AdminForm {
 			"label" => _("Description"),
 			"required" => false,
 		)));
+
+		$this->add_code_field();
 	}
 
 	function clean(){
