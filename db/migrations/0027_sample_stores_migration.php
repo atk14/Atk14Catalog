@@ -26,6 +26,9 @@ Sobota: 10:00 - 18:00",
 Saturday: 10:00 - 18:00",
 			"teaser_cs" => "Praha",
 			"teaser_en" => "Prague",
+
+			"location_lat" => 50.0770708,
+			"location_lng" => 14.4862577,
 		));
 
 		Image::AddImage($store,"http://i.pupiq.net/i/65/65/b66/4b66/550x412/2JcUiK_550x412_26e34525384f3cd3.jpg");

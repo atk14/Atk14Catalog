@@ -6,6 +6,9 @@ CREATE TABLE stores (
 	phone VARCHAR(255),
 	email VARCHAR(255),
 	--
+	location_lat FLOAT, -- 50.0876229
+	location_lng FLOAT, -- 14.4639075
+	--
 	created_by_user_id INT,
 	updated_by_user_id INT,
 	--
