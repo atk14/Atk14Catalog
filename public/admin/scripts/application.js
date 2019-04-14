@@ -3,6 +3,7 @@
 	var document = window.document,
 		ace = window.ace,
 		markdown = window.markdown,
+		//UTILS = window.UTILS, // Uncomment this if you need something from UTILS
 
 	ADMIN = {
 
@@ -327,7 +328,7 @@
 	 * Garber-Irish DOM-based routing.
 	 * See: http://goo.gl/z9dmd
 	 */
-	ADMIN.UTIL = {
+	ADMIN.INITIALIZER = {
 		exec: function( controller, action ) {
 			var ns = ADMIN,
 				c = controller,
@@ -347,9 +348,9 @@
 			controller = body.getAttribute( "data-controller" ),
 			action = body.getAttribute( "data-action" );
 
-			ADMIN.UTIL.exec( "common" );
-			ADMIN.UTIL.exec( controller );
-			ADMIN.UTIL.exec( controller, action );
+			ADMIN.INITIALIZER.exec( "common" );
+			ADMIN.INITIALIZER.exec( controller );
+			ADMIN.INITIALIZER.exec( controller, action );
 		}
 	};
 
@@ -357,5 +358,5 @@
 	window.ADMIN = ADMIN;
 
 	// Initialize application.
-	ADMIN.UTIL.init();
+	ADMIN.INITIALIZER.init();
 } )( window, window.jQuery );

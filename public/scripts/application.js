@@ -2,8 +2,9 @@
 ( function( window, $, undefined ) {
 	"use strict";
 	var document = window.document,
+		//UTILS = window.UTILS, // Uncomment this if you need something from UTILS
 
-	CATALOG = {
+	APPLICATION = {
 		common: {
 
 			// Application-wide code.
@@ -95,9 +96,9 @@
 	 * Garber-Irish DOM-based routing.
 	 * See: http://goo.gl/z9dmd
 	 */
-	CATALOG.UTIL = {
+	APPLICATION.INITIALIZER = {
 		exec: function( controller, action ) {
-			var ns = CATALOG,
+			var ns = APPLICATION,
 				c = controller,
 				a = action;
 
@@ -115,15 +116,15 @@
 			controller = body.getAttribute( "data-controller" ),
 			action = body.getAttribute( "data-action" );
 
-			CATALOG.UTIL.exec( "common" );
-			CATALOG.UTIL.exec( controller );
-			CATALOG.UTIL.exec( controller, action );
+			APPLICATION.INITIALIZER.exec( "common" );
+			APPLICATION.INITIALIZER.exec( controller );
+			APPLICATION.INITIALIZER.exec( controller, action );
 		}
 	};
 
-	// Expose CATALOG to the global object.
-	window.CATALOG = CATALOG;
+	// Expose APPLICATION to the global object.
+	window.APPLICATION = APPLICATION;
 
 	// Initialize application.
-	CATALOG.UTIL.init();
+	APPLICATION.INITIALIZER.init();
 } )( window, window.jQuery );
