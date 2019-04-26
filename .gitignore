@@ -18,3 +18,4 @@ i/*
 !a/.htaccess
 !a/error.php
 a/*
+.well-known/*
