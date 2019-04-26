@@ -17,6 +17,7 @@ class CatalogIdField extends RegexField {
 		$options = array_merge(array(
 			"label" => _("Catalog number"),
 			"max_length" => CATALOG_ID_MAX_LENGTH,
+			"null_empty_output" => true,
 		), $options);
 		parent::__construct(CATALOG_ID_REGEXP, $options);
 		$this->update_messages(array(

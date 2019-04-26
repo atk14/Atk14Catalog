@@ -72,7 +72,7 @@ class CardsController extends AdminController{
 
 			$card = Card::CreateNewRecord($d);
 			$card->setTags($tags);
-			if($catalog_id){
+			if(strlen($catalog_id)){
 				$card->createProduct(array(
 					"catalog_id" => $catalog_id,
 				));
@@ -126,17 +126,19 @@ class CardsController extends AdminController{
 			$tags = $d["tags"];
 			unset($d["tags"]);
 
-			if(!$this->card->hasVariants()){
+			$catalog_id = $d["catalog_id"];
+			unset($d["catalog_id"]);
+
+			if(!$this->card->hasVariants() && strlen($catalog_id)){
 				if(!$first_product){
-					$first_product = Product::CreateNewRecord(array(
-						"card_id" => $this->card,
-						"catalog_id" => $d["catalog_id"],
-					));
-				}else{
-					$first_product->s("catalog_id",$d["catalog_id"]);
+					$first_product = $this->card->createProduct([
+						"catalog_id" => $catalog_id,
+					]);
+				}
+				if($first_product->getCatalogId()!==$catalog_id){
+					$first_product->s("catalog_id",$catalog_id);
 				}
 			}
-			unset($d["catalog_id"]);
 
 			$this->card->s($d,array("reconstruct_missing_slugs" => true));
 			$this->card->setTags($tags);
