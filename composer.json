@@ -9,7 +9,7 @@
         "atk14/drink-markdown": "0.* >=0.2",
         "essence/essence": ">=2.6.1",
         "atk14/menu14": "^1.1.1",
-        "yarri/my-blowfish": ">=1.3 <2.0",
+        "yarri/my-blowfish": ">=1.4 <2.0",
         "yarri/full-text-search-query-like": "^0.2",
         "atk14/confirmation-field": "^1.0",
         "atk14/sluggish-router": "^1.1",
