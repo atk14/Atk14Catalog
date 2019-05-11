@@ -114,9 +114,17 @@
 						);
 					},
 					done: function( e, data ) {
+
+						// This is the same grip like in handleSortables
+						var glyph = "<span class='fas fa-grip-vertical text-secondary handle pr-3' " +
+							" title='sorting'></span>";
+
 						$( data.result.image_gallery_item )
 							.addClass( "not-processed" )
+							.prepend( glyph )
 							.appendTo( $list );
+
+						$list.sortable( "refresh" );
 
 						$msg.remove();
 					},
