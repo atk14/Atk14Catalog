@@ -11,8 +11,8 @@ class CategoryField extends CharField{
 		$options["null_empty_output"] = true;
 		$options += array(
 			"consider_filter" => false,
+			"treat_null_as_root" => false,
 			"follow_pointing_category" => true,
-			"help_text" => _("Start with a slash if you want to search the catalog tree from the root"),
 			"widget" => new TextInput(array(
 				"attrs" => array(
 					"data-suggesting_url" => Atk14Url::BuildLink(array("namespace" => "api", "controller" => "categories_suggestions","action" => "index"))."?format=json&q=",
@@ -21,8 +21,13 @@ class CategoryField extends CharField{
 			))
 		);
 
+		$options += array(
+			"help_text" => _("Start with a slash if you want to search the catalog tree from the root") . ($options["treat_null_as_root"] ? ". "._("A single slash will be considered as root.") : ""),
+		);
+
 		$this->consider_filter = $options["consider_filter"];
 		$this->follow_pointing_category = $options["follow_pointing_category"];
+		$this->treat_null_as_root = $options["treat_null_as_root"];
 
 		parent::__construct($options);
 
@@ -41,6 +46,10 @@ class CategoryField extends CharField{
 			$value = "/".$value->getPath()."/";
 		}
 
+		if(is_null($value) && $this->treat_null_as_root){
+			$value = "/";
+		}
+
 		return $value;
 	}
 
@@ -53,6 +62,9 @@ class CategoryField extends CharField{
 				return array($this->messages["no_such_category"],null);
 			}
 		}else{
+			if($value=="/" && $this->treat_null_as_root){
+				return array(null,null);
+			}
 			$value = preg_replace('/^\//','',$value);
 			$value = preg_replace('/\/$/','',$value); // "/mistnosti/jidelna/" => "mistnosti/jidelna"
 			if(!$category = Category::GetInstanceByPath($value)){

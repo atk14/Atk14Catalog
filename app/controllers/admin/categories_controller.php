@@ -27,7 +27,7 @@ class CategoriesController extends AdminController{
 		$this->form->set_initial("parent_category_id", $this->category->getParentCategory());
 		$this->_save_return_uri();
 		if ($this->request->post() && ($d=$this->form->validate($this->params))) {
-			if($d["parent_category_id"]->getId()==$this->category->getId()){
+			if($d["parent_category_id"] && $d["parent_category_id"]->getId()==$this->category->getId()){
 				$this->form->set_error("parent_category_id",_("The category can not be moved under itself"));
 				return;
 			}
