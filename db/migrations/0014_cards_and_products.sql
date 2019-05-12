@@ -20,21 +20,45 @@ CREATE TABLE cards (
 );
 
 -- textual information for cards
+CREATE SEQUENCE seq_card_section_types START WITH 11;
 CREATE TABLE card_section_types (
 	id INT PRIMARY KEY,
 	code VARCHAR(255) NOT NULL,
 	name VARCHAR(255),
+	rank INT NOT NULL DEFAULT 999,
 	--
-	CONSTRAINT unq_cardsectiontypes_code UNIQUE (code)
+	created_by_user_id INT,
+	updated_by_user_id INT,
+	--
+	created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+	updated_at TIMESTAMP,
+	--
+	CONSTRAINT unq_cardsectiontypes_code UNIQUE (code),
+	CONSTRAINT fk_cardsectiontypes_cr_users FOREIGN KEY (created_by_user_id) REFERENCES users,
+	CONSTRAINT fk_cardsectiontypes_upd_users FOREIGN KEY (updated_by_user_id) REFERENCES users
 );
 
-INSERT INTO card_section_types VALUES (1,'variants','Variants');
-INSERT INTO card_section_types VALUES (2,'tech_spec','Technical specification');
--- INSERT INTO card_section_types VALUES (3,'awards','Awards'); -- reserved :)
-INSERT INTO card_section_types VALUES (4,'documentation','Product brochure');
-INSERT INTO card_section_types VALUES (5,'collection','Other parts of the collection');
-INSERT INTO card_section_types VALUES (6,'info','Information');
---
+INSERT INTO card_section_types (id,code,rank) VALUES (1,'variants',3);
+INSERT INTO translations (table_name,record_id,key,lang,body) VALUES('card_section_types','1','name','en','Variants');
+INSERT INTO translations (table_name,record_id,key,lang,body) VALUES('card_section_types','1','name','cs','Varianty');
+INSERT INTO card_section_types (id,code,rank) VALUES (2,'tech_spec',2);
+INSERT INTO translations (table_name,record_id,key,lang,body) VALUES('card_section_types','2','name','en','Technical specification');
+INSERT INTO translations (table_name,record_id,key,lang,body) VALUES('card_section_types','2','name','cs','Technické specifikace');
+-- Awards: reserved :)
+-- INSERT INTO card_section_types (id,code,rank) VALUES (3,'awards',6);
+-- INSERT INTO translations (table_name,record_id,key,lang,body) VALUES('card_section_types','3','name','en','Awards');
+-- INSERT INTO translations (table_name,record_id,key,lang,body) VALUES('card_section_types','3','name','cs','Ocenění');
+INSERT INTO card_section_types (id,code,rank) VALUES (4,'documentation',4);
+INSERT INTO translations (table_name,record_id,key,lang,body) VALUES('card_section_types','4','name','en','Product documentation');
+INSERT INTO translations (table_name,record_id,key,lang,body) VALUES('card_section_types','4','name','cs','Produktová dokumentace');
+INSERT INTO card_section_types (id,code,rank) VALUES (5,'collection',5);
+INSERT INTO translations (table_name,record_id,key,lang,body) VALUES('card_section_types','5','name','en','Other parts of collection');
+INSERT INTO translations (table_name,record_id,key,lang,body) VALUES('card_section_types','5','name','cs','Další části kolekce');
+INSERT INTO card_section_types (id,code,rank) VALUES (6,'info',1);
+INSERT INTO translations (table_name,record_id,key,lang,body) VALUES('card_section_types','6','name','en','Information');
+INSERT INTO translations (table_name,record_id,key,lang,body) VALUES('card_section_types','6','name','cs','Informace');
+
+
 CREATE SEQUENCE seq_card_sections;
 CREATE TABLE card_sections (
 	id INT PRIMARY KEY DEFAULT NEXTVAL('seq_card_sections'),
