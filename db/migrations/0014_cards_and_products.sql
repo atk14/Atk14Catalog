@@ -22,7 +22,7 @@ CREATE TABLE cards (
 -- textual information for cards
 CREATE SEQUENCE seq_card_section_types START WITH 11;
 CREATE TABLE card_section_types (
-	id INT PRIMARY KEY,
+	id INT PRIMARY KEY DEFAULT NEXTVAL('seq_card_section_types'),
 	code VARCHAR(255) NOT NULL,
 	name VARCHAR(255),
 	rank INT NOT NULL DEFAULT 999,
