@@ -4,6 +4,10 @@
 
 <hr>
 
+{render partial="shared/iobjects" object=$page}
+
+<hr>
+
 {render partial="shared/image_gallery" object=$page}
 
 <hr>
