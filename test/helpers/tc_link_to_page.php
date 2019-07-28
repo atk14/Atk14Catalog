@@ -15,6 +15,9 @@ class TcLinkToPage extends TcBase {
 		$link = smarty_modifier_link_to_page("testing_page");
 		$this->assertEquals("/testing-page/",$link);
 
+		$link = smarty_modifier_link_to_page($this->pages["testing_subpage"]);
+		$this->assertEquals("/testing-page/testing-subpage/",$link);
+
 		$link = smarty_modifier_link_to_page("weird_code");
 		$this->assertEquals("/en/main/page_not_found/?page=weird_code",$link);
 
@@ -22,6 +25,9 @@ class TcLinkToPage extends TcBase {
 
 		$link = smarty_modifier_link_to_page("testing_page");
 		$this->assertEquals("/testovaci-stranka/",$link);
+
+		$link = smarty_modifier_link_to_page($this->pages["testing_subpage"]);
+		$this->assertEquals("/testovaci-stranka/testovaci-podstranka/",$link);
 
 		$link = smarty_modifier_link_to_page("weird_code");
 		$this->assertEquals("/cs/main/page_not_found/?page=weird_code",$link);
