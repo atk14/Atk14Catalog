@@ -29,7 +29,7 @@ Installation
 3rd party libraries are being installed using the Composer. If you don't have the Composer installed, visit http://www.getcomposer.org/
 
     git clone https://github.com/atk14/Atk14Catalog.git
-    cd Atk14Skelet
+    cd Atk14Catalog
     git submodule init
     git submodule update
     composer update
@@ -37,13 +37,6 @@ Installation
     ./scripts/migrate
 
 If you are experiencing a trouble make sure that all requirements are met: <http://book.atk14.net/czech/installation%3Arequirements/>
-
-Installing optional 3rd party libraries
----------------------------------------
-
-    composer update
-
-If you don't have the Composer installed, visit http://www.getcomposer.org/
 
 Front-end assets
 ----------------
@@ -93,3 +86,5 @@ You're done! Happy cataloging!
 ------------------------------
 
 Don't forget to list your new project on http://www.atk14sites.net/
+
+[//]: # ( vim: set ts=2 et: )
