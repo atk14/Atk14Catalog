@@ -77,67 +77,68 @@
 
 		utils: {
 			handleGalleryImagesUpload: function() {
-				var $link = $( "#imageToGallery" );
+				
+				$( ".js--image_to_gallery_link" ).each( function() {
 
-				if ( $link.length !== 1 ) {
-					return;
-				}
+					var $link = $( this );
+					var $wrap = $link.closest(".js--image_gallery_wrap");
 
-				$link.hide();
+					$link.hide();
 
-				var url = $link.attr( "href" ),
-					$progress = $( ".progress-bar" ),
-					$msg = $( ".img-message" ),
-					$list = $( ".list-group-images" ),
-					$input = $( "<input>", {
-						"id": "fileupload",
-						"type": "file",
-						"name": "files[]",
-						"data-url": url,
-						"multiple": "multiple"
+					var url = $link.attr( "href" ),
+						$progress = $wrap.find( ".progress-bar" ),
+						$msg = $wrap.find( ".img-message" ),
+						$list = $wrap.find( ".list-group-images" ),
+						$input = $( "<input>", {
+							"type": "file",
+							"name": "files[]",
+							"data-url": url,
+							"multiple": "multiple"
+						} );
+
+					$input.insertBefore( $link );
+
+					$input.fileupload( {
+						dataType: "json",
+						multipart: false,
+						start: function() {
+							$progress.show();
+						},
+						progressall: function( e, data ) {
+							var progress = parseInt( data.loaded / data.total * 100, 10 );
+
+							$progress.css(
+								"width",
+								progress + "%"
+							);
+						},
+						done: function( e, data ) {
+
+							// This is the same grip like in handleSortables
+							var glyph = "<span class='fas fa-grip-vertical text-secondary handle pr-3' " +
+								" title='sorting'></span>";
+
+							$( data.result.image_gallery_item )
+								.addClass( "not-processed" )
+								.prepend( glyph )
+								.appendTo( $list );
+
+							$list.sortable( "refresh" );
+
+							$msg.remove();
+						},
+						stop: function() {
+							$list.find( ".not-processed" )
+								.prepend( "<span class='glyphicon glyphicon-align-justify'></span>" )
+								.removeClass( "not-processed" );
+
+							$progress.hide().css(
+								"width",
+								"0"
+							);
+						}
 					} );
 
-				$input.insertBefore( $link );
-
-				$input.fileupload( {
-					dataType: "json",
-					multipart: false,
-					start: function() {
-						$progress.show();
-					},
-					progressall: function( e, data ) {
-						var progress = parseInt( data.loaded / data.total * 100, 10 );
-
-						$progress.css(
-							"width",
-							progress + "%"
-						);
-					},
-					done: function( e, data ) {
-
-						// This is the same grip like in handleSortables
-						var glyph = "<span class='fas fa-grip-vertical text-secondary handle pr-3' " +
-							" title='sorting'></span>";
-
-						$( data.result.image_gallery_item )
-							.addClass( "not-processed" )
-							.prepend( glyph )
-							.appendTo( $list );
-
-						$list.sortable( "refresh" );
-
-						$msg.remove();
-					},
-					stop: function() {
-						$list.find( ".not-processed" )
-							.prepend( "<span class='glyphicon glyphicon-align-justify'></span>" )
-							.removeClass( "not-processed" );
-
-						$progress.hide().css(
-							"width",
-							"0"
-						);
-					}
 				} );
 			},
 

@@ -12,7 +12,10 @@ class Image extends LinkedObject implements Translatable{
 	}
 
 	/**
+	 *
 	 * $images = Image::GetImages($product);
+	 * $images = Image::GetImages($product,"");
+	 * $images = Image::GetImages($product,"secondary_images");
 	 */
 	static function GetImages($obj,$options = array()){
 		$class_name = "Image";

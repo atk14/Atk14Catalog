@@ -1,10 +1,13 @@
 CREATE SEQUENCE seq_images;
 CREATE TABLE images (
 	id INT PRIMARY KEY DEFAULT NEXTVAL('seq_images'),
+	--
 	table_name VARCHAR(255) NOT NULL, -- cards, products, brands...
 	record_id INT NOT NULL,
-	url VARCHAR(255) NOT NULL,
+	section VARCHAR(255) NOT NULL DEFAULT '', -- '', 'secondary', 'logos'
 	rank INT NOT NULL DEFAULT 999,
+	--
+	url VARCHAR(255) NOT NULL,
 	--
 	created_by_user_id INT,
 	updated_by_user_id INT,

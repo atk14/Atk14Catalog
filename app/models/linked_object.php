@@ -27,7 +27,20 @@ class LinkedObject extends ApplicationModel implements Rankable {
 		return parent::CreateNewRecord($values,$options);
 	}
 
+	/**
+	 *
+	 *	$image = Image::CreateNewRecord($article,["url" => "..."]);
+	 *	$image = Image::CreateNewRecord($article,["url" => "...", "section" => "secondary_images"]);
+	 *	$image = Image::CreateNewRecord($article,["url" => "..."], "secondary_images"); // section can be defined as the 3rd parameter
+	 */
 	static function CreateNewFor($obj, $values = array(),$options = array()) {
+		if(is_string($options)){
+			$values["section"] = $options;
+			$options = array();
+		}
+		$values += array(
+			"section" => "",
+		);
 		$values["table_name"] = $obj->getTableName();
 		$values["record_id"] = $obj->getId();
 		return static::CreateNewRecord($values,$options);
@@ -36,13 +49,22 @@ class LinkedObject extends ApplicationModel implements Rankable {
 	/**
 	 * Vrati objekty pripojene k jinemu objektu
 	 *
+	 *	$images = Image::GetInstancesFor($article);
+	 *	$images = Image::GetInstancesFor($article,"secondary");
+	 *
 	 * @param $obj LinkedObject
 	 * @param $options @see TableRecord::Find
 	 * @return Comment[]
 	 *
 	 */
 	static function GetInstancesFor($obj, $options = array()){
+		if(!is_array($options)){ // string or null
+			$options = array(
+				"section" => (string)$options
+			);
+		}
 		$options += array(
+			"section" => "",
 			"use_cache" => true,
 			"limit" => null,
 			"offset" => 0,
@@ -66,6 +88,8 @@ class LinkedObject extends ApplicationModel implements Rankable {
 
 		$record_id = $obj->getId();
 
+		$section = (string)$options["section"];
+
 		if(!isset(static::$CACHE[$c_class][$table_name][$record_id])){
 
 			$MAX_IDS_TO_READ = 100;
@@ -86,18 +110,23 @@ class LinkedObject extends ApplicationModel implements Rankable {
 			$o = new $c_class();
 			$c_class_table_name = $o->getTableName();
 			$dbmole = static::GetDbmole();
-			$rows = $dbmole->selectRows("SELECT record_id,id FROM $c_class_table_name WHERE table_name=:table_name AND record_id IN :record_ids ORDER BY rank,id",array(
+			$rows = $dbmole->selectRows("SELECT record_id,section,id FROM $c_class_table_name WHERE table_name=:table_name AND record_id IN :record_ids ORDER BY rank,id",array(
 				":table_name" => $table_name,
 				":record_ids" => $ids_to_read,
 			));
 			foreach($rows as $row){
 				$_record_id = (int)$row["record_id"];
-				static::$CACHE[$c_class][$table_name][$_record_id][] = (int)$row["id"];
-				Cache::Prepare($c_class,$row["id"]);
+				static::$CACHE[$c_class][$table_name][$_record_id][] = ["id" => (int)$row["id"], "section" => $row["section"]];
+				Cache::Prepare($c_class,(int)$row["id"]);
 			}
 		}
 
-		$records = Cache::Get($c_class,static::$CACHE[$c_class][$table_name][$record_id]);
+		$ids = static::$CACHE[$c_class][$table_name][$record_id];
+		$ids = array_filter($ids,function($item) use($section){ return $item["section"]===$section; });
+		$ids = array_map(function($item){ return $item["id"]; },$ids);
+		$ids = array_values($ids);
+
+		$records = Cache::Get($c_class,$ids);
 		if($options["offset"]>0 || isset($options["limit"])){
 			$records = array_slice($records,$options["offset"],$options["limit"]);
 		}
@@ -138,6 +167,7 @@ class LinkedObject extends ApplicationModel implements Rankable {
 		return $this->_setRank($new_rank,array(
 			"table_name" => $this->g("table_name"),
 			"record_id" => $this->g("record_id"),
+			"section" => $this->g("section"),
 		));
 	}
 

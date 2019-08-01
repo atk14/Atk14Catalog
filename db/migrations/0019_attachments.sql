@@ -1,13 +1,16 @@
 CREATE SEQUENCE seq_attachments;
 CREATE TABLE attachments (
 	id INT PRIMARY KEY DEFAULT NEXTVAL('seq_attachments'),
-	table_name VARCHAR(255) NOT NULL, -- card_sections
+	--
+	table_name VARCHAR(255) NOT NULL, -- products, pages...
 	record_id INT NOT NULL,
+	section VARCHAR(255) NOT NULL DEFAULT '',
+	rank INT NOT NULL DEFAULT 999,
+	--
 	url VARCHAR(255) NOT NULL,
 	filename VARCHAR(255) NOT NULL,
 	filesize INT NOT NULL,
 	mime_type VARCHAR(255) NOT NULL,
-	rank INT NOT NULL DEFAULT 999,
 	--
 	created_by_user_id INT,
 	updated_by_user_id INT,
