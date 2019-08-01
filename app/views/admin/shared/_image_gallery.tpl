@@ -2,13 +2,13 @@
  *
  *	{render partial="shared/image_gallery" object=$brand}
  *	{render partial="shared/image_gallery" object=$brand section=""}
- *	{render partial="shared/image_gallery" object=$page section="logos" image_gallery_title="{t}Logos{/t}"}
+ *	{render partial="shared/image_gallery" object=$page section="logos" section_title="{t}Logos{/t}"}
  *}
 
-{if !$image_gallery_title}{assign image_gallery_title "{t}Photo gallery{/t}"}{/if}
-{if !$no_image_message}{assign no_image_message "{t}Currently there are no images{/t}"}{/if}
+{if !$section_title}{assign section_title "{t}Photo gallery{/t}"}{/if}
+{if !$empty_list_message}{assign empty_list_message "{t}Currently there are no images{/t}"}{/if}
 
-<h3>{$image_gallery_title}</h3>
+<h3>{$section_title}</h3>
 
 <div class="js--image_gallery_wrap">
 
@@ -16,7 +16,7 @@
 
 {if !$images}
 	<div class="img-message">
-		<p>{$no_image_message}</p>
+		<p>{$empty_list_message}</p>
 	</div>
 {/if}
 

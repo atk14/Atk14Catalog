@@ -2,11 +2,15 @@
  * Vyrenderuje seznam priloh pro dany object.
  *
  * {render partial="shared/attachments" object=$page}
+ * {render partial="shared/attachments" object=$product section="manuals" section_title="Manuals & brochures"}
  *}
 
-{assign var=attachments value=Attachment::GetAttachments($object)}
+{if !$section_title}{assign section_title "{t}Attachments{/t}"}{/if}
+{if !$empty_list_message}{assign empty_list_message "{t}Currently there are no attachments{/t}"}{/if}
 
-<h3 id="attachments">{button_create_new action="attachments/create_new" table_name=$object->getTableName() record_id=$object->getId() return_to_anchor=attachments}{t}Add an attachment{/t}{/button_create_new}{t}Attachments{/t}</h3>
+{assign var=attachments value=Attachment::GetAttachments($object,$section)}
+
+<h3 id="attachments">{button_create_new action="attachments/create_new" table_name=$object->getTableName() record_id=$object->getId() section=$section return_to_anchor=attachments}{t}Add an attachment{/t}{/button_create_new} {$section_title}</h3>
 
 {if !$attachments}
 

@@ -1,13 +1,8 @@
-<p>
-	{if $url_back}
-		<a href="{$url_back}" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> {t}Zpět{/t}</a>
-	{/if}
-	{a action=create_new table_name=$table_name record_id=$record_id _class="btn btn-primary"}<i class="glyphicon glyphicon-plus-sign"></i> {t}Přidat obrázek{/t}{/a}
-</p>
+<h1>{button_create_new table_name=$table_name record_id=$record_id section=$section}{t}Add image{/t}{/button_create_new} {$page_title}</h1>
 
 {if !$images}
 
-	<p>Momentálně tady nejsou žádné obrázky.</p>
+	<p>{t}Currently there are no images.{/t}</p>
 
 {else}
 

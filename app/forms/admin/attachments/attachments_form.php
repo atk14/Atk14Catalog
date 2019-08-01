@@ -1,5 +1,6 @@
 <?php
 class AttachmentsForm extends AdminForm{
+
 	function add_name_field($options = array()){
 		$options += array(
 			"label" => _("Title"),

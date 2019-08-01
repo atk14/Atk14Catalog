@@ -1,22 +1,10 @@
 <?php
-class ImagesController extends AdminController{
-	function index(){
-		$this->page_title = sprintf(_("Photo gallery of the object %s#%s"),$this->table_name,$this->record_id);
-		$class_name = $this->_get_class_name();
-		$this->tpl_data["images"] = $class_name::FindAll("table_name",$this->table_name,"record_id",$this->record_id);
+class ImagesController extends AdminController {
 
-		$url_back = "";
-		switch($this->table_name){
-			case "card_sections":
-				($cs = CardSection::GetInstanceById($this->record_id)) &&
-				($url_back = $this->_link_to(array("action" => "cards/edit", "id" => $cs->getCardId())));
-				break;
-			case "designers":
-				($ds = Designer::GetInstanceById($this->record_id)) &&
-				($url_back = $this->_link_to(array("action" => "designers/edit", "id" => $ds)));
-				break;	
-		}
-		$this->tpl_data["url_back"] = $url_back;
+	function index(){
+		$this->page_title = strlen($this->section) ? sprintf(_("Photo gallery of the object %s#%s, section %s"),$this->table_name,$this->record_id,$this->section) : sprintf(_("Photo gallery of the object %s#%s"),$this->table_name,$this->record_id);
+		$class_name = $this->_get_class_name();
+		$this->tpl_data["images"] = $class_name::FindAll("table_name",$this->table_name,"record_id",$this->record_id,"section",$this->section);
 	}
 
 	function create_new(){
@@ -30,6 +18,7 @@ class ImagesController extends AdminController{
 			$d["table_name"] = $this->table_name;
 			$d["record_id"] = $this->record_id;
 			$d["url"] = $pupiq->getUrl();
+			$d["section"] = $this->section;
 
 			$class_name = $this->_get_class_name();
 			$image = $class_name::CreateNewRecord($d);
@@ -41,7 +30,7 @@ class ImagesController extends AdminController{
 				return;
 			}
 
-			$this->flash->success(_("Image was created"));
+			$this->flash->success(_("Image has been created"));
 			$this->_redirect_back();
 		}
 	}
@@ -81,14 +70,16 @@ class ImagesController extends AdminController{
 	}
 
 	function _before_filter(){
-		// potrebujeme tyto 2 parametry
-		if(
-			in_array($this->action,array("index","create_new")) && (
-				!($this->table_name = $this->tpl_data["table_name"] = (string)$this->params["table_name"]) ||
-				!($this->record_id = $this->tpl_data["record_id"] = (int)$this->params["record_id"])
-			)
-		){
-			return $this->_execute_action("error404");
+		if(in_array($this->action,array("index","create_new"))){
+			// table_name and record_id are mandatory parameters
+			if (
+				!($this->table_name = $this->tpl_data["table_name"] = (string)$this->params->getString("table_name")) ||
+				!($this->record_id = $this->tpl_data["record_id"] = (int)$this->params->getInt("record_id"))
+			){
+				return $this->_execute_action("error404");
+			}
+			// section is optional parameter
+			$this->section = $this->tpl_data["section"] = (string)$this->params->getString("section");
 		}
 
 		if(in_array($this->action,array("destroy","set_rank","edit"))){

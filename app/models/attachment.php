@@ -8,8 +8,8 @@ class Attachment extends LinkedObject implements Translatable{
 	/**
 	 * $attachments = Attachment::GetAttachments($card_section);
 	 */
-	static function GetAttachments($obj){
-		return Attachment::FindAll("table_name",$obj->getTableName(),"record_id",$obj->getId());
+	static function GetAttachments($obj,$options = array()){
+		return Attachment::GetInstancesFor($obj,$options);
 	}
 
 	function getName($lang = null){
