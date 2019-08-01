@@ -4,7 +4,7 @@
 
 {assign var=iobjects value=Iobject::GetIobjects($object)}
 
-<h4>{t}Objekty vkládané do textu{/t}</h4>
+<h3>{t}Objekty vkládané do textu{/t}</h3>
 
 {if $iobjects}
 
