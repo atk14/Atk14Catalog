@@ -84,7 +84,7 @@ class ImagesController extends AdminController {
 
 		if(in_array($this->action,array("destroy","set_rank","edit"))){
 			if(
-				!($image = $this->_just_find("image",array("class_name" => "ProductImage"))) &&
+				!(class_exists("ProductImage") && ($image = $this->_just_find("image",array("class_name" => "ProductImage")))) &&
 				!($image = $this->_just_find("image"))
 			){
 				return $this->_execute_action("error404");
