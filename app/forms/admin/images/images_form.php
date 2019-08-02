@@ -1,5 +1,6 @@
 <?php
 class ImagesForm extends AdminForm{
+
 	function set_up(){
 		$this->add_field("url", new PupiqImageField(array(
 			"label" => _("Image"),
@@ -15,6 +16,14 @@ class ImagesForm extends AdminForm{
 			"label "=> _("Description"),
 			"required" => false,
 			"max_length" => 1000,
+		)));
+	}
+
+	function tune_for_product_image(){
+		$this->add_field("display_on_card", new BooleanField(array(
+			"label" => _("Display image in gallery on the product card?"),
+			"required" => false,
+			"initial" => true,
 		)));
 	}
 }

@@ -1,5 +1,6 @@
 <?php
-class ProductImage extends Image{
+class ProductImage extends Image {
+
 	function __construct(){
 		parent::__construct("product_images",array(
 			"sequence_name" => "seq_images",

@@ -6,7 +6,7 @@
  *	{render partial="shared/photo_gallery" images=$object->getImages()}
  *}
 
-{if !$images && $object}
+{if !isset($images) && $object}
 	{assign var=images value=Image::GetImages($object)}
 {/if}
 

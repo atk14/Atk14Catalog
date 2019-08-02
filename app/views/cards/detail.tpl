@@ -13,7 +13,7 @@
 
 {render partial="categories"}
 
-{render partial="shared/photo_gallery" object=$card}
+{render partial="shared/photo_gallery" images=$card->getImages()}
 
 {render partial="shared/attachments" object=$card}
 

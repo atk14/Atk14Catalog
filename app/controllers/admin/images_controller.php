@@ -10,6 +10,14 @@ class ImagesController extends AdminController {
 	function create_new(){
 		$this->page_title = _("Adding an image into the photo gallery");
 
+		if($this->_get_class_name()=="ProductImage"){
+			$this->form->tune_for_product_image();
+			if($this->request->xhr() && !$this->params->defined("display_on_card")){
+				// HACK: during a XHR request the display_on_card checkbox is not shown in the upload form, it should be checked by default
+				$this->params["display_on_card"] = "on";
+			}
+		}
+
 		$this->_save_return_uri();
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
 
@@ -37,6 +45,10 @@ class ImagesController extends AdminController {
 
 	function edit(){
 		$this->page_title = sprintf(_("Editing of the Image #%s"),$this->image->getId());
+
+		if($this->_get_class_name()=="ProductImage"){
+			$this->form->tune_for_product_image();
+		}
 
 		$this->_save_return_uri();
 		$this->form->set_initial($this->image);
@@ -91,6 +103,7 @@ class ImagesController extends AdminController {
 			}
 			$this->image = $this->tpl_data["image"] = $image;
 			$this->table_name = $image->g("table_name");
+			$this->section = $image->g("section");
 			$this->record_id = $image->getRecordId();
 		}
 	}
