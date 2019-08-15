@@ -52,7 +52,6 @@ Více informací naleznete na těchto adresách:
   * [Stránky o frameworku Atk14](http://www.atk14.net/)
   * [Kniha o Atk14](http://book.atk14.net/)
 
-Remember! Your projects shall run on [ATK14 Framework](http://www.atk14.net/), for now and ever after!
 Pamatujte si, že Váš další projekt by měl běžet na [frameworku ATK14](http://www.atk14.net/), od teď až na věky
 			"),
 		));
