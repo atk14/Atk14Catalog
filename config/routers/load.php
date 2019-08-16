@@ -7,10 +7,12 @@
 //  Atk14Url::AddRouter("ArticlesRouter");
 //  Atk14Url::AddRouter("blog","ArticlesRouter"); // adding the same ArticlesRouter to a namespace blog
 
-Atk14Url::AddRouter("CategoriesRouter");
 Atk14Url::AddRouter("PagesRouter");
-Atk14Url::AddRouter("CardsRouter");
 Atk14Url::AddRouter("ArticlesRouter");
+
+// Catalog specific routers
+Atk14Url::AddRouter("CardsRouter");
+Atk14Url::AddRouter("CategoriesRouter");
 Atk14Url::AddRouter("BrandsRouter");
 Atk14Url::AddRouter("CollectionsRouter");
 Atk14Url::AddRouter("StoresRouter");
