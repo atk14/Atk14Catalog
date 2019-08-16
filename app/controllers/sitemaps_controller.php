@@ -30,7 +30,6 @@ class SitemapsController extends ApplicationController{
 			"limit" => 20,
 		));
 
-
 		if($this->params->getString("format")=="xml"){
 			$this->render_template = false;
 			$this->response->setContentType("text/xml");
