@@ -93,18 +93,20 @@ gulp.task( "copy", function() {
 
 	// Flags for languages
 	gulp.src( "node_modules/svg-country-flags/svg/*" )
-		.pipe( gulp.dest( "public/dist/images/languages" ) );
+		.pipe( gulp.dest( "public/dist/images/languages" ) )
+		.on( "end", function() {
 
-	// Some corrections in language flags
-	var renameTr = {
-		"cz": "cs",
-		"gb": "en"
-	};
-	Object.keys( renameTr ).forEach( function( key ) {
-		gulp.src( "public/dist/images/languages/" + key + ".svg" )
-			.pipe( rename( renameTr[ key ] + ".svg" ) )
-			.pipe( gulp.dest( "public/dist/images/languages" ) );
-	} );
+			// Some corrections in language flags
+			var renameTr = {
+				"cz": "cs",
+				"gb": "en"
+			};
+			Object.keys( renameTr ).forEach( function( key ) {
+				gulp.src( "public/dist/images/languages/" + key + ".svg" )
+					.pipe( rename( renameTr[ key ] + ".svg" ) )
+					.pipe( gulp.dest( "public/dist/images/languages" ) );
+			} );
+		} );
 } );
 
 // Clean
