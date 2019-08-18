@@ -1,5 +1,6 @@
 <?php
-class FulfillingCategoriesMigration extends ApplicationMigration{
+class SampleCategoriesMigration extends ApplicationMigration{
+
 	function up(){
 		$yml = '
 ---

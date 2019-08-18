@@ -1,5 +1,6 @@
 <?php
-class BrandsFillingMigration extends ApplicationMigration{
+class SampleBrandsMigration extends ApplicationMigration{
+
 	function up(){
 		$b = Brand::CreateNewRecord(array(
 			"name" => "Snake Oil Co.",
