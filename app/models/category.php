@@ -1,6 +1,8 @@
 <?php
 class Category extends ApplicationModel implements Translatable, Rankable, iSlug {
 
+	use TraitGetInstanceByCode;
+
 	static function GetTranslatableFields() { return array("name","teaser","description"); }
 
 	function setRank($new_rank){

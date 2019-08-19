@@ -5,7 +5,7 @@
  *	<a href="{"catalog"|link_to_category}">Catalog</a>
  */
 function smarty_modifier_link_to_category($code){
-	$category = Category::FindByCode($code);
+	$category = Category::GetInstanceByCode($code);
 
 	if(!$category){
 		PRODUCTION && trigger_error("Unknown category code: $code", E_USER_WARNING);
