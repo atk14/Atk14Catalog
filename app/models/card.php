@@ -1,6 +1,8 @@
 <?php
 class Card extends ApplicationModel implements Translatable, iSlug {
 
+	use TraitTags;
+
 	static function GetTranslatableFields(){ return array("name","teaser"); }
 
 	static function CreateNewRecord($values,$options = array()){
@@ -352,10 +354,6 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 
 	function isDeleted(){ return $this->getDeleted(); }
 	function isVisible(){ return $this->getVisible(); }
-
-	function getTagsLister(){ return $this->getLister("Tags"); }
-	function getTags(){ return Cache::Get("Tag",$this->getTagsLister()->getRecordIds()); }
-	function setTags($tags){ return $this->getTagsLister()->setRecords($tags); }
 
 	function getBrand(){
 		return Cache::Get("Brand",$this->getBrandId());
