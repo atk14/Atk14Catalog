@@ -340,6 +340,7 @@
 			handleCategoriesSuggestions: function() {
 				ADMIN.utils.categoriesSuggest( "[data-suggesting_categories='yes']" );
 			}
+
 		}
 	};
 
