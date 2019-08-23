@@ -27,6 +27,7 @@ class AdminController extends ApplicationBaseController{
 			array(_("Welcome screen"),			"main"),
 			array(_("Articles"),						"articles"),
 			array(_("Pages"),								"pages"),
+			array(_("Link Lists"),					"link_lists"),
 			array(_("Tags"),								"tags"),
 			array(_("Users"),								"users"),
 			array(_("Products"),						"cards,products,card_sections,related_cards,consumables,accessories,card_filters,technical_specifications"),

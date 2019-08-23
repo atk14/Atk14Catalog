@@ -29,6 +29,7 @@
 			<li><a href="{"about_us"|link_to_page}">{t}Pages with a hierarchical structure{/t}</a></li>
 			<li>{a action="main/contact"}{t}Contact page with fast contact form{/t}{/a}</li>
 			<li>{a action="articles/index"}{t}Articles section{/t}{/a}</li>
+			<li>{t}Manageable link lists in header and footer{/t}</li>
 			<li>{a action="users/create_new"}{t}User registration{/t}{/a} ({t}with strong blowfish passwords hashing{/t})</li>
 			<li>{a namespace="admin"}{t}Basic administration{/t}{/a}</li>
 			<li>{a namespace="api"}{t}RESTful API{/t}{/a}</li>
@@ -79,3 +80,9 @@ git push</code></pre>
 		</ul>
 	</section>
 </article>
+
+{if $page  && !$page->isIndexable()}
+	{content for=head}
+		<meta name="robots" content="noindex,nofollow,noarchive">
+	{/content}
+{/if}

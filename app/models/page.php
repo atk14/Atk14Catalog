@@ -3,7 +3,7 @@ class Page extends ApplicationModel implements Translatable, Rankable, iSlug {
 
 	use TraitGetInstanceByCode;
 
-	static function GetTranslatableFields() { return array("title", "teaser", "body"); }
+	static function GetTranslatableFields() { return array("title", "teaser", "body", "page_title", "page_description"); }
 
 	/**
 	 * $page_company = Page::GetInstanceByPath("company");
@@ -31,8 +31,23 @@ class Page extends ApplicationModel implements Translatable, Rankable, iSlug {
 		return Cache::Get("Page", $this->getParentPageId());
 	}
 
+	function getRootPage(){
+		$root = $this;
+		while($_root = $root->getParentPage()){
+			$root = $_root;
+		}
+		return $root;
+	}
+
 	function getChildPages() {
 		return Page::FindAll("parent_page_id", $this);
+	}
+
+	function getVisibleChildPages(){
+		$pages = $this->getChildPages();
+		$pages = array_filter($pages,function($page){ return $page->isVisible(); });
+		$pages = array_values($pages);
+		return $pages;
 	}
 
 	function getSlugSegment(){
@@ -56,8 +71,29 @@ class Page extends ApplicationModel implements Translatable, Rankable, iSlug {
 		return sizeof($this->getChildPages())>0;
 	}
 
+	function getPageTitle(){
+		$out = parent::getPageTitle();
+		if(strlen($out)){ return $out; }
+		return $this->getTitle();
+	}
+
+	function getPageDescription(){
+		$out = parent::getPageDescription();
+		if(strlen($out)){ return $out; }
+		$out = $this->getTeaser();
+		if(strlen($out)){ return strip_tags($out); }
+	}
+
 	function isDeletable() {
 		return !$this->hasSubpages();
+	}
+
+	function isVisible(){
+		return $this->getVisible();
+	}
+
+	function isIndexable(){
+		return $this->getIndexable();
 	}
 
 	function setRank($new_rank){

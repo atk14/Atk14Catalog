@@ -10,11 +10,10 @@ class MainController extends ApplicationController{
 	function index(){
 		$this->page_title = _("Welcome!");
 
-		$page = $this->tpl_data["page"] = Page::FindByCode("homepage");
+		$page = $this->tpl_data["page"] = Page::GetInstanceByCode("homepage");
 		if($page){
-			Atk14Require::Helper("modifier.markdown");
-			$this->page_title = $page->getTitle();
-			$this->page_description = strip_tags(smarty_modifier_markdown($page->getTeaser()));
+			$this->page_title = $page->getPageTitle();
+			$this->page_description = $page->getPageDescription();
 		}
 	}
 
