@@ -953,6 +953,74 @@ msgstr "Ano"
 msgid "No"
 msgstr "Ne"
 
+msgid "Manageable link lists in header and footer"
+msgstr "Administrovatelné seznamy odkazů v hlavičce a patičce stránky"
+
+msgid "Edit object"
+msgstr "Editovat objekt"
+
+msgid "Create new object"
+msgstr "Vytvořit nový objekt"
+
+#: ../app/controllers/password_recoveries_controller.php:14
+msgid ""
+"This user account has been deactivated. Password recovery process can not be "
+"started."
+msgstr ""
+"Tento uživatelský účet byl deaktivován. Nelze zahájit proces obnovení hesla."
+
+#: ../app/controllers/password_recoveries_controller.php:18
+msgid ""
+"Password recovery can not be initiated for this user. Email address is not "
+"set."
+msgstr ""
+"Obnovení hesla nelze pro tohoto uživatele iniciovat. E-mailová adresa není "
+"nastavena."
+
+#: ../app/fields/login_field.php:20
+msgid "Only letters, numbers, dots and dashes are allowed"
+msgstr "Zadávejte pouze písmena, číslice, tečky a pomlčky."
+
+#: ../app/fields/oembed_video_field.php:7
+msgid ""
+"Zadejte URL videa. Lze vložit video ze služeb, které poskytují API podle "
+"specifikace <a href=\"http://oembed.com/\">oEmbed</a>."
+msgstr ""
+
+#: ../app/fields/oembed_video_field.php:19
+msgid ""
+"Nelze získat informace o videu. Ověřte URL videa a podporu oEmbed u "
+"poskytovatele videa."
+msgstr ""
+
+#: ../app/fields/oembed_video_field.php:22
+msgid "Typ souboru na tomto URL není video"
+msgstr ""
+
+#: ../app/forms/application_form.php:85
+msgid "Hledat"
+msgstr ""
+
+#: ../app/forms/users/users_form.php:6
+msgid "Firstname"
+msgstr "Jméno"
+
+#: ../app/forms/users/users_form.php:11
+msgid "Lastname"
+msgstr "Příjmení"
+
+#: ../app/helpers/modifier.iobject_type.php:15
+msgid "Video"
+msgstr ""
+
+#: ../app/helpers/modifier.iobject_type.php:19
+msgid "Galerie"
+msgstr ""
+
+#: ../app/helpers/modifier.iobject_type.php:23
+msgid "Obrázek"
+msgstr ""
+
 #~ msgid ""
 #~ "<em>ATK14 Skelet</em> is a very basic application written on top of <a "
 #~ "href=\"http://atk14.net\">the ATK14 Framework</a>.\n"
