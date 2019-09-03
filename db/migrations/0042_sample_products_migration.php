@@ -22,8 +22,8 @@ class SampleProductsMigration extends ApplicationMigration {
 			'teaser_en' => 'The Neverending Story (German: Die unendliche Geschichte) is a German fantasy novel by Michael Ende that was first published in 1979. An English translation, by Ralph Manheim, was first published in 1983. The novel was later adapted into several films.',
 		));
 
-		$card->addToCategory(Category::GetInstanceByPath("books"));
-		$card->addToCategory(Category::GetInstanceByPath("books/children"));
+		$card->addToCategory(Category::GetInstanceByPath("catalog/books"));
+		$card->addToCategory(Category::GetInstanceByPath("catalog/books/children"));
 
 		TechnicalSpecification::CreateNewRecord(array(
 			"card_id" => $card,

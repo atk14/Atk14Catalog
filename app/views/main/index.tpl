@@ -22,7 +22,7 @@
 	<section class="border-top-0">
 		<h3>{t}The Catalog contains mainly{/t}</h3>
 		<ul>
-			<li>{a controller="categories"}{t}List of categories{/t}{/a}</li>
+			<li><a href="{"catalog"|link_to_category}">{t}List of categories{/t}</a></li>
 			<li>{a controller="brands"}{t}List of brands{/t}{/a}</li>
 			<li>{a controller="collections"}{t}List of collections{/t}{/a}</li>
 			<li>{a controller="stores"}{t}List of stores{/t}{/a}</li>
