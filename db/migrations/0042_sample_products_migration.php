@@ -2,6 +2,8 @@
 class SampleProductsMigration extends ApplicationMigration {
 
 	function up(){
+		if(TEST){ return; }
+
 		// Technical Specification Keys
 		$width = TechnicalSpecificationKey::CreateNewRecord(array(
 			"key" => "width",

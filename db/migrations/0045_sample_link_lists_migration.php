@@ -2,6 +2,8 @@
 class SampleLinkListsMigration extends ApplicationMigration {
 
 	function up(){
+		if(TEST){ return; }
+		
 		$main_menu = LinkList::CreateNewRecord([
 			"system_name" => "Main menu",
 			"code" => "main_menu",

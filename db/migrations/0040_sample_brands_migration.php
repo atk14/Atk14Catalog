@@ -2,6 +2,8 @@
 class SampleBrandsMigration extends ApplicationMigration{
 
 	function up(){
+		if(TEST){ return; }
+
 		$b = Brand::CreateNewRecord(array(
 			"name" => "Snake Oil Co.",
 

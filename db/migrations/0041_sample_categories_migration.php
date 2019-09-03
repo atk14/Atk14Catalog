@@ -2,6 +2,8 @@
 class SampleCategoriesMigration extends ApplicationMigration{
 
 	function up(){
+		if(TEST){ return; }
+
 		$yml = '
 ---
 - en: Catalog

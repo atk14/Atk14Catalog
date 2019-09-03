@@ -2,6 +2,8 @@
 class SampleStoresMigration extends ApplicationMigration {
 
 	function up(){
+		if(TEST){ return; }
+
 		$store = Store::CreateNewRecord(array(
 			"image_url" => "http://i.pupiq.net/i/65/65/b65/4b65/736x855/stiz2J_736x855_b562e30b5556c4dc.jpg",
 			"phone" => "+420.606123456",
