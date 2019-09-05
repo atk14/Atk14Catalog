@@ -1,5 +1,6 @@
 <?php
 class FilesForm extends AdminForm{
+
 	function set_up(){
 		$this->add_field("url", new PupiqAttachmentField(array(
 			"label" => _("Soubor"),

@@ -12,18 +12,13 @@ class AttachmentsController extends AdminController{
 		$this->_save_return_uri();
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
 
-			$attachment = $d["attachment"];
-			unset($d["attachment"]);
+			$attachment = $d["url"];
 
 			$d["table_name"] = $this->table_name;
 			$d["record_id"] = $this->record_id;
 			$d["section"] = $this->section;
 
-			$d["filesize"] = $attachment->getFilesize();
-			$d["mime_type"] = $attachment->getMimeType();
 			$d["url"] = $attachment->getUrl();
-
-			//var_dump($d); exit;
 
 			Attachment::CreateNewRecord($d);
 
