@@ -3,8 +3,8 @@ class FilesForm extends AdminForm{
 
 	function set_up(){
 		$this->add_field("url", new PupiqAttachmentField(array(
-			"label" => _("Soubor"),
+			"label" => _("File"),
 		)));
-		$this->add_title_field(["label" => _("Název")]);
+		$this->add_title_field(["label" => _("Title")]);
 	}
 }

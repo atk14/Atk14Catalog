@@ -14,28 +14,33 @@
  *	$ ./scripts/dump_settings DEFAULT_EMAIL
  */
 
-define("DEFAULT_EMAIL","your@email.com");
-define("ATK14_ADMIN_EMAIL",DEFAULT_EMAIL); // the address for sending error reports and so on...
+definedef("DEFAULT_EMAIL","your@email.com");
+definedef("ATK14_ADMIN_EMAIL",DEFAULT_EMAIL); // the address for sending error reports and so on...
 
-define("ATK14_APPLICATION_NAME","ATK14 Catalog");
-define("ATK14_APPLICATION_DESCRIPTION","Yet another application running on ATK14 Framework");
+definedef("ATK14_APPLICATION_NAME","ATK14 Catalog");
+definedef("ATK14_APPLICATION_DESCRIPTION","Yet another application running on ATK14 Framework");
 
-define("ATK14_HTTP_HOST",PRODUCTION ? "catalog.atk14.net" : "atk14catalog.localhost");
+definedef("ATK14_HTTP_HOST",PRODUCTION ? "catalog.atk14.net" : "atk14catalog.localhost");
 
 date_default_timezone_set('Europe/Prague');
 
-define("PUPIQ_API_KEY","101.DemoApiKeyForAccountWithLimitedFunctions");
+definedef("USING_BOOTSTRAP4",true);
+definedef("USING_FONTAWESOME",true);
 
-define("CATALOG_ID_REGEXP",'/^[0-9A-Z_.\/-]{1,}$/i'); // see app/fields/catalog_id_field.php
-define("CATALOG_ID_AUTO_UPPERIZE",true);
+definedef("REDIRECT_TO_SSL_AUTOMATICALLY",PRODUCTION);
 
-define("USING_BOOTSTRAP4",true);
-define("USING_FONTAWESOME",true);
+// Automatic redirection to the ATK14_HTTP_HOST
+definedef("REDIRECT_TO_CORRECT_HOSTNAME_AUTOMATICALLY",false);
 
 // If you don't want to let users to register freely (e.g. your app is an closed alpha),
 // set the constant INVITATION_CODE_FOR_USER_REGISTRATION.
 // See app/forms/users/create_new_form.php for more info
 // define("INVITATION_CODE_FOR_USER_REGISTRATION","some great secret");
+
+definedef("PUPIQ_API_KEY","101.DemoApiKeyForAccountWithLimitedFunctions");
+
+definedef("CATALOG_ID_REGEXP",'/^[0-9A-Z_.\/-]{1,}$/i'); // see app/fields/catalog_id_field.php
+definedef("CATALOG_ID_AUTO_UPPERIZE",true);
 
 if(DEVELOPMENT || TEST){
 	// a place for development and testing environment settings
