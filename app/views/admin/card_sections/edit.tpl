@@ -5,6 +5,5 @@
 <hr>
 {render partial="shared/image_gallery" object=$card_section}
 
+<hr>
 {render partial="shared/attachments" object=$card_section}
-
-{* render partial="shared/embedded_videos" object=$card_section *}
