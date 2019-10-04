@@ -3,6 +3,10 @@
 {render partial="shared/form"}
 
 <hr>
+
+{render partial="shared/iobjects" object=$card_section}
+
+<hr>
 {render partial="shared/image_gallery" object=$card_section}
 
 <hr>
