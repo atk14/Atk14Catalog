@@ -3,6 +3,7 @@
 	{if $page}
 
 		<header>
+			{admin_menu for=$page}
 			<h1>{$page->getTitle()}</h1>
 			<div class="teaser">
 			{!$page->getTeaser()|markdown}
