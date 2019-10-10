@@ -22,6 +22,7 @@ class CardsController extends AdminController{
 
 			$ft_cond[] = "cards.id IN (SELECT card_id FROM products WHERE ".FullTextSearchQueryLike::GetQuery("UPPER(".join("||' '||",array(
 				"catalog_id",
+				"id::VARCHAR",
 				"COALESCE((SELECT body FROM translations WHERE record_id=products.id AND table_name='products' AND key='name' AND lang=:lang),'')",
 				"COALESCE((SELECT body FROM translations WHERE record_id=products.id AND table_name='products' AND key='label' AND lang=:lang),'')",
 				"COALESCE((SELECT body FROM translations WHERE record_id=products.id AND table_name='products' AND key='description' AND lang=:lang),'')",
@@ -32,7 +33,16 @@ class CardsController extends AdminController{
 				"COALESCE((SELECT body FROM translations WHERE record_id=card_sections.id AND table_name='card_sections' AND key='body' AND lang=:lang),'')",
 			)).")",$q_up,$bind_ar).")";
 
+			// a special sorting in searching
+			$name = "COALESCE((SELECT body FROM translations WHERE record_id=cards.id AND table_name='cards' AND key='name' AND lang=:lang),'')";
 			$conditions[] = '('.join(') OR (',$ft_cond).')';
+			$this->sorting->add("search","
+				cards.id::VARCHAR=:search DESC,
+				cards.id::VARCHAR LIKE :search||'%' DESC,
+				UPPER($name) LIKE UPPER(:search||'%') DESC,
+				created_at DESC
+			");
+			$bind_ar[":search"] = $q;
 		}
 
 		$this->sorting->add("created_at",array("reverse" => true));
