@@ -8,7 +8,6 @@ class AddTechnicalSpecificationForm extends AdminForm {
 
 		$this->add_field("content", new CharField(array(
 			"label" => _("Value"),
-			"max_length" => 255,
 		)));
 
 		$this->set_button_text(_("Add new specification"));
