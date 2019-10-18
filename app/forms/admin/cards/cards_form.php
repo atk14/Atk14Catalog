@@ -46,5 +46,9 @@ class CardsForm extends AdminForm{
 			"create_missing_tags" => true,
 			"hint" => "akce , novinka"
 		)));
+		
+		$this->add_visible_field(array(
+			"label" => _("Is product visible?"),
+		));
 	}
 }

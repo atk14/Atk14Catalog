@@ -9,12 +9,10 @@ class EditForm extends CardsForm {
 	}
 
 	function clean() {
-		$d = $this->cleaned_data;
 		list($err,$d) = parent::clean();
 
-		if (isset($d["catalog_id"]) && (!isset($this->initial["catalog_id"]) || $d["catalog_id"]!=$this->initial["catalog_id"]) && ($p=Product::FindByCatalogId($d["catalog_id"]))) {
-			$this->set_error("catalog_id", _("Zadané katalogové číslo je již použité"));
-		}
+		$this->_clean_catalog_id($d);
+
 		return array($err,$d);
 	}
 }

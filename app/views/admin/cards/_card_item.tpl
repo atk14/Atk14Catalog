@@ -1,7 +1,12 @@
 <tr>
 	<td class="item-id">{$card->getId()}</td>
 	<td class="item-thumbnail">{render partial="shared/list_thumbnail" image=$card->getImage()}</td>
-	<td class="item-title">{$card->getName()}</td>
+	<td class="item-title">
+		{$card->getName()}
+		{if !$card->isVisible()}
+		<br><em>({!"eye-slash"|icon} {t}invisible{/t})</em>
+		{/if}
+	</td>
 	<td class="item-hasvariants">{$card->hasVariants()|display_bool}</td>
 	<td class="item-tags">{to_sentence var=$card->getTags() words_connector=" , " last_word_connector=" , "}</td>
 	<td class="item-created">{$card->getCreatedAt()|format_datetime}</td>

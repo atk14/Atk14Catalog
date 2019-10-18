@@ -12,9 +12,8 @@ class CreateNewForm extends CardsForm {
 	function clean() {
 		list($err,$d) = parent::clean();
 
-		if (isset($d["catalog_id"]) && ($product = Product::FindByCatalogId($d["catalog_id"]))) {
-			$this->set_error("catalog_id", _("Zadané katalogové číslo je již použité"));
-		}
+		$this->_clean_catalog_id($d);
+
 		return array($err,$d);
 	}
 }

@@ -170,6 +170,30 @@ class AdminForm extends ApplicationForm{
 			}
 
 		}
+	}
 
+	function _clean_catalog_id(&$data){
+		if(!is_array($data) || !isset($data["catalog_id"])){ return; }
+
+		$product = null;
+		if(isset($this->controller->product)){
+			$product = $this->controller->product;
+		}elseif(isset($this->controller->card)){
+			$product = $this->controller->card->getFirstProduct();
+		}
+
+		$conflicted_product = Product::FindFirst("catalog_id",$data["catalog_id"]);
+
+		if(preg_match('/EditForm/',get_class($this))){
+
+			if($product && $conflicted_product && $product->getId()!=$conflicted_product->getId()){
+				$this->set_error("catalog_id",_("The same catalog number is used for another product"));
+			}
+
+		}elseif($conflicted_product){
+
+			$this->set_error("catalog_id",_("The same catalog number is used for another product"));
+
+		}
 	}
 }
