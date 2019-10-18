@@ -6,7 +6,7 @@
 			<div class="d-flex justify-content-between align-items-center">
 				<div>
 					{$root->getName()}
-					{if !$root->isVisible()}<em>( {!"eye-slash"|icon} {t}invisible{/t})</em>{/if}
+					{if !$root->isVisible()}<em>({!"eye-slash"|icon} {t}invisible{/t})</em>{/if}
 				</div>
 				<div>
 					{dropdown_menu}
