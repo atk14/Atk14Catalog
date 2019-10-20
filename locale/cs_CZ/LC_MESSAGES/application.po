@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-05 12:10+0100\n"
-"PO-Revision-Date: 2019-03-05 12:12+0100\n"
+"POT-Creation-Date: 2019-10-20 12:29+0200\n"
+"PO-Revision-Date: 2019-10-20 13:32+0200\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: Team <team@email.com>\n"
 "Language: cs_CZ\n"
@@ -61,7 +61,7 @@ msgid "Sign in as an admin user"
 msgstr "Přihlaste se jako administrátor"
 
 #: ../app/controllers/logins_controller.php:7
-#: ../app/controllers/password_recoveries_controller.php:74
+#: ../app/controllers/password_recoveries_controller.php:78
 #: ../app/forms/logins/create_new_form.php:16
 msgid "Sign in"
 msgstr "Přihlásit se"
@@ -80,63 +80,18 @@ msgstr "Napište nám na adresu %1, pokud si myslíte, že je to naše chyba."
 msgid "Posted by <em>%1</em> on <time datetime=\"%2\">%3</time>"
 msgstr "Zaslal <em>%1</em> dne <time datetime=\"%2\">%3</time>"
 
-msgid "older article"
-msgstr "starší článek"
+msgid ""
+"This is not a published article! It's not available to the public audience."
+msgstr "Toto není publikovaný článek! Není dostupný veřejnosti."
 
 msgid "newer article"
 msgstr "novější článek"
 
+msgid "older article"
+msgstr "starší článek"
+
 msgid "At the moment there are no news."
 msgstr "V této chvíli nejsou žádné novinky"
-
-msgid "Accessories"
-msgstr "Příslušenství"
-
-msgid "Product locations"
-msgstr "Umístění produktu"
-
-msgid "Consumables"
-msgstr "Spotřební materiál"
-
-msgid "Brand:"
-msgstr "Značka:"
-
-msgid "Are you interested in this product?"
-msgstr "Zajímá vás tento produkt?"
-
-msgid "Related products"
-msgstr "Související produkty"
-
-msgid "Subcategories"
-msgstr "Podkategorie"
-
-msgid "Products"
-msgstr "Produkty"
-
-msgid "No product has been found."
-msgstr "Žádný produkt nebyl nalezen."
-
-msgid "Products in the collection %1"
-msgstr "Produkty v kolekci %1"
-
-msgid "Greetings"
-msgstr "Dobrý den"
-
-msgid ""
-"I would like to know more about products and services you offered on the web "
-"site %1."
-msgstr ""
-"Rád bych se dozvěděl více o produktech a službách, které nabízíte na "
-"webových stránkách %1."
-
-msgid "I would like to know more about the product"
-msgstr "Rád bych se dozvěděl více o produktu"
-
-msgid "Please contact me."
-msgstr "Prosím kontaktujte mě."
-
-msgid "The message has been sent. Thank you!"
-msgstr "Zpráva byla odeslána. Děkujeme!"
 
 msgid "Have you forgotten password?"
 msgstr "Zapomněl jste heslo?"
@@ -171,29 +126,8 @@ msgid ""
 msgstr ""
 "Zapomněl(a) jste své heslo? Pro reset hesla klikněte na následující odkaz"
 
-msgid "recovery link"
-msgstr "odkaz pro obnovu"
-
 msgid "Please note that this link is valid for 2 hours only."
 msgstr "Vezměte prosím na vědomí, že tento odkaz je platný pouze 2 hodiny."
-
-msgid ""
-"Hello %1!\n"
-"\n"
-"Have you forgotten your password? To reset your password, click on the "
-"following link\n"
-"\n"
-"%2\n"
-"\n"
-"Please note that this link is valid for 2 hours only."
-msgstr ""
-"Dobrý den %1!\n"
-"\n"
-"Zapomněl(a) jste své heslo? Pro reset hesla klikněte na následující odkaz\n"
-"\n"
-"%2\n"
-"\n"
-"Vezměte prosím na vědomí, že tento odkaz je platný pouze 2 hodiny."
 
 msgid "Your password was just updated in recovery mode."
 msgstr "Vaše heslo bylo právě změněno v režimu obnovení zapomenutého hesla."
@@ -201,55 +135,17 @@ msgstr "Vaše heslo bylo právě změněno v režimu obnovení zapomenutého hes
 msgid "The update has been executed upon a request from IP address %1"
 msgstr "Změna byla realizována na základě požadavku z IP adresy %1"
 
-msgid ""
-"Hello %1!\n"
-"\n"
-"Your password was just updated in recovery mode.\n"
-"\n"
-"The update has been executed upon a request from IP address %2"
-msgstr ""
-"Dobrý den %1!\n"
-"\n"
-"Vaše heslo bylo právě změněno v režimu obnovení zapomenutého hesla.\n"
-"\n"
-"Změna byla realizována na základě požadavku z IP adresy %2"
+msgid "Thanks for signing up for %1!"
+msgstr "Děkujeme za registraci na %1!"
 
-msgid ""
-"Thanks for signing up for %1!\n"
-"\n"
-"Here is your data summary\n"
-"\n"
-"login: %2\n"
-"email: %3\n"
-"name: %4\n"
-msgstr ""
-"Děkujeme za registraci na %1!\n"
-"\n"
-"Zde je rekapitulace vašich údajů\n"
-"\n"
-"login: %2\n"
-"e-mail: %3\n"
-"jméno: %4\n"
+msgid "Here is your data summary"
+msgstr "Zde je rekapitulace vašich údajů"
 
-msgid ""
-"Hello,\n"
-"\n"
-"thank you for your interest in our products. We will contact you as soon as "
-"we can."
-msgstr ""
-"Dobrý den,\n"
-"\n"
-"děkujeme, že se zajímáte o naše produkty. Co nejdříve Vás budeme kontaktovat."
+msgid "login"
+msgstr "login"
 
-msgid "Here is the message you sent to us:"
-msgstr "Zde je zpráva, kterou jste nám zaslal:"
-
-msgid "Thank you and have a nice day!"
-msgstr "Děkujeme a přejeme hezký den!"
-
-#: ../app/forms/information_requests/create_new_form.php:15
-msgid "Phone"
-msgstr "Telefon"
+msgid "name"
+msgstr "Ihr Name"
 
 msgid "The message has been sent to us. We will reply as soon as we can."
 msgstr "Zpráva nám byla odeslána. Odpovíme vám jak nejrychleji umíme."
@@ -266,50 +162,17 @@ msgstr ""
 msgid "%1 Team"
 msgstr "%1 Tým"
 
+msgid "Phone"
+msgstr "Telefon"
+
 msgid "Opening hours"
 msgstr "Otevírací hodiny"
 
 msgid "From dusk till dawn"
 msgstr "Od soumraku do úsvitu"
 
-msgid "Welcome at ATK14 Catalog!"
-msgstr "Vítejte v ATK14 Katalogu!"
-
-msgid ""
-"<em>ATK14 Catalog</em> is an skeleton suitable for applications of kind like "
-"<em>Products introduction</em>, <em>E-shop</em>, etc."
-msgstr ""
-"<em>ATK14 Katalog</em> je skelet vhodný pro aplikace typu <em>produktový "
-"katalog</em>, <em>e-shop</em> atd."
-
-msgid ""
-"ATK14 Catalog is built on top of <em>ATK14 Skelet</em> &mdash; another great "
-"skeleton."
-msgstr ""
-"ATK14 Katalog je postaven na <em>ATK14 Skeletu</em> &mdash; dalším skvělém "
-"skeletu."
-
-msgid "The ATK14 Skelet at age 5"
-msgstr "ATK14 Skelet ve věku 5 let"
-
-msgid "fig.1 <em>The Creature is pleading for forking on GitHub</em>"
-msgstr "obr.1 <em>Stvoření prosí o fork na GitHubu</em>"
-
-msgid "The Catalog contains mainly"
-msgstr "Katalog obsahuje zejména"
-
-msgid "List of categories"
-msgstr "Seznam kategorií"
-
-msgid "List of brands"
-msgstr "Seznam značek"
-
-msgid "List of collections"
-msgstr "Seznam kolekcí"
-
-#: ../app/controllers/stores_controller.php:5
-msgid "List of stores"
-msgstr "Seznam prodejen"
+msgid "The Skelet contains mainly"
+msgstr "Skelet obsahuje hlavně"
 
 msgid "Pages with a hierarchical structure"
 msgstr "Stránky s hierarchickou strukturou"
@@ -319,6 +182,9 @@ msgstr "Kontaktní stránka s formulářem pro rychlý kontakt"
 
 msgid "Articles section"
 msgstr "Sekce s články"
+
+msgid "Manageable link lists in header and footer"
+msgstr "Administrovatelné seznamy odkazů v hlavičce a patičce stránky"
 
 msgid "User registration"
 msgstr "Registrace uživatele"
@@ -332,7 +198,7 @@ msgstr "Základní administrace"
 msgid "RESTful API"
 msgstr "RESTful API"
 
-#: ../app/controllers/sitemaps_controller.php:10
+#: ../app/controllers/sitemaps_controller.php:11
 msgid "Sitemap"
 msgstr "Mapa stránek"
 
@@ -349,26 +215,26 @@ msgid "Installation"
 msgstr "Instalace"
 
 msgid ""
-"Are you planning to kick up a new project from the Atk14Catalog? Great! Just "
+"Are you planning to kick up a new project from the Atk14Skelet? Great! Just "
 "run the following commands."
 msgstr ""
-"Chystáte se pustit do nového projektu na Atk14SCatalogu? Skvělé! Stačí "
-"spustit následující příkazy."
+"Chystáte se pustit do nového projektu na Atk14Skeletu? Skvělé! Stačí spustit "
+"následující příkazy."
 
 msgid ""
 "You can find more information in <a href=\"https://github.com/atk14/"
-"Atk14Catalog/blob/master/README.md#installation\">the installation "
+"Atk14Skelet/blob/master/README.md#installation\">the installation "
 "instructions.</a>"
 msgstr ""
-"Více informací naleznete v <a href=\"https://github.com/atk14/Atk14Catalog/"
+"Více informací naleznete v <a href=\"https://github.com/atk14/Atk14Skelet/"
 "blob/master/README.md#installation\">pokynech k instalaci.</a>"
 
 msgid ""
-"If you want to help us to improve the Catalog, <a href=\"https://github.com/"
-"atk14/Atk14Catalog\">fork it on GitHub.</a>"
+"If you want to help us to improve the Atk14Skelet, <a href=\"https://github."
+"com/atk14/Atk14Skelet\">fork it on GitHub.</a>"
 msgstr ""
-"Pokud chcete pomoci s vylepšováním ATK14 katalogu, <a href=\"https://github."
-"com/atk14/Atk14Catalog\">forkněte si ho na GitHubu.</a>"
+"Chcete-li nám pomoct vylepšit Atk14Skelet, <a href=\"https://github.com/"
+"atk14/Atk14Skelet\">forkněte si ho na GitHubu. </a>"
 
 msgid "Further Reading & Resources"
 msgstr "Další čtení a zdroje"
@@ -385,8 +251,11 @@ msgstr "API reference"
 msgid "ATK14 on GitHub"
 msgstr "ATK14 na GitHubu"
 
-msgid "ATK14 Catalog on GitHub"
-msgstr "ATK14 Katalog na GitHubu"
+msgid "ATK14 Skelet on GitHub"
+msgstr "ATK14 Skelet na GitHubu"
+
+msgid "This is not a visible page! It's not available to the public audience."
+msgstr "Toto není viditelná stránka! Není dostupná veřejnosti."
 
 msgid "Subpages"
 msgstr "Podstránky"
@@ -413,15 +282,6 @@ msgstr ""
 msgid "Attachments"
 msgstr "Přílohy"
 
-msgid "no image"
-msgstr "bez obrázku"
-
-msgid "Products in the collection"
-msgstr "Produkty v kolekci"
-
-msgid "List of Products"
-msgstr "Seznam produktů"
-
 msgid "The following difficulties have occurred during the form processing:"
 msgstr "Během zpracování formuláře došlo k následujícím chybám:"
 
@@ -440,6 +300,12 @@ msgstr "Volitelné"
 
 msgid "Examples:"
 msgstr "Příklady"
+
+msgid "Edit object"
+msgstr "Editovat objekt"
+
+msgid "Create new object"
+msgstr "Vytvořit nový objekt"
 
 msgid "Create a new record"
 msgstr "Vytvořit nový záznam"
@@ -468,7 +334,7 @@ msgstr "Odhlásit se"
 msgid "Administration"
 msgstr "Administrace"
 
-#: ../app/forms/users/create_new_form.php:21
+#: ../app/forms/users/create_new_form.php:22
 msgid "Register"
 msgstr "Registrovat"
 
@@ -478,25 +344,8 @@ msgstr "Fotogalerie"
 msgid "Here you can find the list of all commands in <em>%1</em>."
 msgstr "Zde neleznete seznam příkazů v <em>%1</em>."
 
-msgid "Homepage"
-msgstr "Úvodní stránka"
-
-msgid "The most important page in the whole universe"
-msgstr "Vůbec nejdůležitější stránka v celém vesmíru"
-
-#: ../app/controllers/main_controller.php:15
-#: ../app/controllers/main_controller.php:38
-msgid "Contact"
-msgstr "Kontakt"
-
-msgid "Contact data and quick contact form"
-msgstr "Kontaktní údaje a formulář pro rychlý kontakt"
-
-msgid "About"
-msgstr "O nás"
-
-msgid "What is this site all about"
-msgstr "O čem jsou tyto stránky"
+msgid "Pages"
+msgstr "Stránky"
 
 #: ../app/controllers/users_controller.php:17
 msgid "New user registration"
@@ -521,22 +370,14 @@ msgstr "Nabízíme skvělé restful API"
 msgid "Recent articles"
 msgstr "Nejnovější články"
 
-msgid "Address"
-msgstr "Adresa"
-
-msgid "Currently we have no store."
-msgstr "V současné době nemáme žádnou prodejnu."
-
-#: ../app/forms/users/create_new_form.php:5
+#: ../app/forms/users/create_new_form.php:6
 msgid "Username (login)"
 msgstr "Uživatelské jméno (login)"
 
-#: ../app/forms/information_requests/create_new_form.php:5
-#: ../app/forms/main/contact_form.php:5 ../app/forms/users/users_form.php:5
+#: ../app/forms/main/contact_form.php:5
 msgid "Your name"
 msgstr "Vaše jméno"
 
-#: ../app/forms/information_requests/create_new_form.php:10
 #: ../app/forms/main/contact_form.php:10
 msgid "Your email"
 msgstr "Váš e-mail"
@@ -569,41 +410,34 @@ msgstr "Špatné heslo"
 msgid "There is no such user"
 msgstr "Takový uživatel tady není"
 
-#: ../app/controllers/application_base.php:28
+#: ../app/controllers/application_base.php:23
 msgid "Page not found"
 msgstr "Stránka nebyla nalezena"
 
-#: ../app/controllers/application_base.php:38
+#: ../app/controllers/application_base.php:33
 msgid "Forbidden"
 msgstr "Zakázáno"
 
-#: ../app/controllers/application_base.php:117
+#: ../app/controllers/application_base.php:125
 msgid "Home"
 msgstr "Domů"
 
-#: ../app/controllers/application_mailer.php:30
+#: ../app/controllers/application_mailer.php:42
 #, php-format
 msgid "Welcome to %s"
 msgstr "Vítejte na %s"
 
-#: ../app/controllers/application_mailer.php:39
+#: ../app/controllers/application_mailer.php:51
 msgid "Reset Your Password"
 msgstr "Obnova vašeho hesla"
 
-#: ../app/controllers/application_mailer.php:48
+#: ../app/controllers/application_mailer.php:60
 msgid "Your password was updated"
 msgstr "Vaše heslo bylo změněno"
 
-#: ../app/controllers/application_mailer.php:60
+#: ../app/controllers/application_mailer.php:72
 msgid "Message sent from contact page"
 msgstr "Zpráva zaslaná z kontaktní stránky"
-
-#: ../app/controllers/application_mailer.php:71
-#: ../app/controllers/application_mailer.php:80
-#: ../app/controllers/information_requests_controller.php:5
-#: ../app/controllers/information_requests_controller.php:39
-msgid "Request for information"
-msgstr "Žádost o informaci"
 
 #: ../app/controllers/application_rest_api.php:76
 #, php-format
@@ -637,30 +471,6 @@ msgstr "Články"
 msgid "Articles tagged with <em>%s</em>"
 msgstr "Články se štítkem <em>%s</em>"
 
-#: ../app/controllers/brands_controller.php:4
-msgid "List of Brands"
-msgstr "Seznam značek"
-
-#: ../app/controllers/brands_controller.php:14
-msgid "Brands"
-msgstr "Značky"
-
-#: ../app/controllers/categories_controller.php:5
-msgid "List of Categories"
-msgstr "Seznam kategorií"
-
-#: ../app/controllers/categories_controller.php:70
-msgid "Categories"
-msgstr "Kategorie"
-
-#: ../app/controllers/collections_controller.php:4
-msgid "List of Collections"
-msgstr "Seznam kolekcí"
-
-#: ../app/controllers/collections_controller.php:14
-msgid "Collections"
-msgstr "Kolekce"
-
 #: ../app/controllers/logins_controller.php:16
 #, php-format
 msgid ""
@@ -692,30 +502,38 @@ msgstr "Zůstal jste přihlášený jako <em>%s</em>"
 msgid "Welcome!"
 msgstr "Vítejte"
 
+#: ../app/controllers/main_controller.php:21
+#: ../app/controllers/main_controller.php:44
+msgid "Contact"
+msgstr "Kontakt"
+
 #: ../app/controllers/password_recoveries_controller.php:10
 msgid "There is no such user with the given login or email"
 msgstr "Tady není uživatel s tímto loginem nebo e-mailem"
 
 #: ../app/controllers/password_recoveries_controller.php:14
 msgid ""
-"Password recovery can not be initiated for this user. Email address is not "
-"set"
+"This user account has been deactivated. Password recovery process can not be "
+"started."
 msgstr ""
-"Obnova hesla nemůže být pro tohoto uživatele provedena. E-mailová adresa "
-"není nastavena"
+"Tento uživatelský účet byl deaktivován. Nelze zahájit proces obnovení hesla."
 
-#: ../app/controllers/password_recoveries_controller.php:58
+#: ../app/controllers/password_recoveries_controller.php:18
+msgid ""
+"Password recovery can not be initiated for this user. Email address is not "
+"set."
+msgstr ""
+"Obnovení hesla nelze pro tohoto uživatele iniciovat. E-mailová adresa není "
+"nastavena."
+
+#: ../app/controllers/password_recoveries_controller.php:62
 #: ../app/controllers/users_controller.php:66
 msgid "Your password has been updated successfully"
 msgstr "Vaše heslo bylo úspěšně změněno"
 
-#: ../app/controllers/password_recoveries_controller.php:75
+#: ../app/controllers/password_recoveries_controller.php:79
 msgid "Password recovery"
 msgstr "Obnovení hesla"
-
-#: ../app/controllers/stores_controller.php:11
-msgid "Stores"
-msgstr "Prodejny"
 
 #: ../app/controllers/users_controller.php:4
 #: ../app/controllers/users_controller.php:79
@@ -745,61 +563,44 @@ msgstr "Údaje vašeho účtu byly změněny"
 msgid "This is not your current password"
 msgstr "Toto neni vaše aktuální heslo"
 
-#: ../app/fields/brand_field.php:4
-msgid "brand"
-msgstr "značka"
-
-#: ../app/fields/card_field.php:8
-msgid "There is no such product"
-msgstr "Tento produkt neexistuje"
-
-#: ../app/fields/card_section_type_field.php:4
-msgid "vyberte typ obsahu"
-msgstr "vyberte typ obsahu"
-
-#: ../app/fields/catalog_id_field.php:18
-msgid "Catalog number"
-msgstr "Katalogové číslo"
-
-#: ../app/fields/catalog_id_field.php:23
-msgid "This doesn't look like a catalog number"
-msgstr "Toto nevypadá jako katalogové číslo"
-
-#: ../app/fields/category_field.php:15
-msgid "Start with a slash if you want to search the catalog tree from the root"
-msgstr ""
-"Začněte psát lomítko, pokud chcete prohledávat katalogový strom od kořene"
-
-#: ../app/fields/category_field.php:30
-msgid "There is no such category"
-msgstr "Taková kategorie neexistuje"
-
-#: ../app/fields/category_field.php:31
-msgid "It's a filter. This category cannot be selected."
-msgstr "Toto je filtr. Tato kategorie nemůže být vybrána."
-
-#: ../app/fields/collection_field.php:7
-msgid "collection"
-msgstr "kolekce"
-
-#: ../app/fields/collection_field.php:35
-msgid "There is no such collection"
-msgstr "Taková kolekce neexistuje"
-
-#: ../app/fields/login_field.php:6
+#: ../app/fields/login_field.php:7
 msgid ""
 "Only letters, numbers, dots and dashes are allowed. Up to 50 characters."
 msgstr ""
 "Zadávejte pouze písmena, číslice, tečky a pomlčky. Max. délka je omezena na "
 "50 znaků."
 
-#: ../app/fields/login_field.php:18
+#: ../app/fields/login_field.php:19
 msgid "This username has been already taken"
 msgstr "Toto uživatelské jméno je již zabráno"
+
+#: ../app/fields/login_field.php:20
+msgid "Only letters, numbers, dots and dashes are allowed"
+msgstr "Zadávejte pouze písmena, číslice, tečky a pomlčky."
 
 #: ../app/fields/object_field.php:30
 msgid "There is no such record"
 msgstr "Takový záznam neexistuje"
+
+#: ../app/fields/oembed_video_field.php:7
+msgid ""
+"Zadejte URL videa. Lze vložit video ze služeb, které poskytují API podle "
+"specifikace <a href=\"http://oembed.com/\">oEmbed</a>."
+msgstr ""
+"Zadejte URL videa. Lze vložit video ze služeb, které poskytují API podle "
+"specifikace <a href=\"http://oembed.com/\">oEmbed</a>."
+
+#: ../app/fields/oembed_video_field.php:19
+msgid ""
+"Nelze získat informace o videu. Ověřte URL videa a podporu oEmbed u "
+"poskytovatele videa."
+msgstr ""
+"Nelze získat informace o videu. Ověřte URL videa a podporu oEmbed u "
+"poskytovatele videa."
+
+#: ../app/fields/oembed_video_field.php:22
+msgid "Typ souboru na tomto URL není video"
+msgstr "Typ souboru na tomto URL není video"
 
 #: ../app/fields/page_field.php:4
 msgid "page"
@@ -809,35 +610,33 @@ msgstr "stránka"
 msgid "There is no such page"
 msgstr "Taková stránka neexistuje"
 
-#: ../app/fields/slug_field.php:5
+#: ../app/fields/slug_field.php:8
 msgid "Slug"
 msgstr "Slug"
 
-#: ../app/fields/slug_field.php:7
+#: ../app/fields/slug_field.php:10
 msgid "funny-green-mug"
 msgstr "vtipny-zeleny-hrnecek"
 
-#: ../app/fields/slug_field.php:17
+#: ../app/fields/slug_field.php:20
 msgid "Write something like black-cat-white-cat"
 msgstr "Napište něco ve stylu cerna-kocka-bila-kocka"
 
-#: ../app/fields/tags_field.php:18
+#: ../app/fields/tags_field.php:21
 msgid "Ensure that there are max %max% tags (now there are %count%)"
 msgstr ""
 "Ujistěte se, že je zde nejvýše %max% štítků (nyní je tady %count% štítků) "
 
-#: ../app/fields/tags_field.php:19
+#: ../app/fields/tags_field.php:22
 #, php-format
 msgid "There is no tag <em>%s</em>"
 msgstr "Štítek <em>%s</em> neexistuje"
 
-#: ../app/fields/tags_field.php:20
+#: ../app/fields/tags_field.php:23
 #, php-format
 msgid "Tag <em>%s</em> is there more than once"
 msgstr "Štítek <em>%s</em> je uveden vícekrát"
 
-#: ../app/forms/api/categories_suggestions/index_form.php:5
-#: ../app/forms/api/suggestions/index_form.php:5
 #: ../app/forms/api/tags_suggestions/index_form.php:5
 msgid "Search term"
 msgstr "Hledat výraz"
@@ -866,20 +665,9 @@ msgstr "Smazat"
 msgid "Save"
 msgstr "Uložit"
 
-#: ../app/forms/information_requests/create_new_form.php:20
-#: ../app/forms/main/contact_form.php:15
-msgid "Sign up for newsletter"
-msgstr "Přihlásit se k odběru newsletteru"
-
-#: ../app/forms/information_requests/create_new_form.php:26
-#: ../app/forms/main/contact_form.php:21
-msgid "Text"
-msgstr "Text"
-
-#: ../app/forms/information_requests/create_new_form.php:31
-#: ../app/forms/main/contact_form.php:26
-msgid "Send message"
-msgstr "Poslat zprávu"
+#: ../app/forms/application_form.php:85
+msgid "Search query"
+msgstr "Vyhledávací dotaz"
 
 #: ../app/forms/logins/create_new_form.php:8
 msgid "Login"
@@ -887,9 +675,21 @@ msgstr "Přihlásit se"
 
 #: ../app/forms/logins/create_new_form.php:12
 #: ../app/forms/users/edit_password_form.php:5
-#: ../app/forms/users/users_form.php:20
+#: ../app/forms/users/users_form.php:25
 msgid "Password"
 msgstr "Heslo"
+
+#: ../app/forms/main/contact_form.php:15
+msgid "Sign up for newsletter"
+msgstr "Přihlásit se k odběru newsletteru"
+
+#: ../app/forms/main/contact_form.php:21
+msgid "Text"
+msgstr "Text"
+
+#: ../app/forms/main/contact_form.php:26
+msgid "Send message"
+msgstr "Poslat zprávu"
 
 #: ../app/forms/password_recoveries/create_new_form.php:5
 msgid "Login or email address"
@@ -904,102 +704,17 @@ msgstr "Pošli mi odkaz pro obnovu"
 msgid "Set new password"
 msgstr "Nastavit nové heslo"
 
-#: ../app/forms/users/create_new_form.php:16
+#: ../app/forms/users/create_new_form.php:17
 msgid "In order to register you need to obtain an invitation code"
 msgstr "Pro registraci musíte znát kód platné pozvánky"
 
-#: ../app/forms/users/create_new_form.php:28
+#: ../app/forms/users/create_new_form.php:29
 msgid "This is not a valid invitation code"
 msgstr "Toto neni kód platné pozvánky"
 
 #: ../app/forms/users/edit_password_form.php:17
 msgid "The new password is the same as your current password"
 msgstr "Nové heslo je stejné jako to současné"
-
-#: ../app/forms/users/users_form.php:11
-msgid "Email address"
-msgstr "E-mailová adresa"
-
-#: ../app/forms/users/users_form.php:14
-msgid "We will not disclose this address"
-msgstr "Tuto adresu nebudeme zvěřejňovat"
-
-#: ../app/forms/users/users_form.php:25
-msgid "Password (repeat)"
-msgstr "Heslo (opakování)"
-
-#: ../app/forms/users/users_form.php:38
-msgid "Password doesn't match"
-msgstr "Heslo se neshoduje"
-
-#: ../app/helpers/function.paginator.php:89
-#: ../app/helpers/function.paginator.php:153
-msgid "items total"
-msgstr "Položek celkem"
-
-#: ../app/helpers/function.paginator.php:103
-msgid "Prev"
-msgstr "Předchozí"
-
-#: ../app/helpers/function.paginator.php:148
-msgid "Next"
-msgstr "Následující"
-
-#: ../app/helpers/modifier.display_bool.php:13
-msgid "Yes"
-msgstr "Ano"
-
-#: ../app/helpers/modifier.display_bool.php:14
-msgid "No"
-msgstr "Ne"
-
-msgid "Manageable link lists in header and footer"
-msgstr "Administrovatelné seznamy odkazů v hlavičce a patičce stránky"
-
-msgid "Edit object"
-msgstr "Editovat objekt"
-
-msgid "Create new object"
-msgstr "Vytvořit nový objekt"
-
-#: ../app/controllers/password_recoveries_controller.php:14
-msgid ""
-"This user account has been deactivated. Password recovery process can not be "
-"started."
-msgstr ""
-"Tento uživatelský účet byl deaktivován. Nelze zahájit proces obnovení hesla."
-
-#: ../app/controllers/password_recoveries_controller.php:18
-msgid ""
-"Password recovery can not be initiated for this user. Email address is not "
-"set."
-msgstr ""
-"Obnovení hesla nelze pro tohoto uživatele iniciovat. E-mailová adresa není "
-"nastavena."
-
-#: ../app/fields/login_field.php:20
-msgid "Only letters, numbers, dots and dashes are allowed"
-msgstr "Zadávejte pouze písmena, číslice, tečky a pomlčky."
-
-#: ../app/fields/oembed_video_field.php:7
-msgid ""
-"Zadejte URL videa. Lze vložit video ze služeb, které poskytují API podle "
-"specifikace <a href=\"http://oembed.com/\">oEmbed</a>."
-msgstr ""
-
-#: ../app/fields/oembed_video_field.php:19
-msgid ""
-"Nelze získat informace o videu. Ověřte URL videa a podporu oEmbed u "
-"poskytovatele videa."
-msgstr ""
-
-#: ../app/fields/oembed_video_field.php:22
-msgid "Typ souboru na tomto URL není video"
-msgstr ""
-
-#: ../app/forms/application_form.php:85
-msgid "Hledat"
-msgstr ""
 
 #: ../app/forms/users/users_form.php:6
 msgid "Firstname"
@@ -1009,17 +724,93 @@ msgstr "Jméno"
 msgid "Lastname"
 msgstr "Příjmení"
 
+#: ../app/forms/users/users_form.php:16
+msgid "Email address"
+msgstr "E-mailová adresa"
+
+#: ../app/forms/users/users_form.php:19
+msgid "We will not disclose this address"
+msgstr "Tuto adresu nebudeme zvěřejňovat"
+
+#: ../app/forms/users/users_form.php:30
+msgid "Password (repeat)"
+msgstr "Heslo (opakování)"
+
+#: ../app/forms/users/users_form.php:43
+msgid "Password doesn't match"
+msgstr "Heslo se neshoduje"
+
+#: ../app/helpers/modifier.display_bool.php:13
+msgid "Yes"
+msgstr "Ano"
+
+#: ../app/helpers/modifier.display_bool.php:14
+msgid "No"
+msgstr "Ne"
+
 #: ../app/helpers/modifier.iobject_type.php:15
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: ../app/helpers/modifier.iobject_type.php:19
 msgid "Galerie"
-msgstr ""
+msgstr "Galerie"
 
 #: ../app/helpers/modifier.iobject_type.php:23
 msgid "Obrázek"
-msgstr ""
+msgstr "Obrázek"
+
+#~ msgid "recovery link"
+#~ msgstr "odkaz pro obnovu"
+
+#~ msgid ""
+#~ "Hello %1!\n"
+#~ "\n"
+#~ "Have you forgotten your password? To reset your password, click on the "
+#~ "following link\n"
+#~ "\n"
+#~ "%2\n"
+#~ "\n"
+#~ "Please note that this link is valid for 2 hours only."
+#~ msgstr ""
+#~ "Dobrý den %1!\n"
+#~ "\n"
+#~ "Zapomněl(a) jste své heslo? Pro reset hesla klikněte na následující "
+#~ "odkaz\n"
+#~ "\n"
+#~ "%2\n"
+#~ "\n"
+#~ "Vezměte prosím na vědomí, že tento odkaz je platný pouze 2 hodiny."
+
+#~ msgid ""
+#~ "Hello %1!\n"
+#~ "\n"
+#~ "Your password was just updated in recovery mode.\n"
+#~ "\n"
+#~ "The update has been executed upon a request from IP address %2"
+#~ msgstr ""
+#~ "Dobrý den %1!\n"
+#~ "\n"
+#~ "Vaše heslo bylo právě změněno v režimu obnovení zapomenutého hesla.\n"
+#~ "\n"
+#~ "Změna byla realizována na základě požadavku z IP adresy %2"
+
+#~ msgid ""
+#~ "Thanks for signing up for %1!\n"
+#~ "\n"
+#~ "Here is your data summary\n"
+#~ "\n"
+#~ "login: %2\n"
+#~ "email: %3\n"
+#~ "name: %4\n"
+#~ msgstr ""
+#~ "Děkujeme za registraci na %1!\n"
+#~ "\n"
+#~ "Zde je rekapitulace vašich údajů\n"
+#~ "\n"
+#~ "login: %2\n"
+#~ "e-mail: %3\n"
+#~ "jméno: %4\n"
 
 #~ msgid ""
 #~ "<em>ATK14 Skelet</em> is a very basic application written on top of <a "
@@ -1032,39 +823,48 @@ msgstr ""
 #~ "\t\t\t\t\tVzhledem k tomu, jak je Skelet jednoduchý a minimální, může být "
 #~ "pro vývojáře užitečný jako dobrý výchozí bod pro jakoukoli jinou aplikaci."
 
-#~ msgid ""
-#~ "Are you planning to kick up a new project from the Atk14Skelet? Great! "
-#~ "Just run the following commands."
-#~ msgstr ""
-#~ "Chystáte se pustit do nového projektu na Atk14Skeletu? Skvělé! Stačí "
-#~ "spustit následující příkazy."
+#~ msgid "The ATK14 Skelet at age 5"
+#~ msgstr "ATK14 Skelet ve věku 5 let"
+
+#~ msgid "fig.1 <em>The Creature is pleading for forking on GitHub</em>"
+#~ msgstr "obr.1 <em>Stvoření prosí o fork na GitHubu</em>"
+
+#~ msgid "items total"
+#~ msgstr "Položek celkem"
+
+#~ msgid "Prev"
+#~ msgstr "Předchozí"
+
+#~ msgid "Next"
+#~ msgstr "Následující"
+
+#~ msgid "About page"
+#~ msgstr "Stránka O nás"
+
+#~ msgid "Homepage"
+#~ msgstr "Úvodní stránka"
+
+#~ msgid "The most important page in the whole universe"
+#~ msgstr "Vůbec nejdůležitější stránka v celém vesmíru"
+
+#~ msgid "Contact data and quick contact form"
+#~ msgstr "Kontaktní údaje a formulář pro rychlý kontakt"
+
+#~ msgid "About"
+#~ msgstr "O nás"
+
+#~ msgid "What is this site all about"
+#~ msgstr "O čem jsou tyto stránky"
+
+#~ msgid "About %s"
+#~ msgstr "O %s"
 
 #~ msgid ""
-#~ "You can find more information in <a href=\"https://github.com/atk14/"
-#~ "Atk14Skelet/blob/master/README.md#installation\">the installation "
-#~ "instructions.</a>"
+#~ "Password recovery can not be initiated for this user. Email address is "
+#~ "not set"
 #~ msgstr ""
-#~ "Více informací naleznete v <a href=\"https://github.com/atk14/Atk14Skelet/"
-#~ "blob/master/README.md#installation\">pokynech k instalaci.</a>"
-
-#~ msgid ""
-#~ "If you want to help us to improve the Atk14Skelet, <a href=\"https://"
-#~ "github.com/atk14/Atk14Skelet\">fork it on GitHub.</a>"
-#~ msgstr ""
-#~ "Chcete-li nám pomoct vylepšit Atk14Skelet, <a href=\"https://github.com/"
-#~ "atk14/Atk14Skelet\">forkněte si ho na GitHubu. </a>"
-
-#~ msgid "The URL is not valid."
-#~ msgstr "Toto URL není platné"
-
-#~ msgid "Go to home page"
-#~ msgstr "Přejděte na úvodní stránku"
-
-#~ msgid "administrator"
-#~ msgstr "administrátor"
-
-#~ msgid "There is not such user with the given login or email"
-#~ msgstr "Tady není uživatel s tímto loginem nebo e-mailem"
+#~ "Obnova hesla nemůže být pro tohoto uživatele provedena. E-mailová adresa "
+#~ "není nastavena"
 
 #~ msgid ""
 #~ "To reset admins password use console like ATK14 ninja: $ ./scripts/"
@@ -1072,9 +872,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Resetujte adminovo heslo v konzoli jako správný ATK14 ninja: $ ./scripts/"
 #~ "migrate -f 0002_reset_admins_password_migration.php"
-
-#~ msgid "This login has been already taken"
-#~ msgstr "Tento login je již zabrán"
 
 #~ msgid ""
 #~ "Are you sure to delete article item\n"
@@ -1107,6 +904,973 @@ msgstr ""
 #~ msgid "Tags"
 #~ msgstr "Štítky"
 
+#~ msgid "Welcome administrator!"
+#~ msgstr "Vítejte administrátore!"
+
+#~ msgid "No record has been found."
+#~ msgstr "Nebyl nalezen žádný záznam."
+
+#~ msgid "Subscribed since"
+#~ msgstr "Přihlášen od"
+
+#~ msgid "Export emails in CSV"
+#~ msgstr "Export e-mailů v CSV"
+
+#~ msgid "Created at"
+#~ msgstr "Vytvořeno"
+
+#~ msgid "User"
+#~ msgstr "Uživatel"
+
+#~ msgid "Created from address"
+#~ msgstr "Vytvořeno z adresy"
+
+#~ msgid "Password recovered?"
+#~ msgstr "Heslo obnoveno?"
+
+#~ msgid "Recovered at"
+#~ msgstr "Obnoveno dne"
+
+#~ msgid "Recovered from address"
+#~ msgstr "Obnoveno z adresy"
+
+#~ msgid "Add new tag"
+#~ msgstr "Přidat nový štítek"
+
+#~ msgid "No tag has been found."
+#~ msgstr "Nebyl nalezen žádný štítek."
+
+#~ msgid "Tag"
+#~ msgstr "Štítek"
+
+#~ msgid ""
+#~ "You are about to permanently delete tag %1\n"
+#~ "\tAre you sure about that?"
+#~ msgstr ""
+#~ "Chystáte se smazat štítek %1\n"
+#~ "\tUrčite to chcete?"
+
+#~ msgid "Delete tag"
+#~ msgstr "Smazat štítek"
+
+#~ msgid ""
+#~ "At the moment no one knows the actual user's password because passwords "
+#~ "are not stored in plain text form. In this form you can set a new "
+#~ "password to the user <em>%1</em>"
+#~ msgstr ""
+#~ "Momentálně nikdo nezná heslo uživatele, protože hesla nejsou ukládána v "
+#~ "čitelné podobě. V tomto formuláři můžete nastavit nové heslo uživateli "
+#~ "<em>%1</em>"
+
+#~ msgid "Create a new user"
+#~ msgstr "Vytvořit nového uživatele"
+
+#~ msgid "Username"
+#~ msgstr "Uživatelské jméno"
+
+#~ msgid "Is admin?"
+#~ msgstr "Je administrátor?"
+
+#~ msgid "Updated at"
+#~ msgstr "Změněno"
+
+#~ msgid "Sign in as this user"
+#~ msgstr "Přihlásit se jako tento uživatel"
+
+#~ msgid ""
+#~ "You are about to permanently delete user %1\n"
+#~ "\tAre you sure about that?"
+#~ msgstr ""
+#~ "Chystáte se nevratně smazat uživatele %1\n"
+#~ "\tJste si skutečně jistý?"
+
+#~ msgid "Delete user"
+#~ msgstr "Smazat uživatele"
+
+#~ msgid ""
+#~ "<em>ATK14 Skelet</em> is a very basic application written on top of <a "
+#~ "href=\"http://atk14.net\">the ATK14 Framework</a>.\n"
+#~ "\t\t\tAs the Skelet is simple and minimal it may be usefull for "
+#~ "developers as a good start point for any other application."
+#~ msgstr ""
+#~ "<em>ATK14 Skelet</em> je základní aplikace napsaná ve <a href=\"http://"
+#~ "atk14.net\">frameworku ATK14</a>.\n"
+#~ "\t\t\tSkelet je jednoduchý a minimalistický, proto může být pro webového "
+#~ "vývojáře dobrým startovacím místem pro jakoukoli další aplikaci."
+
+#~ msgid "The URL is not valid."
+#~ msgstr "Toto URL není platné"
+
+#~ msgid "Go to home page"
+#~ msgstr "Přejděte na úvodní stránku"
+
+#~ msgid "administrator"
+#~ msgstr "administrátor"
+
+#~ msgid "This login has been already taken"
+#~ msgstr "Tento login je již zabrán"
+
+#~ msgid "Welcome screen"
+#~ msgstr "Vítací obrazovka"
+
+#~ msgid "Users"
+#~ msgstr "Uživatelé"
+
+#~ msgid "Password recoveries"
+#~ msgstr "Obnovy hesel"
+
+#~ msgid "Newsletter subscribers"
+#~ msgstr "Odběratelé newsletteru"
+
+#~ msgid "The entry has been deleted"
+#~ msgstr "Záznam byl smazán"
+
+#~ msgid "Listing Articles"
+#~ msgstr "Výpis článků"
+
+#~ msgid "Create article"
+#~ msgstr "Vytvořit článek"
+
+#~ msgid "The article has been created successfully"
+#~ msgstr "Článek byl úspěšně vytvořen"
+
+#~ msgid "Editing %s"
+#~ msgstr "Editace %s"
+
+#~ msgid "The article has been updated successfully"
+#~ msgstr "Článek byl úspěšně aktualizován"
+
+#~ msgid "Newsletter Subscribers"
+#~ msgstr "Odběratelé newsletteru"
+
+#~ msgid "Listing Tags"
+#~ msgstr "Přehled štítků"
+
+#~ msgid "Create a new tag"
+#~ msgstr "Vytvořit nový štítek"
+
+#~ msgid "The tag has been created successfully"
+#~ msgstr "Štítek byl úspěšně vytvořen"
+
+#~ msgid "Editing tag %s"
+#~ msgstr "Editace štítku %s"
+
+#~ msgid "The same tag already exists"
+#~ msgstr "Stejný štítek již existuje"
+
+#~ msgid "The tag has been updated"
+#~ msgstr "Štítek byl aktualizován"
+
+#~ msgid "Users list"
+#~ msgstr "Seznam uživatelů"
+
+#~ msgid "The user has been created successfully"
+#~ msgstr "Uživatel byl úspěšně vytvořen"
+
+#~ msgid "Editing user %s"
+#~ msgstr "Editace uživatele %s"
+
+#~ msgid "The user entry has been updated"
+#~ msgstr "Záznam o uživateli byl aktualizován"
+
+#~ msgid "Setting a new password to the user %s"
+#~ msgstr "Nastavit nové heslo uživateli %s"
+
+#~ msgid ""
+#~ "The new password has been set to the user <em>%user%</em>.<br>Would be "
+#~ "nice to let him know at email address <a href=\"mailto:%email%\">%email%</"
+#~ "a>."
+#~ msgstr ""
+#~ "Nové heslo bylo nastaveno uživateli <em>%user%</em>.<br>Bude hezké, když "
+#~ "mu o tom napíšete na e-mail <a href=\"mailto:%email%\">%email%</a>."
+
+#~ msgid "The user entry has been deleted"
+#~ msgstr "Uživatel byl smazán"
+
+#~ msgid "Now you are logged as <em>%s</em>"
+#~ msgstr "Nyní jste přihlášen jako <em>%s</em>"
+
+#~ msgid "Body"
+#~ msgstr "Tělo"
+
+#~ msgid "Mardown format is expected"
+#~ msgstr "Je očekáván formát Markdown"
+
+#~ msgid "Published At"
+#~ msgstr "Publikováno dne"
+
+#~ msgid "Search articles"
+#~ msgstr "Vyhledat články"
+
+#~ msgid "Search tags"
+#~ msgstr "Vyhledat štítky"
+
+#~ msgid "Set password"
+#~ msgstr "Nastavit heslo"
+
+#~ msgid "Search users"
+#~ msgstr "Hledat uživatele"
+
+#~ msgid "Actions"
+#~ msgstr "Akce"
+
+#~ msgid ""
+#~ "Please note that default administration access is admin/admin. Be a smart "
+#~ "guy and change admin's password on production promptly."
+#~ msgstr ""
+#~ "Mějte prosím na paměti, že administrátorský přístup je admin/admin. Buďtě "
+#~ "chytrý chlapík a v produkčním prostředí změnte okamžitě adminovo heslo."
+
+#~ msgid "News section"
+#~ msgstr "Sekce s novinkama"
+
+#~ msgid ""
+#~ "If you are brave enough to install the Skelet on your computer, check out "
+#~ "<a href=\"https://github.com/atk14/Atk14Skelet/blob/master/README."
+#~ "md#installation\">the installation instrunction.</a>"
+#~ msgstr ""
+#~ "Pokud jste dost odvážný, nainstalujte si Skelet na svůj počítač. Mrkněte "
+#~ "na <a href=\"https://github.com/atk14/Atk14Skelet/blob/master/README."
+#~ "md#installation\">navod k instalaci.</a>"
+
+#~ msgid ""
+#~ "If you want to help us to improve the Skelet, <a href=\"https://github."
+#~ "com/atk14/Atk14Skelet\">fork it on GitHub.</a>"
+#~ msgstr ""
+#~ "Pokud chcete pomoct při zlepšování Skeletu, <a href=\"https://github.com/"
+#~ "atk14/Atk14Skelet\">forkněte si ho na GitHubu.</a>"
+
+#~ msgid "News archive"
+#~ msgstr "Archív novinek"
+
+#~ msgid "News"
+#~ msgstr "Novinky"
+
+#~ msgid ""
+#~ "Mention tag <em>%s</em> when this article should be displayed in the news "
+#~ "section"
+#~ msgstr ""
+#~ "Uveďte štítek <em>%s</em>, pokud se má tento článek objevit mezi novinkama"
+
+#~ msgid "Headers"
+#~ msgstr "Hlavičky"
+
+#~ msgid "HTML body"
+#~ msgstr "HTML část zprávy"
+
+#~ msgid "Plain text body"
+#~ msgstr "Textová část"
+
+#~ msgid "No mail has been sent"
+#~ msgstr "Žádný e-mail nebyl odeslán"
+
+#~ msgid "This doesn't look like an URL"
+#~ msgstr "Toto nevypadá jako URL"
+
+#~ msgid "This field is required."
+#~ msgstr "Toto pole je povinné"
+
+#~ msgid "Enter a valid value."
+#~ msgstr "Vložte správnou hodnotu."
+
+#~ msgid ""
+#~ "Select a valid choice. %(value)s is not one of the available choices."
+#~ msgstr "Vyberte platnou hodnotu. %(value) není jedna z nabízených možností."
+
+#~ msgid "Enter a list of values."
+#~ msgstr "Zadejte seznam hodnot."
+
+#~ msgid "Please, choose the right options."
+#~ msgstr "Prosím, vyberte správné možnosti."
+
+#~ msgid "Enter a number."
+#~ msgstr "Zadejte číslo."
+
+#~ msgid "Ensure this value is less than or equal to %value%."
+#~ msgstr "Hodnota musí být rovna nebo  menší než %value%."
+
+#~ msgid "Ensure this value is greater than or equal to %value%."
+#~ msgstr "Hodnota musí být rovna nebo větší než %value%."
+
+#~ msgid "Enter a whole number."
+#~ msgstr "Zadejte celé číslo."
+
+#~ msgid "Enter a valid date, hours, minutes and seconds."
+#~ msgstr "Zadejte platné datum, hodiny, minuty a sekundy."
+
+#~ msgid "Enter a valid date."
+#~ msgstr "Zadejde platné datum."
+
+#~ msgid ""
+#~ "Select a valid choice. That choice is not one of the available choices."
+#~ msgstr ""
+#~ "Vyberte platnou hodnotu. Vybraná hodnota není ani jedna z nabízených "
+#~ "hodnot."
+
+#~ msgid "Please, choose the right option."
+#~ msgstr "Prosím, vyberte správnou možnost."
+
+#~ msgid "Ensure this value has at most %max% characters (it has %length%)."
+#~ msgstr "Hodnota musí být dlouhá nejvýše %max% znaků (teď má %length%)."
+
+#~ msgid "Ensure this value has at least %min% characters (it has %length%)."
+#~ msgstr "Hodnota musí mít alespoň %min% znaků (teď má %length%)."
+
+#~ msgid "Ensure this value has at most %max% characters."
+#~ msgstr "Tato hodnota "
+
+#~ msgid "Ensure this value has at least %min% characters."
+#~ msgstr "Hodnota musí mít alespoň %min% znaků."
+
+#~ msgid "Ensure this value has between %min% and %max% characters."
+#~ msgstr "Délka řetězce musí být mezi %min% a %max% znaky."
+
+#~ msgid "Ensure this file is image."
+#~ msgstr "Ověřte, že tento soubor je obrázek."
+
+#~ msgid "Ensure this image is %width_required% pixels wide (it is %width%)."
+#~ msgstr ""
+#~ "Ujistěte se, že je šířka obrázku %width_required% bodů (teď je šířoký "
+#~ "%width%)."
+
+#~ msgid "Ensure this image is %height_required% pixels high (it is %height%)."
+#~ msgstr ""
+#~ "Ujistěte se, že výška obrázku je %height_required% bodů (teď je vysoký "
+#~ "%height%)."
+
+#~ msgid "Ensure this image is at most %max% pixels wide (it is %width%)."
+#~ msgstr ""
+#~ "Ujistěte se, že šířka obrázku nepřekročí %max% bodů (teď je šíroký %width"
+#~ "%)."
+
+#~ msgid "Ensure this image is at most %max% pixels high (it is %height%)."
+#~ msgstr ""
+#~ "Ujistěte se, že výška obrázku nepřekročí %max% bodů (teď je vysoký %height"
+#~ "%)."
+
+#~ msgid "Ensure this image is at least %min% pixels wide (it is %width%)."
+#~ msgstr "Obrázek musí mít alespoň %min% bodů na šířku (nyní má %width%). "
+
+#~ msgid "Ensure this image is at least %min% pixels high (it is %height%)."
+#~ msgstr "Obrázek musí mít alespoň %min% bodů na výšku (nyní má %height%). "
+
+#~ msgid "Ensure this image is in a required format"
+#~ msgstr "Ujistěte se, že je obrázek v požadovaném formátu"
+
+#~ msgid "Enter a valid date, hours and minutes."
+#~ msgstr "Zadejte platné datum, hodiny a minuty."
+
+#~ msgid ""
+#~ "Ensure this file has at most %max_file_size% bytes (it has %file_size%)"
+#~ msgstr ""
+#~ "Ujistěte se, že velikost souboru nepřekročí %max_file_size% bytů (teď má "
+#~ "%file_size%)"
+
+#~ msgid "Unsupported file type: %mime_type%"
+#~ msgstr "Nepodporovaný typ souboru: %mime_type%"
+
+#~ msgid ""
+#~ "The uploaded file exceeds the max file size value that is set on the "
+#~ "server (%upload_max_filesize%)"
+#~ msgstr ""
+#~ "Nahraný soubor překračuje maximální velikost souboru, která je nastavena "
+#~ "na serveru (%upload_max_filesize%)"
+
+#~ msgid ""
+#~ "The uploaded file exceeds the max file size directive that was specified "
+#~ "in the HTML form (%MAX_FILE_SIZE%)"
+#~ msgstr ""
+#~ "Velikost nahraného souboru přesahuje maximální velikost, která je "
+#~ "nastavena v HTML formuláři (%MAX_FILE_SIZE%)"
+
+#~ msgid "The uploaded file was only partially uploaded"
+#~ msgstr "Nahraný soubor byl nahrán jen částečně"
+
+#~ msgid "Missing a temporary folder"
+#~ msgstr "Adresář pro dočasné soubory chybí"
+
+#~ msgid "Failed to write file to disk"
+#~ msgstr "Soubor se nepodařilo zapsat na disk"
+
+#~ msgid "File upload stopped by an extension installed on the server"
+#~ msgstr ""
+#~ "Nahrávání souboru bylo zastaveno rozšířením nainstalovaným na serveru"
+
+#~ msgid "An error occurred during file upload"
+#~ msgstr "Během nahrávání souboru došlo k chybě"
+
+#~ msgid "Enter a valid e-mail address."
+#~ msgstr "Zadejte platnou e-mailovou adresu."
+
+#~ msgid "Enter a valid IP address."
+#~ msgstr "Vložte platnou IP adresu."
+
+#~ msgid "The form contains errors, therefore it cannot be processed."
+#~ msgstr "Formulář obsahuje chyby, proto nemůže být zpracován."
+
+#~ msgid "Please, submit the form again"
+#~ msgstr "Prosím, odešlete formulář znovu."
+
+#~ msgid "Sort table by this column"
+#~ msgstr "Třídit tabulku podle tohoto sloupce"
+
+#~ msgid "%s items total"
+#~ msgstr "%s položek celkem"
+
+#~ msgid "prev"
+#~ msgstr "předchozí"
+
+#~ msgid "next"
+#~ msgstr "následující"
+
+#~ msgid "Are you sure?"
+#~ msgstr "Jste si jistý?"
+
+#~ msgid "and"
+#~ msgstr "a"
+
+#~ msgid "atk14.date_format"
+#~ msgstr "j.n.Y"
+
+#~ msgid "atk14.parse_date_pattern"
+#~ msgstr "/^(?<day>[0-9]{1,2})\\.(?<month>[0-9]{1,2})\\.(?<year>[0-9]{4})$/"
+
+#~ msgid "atk14.datetime_format"
+#~ msgstr "j.n.Y H:i"
+
+#~ msgid "atk14.parse_datetime_pattern"
+#~ msgstr ""
+#~ "/^(?<day>[0-9]{1,2})\\.(?<month>[0-9]{1,2})\\.(?<year>[0-9]{4}) (?"
+#~ "<hours>[0-9]{2}):(?<minutes>[0-9]{2})$/"
+
+#~ msgid "atk14.datetime_with_seconds_format"
+#~ msgstr "j.n.Y H:i:s"
+
+#~ msgid "atk14.parse_datetime_with_seconds_pattern"
+#~ msgstr ""
+#~ "/^(?<day>[0-9]{1,2})\\.(?<month>[0-9]{1,2})\\.(?<year>[0-9]{4}) (?"
+#~ "<hours>[0-9]{2}):(?<minutes>[0-9]{2}):(?<seconds>[0-9]{2})$/"
+
+#~ msgid "Service Unavailable"
+#~ msgstr "Služba je nedostupná"
+
+#~ msgid "This site is in maintenance. Please come back later."
+#~ msgstr "Probíhá údržba této stránky. Přijďte prosím později."
+
+#~ msgid "Create new user"
+#~ msgstr "Vytvořit nového uživatele"
+
+#~ msgid "Add New"
+#~ msgstr "Přidat novinku"
+
+#~ msgid "The article has been deleted"
+#~ msgstr "Článek byl smazán"
+
+#~ msgid "Current Password"
+#~ msgstr "Aktuální heslo"
+
+#~ msgid "New Password"
+#~ msgstr "Nové heslo"
+
+#~ msgid "Search records"
+#~ msgstr "Hledat záznamy"
+
+#~ msgid "Disallowed file type (%mime_type%)"
+#~ msgstr "Nepovolený typ souboru (%mime_type%)"
+
+#~ msgid ""
+#~ "Hello %1!\n"
+#~ "\n"
+#~ "Have you forgotten you password? To reset your password, click on the "
+#~ "link below\n"
+#~ "\n"
+#~ "%2\n"
+#~ "\n"
+#~ "Please note that this link is valid for 2 hours only."
+#~ msgstr ""
+#~ "Dobrý den %1!\n"
+#~ "\n"
+#~ "Zapoměl jste přihlašovací heslo? Pro nastavení nového hesla klikněte na "
+#~ "odkaz\n"
+#~ "\n"
+#~ "%2\n"
+#~ "\n"
+#~ "Mějte prosím na paměti, ze tento odkaz je platný pouze 2 hodiny."
+
+#~ msgid "Description"
+#~ msgstr "Popis"
+
+#~ msgid "Image URL"
+#~ msgstr "URL obrázku"
+
+#~ msgid "The Creature Show"
+#~ msgstr "Přehlídka příšer"
+
+#~ msgid "Creating new creature"
+#~ msgstr "Vytvoření nové příšerky"
+
+#~ msgid "A new creature has been successfully created"
+#~ msgstr "Nová příšerka byla vytvořena"
+
+#~ msgid "Detail of the creature #%s"
+#~ msgstr "Podrobnosti o příšerce #%s"
+
+#~ msgid "Editing the creature #%s"
+#~ msgstr "Editovat příšerku #%s"
+
+#~ msgid "The creature has been changed successfully."
+#~ msgstr "Příšerka byla úspěšně změněna."
+
+#~ msgid "my beautiful application"
+#~ msgstr "moje nádherná aplikace"
+
+#~ msgid ""
+#~ "If you are brave enough to install the Skelet on your computer, check out "
+#~ "<a href=\"https://github.com/yarri/Atk14Skelet/blob/master/README."
+#~ "md#installation\">the installation instrunction.</a>"
+#~ msgstr ""
+#~ "Pokud si troufáte na instalaci Skeletu na váš počítač, přečtěte si <a "
+#~ "href=\"https://github.com/yarri/Atk14Skelet/blob/master/README."
+#~ "md#installation\">instalační instrukce.</a>"
+
+#~ msgid ""
+#~ "If you want to help us to improve the Skelet, <a href=\"https://github."
+#~ "com/yarri/Atk14Skelet\">fork it on GitHub.</a>"
+#~ msgstr ""
+#~ "Pokud nám chcete pomoct s vývojem Skeletu, <a href=\"https://github.com/"
+#~ "yarri/Atk14Skelet\">forkněte si ho na GitHubu.</a>"
+
+#~ msgid "E-mail address"
+#~ msgstr "E-mailová adresa"
+
+#~ msgid "Login or e-mail address"
+#~ msgstr "Login nebo e-mailová adresa"
+
+#~ msgid "Your e-mail"
+#~ msgstr "Váš e-mail"
+
+#~ msgid "There is not such user with the given login or e-mail"
+#~ msgstr "Tady není uživatel s takovým loginem nebo e-mailem."
+
+#~ msgid "Access denied"
+#~ msgstr "Přístup byl odmítnut"
+
+#~ msgid "Listing News"
+#~ msgstr "Sezam novinek"
+
+#~ msgid "Create news entry"
+#~ msgstr "Vytvořit nový záznam"
+
+#~ msgid "The news entry has been created successfully"
+#~ msgstr "Novinka byla úspěšně vytvořena"
+
+#~ msgid "The news entry has been updated successfully"
+#~ msgstr "Novinka byla úspěšně změněna"
+
+#~ msgid "The news entry has been deleted"
+#~ msgstr "Novinka byla smazána"
+
+#~ msgid "The form contains errors, therefor it cannot be processed."
+#~ msgstr "Formulář obsahuje chyby, proto nemůže být zpracován."
+
+#~ msgid "No record has been found"
+#~ msgstr "Nebyl nalezen žádný záznam"
+
+#~ msgid ""
+#~ "Are you sure to delete news item\n"
+#~ "%1?"
+#~ msgstr ""
+#~ "Jste si jistý smazáním novinky\n"
+#~ "%1?"
+
+#~ msgid "Delete news"
+#~ msgstr "Smazat novinku"
+
+#~ msgid "Search news items"
+#~ msgstr "Hladat v novinkách"
+
+#~ msgid "The list is empty"
+#~ msgstr "Seznam je prázdný"
+
+#~ msgid "No records found."
+#~ msgstr "Nebyl nalezen žádný záznam."
+
+#~ msgid "E-mail"
+#~ msgstr "E-mail"
+
+#~ msgid "The password recovery link has been sent to your e-mail address."
+#~ msgstr "Odkaz pro obnovu hesla byl odeslán na vaší e-mailovou adresu"
+
+#~ msgid "We are deeply sorry but you are not authorized to see this page!"
+#~ msgstr ""
+#~ "Je nám nesmírně líto, ale nejste autorizován k prohlížení této stránky!"
+
+#~ msgid ""
+#~ "Best regards\n"
+#~ "\n"
+#~ "%1 Support Team\n"
+#~ "web: %2\n"
+#~ "e-mail: %3"
+#~ msgstr ""
+#~ "S pozdravem\n"
+#~ "\n"
+#~ "%1 Support Team\n"
+#~ "web: %2\n"
+#~ "e-mail: %3"
+
+#~ msgid ""
+#~ "If you have any question, contact us through the following form. We will "
+#~ "reply to you as soon as we can."
+#~ msgstr ""
+#~ "Pokud máte nějakou otázku, kontaktujte nás prostřednictvím tohoto "
+#~ "formuláře. Odpovíme vám, jak nejdříve budeme moct."
+
+#~ msgid "Below the form you'll find other contact information."
+#~ msgstr "Pod tímto formulářem najdete další kontaktní informace"
+
+#~ msgid "Create a new creature"
+#~ msgstr "Vytvořit novou příšeru"
+
+#~ msgid "No creature was found."
+#~ msgstr "Nebyla nalezena žádná příšerka."
+
+#~ msgid "Id"
+#~ msgstr "Id"
+
+#~ msgid ""
+#~ "<em>The Creature Show</em> gives you a opportunity to inspect a "
+#~ "functional ATK14 code immediatelly after a new web-app installation."
+#~ msgstr ""
+#~ "<em>Přehlídka příšer</em> slouží k prozkoumání funkčního kódu právě "
+#~ "nainstalované ATK14 aplikace."
+
+#~ msgid ""
+#~ "For a beginner there is a lot of things to study. Inspect following files "
+#~ "and direcories."
+#~ msgstr ""
+#~ "Pro začátečníka je tady spousta věcí ke studiu. Prohlédněte si například "
+#~ "následující soubory a adresáře."
+
+#~ msgid "Update creature"
+#~ msgstr "Aktualizovat příšerku"
+
+#~ msgid "Are you sure to destroy the creature #%1?"
+#~ msgstr "Jste si jistý smazáním příšerky #%1?"
+
+#~ msgid "detail"
+#~ msgstr "podrobnosti"
+
+#~ msgid "edit"
+#~ msgstr "editovat"
+
+#~ msgid "destroy"
+#~ msgstr "smazat"
+
+#~ msgid "Image"
+#~ msgstr "Obrázek"
+
+#~ msgid "An image of the creature"
+#~ msgstr "Obrázek příšerky"
+
+#~ msgid "Get the creature as JSON"
+#~ msgstr "Příšerka ve formátu JSON"
+
+#~ msgid "Get the creature as XML"
+#~ msgstr "Příšerka ve formátu XML"
+
+#~ msgid "Create new creature"
+#~ msgstr "Vytvořit novou příšerku"
+
+#~ msgid "This is app/views/application/error404.tpl template"
+#~ msgstr "Toto je šablona app/views/application/error404.tpl"
+
+#~ msgid "required"
+#~ msgstr "povinné"
+
+#~ msgid "Example:"
+#~ msgstr "Příklad"
+
+#~ msgid "It's working!"
+#~ msgstr "Fachá to!"
+
+#~ msgid "Hi there, it's nice to see you!"
+#~ msgstr "Ahoj. Je pěkné, že jste tady!"
+
+#~ msgid "What you see is a freshly installed ATK14 application."
+#~ msgstr "To, co vidíte, je čerstvě nainstalovaná ATK14 aplikace."
+
+#~ msgid ""
+#~ "This HTTP request is handled by the <code>app/controllers/main_controller."
+#~ "php</code> and the <code>index()</code> action."
+#~ msgstr ""
+#~ "Tento HTTP požadavek je obsloužen kontrolerem <code>app/controllers/"
+#~ "main_controller.php</code> a jeho akcí <code>index()</code>."
+
+#~ msgid "This is <code>app/views/main/index.tpl</code> template."
+#~ msgstr "Toto je šablona <code>app/views/main/index.tpl</code>."
+
+#~ msgid "Where to go?"
+#~ msgstr "Kam zajít?"
+
+#~ msgid "visit the Creatures show"
+#~ msgstr "navštívit Přehlídku příšer"
+
+#~ msgid "check out 404 error page"
+#~ msgstr "prověřte chybovou stránku 404"
+
+#~ msgid ""
+#~ "switch the language: <a href=\"%1\">english</a> or <a href=\"%2\">czech</"
+#~ "a>"
+#~ msgstr ""
+#~ "Změnit jazyk: <a href=\"%1\">angličtina</a> nebo <a href=\"%2\">čeština</"
+#~ "a>"
+
+#~ msgid "gettext dictionaries are placed in <code>locale/</code> directory"
+#~ msgstr "gettextové slovníky jsou umístěny v adresáři <code>locale/</code>"
+
+#~ msgid "External links"
+#~ msgstr "Externí odkazy"
+
+#~ msgid "ATK14 project website"
+#~ msgstr "Stránky projektu ATK14"
+
+#~ msgid "The ATK14 Book"
+#~ msgstr "Kniha ATK14"
+
+#~ msgid "The API reference"
+#~ msgstr "API reference"
+
+#~ msgid "ATK14 project page on Github"
+#~ msgstr "stránky projektu ATK14 na Githubu"
+
+#~ msgid ""
+#~ "This HTTP request is handled by the MainController and the index() action."
+#~ msgstr ""
+#~ "Tento HTTP požadavek je obsloužen kontrolerem MainController a jeho akcí "
+#~ "index()."
+
+#~ msgid "This is app/views/main/index.tpl template."
+#~ msgstr "Toto je šablona app/views/main/index.tpl."
+
+#~ msgid "gettext dictionaries are placed in locale/ directory"
+#~ msgstr "gettextove slovníky jsou umístěny v adresáři locale/"
+
+#~ msgid "Listing creatures"
+#~ msgstr "Seznam příšer"
+
+#~ msgid "ATK14 Powered Website"
+#~ msgstr "Webové místo pohání ATK14"
+
+#~ msgid "Nothing was found."
+#~ msgstr "Nic nebylo nalezeno."
+
+#~ msgid "New Creature Form"
+#~ msgstr "Formulář pro vytvoření nové příšerky"
+
+#~ msgid "Nice to see you."
+#~ msgstr "Rád vás vidím."
+
+#~ msgid "Where to go"
+#~ msgstr "Kam zajít"
+
+#~ msgid "Accessories"
+#~ msgstr "Příslušenství"
+
+#~ msgid "Product locations"
+#~ msgstr "Umístění produktu"
+
+#~ msgid "Consumables"
+#~ msgstr "Spotřební materiál"
+
+#~ msgid "Brand:"
+#~ msgstr "Značka:"
+
+#~ msgid "Are you interested in this product?"
+#~ msgstr "Zajímá vás tento produkt?"
+
+#~ msgid "Related products"
+#~ msgstr "Související produkty"
+
+#~ msgid "Subcategories"
+#~ msgstr "Podkategorie"
+
+#~ msgid "Products"
+#~ msgstr "Produkty"
+
+#~ msgid "No product has been found."
+#~ msgstr "Žádný produkt nebyl nalezen."
+
+#~ msgid "Products in the collection %1"
+#~ msgstr "Produkty v kolekci %1"
+
+#~ msgid "Greetings"
+#~ msgstr "Dobrý den"
+
+#~ msgid ""
+#~ "I would like to know more about products and services you offered on the "
+#~ "web site %1."
+#~ msgstr ""
+#~ "Rád bych se dozvěděl více o produktech a službách, které nabízíte na "
+#~ "webových stránkách %1."
+
+#~ msgid "I would like to know more about the product"
+#~ msgstr "Rád bych se dozvěděl více o produktu"
+
+#~ msgid "Please contact me."
+#~ msgstr "Prosím kontaktujte mě."
+
+#~ msgid "The message has been sent. Thank you!"
+#~ msgstr "Zpráva byla odeslána. Děkujeme!"
+
+#~ msgid ""
+#~ "Hello,\n"
+#~ "\n"
+#~ "thank you for your interest in our products. We will contact you as soon "
+#~ "as we can."
+#~ msgstr ""
+#~ "Dobrý den,\n"
+#~ "\n"
+#~ "děkujeme, že se zajímáte o naše produkty. Co nejdříve Vás budeme "
+#~ "kontaktovat."
+
+#~ msgid "Here is the message you sent to us:"
+#~ msgstr "Zde je zpráva, kterou jste nám zaslal:"
+
+#~ msgid "Thank you and have a nice day!"
+#~ msgstr "Děkujeme a přejeme hezký den!"
+
+#~ msgid "The Catalog contains mainly"
+#~ msgstr "Katalog obsahuje zejména"
+
+#~ msgid "List of categories"
+#~ msgstr "Seznam kategorií"
+
+#~ msgid "List of brands"
+#~ msgstr "Seznam značek"
+
+#~ msgid "List of collections"
+#~ msgstr "Seznam kolekcí"
+
+#~ msgid "List of stores"
+#~ msgstr "Seznam prodejen"
+
+#~ msgid ""
+#~ "Are you planning to kick up a new project from the Atk14Catalog? Great! "
+#~ "Just run the following commands."
+#~ msgstr ""
+#~ "Chystáte se pustit do nového projektu na Atk14SCatalogu? Skvělé! Stačí "
+#~ "spustit následující příkazy."
+
+#~ msgid ""
+#~ "You can find more information in <a href=\"https://github.com/atk14/"
+#~ "Atk14Catalog/blob/master/README.md#installation\">the installation "
+#~ "instructions.</a>"
+#~ msgstr ""
+#~ "Více informací naleznete v <a href=\"https://github.com/atk14/"
+#~ "Atk14Catalog/blob/master/README.md#installation\">pokynech k instalaci.</"
+#~ "a>"
+
+#~ msgid ""
+#~ "If you want to help us to improve the Catalog, <a href=\"https://github."
+#~ "com/atk14/Atk14Catalog\">fork it on GitHub.</a>"
+#~ msgstr ""
+#~ "Pokud chcete pomoci s vylepšováním ATK14 katalogu, <a href=\"https://"
+#~ "github.com/atk14/Atk14Catalog\">forkněte si ho na GitHubu.</a>"
+
+#~ msgid "ATK14 Catalog on GitHub"
+#~ msgstr "ATK14 Katalog na GitHubu"
+
+#~ msgid "no image"
+#~ msgstr "bez obrázku"
+
+#~ msgid "Products in the collection"
+#~ msgstr "Produkty v kolekci"
+
+#~ msgid "List of Products"
+#~ msgstr "Seznam produktů"
+
+#~ msgid "Address"
+#~ msgstr "Adresa"
+
+#~ msgid "Currently we have no store."
+#~ msgstr "V současné době nemáme žádnou prodejnu."
+
+#~ msgid "Request for information"
+#~ msgstr "Žádost o informaci"
+
+#~ msgid "List of Brands"
+#~ msgstr "Seznam značek"
+
+#~ msgid "Brands"
+#~ msgstr "Značky"
+
+#~ msgid "List of Categories"
+#~ msgstr "Seznam kategorií"
+
+#~ msgid "List of Collections"
+#~ msgstr "Seznam kolekcí"
+
+#~ msgid "Collections"
+#~ msgstr "Kolekce"
+
+#~ msgid "Stores"
+#~ msgstr "Prodejny"
+
+#~ msgid "brand"
+#~ msgstr "značka"
+
+#~ msgid "Catalog number"
+#~ msgstr "Katalogové číslo"
+
+#~ msgid "This doesn't look like a catalog number"
+#~ msgstr "Toto nevypadá jako katalogové číslo"
+
+#~ msgid ""
+#~ "Start with a slash if you want to search the catalog tree from the root"
+#~ msgstr ""
+#~ "Začněte psát lomítko, pokud chcete prohledávat katalogový strom od kořene"
+
+#~ msgid "There is no such category"
+#~ msgstr "Taková kategorie neexistuje"
+
+#~ msgid "It's a filter. This category cannot be selected."
+#~ msgstr "Toto je filtr. Tato kategorie nemůže být vybrána."
+
+#~ msgid "collection"
+#~ msgstr "kolekce"
+
+#~ msgid "There is no such collection"
+#~ msgstr "Taková kolekce neexistuje"
+
+#~ msgid "Welcome at ATK14 Catalog!"
+#~ msgstr "Vítejte v ATK14 Katalogu!"
+
+#~ msgid ""
+#~ "<em>ATK14 Catalog</em> is an skeleton suitable for applications of kind "
+#~ "like <em>Products introduction</em>, <em>E-shop</em>, etc."
+#~ msgstr ""
+#~ "<em>ATK14 Katalog</em> je skelet vhodný pro aplikace typu <em>produktový "
+#~ "katalog</em>, <em>e-shop</em> atd."
+
+#~ msgid ""
+#~ "ATK14 Catalog is built on top of <em>ATK14 Skelet</em> &mdash; another "
+#~ "great skeleton."
+#~ msgstr ""
+#~ "ATK14 Katalog je postaven na <em>ATK14 Skeletu</em> &mdash; dalším "
+#~ "skvělém skeletu."
+
+#~ msgid "Categories"
+#~ msgstr "Kategorie"
+
+#~ msgid "There is no such product"
+#~ msgstr "Tento produkt neexistuje"
+
+#~ msgid "vyberte typ obsahu"
+#~ msgstr "vyberte typ obsahu"
+
+#~ msgid "There is not such user with the given login or email"
+#~ msgstr "Tady není uživatel s tímto loginem nebo e-mailem"
+
 #~ msgid ""
 #~ "You are about to permanently delete brand %1\n"
 #~ "Are you sure about that?"
@@ -1116,9 +1880,6 @@ msgstr ""
 
 #~ msgid "Add a new brand"
 #~ msgstr "Přidat novou značku"
-
-#~ msgid "No record has been found."
-#~ msgstr "Nebyl nalezen žádný záznam."
 
 #~ msgid "The product is not yet placed in a category with a filter."
 #~ msgstr "Produkt zatím nebyl zařazen do kategorie s filtrem."
@@ -1169,9 +1930,6 @@ msgstr ""
 #~ msgid "Variants are not considered for this product"
 #~ msgstr "Varianty nejsou pro tento produkt uvažovány"
 
-#~ msgid "Are you sure?"
-#~ msgstr "Jste si jistý?"
-
 #~ msgid "switch to the variant mode"
 #~ msgstr "přepnout do variantního režimu"
 
@@ -1201,12 +1959,6 @@ msgstr ""
 
 #~ msgid "Has variants?"
 #~ msgstr "Má varianty?"
-
-#~ msgid "Created at"
-#~ msgstr "Vytvořeno"
-
-#~ msgid "Updated at"
-#~ msgstr "Změněno"
 
 #~ msgid "Chystáte se smazat produkt %1. Jste si jistý/á?"
 #~ msgstr "Chystáte se smazat produkt %1. Jste si jistý/á?"
@@ -1386,15 +2138,6 @@ msgstr ""
 #~ msgid "Přidat obrázek"
 #~ msgstr "Přidat obrázek"
 
-#~ msgid "Welcome administrator!"
-#~ msgstr "Vítejte administrátore!"
-
-#~ msgid "Subscribed since"
-#~ msgstr "Přihlášen od"
-
-#~ msgid "Export emails in CSV"
-#~ msgstr "Export e-mailů v CSV"
-
 #~ msgid "This page has no subpages"
 #~ msgstr "Tato stránka nemá podstránky"
 
@@ -1416,21 +2159,6 @@ msgstr ""
 
 #~ msgid "[%1]"
 #~ msgstr "[%1]"
-
-#~ msgid "User"
-#~ msgstr "Uživatel"
-
-#~ msgid "Created from address"
-#~ msgstr "Vytvořeno z adresy"
-
-#~ msgid "Password recovered?"
-#~ msgstr "Heslo obnoveno?"
-
-#~ msgid "Recovered at"
-#~ msgstr "Obnoveno dne"
-
-#~ msgid "Recovered from address"
-#~ msgstr "Obnoveno z adresy"
 
 #~ msgid ""
 #~ "You are about to delete the attachment %1\n"
@@ -1467,76 +2195,11 @@ msgstr ""
 #~ "Chystáte se trvale smazat prodejnu %1\n"
 #~ "Jsi si tím jistý(á)?"
 
-#~ msgid "Add new tag"
-#~ msgstr "Přidat nový štítek"
-
-#~ msgid "No tag has been found."
-#~ msgstr "Nebyl nalezen žádný štítek."
-
-#~ msgid "Tag"
-#~ msgstr "Štítek"
-
-#~ msgid ""
-#~ "You are about to permanently delete tag %1\n"
-#~ "\tAre you sure about that?"
-#~ msgstr ""
-#~ "Chystáte se smazat štítek %1\n"
-#~ "\tUrčite to chcete?"
-
-#~ msgid "Delete tag"
-#~ msgstr "Smazat štítek"
-
-#~ msgid ""
-#~ "At the moment no one knows the actual user's password because passwords "
-#~ "are not stored in plain text form. In this form you can set a new "
-#~ "password to the user <em>%1</em>"
-#~ msgstr ""
-#~ "Momentálně nikdo nezná heslo uživatele, protože hesla nejsou ukládána v "
-#~ "čitelné podobě. V tomto formuláři můžete nastavit nové heslo uživateli "
-#~ "<em>%1</em>"
-
-#~ msgid "Create a new user"
-#~ msgstr "Vytvořit nového uživatele"
-
-#~ msgid "Username"
-#~ msgstr "Uživatelské jméno"
-
-#~ msgid "Is admin?"
-#~ msgstr "Je administrátor?"
-
-#~ msgid "Sign in as this user"
-#~ msgstr "Přihlásit se jako tento uživatel"
-
-#~ msgid ""
-#~ "You are about to permanently delete user %1\n"
-#~ "\tAre you sure about that?"
-#~ msgstr ""
-#~ "Chystáte se nevratně smazat uživatele %1\n"
-#~ "\tJste si skutečně jistý?"
-
-#~ msgid "Delete user"
-#~ msgstr "Smazat uživatele"
-
 #~ msgid "Adding new accessory product"
 #~ msgstr "Přidání nového příslušenství"
 
 #~ msgid "Accessory product has been added"
 #~ msgstr "Příslušenství bylo přidáno"
-
-#~ msgid "Welcome screen"
-#~ msgstr "Vítací obrazovka"
-
-#~ msgid "Pages"
-#~ msgstr "Stránky"
-
-#~ msgid "Users"
-#~ msgstr "Uživatelé"
-
-#~ msgid "Password recoveries"
-#~ msgstr "Obnovy hesel"
-
-#~ msgid "Newsletter subscribers"
-#~ msgstr "Odběratelé newsletteru"
 
 #~ msgid "filtr"
 #~ msgstr "filtr"
@@ -1555,24 +2218,6 @@ msgstr ""
 
 #~ msgid "Editace objektu typu %s"
 #~ msgstr "Editace objektu typu %s"
-
-#~ msgid "The entry has been deleted"
-#~ msgstr "Záznam byl smazán"
-
-#~ msgid "Listing Articles"
-#~ msgstr "Výpis článků"
-
-#~ msgid "Create article"
-#~ msgstr "Vytvořit článek"
-
-#~ msgid "The article has been created successfully"
-#~ msgstr "Článek byl úspěšně vytvořen"
-
-#~ msgid "Editing %s"
-#~ msgstr "Editace %s"
-
-#~ msgid "The article has been updated successfully"
-#~ msgstr "Článek byl úspěšně aktualizován"
 
 #~ msgid "Přílohy k objektu %s#%s"
 #~ msgstr "Přílohy k objektu %s#%s"
@@ -1748,9 +2393,6 @@ msgstr ""
 #~ msgid "The image has been deleted"
 #~ msgstr "Obrázek byl smazán"
 
-#~ msgid "Newsletter Subscribers"
-#~ msgstr "Odběratelé newsletteru"
-
 #~ msgid "Create page"
 #~ msgstr "Vytvořit stránku"
 
@@ -1787,24 +2429,6 @@ msgstr ""
 #~ msgid "Edit store"
 #~ msgstr "Editace prodejny"
 
-#~ msgid "Listing Tags"
-#~ msgstr "Přehled štítků"
-
-#~ msgid "Create a new tag"
-#~ msgstr "Vytvořit nový štítek"
-
-#~ msgid "The tag has been created successfully"
-#~ msgstr "Štítek byl úspěšně vytvořen"
-
-#~ msgid "Editing tag %s"
-#~ msgstr "Editace štítku %s"
-
-#~ msgid "The same tag already exists"
-#~ msgstr "Stejný štítek již existuje"
-
-#~ msgid "The tag has been updated"
-#~ msgstr "Štítek byl aktualizován"
-
 #~ msgid "Editace klíče %s"
 #~ msgstr "Editace klíče %s"
 
@@ -1817,35 +2441,6 @@ msgstr ""
 #~ msgid "New technical specification record has been created"
 #~ msgstr "Byl vytvořen nový záznam technické specifikace"
 
-#~ msgid "Users list"
-#~ msgstr "Seznam uživatelů"
-
-#~ msgid "The user has been created successfully"
-#~ msgstr "Uživatel byl úspěšně vytvořen"
-
-#~ msgid "Editing user %s"
-#~ msgstr "Editace uživatele %s"
-
-#~ msgid "The user entry has been updated"
-#~ msgstr "Záznam o uživateli byl aktualizován"
-
-#~ msgid "Setting a new password to the user %s"
-#~ msgstr "Nastavit nové heslo uživateli %s"
-
-#~ msgid ""
-#~ "The new password has been set to the user <em>%user%</em>.<br>Would be "
-#~ "nice to let him know at email address <a href=\"mailto:%email%\">%email%</"
-#~ "a>."
-#~ msgstr ""
-#~ "Nové heslo bylo nastaveno uživateli <em>%user%</em>.<br>Bude hezké, když "
-#~ "mu o tom napíšete na e-mail <a href=\"mailto:%email%\">%email%</a>."
-
-#~ msgid "The user entry has been deleted"
-#~ msgstr "Uživatel byl smazán"
-
-#~ msgid "Now you are logged as <em>%s</em>"
-#~ msgstr "Nyní jste přihlášen jako <em>%s</em>"
-
 #~ msgid "Code"
 #~ msgstr "Kód"
 
@@ -1855,18 +2450,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Alternativní klíč pro systémové použití. Ponechte beze změny, pokud si "
 #~ "nejste jisti."
-
-#~ msgid "Body"
-#~ msgstr "Tělo"
-
-#~ msgid "Mardown format is expected"
-#~ msgstr "Je očekáván formát Markdown"
-
-#~ msgid "Published At"
-#~ msgstr "Publikováno dne"
-
-#~ msgid "Search articles"
-#~ msgstr "Vyhledat články"
 
 #~ msgid "User Manual"
 #~ msgstr "Uživatelský manuál"
@@ -1941,12 +2524,6 @@ msgstr ""
 #~ msgid "e.g. material or color"
 #~ msgstr "např. materiál nebo barva"
 
-#~ msgid "Description"
-#~ msgstr "Popis"
-
-#~ msgid "Image"
-#~ msgstr "Obrázek"
-
 #~ msgid "Is visible?"
 #~ msgstr "Je viditelné?"
 
@@ -1995,9 +2572,6 @@ msgstr ""
 #~ msgid "Krátký popis"
 #~ msgstr "Krátký popis"
 
-#~ msgid "Search tags"
-#~ msgstr "Vyhledat štítky"
-
 #~ msgid "Key"
 #~ msgstr "Klíč"
 
@@ -2007,30 +2581,11 @@ msgstr ""
 #~ msgid "Localized value"
 #~ msgstr "Lokalizovaná hodnota"
 
-#~ msgid "Set password"
-#~ msgstr "Nastavit heslo"
-
-#~ msgid "Search users"
-#~ msgstr "Hledat uživatele"
-
-#~ msgid "Actions"
-#~ msgstr "Akce"
-
 #~ msgid "Create new subpage"
 #~ msgstr "Vytvořit novou podstránku"
 
 #~ msgid "Currently there are no attachments"
 #~ msgstr "Momentálně tady nejsou žádné přílohy"
-
-#~ msgid ""
-#~ "Please note that default administration access is admin/admin. Be a smart "
-#~ "guy and change admin's password on production promptly."
-#~ msgstr ""
-#~ "Mějte prosím na paměti, že administrátorský přístup je admin/admin. Buďtě "
-#~ "chytrý chlapík a v produkčním prostředí změnte okamžitě adminovo heslo."
-
-#~ msgid "News section"
-#~ msgstr "Sekce s novinkama"
 
 #~ msgid ""
 #~ "If you are brave enough to install the Catalog on your computer, check "
@@ -2041,23 +2596,11 @@ msgstr ""
 #~ "podívejte se na <a href=\"https://github.com/atk14/Atk14Catalog/blob/"
 #~ "master/README.md#installation\">návod k instalaci.</a>"
 
-#~ msgid "News archive"
-#~ msgstr "Archív novinek"
-
 #~ msgid "Editing page '%s'"
 #~ msgstr "Editace stránky '%s'"
 
 #~ msgid "The pages has been deleted"
 #~ msgstr "Stránka byla smazána"
-
-#~ msgid "News"
-#~ msgstr "Novinky"
-
-#~ msgid ""
-#~ "Mention tag <em>%s</em> when this article should be displayed in the news "
-#~ "section"
-#~ msgstr ""
-#~ "Uveďte štítek <em>%s</em>, pokud se má tento článek objevit mezi novinkama"
 
 #~ msgid "An alternative key. Leave empty if you are not sure."
 #~ msgstr "Alternativní klíč. Pokud si nejste jistý, ponechte prázdné."
@@ -2067,554 +2610,3 @@ msgstr ""
 
 #~ msgid "Značka"
 #~ msgstr "Brand"
-
-#~ msgid "About %s"
-#~ msgstr "O %s"
-
-#~ msgid "Headers"
-#~ msgstr "Hlavičky"
-
-#~ msgid "HTML body"
-#~ msgstr "HTML část zprávy"
-
-#~ msgid "Plain text body"
-#~ msgstr "Textová část"
-
-#~ msgid "No mail has been sent"
-#~ msgstr "Žádný e-mail nebyl odeslán"
-
-#~ msgid "This doesn't look like an URL"
-#~ msgstr "Toto nevypadá jako URL"
-
-#~ msgid "This field is required."
-#~ msgstr "Toto pole je povinné"
-
-#~ msgid "Enter a valid value."
-#~ msgstr "Vložte správnou hodnotu."
-
-#~ msgid ""
-#~ "Select a valid choice. %(value)s is not one of the available choices."
-#~ msgstr "Vyberte platnou hodnotu. %(value) není jedna z nabízených možností."
-
-#~ msgid "Enter a list of values."
-#~ msgstr "Zadejte seznam hodnot."
-
-#~ msgid "Please, choose the right options."
-#~ msgstr "Prosím, vyberte správné možnosti."
-
-#~ msgid "Enter a number."
-#~ msgstr "Zadejte číslo."
-
-#~ msgid "Ensure this value is less than or equal to %value%."
-#~ msgstr "Hodnota musí být rovna nebo  menší než %value%."
-
-#~ msgid "Ensure this value is greater than or equal to %value%."
-#~ msgstr "Hodnota musí být rovna nebo větší než %value%."
-
-#~ msgid "Enter a whole number."
-#~ msgstr "Zadejte celé číslo."
-
-#~ msgid "Enter a valid date, hours, minutes and seconds."
-#~ msgstr "Zadejte platné datum, hodiny, minuty a sekundy."
-
-#~ msgid "Enter a valid date."
-#~ msgstr "Zadejde platné datum."
-
-#~ msgid ""
-#~ "Select a valid choice. That choice is not one of the available choices."
-#~ msgstr ""
-#~ "Vyberte platnou hodnotu. Vybraná hodnota není ani jedna z nabízených "
-#~ "hodnot."
-
-#~ msgid "Please, choose the right option."
-#~ msgstr "Prosím, vyberte správnou možnost."
-
-#~ msgid "Ensure this value has at most %max% characters (it has %length%)."
-#~ msgstr "Hodnota musí být dlouhá nejvýše %max% znaků (teď má %length%)."
-
-#~ msgid "Ensure this value has at least %min% characters (it has %length%)."
-#~ msgstr "Hodnota musí mít alespoň %min% znaků (teď má %length%)."
-
-#~ msgid "Ensure this value has at most %max% characters."
-#~ msgstr "Tato hodnota "
-
-#~ msgid "Ensure this value has at least %min% characters."
-#~ msgstr "Hodnota musí mít alespoň %min% znaků."
-
-#~ msgid "Ensure this value has between %min% and %max% characters."
-#~ msgstr "Délka řetězce musí být mezi %min% a %max% znaky."
-
-#~ msgid "Ensure this file is image."
-#~ msgstr "Ověřte, že tento soubor je obrázek."
-
-#~ msgid "Ensure this image is %width_required% pixels wide (it is %width%)."
-#~ msgstr ""
-#~ "Ujistěte se, že je šířka obrázku %width_required% bodů (teď je šířoký "
-#~ "%width%)."
-
-#~ msgid "Ensure this image is %height_required% pixels high (it is %height%)."
-#~ msgstr ""
-#~ "Ujistěte se, že výška obrázku je %height_required% bodů (teď je vysoký "
-#~ "%height%)."
-
-#~ msgid "Ensure this image is at most %max% pixels wide (it is %width%)."
-#~ msgstr ""
-#~ "Ujistěte se, že šířka obrázku nepřekročí %max% bodů (teď je šíroký %width"
-#~ "%)."
-
-#~ msgid "Ensure this image is at most %max% pixels high (it is %height%)."
-#~ msgstr ""
-#~ "Ujistěte se, že výška obrázku nepřekročí %max% bodů (teď je vysoký %height"
-#~ "%)."
-
-#~ msgid "Ensure this image is at least %min% pixels wide (it is %width%)."
-#~ msgstr "Obrázek musí mít alespoň %min% bodů na šířku (nyní má %width%). "
-
-#~ msgid "Ensure this image is at least %min% pixels high (it is %height%)."
-#~ msgstr "Obrázek musí mít alespoň %min% bodů na výšku (nyní má %height%). "
-
-#~ msgid "Ensure this image is in a required format"
-#~ msgstr "Ujistěte se, že je obrázek v požadovaném formátu"
-
-#~ msgid "Enter a valid date, hours and minutes."
-#~ msgstr "Zadejte platné datum, hodiny a minuty."
-
-#~ msgid ""
-#~ "Ensure this file has at most %max_file_size% bytes (it has %file_size%)"
-#~ msgstr ""
-#~ "Ujistěte se, že velikost souboru nepřekročí %max_file_size% bytů (teď má "
-#~ "%file_size%)"
-
-#~ msgid "Unsupported file type: %mime_type%"
-#~ msgstr "Nepodporovaný typ souboru: %mime_type%"
-
-#~ msgid ""
-#~ "The uploaded file exceeds the max file size value that is set on the "
-#~ "server (%upload_max_filesize%)"
-#~ msgstr ""
-#~ "Nahraný soubor překračuje maximální velikost souboru, která je nastavena "
-#~ "na serveru (%upload_max_filesize%)"
-
-#~ msgid ""
-#~ "The uploaded file exceeds the max file size directive that was specified "
-#~ "in the HTML form (%MAX_FILE_SIZE%)"
-#~ msgstr ""
-#~ "Velikost nahraného souboru přesahuje maximální velikost, která je "
-#~ "nastavena v HTML formuláři (%MAX_FILE_SIZE%)"
-
-#~ msgid "The uploaded file was only partially uploaded"
-#~ msgstr "Nahraný soubor byl nahrán jen částečně"
-
-#~ msgid "Missing a temporary folder"
-#~ msgstr "Adresář pro dočasné soubory chybí"
-
-#~ msgid "Failed to write file to disk"
-#~ msgstr "Soubor se nepodařilo zapsat na disk"
-
-#~ msgid "File upload stopped by an extension installed on the server"
-#~ msgstr ""
-#~ "Nahrávání souboru bylo zastaveno rozšířením nainstalovaným na serveru"
-
-#~ msgid "An error occurred during file upload"
-#~ msgstr "Během nahrávání souboru došlo k chybě"
-
-#~ msgid "Enter a valid e-mail address."
-#~ msgstr "Zadejte platnou e-mailovou adresu."
-
-#~ msgid "Enter a valid IP address."
-#~ msgstr "Vložte platnou IP adresu."
-
-#~ msgid "The form contains errors, therefore it cannot be processed."
-#~ msgstr "Formulář obsahuje chyby, proto nemůže být zpracován."
-
-#~ msgid "Please, submit the form again"
-#~ msgstr "Prosím, odešlete formulář znovu."
-
-#~ msgid "Sort table by this column"
-#~ msgstr "Třídit tabulku podle tohoto sloupce"
-
-#~ msgid "%s items total"
-#~ msgstr "%s položek celkem"
-
-#~ msgid "prev"
-#~ msgstr "předchozí"
-
-#~ msgid "next"
-#~ msgstr "následující"
-
-#~ msgid "and"
-#~ msgstr "a"
-
-#~ msgid "atk14.date_format"
-#~ msgstr "j.n.Y"
-
-#~ msgid "atk14.parse_date_pattern"
-#~ msgstr "/^(?<day>[0-9]{1,2})\\.(?<month>[0-9]{1,2})\\.(?<year>[0-9]{4})$/"
-
-#~ msgid "atk14.datetime_format"
-#~ msgstr "j.n.Y H:i"
-
-#~ msgid "atk14.parse_datetime_pattern"
-#~ msgstr ""
-#~ "/^(?<day>[0-9]{1,2})\\.(?<month>[0-9]{1,2})\\.(?<year>[0-9]{4}) (?"
-#~ "<hours>[0-9]{2}):(?<minutes>[0-9]{2})$/"
-
-#~ msgid "atk14.datetime_with_seconds_format"
-#~ msgstr "j.n.Y H:i:s"
-
-#~ msgid "atk14.parse_datetime_with_seconds_pattern"
-#~ msgstr ""
-#~ "/^(?<day>[0-9]{1,2})\\.(?<month>[0-9]{1,2})\\.(?<year>[0-9]{4}) (?"
-#~ "<hours>[0-9]{2}):(?<minutes>[0-9]{2}):(?<seconds>[0-9]{2})$/"
-
-#~ msgid "Service Unavailable"
-#~ msgstr "Služba je nedostupná"
-
-#~ msgid "This site is in maintenance. Please come back later."
-#~ msgstr "Probíhá údržba této stránky. Přijďte prosím později."
-
-#~ msgid "Create new user"
-#~ msgstr "Vytvořit nového uživatele"
-
-#~ msgid ""
-#~ "<em>ATK14 Skelet</em> is a very basic application written on top of <a "
-#~ "href=\"http://atk14.net\">the ATK14 Framework</a>.\n"
-#~ "\t\t\tAs the Skelet is simple and minimal it may be usefull for "
-#~ "developers as a good start point for any other application."
-#~ msgstr ""
-#~ "<em>ATK14 Skelet</em> je základní aplikace napsaná ve <a href=\"http://"
-#~ "atk14.net\">frameworku ATK14</a>.\n"
-#~ "\t\t\tSkelet je jednoduchý a minimalistický, proto může být pro webového "
-#~ "vývojáře dobrým startovacím místem pro jakoukoli další aplikaci."
-
-#~ msgid "The Skelet contains mainly"
-#~ msgstr "Skelet obsahuje hlavně"
-
-#~ msgid "About page"
-#~ msgstr "Stránka O nás"
-
-#~ msgid ""
-#~ "If you are brave enough to install the Skelet on your computer, check out "
-#~ "<a href=\"https://github.com/atk14/Atk14Skelet/blob/master/README."
-#~ "md#installation\">the installation instrunction.</a>"
-#~ msgstr ""
-#~ "Pokud jste dost odvážný, nainstalujte si Skelet na svůj počítač. Mrkněte "
-#~ "na <a href=\"https://github.com/atk14/Atk14Skelet/blob/master/README."
-#~ "md#installation\">navod k instalaci.</a>"
-
-#~ msgid ""
-#~ "If you want to help us to improve the Skelet, <a href=\"https://github."
-#~ "com/atk14/Atk14Skelet\">fork it on GitHub.</a>"
-#~ msgstr ""
-#~ "Pokud chcete pomoct při zlepšování Skeletu, <a href=\"https://github.com/"
-#~ "atk14/Atk14Skelet\">forkněte si ho na GitHubu.</a>"
-
-#~ msgid "ATK14 Skelet on GitHub"
-#~ msgstr "ATK14 Skelet na GitHubu"
-
-#~ msgid "Add New"
-#~ msgstr "Přidat novinku"
-
-#~ msgid "The article has been deleted"
-#~ msgstr "Článek byl smazán"
-
-#~ msgid "Current Password"
-#~ msgstr "Aktuální heslo"
-
-#~ msgid "New Password"
-#~ msgstr "Nové heslo"
-
-#~ msgid "Search records"
-#~ msgstr "Hledat záznamy"
-
-#~ msgid "Disallowed file type (%mime_type%)"
-#~ msgstr "Nepovolený typ souboru (%mime_type%)"
-
-#~ msgid ""
-#~ "Hello %1!\n"
-#~ "\n"
-#~ "Have you forgotten you password? To reset your password, click on the "
-#~ "link below\n"
-#~ "\n"
-#~ "%2\n"
-#~ "\n"
-#~ "Please note that this link is valid for 2 hours only."
-#~ msgstr ""
-#~ "Dobrý den %1!\n"
-#~ "\n"
-#~ "Zapoměl jste přihlašovací heslo? Pro nastavení nového hesla klikněte na "
-#~ "odkaz\n"
-#~ "\n"
-#~ "%2\n"
-#~ "\n"
-#~ "Mějte prosím na paměti, ze tento odkaz je platný pouze 2 hodiny."
-
-#~ msgid "Image URL"
-#~ msgstr "URL obrázku"
-
-#~ msgid "The Creature Show"
-#~ msgstr "Přehlídka příšer"
-
-#~ msgid "Creating new creature"
-#~ msgstr "Vytvoření nové příšerky"
-
-#~ msgid "A new creature has been successfully created"
-#~ msgstr "Nová příšerka byla vytvořena"
-
-#~ msgid "Detail of the creature #%s"
-#~ msgstr "Podrobnosti o příšerce #%s"
-
-#~ msgid "Editing the creature #%s"
-#~ msgstr "Editovat příšerku #%s"
-
-#~ msgid "The creature has been changed successfully."
-#~ msgstr "Příšerka byla úspěšně změněna."
-
-#~ msgid "my beautiful application"
-#~ msgstr "moje nádherná aplikace"
-
-#~ msgid ""
-#~ "If you are brave enough to install the Skelet on your computer, check out "
-#~ "<a href=\"https://github.com/yarri/Atk14Skelet/blob/master/README."
-#~ "md#installation\">the installation instrunction.</a>"
-#~ msgstr ""
-#~ "Pokud si troufáte na instalaci Skeletu na váš počítač, přečtěte si <a "
-#~ "href=\"https://github.com/yarri/Atk14Skelet/blob/master/README."
-#~ "md#installation\">instalační instrukce.</a>"
-
-#~ msgid ""
-#~ "If you want to help us to improve the Skelet, <a href=\"https://github."
-#~ "com/yarri/Atk14Skelet\">fork it on GitHub.</a>"
-#~ msgstr ""
-#~ "Pokud nám chcete pomoct s vývojem Skeletu, <a href=\"https://github.com/"
-#~ "yarri/Atk14Skelet\">forkněte si ho na GitHubu.</a>"
-
-#~ msgid "E-mail address"
-#~ msgstr "E-mailová adresa"
-
-#~ msgid "Login or e-mail address"
-#~ msgstr "Login nebo e-mailová adresa"
-
-#~ msgid "Your e-mail"
-#~ msgstr "Váš e-mail"
-
-#~ msgid "There is not such user with the given login or e-mail"
-#~ msgstr "Tady není uživatel s takovým loginem nebo e-mailem."
-
-#~ msgid "Access denied"
-#~ msgstr "Přístup byl odmítnut"
-
-#~ msgid "Listing News"
-#~ msgstr "Sezam novinek"
-
-#~ msgid "Create news entry"
-#~ msgstr "Vytvořit nový záznam"
-
-#~ msgid "The news entry has been created successfully"
-#~ msgstr "Novinka byla úspěšně vytvořena"
-
-#~ msgid "The news entry has been updated successfully"
-#~ msgstr "Novinka byla úspěšně změněna"
-
-#~ msgid "The news entry has been deleted"
-#~ msgstr "Novinka byla smazána"
-
-#~ msgid "The form contains errors, therefor it cannot be processed."
-#~ msgstr "Formulář obsahuje chyby, proto nemůže být zpracován."
-
-#~ msgid "No record has been found"
-#~ msgstr "Nebyl nalezen žádný záznam"
-
-#~ msgid ""
-#~ "Are you sure to delete news item\n"
-#~ "%1?"
-#~ msgstr ""
-#~ "Jste si jistý smazáním novinky\n"
-#~ "%1?"
-
-#~ msgid "Delete news"
-#~ msgstr "Smazat novinku"
-
-#~ msgid "Search news items"
-#~ msgstr "Hladat v novinkách"
-
-#~ msgid "The list is empty"
-#~ msgstr "Seznam je prázdný"
-
-#~ msgid "No records found."
-#~ msgstr "Nebyl nalezen žádný záznam."
-
-#~ msgid "E-mail"
-#~ msgstr "E-mail"
-
-#~ msgid "The password recovery link has been sent to your e-mail address."
-#~ msgstr "Odkaz pro obnovu hesla byl odeslán na vaší e-mailovou adresu"
-
-#~ msgid "We are deeply sorry but you are not authorized to see this page!"
-#~ msgstr ""
-#~ "Je nám nesmírně líto, ale nejste autorizován k prohlížení této stránky!"
-
-#~ msgid ""
-#~ "Best regards\n"
-#~ "\n"
-#~ "%1 Support Team\n"
-#~ "web: %2\n"
-#~ "e-mail: %3"
-#~ msgstr ""
-#~ "S pozdravem\n"
-#~ "\n"
-#~ "%1 Support Team\n"
-#~ "web: %2\n"
-#~ "e-mail: %3"
-
-#~ msgid ""
-#~ "If you have any question, contact us through the following form. We will "
-#~ "reply to you as soon as we can."
-#~ msgstr ""
-#~ "Pokud máte nějakou otázku, kontaktujte nás prostřednictvím tohoto "
-#~ "formuláře. Odpovíme vám, jak nejdříve budeme moct."
-
-#~ msgid "Below the form you'll find other contact information."
-#~ msgstr "Pod tímto formulářem najdete další kontaktní informace"
-
-#~ msgid "Create a new creature"
-#~ msgstr "Vytvořit novou příšeru"
-
-#~ msgid "No creature was found."
-#~ msgstr "Nebyla nalezena žádná příšerka."
-
-#~ msgid "Id"
-#~ msgstr "Id"
-
-#~ msgid ""
-#~ "<em>The Creature Show</em> gives you a opportunity to inspect a "
-#~ "functional ATK14 code immediatelly after a new web-app installation."
-#~ msgstr ""
-#~ "<em>Přehlídka příšer</em> slouží k prozkoumání funkčního kódu právě "
-#~ "nainstalované ATK14 aplikace."
-
-#~ msgid ""
-#~ "For a beginner there is a lot of things to study. Inspect following files "
-#~ "and direcories."
-#~ msgstr ""
-#~ "Pro začátečníka je tady spousta věcí ke studiu. Prohlédněte si například "
-#~ "následující soubory a adresáře."
-
-#~ msgid "Update creature"
-#~ msgstr "Aktualizovat příšerku"
-
-#~ msgid "Are you sure to destroy the creature #%1?"
-#~ msgstr "Jste si jistý smazáním příšerky #%1?"
-
-#~ msgid "detail"
-#~ msgstr "podrobnosti"
-
-#~ msgid "edit"
-#~ msgstr "editovat"
-
-#~ msgid "destroy"
-#~ msgstr "smazat"
-
-#~ msgid "An image of the creature"
-#~ msgstr "Obrázek příšerky"
-
-#~ msgid "Get the creature as JSON"
-#~ msgstr "Příšerka ve formátu JSON"
-
-#~ msgid "Get the creature as XML"
-#~ msgstr "Příšerka ve formátu XML"
-
-#~ msgid "Create new creature"
-#~ msgstr "Vytvořit novou příšerku"
-
-#~ msgid "This is app/views/application/error404.tpl template"
-#~ msgstr "Toto je šablona app/views/application/error404.tpl"
-
-#~ msgid "required"
-#~ msgstr "povinné"
-
-#~ msgid "Example:"
-#~ msgstr "Příklad"
-
-#~ msgid "It's working!"
-#~ msgstr "Fachá to!"
-
-#~ msgid "Hi there, it's nice to see you!"
-#~ msgstr "Ahoj. Je pěkné, že jste tady!"
-
-#~ msgid "What you see is a freshly installed ATK14 application."
-#~ msgstr "To, co vidíte, je čerstvě nainstalovaná ATK14 aplikace."
-
-#~ msgid ""
-#~ "This HTTP request is handled by the <code>app/controllers/main_controller."
-#~ "php</code> and the <code>index()</code> action."
-#~ msgstr ""
-#~ "Tento HTTP požadavek je obsloužen kontrolerem <code>app/controllers/"
-#~ "main_controller.php</code> a jeho akcí <code>index()</code>."
-
-#~ msgid "This is <code>app/views/main/index.tpl</code> template."
-#~ msgstr "Toto je šablona <code>app/views/main/index.tpl</code>."
-
-#~ msgid "Where to go?"
-#~ msgstr "Kam zajít?"
-
-#~ msgid "visit the Creatures show"
-#~ msgstr "navštívit Přehlídku příšer"
-
-#~ msgid "check out 404 error page"
-#~ msgstr "prověřte chybovou stránku 404"
-
-#~ msgid ""
-#~ "switch the language: <a href=\"%1\">english</a> or <a href=\"%2\">czech</"
-#~ "a>"
-#~ msgstr ""
-#~ "Změnit jazyk: <a href=\"%1\">angličtina</a> nebo <a href=\"%2\">čeština</"
-#~ "a>"
-
-#~ msgid "gettext dictionaries are placed in <code>locale/</code> directory"
-#~ msgstr "gettextové slovníky jsou umístěny v adresáři <code>locale/</code>"
-
-#~ msgid "External links"
-#~ msgstr "Externí odkazy"
-
-#~ msgid "ATK14 project website"
-#~ msgstr "Stránky projektu ATK14"
-
-#~ msgid "The ATK14 Book"
-#~ msgstr "Kniha ATK14"
-
-#~ msgid "The API reference"
-#~ msgstr "API reference"
-
-#~ msgid "ATK14 project page on Github"
-#~ msgstr "stránky projektu ATK14 na Githubu"
-
-#~ msgid ""
-#~ "This HTTP request is handled by the MainController and the index() action."
-#~ msgstr ""
-#~ "Tento HTTP požadavek je obsloužen kontrolerem MainController a jeho akcí "
-#~ "index()."
-
-#~ msgid "This is app/views/main/index.tpl template."
-#~ msgstr "Toto je šablona app/views/main/index.tpl."
-
-#~ msgid "gettext dictionaries are placed in locale/ directory"
-#~ msgstr "gettextove slovníky jsou umístěny v adresáři locale/"
-
-#~ msgid "Listing creatures"
-#~ msgstr "Seznam příšer"
-
-#~ msgid "ATK14 Powered Website"
-#~ msgstr "Webové místo pohání ATK14"
-
-#~ msgid "Nothing was found."
-#~ msgstr "Nic nebylo nalezeno."
-
-#~ msgid "New Creature Form"
-#~ msgstr "Formulář pro vytvoření nové příšerky"
-
-#~ msgid "Nice to see you."
-#~ msgstr "Rád vás vidím."
-
-#~ msgid "Where to go"
-#~ msgstr "Kam zajít"
