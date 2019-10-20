@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-20 12:29+0200\n"
-"PO-Revision-Date: 2019-10-20 13:32+0200\n"
+"POT-Creation-Date: 2019-10-20 16:35+0200\n"
+"PO-Revision-Date: 2019-10-20 17:14+0200\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: Team <team@email.com>\n"
 "Language: cs_CZ\n"
@@ -93,6 +93,58 @@ msgstr "starší článek"
 msgid "At the moment there are no news."
 msgstr "V této chvíli nejsou žádné novinky"
 
+msgid "Accessories"
+msgstr "Příslušenství"
+
+msgid "Product locations"
+msgstr "Umístění produktu"
+
+msgid "Consumables"
+msgstr "Spotřební materiál"
+
+msgid "Brand:"
+msgstr "Značka:"
+
+msgid "Are you interested in this product?"
+msgstr "Zajímá vás tento produkt?"
+
+msgid "catalog number: %1"
+msgstr "Číslo produktu: %1"
+
+msgid "Related products"
+msgstr "Související produkty"
+
+msgid "Subcategories"
+msgstr "Podkategorie"
+
+msgid "Products"
+msgstr "Produkty"
+
+msgid "No product has been found."
+msgstr "Žádný produkt nebyl nalezen."
+
+msgid "Products in the collection %1"
+msgstr "Produkty v kolekci %1"
+
+msgid "Greetings"
+msgstr "Dobrý den"
+
+msgid ""
+"I would like to know more about products and services you offered on the web "
+"site %1."
+msgstr ""
+"Rád bych se dozvěděl více o produktech a službách, které nabízíte na "
+"webových stránkách %1."
+
+msgid "I would like to know more about the product"
+msgstr "Rád bych se dozvěděl více o produktu"
+
+msgid "Please contact me."
+msgstr "Prosím kontaktujte mě."
+
+msgid "The message has been sent. Thank you!"
+msgstr "Zpráva byla odeslána. Děkujeme!"
+
 msgid "Have you forgotten password?"
 msgstr "Zapomněl jste heslo?"
 
@@ -147,6 +199,26 @@ msgstr "login"
 msgid "name"
 msgstr "Ihr Name"
 
+msgid ""
+"Hello,\n"
+"\n"
+"thank you for your interest in our products. We will contact you as soon as "
+"we can."
+msgstr ""
+"Dobrý den,\n"
+"\n"
+"děkujeme, že se zajímáte o naše produkty. Co nejdříve Vás budeme kontaktovat."
+
+msgid "Here is the message you sent to us:"
+msgstr "Zde je zpráva, kterou jste nám zaslal:"
+
+msgid "Thank you and have a nice day!"
+msgstr "Děkujeme a přejeme hezký den!"
+
+#: ../app/forms/information_requests/create_new_form.php:15
+msgid "Phone"
+msgstr "Telefon"
+
 msgid "The message has been sent to us. We will reply as soon as we can."
 msgstr "Zpráva nám byla odeslána. Odpovíme vám jak nejrychleji umíme."
 
@@ -162,17 +234,27 @@ msgstr ""
 msgid "%1 Team"
 msgstr "%1 Tým"
 
-msgid "Phone"
-msgstr "Telefon"
-
 msgid "Opening hours"
 msgstr "Otevírací hodiny"
 
 msgid "From dusk till dawn"
 msgstr "Od soumraku do úsvitu"
 
-msgid "The Skelet contains mainly"
-msgstr "Skelet obsahuje hlavně"
+msgid "The Catalog contains mainly"
+msgstr "Katalog obsahuje zejména"
+
+msgid "List of categories"
+msgstr "Seznam kategorií"
+
+msgid "List of brands"
+msgstr "Seznam značek"
+
+msgid "List of collections"
+msgstr "Seznam kolekcí"
+
+#: ../app/controllers/stores_controller.php:5
+msgid "List of stores"
+msgstr "Seznam prodejen"
 
 msgid "Pages with a hierarchical structure"
 msgstr "Stránky s hierarchickou strukturou"
@@ -215,26 +297,26 @@ msgid "Installation"
 msgstr "Instalace"
 
 msgid ""
-"Are you planning to kick up a new project from the Atk14Skelet? Great! Just "
+"Are you planning to kick up a new project from the Atk14Catalog? Great! Just "
 "run the following commands."
 msgstr ""
-"Chystáte se pustit do nového projektu na Atk14Skeletu? Skvělé! Stačí spustit "
-"následující příkazy."
+"Chystáte se pustit do nového projektu na Atk14SCatalogu? Skvělé! Stačí "
+"spustit následující příkazy."
 
 msgid ""
 "You can find more information in <a href=\"https://github.com/atk14/"
-"Atk14Skelet/blob/master/README.md#installation\">the installation "
+"Atk14Catalog/blob/master/README.md#installation\">the installation "
 "instructions.</a>"
 msgstr ""
-"Více informací naleznete v <a href=\"https://github.com/atk14/Atk14Skelet/"
+"Více informací naleznete v <a href=\"https://github.com/atk14/Atk14Catalog/"
 "blob/master/README.md#installation\">pokynech k instalaci.</a>"
 
 msgid ""
-"If you want to help us to improve the Atk14Skelet, <a href=\"https://github."
-"com/atk14/Atk14Skelet\">fork it on GitHub.</a>"
+"If you want to help us to improve the Catalog, <a href=\"https://github.com/"
+"atk14/Atk14Catalog\">fork it on GitHub.</a>"
 msgstr ""
-"Chcete-li nám pomoct vylepšit Atk14Skelet, <a href=\"https://github.com/"
-"atk14/Atk14Skelet\">forkněte si ho na GitHubu. </a>"
+"Pokud chcete pomoci s vylepšováním ATK14 katalogu, <a href=\"https://github."
+"com/atk14/Atk14Catalog\">forkněte si ho na GitHubu.</a>"
 
 msgid "Further Reading & Resources"
 msgstr "Další čtení a zdroje"
@@ -251,8 +333,8 @@ msgstr "API reference"
 msgid "ATK14 on GitHub"
 msgstr "ATK14 na GitHubu"
 
-msgid "ATK14 Skelet on GitHub"
-msgstr "ATK14 Skelet na GitHubu"
+msgid "ATK14 Catalog on GitHub"
+msgstr "ATK14 Katalog na GitHubu"
 
 msgid "This is not a visible page! It's not available to the public audience."
 msgstr "Toto není viditelná stránka! Není dostupná veřejnosti."
@@ -282,6 +364,15 @@ msgstr ""
 msgid "Attachments"
 msgstr "Přílohy"
 
+msgid "no image"
+msgstr "bez obrázku"
+
+msgid "Products in the collection"
+msgstr "Produkty v kolekci"
+
+msgid "List of Products"
+msgstr "Seznam produktů"
+
 msgid "The following difficulties have occurred during the form processing:"
 msgstr "Během zpracování formuláře došlo k následujícím chybám:"
 
@@ -300,6 +391,18 @@ msgstr "Volitelné"
 
 msgid "Examples:"
 msgstr "Příklady"
+
+msgid "Edit category"
+msgstr "Editovat kategorii"
+
+msgid "Add new category (sibling)"
+msgstr "Přidat novou kategorii (sourozence)"
+
+msgid "Add new subcategory (child)"
+msgstr "Přidat novou podkategorii (dítě)"
+
+msgid "Show category tree"
+msgstr "Zobrazit strom kategorií"
 
 msgid "Edit object"
 msgstr "Editovat objekt"
@@ -347,6 +450,9 @@ msgstr "Zde neleznete seznam příkazů v <em>%1</em>."
 msgid "Pages"
 msgstr "Stránky"
 
+msgid "Product categories"
+msgstr "Produktové kategorie"
+
 #: ../app/controllers/users_controller.php:17
 msgid "New user registration"
 msgstr "Registrace nového uživatele"
@@ -370,14 +476,22 @@ msgstr "Nabízíme skvělé restful API"
 msgid "Recent articles"
 msgstr "Nejnovější články"
 
+msgid "Address"
+msgstr "Adresa"
+
+msgid "Currently we have no store."
+msgstr "V současné době nemáme žádnou prodejnu."
+
 #: ../app/forms/users/create_new_form.php:6
 msgid "Username (login)"
 msgstr "Uživatelské jméno (login)"
 
+#: ../app/forms/information_requests/create_new_form.php:5
 #: ../app/forms/main/contact_form.php:5
 msgid "Your name"
 msgstr "Vaše jméno"
 
+#: ../app/forms/information_requests/create_new_form.php:10
 #: ../app/forms/main/contact_form.php:10
 msgid "Your email"
 msgstr "Váš e-mail"
@@ -439,6 +553,13 @@ msgstr "Vaše heslo bylo změněno"
 msgid "Message sent from contact page"
 msgstr "Zpráva zaslaná z kontaktní stránky"
 
+#: ../app/controllers/application_mailer.php:83
+#: ../app/controllers/application_mailer.php:92
+#: ../app/controllers/information_requests_controller.php:5
+#: ../app/controllers/information_requests_controller.php:39
+msgid "Request for information"
+msgstr "Žádost o informaci"
+
 #: ../app/controllers/application_rest_api.php:76
 #, php-format
 msgid "Commands in %s"
@@ -470,6 +591,26 @@ msgstr "Články"
 #, php-format
 msgid "Articles tagged with <em>%s</em>"
 msgstr "Články se štítkem <em>%s</em>"
+
+#: ../app/controllers/brands_controller.php:4
+msgid "List of Brands"
+msgstr "Seznam značek"
+
+#: ../app/controllers/brands_controller.php:14
+msgid "Brands"
+msgstr "Značky"
+
+#: ../app/controllers/categories_controller.php:13
+msgid "List of Categories"
+msgstr "Seznam kategorií"
+
+#: ../app/controllers/collections_controller.php:4
+msgid "List of Collections"
+msgstr "Seznam kolekcí"
+
+#: ../app/controllers/collections_controller.php:14
+msgid "Collections"
+msgstr "Kolekce"
 
 #: ../app/controllers/logins_controller.php:16
 #, php-format
@@ -535,6 +676,10 @@ msgstr "Vaše heslo bylo úspěšně změněno"
 msgid "Password recovery"
 msgstr "Obnovení hesla"
 
+#: ../app/controllers/stores_controller.php:11
+msgid "Stores"
+msgstr "Prodejny"
+
 #: ../app/controllers/users_controller.php:4
 #: ../app/controllers/users_controller.php:79
 msgid "User profile"
@@ -562,6 +707,51 @@ msgstr "Údaje vašeho účtu byly změněny"
 #: ../app/controllers/users_controller.php:56
 msgid "This is not your current password"
 msgstr "Toto neni vaše aktuální heslo"
+
+#: ../app/fields/brand_field.php:4
+msgid "brand"
+msgstr "značka"
+
+#: ../app/fields/card_field.php:8
+msgid "There is no such product card"
+msgstr "Taková produktová karta neexistuje"
+
+#: ../app/fields/card_section_type_field.php:5
+msgid "select content type"
+msgstr "vyberte typ obsahu"
+
+#: ../app/fields/catalog_id_field.php:18
+msgid "Catalog number"
+msgstr "Katalogové číslo"
+
+#: ../app/fields/catalog_id_field.php:24
+msgid "This doesn't look like a catalog number"
+msgstr "Toto nevypadá jako katalogové číslo"
+
+#: ../app/fields/category_field.php:25
+msgid "Start with a slash if you want to search the catalog tree from the root"
+msgstr ""
+"Začněte psát lomítko, pokud chcete prohledávat katalogový strom od kořene"
+
+#: ../app/fields/category_field.php:25
+msgid "A single slash will be considered as root."
+msgstr "Samotné lomítko bude považováno za kořen."
+
+#: ../app/fields/category_field.php:35
+msgid "There is no such category"
+msgstr "Taková kategorie neexistuje"
+
+#: ../app/fields/category_field.php:36
+msgid "It's a filter. This category cannot be selected."
+msgstr "Toto je filtr. Tato kategorie nemůže být vybrána."
+
+#: ../app/fields/collection_field.php:7
+msgid "collection"
+msgstr "kolekce"
+
+#: ../app/fields/collection_field.php:35
+msgid "There is no such collection"
+msgstr "Taková kolekce neexistuje"
 
 #: ../app/fields/login_field.php:7
 msgid ""
@@ -637,6 +827,8 @@ msgstr "Štítek <em>%s</em> neexistuje"
 msgid "Tag <em>%s</em> is there more than once"
 msgstr "Štítek <em>%s</em> je uveden vícekrát"
 
+#: ../app/forms/api/categories_suggestions/index_form.php:5
+#: ../app/forms/api/suggestions/index_form.php:5
 #: ../app/forms/api/tags_suggestions/index_form.php:5
 msgid "Search term"
 msgstr "Hledat výraz"
@@ -669,6 +861,21 @@ msgstr "Uložit"
 msgid "Search query"
 msgstr "Vyhledávací dotaz"
 
+#: ../app/forms/information_requests/create_new_form.php:20
+#: ../app/forms/main/contact_form.php:15
+msgid "Sign up for newsletter"
+msgstr "Přihlásit se k odběru newsletteru"
+
+#: ../app/forms/information_requests/create_new_form.php:26
+#: ../app/forms/main/contact_form.php:21
+msgid "Text"
+msgstr "Text"
+
+#: ../app/forms/information_requests/create_new_form.php:31
+#: ../app/forms/main/contact_form.php:26
+msgid "Send message"
+msgstr "Poslat zprávu"
+
 #: ../app/forms/logins/create_new_form.php:8
 msgid "Login"
 msgstr "Přihlásit se"
@@ -678,18 +885,6 @@ msgstr "Přihlásit se"
 #: ../app/forms/users/users_form.php:25
 msgid "Password"
 msgstr "Heslo"
-
-#: ../app/forms/main/contact_form.php:15
-msgid "Sign up for newsletter"
-msgstr "Přihlásit se k odběru newsletteru"
-
-#: ../app/forms/main/contact_form.php:21
-msgid "Text"
-msgstr "Text"
-
-#: ../app/forms/main/contact_form.php:26
-msgid "Send message"
-msgstr "Poslat zprávu"
 
 #: ../app/forms/password_recoveries/create_new_form.php:5
 msgid "Login or email address"
@@ -759,6 +954,38 @@ msgstr "Galerie"
 #: ../app/helpers/modifier.iobject_type.php:23
 msgid "Obrázek"
 msgstr "Obrázek"
+
+#: ../app/models/product.php:27
+msgid "Variant"
+msgstr "Varianta"
+
+#~ msgid "The Skelet contains mainly"
+#~ msgstr "Skelet obsahuje hlavně"
+
+#~ msgid ""
+#~ "Are you planning to kick up a new project from the Atk14Skelet? Great! "
+#~ "Just run the following commands."
+#~ msgstr ""
+#~ "Chystáte se pustit do nového projektu na Atk14Skeletu? Skvělé! Stačí "
+#~ "spustit následující příkazy."
+
+#~ msgid ""
+#~ "You can find more information in <a href=\"https://github.com/atk14/"
+#~ "Atk14Skelet/blob/master/README.md#installation\">the installation "
+#~ "instructions.</a>"
+#~ msgstr ""
+#~ "Více informací naleznete v <a href=\"https://github.com/atk14/Atk14Skelet/"
+#~ "blob/master/README.md#installation\">pokynech k instalaci.</a>"
+
+#~ msgid ""
+#~ "If you want to help us to improve the Atk14Skelet, <a href=\"https://"
+#~ "github.com/atk14/Atk14Skelet\">fork it on GitHub.</a>"
+#~ msgstr ""
+#~ "Chcete-li nám pomoct vylepšit Atk14Skelet, <a href=\"https://github.com/"
+#~ "atk14/Atk14Skelet\">forkněte si ho na GitHubu. </a>"
+
+#~ msgid "ATK14 Skelet on GitHub"
+#~ msgstr "ATK14 Skelet na GitHubu"
 
 #~ msgid "recovery link"
 #~ msgstr "odkaz pro obnovu"
@@ -1672,175 +1899,6 @@ msgstr "Obrázek"
 
 #~ msgid "Where to go"
 #~ msgstr "Kam zajít"
-
-#~ msgid "Accessories"
-#~ msgstr "Příslušenství"
-
-#~ msgid "Product locations"
-#~ msgstr "Umístění produktu"
-
-#~ msgid "Consumables"
-#~ msgstr "Spotřební materiál"
-
-#~ msgid "Brand:"
-#~ msgstr "Značka:"
-
-#~ msgid "Are you interested in this product?"
-#~ msgstr "Zajímá vás tento produkt?"
-
-#~ msgid "Related products"
-#~ msgstr "Související produkty"
-
-#~ msgid "Subcategories"
-#~ msgstr "Podkategorie"
-
-#~ msgid "Products"
-#~ msgstr "Produkty"
-
-#~ msgid "No product has been found."
-#~ msgstr "Žádný produkt nebyl nalezen."
-
-#~ msgid "Products in the collection %1"
-#~ msgstr "Produkty v kolekci %1"
-
-#~ msgid "Greetings"
-#~ msgstr "Dobrý den"
-
-#~ msgid ""
-#~ "I would like to know more about products and services you offered on the "
-#~ "web site %1."
-#~ msgstr ""
-#~ "Rád bych se dozvěděl více o produktech a službách, které nabízíte na "
-#~ "webových stránkách %1."
-
-#~ msgid "I would like to know more about the product"
-#~ msgstr "Rád bych se dozvěděl více o produktu"
-
-#~ msgid "Please contact me."
-#~ msgstr "Prosím kontaktujte mě."
-
-#~ msgid "The message has been sent. Thank you!"
-#~ msgstr "Zpráva byla odeslána. Děkujeme!"
-
-#~ msgid ""
-#~ "Hello,\n"
-#~ "\n"
-#~ "thank you for your interest in our products. We will contact you as soon "
-#~ "as we can."
-#~ msgstr ""
-#~ "Dobrý den,\n"
-#~ "\n"
-#~ "děkujeme, že se zajímáte o naše produkty. Co nejdříve Vás budeme "
-#~ "kontaktovat."
-
-#~ msgid "Here is the message you sent to us:"
-#~ msgstr "Zde je zpráva, kterou jste nám zaslal:"
-
-#~ msgid "Thank you and have a nice day!"
-#~ msgstr "Děkujeme a přejeme hezký den!"
-
-#~ msgid "The Catalog contains mainly"
-#~ msgstr "Katalog obsahuje zejména"
-
-#~ msgid "List of categories"
-#~ msgstr "Seznam kategorií"
-
-#~ msgid "List of brands"
-#~ msgstr "Seznam značek"
-
-#~ msgid "List of collections"
-#~ msgstr "Seznam kolekcí"
-
-#~ msgid "List of stores"
-#~ msgstr "Seznam prodejen"
-
-#~ msgid ""
-#~ "Are you planning to kick up a new project from the Atk14Catalog? Great! "
-#~ "Just run the following commands."
-#~ msgstr ""
-#~ "Chystáte se pustit do nového projektu na Atk14SCatalogu? Skvělé! Stačí "
-#~ "spustit následující příkazy."
-
-#~ msgid ""
-#~ "You can find more information in <a href=\"https://github.com/atk14/"
-#~ "Atk14Catalog/blob/master/README.md#installation\">the installation "
-#~ "instructions.</a>"
-#~ msgstr ""
-#~ "Více informací naleznete v <a href=\"https://github.com/atk14/"
-#~ "Atk14Catalog/blob/master/README.md#installation\">pokynech k instalaci.</"
-#~ "a>"
-
-#~ msgid ""
-#~ "If you want to help us to improve the Catalog, <a href=\"https://github."
-#~ "com/atk14/Atk14Catalog\">fork it on GitHub.</a>"
-#~ msgstr ""
-#~ "Pokud chcete pomoci s vylepšováním ATK14 katalogu, <a href=\"https://"
-#~ "github.com/atk14/Atk14Catalog\">forkněte si ho na GitHubu.</a>"
-
-#~ msgid "ATK14 Catalog on GitHub"
-#~ msgstr "ATK14 Katalog na GitHubu"
-
-#~ msgid "no image"
-#~ msgstr "bez obrázku"
-
-#~ msgid "Products in the collection"
-#~ msgstr "Produkty v kolekci"
-
-#~ msgid "List of Products"
-#~ msgstr "Seznam produktů"
-
-#~ msgid "Address"
-#~ msgstr "Adresa"
-
-#~ msgid "Currently we have no store."
-#~ msgstr "V současné době nemáme žádnou prodejnu."
-
-#~ msgid "Request for information"
-#~ msgstr "Žádost o informaci"
-
-#~ msgid "List of Brands"
-#~ msgstr "Seznam značek"
-
-#~ msgid "Brands"
-#~ msgstr "Značky"
-
-#~ msgid "List of Categories"
-#~ msgstr "Seznam kategorií"
-
-#~ msgid "List of Collections"
-#~ msgstr "Seznam kolekcí"
-
-#~ msgid "Collections"
-#~ msgstr "Kolekce"
-
-#~ msgid "Stores"
-#~ msgstr "Prodejny"
-
-#~ msgid "brand"
-#~ msgstr "značka"
-
-#~ msgid "Catalog number"
-#~ msgstr "Katalogové číslo"
-
-#~ msgid "This doesn't look like a catalog number"
-#~ msgstr "Toto nevypadá jako katalogové číslo"
-
-#~ msgid ""
-#~ "Start with a slash if you want to search the catalog tree from the root"
-#~ msgstr ""
-#~ "Začněte psát lomítko, pokud chcete prohledávat katalogový strom od kořene"
-
-#~ msgid "There is no such category"
-#~ msgstr "Taková kategorie neexistuje"
-
-#~ msgid "It's a filter. This category cannot be selected."
-#~ msgstr "Toto je filtr. Tato kategorie nemůže být vybrána."
-
-#~ msgid "collection"
-#~ msgstr "kolekce"
-
-#~ msgid "There is no such collection"
-#~ msgstr "Taková kolekce neexistuje"
 
 #~ msgid "Welcome at ATK14 Catalog!"
 #~ msgstr "Vítejte v ATK14 Katalogu!"
