@@ -11,12 +11,6 @@ class CardsController extends ApplicationController{
 
 		$this->tpl_data["categories"] = $card->getCategories(array("consider_invisible_categories" => false, "consider_filters" => false));
 
-		$primary_category = $card->getPrimaryCategory();
-		if($primary_category){
-			foreach($primary_category->getPathOfCategories() as $c){
-				$this->breadcrumbs[] = array($c->getName(),$this->_link_to(array("action" => "categories/detail", "path" => $c->getPath())));
-			}
-		}
-		$this->breadcrumbs[] = $card->getName();
+		$this->_add_card_to_breadcrumbs($card);
 	}
 }
