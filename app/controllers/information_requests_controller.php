@@ -15,6 +15,8 @@ class InformationRequestsController extends ApplicationController{
 				));
 			}
 
+			$d["product"] = $this->product;
+			$d["card"] = $this->card;
 			$this->mailer->send_information_request($d,$this->request,$this->logged_user);
 			$this->mailer->send_copy_of_information_request_to_customer($d["email"],$d["body"]);
 
