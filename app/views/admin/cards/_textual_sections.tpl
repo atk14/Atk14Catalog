@@ -22,7 +22,7 @@ Are you sure?{/t}{/capture}
 			{if $section->getBody()}
 				<small>{$section->getBody()|truncate:200}</small>
 			{else}
-				<small><em>{t}without textual content{/t}</em></small>
+				<small><em>{t}no textual content{/t}</em></small>
 			{/if}
 		</li>
 	{/foreach}
