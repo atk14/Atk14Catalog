@@ -187,6 +187,24 @@ class CardsController extends AdminController{
 		))."#variants");
 	}
 
+	function disable_variants(){
+		if(!$this->request->post() || !$this->card->hasVariants()){
+			return $this->_execute_action("error404");
+		}
+
+		if(sizeof($this->card->getProducts())!=1){
+			return $this->_execute_action("error404");
+		}
+
+		$this->card->s("has_variants",false);
+
+		$this->flash->success(_("Variants mode has been deactivated"));
+		$this->_redirect_to($this->_link_to(array(
+			"action" => "edit",
+			"id" => $this->card,
+		))."#variants");
+	}
+
 	function add_to_category(){
 		if(!$this->request->post()){ return $this->_execute_action("error404"); }
 
@@ -259,7 +277,7 @@ class CardsController extends AdminController{
 	}
 
 	function _before_filter() {
-		if (in_array($this->action, array("edit","destroy","enable_variants","add_to_category","add_technical_specification","remove_from_category","append_external_source","remove_external_source", "set_category_rank"))) {
+		if (in_array($this->action, array("edit","destroy","enable_variants","disable_variants","add_to_category","add_technical_specification","remove_from_category","append_external_source","remove_external_source", "set_category_rank"))) {
 			$this->_find("card");
 		}
 
