@@ -12,11 +12,11 @@
 
 <hr>
 
-{render partial="filters" card=$card categories=$categories form=$add_to_category_form}
+{render partial="variants"}
 
 <hr>
 
-{render partial="variants"}
+{render partial="filters" card=$card categories=$categories form=$add_to_category_form}
 
 <hr>
 
