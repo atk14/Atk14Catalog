@@ -192,7 +192,7 @@ class CardsController extends AdminController{
 			return $this->_execute_action("error404");
 		}
 
-		if(sizeof($this->card->getProducts())!=1){
+		if(!$this->card->canBeSwitchedToNonVariantMode()){
 			return $this->_execute_action("error404");
 		}
 
