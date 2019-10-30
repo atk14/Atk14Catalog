@@ -7,9 +7,8 @@
 {if !$card->hasVariants()}
 	{t}Variants are not considered for this product{/t} &rarr; {a action=enable_variants id=$card _method=post _confirm="{t}Are you sure?{/t}"}{t}switch to the variant mode{/t}{/a}
 {else}
-	{assign products $card->getProducts()}
-	{render partial="products" products=$products}
-	{if sizeof($products)==1}
+	{render partial="products" products=$card->getProducts()}
+	{if $card->canBeSwitchedToNonVariantMode()}
 		{t}This product can be swithed to the non-variant mode{/t} &rarr; {a action=disable_variants id=$card _method=post _confirm="{t}Are you sure?{/t}"}{t}switch to the non-variant mode{/t}{/a}
 	{/if}
 {/if}

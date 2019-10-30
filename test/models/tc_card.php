@@ -42,4 +42,23 @@ class TcCard extends TcBase {
 		$this->assertEquals(1,sizeof($filters));
 		$this->assertEquals($color->getId(),$filters[0]->getId());
 	}
+
+	function test_canBeSwitchedToNonVariantMode(){
+		$card = Card::CreateNewRecord(array());
+		$this->assertTrue($card->canBeSwitchedToNonVariantMode());
+
+		$card = Card::CreateNewRecord(array());
+		$card->createProduct(array("catalog_id" => "123"));
+		$this->assertTrue($card->canBeSwitchedToNonVariantMode());
+
+		$card = Card::CreateNewRecord(array());
+		$card->createProduct(array("catalog_id" => "124"));
+		$card->createProduct(array("catalog_id" => "125"));
+		$this->assertFalse($card->canBeSwitchedToNonVariantMode());
+
+		$card = Card::CreateNewRecord(array());
+		$card->createProduct(array("catalog_id" => "126"));
+		$card->createProduct(array("catalog_id" => "127","deleted" => true));
+		$this->assertTrue($card->canBeSwitchedToNonVariantMode());
+	}
 }
