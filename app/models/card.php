@@ -75,6 +75,9 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 	}
 
 	function getImages($options = array()){
+		if(is_bool($options)){
+			$options = ["consider_product_images" => $options];
+		}
 		$options += array(
 			"consider_product_images" => true,
 		);

@@ -51,12 +51,23 @@ class Product extends ApplicationModel implements Translatable,Rankable{
 		return ProductImage::GetImages($this);
 	}
 
-	function getImage($consider_card_image = true){
+	/**
+	 *
+	 * $image = $product->getImage(false);
+	 */
+	function getImage($options = []){
+		if(is_bool($options)){
+			$options = ["consider_card_image" => $options];
+		}
+		$options += [
+			"consider_card_image" => true,
+		];
+
 		if($images = $this->getImages()){
 			return $images[0];
 		}
 
-		if(!$consider_card_image){
+		if(!$options["consider_card_image"]){
 			return;
 		}
 
