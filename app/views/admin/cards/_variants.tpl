@@ -9,6 +9,6 @@
 {else}
 	{render partial="products" products=$card->getProducts()}
 	{if $card->canBeSwitchedToNonVariantMode()}
-		{t}This product can be swithed to the non-variant mode{/t} &rarr; {a action=disable_variants id=$card _method=post _confirm="{t}Are you sure?{/t}"}{t}switch to the non-variant mode{/t}{/a}
+		{t}This product can be switched to the non-variant mode{/t} &rarr; {a action=disable_variants id=$card _method=post _confirm="{t}Are you sure?{/t}"}{t}switch to the non-variant mode{/t}{/a}
 	{/if}
 {/if}
