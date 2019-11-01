@@ -3,7 +3,7 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 
 	use TraitGetInstanceByCode;
 
-	static function GetTranslatableFields() { return array("name","teaser","description"); }
+	static function GetTranslatableFields() { return array("name","teaser","description", "page_title", "page_description"); }
 
 	function setRank($new_rank){
 		$this->_setRank($new_rank,array("parent_category_id" => $this->getParentCategoryId()));
@@ -118,6 +118,19 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 	function isSubcategoryOfFilter(){
 		$parent = $this->getParentCategory();
 		return $parent && $parent->isFilter();
+	}
+
+	function getPageTitle(){
+		$out = parent::getPageTitle();
+		if(strlen($out)){ return $out; }
+		return $this->getName();
+	}
+
+	function getPageDescription(){
+		$out = parent::getPageDescription();
+		if(strlen($out)){ return $out; }
+		$out = $this->getTeaser();
+		if(strlen($out)){ return strip_tags($out); }
 	}
 
 	function isVisible(){

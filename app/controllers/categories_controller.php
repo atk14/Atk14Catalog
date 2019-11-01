@@ -22,7 +22,8 @@ class CategoriesController extends ApplicationController{
 		}
 
 		$this->tpl_data["category"] = $category;
-		$this->page_title = $category->getName();
+		$this->page_title = $category->getPageTitle();
+		$this->page_description = $category->getPageDescription();
 
 		// v ceste k teto kategorii je najeky alias ->
 		// vytiskneme do <head></head> element <link rel="canonical">
