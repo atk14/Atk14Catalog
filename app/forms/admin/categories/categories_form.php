@@ -30,19 +30,22 @@ class CategoriesForm extends AdminForm{
 			"config" => "category",
 		)));
 
-		$this->add_translatable_field("page_title",new CharField(array(
-			"label" => _("HTML title"),
-			"required" => false,
-			"max_length" => 255,
-			"help_text" => h(_("Content for <html><head><title>. If left empty, the name is used.")),
-		)));
+		if($options["add_page_title_and_description_fields"]){
 
-		$this->add_translatable_field("page_description", new CharField(array(
-			"label" => _("HTML description"),
-			"required" => false,
-			"max_length" => 255,
-			"help_text" => h(_('Content for <meta name="description">. If left empty, the teaser is used.')),
-		)));
+			$this->add_translatable_field("page_title",new CharField(array(
+				"label" => _("HTML title"),
+				"required" => false,
+				"max_length" => 255,
+				"help_text" => h(_("Content for <html><head><title>. If left empty, the name is used.")),
+			)));
+
+			$this->add_translatable_field("page_description", new CharField(array(
+				"label" => _("HTML description"),
+				"required" => false,
+				"max_length" => 255,
+				"help_text" => h(_('Content for <meta name="description">. If left empty, the teaser is used.')),
+			)));
+		}
 
 		$this->add_field("image_url", new PupiqImageField(array(
 			"label" => _("Image"),
