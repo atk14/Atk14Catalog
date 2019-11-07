@@ -1,5 +1,6 @@
 <?php
 class TechnicalSpecification extends ApplicationModel implements Translatable, Rankable {
+
 	public static function GetTranslatableFields(){ return array("content_localized"); }
 
 	/**
@@ -28,9 +29,12 @@ class TechnicalSpecification extends ApplicationModel implements Translatable, R
 		return Cache::Get("TechnicalSpecificationKey",$this->getTechnicalSpecificationKeyId());
 	}
 
-	function getContent(){
+	function getContent($lang = null){
 		global $ATK14_GLOBAL;
-		$lang = $ATK14_GLOBAL->getLang();
+
+		if(is_null($lang)){
+			$lang = $ATK14_GLOBAL->getLang();
+		}
 
 		if(strlen($content = $this->g("content_localized_$lang"))){
 			return $content;

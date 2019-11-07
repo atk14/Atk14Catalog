@@ -21,6 +21,10 @@ class TcTechnicalSpecificationKey extends TcBase {
 			"key_localized_cs" => "Hmotnost",
 		));
 
+		$this->assertEquals("Weight",$weight->getKey());
+		$this->assertEquals("Weight",$weight->getKey("en"));
+		$this->assertEquals("Hmotnost",$weight->getKey("cs"));
+
 		$lang = "en";
 		Atk14Locale::Initialize($lang);
 

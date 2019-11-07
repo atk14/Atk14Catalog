@@ -12,6 +12,10 @@ class TcTechnicalSpecification extends TcBase {
 			"content" => "Strong",
 			"content_localized_cs" => "Silná",
 		));
+
+		$this->assertEquals("Strong",$ts->getContent());
+		$this->assertEquals("Strong",$ts->getContent("en"));
+		$this->assertEquals("Silná",$ts->getContent("cs"));
 		
 		$lang = "en";
 		Atk14Locale::Initialize($lang);

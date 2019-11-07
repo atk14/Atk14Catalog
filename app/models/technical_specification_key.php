@@ -1,5 +1,6 @@
 <?php
 class TechnicalSpecificationKey extends ApplicationModel implements Translatable {
+
 	public static function GetTranslatableFields(){ return array("key_localized"); }
 
 	public static function GetInstanceByKey($key){
@@ -24,9 +25,12 @@ class TechnicalSpecificationKey extends ApplicationModel implements Translatable
 		return $out;
 	}
 
-	function getKey(){
+	function getKey($lang = null){
 		global $ATK14_GLOBAL;
-		$lang = $ATK14_GLOBAL->getLang();
+
+		if(is_null($lang)){
+			$lang = $ATK14_GLOBAL->getLang();
+		}
 
 		if(strlen($key = $this->g("key_localized_$lang"))){
 			return $key;
@@ -36,6 +40,6 @@ class TechnicalSpecificationKey extends ApplicationModel implements Translatable
 	}
 
 	function toString(){
-		return $this->getKey();
+		return (string)$this->getKey();
 	}
 }

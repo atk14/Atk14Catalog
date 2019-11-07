@@ -122,8 +122,25 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 	}
 
 	// Prvni obrazek
-	function getImage(){
-		if($ar = $this->getImages(array("limit" => 1))){
+	function getImage($options = []){
+		if(is_bool($options)){
+			$options = ["consider_product_images" => $options];
+		}
+		$options += [
+			"consider_product_images" => true,
+		];
+	
+		// Obrazek z prvni obrazkove varianty ma prednost pred obrazkem u teto karty
+		if($options["consider_product_images"] && $this->hasVariants()){
+			foreach($this->getProducts() as $p){
+				if($i = $p->getImage(false)){
+					return $i;
+				}
+			}
+		}
+
+		$options["limit"] = 1;
+		if($ar = $this->getImages($options)){
 			return $ar[0];
 		}
 	}
