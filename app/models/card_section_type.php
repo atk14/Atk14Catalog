@@ -8,6 +8,7 @@ class CardSectionType extends ApplicationModel implements Translatable, Rankable
 	}
 
 	function toString(){
-		return (string)$this->getName();
+		$name = strlen($this->getName()) ? $this->getName() : $this->getCode();
+		return "$name";
 	}
 }
