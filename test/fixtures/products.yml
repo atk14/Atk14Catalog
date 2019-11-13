@@ -1,11 +1,19 @@
 mint_tea:
   catalog_id: TEA_MINT
   card_id: "<?php echo $cards["tea"]->getId() ?>"
+  label_en: "mint"
+  label_cs: "mátový"
 
 black_tea:
   catalog_id: TEA_BLACK
   card_id: "<?php echo $cards["tea"]->getId() ?>"
+  label_en: "black"
+  label_cs: "černý"
 
 green_tea:
   catalog_id: TEA_GREEN
   card_id: "<?php echo $cards["tea"]->getId() ?>"
+  name_en: "Green tea"
+  name_cs: "Zelený čaj"
+  label_en: "green"
+  label_cs: "zelený"

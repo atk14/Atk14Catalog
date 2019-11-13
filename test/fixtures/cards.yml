@@ -5,6 +5,7 @@ coffee:
 tea:
   name_en: Tea
   name_cs: Čaj
+  has_variants: true
 
 peanuts:
   name_en: Peanuts

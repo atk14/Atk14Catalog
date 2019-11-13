@@ -5,6 +5,24 @@
  */
 class TcProduct extends TcBase {
 
+	function test_getName(){
+		// Black tea has not its own name filled
+		$black_tea = $this->products["black_tea"];
+		$this->assertEquals("Tea, black",$black_tea->getName());
+		$this->assertEquals("Tea",$black_tea->getName(false));
+		$this->assertEquals("Čaj",$black_tea->getName("cs",false));
+		$this->assertEquals("Tea, black",$black_tea->getFullName());
+		$this->assertEquals("Čaj, černý",$black_tea->getFullName("cs"));
+
+		// Green tea has its own name filled
+		$green_tea = $this->products["green_tea"];
+		$this->assertEquals("Green tea",$green_tea->getName());
+		$this->assertEquals("Green tea",$green_tea->getName(false));
+		$this->assertEquals("Zelený čaj",$green_tea->getName("cs",false));
+		$this->assertEquals("Green tea",$green_tea->getFullName());
+		$this->assertEquals("Zelený čaj",$green_tea->getFullName("cs"));
+	}
+
 	function test_destroy(){
 		$green_tea = $this->products["green_tea"];
 		$green_tea_id = $green_tea->getId();
