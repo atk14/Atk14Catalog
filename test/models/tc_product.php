@@ -21,6 +21,15 @@ class TcProduct extends TcBase {
 		$this->assertEquals("Zelený čaj",$green_tea->getName("cs",false));
 		$this->assertEquals("Green tea",$green_tea->getFullName());
 		$this->assertEquals("Zelený čaj",$green_tea->getFullName("cs"));
+
+		// Peanuts do not have a label filled nor own name
+		// The name is read from the card
+		$peanuts = $this->products["peanuts"];
+		$this->assertEquals("Peanuts",$peanuts->getName());
+		$this->assertEquals("Peanuts",$peanuts->getName(false));
+		$this->assertEquals("Arašídy",$peanuts->getName("cs",false));
+		$this->assertEquals("Peanuts",$peanuts->getFullName());
+		$this->assertEquals("Arašídy",$peanuts->getFullName("cs"));
 	}
 
 	function test_destroy(){

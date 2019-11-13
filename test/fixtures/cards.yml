@@ -10,3 +10,4 @@ tea:
 peanuts:
   name_en: Peanuts
   name_cs: Arašídy
+  has_variants: false

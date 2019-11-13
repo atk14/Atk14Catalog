@@ -17,3 +17,7 @@ green_tea:
   name_cs: "Zelený čaj"
   label_en: "green"
   label_cs: "zelený"
+
+peanuts:
+  catalog_id: PEANUTS
+  card_id: "<?php echo $cards["peanuts"]->getId() ?>"
