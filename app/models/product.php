@@ -19,13 +19,6 @@ class Product extends ApplicationModel implements Translatable,Rankable{
 		return $product;
 	}
 
-	function getLabel($lang = null){
-		$label = parent::getLabel($lang);
-		if(strlen($label)){
-			return $label;
-		}
-		return _("Variant");
-	}
 
 	function getName($lang = null){
 		$name = parent::getName($lang);
@@ -34,6 +27,14 @@ class Product extends ApplicationModel implements Translatable,Rankable{
 		}
 		$card = $this->getCard();
 		return $card->getName($lang);
+	}
+
+	function getFullName(){
+		$full_name = $this->getName();
+		if($label = $this->getLabel()){
+			$full_name .= ", ".$label;
+		}
+		return $full_name;
 	}
 
 	function getCard(){ return Cache::Get("Card",$this->getCardId()); }
@@ -141,5 +142,15 @@ class Product extends ApplicationModel implements Translatable,Rankable{
 
 	function getDevices() {
 		return $this->getDevicesLister()->getRecords();
+	}
+
+	function toHumanReadableString(){
+		$out = $this->getCatalogId();
+		$out .= ", ".$this->toString();
+		return $out;
+	}
+
+	function toString(){
+		return $this->getFullName();
 	}
 }
