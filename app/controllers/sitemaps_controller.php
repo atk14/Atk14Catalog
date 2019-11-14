@@ -26,6 +26,15 @@ class SitemapsController extends ApplicationController{
 				"pointing_to_category_id IS NULL" // is not alias
 			)
 		));
+
+		$this->tpl_data["cards"] = Card::FindAll(array(
+			"conditions" => array(
+				"visible",
+				"NOT deleted",
+			),
+			"order_by" => "created_at DESC",
+			"limit" => 1000,
+		));
 	
 		$this->tpl_data["articles"] = Article::FindAll(array(
 			"condition" => "published_at<:now",

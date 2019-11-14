@@ -10,6 +10,11 @@
 		{render partial="categories" categories=$categories}
 	</li>
 
+	<li>
+		<h4>{t}Products{/t}</h4>
+		{render partial="cards" products=$cards}
+	</li>
+
 	{*
 	<li>
 		<h4>{a action="users/create_new" _with_hostname=1}{t}New user registration{/t}{/a}</h4>
