@@ -54,6 +54,7 @@ class CategoriesController extends AdminController{
 		$this->_save_return_uri();
 
 		if($this->parent_category->isFilter()){
+			$this->page_title .= " ("._("filter option").")";
 			unset($this->form->fields["is_filter"]);
 		}
 
@@ -94,8 +95,13 @@ class CategoriesController extends AdminController{
 
 		$this->category->destroy();
 		
+		if($this->request->xhr()){
+			$this->template_name = "application/destroy";
+			return;
+		}
+
 		$this->flash->success(_("The category was deleted"));
-		$this->_redirect_back();
+		$this->_redirect_to("category_trees/index");
 	}
 
 	function create_alias() {

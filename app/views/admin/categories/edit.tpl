@@ -3,7 +3,7 @@
 
 	{dropdown_menu clearfix=false}
 		{if $category->allowSubcategories()}
-			{a action="create_new" parent_category_id=$category}{icon glyph="plus-circle"} {t}Add a new subcategory{/t}{/a}
+			{a action="create_new" parent_category_id=$category}{icon glyph="plus-circle"} {t}Add a new subcategory{/t}{if $category->isFilter()} ({t}filter option{/t}){/if}{/a}
 		{/if}
 		{if $category->isVisible() && !$category->isFilter() && !$category->isSubcategoryOfFilter()}
 			{a namespace="" action="categories/detail" path=$category->getPath()}{icon glyph="eye-open"} {t}Show on web{/t}{/a}
@@ -19,7 +19,7 @@
 Also all subcategories will be deleted. Deletion cannot be undone.
 
 Do you really want this?{/t}{/capture}
-			{a_destroy id=$category _confirm=$confirmation}{icon glyph="trash-alt"} {t}Delete{/t}{/a_destroy}
+			{a action="destroy" id=$category _confirm=$confirmation _method=post}{icon glyph="trash-alt"} {t}Delete{/t}{/a} {* Here, a non-XHR request required *}
 		{/if}
 	{/dropdown_menu}
 </h1>
@@ -49,7 +49,9 @@ Do you really want this?{/t}{/capture}
 
 		<tr>
 			<th>{t}Is a filter?{/t}</th>
-			<td>{$category->isFilter()|display_bool}</td>
+			<td>
+				{if $category->isSubcategoryOfFilter()}{t}It is a filter option{/t}{else}{$category->isFilter()|display_bool}{/if}
+			</td>
 		</tr>
 
 		<tr>
@@ -64,8 +66,9 @@ Do you really want this?{/t}{/capture}
 
 {render partial="shared/form"}
 
+<hr>
+
 {if $category->isAlias()}
-	<hr>
 
 	{assign var=ptc value=$category->getPointingToCategory()}
 	{capture assign=url}{link_to action=edit id=$ptc}{/capture}
@@ -75,13 +78,11 @@ Do you really want this?{/t}{/capture}
 
 	{if !$category->isSubcategoryOfFilter()}
 		{* Pokud je rodic filtr, nelze uz pridavat dalsi podkategorie *}
-		<hr>
-
 		<h3 id="subcategories">
 			{if $category->allowSubcategories()}
 				{button_create_new parent_category_id=$category return_to_anchor="subcategories"}{t}Add a new subcategory{/t}{/button_create_new}
 			{/if}
-			{t}Subcategories{/t}
+			{t}Subcategories{/t} {if $category->isFilter()}({t}filter options{/t}){/if}
 		</h3>
 		{assign var=children value=$category->getChildCategories()}
 		{if $children}
