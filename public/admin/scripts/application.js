@@ -15,6 +15,7 @@
 				ADMIN.utils.handleTagsSuggestions();
 				ADMIN.utils.initializeMarkdonEditors();
 				ADMIN.utils.handleGalleryImagesUpload();
+				ADMIN.utils.handleCopyIobjectCode();
 				ADMIN.utils.handleCategoriesSuggestions();
 
 				// Form hints.
@@ -35,6 +36,7 @@
 
 				UTILS.leaving_unsaved_page_checker.init();
 			}
+
 		},
 
 		cards: {
@@ -341,6 +343,22 @@
 							return false;
 						}
 					} );
+				} );
+			},
+
+			// Copy iobject to clipboard
+			handleCopyIobjectCode: function() {
+				$( ".iobject-copy-code" ).popover();
+				$( ".iobject-copy-code" ).on( "click", function( e ) {
+					e.preventDefault();
+					var code = $( this ).closest( ".iobject-code-wrap" ).find( ".iobject-code" ).text();
+					var el = document.createElement( "textarea" );
+					el.value = code;
+					document.body.appendChild( el );
+					el.select();
+					document.execCommand( "copy" );
+					document.body.removeChild( el );
+					$( this ).trigger( "focus" );
 				} );
 			},
 
