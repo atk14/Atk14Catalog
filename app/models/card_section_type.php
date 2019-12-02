@@ -1,6 +1,8 @@
 <?php
 class CardSectionType extends ApplicationModel implements Translatable, Rankable{
 
+	use TraitGetInstanceByCode;
+
 	static function GetTranslatableFields(){ return array("name"); }
 
 	function setRank($rank){

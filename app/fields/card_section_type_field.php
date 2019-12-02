@@ -9,4 +9,11 @@ class CardSectionTypeField extends ChoiceField{
 		$options["choices"] = $choices;
 		parent::__construct($options);
 	}
+
+	function format_initial_data($value){
+		if(is_object($value)){
+			$value = $value->getId();
+		}
+		return $value;
+	}
 }
