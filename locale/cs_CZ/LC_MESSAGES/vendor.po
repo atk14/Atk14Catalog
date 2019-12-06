@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-20 12:29+0200\n"
-"PO-Revision-Date: 2019-08-23 13:56+0200\n"
+"PO-Revision-Date: 2019-12-06 13:19+0100\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: \n"
 "Language: cs_CZ\n"
@@ -61,3 +61,29 @@ msgstr "Neznámá chyba"
 #: ../vendor/atk14/url-field/src/url_field.php:12
 msgid "This doesn't look like an URL"
 msgstr "Toto nevypadá jako URL"
+
+#~ msgid ""
+#~ "Please try to solve the test. It is important for us to be sure that we "
+#~ "are communicating with a human."
+#~ msgstr ""
+#~ "Prosím, pokuste to vyřešit. Je pro nás důležité, abychom si byli jisti, "
+#~ "že komunikujeme s člověkem."
+
+#~ msgid "The test was not successful. Please try it again."
+#~ msgstr "Test nebyl úspěšný. Zkuste to prosím znovu."
+
+#~ msgid ""
+#~ "We are experiencing some technical issue during the communication with "
+#~ "Google. Please try it later."
+#~ msgstr ""
+#~ "Během komunikace se společností Google došlo k technickým problémům. "
+#~ "Zkuste to prosím později."
+
+#~ msgid "Slug"
+#~ msgstr "Slug"
+
+#~ msgid "funny-green-mug"
+#~ msgstr "zabavny-zeleny-hrnek"
+
+#~ msgid "Write something like black-cat-white-cat"
+#~ msgstr "Napište něco jako cerna-kocka-bily-kocour"
