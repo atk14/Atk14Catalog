@@ -1,12 +1,9 @@
 <?php
 class PageField extends ChoiceField {
-	function __construct($options=array()) {
+
+	function __construct($options = array()) {
 		$choices = array("" => "-- "._("page")." --");
 		$conditions = $bind_ar = array();
-		if ($options["page_id"]) {
-			$conditions[] = "id!=:page_id";
-			$bind_ar[":page_id"] = $options["page_id"];
-		};
 
 		foreach(Page::FindAll(array(
 			"conditions" => $conditions,
