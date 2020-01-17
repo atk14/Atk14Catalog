@@ -1,15 +1,22 @@
 <?php
+require_once(__DIR__ . "/trait_slug_state_watcher.php");
+
 class CategoriesController extends AdminController{
+
+	use TraitSlugStateWatcher;
 
 	function edit(){
 		$this->page_title = sprintf(_('Editing category "%s"'),strip_tags($this->category->getName()));
 		$this->form->set_initial($this->category);
 
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
+
+			$this->_save_slug_state($this->category);
+
 			$this->category->s($d,array("reconstruct_missing_slugs" => true));
 
 			$this->flash->success(_("Changes have been saved"));
-			$this->_redirect_back();
+			$this->_redirect_back_or_edit_slug();
 		}
 
 		$MAX_CARDS = 100;

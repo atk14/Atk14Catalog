@@ -1,5 +1,9 @@
 <?php
+require_once(__DIR__ . "/trait_slug_state_watcher.php");
+
 class CardsController extends AdminController{
+
+	use TraitSlugStateWatcher;
 
 	function index(){
 		$this->page_title = _("List of Products");
@@ -132,7 +136,8 @@ class CardsController extends AdminController{
 			/*
 			$category_ids = $d["category_ids"];
 			unset($d["category_ids"]); */
-			list($original_names,$original_slugs) = $this->_get_names_and_slugs($this->card);
+
+			$this->_save_slug_state($this->card);
 
 			$tags = $d["tags"];
 			unset($d["tags"]);
@@ -160,34 +165,11 @@ class CardsController extends AdminController{
 				$this->card->addToCategory($cat);
 			}*/
 
-			list($new_names,$new_slugs) = $this->_get_names_and_slugs($this->card);
-
-			if($new_names!=$original_names && $new_slugs==$original_slugs){
-				$this->flash->success(_("Changes have been saved.")." "._("Please make sure you don't need to change slugs."));
-				$this->_redirect_to(array("action" => "edit_slugs", "id" => $this->card, "return_uri" => $this->_get_return_uri()));
-				return;
-			}
-
 			$this->flash->success(_("Changes have been saved"));
-			$this->_redirect_back();
+			$this->_redirect_back_or_edit_slug();
 		}
 
 		$this->_prepare_categories();
-	}
-
-	function edit_slugs(){
-		$this->page_title = sprintf(_("Editing slugs of product %s"),strip_tags($this->card->getName()));
-
-		$this->form->set_initial($this->card);
-		$this->_save_return_uri();
-
-		if($this->request->post() && ($d = $this->form->validate($this->params))){
-			if($this->form->changed()){
-				$this->card->s($d);
-				$this->flash->success(_("Changes have been saved"));
-			}
-			$this->_redirect_back();
-		}
 	}
 
 	function destroy(){
@@ -301,7 +283,7 @@ class CardsController extends AdminController{
 	}
 
 	function _before_filter() {
-		if (in_array($this->action, array("edit","edit_slugs","destroy","enable_variants","disable_variants","add_to_category","add_technical_specification","remove_from_category","append_external_source","remove_external_source", "set_category_rank"))) {
+		if (in_array($this->action, array("edit","destroy","enable_variants","disable_variants","add_to_category","add_technical_specification","remove_from_category","append_external_source","remove_external_source", "set_category_rank"))) {
 			$this->_find("card");
 		}
 
@@ -328,17 +310,5 @@ class CardsController extends AdminController{
 		$this->tpl_data["categories"] = $categories;
 		$this->tpl_data["filter_categories_count"] = $filter_categories_count;
 		$this->tpl_data["filters"] = $filters;
-	}
-
-	function _get_names_and_slugs($card){
-		global $ATK14_GLOBAL;
-
-		$names = $slugs = array();
-		foreach($ATK14_GLOBAL->getSupportedLangs() as $l){
-			$names[$l] = $card->getName($l);
-			$slugs[$l] = $card->getSlug($l);
-		}
-
-		return array($names,$slugs);
 	}
 }
