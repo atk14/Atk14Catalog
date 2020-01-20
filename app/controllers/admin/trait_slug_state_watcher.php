@@ -58,7 +58,7 @@ trait TraitSlugStateWatcher {
 
 		$patterns = $slugs = array();
 		foreach($ATK14_GLOBAL->getSupportedLangs() as $l){
-			$patterns[$l] = $object->getSlugPattern($l);
+			$patterns[$l] = Translate::Lower($object->getSlugPattern($l));
 			$slugs[$l] = $object->getSlug($l);
 		}
 
