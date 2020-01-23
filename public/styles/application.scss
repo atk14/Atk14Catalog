@@ -20,6 +20,10 @@
 // Other SCSS
 @import "layout";
 
+@import "alerts";
+
+@import "admin-object-menu";
+
 @import "articles";
 
 @import "cards";
@@ -46,3 +50,4 @@
 @import "shared/loading";
 @import "shared/btn_default";
 @import "shared/fileicons";
+
