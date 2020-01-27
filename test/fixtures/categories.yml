@@ -53,3 +53,11 @@ shoes:
   parent_category_id: 1001
   name_en: Shoes
   name_cs: Obuv
+
+mens_shoes:
+  id: 1011
+  parent_category_id: 1010
+  name_en: "Men"
+  name_cs: "Muži"
+  long_name_en: "Men's shoes"
+  long_name_cs: "Obuv pro muže"

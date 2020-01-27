@@ -65,4 +65,30 @@ class TcCategory extends TcBase {
 		$this->assertEquals($coffee->getId(),$cards[0]->getId());
 		$this->assertEquals($tea->getId(),$cards[1]->getId());
 	}
+
+	function test_names(){
+		$shoes = $this->categories["shoes"];
+
+		$this->assertEquals("Shoes",$shoes->getName("en"));
+		$this->assertEquals("Obuv",$shoes->getName("cs"));
+
+		$this->assertEquals("Shoes",$shoes->getLongName("en"));
+		$this->assertEquals("Obuv",$shoes->getLongName("cs"));
+
+		$this->assertEquals("Shoes",$shoes->getPageTitle("en"));
+		$this->assertEquals("Obuv",$shoes->getPageTitle("cs"));
+
+		// --
+
+		$mens_shoes = $this->categories["mens_shoes"];
+
+		$this->assertEquals("Men",$mens_shoes->getName("en"));
+		$this->assertEquals("Muži",$mens_shoes->getName("cs"));
+
+		$this->assertEquals("Men's shoes",$mens_shoes->getLongName("en"));
+		$this->assertEquals("Obuv pro muže",$mens_shoes->getLongName("cs"));
+
+		$this->assertEquals("Men's shoes",$mens_shoes->getPageTitle("en"));
+		$this->assertEquals("Obuv pro muže",$mens_shoes->getPageTitle("cs"));
+	}
 }
