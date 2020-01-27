@@ -7,6 +7,8 @@ class CategoriesController extends AdminController{
 
 	function edit(){
 		$this->page_title = sprintf(_('Editing category "%s"'),strip_tags($this->category->getName()));
+
+		$this->_save_return_uri();
 		$this->form->set_initial($this->category);
 
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
