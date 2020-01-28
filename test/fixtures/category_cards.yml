@@ -1,7 +1,11 @@
-green_tea:
+tea__color_green:
   category_id: "<?php echo $categories["color_green"]->getId() ?>"
   card_id: "<?php echo $cards["tea"]->getId() ?>"
 
-hot_tea:
+tea__food_drinks:
+   category_id: "<?php echo $categories["food_drinks"]->getId() ?>"
+   card_id: "<?php echo $cards["tea"]->getId() ?>"
+
+tea__hot_drinks:
    category_id: "<?php echo $categories["hot_drinks"]->getId() ?>"
    card_id: "<?php echo $cards["tea"]->getId() ?>"

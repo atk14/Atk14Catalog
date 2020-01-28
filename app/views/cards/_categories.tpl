@@ -1,3 +1,5 @@
+{assign categories $card->getCategories(["consider_invisible_categories" => false, "consider_filters" => false, "deduplicate" => true])}
+
 {if sizeof($categories)>1}
 	<section>
 	<h4>{t}Product locations{/t}</h4>

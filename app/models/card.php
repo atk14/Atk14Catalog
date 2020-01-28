@@ -232,6 +232,7 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 			"consider_filters" => true,
 			"root_category" => null,
 			"filters_only" => false,
+			"deduplicate" => false, // filters out categories that are listed in the paths of other categories
 		);
 
 		$categories = array();
@@ -244,6 +245,21 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 			if($options["root_category"] && !$c->isDescendantOf($options["root_category"])){ continue; }
 			$categories[] = $c;
 		}
+
+		if($options["deduplicate"]){
+			// getting parents
+			$parent_ids = array();
+			foreach($categories as $c){
+				while($p = $c->getParentCategory()){
+					$parent_ids[] = $p->getId();
+					$c = $p;
+				}
+			}
+			// filtering
+			$categories = array_filter($categories, function($c) use($parent_ids){ return !in_array($c->getId(),$parent_ids); });
+			$categories = array_values($categories);
+		}
+
 		return $categories;
 	}
 
