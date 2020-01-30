@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-06 13:38+0100\n"
-"PO-Revision-Date: 2019-12-06 13:40+0100\n"
+"POT-Creation-Date: 2020-01-30 12:46+0100\n"
+"PO-Revision-Date: 2020-01-30 12:51+0100\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: Team <team@email.com>\n"
 "Language: cs_CZ\n"
@@ -268,7 +268,7 @@ msgstr "Vytvořit a editovat alias"
 msgid "Add a new subcategory"
 msgstr "Přidat podkategorii"
 
-#: ../app/controllers/admin/categories_controller.php:57
+#: ../app/controllers/admin/categories_controller.php:66
 msgid "filter option"
 msgstr "možnost filtru"
 
@@ -556,7 +556,7 @@ msgstr "Obnoveno dne"
 msgid "Recovered from address"
 msgstr "Obnoveno z adresy"
 
-#: ../app/forms/admin/categories/categories_form.php:28
+#: ../app/forms/admin/categories/categories_form.php:34
 #: ../app/forms/admin/collections/collections_form.php:13
 #: ../app/forms/admin/images/images_form.php:16
 #: ../app/forms/admin/products/products_form.php:19
@@ -622,8 +622,11 @@ msgstr "bez názvu"
 msgid "copy this line to the text"
 msgstr "zkopírujte tento řádek do textu"
 
-msgid "Copy"
-msgstr "Kopírova"
+msgid "Copied!"
+msgstr "Zkopírováno!"
+
+msgid "Copy the line"
+msgstr "Kopírovat řádek"
 
 msgid "Currently there are no objects"
 msgstr "Momentálně tady nejsou žádné objekty"
@@ -904,10 +907,11 @@ msgid "Editing attachment #%s"
 msgstr "Editace přílohy #%s"
 
 #: ../app/controllers/admin/attachments_controller.php:38
-#: ../app/controllers/admin/cards_controller.php:162
-#: ../app/controllers/admin/categories_controller.php:11
+#: ../app/controllers/admin/cards_controller.php:168
+#: ../app/controllers/admin/categories_controller.php:20
 #: ../app/controllers/admin/collections_controller.php:27
 #: ../app/controllers/admin/images_controller.php:59
+#: ../app/controllers/admin/slugs_controller.php:19
 msgid "Changes have been saved"
 msgstr "Změny byly uloženy"
 
@@ -945,42 +949,42 @@ msgstr "Umístění produktu \"%s\" do filtrů"
 msgid "Settings saved"
 msgstr "Nastavení uloženo"
 
-#: ../app/controllers/admin/cards_controller.php:5
+#: ../app/controllers/admin/cards_controller.php:9
 msgid "List of Products"
 msgstr "Seznam produktů"
 
-#: ../app/controllers/admin/cards_controller.php:63
+#: ../app/controllers/admin/cards_controller.php:67
 msgid "Adding a product"
 msgstr "Přidat produkt"
 
-#: ../app/controllers/admin/cards_controller.php:97
+#: ../app/controllers/admin/cards_controller.php:101
 msgid "The product has been created. Now you can add some extra data to it."
 msgstr "Produkt byl vytvořen. Nyní k němu můžete přidat další údaje."
 
-#: ../app/controllers/admin/cards_controller.php:103
+#: ../app/controllers/admin/cards_controller.php:107
 #, php-format
 msgid "Editing product %s"
 msgstr "Editace produktu %s"
 
-#: ../app/controllers/admin/cards_controller.php:183
+#: ../app/controllers/admin/cards_controller.php:189
 msgid "Variants mode has been activated"
 msgstr "Variantní režim byl aktivován"
 
-#: ../app/controllers/admin/cards_controller.php:201
+#: ../app/controllers/admin/cards_controller.php:207
 msgid "Variants mode has been deactivated"
 msgstr "Variantní režim byl deaktivován"
 
-#: ../app/controllers/admin/cards_controller.php:224
+#: ../app/controllers/admin/cards_controller.php:230
 #: ../app/controllers/admin/technical_specifications_controller.php:12
 #: ../app/controllers/admin/technical_specifications_controller.php:36
 msgid "The product already has this specification"
 msgstr "Tento produkt už má tuto specifikaci"
 
-#: ../app/controllers/admin/cards_controller.php:256
+#: ../app/controllers/admin/cards_controller.php:262
 msgid "Připojení odkazu k produktu"
 msgstr "Připojení odkazu k produktu"
 
-#: ../app/controllers/admin/cards_controller.php:274
+#: ../app/controllers/admin/cards_controller.php:280
 msgid "Odkaz odpojen"
 msgstr "Odkaz odpojen"
 
@@ -1001,53 +1005,53 @@ msgstr "Bylo by pěkné doplnit nějaké další informace"
 msgid "Editace textové sekce"
 msgstr "Editace textové sekce"
 
-#: ../app/controllers/admin/categories_controller.php:5
+#: ../app/controllers/admin/categories_controller.php:9
 #, php-format
 msgid "Editing category \"%s\""
 msgstr "Editace kategorie \"%s\""
 
-#: ../app/controllers/admin/categories_controller.php:26
+#: ../app/controllers/admin/categories_controller.php:35
 #, php-format
 msgid "Moving category %s"
 msgstr "Přesun kategorie %s"
 
-#: ../app/controllers/admin/categories_controller.php:31
+#: ../app/controllers/admin/categories_controller.php:40
 msgid "The category can not be moved under itself"
 msgstr "Kategorie nemůže být přesunuta pod sebe sama"
 
-#: ../app/controllers/admin/categories_controller.php:35
+#: ../app/controllers/admin/categories_controller.php:44
 msgid "The category was moved"
 msgstr "Kategorie byla přesunuta"
 
-#: ../app/controllers/admin/categories_controller.php:52
+#: ../app/controllers/admin/categories_controller.php:61
 msgid "New subcategory"
 msgstr "Nová podkategorie"
 
-#: ../app/controllers/admin/categories_controller.php:64
+#: ../app/controllers/admin/categories_controller.php:73
 msgid "Category cannot be created when the parent category is an alias"
 msgstr "Kategorie nelze vytvořit, pokud je nadřazená kategorie alias"
 
-#: ../app/controllers/admin/categories_controller.php:70
+#: ../app/controllers/admin/categories_controller.php:79
 msgid "On this place a new category cannot be created"
 msgstr "Na tomto místě nemůže být vytvořena nová kategorie"
 
-#: ../app/controllers/admin/categories_controller.php:76
+#: ../app/controllers/admin/categories_controller.php:85
 msgid "Filter cannot be created when the parent category is also a filter"
 msgstr "Filtr nelze vytvořit, pokud je nadřazená kategorie také filtr"
 
-#: ../app/controllers/admin/categories_controller.php:83
+#: ../app/controllers/admin/categories_controller.php:92
 msgid "Category has been created"
 msgstr "Kategorie byla vytvořena"
 
-#: ../app/controllers/admin/categories_controller.php:103
+#: ../app/controllers/admin/categories_controller.php:112
 msgid "The category was deleted"
 msgstr "Kategorie byla smazána"
 
-#: ../app/controllers/admin/categories_controller.php:112
+#: ../app/controllers/admin/categories_controller.php:121
 msgid "New alias"
 msgstr "Nový alias"
 
-#: ../app/controllers/admin/categories_controller.php:120
+#: ../app/controllers/admin/categories_controller.php:129
 msgid "Alias was created"
 msgstr "Alias byl vytvořen"
 
@@ -1260,6 +1264,11 @@ msgstr "Přidání nového souvisejícího produktu"
 msgid "Related product has been added"
 msgstr "Související produkt byl přidán"
 
+#: ../app/controllers/admin/slugs_controller.php:7
+#, php-format
+msgid "Editing slug of object \"%s\""
+msgstr "Editace slugu objektu \"%s\""
+
 #: ../app/controllers/admin/stores_controller.php:5
 msgid "List of stores"
 msgstr "Seznam prodejen"
@@ -1319,6 +1328,10 @@ msgstr "Přidat novou technickou specifikaci"
 #: ../app/controllers/admin/technical_specifications_controller.php:19
 msgid "New technical specification record has been created"
 msgstr "Byl vytvořen nový záznam technické specifikace"
+
+#: ../app/controllers/admin/trait_slug_state_watcher.php:46
+msgid "Please make sure you don't need to change slugs"
+msgstr "Ujistěte se, že nemusíte měnit slugy"
 
 #: ../app/controllers/admin/users_controller.php:4
 msgid "Users list"
@@ -1389,7 +1402,7 @@ msgstr ""
 "beze změny."
 
 #: ../app/forms/admin/admin_form.php:137
-#: ../app/forms/admin/categories/categories_form.php:56
+#: ../app/forms/admin/categories/categories_form.php:63
 msgid "Is visible?"
 msgstr "Je viditelné?"
 
@@ -1402,7 +1415,7 @@ msgid "The same catalog number is used for another product"
 msgstr "Stejné katalogové číslo se používá pro jiný produkt"
 
 #: ../app/forms/admin/articles/articles_form.php:11
-#: ../app/forms/admin/categories/categories_form.php:51
+#: ../app/forms/admin/categories/categories_form.php:57
 #: ../app/forms/admin/collections/collections_form.php:17
 #: ../app/forms/admin/images/images_form.php:6
 #: ../app/forms/admin/link_list_items/link_list_items_form.php:16
@@ -1418,7 +1431,7 @@ msgstr "Obrázek používaný v přehledu článků"
 #: ../app/forms/admin/articles/articles_form.php:17
 #: ../app/forms/admin/brands/brands_form.php:8
 #: ../app/forms/admin/cards/cards_form.php:23
-#: ../app/forms/admin/categories/categories_form.php:22
+#: ../app/forms/admin/categories/categories_form.php:28
 #: ../app/forms/admin/collections/collections_form.php:8
 #: ../app/forms/admin/pages/pages_form.php:16
 msgid "Teaser"
@@ -1453,7 +1466,7 @@ msgstr "Název"
 
 #: ../app/forms/admin/brands/brands_form.php:10
 #: ../app/forms/admin/cards/cards_form.php:25
-#: ../app/forms/admin/categories/categories_form.php:24
+#: ../app/forms/admin/categories/categories_form.php:30
 #: ../app/forms/admin/stores/stores_form.php:10
 msgid "Brief description"
 msgstr "Stručný popis"
@@ -1542,35 +1555,51 @@ msgid "Search"
 msgstr "Hledat"
 
 #: ../app/forms/admin/categories/categories_form.php:16
+msgid "Long name"
+msgstr "Dlouhé jméno"
+
+#: ../app/forms/admin/categories/categories_form.php:18
+msgid "Fill in if the name alone is not enough to describe the category."
+msgstr "Vyplňte, pokud samotné jméno nestačí k popisu kategorie."
+
+#: ../app/forms/admin/categories/categories_form.php:22
 msgid "Is this a filter?"
 msgstr "Je to filtr?"
 
-#: ../app/forms/admin/categories/categories_form.php:17
+#: ../app/forms/admin/categories/categories_form.php:23
 msgid "e.g. material or color"
 msgstr "např. materiál nebo barva"
 
-#: ../app/forms/admin/categories/categories_form.php:36
+#: ../app/forms/admin/categories/categories_form.php:42
 #: ../app/forms/admin/pages/pages_form.php:26
 msgid "HTML title"
 msgstr "HTML název"
 
-#: ../app/forms/admin/categories/categories_form.php:39
-msgid "Content for <html><head><title>. If left empty, the name is used."
+#: ../app/forms/admin/categories/categories_form.php:45
+msgid ""
+"Content for <html><head><title>. If left empty, the long name, resp. the "
+"name is used."
 msgstr ""
-"Obsah pro <html><head><title>. Pokud je ponecháno prázdné, použije se název."
+"Obsah pro <html><head><title>. Pokud zůstane prázdné, použije se dlouhé "
+"jméno, resp. jméno."
 
-#: ../app/forms/admin/categories/categories_form.php:43
+#: ../app/forms/admin/categories/categories_form.php:49
 #: ../app/forms/admin/pages/pages_form.php:33
 msgid "HTML description"
 msgstr "HTML popis"
 
-#: ../app/forms/admin/categories/categories_form.php:46
+#: ../app/forms/admin/categories/categories_form.php:52
 #: ../app/forms/admin/pages/pages_form.php:36
 msgid ""
 "Content for <meta name=\"description\">. If left empty, the teaser is used."
 msgstr ""
 "Obsah pro <meta name=\"description\">. Pokud bude ponecháno prázdné, použije "
 "se teaser."
+
+#: ../app/forms/admin/categories/categories_form.php:59
+#, php-format
+msgid "Recommended image size is %dx%d"
+msgstr "Doporučená velikost obrázku je %dx%d"
 
 #: ../app/forms/admin/categories/create_alias_form.php:6
 msgid "Umístit do kategorie"
@@ -1699,17 +1728,21 @@ msgstr ""
 msgid "Parent page"
 msgstr "Rodičovské stránka"
 
-#: ../app/forms/admin/pages/pages_form.php:46
+#: ../app/forms/admin/pages/pages_form.php:45
 msgid "Show in sitemap?"
 msgstr "Zobrazovat v mapě stránek?"
 
-#: ../app/forms/admin/pages/pages_form.php:52
+#: ../app/forms/admin/pages/pages_form.php:51
 msgid "Visible?"
 msgstr "Viditelné?"
 
-#: ../app/forms/admin/pages/pages_form.php:64
-msgid "You cannot use the same page as the parent for the current page."
-msgstr "Nemůžete nastavit stránku jako rodičovskou pro stejnou stránku."
+#: ../app/forms/admin/pages/pages_form.php:67
+msgid "The page cannot be placed under itself."
+msgstr "Stránku nelze umístit samu pod sebe."
+
+#: ../app/forms/admin/pages/pages_form.php:73
+msgid "Nesting is too deep."
+msgstr "Vnoření je příliš hluboké."
 
 #: ../app/forms/admin/pictures/pictures_form.php:8
 msgid "Obrázek"
@@ -1726,6 +1759,10 @@ msgstr "Název produktu"
 #: ../app/forms/admin/products/products_form.php:16
 msgid "Fill in only when product name differs from it's card name"
 msgstr "Vyplňte, pouze pokud se název produktu liší od názvu jeho karty"
+
+#: ../app/forms/admin/slugs/edit_form.php:7
+msgid "Update slug"
+msgstr "Aktualizace slugu"
 
 #: ../app/forms/admin/stores/stores_form.php:26
 msgid "Phone"
@@ -1812,6 +1849,10 @@ msgstr "Automatické spuštění videa"
 #: ../app/forms/admin/videos/videos_form.php:13
 msgid "Po ukončení přehrát znovu"
 msgstr "Po ukončení přehrát znovu"
+
+msgid "Content for <html><head><title>. If left empty, the name is used."
+msgstr ""
+"Obsah pro <html><head><title>. Pokud je ponecháno prázdné, použije se název."
 
 msgid "This product can be swithed to the non-variant mode"
 msgstr "Tento produkt lze přepnout do nevariatního režimu"
@@ -2091,6 +2132,12 @@ msgstr "ATK14 Katalog je postaven na <em>ATK14 Skeletu</em>"
 
 msgid "Značka"
 msgstr "Brand"
+
+#~ msgid "Copy"
+#~ msgstr "Kopírova"
+
+#~ msgid "You cannot use the same page as the parent for the current page."
+#~ msgstr "Nemůžete nastavit stránku jako rodičovskou pro stejnou stránku."
 
 #~ msgid "velikost originálu:"
 #~ msgstr "velikost originálu:"
