@@ -17,6 +17,10 @@
 
 {render partial="shared/attachments" object=$card}
 
+{if !$card->hasCardSection("tech_spec")}
+	{render partial="technical_specifications"}
+{/if}
+
 {foreach $card->getCardSections() as $section}
 	<section>
 	<h3>{$section->getName()}</h3>

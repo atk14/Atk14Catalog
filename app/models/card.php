@@ -297,6 +297,17 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 	}
 
 	/**
+	 *
+	 *	$card->hasCardSection("tech_spec"); // true or false
+	 */
+	function hasCardSection($type_code){
+		foreach($this->getCardSections() as $section){
+			if($section->getTypeCode()==$type_code){ return true; }
+		}
+		return false;
+	}
+
+	/**
 	 * Projde vsechny textove sekce a k nim prilozena vlozena videa.
 	 * Vrati prvni instanci.
 	 *
