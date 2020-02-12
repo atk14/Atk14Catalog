@@ -1,4 +1,4 @@
-{if sizeof($categories)>1}
+{if $categories && sizeof($categories)>=1}
 	<section>
 	<h4>{t}Product locations{/t}</h4>
 	<ul class="list list-unstyled">
