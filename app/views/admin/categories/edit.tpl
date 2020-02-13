@@ -138,6 +138,7 @@ Do you really want this?{/t}{/capture}
 						<li class="list-group-item" data-id="{$card->getId()}">
 							{render partial="shared/list_thumbnail" image=$card->getImage()}
 							{$card->getName()}
+							{if !$card->isVisible()}<em>({!"eye-slash"|icon} {t}invisible{/t})</em>{/if}
 							{dropdown_menu}
 								{a action="cards/edit" id=$card}{!"edit"|icon} {t}Edit product{/t}{/a}
 								{a_destroy action="category_cards/destroy" id=$card category_id=$category}{!"remove"|icon} {t}Remove product{/t}{/a_destroy}
