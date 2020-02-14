@@ -72,7 +72,7 @@ Do you really want this?{/t}{/capture}
 
 	{assign var=ptc value=$category->getPointingToCategory()}
 	{capture assign=url}{link_to action=edit id=$ptc}{/capture}
-	<p>{t url=$url path=$ptc->getPath() escape=no}This is a virtual category, which is actually pointing to <a href="%1">/%2/</a>{/t}</p>
+	<p>{t url=$url path=$ptc->getPath() escape=no}This is a linking category that refers to <a href="%1">/%2/</a>{/t}</p>
 
 {else}
 

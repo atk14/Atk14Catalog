@@ -6,7 +6,16 @@ class CategoriesController extends AdminController{
 	use TraitSlugStateWatcher;
 
 	function edit(){
-		$this->page_title = sprintf(_('Editing category "%s"'),strip_tags($this->category->getName()));
+		if($this->category->isAlias()){
+			$title = _('Editing linking category "%s"');
+		}elseif($this->category->isFilter()){
+			$title = _('Editing filter category "%s"');
+		}elseif($this->category->isSubcategoryOfFilter()){
+			$title = _('Editing filter option "%s"');
+		}else{
+			$title = _('Editing category "%s"');
+		}
+		$this->page_title = sprintf($title,strip_tags($this->category->getName()));
 
 		$this->_save_return_uri();
 		$this->form->set_initial($this->category);
