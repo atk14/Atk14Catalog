@@ -3,7 +3,7 @@
 		{foreach $categories as $c}
 			<li>
 				{if $c->isFilter()}<em>{!"filter"|icon} {t}filter{/t}:</em>{/if}
-				{if $c->isPointingToCategory()}<em>{!"share-alt"|icon} {t}alias{/t}:</em>{/if}
+				{if $c->isPointingToCategory()}<em>{!"share-alt"|icon} {t}link{/t}:</em>{/if}
 				
 				{if !$c->isPointingToCategory() and !$c->isFilter()}<em>{!"folder-open"|icon}</em>{/if}
 

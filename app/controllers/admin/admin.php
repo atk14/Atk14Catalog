@@ -84,7 +84,7 @@ class AdminController extends ApplicationBaseController{
 		foreach($ancestors as $a){
 			$name = $a->getName();
 			if($a->isFilter()){ $name = _("filter").": $name"; }
-			if($a->isAlias()){ $name = _("alias").": $name"; }
+			if($a->isAlias()){ $name = _("link").": $name"; }
 
 			$this->breadcrumbs[] = array(
 				$name,

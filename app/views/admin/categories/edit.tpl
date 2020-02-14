@@ -12,7 +12,7 @@
 			{a action=move_to_category id=$category}{icon glyph="arrows-alt"} {t}Move the category{/t}{/a}
 		{/if}
 		{if $category->canBeAliased()}
-			{a action=create_alias id=$category}{icon glyph="share-alt"} {t}Create an alias{/t}{/a}
+			{a action=create_alias id=$category}{icon glyph="share-alt"} {t}Create a link to this category{/t}{/a}
 		{/if}
 		{if $category->isDeletable()}
 			{capture assign=confirmation}{t name=$category->getName() escape=no}You are about to delete the category %1!
@@ -90,7 +90,7 @@ Do you really want this?{/t}{/capture}
 					{foreach $children as $child}
 						<li class="list-group-item" data-id="{$child->getId()}">
 							{if $child->isFilter()}<em>{t}filter{/t}:</em>{/if}
-							{if $child->isAlias()}<em>{t}alias{/t}:</em>{/if}
+							{if $child->isAlias()}<em>{t}link{/t}:</em>{/if}
 							{$child->getName()}
 							{if !$child->isVisible()}<em>({t}invisible{/t})</em>{/if}
 							{dropdown_menu}

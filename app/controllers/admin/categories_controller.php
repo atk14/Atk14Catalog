@@ -118,7 +118,7 @@ class CategoriesController extends AdminController{
 			return $this->_execute_action("error404");
 		}
 
-		$this->page_title = _("New alias");
+		$this->page_title = sprintf(_('Creating new link to the category "%s"'),$this->category->getName());
 		$this->_save_return_uri();
 		$initial = $this->category->toArray();
 		unset($initial["parent_category_id"]);
