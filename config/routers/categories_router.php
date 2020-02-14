@@ -22,11 +22,16 @@ class CategoriesRouter extends Atk14Router{
 
 		$path = $this->params["path"];
 		unset($this->params["path"]);
-	
+
 		// $path may vary when the $this->lang changes
-		$category = Category::GetInstanceByPath($path);
-		if($category){
-			$path = $category->getPath($this->lang);
+		$l = null;
+		$category = Category::GetInstanceByPath($path,$l);
+		if($category && ($l!=$this->lang)){
+			$path_ar = array();
+			foreach(Category::GetInstancesOnPath($path) as $c){
+				$path_ar[] = $c->getSlug($this->lang);
+			}
+			$path = join("/",$path_ar);
 		}
 
 		$uri = "/$path/";

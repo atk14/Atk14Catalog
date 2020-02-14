@@ -29,29 +29,53 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 		return Category::FindAll("parent_category_id",$parent_category,$options);
 	}
 
+	function realMeId() { return $this->getPointingToCategoryId()?:$this->getId();}
+	function realMe() { return $this->getPointingToCategoryId()?$this->getPointingToCategory():$this;}
+
 	/**
-	 * $jidelna = Category::GetInstanceByPath("mistnosti/jidelna");
+	 * Vrati pole kategorii (jak jdou po ceste od korene)
+	 * Pokud dana cesta neexistuje, vrati null
+	 *
+	 * ```
+	 * $categories = Category::GetInstanceByPath("mistnosti/jidelna/stůl");
+	 * $categories[0]->getSlug(); //mistnosti
+	 * $categories[1]->getSlug(); //jidelna
+	 * $categories[2]->getSlug(); //stul
+	 * ```
 	 */
-	static function GetInstanceByPath($path,&$lang = null){
+	static function GetInstancesOnPath($path, &$lang = null) {
 		$orig_lang = $lang;
 
 		$path = (string)$path;
-
 		if(!$path){ return null; }
-		
+
+		$my_path='';
+		$slugs = explode("/",$path);
 		$parent_category_id = null;
+
+		$out = array();
+
+		$cpath = '';
 		foreach(explode('/',$path) as $slug){
 			if(!$c = Category::GetInstanceBySlug($slug,$lang,$parent_category_id)){
 				$lang = $orig_lang; // nenechame nastaveny $lang na nejakou necekanou hodnotu
 				return null;
 			}
-			if($pt = $c->getPointingToCategory()){
-				$c = $pt;
-			}
+			$c = $c->realMe();
+			$cpath .= "/$slug";
+			$out[substr($cpath,1)] = $c;
 			$parent_category_id = $c->getId();
 		}
+		return $out;
+	}
 
-		return $c;
+	/**
+	 * $jidelna = Category::GetInstanceByPath("mistnosti/jidelna");
+	 */
+	static function GetInstanceByPath($path,&$lang = null){
+		$out = self::GetInstancesOnPath($path, $lang);
+		if(!$out) { return null ; }
+		return end($out);
 	}
 
 	static function GetInstanceByNamePath($path,&$lang = null){
