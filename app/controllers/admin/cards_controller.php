@@ -137,6 +137,11 @@ class CardsController extends AdminController{
 			$category_ids = $d["category_ids"];
 			unset($d["category_ids"]); */
 
+			if(!$this->form->changed()){
+				$this->_redirect_back();
+				return;
+			}
+
 			$this->_save_slug_state($this->card);
 
 			$tags = $d["tags"];
@@ -173,10 +178,7 @@ class CardsController extends AdminController{
 	}
 
 	function destroy(){
-		if(!$this->request->post()){
-			return $this->_execute_action("error404");
-		}
-		$this->card->destroy();
+		$this->_destroy();
 	}
 
 	function enable_variants(){
@@ -284,7 +286,10 @@ class CardsController extends AdminController{
 
 	function _before_filter() {
 		if (in_array($this->action, array("edit","destroy","enable_variants","disable_variants","add_to_category","add_technical_specification","remove_from_category","append_external_source","remove_external_source", "set_category_rank"))) {
-			$this->_find("card");
+			$card = $this->_find("card");
+			if($card->isDeleted()){
+				return $this->_execute_action("error404");
+			}
 		}
 
 		if (in_array($this->action, array("remove_from_category", "set_category_rank"))) {
