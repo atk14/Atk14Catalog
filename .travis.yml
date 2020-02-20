@@ -15,22 +15,24 @@ php:
   - 7.1
   - 7.2
   - 7.3
-  - 7.4snapshot
+  - 7.4
 
 before_install:
   - echo 'en_US.UTF-8 UTF-8' | sudo tee --append /var/lib/locales/supported.d/local
   - echo 'cs_CZ.UTF-8 UTF-8' | sudo tee --append /var/lib/locales/supported.d/local
   - sudo locale-gen
   - locale -a
-  - composer global require "phpunit/phpunit=4.8.*"
+  - composer global require "phpunit/phpunit=4.8.*|5.7.*"
   - git submodule init && git submodule update
-  - ./scripts/check_system || echo "FIX REQUIREMENTS!"
+  - ./scripts/check_system || echo "FIX SYSTEM REQUIREMENTS!"
 
 before_script:
   - travis_retry composer install --dev --no-interaction --prefer-dist
   - echo "y" | ATK14_ENV=test ./scripts/create_database
   - echo "SELECT VERSION()" | ATK14_ENV=test ./scripts/dbconsole
   - ATK14_ENV=test ./scripts/migrate
+  - echo '127.0.0.1 atk14skelet.localhost' | sudo tee --append /etc/hosts
+  - ./scripts/check_installation || echo "FIX APPLICATION REQUIREMENTS!"
 
 script:
   - ./scripts/run_all_tests && echo "EVERYTHING IS FINE"
