@@ -237,6 +237,7 @@ class AdminController extends ApplicationBaseController{
 			"object" => null,
 			"flash_message" => _("Změny byly uloženy"),
 			"redirect_to" => null,
+			"has_iobjects" => false,
 			"has_image_gallery" => false,
 			"has_attachments" => false,
 			"set_initial_closure" => null, // function($form,$object){...}
@@ -257,6 +258,7 @@ class AdminController extends ApplicationBaseController{
 		}
 
 		$this->tpl_data["object"] = $object;
+		$this->tpl_data["has_iobjects"] = $options["has_iobjects"];
 		$this->tpl_data["has_image_gallery"] = $options["has_image_gallery"];
 		$this->tpl_data["has_attachments"] = $options["has_attachments"];
 
