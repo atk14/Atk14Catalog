@@ -3,6 +3,7 @@ var del = require( "del" );
 var rename = require( "gulp-rename" );
 var $ = require( "gulp-load-plugins" )();
 var browserSync = require( "browser-sync" ).create();
+var favicons = require("favicons").stream;
 require( "./gulpfile-admin" );
 
 var vendorStyles = [
@@ -68,6 +69,47 @@ gulp.task( "scripts", function() {
 		.pipe( $.sourcemaps.write( "." ) )
 		.pipe( gulp.dest( "public/dist/scripts" ) )
 		.pipe( browserSync.stream() );
+} );
+
+// Favicons
+gulp.task( "favicons", function() {
+	var execSync = require( "child_process" ).execSync;
+	var appName = execSync( "./scripts/dump_settings ATK14_APPLICATION_NAME" ).toString().trim();
+	var appDescription = execSync( "./scripts/dump_settings ATK14_APPLICATION_DESCRIPTION" ).toString().trim();
+	var appUrl = execSync( "./scripts/dump_settings ATK14_APPLICATION_URL" ).toString().trim();
+	var baseHref = execSync( "./scripts/dump_settings ATK14_BASE_HREF" ).toString().trim(); // e.g. "/"
+
+	gulp.src( [ "public/favicons/favicon.png" ] )
+	.pipe(
+		favicons( {
+			appName: appName,
+			appShortName: null,
+			appDescription: appDescription,
+			background: "#ffffff",
+			path: baseHref + "public/dist/favicons/",
+			url: appUrl,
+			display: "standalone",
+			orientation: "portrait",
+			scope: baseHref,
+			start_url: baseHref,
+			version: 1.0,
+			logging: false,
+			html: "index.html",
+			pipeHTML: false,
+			replace: true,
+			icons: {
+				android: { overlayShadow: false, overlayGlow: false },
+				appleIcon: { overlayShadow: false, overlayGlow: false },
+				appleStartup: false,
+				coast: false,
+				favicons: { overlayShadow: false, overlayGlow: false },
+				firefox: false,
+				windows: { overlayShadow: false, overlayGlow: false },
+				yandex: false
+			}
+		} )
+	)
+	.pipe( gulp.dest( "public/dist/favicons" ) );
 } );
 
 // Lint & Code style
@@ -139,6 +181,7 @@ var buildTasks = [
 	"styles",
 	"styles-vendor",
 	"scripts",
+	"favicons",
 	"copy"
 ];
 
