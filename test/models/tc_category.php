@@ -91,4 +91,26 @@ class TcCategory extends TcBase {
 		$this->assertEquals("Men's shoes",$mens_shoes->getPageTitle("en"));
 		$this->assertEquals("Obuv pro muže",$mens_shoes->getPageTitle("cs"));
 	}
+
+	function test_destroy(){
+		$kids = $this->categories["kids"];
+		$kids__kids_shoes = $this->categories["kids__kids_shoes"];
+		//
+		$kids_shoes = $this->categories["kids_shoes"];
+		$kids_shoes__girls = $this->categories["kids_shoes__girls"];
+		
+		$this->assertEquals($kids->getId(),$kids__kids_shoes->getParentCategoryId());
+		$this->assertEquals($kids_shoes->getId(),$kids__kids_shoes->getPointingToCategoryId());
+		$this->assertEquals($kids_shoes->getId(),$kids_shoes__girls->getParentCategoryId());
+
+		$kids->destroy();
+
+		Cache::Clear();
+
+		$this->assertNull(Category::FindByCode("kids"));
+		$this->assertNull(Category::FindByCode("kids__kids_shoes"));
+
+		$this->assertNotNull(Category::FindByCode("kids_shoes"));
+		$this->assertNotNull(Category::FindByCode("kids_shoes__girls"));
+	}
 }

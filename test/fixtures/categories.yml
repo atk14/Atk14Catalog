@@ -19,6 +19,16 @@ color_green:
   id: 1004
   parent_category_id: 1002
   name_en: Green
+
+color_yellow:
+  id: 1012
+  parent_category_id: 1002
+  name_en: Yellow
+
+color_blue:
+  id: 1013
+  parent_category_id: 1002
+  name_en: Blue
  
 usage:
   id: 1005
@@ -48,6 +58,14 @@ hot_drinks:
   parent_category_id: 1008
   name_en: Hot drinks
 
+cold_drinks:
+  id: 1011
+  parent_category_id: 1008
+  name_en: Cold drinks
+
+
+
+
 shoes:
   id: 1010
   parent_category_id: 1001
@@ -55,9 +73,46 @@ shoes:
   name_cs: Obuv
 
 mens_shoes:
-  id: 1011
+  id: 1017
   parent_category_id: 1010
   name_en: "Men"
   name_cs: "Muži"
   long_name_en: "Men's shoes"
   long_name_cs: "Obuv pro muže"
+
+kids_shoes:
+  id: 1014
+  code: "kids_shoes"
+  parent_category_id: 1010
+  name_en: "Kids"
+  name_cs: "Děti"
+
+kids_shoes__girls:
+  id: 1018
+  code: "kids_shoes__girls"
+  parent_category_id: 1014
+  name_en: "Girls"
+  name_cs: "Holky"
+
+kids_shoes__boys:
+  id: 1019
+  code: "kids_shoes__boys"
+  parent_category_id: 1014
+  name_en: "Boys"
+  name_cs: "Chlapci"
+
+
+
+kids:
+  id: 1015
+  code: "kids"
+  name_en: "Kids"
+  name_cs: "Děti"
+
+kids__kids_shoes:
+  id: 1016
+  code: "kids__kids_shoes"
+  parent_category_id: 1015
+  pointing_to_category_id: 1014
+  name_en: "Shoes"
+  name_cs: "Obuv"
