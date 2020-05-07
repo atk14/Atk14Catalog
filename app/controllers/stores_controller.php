@@ -3,7 +3,7 @@ class StoresController extends ApplicationController {
 
 	function index(){
 		$this->page_title = _("List of stores");
-		$this->breadcrumbs[] = "Stores";
+		$this->breadcrumbs[] = _("Stores");
 		$this->tpl_data["stores"] = Store::FindAll();
 	}
 
