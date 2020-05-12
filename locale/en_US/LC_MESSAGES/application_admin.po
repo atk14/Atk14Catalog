@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-30 12:46+0100\n"
-"PO-Revision-Date: 2020-01-30 13:04+0100\n"
+"POT-Creation-Date: 2020-05-12 16:50+0200\n"
+"PO-Revision-Date: 2020-05-12 17:07+0200\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: Team <team@email.com>\n"
 "Language: en_US\n"
@@ -64,7 +64,7 @@ msgid "Date"
 msgstr "Date"
 
 #: ../app/controllers/admin/admin.php:32
-#: ../app/forms/admin/articles/articles_form.php:33
+#: ../app/forms/admin/articles/articles_form.php:34
 #: ../app/forms/admin/cards/cards_form.php:44
 msgid "Tags"
 msgstr "Tags"
@@ -268,15 +268,15 @@ msgstr "Vytvořit a editovat alias"
 msgid "Add a new subcategory"
 msgstr "Add a new subcategory"
 
-#: ../app/controllers/admin/categories_controller.php:66
+#: ../app/controllers/admin/categories_controller.php:75
 msgid "filter option"
 msgstr "filter option"
 
 msgid "Move the category"
 msgstr "Move the category"
 
-msgid "Create an alias"
-msgstr "Create an alias"
+msgid "Create a link to this category"
+msgstr "Create a link to this category"
 
 msgid ""
 "You are about to delete the category %1!\n"
@@ -304,12 +304,8 @@ msgstr "It is a filter option"
 msgid "Can products be inserted here?"
 msgstr "Can products be inserted here?"
 
-msgid ""
-"This is a virtual category, which is actually pointing to <a href=\"%1\">/%2/"
-"</a>"
-msgstr ""
-"This is a virtual category, which is actually pointing to <a href=\"%1\">/%2/"
-"</a>"
+msgid "This is a linking category that refers to <a href=\"%1\">/%2/</a>"
+msgstr "This is a linking category that refers to <a href=\"%1\">/%2/</a>"
 
 msgid "Subcategories"
 msgstr "Subcategories"
@@ -322,8 +318,8 @@ msgid "filter"
 msgstr "filter"
 
 #: ../app/controllers/admin/admin.php:87
-msgid "alias"
-msgstr "alias"
+msgid "link"
+msgstr "link"
 
 msgid "This category has no subcategories."
 msgstr "This category has no subcategories."
@@ -435,23 +431,20 @@ msgstr "URL"
 msgid "bez popisu"
 msgstr "without description"
 
-msgid "Fotogalerie zatím neobsahuje žádný obrázek."
-msgstr "Photogallery has no image yet."
+msgid "Drag files here"
+msgstr "Drag files here"
 
-msgid "Upravit"
-msgstr "Edit"
+msgid "Photos"
+msgstr "Photos"
 
-msgid "Smazat"
-msgstr "Delete"
-
-msgid "editovat"
-msgstr "edit"
-
-msgid "bez titulku"
-msgstr "without a title"
+msgid "Přidat obrázky do fotogalerie"
+msgstr "Add pictures to the photo gallery"
 
 msgid "Přidat fotografii"
 msgstr "Add a photo"
+
+msgid "bez titulku nebo popisu"
+msgstr "without title or description"
 
 msgid "The image was uploaded at:"
 msgstr "The image was uploaded at:"
@@ -601,12 +594,6 @@ msgstr "Logos"
 msgid "Photo gallery"
 msgstr "Photo gallery"
 
-msgid "Currently there are no images"
-msgstr "Currently there are no images"
-
-msgid "Add an image"
-msgstr "Add an image"
-
 msgid "Objects inserted into text"
 msgstr "Objects inserted into text"
 
@@ -668,6 +655,19 @@ msgstr "Show larger image"
 
 msgid "no image"
 msgstr "no image"
+
+msgid "Add images"
+msgstr "Add images"
+
+msgid ""
+"Upload multiple files with the file dialog or by dragging and dropping "
+"images onto the dashed region"
+msgstr ""
+"Upload multiple files with the file dialog or by dragging and dropping "
+"images onto the dashed region"
+
+msgid "Submit form"
+msgstr "Submit form"
 
 msgid "Add a store"
 msgstr "Add a store"
@@ -848,16 +848,16 @@ msgstr "Create an object of type %s"
 msgid "Změny byly uloženy"
 msgstr "The changes have been saved"
 
-#: ../app/controllers/admin/admin.php:264
+#: ../app/controllers/admin/admin.php:266
 #, php-format
 msgid "Editace objektu typu %s"
 msgstr "Editing object of type %s"
 
-#: ../app/controllers/admin/admin.php:388
+#: ../app/controllers/admin/admin.php:390
 msgid "The entry has been deleted"
 msgstr "The entry has been deleted"
 
-#: ../app/controllers/admin/admin.php:395
+#: ../app/controllers/admin/admin.php:397
 #: ../app/controllers/admin/galleries_controller.php:33
 msgid "Fotogalerie"
 msgstr "Photogallery"
@@ -907,8 +907,8 @@ msgid "Editing attachment #%s"
 msgstr "Editing attachment #%s"
 
 #: ../app/controllers/admin/attachments_controller.php:38
-#: ../app/controllers/admin/cards_controller.php:168
-#: ../app/controllers/admin/categories_controller.php:20
+#: ../app/controllers/admin/cards_controller.php:173
+#: ../app/controllers/admin/categories_controller.php:29
 #: ../app/controllers/admin/collections_controller.php:27
 #: ../app/controllers/admin/images_controller.php:59
 #: ../app/controllers/admin/slugs_controller.php:19
@@ -966,25 +966,25 @@ msgstr "The product has been created. Now you can add some extra data to it."
 msgid "Editing product %s"
 msgstr "Editing product %s"
 
-#: ../app/controllers/admin/cards_controller.php:189
+#: ../app/controllers/admin/cards_controller.php:191
 msgid "Variants mode has been activated"
 msgstr "Variants mode has been activated"
 
-#: ../app/controllers/admin/cards_controller.php:207
+#: ../app/controllers/admin/cards_controller.php:209
 msgid "Variants mode has been deactivated"
 msgstr "Variants mode has been deactivated"
 
-#: ../app/controllers/admin/cards_controller.php:230
+#: ../app/controllers/admin/cards_controller.php:232
 #: ../app/controllers/admin/technical_specifications_controller.php:12
 #: ../app/controllers/admin/technical_specifications_controller.php:36
 msgid "The product already has this specification"
 msgstr "The product already has this specification"
 
-#: ../app/controllers/admin/cards_controller.php:262
+#: ../app/controllers/admin/cards_controller.php:264
 msgid "Připojení odkazu k produktu"
 msgstr "Connecting link to the product"
 
-#: ../app/controllers/admin/cards_controller.php:280
+#: ../app/controllers/admin/cards_controller.php:282
 msgid "Odkaz odpojen"
 msgstr "Link disconnected"
 
@@ -1005,53 +1005,69 @@ msgstr "It would be nice to add some more information"
 msgid "Editace textové sekce"
 msgstr "Text section editing"
 
-#: ../app/controllers/admin/categories_controller.php:9
+#: ../app/controllers/admin/categories_controller.php:10
+#, php-format
+msgid "Editing linking category \"%s\""
+msgstr "Editing linking category \"%s\""
+
+#: ../app/controllers/admin/categories_controller.php:12
+#, php-format
+msgid "Editing filter category \"%s\""
+msgstr "Editing filter category \"%s\""
+
+#: ../app/controllers/admin/categories_controller.php:14
+#, php-format
+msgid "Editing filter option \"%s\""
+msgstr "Editing filter option \"%s\""
+
+#: ../app/controllers/admin/categories_controller.php:16
 #, php-format
 msgid "Editing category \"%s\""
 msgstr "Editing category \"%s\""
 
-#: ../app/controllers/admin/categories_controller.php:35
+#: ../app/controllers/admin/categories_controller.php:44
 #, php-format
 msgid "Moving category %s"
 msgstr "Moving category %s"
 
-#: ../app/controllers/admin/categories_controller.php:40
+#: ../app/controllers/admin/categories_controller.php:49
 msgid "The category can not be moved under itself"
 msgstr "The category can not be moved under itself"
 
-#: ../app/controllers/admin/categories_controller.php:44
+#: ../app/controllers/admin/categories_controller.php:53
 msgid "The category was moved"
 msgstr "The category was moved"
 
-#: ../app/controllers/admin/categories_controller.php:61
+#: ../app/controllers/admin/categories_controller.php:70
 msgid "New subcategory"
 msgstr "New subcategory"
 
-#: ../app/controllers/admin/categories_controller.php:73
+#: ../app/controllers/admin/categories_controller.php:82
 msgid "Category cannot be created when the parent category is an alias"
 msgstr "Category cannot be created when the parent category is an alias"
 
-#: ../app/controllers/admin/categories_controller.php:79
+#: ../app/controllers/admin/categories_controller.php:88
 msgid "On this place a new category cannot be created"
 msgstr "On this place a new category cannot be created"
 
-#: ../app/controllers/admin/categories_controller.php:85
+#: ../app/controllers/admin/categories_controller.php:94
 msgid "Filter cannot be created when the parent category is also a filter"
 msgstr "Filter cannot be created when the parent category is also a filter"
 
-#: ../app/controllers/admin/categories_controller.php:92
+#: ../app/controllers/admin/categories_controller.php:101
 msgid "Category has been created"
 msgstr "Category has been created"
 
-#: ../app/controllers/admin/categories_controller.php:112
+#: ../app/controllers/admin/categories_controller.php:121
 msgid "The category was deleted"
 msgstr "The category was deleted"
 
-#: ../app/controllers/admin/categories_controller.php:121
-msgid "New alias"
-msgstr "New alias"
+#: ../app/controllers/admin/categories_controller.php:130
+#, php-format
+msgid "Creating new link to the category \"%s\""
+msgstr "Creating new link to the category \"%s\""
 
-#: ../app/controllers/admin/categories_controller.php:129
+#: ../app/controllers/admin/categories_controller.php:138
 msgid "Alias was created"
 msgstr "Alias was created"
 
@@ -1436,16 +1452,20 @@ msgstr "Image used in article overview"
 msgid "Teaser"
 msgstr "Teaser"
 
-#: ../app/forms/admin/articles/articles_form.php:22
-#: ../app/forms/admin/pages/pages_form.php:21
+#: ../app/forms/admin/articles/articles_form.php:18
+#: ../app/forms/admin/articles/articles_form.php:24
+#: ../app/forms/admin/pages/pages_form.php:17
+#: ../app/forms/admin/pages/pages_form.php:23
+#, php-format
+msgid "<a href=\"%s\">Markdown</a> format is expected"
+msgstr "<a href=\"%s\">Markdown</a> format is expected"
+
+#: ../app/forms/admin/articles/articles_form.php:23
+#: ../app/forms/admin/pages/pages_form.php:22
 msgid "Body"
 msgstr "Body"
 
-#: ../app/forms/admin/articles/articles_form.php:23
-msgid "Markdown format is expected"
-msgstr "Markdown format is expected"
-
-#: ../app/forms/admin/articles/articles_form.php:28
+#: ../app/forms/admin/articles/articles_form.php:29
 msgid "Published At"
 msgstr "Published At"
 
@@ -1571,7 +1591,7 @@ msgid "e.g. material or color"
 msgstr "e.g. material or color"
 
 #: ../app/forms/admin/categories/categories_form.php:42
-#: ../app/forms/admin/pages/pages_form.php:26
+#: ../app/forms/admin/pages/pages_form.php:28
 msgid "HTML title"
 msgstr "HTML title"
 
@@ -1584,12 +1604,12 @@ msgstr ""
 "name is used."
 
 #: ../app/forms/admin/categories/categories_form.php:49
-#: ../app/forms/admin/pages/pages_form.php:33
+#: ../app/forms/admin/pages/pages_form.php:35
 msgid "HTML description"
 msgstr "HTML description"
 
 #: ../app/forms/admin/categories/categories_form.php:52
-#: ../app/forms/admin/pages/pages_form.php:36
+#: ../app/forms/admin/pages/pages_form.php:38
 msgid ""
 "Content for <meta name=\"description\">. If left empty, the teaser is used."
 msgstr ""
@@ -1718,27 +1738,27 @@ msgstr "The same code is used on a different page"
 msgid "Image used on list of pages, social networks, etc."
 msgstr "Image used on list of pages, social networks, etc."
 
-#: ../app/forms/admin/pages/pages_form.php:29
+#: ../app/forms/admin/pages/pages_form.php:31
 msgid "Content for <html><head><title>. If left empty, the title is used."
 msgstr "Content for <html><head><title>. If left empty, the title is used."
 
-#: ../app/forms/admin/pages/pages_form.php:40
+#: ../app/forms/admin/pages/pages_form.php:42
 msgid "Parent page"
 msgstr "Parent page"
 
-#: ../app/forms/admin/pages/pages_form.php:45
+#: ../app/forms/admin/pages/pages_form.php:47
 msgid "Show in sitemap?"
 msgstr "Show in sitemap?"
 
-#: ../app/forms/admin/pages/pages_form.php:51
+#: ../app/forms/admin/pages/pages_form.php:53
 msgid "Visible?"
 msgstr "Visible?"
 
-#: ../app/forms/admin/pages/pages_form.php:67
+#: ../app/forms/admin/pages/pages_form.php:69
 msgid "The page cannot be placed under itself."
 msgstr "The page cannot be placed under itself."
 
-#: ../app/forms/admin/pages/pages_form.php:73
+#: ../app/forms/admin/pages/pages_form.php:75
 msgid "Nesting is too deep."
 msgstr "Nesting is too deep."
 
@@ -1848,6 +1868,46 @@ msgstr "Auto-start video"
 #: ../app/forms/admin/videos/videos_form.php:13
 msgid "Po ukončení přehrát znovu"
 msgstr "Play again when finished"
+
+msgid "Create an alias"
+msgstr "Create an alias"
+
+msgid ""
+"This is a virtual category, which is actually pointing to <a href=\"%1\">/%2/"
+"</a>"
+msgstr ""
+"This is a virtual category, which is actually pointing to <a href=\"%1\">/%2/"
+"</a>"
+
+msgid "alias"
+msgstr "alias"
+
+msgid "New alias"
+msgstr "New alias"
+
+#~ msgid "Fotogalerie zatím neobsahuje žádný obrázek."
+#~ msgstr "Photogallery has no image yet."
+
+#~ msgid "Upravit"
+#~ msgstr "Edit"
+
+#~ msgid "Smazat"
+#~ msgstr "Delete"
+
+#~ msgid "editovat"
+#~ msgstr "edit"
+
+#~ msgid "bez titulku"
+#~ msgstr "without a title"
+
+#~ msgid "Currently there are no images"
+#~ msgstr "Currently there are no images"
+
+#~ msgid "Add an image"
+#~ msgstr "Add an image"
+
+#~ msgid "Markdown format is expected"
+#~ msgstr "Markdown format is expected"
 
 #~ msgid "atk14.date_format"
 #~ msgstr "m/d/Y"

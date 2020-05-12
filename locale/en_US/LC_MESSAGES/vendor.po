@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-30 12:46+0100\n"
-"PO-Revision-Date: 2020-01-30 12:25+0100\n"
+"POT-Creation-Date: 2020-05-12 16:50+0200\n"
+"PO-Revision-Date: 2020-05-12 17:08+0200\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -33,13 +33,17 @@ msgstr "Plain text body"
 msgid "No mail has been sent"
 msgstr "No mail has been sent"
 
-#: ../vendor/atk14/phone-field/src/phone_field.php:5
-msgid "Enter valid phone number (+420.605123456)"
-msgstr "Enter valid phone number (+420.605123456)"
-
 #: ../vendor/atk14/phone-field/src/phone_field.php:7
-msgid "Enter phone number in format +420.605123456"
-msgstr "Enter phone number in format +420.605123456"
+msgid "Enter phone number in format %sample_phone_number%"
+msgstr "Enter phone number in format %sample_phone_number%"
+
+#: ../vendor/atk14/phone-field/src/phone_field.php:18
+msgid "Enter valid phone number (%sample_phone_number%)"
+msgstr "Enter valid phone number (%sample_phone_number%)"
+
+#: ../vendor/atk14/phone-field/src/phone_field.php:19
+msgid "Enter phone number"
+msgstr "Enter phone number"
 
 #: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_attachment_input.php:41
 #: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_image_input.php:45
@@ -93,3 +97,15 @@ msgstr "Write something like black-cat-white-cat"
 #: ../vendor/atk14/url-field/src/url_field.php:12
 msgid "This doesn't look like an URL"
 msgstr "This doesn't look like an URL"
+
+msgid "Hello World!"
+msgstr "Hello World!"
+
+msgid "Hello Another World!"
+msgstr "Hello Another World!"
+
+#~ msgid "Enter valid phone number (+420.605123456)"
+#~ msgstr "Enter valid phone number (+420.605123456)"
+
+#~ msgid "Enter phone number in format +420.605123456"
+#~ msgstr "Enter phone number in format +420.605123456"

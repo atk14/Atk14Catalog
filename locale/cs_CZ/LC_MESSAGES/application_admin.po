@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-30 12:46+0100\n"
-"PO-Revision-Date: 2020-01-30 12:51+0100\n"
+"POT-Creation-Date: 2020-05-12 16:50+0200\n"
+"PO-Revision-Date: 2020-03-16 10:19+0100\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: Team <team@email.com>\n"
 "Language: cs_CZ\n"
@@ -64,7 +64,7 @@ msgid "Date"
 msgstr "Datum"
 
 #: ../app/controllers/admin/admin.php:32
-#: ../app/forms/admin/articles/articles_form.php:33
+#: ../app/forms/admin/articles/articles_form.php:34
 #: ../app/forms/admin/cards/cards_form.php:44
 msgid "Tags"
 msgstr "Štítky"
@@ -245,7 +245,7 @@ msgid "Add a new variant"
 msgstr "Přidat novou variantu"
 
 msgid "Product variants (%1)"
-msgstr "Varianty produktů (%1)"
+msgstr "Varianty produktu (%1)"
 
 msgid "Variants are not considered for this product"
 msgstr "Varianty nejsou pro tento produkt uvažovány"
@@ -268,15 +268,15 @@ msgstr "Vytvořit a editovat alias"
 msgid "Add a new subcategory"
 msgstr "Přidat podkategorii"
 
-#: ../app/controllers/admin/categories_controller.php:66
+#: ../app/controllers/admin/categories_controller.php:75
 msgid "filter option"
 msgstr "možnost filtru"
 
 msgid "Move the category"
 msgstr "Přesunout kategorii"
 
-msgid "Create an alias"
-msgstr "Vytvořit alias"
+msgid "Create a link to this category"
+msgstr "Vytvořit odkaz na tuto kategorii"
 
 msgid ""
 "You are about to delete the category %1!\n"
@@ -304,12 +304,8 @@ msgstr "To je možnost filtru"
 msgid "Can products be inserted here?"
 msgstr "Mohou zde být vloženy produkty?"
 
-msgid ""
-"This is a virtual category, which is actually pointing to <a href=\"%1\">/%2/"
-"</a>"
-msgstr ""
-"Jedná se o virtuální kategorii, která ve skutečnosti ukazuje na <a href="
-"\"%1\">/% 2/</a>"
+msgid "This is a linking category that refers to <a href=\"%1\">/%2/</a>"
+msgstr "Toto je odkazující kategorie, která směřuje do <a href=\"%1\">/%2/</a>"
 
 msgid "Subcategories"
 msgstr "Podkategorie"
@@ -322,8 +318,8 @@ msgid "filter"
 msgstr "filtr"
 
 #: ../app/controllers/admin/admin.php:87
-msgid "alias"
-msgstr "alias"
+msgid "link"
+msgstr "odkaz"
 
 msgid "This category has no subcategories."
 msgstr "Tato kategorie nemá žádné podkategorie."
@@ -435,23 +431,20 @@ msgstr "URL"
 msgid "bez popisu"
 msgstr "bez popisu"
 
-msgid "Fotogalerie zatím neobsahuje žádný obrázek."
-msgstr "Fotogalerie zatím neobsahuje žádný obrázek."
+msgid "Drag files here"
+msgstr "Přetáhněte soubory sem"
 
-msgid "Upravit"
-msgstr "Upravit"
+msgid "Photos"
+msgstr "Fotografie"
 
-msgid "Smazat"
-msgstr "Smazat"
-
-msgid "editovat"
-msgstr "editovat"
-
-msgid "bez titulku"
-msgstr "bez titulku"
+msgid "Přidat obrázky do fotogalerie"
+msgstr "Přidat obrázky do fotogalerie"
 
 msgid "Přidat fotografii"
 msgstr "Přidat fotografii"
+
+msgid "bez titulku nebo popisu"
+msgstr "bez titulku nebo popisu"
 
 msgid "The image was uploaded at:"
 msgstr "Obrázek byl nahrán:"
@@ -601,12 +594,6 @@ msgstr "Loga"
 msgid "Photo gallery"
 msgstr "Fotogalerie"
 
-msgid "Currently there are no images"
-msgstr "Momentálně tady nejsou žádné obrázky"
-
-msgid "Add an image"
-msgstr "Přidat obrázek"
-
 msgid "Objects inserted into text"
 msgstr "Objekty vložené do textu"
 
@@ -668,6 +655,19 @@ msgstr "Zobrazit větší obrázek"
 
 msgid "no image"
 msgstr "bez obrázku"
+
+msgid "Add images"
+msgstr "Přidat obrázky"
+
+msgid ""
+"Upload multiple files with the file dialog or by dragging and dropping "
+"images onto the dashed region"
+msgstr ""
+"Nahrajte více obrázků buďto pomocí souborový dialogu nebo přetažením obrázků "
+"do vyčárkované oblasti"
+
+msgid "Submit form"
+msgstr "Odeslat formulář"
 
 msgid "Add a store"
 msgstr "Přidat prodejnu"
@@ -848,16 +848,16 @@ msgstr "Vytvořit objekt typu %s"
 msgid "Změny byly uloženy"
 msgstr "Změny byly uloženy"
 
-#: ../app/controllers/admin/admin.php:264
+#: ../app/controllers/admin/admin.php:266
 #, php-format
 msgid "Editace objektu typu %s"
 msgstr "Editace objektu typu %s"
 
-#: ../app/controllers/admin/admin.php:388
+#: ../app/controllers/admin/admin.php:390
 msgid "The entry has been deleted"
 msgstr "Záznam byl smazán"
 
-#: ../app/controllers/admin/admin.php:395
+#: ../app/controllers/admin/admin.php:397
 #: ../app/controllers/admin/galleries_controller.php:33
 msgid "Fotogalerie"
 msgstr "Fotogalerie"
@@ -907,8 +907,8 @@ msgid "Editing attachment #%s"
 msgstr "Editace přílohy #%s"
 
 #: ../app/controllers/admin/attachments_controller.php:38
-#: ../app/controllers/admin/cards_controller.php:168
-#: ../app/controllers/admin/categories_controller.php:20
+#: ../app/controllers/admin/cards_controller.php:173
+#: ../app/controllers/admin/categories_controller.php:29
 #: ../app/controllers/admin/collections_controller.php:27
 #: ../app/controllers/admin/images_controller.php:59
 #: ../app/controllers/admin/slugs_controller.php:19
@@ -966,25 +966,25 @@ msgstr "Produkt byl vytvořen. Nyní k němu můžete přidat další údaje."
 msgid "Editing product %s"
 msgstr "Editace produktu %s"
 
-#: ../app/controllers/admin/cards_controller.php:189
+#: ../app/controllers/admin/cards_controller.php:191
 msgid "Variants mode has been activated"
 msgstr "Variantní režim byl aktivován"
 
-#: ../app/controllers/admin/cards_controller.php:207
+#: ../app/controllers/admin/cards_controller.php:209
 msgid "Variants mode has been deactivated"
 msgstr "Variantní režim byl deaktivován"
 
-#: ../app/controllers/admin/cards_controller.php:230
+#: ../app/controllers/admin/cards_controller.php:232
 #: ../app/controllers/admin/technical_specifications_controller.php:12
 #: ../app/controllers/admin/technical_specifications_controller.php:36
 msgid "The product already has this specification"
 msgstr "Tento produkt už má tuto specifikaci"
 
-#: ../app/controllers/admin/cards_controller.php:262
+#: ../app/controllers/admin/cards_controller.php:264
 msgid "Připojení odkazu k produktu"
 msgstr "Připojení odkazu k produktu"
 
-#: ../app/controllers/admin/cards_controller.php:280
+#: ../app/controllers/admin/cards_controller.php:282
 msgid "Odkaz odpojen"
 msgstr "Odkaz odpojen"
 
@@ -1005,53 +1005,69 @@ msgstr "Bylo by pěkné doplnit nějaké další informace"
 msgid "Editace textové sekce"
 msgstr "Editace textové sekce"
 
-#: ../app/controllers/admin/categories_controller.php:9
+#: ../app/controllers/admin/categories_controller.php:10
+#, php-format
+msgid "Editing linking category \"%s\""
+msgstr "Editace odkazující kategorie \"%s\""
+
+#: ../app/controllers/admin/categories_controller.php:12
+#, php-format
+msgid "Editing filter category \"%s\""
+msgstr "Editace filtrační kategorie \"%s\""
+
+#: ../app/controllers/admin/categories_controller.php:14
+#, php-format
+msgid "Editing filter option \"%s\""
+msgstr "Editace možnosti filtru \"%s\""
+
+#: ../app/controllers/admin/categories_controller.php:16
 #, php-format
 msgid "Editing category \"%s\""
 msgstr "Editace kategorie \"%s\""
 
-#: ../app/controllers/admin/categories_controller.php:35
+#: ../app/controllers/admin/categories_controller.php:44
 #, php-format
 msgid "Moving category %s"
 msgstr "Přesun kategorie %s"
 
-#: ../app/controllers/admin/categories_controller.php:40
+#: ../app/controllers/admin/categories_controller.php:49
 msgid "The category can not be moved under itself"
 msgstr "Kategorie nemůže být přesunuta pod sebe sama"
 
-#: ../app/controllers/admin/categories_controller.php:44
+#: ../app/controllers/admin/categories_controller.php:53
 msgid "The category was moved"
 msgstr "Kategorie byla přesunuta"
 
-#: ../app/controllers/admin/categories_controller.php:61
+#: ../app/controllers/admin/categories_controller.php:70
 msgid "New subcategory"
 msgstr "Nová podkategorie"
 
-#: ../app/controllers/admin/categories_controller.php:73
+#: ../app/controllers/admin/categories_controller.php:82
 msgid "Category cannot be created when the parent category is an alias"
 msgstr "Kategorie nelze vytvořit, pokud je nadřazená kategorie alias"
 
-#: ../app/controllers/admin/categories_controller.php:79
+#: ../app/controllers/admin/categories_controller.php:88
 msgid "On this place a new category cannot be created"
 msgstr "Na tomto místě nemůže být vytvořena nová kategorie"
 
-#: ../app/controllers/admin/categories_controller.php:85
+#: ../app/controllers/admin/categories_controller.php:94
 msgid "Filter cannot be created when the parent category is also a filter"
 msgstr "Filtr nelze vytvořit, pokud je nadřazená kategorie také filtr"
 
-#: ../app/controllers/admin/categories_controller.php:92
+#: ../app/controllers/admin/categories_controller.php:101
 msgid "Category has been created"
 msgstr "Kategorie byla vytvořena"
 
-#: ../app/controllers/admin/categories_controller.php:112
+#: ../app/controllers/admin/categories_controller.php:121
 msgid "The category was deleted"
 msgstr "Kategorie byla smazána"
 
-#: ../app/controllers/admin/categories_controller.php:121
-msgid "New alias"
-msgstr "Nový alias"
+#: ../app/controllers/admin/categories_controller.php:130
+#, php-format
+msgid "Creating new link to the category \"%s\""
+msgstr "Vytvoření odkazu na kategorii \"%s\""
 
-#: ../app/controllers/admin/categories_controller.php:129
+#: ../app/controllers/admin/categories_controller.php:138
 msgid "Alias was created"
 msgstr "Alias byl vytvořen"
 
@@ -1437,16 +1453,20 @@ msgstr "Obrázek používaný v přehledu článků"
 msgid "Teaser"
 msgstr "Teaser"
 
-#: ../app/forms/admin/articles/articles_form.php:22
-#: ../app/forms/admin/pages/pages_form.php:21
+#: ../app/forms/admin/articles/articles_form.php:18
+#: ../app/forms/admin/articles/articles_form.php:24
+#: ../app/forms/admin/pages/pages_form.php:17
+#: ../app/forms/admin/pages/pages_form.php:23
+#, php-format
+msgid "<a href=\"%s\">Markdown</a> format is expected"
+msgstr "Je očekáván formát <a href=\"%s\">Markdown</a>"
+
+#: ../app/forms/admin/articles/articles_form.php:23
+#: ../app/forms/admin/pages/pages_form.php:22
 msgid "Body"
 msgstr "Tělo"
 
-#: ../app/forms/admin/articles/articles_form.php:23
-msgid "Markdown format is expected"
-msgstr "Je očekáván formát Markdown"
-
-#: ../app/forms/admin/articles/articles_form.php:28
+#: ../app/forms/admin/articles/articles_form.php:29
 msgid "Published At"
 msgstr "Publikováno dne"
 
@@ -1571,7 +1591,7 @@ msgid "e.g. material or color"
 msgstr "např. materiál nebo barva"
 
 #: ../app/forms/admin/categories/categories_form.php:42
-#: ../app/forms/admin/pages/pages_form.php:26
+#: ../app/forms/admin/pages/pages_form.php:28
 msgid "HTML title"
 msgstr "HTML název"
 
@@ -1584,12 +1604,12 @@ msgstr ""
 "jméno, resp. jméno."
 
 #: ../app/forms/admin/categories/categories_form.php:49
-#: ../app/forms/admin/pages/pages_form.php:33
+#: ../app/forms/admin/pages/pages_form.php:35
 msgid "HTML description"
 msgstr "HTML popis"
 
 #: ../app/forms/admin/categories/categories_form.php:52
-#: ../app/forms/admin/pages/pages_form.php:36
+#: ../app/forms/admin/pages/pages_form.php:38
 msgid ""
 "Content for <meta name=\"description\">. If left empty, the teaser is used."
 msgstr ""
@@ -1718,29 +1738,29 @@ msgstr "Stejný kód je použit na jiné stránce"
 msgid "Image used on list of pages, social networks, etc."
 msgstr "Obrázek použitý v seznamu stránek, na sociálních sítí atd."
 
-#: ../app/forms/admin/pages/pages_form.php:29
+#: ../app/forms/admin/pages/pages_form.php:31
 msgid "Content for <html><head><title>. If left empty, the title is used."
 msgstr ""
 "Obsah pro <html><head><title>. Pokud bude ponecháno prázdné, bude použit "
 "název."
 
-#: ../app/forms/admin/pages/pages_form.php:40
+#: ../app/forms/admin/pages/pages_form.php:42
 msgid "Parent page"
 msgstr "Rodičovské stránka"
 
-#: ../app/forms/admin/pages/pages_form.php:45
+#: ../app/forms/admin/pages/pages_form.php:47
 msgid "Show in sitemap?"
 msgstr "Zobrazovat v mapě stránek?"
 
-#: ../app/forms/admin/pages/pages_form.php:51
+#: ../app/forms/admin/pages/pages_form.php:53
 msgid "Visible?"
 msgstr "Viditelné?"
 
-#: ../app/forms/admin/pages/pages_form.php:67
+#: ../app/forms/admin/pages/pages_form.php:69
 msgid "The page cannot be placed under itself."
 msgstr "Stránku nelze umístit samu pod sebe."
 
-#: ../app/forms/admin/pages/pages_form.php:73
+#: ../app/forms/admin/pages/pages_form.php:75
 msgid "Nesting is too deep."
 msgstr "Vnoření je příliš hluboké."
 
@@ -1849,6 +1869,22 @@ msgstr "Automatické spuštění videa"
 #: ../app/forms/admin/videos/videos_form.php:13
 msgid "Po ukončení přehrát znovu"
 msgstr "Po ukončení přehrát znovu"
+
+msgid "Create an alias"
+msgstr "Vytvořit alias"
+
+msgid ""
+"This is a virtual category, which is actually pointing to <a href=\"%1\">/%2/"
+"</a>"
+msgstr ""
+"Jedná se o virtuální kategorii, která ve skutečnosti ukazuje na <a href="
+"\"%1\">/%2/</a>"
+
+msgid "alias"
+msgstr "alias"
+
+msgid "New alias"
+msgstr "Nový alias"
 
 msgid "Content for <html><head><title>. If left empty, the name is used."
 msgstr ""
@@ -2132,6 +2168,30 @@ msgstr "ATK14 Katalog je postaven na <em>ATK14 Skeletu</em>"
 
 msgid "Značka"
 msgstr "Brand"
+
+#~ msgid "Fotogalerie zatím neobsahuje žádný obrázek."
+#~ msgstr "Fotogalerie zatím neobsahuje žádný obrázek."
+
+#~ msgid "Upravit"
+#~ msgstr "Upravit"
+
+#~ msgid "Smazat"
+#~ msgstr "Smazat"
+
+#~ msgid "editovat"
+#~ msgstr "editovat"
+
+#~ msgid "bez titulku"
+#~ msgstr "bez titulku"
+
+#~ msgid "Currently there are no images"
+#~ msgstr "Momentálně tady nejsou žádné obrázky"
+
+#~ msgid "Add an image"
+#~ msgstr "Přidat obrázek"
+
+#~ msgid "Markdown format is expected"
+#~ msgstr "Je očekáván formát Markdown"
 
 #~ msgid "Copy"
 #~ msgstr "Kopírova"
@@ -3297,3 +3357,1554 @@ msgstr "Brand"
 
 #~ msgid "Where to go"
 #~ msgstr "Kam zajít"
+
+#~ msgid "doprava zdarma"
+#~ msgstr "doprava zdarma"
+
+#~ msgid "sleva %1%"
+#~ msgstr "sleva %1%"
+
+#~ msgid "pouze pro přihlášené"
+#~ msgstr "pouze pro přihlášené"
+
+#~ msgid "i pro neregistrované"
+#~ msgstr "i pro neregistrované"
+
+#~ msgid "minimální výše objednávky %1"
+#~ msgstr "minimální výše objednávky %1"
+
+#~ msgid "bez omezení výše objednávky"
+#~ msgstr "bez omezení výše objednávky"
+
+#~ msgid "pouze pro dopravu %1"
+#~ msgstr "pouze pro dopravu %1"
+
+#~ msgid "vytvořit novou kampaň"
+#~ msgstr "vytvořit novou kampaň"
+
+#~ msgid ""
+#~ "Kampaně se používají pro stanovení <em>procentní slevy nebo dopravy "
+#~ "zdarma od určité částky</em> nebo <em>slevy pro registrované zákazníky</"
+#~ "em>."
+#~ msgstr ""
+#~ "Kampaně se používají pro stanovení <em>procentní slevy nebo dopravy "
+#~ "zdarma od určité částky</em> nebo <em>slevy pro registrované zákazníky</"
+#~ "em>."
+
+#~ msgid "Nebyla nalezena ani jedna kampaň."
+#~ msgstr "Nebyla nalezena ani jedna kampaň."
+
+#~ msgid "Oblasti"
+#~ msgstr "Oblasti"
+
+#~ msgid "Obsah"
+#~ msgstr "Obsah"
+
+#~ msgid "Podmínky"
+#~ msgstr "Podmínky"
+
+#~ msgid "Je aktivní?"
+#~ msgstr "Je aktivní?"
+
+#~ msgid "Valid from"
+#~ msgstr "Platnost od"
+
+#~ msgid "Valid to"
+#~ msgstr "Platnost do"
+
+#~ msgid "Datum vytvoření"
+#~ msgstr "Datum vytvoření"
+
+#~ msgid "Je-li třeba, upravte název a slug zachovávaného produktu."
+#~ msgstr "Je-li třeba, upravte název a slug zachovávaného produktu."
+
+#~ msgid ""
+#~ "Zadejte alepoň dva produkty, které chcete spojit na jednu produktovou "
+#~ "kartu."
+#~ msgstr ""
+#~ "Zadejte alepoň dva produkty, které chcete spojit na jednu produktovou "
+#~ "kartu."
+
+#~ msgid "Doplňte k produktům krátké názvy pro rozlišení varianty."
+#~ msgstr "Doplňte k produktům krátké názvy pro rozlišení varianty."
+
+#~ msgid "Variants on product card <em>%1</em>"
+#~ msgstr "Varianty na produktové kartě <em>%1</em>"
+
+#~ msgid "Určete produkt, který zůstane po spojení zachován."
+#~ msgstr "Určete produkt, který zůstane po spojení zachován."
+
+#~ msgid "Copy this product"
+#~ msgstr "Kopírovat tento produkt"
+
+#~ msgid "Merge this product with another"
+#~ msgstr "Sloučit tento produkt s jiným"
+
+#~ msgid "Creators"
+#~ msgstr "Tvůrci"
+
+#~ msgid "Edit creator"
+#~ msgstr "Upravit tvůrce"
+
+#~ msgid "Upravit vazbu tvůrce s produktem"
+#~ msgstr "Upravit vazbu tvůrce s produktem"
+
+#~ msgid "Visit the creator page"
+#~ msgstr "Navštívit stránku tvůrce"
+
+#~ msgid "main creator"
+#~ msgstr "hlavní tvůrce"
+
+#~ msgid "secondary creator"
+#~ msgstr "vedlejší tvůrce"
+
+#~ msgid "profile page"
+#~ msgstr "profilová stránka"
+
+#~ msgid "This product has no creator specified"
+#~ msgstr "Tento produkt nemá specifikovaného tvůrce"
+
+#~ msgid "Edit stockount in warehouse %1"
+#~ msgstr "Upravit skladovou položku ve skladu %1"
+
+#~ msgid "Create new entry in warehouse %1"
+#~ msgstr "Vytvořit nový záznam ve skladu %1"
+
+#~ msgid "Edit price in pricelist %1"
+#~ msgstr "Upravit cenu v ceníku %1"
+
+#~ msgid "Create new entry in pricelist %1"
+#~ msgstr "Vytvořit nový záznam v ceníku %1"
+
+#~ msgid ""
+#~ "You are about to permanently delete creator role %1\n"
+#~ "\tAre you sure about that?"
+#~ msgstr ""
+#~ "Chystáte se trvale smazat roli tvůrce %1\n"
+#~ "\\ẗJste si jistý/á?"
+
+#~ msgid "Add a new creator role"
+#~ msgstr "Přidat novou roli tvůrce"
+
+#~ msgid "default currency"
+#~ msgstr "výchozí měna"
+
+#~ msgid "conversion rate"
+#~ msgstr "konverzní kurz"
+
+#~ msgid "Specifické hodnoty u podporovaných zemí"
+#~ msgstr "Specifické hodnoty u podporovaných zemí"
+
+#~ msgid "Země"
+#~ msgstr "Země"
+
+#~ msgid "Cena"
+#~ msgstr "Cena"
+
+#~ msgid "Cena s DPH"
+#~ msgstr "Cena s DPH"
+
+#~ msgid "Kód dopravy"
+#~ msgstr "Kód dopravy"
+
+#~ msgid "Nová možnost doručení"
+#~ msgstr "Nová možnost doručení"
+
+#~ msgid "Vybrat možné platební metody"
+#~ msgstr "Vybrat možné platební metody"
+
+#~ msgid "Vypnout"
+#~ msgstr "Vypnout"
+
+#~ msgid "Zapnout"
+#~ msgstr "Zapnout"
+
+#~ msgid "osobní odběr"
+#~ msgstr "osobní odběr"
+
+#~ msgid "prodejna není určena"
+#~ msgstr "prodejna není určena"
+
+#~ msgid "Vyplňte produkt nebo kategorii."
+#~ msgstr "Vyplňte produkt nebo kategorii."
+
+#~ msgid "kategorie #%1"
+#~ msgstr "kategorie #%1"
+
+#~ msgid "produkt %1"
+#~ msgstr "produkt %1"
+
+#~ msgid "Editovat"
+#~ msgstr "Editovat"
+
+#~ msgid "Vytvořit novou slevu"
+#~ msgstr "Vytvořit novou slevu"
+
+#~ msgid "Sleva [%]"
+#~ msgstr "Sleva [%]"
+
+#~ msgid "Nositel"
+#~ msgstr "Nositel"
+
+#~ msgid "Dny"
+#~ msgstr "Dny"
+
+#~ msgid "Měsíce"
+#~ msgstr "Měsíce"
+
+#~ msgid "Roky"
+#~ msgstr "Roky"
+
+#~ msgid "Eshop %1: Administration"
+#~ msgstr "E-shop %1: administrace"
+
+#~ msgid "Dnešní objednávky:"
+#~ msgstr "Dnešní objednávky:"
+
+#~ msgid "Objednávky ve stavu rozpracováno:"
+#~ msgstr "Objednávky ve stavu rozpracováno:"
+
+#~ msgid "Akt. počet nákupních košíků:"
+#~ msgstr "Akt. počet nákupních košíků:"
+
+#~ msgid "Vývoj počtu objednávek:"
+#~ msgstr "Vývoj počtu objednávek:"
+
+#~ msgid "Stav objednávky"
+#~ msgstr "Stav objednávky"
+
+#~ msgid "Tisk"
+#~ msgstr "Tisk"
+
+#~ msgid "Určit zodpovědnou osobu"
+#~ msgstr "Určit zodpovědnou osobu"
+
+#~ msgid "Nastavit nový stav objednávky"
+#~ msgstr "Nastavit nový stav objednávky"
+
+#~ msgid "Kampaně"
+#~ msgstr "Kampaně"
+
+#~ msgid "Žádná kampaň"
+#~ msgstr "Žádná kampaň"
+
+#~ msgid "Kampaň"
+#~ msgstr "Kampaň"
+
+#~ msgid "Sleva"
+#~ msgstr "Sleva"
+
+#~ msgid "Poznámka"
+#~ msgstr "Poznámka"
+
+#~ msgid "Záznam přidal dne %1 v %2 administrátor %3"
+#~ msgstr "Záznam přidal dne %1 v %2 administrátor %3"
+
+#~ msgid "Opravdu chcete smazat tuto kampaň?"
+#~ msgstr "Opravdu chcete smazat tuto kampaň?"
+
+#~ msgid "Číslo objednávky"
+#~ msgstr "Číslo objednávky"
+
+#~ msgid "Zodpovědná osoba"
+#~ msgstr "Zodpovědná osoba"
+
+#~ msgid "Není určena &rarr; "
+#~ msgstr "Není určena &rarr; "
+
+#~ msgid "Změnit stav objednávky"
+#~ msgstr "Změnit stav objednávky"
+
+#~ msgid "kód: %1"
+#~ msgstr "kód: %1"
+
+#~ msgid "automatický stav"
+#~ msgstr "automatický stav"
+
+#~ msgid "Zákazník"
+#~ msgstr "Zákazník"
+
+#~ msgid "nákup bez registrace"
+#~ msgstr "nákup bez registrace"
+
+#~ msgid "E-mail:"
+#~ msgstr "E-mail:"
+
+#~ msgid "Telefon:"
+#~ msgstr "Telefon:"
+
+#~ msgid "Fakturační adresa"
+#~ msgstr "Fakturační adresa"
+
+#~ msgid "validní DIČ pro zahraniční transakce v rámci EU"
+#~ msgstr "validní DIČ pro zahraniční transakce v rámci EU"
+
+#~ msgid "nevalidní DIČ pro zahraniční transakce v rámci EU"
+#~ msgstr "nevalidní DIČ pro zahraniční transakce v rámci EU"
+
+#~ msgid "validace DIČ pro zahraniční transakce v rámci EU nebyla provedena"
+#~ msgstr "validace DIČ pro zahraniční transakce v rámci EU nebyla provedena"
+
+#~ msgid "validovat DIČ"
+#~ msgstr "validovat DIČ"
+
+#~ msgid "Doručovací adresa"
+#~ msgstr "Doručovací adresa"
+
+#~ msgid "Celková cena bez DPH:"
+#~ msgstr "Celková cena bez DPH:"
+
+#~ msgid "Celková cena s DPH:"
+#~ msgstr "Celková cena s DPH:"
+
+#~ msgid "Dárkový poukaz %1"
+#~ msgstr "Dárkový poukaz %1"
+
+#~ msgid "Celková cena k úhradě:"
+#~ msgstr "Celková cena k úhradě:"
+
+#~ msgid "Celkem uhrazeno:"
+#~ msgstr "Celkem uhrazeno:"
+
+#~ msgid "Způsob dopravy"
+#~ msgstr "Způsob dopravy"
+
+#~ msgid "Poplatek:"
+#~ msgstr "Poplatek:"
+
+#~ msgid "Poplatek s DPH:"
+#~ msgstr "Poplatek s DPH:"
+
+#~ msgid "Číslo zásilky pro sledování:"
+#~ msgstr "Číslo zásilky pro sledování:"
+
+#~ msgid "Není vyplněno"
+#~ msgstr "Není vyplněno"
+
+#~ msgid "Platební metoda"
+#~ msgstr "Platební metoda"
+
+#~ msgid "Platební transakce"
+#~ msgstr "Platební transakce"
+
+#~ msgid "Platební brána:"
+#~ msgstr "Platební brána:"
+
+#~ msgid "Transakční ID:"
+#~ msgstr "Transakční ID:"
+
+#~ msgid "Stav platby:"
+#~ msgstr "Stav platby:"
+
+#~ msgid "Stav platby aktualizován:"
+#~ msgstr "Stav platby aktualizován:"
+
+#~ msgid "Položky objednávky"
+#~ msgstr "Položky objednávky"
+
+#~ msgid "Nastavit do stavu '%1'"
+#~ msgstr "Nastavit do stavu '%1'"
+
+#~ msgid "Doprava"
+#~ msgstr "Doprava"
+
+#~ msgid "Platba"
+#~ msgstr "Platba"
+
+#~ msgid "Ostatní"
+#~ msgstr "Ostatní"
+
+#~ msgid "Sumarizace cen"
+#~ msgstr "Sumarizace cen"
+
+#~ msgid "Cena za zboží vč. DPH"
+#~ msgstr "Cena za zboží vč. DPH"
+
+#~ msgid "Doprava a platba"
+#~ msgstr "Doprava a platba"
+
+#~ msgid "Slevová kampaň"
+#~ msgstr "Slevová kampaň"
+
+#~ msgid "Slevové kupóny"
+#~ msgstr "Slevové kupóny"
+
+#~ msgid "Celkem k úhradě"
+#~ msgstr "Celkem k úhradě"
+
+#~ msgid "Chyby importu (%1)"
+#~ msgstr "Chyby importu (%1)"
+
+#~ msgid "řádek %1"
+#~ msgstr "řádek %1"
+
+#~ msgid "Úspěšně importované zásilky (%1)"
+#~ msgstr "Úspěšně importované zásilky (%1)"
+
+#~ msgid "Objednávka %1"
+#~ msgstr "Objednávka %1"
+
+#~ msgid "Nebyla nalezena žádná objednávka."
+#~ msgstr "Nebyla nalezena žádná objednávka."
+
+#~ msgid "Číslo obj."
+#~ msgstr "Číslo obj."
+
+#~ msgid "Telefon"
+#~ msgstr "Telefon"
+
+#~ msgid "Celk. cena"
+#~ msgstr "Celk. cena"
+
+#~ msgid "Pozn."
+#~ msgstr "Pozn."
+
+#~ msgid "Datum posl. změny"
+#~ msgstr "Datum posl. změny"
+
+#~ msgid "Zodp.&nbsp;osoba"
+#~ msgstr "Zodp.&nbsp;osoba"
+
+#~ msgid "%1"
+#~ msgstr "%1"
+
+#~ msgid "určit zodp.osobu"
+#~ msgstr "určit zodp.osobu"
+
+#~ msgid "Přiřadit zodpovědnou osobu"
+#~ msgstr "Přiřadit zodpovědnou osobu"
+
+#~ msgid "Zrušit filtry"
+#~ msgstr "Zrušit filtry"
+
+#~ msgid "it is notified"
+#~ msgstr "je notifikováno"
+
+#~ msgid "notification disabled"
+#~ msgstr "notifikování zakázáno"
+
+#~ msgid "bcc"
+#~ msgstr "bcc"
+
+#~ msgid "Slevové kupóny nebyly zadány"
+#~ msgstr "Slevové kupóny nebyly zadány"
+
+#~ msgid "Kód"
+#~ msgstr "Kód"
+
+#~ msgid "Opravdu chcete smazat tento slevový kupón?"
+#~ msgstr "Opravdu chcete smazat tento slevový kupón?"
+
+#~ msgid "Nová možnost platby"
+#~ msgstr "Nová možnost platby"
+
+#~ msgid "Založit novou cenu"
+#~ msgstr "Založit novou cenu"
+
+#~ msgid "Minimum quantity"
+#~ msgstr "Minimální množství"
+
+#~ msgid "Price"
+#~ msgstr "Cena"
+
+#~ msgid "Price incl. VAT"
+#~ msgstr "Cena včetně DPH"
+
+#~ msgid "Upravit cenu"
+#~ msgstr "Upravit cenu"
+
+#~ msgid "Zobrazit produkt v e-shopu"
+#~ msgstr "Zobrazit produkt v e-shopu"
+
+#~ msgid "Editovat produkt"
+#~ msgstr "Editovat produkt"
+
+#~ msgid "Smazat cenu"
+#~ msgstr "Smazat cenu"
+
+#~ msgid "Add a pricelist"
+#~ msgstr "Přidat ceník"
+
+#~ msgid ""
+#~ "Obvykle je vhodné spravovat dva ceníky: jeden ceník pro ceny všech "
+#~ "produktů a druhý, základní ceník, pro ceny slevněných produktů před "
+#~ "slevou. Zákazník tak  může být v eshopu informován, že nějaký produkt je "
+#~ "slevněn z nějaké původní ceny."
+#~ msgstr ""
+#~ "Obvykle je vhodné spravovat dva ceníky: jeden ceník pro ceny všech "
+#~ "produktů a druhý, základní ceník, pro ceny slevněných produktů před "
+#~ "slevou. Zákazník tak  může být v eshopu informován, že nějaký produkt je "
+#~ "slevněn z nějaké původní ceny."
+
+#~ msgid "Prices"
+#~ msgstr "Ceny"
+
+#~ msgid ""
+#~ "You are about to permanently delete pricelist %1\n"
+#~ "\t\tAre you sure about that?"
+#~ msgstr ""
+#~ "Chystáte se trvale smazat ceník %1\n"
+#~ "\t\tJste si jistý/á?"
+
+#~ msgid "Fotogalerii lze přidat hned po vytvoření varianty produktu."
+#~ msgstr "Fotogalerii lze přidat hned po vytvoření varianty produktu."
+
+#~ msgid "Add a region"
+#~ msgstr "Přidat oblast"
+
+#~ msgid ""
+#~ "You are about to permanently delete VAT rate %1\n"
+#~ "\t\tAre you sure about that?"
+#~ msgstr ""
+#~ "Chystáte se trvale smazat sazbu DPH %1\n"
+#~ "\t\tJste si jistý/á?"
+
+#~ msgid "Kód produktu&nbsp;/&nbsp;EAN"
+#~ msgstr "Kód produktu&nbsp;/&nbsp;EAN"
+
+#~ msgid "Název produktu"
+#~ msgstr "Název produktu"
+
+#~ msgid "Jedn. cena"
+#~ msgstr "Jedn. cena"
+
+#~ msgid "Celkem s DPH"
+#~ msgstr "Celkem s DPH"
+
+#~ msgid "Sleva v kampani"
+#~ msgstr "Sleva v kampani"
+
+#~ msgid ""
+#~ "Ano = na položku byla poskytnuta sleva v kampani (např. 7% sleva za "
+#~ "registraci). Ne = sleva v kampani poskytnuta nebyla, nejčastěji z důvodu "
+#~ "poskytnutí slevy dle ceníku."
+#~ msgstr ""
+#~ "Ano = na položku byla poskytnuta sleva v kampani (např. 7% sleva za "
+#~ "registraci). Ne = sleva v kampani poskytnuta nebyla, nejčastěji z důvodu "
+#~ "poskytnutí slevy dle ceníku."
+
+#~ msgid "Neurčeno"
+#~ msgstr "Neurčeno"
+
+#~ msgid "Add product promotion"
+#~ msgstr "Přidat propagaci produktu"
+
+#~ msgid "search in menu"
+#~ msgstr "hledat v nabídce"
+
+#~ msgid "Kód produktu"
+#~ msgstr "Kód produktu"
+
+#~ msgid "Jednotka"
+#~ msgstr "Jednotka"
+
+#~ msgid "Sazba DPH"
+#~ msgstr "Sazba DPH"
+
+#~ msgid "no payment methods selected"
+#~ msgstr "nebyly vybrány žádné platební metody"
+
+#~ msgid "Add new image"
+#~ msgstr "Přidat nový obrázek"
+
+#~ msgid "Zatím tady není žádný obrázek."
+#~ msgstr "Zatím tady není žádný obrázek."
+
+#~ msgid "Add new image slider"
+#~ msgstr "Přidat nový obrázkový posuvník"
+
+#~ msgid "Currently there is no image slider."
+#~ msgstr "Momentálně zde není žádný obrázkový posuvník."
+
+#~ msgid "Images"
+#~ msgstr "Obrázky"
+
+#~ msgid ""
+#~ "You are about to permanently delete image slider %1\n"
+#~ "\tAre you sure about that?"
+#~ msgstr ""
+#~ "Chystáte se trvale smazat obrázkový posuvník %1\n"
+#~ "\\ẗJste si jistý/á?"
+
+#~ msgid "invisible in the public list on web"
+#~ msgstr "neviditelné ve veřejném seznamu na webu"
+
+#~ msgid "Parameter name"
+#~ msgstr "Název parametru"
+
+#~ msgid "Přihlašovací jméno"
+#~ msgstr "Přihlašovací jméno"
+
+#~ msgid "Jméno"
+#~ msgstr "Jméno"
+
+#~ msgid "oslovení"
+#~ msgstr "oslovení"
+
+#~ msgid "Role &amp; stavy"
+#~ msgstr "Role &amp; stavy"
+
+#~ msgid "administrátor"
+#~ msgstr "administrátor"
+
+#~ msgid "Firma"
+#~ msgstr "Firma"
+
+#~ msgid "Doručovací adresy"
+#~ msgstr "Doručovací adresy"
+
+#~ msgid "Datum narození"
+#~ msgstr "Datum narození"
+
+#~ msgid "Uživatel nevytvořil žádnou objednávku"
+#~ msgstr "Uživatel nevytvořil žádnou objednávku"
+
+#~ msgid ""
+#~ "Uživatel %1 se nebude moci přihlásit ke svému účtu. Přejete si zablokovat "
+#~ "uživatele?"
+#~ msgstr ""
+#~ "Uživatel %1 se nebude moci přihlásit ke svému účtu. Přejete si zablokovat "
+#~ "uživatele?"
+
+#~ msgid "Blokovat uživatele"
+#~ msgstr "Blokovat uživatele"
+
+#~ msgid "Přejete si povolit uživateli přihlášení k účtu?"
+#~ msgstr "Přejete si povolit uživateli přihlášení k účtu?"
+
+#~ msgid "Odblokovat uživatele"
+#~ msgstr "Odblokovat uživatele"
+
+#~ msgid "Přidej administrátorskou roli"
+#~ msgstr "Přidej administrátorskou roli"
+
+#~ msgid "Uprav administrátorskou roli"
+#~ msgstr "Uprav administrátorskou roli"
+
+#~ msgid ""
+#~ "You are about to permanently delete user %1\n"
+#~ "Are you sure about that?"
+#~ msgstr ""
+#~ "Chystáte se trvale smazat uživatele %1\n"
+#~ "Jste si jistý/á?"
+
+#~ msgid "Smazat uživatele"
+#~ msgstr "Smazat uživatele"
+
+#~ msgid ""
+#~ "Editujete zástupného uživatele pro nepřihlášeného zákazníka. Nastavení "
+#~ "ceníků u tohoto uživatele bude použito při registraci nových zákazníků."
+#~ msgstr ""
+#~ "Editujete zástupného uživatele pro nepřihlášeného zákazníka. Nastavení "
+#~ "ceníků u tohoto uživatele bude použito při registraci nových zákazníků."
+
+#~ msgid "Add a VAT rate"
+#~ msgstr "Přidat sazbu DPH"
+
+#~ msgid ""
+#~ "The first VAT rate in the list below is considered to be the default VAT "
+#~ "rate."
+#~ msgstr ""
+#~ "První sazba DPH v níže uvedeném seznamu se považuje za výchozí sazbu DPH."
+
+#~ msgid "Nebyl nalezen žádný voucher."
+#~ msgstr "Nebyl nalezen žádný voucher."
+
+#~ msgid "Regions"
+#~ msgstr "Oblasti"
+
+#~ msgid "Hodnota"
+#~ msgstr "Hodnota"
+
+#~ msgid "Byl použit?"
+#~ msgstr "Byl použit?"
+
+#~ msgid "Kupón vytvořil/a"
+#~ msgstr "Kupón vytvořil/a"
+
+#~ msgid "Najít objednávky s tímto kupónem"
+#~ msgstr "Najít objednávky s tímto kupónem"
+
+#~ msgid "Stockcount"
+#~ msgstr "Skladové množství"
+
+#~ msgid "Show product in eshop"
+#~ msgstr "Zobrazit produkt v e-shopu"
+
+#~ msgid "Delete entry"
+#~ msgstr "Smazat záznam"
+
+#~ msgid "Add a warehouse"
+#~ msgstr "Přidat sklad"
+
+#~ msgid "Warehouse status"
+#~ msgstr "Stav skladu"
+
+#~ msgid ""
+#~ "You are about to permanently delete warehouse %1\n"
+#~ "\t\tAre you sure about that?"
+#~ msgstr ""
+#~ "Chystáte se trvale smazat sklad %1\n"
+#~ "\t\\ẗJste si jistý/á?"
+
+#~ msgid "Orders"
+#~ msgstr "Objednávky"
+
+#~ msgid "Image sliders"
+#~ msgstr "Obrázkové posuvníky"
+
+#~ msgid "Vouchers"
+#~ msgstr "Poukazy"
+
+#~ msgid "Campaigns"
+#~ msgstr "Kampaně"
+
+#~ msgid "Warehouses"
+#~ msgstr "Sklady"
+
+#~ msgid "Pricelists"
+#~ msgstr "Ceníky"
+
+#~ msgid "Discounts"
+#~ msgstr "Slevy"
+
+#~ msgid "Delivery methods"
+#~ msgstr "Způsoby doručení"
+
+#~ msgid "Payment methods"
+#~ msgstr "Platební metody"
+
+#~ msgid "Combination of transports and payments"
+#~ msgstr "Kombinace přeprav a plateb"
+
+#~ msgid "Currencies"
+#~ msgstr "Měny"
+
+#~ msgid "VAT rates"
+#~ msgstr "Sazby DPH"
+
+#~ msgid "Order statuses"
+#~ msgstr "Stavy objednávky"
+
+#~ msgid "Selling regions"
+#~ msgstr "Prodejná oblasti"
+
+#~ msgid "System preferences"
+#~ msgstr "Nastavení systému"
+
+#~ msgid "Nová kampaň"
+#~ msgstr "Nová kampaň"
+
+#~ msgid "Editace kampaně"
+#~ msgstr "Editace kampaně"
+
+#~ msgid "Copying product \"%s\""
+#~ msgstr "Kopírování produktu \"%s\""
+
+#~ msgid "A new product was successfully created"
+#~ msgstr "Nový produkt byl úspěšně vytvořen"
+
+#~ msgid "Adding creator to the product \"%s\""
+#~ msgstr "Přidání tvůrce k produktu \"%s\""
+
+#~ msgid "Editing link between creator and product"
+#~ msgstr "Úpravy propojení mezi tvůrcem a produktem"
+
+#~ msgid "Slučování produktů"
+#~ msgstr "Slučování produktů"
+
+#~ msgid "Products were successfully merged"
+#~ msgstr "Produkty byly úspěšně sloučeny"
+
+#~ msgid "Creator roles"
+#~ msgstr "Role tvůrce"
+
+#~ msgid "Create a new role for creators"
+#~ msgstr "Vytvořit novou roli pro tvůrce"
+
+#~ msgid "Editing creator \"%s\""
+#~ msgstr "Editace tvůrce \"%s\""
+
+#~ msgid "List of Currencies"
+#~ msgstr "Seznam měn"
+
+#~ msgid "Specifické hodnoty dopravy pro %s"
+#~ msgstr "Specifické hodnoty dopravy pro %s"
+
+#~ msgid "Způsoby dopravy"
+#~ msgstr "Způsoby dopravy"
+
+#~ msgid "Editace způsobu dopravy"
+#~ msgstr "Editace způsobu dopravy"
+
+#~ msgid "Způsob dopravy '%s' zapnut"
+#~ msgstr "Způsob dopravy '%s' zapnut"
+
+#~ msgid "Způsob dopravy '%s' vypnut"
+#~ msgstr "Způsob dopravy '%s' vypnut"
+
+#~ msgid "List of discounts"
+#~ msgstr "Seznam slev"
+
+#~ msgid "File %s"
+#~ msgstr "Soubor %s"
+
+#~ msgid "Objednávka %d"
+#~ msgstr "Objednávka %d"
+
+#~ msgid "Změna stavu objednávky %s"
+#~ msgstr "Změna stavu objednávky %s"
+
+#~ msgid "Byl nastaven úspěšně nový stav objednávky"
+#~ msgstr "Byl nastaven úspěšně nový stav objednávky"
+
+#~ msgid "Seznam objednávek"
+#~ msgstr "Seznam objednávek"
+
+#~ msgid "Objednávka %s"
+#~ msgstr "Objednávka %s"
+
+#~ msgid "Editace objednávky %s"
+#~ msgstr "Editace objednávky %s"
+
+#~ msgid "Zodpovědná osoba nastavena"
+#~ msgstr "Zodpovědná osoba nastavena"
+
+#~ msgid "Import čísel pro sledování zásilek"
+#~ msgstr "Import čísel pro sledování zásilek"
+
+#~ msgid "Chybná data v souboru"
+#~ msgstr "Chybná data v souboru"
+
+#~ msgid "Zásilky byly naimportovány"
+#~ msgstr "Zásilky byly naimportovány"
+
+#~ msgid "Seznam všech stavů objednávek"
+#~ msgstr "Seznam všech stavů objednávek"
+
+#~ msgid "Editace stavu objednávky"
+#~ msgstr "Editace stavu objednávky"
+
+#~ msgid "Způsoby platby"
+#~ msgstr "Způsoby platby"
+
+#~ msgid "Editace možnosti platby"
+#~ msgstr "Editace možnosti platby"
+
+#~ msgid "Možnost platby '%s' zapnuta"
+#~ msgstr "Možnost platby '%s' zapnuta"
+
+#~ msgid "Možnost platby '%s' vypnuta"
+#~ msgstr "Možnost platby '%s' vypnuta"
+
+#~ msgid "Prices in pricelist %s"
+#~ msgstr "Ceny v ceníku %s"
+
+#~ msgid "Nová cena"
+#~ msgstr "Nová cena"
+
+#~ msgid "Editace ceny"
+#~ msgstr "Editace ceny"
+
+#~ msgid "Editing product variant %s (%s)"
+#~ msgstr "Editace produktové varianty %s (%s)"
+
+#~ msgid "Editing product %s (%s)"
+#~ msgstr "Editace produktu %s (%s)"
+
+#~ msgid "List of selling regions"
+#~ msgstr "Seznam prodejních oblastí"
+
+#~ msgid "Editing selling region"
+#~ msgstr "Editace prodejní oblasti"
+
+#~ msgid "Kombinace doprav a plateb"
+#~ msgstr "Kombinace doprav a plateb"
+
+#~ msgid "Způsoby platby pro způsob doručení '%s'"
+#~ msgstr "Způsoby platby pro způsob doručení '%s'"
+
+#~ msgid "Způsoby dopravy pro způsob platby '%s'"
+#~ msgstr "Způsoby dopravy pro způsob platby '%s'"
+
+#~ msgid "Images in slider %s"
+#~ msgstr "Obrázky v posuvníku %s"
+
+#~ msgid "Add new image into the slider"
+#~ msgstr "Přidat obrázek do obrázkového posuvníku"
+
+#~ msgid "List of image sliders"
+#~ msgstr "Seznam obrázkových posuvníků"
+
+#~ msgid "Editing parameter %s"
+#~ msgstr "Editace parametru %s"
+
+#~ msgid "Parameter value has been updated"
+#~ msgstr "Hodnota parametru byla aktualizována"
+
+#~ msgid "Detail uživatele %s"
+#~ msgstr "Detail uživatele %s"
+
+#~ msgid "List of VAT rates"
+#~ msgstr "Seznam sazeb DPH"
+
+#~ msgid "Nový slevový kupón"
+#~ msgstr "Nový slevový kupón"
+
+#~ msgid "Editace slevového kupónu"
+#~ msgstr "Editace slevového kupónu"
+
+#~ msgid "Products in warehouse %s"
+#~ msgstr "Produkty v skladu %s"
+
+#~ msgid "New warehouse entry"
+#~ msgstr "Nový skladový záznam"
+
+#~ msgid "Edit warehouse entry"
+#~ msgstr "Editace skladového záznamu"
+
+#~ msgid "Validity date from"
+#~ msgstr "Datum platnosti od"
+
+#~ msgid "Validity date to"
+#~ msgstr "Datum platnosti do"
+
+#~ msgid "Vat rate"
+#~ msgstr "Sazba DPH"
+
+#~ msgid "Unit"
+#~ msgstr "Jednotka"
+
+#~ msgid "Lze produkt objednat bez ohledu na skladovou zásobu?"
+#~ msgstr "Lze produkt objednat bez ohledu na skladovou zásobu?"
+
+#~ msgid ""
+#~ "Zaškrtněte pouze v případě, že se jedná o produkt bez uvažování skladové "
+#~ "zásoby (např. digitální soubor)"
+#~ msgstr ""
+#~ "Zaškrtněte pouze v případě, že se jedná o produkt bez uvažování skladové "
+#~ "zásoby (např. digitální soubor)"
+
+#~ msgid "Je toto aktivní kampaň"
+#~ msgstr "Je toto aktivní kampaň"
+
+#~ msgid "Název kampaně"
+#~ msgstr "Název kampaně"
+
+#~ msgid "Pouze pro přihlášené?"
+#~ msgstr "Pouze pro přihlášené?"
+
+#~ msgid "Minimální cena zboží v košíku [%s]"
+#~ msgstr "Minimální cena zboží v košíku [%s]"
+
+#~ msgid "Vztahuje se pouze na dopravu"
+#~ msgstr "Vztahuje se pouze na dopravu"
+
+#~ msgid "nezáleží na dopravě"
+#~ msgstr "nezáleží na dopravě"
+
+#~ msgid "Procentní sleva"
+#~ msgstr "Procentní sleva"
+
+#~ msgid "Nastavte nulu, pokud je toto kampaň na dopravu zdarma"
+#~ msgstr "Nastavte nulu, pokud je toto kampaň na dopravu zdarma"
+
+#~ msgid "Doprava zdarma?"
+#~ msgstr "Doprava zdarma?"
+
+#~ msgid ""
+#~ "V jedné kampani lze nastavit buďto procentní slevu nebo dopravu zdarma"
+#~ msgstr ""
+#~ "V jedné kampani lze nastavit buďto procentní slevu nebo dopravu zdarma"
+
+#~ msgid "Je nutné nastavit buďto procentní slevu nebo dopravu zdarma"
+#~ msgstr "Je nutné nastavit buďto procentní slevu nebo dopravu zdarma"
+
+#~ msgid "Should the new product be visible?"
+#~ msgstr "Měl by být nový produkt viditelný?"
+
+#~ msgid "Copy photo gallery?"
+#~ msgstr "Kopírovat fotogalerii?"
+
+#~ msgid "Copy attachments?"
+#~ msgstr "Kopírovat přílohy?"
+
+#~ msgid "Copy categories?"
+#~ msgstr "Kopírovat kategorie?"
+
+#~ msgid "Copy textual sections?"
+#~ msgstr "Kopírovat textové sekce?"
+
+#~ msgid "Copy technical specifications?"
+#~ msgstr "Kopírovat technické specifikace?"
+
+#~ msgid "Copy creators?"
+#~ msgstr "Kopírovat tvůrce?"
+
+#~ msgid "Create new product"
+#~ msgstr "Vytvořit nový produkt"
+
+#~ msgid "Creator"
+#~ msgstr "Tvůrce"
+
+#~ msgid "Role"
+#~ msgstr "Role"
+
+#~ msgid "Missing a role? &rarr; <a href=\"%s\">create it</a>"
+#~ msgstr "Chybí vám role? &rarr; <a href=\"%s\">vytvořte ji</a>"
+
+#~ msgid "Is this the main creator?"
+#~ msgstr "Je toto hlavní tvůrce?"
+
+#~ msgid "Sloučit produkty"
+#~ msgstr "Sloučit produkty"
+
+#~ msgid "Product %d"
+#~ msgstr "Produkt %d"
+
+#~ msgid "Continue"
+#~ msgstr "Pokračovat"
+
+#~ msgid "Každý produkt lze zadat pouze jednou"
+#~ msgstr "Každý produkt lze zadat pouze jednou"
+
+#~ msgid "Label for product %s"
+#~ msgstr "Označení produktu %s"
+
+#~ msgid "Zachovávaný produkt"
+#~ msgstr "Zachovávaný produkt"
+
+#~ msgid "Cena bez DPH [%s]"
+#~ msgstr "Cena bez DPH [%s]"
+
+#~ msgid "Koncová cena [%s]"
+#~ msgstr "Koncová cena [%s]"
+
+#~ msgid "Cena bude uložena do ceníku <em>%s</em>"
+#~ msgstr "Cena bude uložena do ceníku <em>%s</em>"
+
+#~ msgid "Cena před slevou bez DPH [%s]"
+#~ msgstr "Cena před slevou bez DPH [%s]"
+
+#~ msgid "Koncová cena před slevou [%s]"
+#~ msgstr "Koncová cena před slevou [%s]"
+
+#~ msgid "Skladové množství bude nastaveno do skladu <em>%s</em>"
+#~ msgstr "Skladové množství bude nastaveno do skladu <em>%s</em>"
+
+#~ msgid "Primary category"
+#~ msgstr "Hlavní kategorie"
+
+#~ msgid "Localized name"
+#~ msgstr "Lokalizované jméno"
+
+#~ msgid "Profile page"
+#~ msgstr "Profilová stránka"
+
+#~ msgid ""
+#~ "Propojte tvůrce s jeho profilovou stránkou. Na této stránce pak budou "
+#~ "automaticky zobrazeny jeho produkty."
+#~ msgstr ""
+#~ "Propojte tvůrce s jeho profilovou stránkou. Na této stránce pak budou "
+#~ "automaticky zobrazeny jeho produkty."
+
+#~ msgid "Zatím stránka neexistuje? &rarr; <a href=\"%s\">vytvořte ji</a>"
+#~ msgstr "Zatím stránka neexistuje? &rarr; <a href=\"%s\">vytvořte ji</a>"
+
+#~ msgid "Another creator already has this name"
+#~ msgstr "Toto jméno již má jiný tvůrce"
+
+#~ msgid "This page is the profile page for another creator (%s)"
+#~ msgstr "Tato stránka je profilová stránka jiného tvůrce (%s)"
+
+#~ msgid "Conversion rate"
+#~ msgstr "Konverzní kurz"
+
+#~ msgid "Specify <em>X</em> for the equation <em>1 %s = X %s</em>"
+#~ msgstr "Pro rovnici <em>1 %s = X %s</em> zadejte <em>X</em>"
+
+#~ msgid "Decimal places"
+#~ msgstr "Desetinná místa"
+
+#~ msgid "Decimal places used, for instance, in a product detail"
+#~ msgstr "Počet desetinných míst například v detailu produktu"
+
+#~ msgid "Decimal places in the summary"
+#~ msgstr "Počet desetinných míst v souhrnu"
+
+#~ msgid "Decimal places used in the total price of an order"
+#~ msgstr "Počet desetinných míst v celkové ceně objednávky"
+
+#~ msgid "Conversion rate cannot be changed on the default currency"
+#~ msgstr "Konverzní kurz nelze měnit ve výchozí měně"
+
+#~ msgid "Aktualizovat"
+#~ msgstr "Aktualizovat"
+
+#~ msgid "Specifická cena [%s]"
+#~ msgstr "Specifická cena [%s]"
+
+#~ msgid "Specifická cena s DPH [%s]"
+#~ msgstr "Specifická cena s DPH [%s]"
+
+#~ msgid "Kód pro export objednávky do XML"
+#~ msgstr "Kód pro export objednávky do XML"
+
+#~ msgid "Zadejte obě ceny nebo nechejte obě ceny prázdné"
+#~ msgstr "Zadejte obě ceny nebo nechejte obě ceny prázdné"
+
+#~ msgid "Aktivní"
+#~ msgstr "Aktivní"
+
+#~ msgid "Název dopravy"
+#~ msgstr "Název dopravy"
+
+#~ msgid "Nadpis nápovědy"
+#~ msgstr "Nadpis nápovědy"
+
+#~ msgid "Text nápovědy"
+#~ msgstr "Text nápovědy"
+
+#~ msgid "Text nápovědy do notifikačních e-mailů"
+#~ msgstr "Text nápovědy do notifikačních e-mailů"
+
+#~ msgid ""
+#~ "Pokud nebude částka určena, znamená to, že cena za dopravu bude stanovena "
+#~ "následnou dohodou."
+#~ msgstr ""
+#~ "Pokud nebude částka určena, znamená to, že cena za dopravu bude stanovena "
+#~ "následnou dohodou."
+
+#~ msgid "Výchozí cena [%s]"
+#~ msgstr "Výchozí cena [%s]"
+
+#~ msgid "Výchozí cena s DPH [%s]"
+#~ msgstr "Výchozí cena s DPH [%s]"
+
+#~ msgid "Osobní odběr"
+#~ msgstr "Osobní odběr"
+
+#~ msgid "Vyberte prodejnu pro osobní odběr"
+#~ msgstr "Vyberte prodejnu pro osobní odběr"
+
+#~ msgid "Lze vybrat pouze, pokud bude zatržen <em>osobní odběr</em>"
+#~ msgstr "Lze vybrat pouze, pokud bude zatržen <em>osobní odběr</em>"
+
+#~ msgid "Povinné klíčové slovo"
+#~ msgstr "Povinné klíčové slovo"
+
+#~ msgid ""
+#~ "Doručovací metodu bude možné použít jen v případě, že všechny produkty v "
+#~ "košíku budou obsahovat požadované klíčové slovo."
+#~ msgstr ""
+#~ "Doručovací metodu bude možné použít jen v případě, že všechny produkty v "
+#~ "košíku budou obsahovat požadované klíčové slovo."
+
+#~ msgid "Pro systémové účely. Unikátní kód."
+#~ msgstr "Pro systémové účely. Unikátní kód."
+
+#~ msgid "URL pro sledování zásilky"
+#~ msgstr "URL pro sledování zásilky"
+
+#~ msgid ""
+#~ "Znak '@' v URL bude nahrazen číslem zásilky.<br>Např. 'https://www."
+#~ "postaonline.cz/trackandtrace/-/zasilka/cislo?parcelNumbers=@'"
+#~ msgstr ""
+#~ "Znak '@' v URL bude nahrazen číslem zásilky.<br>Např. 'https://www."
+#~ "postaonline.cz/trackandtrace/-/zasilka/cislo?parcelNumbers=@'"
+
+#~ msgid "Pokud je vybrába prodejna pro osbní odběr, zatrhněte i osobní odběr"
+#~ msgstr "Pokud je vybrába prodejna pro osbní odběr, zatrhněte i osobní odběr"
+
+#~ msgid "Specify the price incl. VAT"
+#~ msgstr "Zadejte cenu vč. DPH"
+
+#~ msgid "Specify the price"
+#~ msgstr "Zadejte cenu"
+
+#~ msgid "Kategorie"
+#~ msgstr "Kategorie"
+
+#~ msgid "Nelze zadat produkt i kategorii"
+#~ msgstr "Nelze zadat produkt i kategorii"
+
+#~ msgid "Show only"
+#~ msgstr "Pouze zobrazit"
+
+#~ msgid "show only"
+#~ msgstr "pouze zobrazit"
+
+#~ msgid "products"
+#~ msgstr "produkty"
+
+#~ msgid "categories"
+#~ msgstr "kategorie"
+
+#~ msgid "Zobrazovat v oblasti"
+#~ msgstr "Zobrazovat v oblasti"
+
+#~ msgid "Internal note"
+#~ msgstr "Interní poznámka"
+
+#~ msgid "Změnit stav"
+#~ msgstr "Změnit stav"
+
+#~ msgid "Zaplacená částka [%s]"
+#~ msgstr "Zaplacená částka [%s]"
+
+#~ msgid "Kód pro sledování zásilky pro dopravu %s"
+#~ msgstr "Kód pro sledování zásilky pro dopravu %s"
+
+#~ msgid "New order status"
+#~ msgstr "Nový stav objednávky"
+
+#~ msgid "Poplatek za dopravu"
+#~ msgstr "Poplatek za dopravu"
+
+#~ msgid "Poplatek za dopravu včetně DPH"
+#~ msgstr "Poplatek za dopravu včetně DPH"
+
+#~ msgid "Způsob platby"
+#~ msgstr "Způsob platby"
+
+#~ msgid "Poplatek za platbu"
+#~ msgstr "Poplatek za platbu"
+
+#~ msgid "Poplatek za platbu včetně DPH"
+#~ msgstr "Poplatek za platbu včetně DPH"
+
+#~ msgid "Celkem uhrazeno [%s]"
+#~ msgstr "Celkem uhrazeno [%s]"
+
+#~ msgid "Číslo zásilky pro sledování"
+#~ msgstr "Číslo zásilky pro sledování"
+
+#~ msgid "Specify the delivery fee incl. VAT"
+#~ msgstr "Zadejte doručovací poplatek vč. DPH"
+
+#~ msgid "Specify the delivery fee"
+#~ msgstr "Zadejte doručovací poplatek"
+
+#~ msgid "Importovat"
+#~ msgstr "Importovat"
+
+#~ msgid "Doručovací služba"
+#~ msgstr "Doručovací služba"
+
+#~ msgid "doručovací služba"
+#~ msgstr "doručovací služba"
+
+#~ msgid "Česká Pošta"
+#~ msgstr "Česká Pošta"
+
+#~ msgid "Soubor ve formátu csv s informacemi o podaných zásilkách"
+#~ msgstr "Soubor ve formátu csv s informacemi o podaných zásilkách"
+
+#~ msgid "Datum od"
+#~ msgstr "Datum od"
+
+#~ msgid "způsob platby"
+#~ msgstr "způsob platby"
+
+#~ msgid "stav online platby"
+#~ msgstr "stav online platby"
+
+#~ msgid "Stav platby"
+#~ msgstr "Stav platby"
+
+#~ msgid "Způsob doručení"
+#~ msgstr "Způsob doručení"
+
+#~ msgid "způsob doručení"
+#~ msgstr "způsob doručení"
+
+#~ msgid "stav objednávky"
+#~ msgstr "stav objednávky"
+
+#~ msgid "všechny rozpracované objednávky"
+#~ msgstr "všechny rozpracované objednávky"
+
+#~ msgid "Objednaný produkt"
+#~ msgstr "Objednaný produkt"
+
+#~ msgid "Uživatel"
+#~ msgstr "Uživatel"
+
+#~ msgid "Nastavit zodpovědnou osobu"
+#~ msgstr "Nastavit zodpovědnou osobu"
+
+#~ msgid "Enable notification"
+#~ msgstr "Povolit notifikaci"
+
+#~ msgid "BCC e-mail"
+#~ msgstr "BCC e-mail"
+
+#~ msgid ""
+#~ "Notifications can be sent to this address or addresses as blind copies."
+#~ msgstr "Notifikace lze zasílat na tuto adresu nebo adresy jako slepé kopie."
+
+#~ msgid "Jedná se o bankovní převod?"
+#~ msgstr "Jedná se o bankovní převod?"
+
+#~ msgid "Jedná se o dobírku?"
+#~ msgstr "Jedná se o dobírku?"
+
+#~ msgid "Platební brána"
+#~ msgstr "Platební brána"
+
+#~ msgid "nenapojeno na žádnou bránu"
+#~ msgstr "nenapojeno na žádnou bránu"
+
+#~ msgid "Platební bránu zatím nelze nastavit"
+#~ msgstr "Platební bránu zatím nelze nastavit"
+
+#~ msgid "Název platební metody"
+#~ msgstr "Název platební metody"
+
+#~ msgid "Cena [%s]"
+#~ msgstr "Cena [%s]"
+
+#~ msgid "Cena s DPH [%s]"
+#~ msgstr "Cena s DPH [%s]"
+
+#~ msgid "Kód platby"
+#~ msgstr "Kód platby"
+
+#~ msgid ""
+#~ "Zatrhněte, zda se jedná o bankovní převod nebo o dobírku, nebo vyberte "
+#~ "platební bránu"
+#~ msgstr ""
+#~ "Zatrhněte, zda se jedná o bankovní převod nebo o dobírku, nebo vyberte "
+#~ "platební bránu"
+
+#~ msgid ""
+#~ "Zatrhněte, zda se jedná buďto o bankovní převod nebo o dobírku, nebo "
+#~ "vyberte platební bránu. Hodnoty nelze kombinovat."
+#~ msgstr ""
+#~ "Zatrhněte, zda se jedná buďto o bankovní převod nebo o dobírku, nebo "
+#~ "vyberte platební bránu. Hodnoty nelze kombinovat."
+
+#~ msgid "Stejná kombinace produktu, ceny a minimálního množství již existuje"
+#~ msgstr "Stejná kombinace produktu, ceny a minimálního množství již existuje"
+
+#~ msgid "Cena platí od minimálního množství"
+#~ msgstr "Cena platí od minimálního množství"
+
+#~ msgid ""
+#~ "Vhodným zadáním několika cen pro jeden produkt lze docílit množstevních "
+#~ "slev"
+#~ msgstr ""
+#~ "Vhodným zadáním několika cen pro jeden produkt lze docílit množstevních "
+#~ "slev"
+
+#~ msgid "Is product variant visible?"
+#~ msgstr "Je varianta produktu viditelná?"
+
+#~ msgid "Vyberte dostupné způsoby dopravy"
+#~ msgstr "Vyberte dostupné způsoby dopravy"
+
+#~ msgid "neaktivní platební metoda"
+#~ msgstr "neaktivní platební metoda"
+
+#~ msgid "Vyberte dostupné způsoby platby"
+#~ msgstr "Vyberte dostupné způsoby platby"
+
+#~ msgid "URL / cesta"
+#~ msgstr "URL / cesta"
+
+#~ msgid ""
+#~ "Interní odkaz zadávejte pouze ve formě URI (např. /napoveda/). Odkaz na "
+#~ "externí web musí obsahovat celou cestu včetně domény (např. http://www."
+#~ "externi-web.cz/soubor.pdf)."
+#~ msgstr ""
+#~ "Interní odkaz zadávejte pouze ve formě URI (např. /napoveda/). Odkaz na "
+#~ "externí web musí obsahovat celou cestu včetně domény (např. http://www."
+#~ "externi-web.cz/soubor.pdf)."
+
+#~ msgid "Street"
+#~ msgstr "Ulice"
+
+#~ msgid "Street (2nd line)"
+#~ msgstr "Ulice (2. řádka)"
+
+#~ msgid "City"
+#~ msgstr "Město"
+
+#~ msgid "ZIP"
+#~ msgstr "PSČ"
+
+#~ msgid "Stát"
+#~ msgstr "Stát"
+
+#~ msgid "Monday"
+#~ msgstr "pondělí"
+
+#~ msgid "Tuesday"
+#~ msgstr "úterý"
+
+#~ msgid "Wednesday"
+#~ msgstr "středa"
+
+#~ msgid "Thursday"
+#~ msgstr "čtvrtek"
+
+#~ msgid "Friday"
+#~ msgstr "pátek"
+
+#~ msgid "Saturday"
+#~ msgstr "sobota"
+
+#~ msgid "Sunday"
+#~ msgstr "neděle"
+
+#~ msgid "Otevřeno v %s od"
+#~ msgstr "Otevřeno v %s od"
+
+#~ msgid "Otevřeno v %s do"
+#~ msgstr "Otevřeno v %s do"
+
+#~ msgid "Is visible in the public list on web?"
+#~ msgstr "Je viditelný ve veřejném seznamu na webu?"
+
+#~ msgid "Textual value"
+#~ msgstr "Textová hodnota"
+
+#~ msgid "String value"
+#~ msgstr "Řetězcová hodnota"
+
+#~ msgid "Integer value"
+#~ msgstr "Celočíselná hodnota"
+
+#~ msgid "Boolean value"
+#~ msgstr "Booleovská hodnota"
+
+#~ msgid "Phone number"
+#~ msgstr "Telefonní číslo"
+
+#~ msgid "default color"
+#~ msgstr "výchozí barva"
+
+#~ msgid "blue"
+#~ msgstr "modrá"
+
+#~ msgid "indigo"
+#~ msgstr "indigová"
+
+#~ msgid "purple"
+#~ msgstr "purpurová"
+
+#~ msgid "pink"
+#~ msgstr "růžová"
+
+#~ msgid "red"
+#~ msgstr "červená"
+
+#~ msgid "orange"
+#~ msgstr "oranžová"
+
+#~ msgid "yellow"
+#~ msgstr "žlutá"
+
+#~ msgid "green"
+#~ msgstr "zelená"
+
+#~ msgid "teal"
+#~ msgstr "šedozelená"
+
+#~ msgid "cyan"
+#~ msgstr "tyrkysová"
+
+#~ msgid "white"
+#~ msgstr "bílá"
+
+#~ msgid "gray"
+#~ msgstr "šedá"
+
+#~ msgid "dark gray"
+#~ msgstr "tmavě šedá"
+
+#~ msgid "Color"
+#~ msgstr "Barva"
+
+#~ msgid "Ceník"
+#~ msgstr "Ceník"
+
+#~ msgid "Ceník s cenami před slevou"
+#~ msgstr "Ceník s cenami před slevou"
+
+#~ msgid "VAT percent"
+#~ msgstr "Procenta DPH"
+
+#~ msgid "Stejný kód má jiný slevový kupón"
+#~ msgstr "Stejný kód má jiný slevový kupón"
+
+#~ msgid "Písmenný kód bude automaticky převeden na velká písmena"
+#~ msgstr "Písmenný kód bude automaticky převeden na velká písmena"
+
+#~ msgid "Hodnota poukazu [%s]"
+#~ msgstr "Hodnota poukazu [%s]"
+
+#~ msgid "Procentní sleva poukazu"
+#~ msgstr "Procentní sleva poukazu"
+
+#~ msgid "Lze uplatňovat opakovaně"
+#~ msgstr "Lze uplatňovat opakovaně"
+
+#~ msgid "Minimální hodnota zboží v košíku s DPH [%s]"
+#~ msgstr "Minimální hodnota zboží v košíku s DPH [%s]"
+
+#~ msgid ""
+#~ "Kupón nebude možné použít, pokud bude v košíku zboží celkem za nižší "
+#~ "částku"
+#~ msgstr ""
+#~ "Kupón nebude možné použít, pokud bude v košíku zboží celkem za nižší "
+#~ "částku"
+
+#~ msgid "Oblasti platnosti kupónu"
+#~ msgstr "Oblasti platnosti kupónu"
+
+#~ msgid "Neaktivní slevový kupón nebude možné použít"
+#~ msgstr "Neaktivní slevový kupón nebude možné použít"
+
+#~ msgid ""
+#~ "Je nutné zadat alespoň jeden typ slevy: hodnotu poukazu, procentní slevu "
+#~ "nebo dopravu zdarma"
+#~ msgstr ""
+#~ "Je nutné zadat alespoň jeden typ slevy: hodnotu poukazu, procentní slevu "
+#~ "nebo dopravu zdarma"
+
+#~ msgid "Platnost od a Platnost do musí být rozdílne datumy"
+#~ msgstr "Platnost od a Platnost do musí být rozdílne datumy"
+
+#~ msgid "Platnost od musí být starší datum než Platnost do"
+#~ msgstr "Platnost od musí být starší datum než Platnost do"
+
+#~ msgid "Applicable to eshop?"
+#~ msgstr "Uplatňuje se v e-shopu?"
+
+#~ msgid "ks/cm"
+#~ msgstr "ks/cm"
+
+#~ msgid "Stock count considered?"
+#~ msgstr "Uvažuje se skladová zásoba?"
+
+#~ msgid ""
+#~ "In some cases stock count might not be considered, e.g. digital products"
+#~ msgstr ""
+#~ "V některých případech se nemusí skladová zásoba zohledňovat, např. u "
+#~ "digitálních produktů"
+
+#~ msgid "notifikuje se"
+#~ msgstr "notifikuje se"
+
+#~ msgid "Úprava varianty produktu '%s' (%s)"
+#~ msgstr "Úprava varianty produktu '%s' (%s)"
+
+#~ msgid "Note"
+#~ msgstr "Poznámka"
+
+#~ msgid "Text ve formuláři"
+#~ msgstr "Text ve formuláři"
+
+#~ msgid "Main creator"
+#~ msgstr "Hlavní tvůrce"

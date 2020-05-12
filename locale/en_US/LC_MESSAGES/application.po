@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-30 12:46+0100\n"
-"PO-Revision-Date: 2020-01-30 12:52+0100\n"
+"POT-Creation-Date: 2020-05-12 16:50+0200\n"
+"PO-Revision-Date: 2020-05-12 17:07+0200\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: Team <team@email.com>\n"
 "Language: en_US\n"
@@ -16,6 +16,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.7.1\n"
+
+msgid "Nahoru"
+msgstr "Top"
 
 msgid "Best regards"
 msgstr "Best regards"
@@ -410,6 +413,15 @@ msgstr "Objects administration"
 msgid "Edit links"
 msgstr "Edit links"
 
+msgid "Edit page"
+msgstr "Edit page"
+
+msgid "Create a subpage"
+msgstr "Create a subpage"
+
+msgid "List of pages"
+msgstr "List of pages"
+
 msgid "Create a new record"
 msgstr "Create a new record"
 
@@ -453,7 +465,7 @@ msgstr "Pages"
 msgid "Product categories"
 msgstr "Product categories"
 
-#: ../app/controllers/users_controller.php:18
+#: ../app/controllers/users_controller.php:22
 msgid "New user registration"
 msgstr "New user registration"
 
@@ -523,11 +535,11 @@ msgstr "Are you admin?"
 msgid "Yes, you are"
 msgstr "Yes, you are"
 
-#: ../app/controllers/users_controller.php:44
+#: ../app/controllers/users_controller.php:48
 msgid "Change your account data"
 msgstr "Change your account data"
 
-#: ../app/controllers/users_controller.php:61
+#: ../app/controllers/users_controller.php:65
 msgid "Change your password"
 msgstr "Change your password"
 
@@ -698,7 +710,7 @@ msgstr ""
 "set."
 
 #: ../app/controllers/password_recoveries_controller.php:62
-#: ../app/controllers/users_controller.php:75
+#: ../app/controllers/users_controller.php:79
 msgid "Your password has been updated successfully"
 msgstr "Your password has been updated successfully"
 
@@ -706,15 +718,16 @@ msgstr "Your password has been updated successfully"
 msgid "Password recovery"
 msgstr "Password recovery"
 
+#: ../app/controllers/stores_controller.php:6
 #: ../app/controllers/stores_controller.php:11
 msgid "Stores"
 msgstr "Stores"
 
-#: ../app/controllers/users_controller.php:10
+#: ../app/controllers/users_controller.php:14
 msgid "To register as a new user, sign out first"
 msgstr "To register as a new user, sign out first"
 
-#: ../app/controllers/users_controller.php:31
+#: ../app/controllers/users_controller.php:35
 #, php-format
 msgid ""
 "You have been successfully registered and now you are logged in as <em>%s</"
@@ -723,19 +736,19 @@ msgstr ""
 "You have been successfully registered and now you are logged in as <em>%s</"
 "em>"
 
-#: ../app/controllers/users_controller.php:40
+#: ../app/controllers/users_controller.php:44
 msgid "Thank you for your registration!"
 msgstr "Thank you for your registration!"
 
-#: ../app/controllers/users_controller.php:50
+#: ../app/controllers/users_controller.php:54
 msgid "Nothing has been changed"
 msgstr "Nothing has been changed"
 
-#: ../app/controllers/users_controller.php:55
+#: ../app/controllers/users_controller.php:59
 msgid "Your account data has been updated"
 msgstr "Your account data has been updated"
 
-#: ../app/controllers/users_controller.php:65
+#: ../app/controllers/users_controller.php:69
 msgid "This is not your current password"
 msgstr "This is not your current password"
 
@@ -975,6 +988,165 @@ msgstr "Gallery"
 #: ../app/helpers/modifier.iobject_type.php:23
 msgid "Obrázek"
 msgstr "Picture"
+
+msgid "Zpráva z obchodu %1"
+msgstr "Message from eshop %1"
+
+msgid "Krásný den přeje<br/>%1"
+msgstr "Have a nice day<br/>%1"
+
+msgid "Posted by <!-- she --> <em>%1</em> on <time datetime=\"%2\">%3</time>"
+msgstr "Posted by <!-- she --> <em>%1</em> on <time datetime=\"%2\">%3</time>"
+
+msgid "Produkt"
+msgstr "Product"
+
+msgid "Kód"
+msgstr "Code"
+
+msgid "Jedn. cena"
+msgstr "Unit price"
+
+msgid "Množství"
+msgstr "Amount"
+
+msgid "Celkem"
+msgstr "Total"
+
+msgid "Košík"
+msgstr "Basket"
+
+msgid "Recalculate basket content"
+msgstr "Recalculate basket content"
+
+msgid "Back to catalog"
+msgstr "Back to catalog"
+
+msgid "Select shipping and payment"
+msgstr "Select shipping and payment"
+
+msgid "The shopping basket is empty."
+msgstr "The shopping basket is empty."
+
+msgid "Objednávka nemůže být dokončena"
+msgstr "The order cannot be completed"
+
+msgid "Do košíku jste úspěšně přidali produkt \"%1\"."
+msgstr "You have successfully added the product \"%1\" to the basket."
+
+msgid "Vybrat další produkt"
+msgstr "Select another product"
+
+msgid "Discount"
+msgstr "Discount"
+
+msgid "This product is not in offer"
+msgstr "This product is not in offer"
+
+msgid "Catalog number: %1"
+msgstr "Catalog number: %1"
+
+msgid "incl. VAT"
+msgstr "incl. VAT"
+
+msgid "Add to cart"
+msgstr "Add to cart"
+
+msgid "This product is sold out"
+msgstr "This product is sold out"
+
+msgid "telefon:"
+msgstr "phone:"
+
+msgid "Smazat adresu"
+msgstr "Delete address"
+
+msgid "Smazat"
+msgstr "Delete"
+
+msgid "(nepovinné)"
+msgstr "(optional)"
+
+msgid "Back to basket content"
+msgstr "Back to basket content"
+
+msgid "Copy this product"
+msgstr "Copy this product"
+
+msgid "Create new product"
+msgstr "Create new product"
+
+msgid "Products administration"
+msgstr "Products administration"
+
+msgid "Not in stock"
+msgstr "Not in stock"
+
+msgid "In stock"
+msgstr "In stock"
+
+msgid "In stock %1 %2"
+msgstr "In stock %1 %2"
+
+msgid "Social networks"
+msgstr "Social networks"
+
+msgid "Previous"
+msgstr "Previous"
+
+msgid "Next"
+msgstr "Next"
+
+msgid "Basket"
+msgstr "Basket"
+
+msgid "Shipping and payment"
+msgstr "Shipping and payment"
+
+msgid "Delivery data"
+msgstr "Delivery data"
+
+msgid "Summary"
+msgstr "Summary"
+
+msgid "Košík je prázdný"
+msgstr "Shopping basket is empty"
+
+msgid "Produkt <em>%s (%s)</em> byl vyřazen z našeho ceníku"
+msgstr "Product <em>%s (%s)</em> has been removed from our price list"
+
+msgid "Produkt <em>%s (%s)</em> není skladem"
+msgstr "Product <em>%s (%s)</em> is out of stock"
+
+msgid "produktů"
+msgstr "products"
+
+msgid "produkt"
+msgstr "product"
+
+msgid "produkty"
+msgstr "products"
+
+msgid "Načítám..."
+msgstr "Loading..."
+
+msgid "Vše"
+msgstr "All"
+
+msgid "Ano"
+msgstr "Yes"
+
+msgid "Ne"
+msgstr "No"
+
+msgid "from"
+msgstr "from"
+
+msgid "to"
+msgstr "to"
+
+msgid "V případě dotazů nás můžete kontaktovat na emailu %1"
+msgstr "If you have any questions, you can contact us at %1"
 
 #~ msgid "atk14.date_format"
 #~ msgstr "m/d/Y"
