@@ -9,7 +9,7 @@
 				{/if}
 			</div>
 			<div class="col-12 col-md-6 text-md-right">
-				{!$brand->getLogoUrl()|pupiq_img:"300x300":"class='img-fluid'"}
+				{!$brand->getLogoUrl()|pupiq_img:"300x300,format=png":"class='img-fluid'"}
 			</div>
 		</div>
 	</div>
