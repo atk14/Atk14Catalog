@@ -44,6 +44,7 @@ class TcCategory extends TcBase {
 
 		$coffee = $this->cards["coffee"];
 		$tea = $this->cards["tea"];
+		$apple_cider = $this->cards["apple_cider"];
 
 		// Testing that addCard() inserts the given card at the beginning of the list
 		
@@ -58,12 +59,14 @@ class TcCategory extends TcBase {
 		// --
 
 		$food_drinks->addCard($tea);
-		$food_drinks->addCard($coffee);
+		$food_drinks->addCard($coffee,["first" => true]); // this is the default
+		$food_drinks->addCard($apple_cider,array("first" => false));
 
 		$cards = $food_drinks->getCards();
-		$this->assertEquals(2,sizeof($cards));
+		$this->assertEquals(3,sizeof($cards));
 		$this->assertEquals($coffee->getId(),$cards[0]->getId());
 		$this->assertEquals($tea->getId(),$cards[1]->getId());
+		$this->assertEquals($apple_cider->getId(),$cards[2]->getId());
 	}
 
 	function test_names(){

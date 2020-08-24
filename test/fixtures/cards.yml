@@ -7,6 +7,11 @@ tea:
   name_cs: Čaj
   has_variants: true
 
+apple_cider:
+  name_en: Apple Cider
+  name_cs: Jablečný cider
+  product_type_id: "<?= $product_types["drink"]->getId() ?>"
+
 peanuts:
   name_en: Peanuts
   name_cs: Arašídy

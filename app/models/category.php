@@ -289,7 +289,11 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 	 *
 	 * Actually it inserts the card at the beginning of the card list.
 	 */
-	function addCard($card){
+	function addCard($card,$options = []){
+		$options += [
+			"first" => true,
+		];
+
 		if($this->isFilter()){
 			throw new Exception("Can't insert card $card into filter category $this");
 		}
@@ -300,14 +304,25 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 		// Using CardsLister can consume very much memory in a large catalog
 		//$lister = $this->getCardsLister();
 		//if(!$lister->contains($card)) {
-		//	return $lister->prepend($card);
+		//	if($options["first"]) {
+		//		return $lister->prepend($card);
+		//	} else {
+		//		return $lister->append($card);
+		//	}
 		//}
 
 		if(0===$this->dbmole->selectInt("SELECT COUNT(*) FROM category_cards WHERE category_id=:category_id AND card_id=:card_id",[":category_id" => $this, ":card_id" => $card])){
+			if($options["first"]){
+				$MIN = "MIN";
+				$delta = -1;
+			}else{
+				$MIN = "MAX";
+				$delta = 1;
+			}
 			$this->dbmole->insertIntoTable("category_cards",[
 				"category_id" => $this,
 				"card_id" => $card,
-				"rank" => $this->dbmole->selectInt("SELECT COALESCE(MIN(rank)-1,0) FROM category_cards WHERE category_id=:category_id",[":category_id" => $this]),
+				"rank" => $this->dbmole->selectInt("SELECT COALESCE($MIN(rank)+:delta,0) FROM category_cards WHERE category_id=:category_id",[":category_id" => $this,":delta" => $delta]),
 			]);
 		}
 	}
