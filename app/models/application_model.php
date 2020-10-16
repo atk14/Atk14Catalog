@@ -17,6 +17,12 @@ class ApplicationModel extends TableRecord{
 		global $ATK14_GLOBAL,$HTTP_REQUEST;
 		$obj = new static();
 
+		$options += array(
+			"reconstruct_missing_slugs" => true,
+		);
+		$reconstruct_missing_slugs = $options["reconstruct_missing_slugs"];
+		unset($options["reconstruct_missing_slugs"]);
+
 		// there is a auto setting of created_at, created_on or create_date field
 		$v_keys = array_keys($values);
 		foreach(array("created_at","created_on","create_date") as $f){
@@ -73,7 +79,7 @@ class ApplicationModel extends TableRecord{
 			$out->setSlug($slugs);
 		}
 
-		if($obj instanceof iSlug){
+		if($obj instanceof iSlug && $reconstruct_missing_slugs){
 			Slug::ComplementSlugs($out);
 		}
 
@@ -327,22 +333,39 @@ class ApplicationModel extends TableRecord{
 		Slug::SetObjectSlug($this,$slug,$lang,$segment,$options);
 	}
 
-	static function GetInstanceBySlug($slug,&$lang = null,$options = array()){
-		if(!is_array($options)){
-			$options = array("segment" => $options);
+	/**
+	 * $lang = null;
+	 * $article = Article::GetInstanceBySlug("interesting-article",$lang); // Article
+	 * echo $lang; // "en"
+	 *
+	 * $lang = "cs";
+	 * $article = Article::GetInstanceBySlug("interesting-article",$lang); // null
+	 *
+	 * $lang = null;
+	 * $article = Article::GetInstanceBySlug("interesting-article",$lang,["segment" => ""]); // Article
+	 * echo $lang; // "en"
+	 *
+	 * $lang = null;
+	 * $article = Article::GetInstanceBySlug("interesting-article",$lang,["segment" => "not-existing-segment"]); // null
+	 */
+	static function GetInstanceBySlug($slug,&$lang = null,$segment = '', $options=[]){
+		if(is_array($segment)){
+			$options = $segment;
+			$segment = '';
 		}
-
-		$options += array(
-			"segment" => "",
-			"consider_segment" => true,
-		);
+		if(array_key_exists("segment",$options)){
+			$segment = $options["segment"];
+		}
 
 		$class_name = get_called_class();
 		$o = new $class_name();
 		$table_name = $o->getTableName();
 
-		$record_id = Slug::GetRecordIdBySlug($table_name,$slug,$lang,$options);
-		return Cache::Get("$class_name",$record_id);
+		$record_id = Slug::GetRecordIdBySlug($table_name,$slug,$lang,(string)$segment, $options);
+		if(isset($options['force_read']) && $options['force_read']) {
+			Cache::Clear("$class_name", $record_id);
+		}
+		return Cache::Get("$class_name",$record_id, $options);
 	}
 
 	function getValue($field_name){

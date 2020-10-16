@@ -249,6 +249,53 @@ class TcSlug extends TcBase{
 			"title_en" => "Sample Article",
 		));
 		$this->assertEquals("sample-article-2",$a3->getSlug("en"));
+
+		// There is an internal limit 50, after that uniqid() is added to the slug
+		for($i=1;$i<=52;$i++){
+			$a = Article::CreateNewRecord(array("title_en" => "Nice Reading"));
+			$expected_slug = "nice-reading";
+			if($i>=2 && $i<=50){
+				$expected_slug .= "-$i";
+			}
+			if($i>50){
+				$this->assertTrue(!!preg_match('/^nice-reading-[a-z0-9]{5,}$/',$a->getSlug("en")));
+				return;
+			}
+			$this->assertEquals($expected_slug,$a->getSlug("en"));
+		}
+	}
+
+	function test_reconstruct_missing_slugs(){
+		// false
+		$article = Article::CreateNewRecord(array(
+			"title_en" => "Nice Reading",
+			"title_cs" => "Krásné čtení",
+			"slug_cs" => "krasne-cteni"
+		),array(
+			"reconstruct_missing_slugs" => false,
+		));
+		$this->assertEquals("articles-en-".$article->getId(),$article->getSlug("en"));
+		$this->assertEquals("krasne-cteni",$article->getSlug("cs"));
+
+		// true
+		$article = Article::CreateNewRecord(array(
+			"title_en" => "Very Nice Reading",
+			"title_cs" => "Moc krásné čtení",
+			"slug_cs" => "moc-krasne-cteni"
+		),array(
+			"reconstruct_missing_slugs" => true,
+		));
+		$this->assertEquals("very-nice-reading",$article->getSlug("en"));
+		$this->assertEquals("moc-krasne-cteni",$article->getSlug("cs"));
+
+		// defaul
+		$article = Article::CreateNewRecord(array(
+			"title_en" => "Very, Very Nice Reading",
+			"title_cs" => "Moc, moc krásné čtení",
+			"slug_cs" => "moc-moc-krasne-cteni"
+		));
+		$this->assertEquals("very-very-nice-reading",$article->getSlug("en"));
+		$this->assertEquals("moc-moc-krasne-cteni",$article->getSlug("cs"));
 	}
 
 	function test_GetRecordIdBySlug(){
