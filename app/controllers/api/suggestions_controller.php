@@ -1,6 +1,19 @@
 <?php
 class SuggestionsController extends ApiController{
 
+	function users(){
+		if(!$this->logged_user || !$this->logged_user->isAdmin()){
+			// this is for a logged-in administrator only
+			$this->_execute_action("error403");
+			return;
+		}
+
+		$this->_suggest([
+			"fields" => ["login","firstname","lastname"],
+			"order_by" => "LOWER(login) LIKE LOWER(:q)||'%' DESC, LOWER(lastname) LIKE LOWER(:q)||'%' DESC, LOWER(firstname) LIKE LOWER(:q)||'%' DESC, login",
+		]);
+	}
+
 	/**
 	 * ### Suggestion of Product Cards
 	 */
