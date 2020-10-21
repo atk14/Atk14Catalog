@@ -12,12 +12,14 @@ class SuggestionsController extends ApiController{
 			"fields" => [
 				"login",
 				"firstname",
-				"lastname"
+				"lastname",
+				"email"
 			],
 			"order_by" => "
 				LOWER(login) LIKE LOWER(:q)||'%' DESC,
 				LOWER(lastname) LIKE LOWER(:q)||'%' DESC,
 				LOWER(firstname) LIKE LOWER(:q)||'%' DESC,
+				is_admin DESC,
 				login
 			",
 		]);
