@@ -54,6 +54,12 @@ definedef("ARTICLE_BODY_MAX_WIDTH",825);
 // see app/views/shared/trackers/google/_analytics.tpl and app/layouts/default.tpl.
 // definedef("GOOGLE_ANALYTICS_TRACKING_ID","UA-123456789-1");
 
+// Temporary files uploads (these settings effects use of AsyncFileField)
+// definedef("TEMPORARY_FILE_UPLOADS_ENABLED",true);
+// definedef("TEMPORARY_FILE_UPLOADS_DIRECTORY",__DIR__ . "/../tmp/temporary_file_uploads/");
+// definedef("TEMPORARY_FILE_UPLOADS_MAX_FILESIZE",512 * 1024 * 1024); // 512MB
+// definedef("TEMPORARY_FILE_UPLOADS_MAX_AGE", 2 * 60 * 60); // 2 hours
+
 definedef("CATALOG_ID_REGEXP",'/^[0-9A-Z_.\/-]{1,}$/i'); // see app/fields/catalog_id_field.php
 definedef("CATALOG_ID_AUTO_UPPERIZE",true);
 
