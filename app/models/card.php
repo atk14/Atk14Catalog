@@ -583,6 +583,7 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 	static function GetFinderForCategory($category, $filter_d = array(), $options = array()) {
 
 		$options = array_merge(array(
+			"search_entire_branch" => true, // search for cards in the given category and also in all its subcategories and so on (true) or search for cards only in the given category (false)?
 			"limit" => 50,
 			"offset" => 0,
 			"order" => "default", // "default", "price_asc", "price_desc"
@@ -615,7 +616,11 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		$bind_ar[":this_category"] = $category;
 		
 		$conditions[] = "category_cards.category_id IN :categories";
-		$bind_ar[":categories"] = $category->getBranchCategoryIds();
+		if($options["search_entire_branch"]){
+			$bind_ar[":categories"] = $category->getBranchCategoryIds();
+		}else{
+			$bind_ar[":categories"] = array($category->isPointingToCategory() ? $category->getPointingToCategory() : $category);
+		}
 
 		$conditions[] = "cards.id=category_cards.card_id";
 		$conditions[] = "cards.visible='t'";

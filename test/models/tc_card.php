@@ -67,4 +67,14 @@ class TcCard extends TcBase {
 		$card->createProduct(array("catalog_id" => "127","deleted" => true));
 		$this->assertTrue($card->canBeSwitchedToNonVariantMode());
 	}
+
+	function test_GetFinderForCategory(){
+		$catalog = $this->categories["catalog"];
+
+		$finder = Card::GetFinderForCategory($catalog);
+		$this->assertTrue($finder->getTotalAmount()>0);
+
+		$finder = Card::GetFinderForCategory($catalog,array(),array("search_entire_branch" => false));
+		$this->assertTrue($finder->getTotalAmount()===0);
+	}
 }
