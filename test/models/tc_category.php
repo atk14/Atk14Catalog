@@ -16,16 +16,19 @@ class TcCategory extends TcBase {
 		));
 		$this->assertTrue($root->isVisible());
 		$this->assertFalse($child->isVisible());
+		$this->assertFalse($child->isVisible(false));
 
 		$child->s("visible",true);
 		$this->assertTrue($root->isVisible());
 		$this->assertTrue($child->isVisible());
+		$this->assertTrue($child->isVisible(false));
 
 		Cache::Clear();
 
 		$root->s("visible",false);
 		$this->assertFalse($root->isVisible());
 		$this->assertFalse($child->isVisible());
+		$this->assertTrue($child->isVisible(false));
 	}
 
 	function test_isDescendantOf(){
