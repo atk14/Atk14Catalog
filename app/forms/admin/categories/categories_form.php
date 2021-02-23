@@ -6,6 +6,7 @@ class CategoriesForm extends AdminForm{
 			"add_is_filter_field" => false,
 			"add_slug_field" => false,
 			"add_page_title_and_description_fields" => false,
+			"add_code_field" => true,
 		);
 
 		$this->add_translatable_field("name", new CharField(array(
@@ -58,6 +59,8 @@ class CategoriesForm extends AdminForm{
 			"required" => false,
 			"help_text" => sprintf(_("Recommended image size is %dx%d"),1920,1080),
 		)));
+
+		$options["add_code_field"] && $this->add_code_field();
 
 		$this->add_field("visible", new BooleanField(array(
 			"label" => _("Is visible?"),
