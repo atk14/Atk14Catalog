@@ -287,7 +287,7 @@ class CardsController extends AdminController{
 	function _before_filter() {
 		if (in_array($this->action, array("edit","destroy","enable_variants","disable_variants","add_to_category","add_technical_specification","remove_from_category","append_external_source","remove_external_source", "set_category_rank"))) {
 			$card = $this->_find("card");
-			if($card->isDeleted()){
+			if($card && $card->isDeleted()){
 				return $this->_execute_action("error404");
 			}
 		}
