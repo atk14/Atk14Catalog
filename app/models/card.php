@@ -549,6 +549,35 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		return TechnicalSpecification::FindAll("card_id",$this);
 	}
 
+	/**
+	 * Returns the first occurrence of TechnicalSpecification with the given key
+	 *
+	 *	echo $card->getTechnicalSpecification("weight");
+	 *	echo $card->getTechnicalSpecification(123);
+	 *	echo $card->getTechnicalSpecification($tech_spec_key);
+	 *
+	 * @return TechnicalSpecification
+	 */
+	function getTechnicalSpecification($key){
+		static $KEYS;
+
+		if(is_numeric($key) && ($obj = Cache::Get("TechnicalSpecificationKey",$key))){
+			$key = $obj;
+		}
+		if(is_string($key) && ($obj = TechnicalSpecificationKey::GetInstanceByKey($key))){
+			$key = $obj;
+		}
+		if(!is_object($key)){
+			return null;
+		}
+
+		foreach($this->getTechnicalSpecifications() as $ts){
+			if($ts->getTechnicalSpecificationKeyId()==$key->getId()){
+				return $ts;
+			}
+		}
+	}
+
 	function setValues($values,$options=array()) {
 		if (array_key_exists("collection_id", $values)) {
 			$collection_id = $values["collection_id"];

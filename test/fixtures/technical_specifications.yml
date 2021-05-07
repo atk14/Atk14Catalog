@@ -1,0 +1,16 @@
+coffee__aroma:
+  card_id: "<?= $cards["coffee"]->getId() ?>"
+  technical_specification_key_id: "<?= $technical_specification_keys["aroma"]->getId() ?>"
+  content: "Strong"
+  content_localized_cs: "Silná"
+
+coffee__weight:
+  card_id: "<?= $cards["coffee"]->getId() ?>"
+  technical_specification_key_id: "<?= $technical_specification_keys["weight"]->getId() ?>"
+  content: "200g"
+
+coffee__acidity:
+  card_id: "<?= $cards["coffee"]->getId() ?>"
+  technical_specification_key_id: "<?= $technical_specification_keys["acidity"]->getId() ?>"
+  content: "Low"
+  content_localized_cs: "Nízká"

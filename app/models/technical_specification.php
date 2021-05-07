@@ -42,4 +42,8 @@ class TechnicalSpecification extends ApplicationModel implements Translatable, R
 
 		return $this->g("content");
 	}
+
+	function toString(){
+		return (string)$this->getContent();
+	}
 }

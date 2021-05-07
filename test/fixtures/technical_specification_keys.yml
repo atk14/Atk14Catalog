@@ -1,4 +1,24 @@
 aroma:
   key: aroma
   key_localized_en: Aroma
-  key_localized_cz: Vůně
+  key_localized_cs: Vůně
+
+acidity:
+  key: acidity
+  key_localized_en: Acidity
+  key_localized_cs: Kyselost
+
+width:
+  key: width
+  key_localized_en: Width
+  key_localized_cs: Šířka
+
+height:
+  key: height
+  key_localized_en: Height
+  key_localized_cs: Výška
+
+weight:
+  key: weight
+  key_localized_en: Weight
+  key_localized_cs: Hmotnost
