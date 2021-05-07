@@ -1,6 +1,8 @@
 <?php
 class TechnicalSpecificationKey extends ApplicationModel implements Translatable {
 
+	use TraitGetInstanceByCode;
+
 	public static function GetTranslatableFields(){ return array("key_localized"); }
 
 	public static function GetInstanceByKey($key){
