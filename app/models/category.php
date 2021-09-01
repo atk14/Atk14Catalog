@@ -37,7 +37,7 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 	 * Pokud dana cesta neexistuje, vrati null
 	 *
 	 * ```
-	 * $categories = Category::GetInstanceByPath("mistnosti/jidelna/stůl");
+	 * $categories = Category::GetInstancesOnPath("mistnosti/jidelna/stul");
 	 * $categories[0]->getSlug(); //mistnosti
 	 * $categories[1]->getSlug(); //jidelna
 	 * $categories[2]->getSlug(); //stul
@@ -63,7 +63,7 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 			}
 			$c = $c->realMe();
 			$cpath .= "/$slug";
-			$out[substr($cpath,1)] = $c;
+			$out[] = $c;
 			$parent_category_id = $c->getId();
 		}
 		return $out;
