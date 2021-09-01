@@ -18,4 +18,8 @@ class Store extends ApplicationModel Implements Rankable, Translatable, iSlug {
 		$lng = $this->g("location_lng")."E"; // TODO: zaporne je W
 		return "$lat, $lng";
 	}
+
+	function toString(){
+		return (string)$this->getName();
+	}
 }
