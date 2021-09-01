@@ -2,7 +2,9 @@ catalog:
   id: 1001
   code: "catalog"
   name_en: Catalog
-  name_cs: Katalog 
+  name_cs: Katalog
+  slug_en: catalog
+  slug_cs: katalog
 
 color:
   id: 1002

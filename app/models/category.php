@@ -78,26 +78,57 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 		return end($out);
 	}
 
-	static function GetInstanceByNamePath($path,&$lang = null){
+	/**
+	 *
+	 *	$catalog = Category::GetInstanceByName(null,"Catalog");
+	 *	$shoes = Category::GetInstanceByName($catalog,"Shoes");
+	 */
+	static function GetInstanceByName($parent_category,$name,&$lang = null){
+		global $ATK14_GLOBAL;
+
+		$categories = $parent_category ? $parent_category->getChildCategories() : Category::FindAll("parent_category_id",null);
+
+		$langs = $lang ? [$lang] : $ATK14_GLOBAL->getSupportedLangs();
+		foreach($categories as $category){
+			foreach($langs as $l){
+				if($category->g("name_$l")==$name){
+					$lang = $l;
+					return $category;
+				}
+			}
+		}
+	}
+
+	static function GetInstancesOnNamePath($path, &$lang = null){
 		$orig_lang = $lang;
 
 		$path = (string)$path;
-
 		if(!$path){ return null; }
-		
-		$parent_category_id = null;
-		foreach(explode('/',$path) as $slug){
-			if(!$c = Category::GetInstanceByName($slug,$lang,$parent_category_id)){
+
+		$my_path='';
+		$slugs = explode("/",$path);
+		$parent_category = null;
+
+		$out = array();
+
+		$cpath = '';
+		foreach(explode('/',$path) as $name){
+			if(!$c = Category::GetInstanceByName($parent_category,$name,$lang)){
 				$lang = $orig_lang; // nenechame nastaveny $lang na nejakou necekanou hodnotu
 				return null;
 			}
-			if($pt = $c->getPointingToCategory()){
-				$c = $pt;
-			}
-			$parent_category_id = $c->getId();
+			$c = $c->realMe();
+			$cpath .= "/$name";
+			$out[] = $c;
+			$parent_category = $c;
 		}
+		return $out;
+	}
 
-		return $c;
+	static function GetInstanceByNamePath($path,&$lang = null){
+		$out = self::GetInstancesOnNamePath($path, $lang);
+		if(!$out) { return null ; }
+		return end($out);
 	}
 
 	function getChildCategories($options = array()){
@@ -431,22 +462,6 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 			$checked_category = $checked_category->getParentCategory();
 		}
 		return false;
-	}
-
-	static function GetInstanceByName($name,&$lang = null,$segment = ''){
-		$class_name = get_called_class();
-		$o = new $class_name();
-		$table_name = $o->getTableName();
-
-		$record = Translation::FindFirst(array(
-			"conditions" => array(
-				"table_name" => $table_name,
-				"key" => "name",
-				"body" => $name,
-				"lang" => $lang,
-			),
-		));
-		return static::GetInstanceById($record->getRecordId());
 	}
 
 	/**

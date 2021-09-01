@@ -147,7 +147,7 @@ class TcCategory extends TcBase {
 		$cat = Category::GetInstanceByPath("catalog/obuv/deti",$lang); // language mixing
 		$this->assertNull($cat);
 
-		// GetInstanceByPath
+		// GetInstancesOnPath
 
 		$lang = null;
 		$cats = Category::GetInstancesOnPath("catalog/shoes/kids",$lang);
@@ -159,6 +159,78 @@ class TcCategory extends TcBase {
 
 		$lang = null;
 		$cats = Category::GetInstancesOnPath("catalog/shoes/kids/nonsence",$lang);
+		$this->assertEquals(null,$cats);
+	}
+
+	function test_GetInstanceByNamePath(){
+
+		// GetInstancesOnPath without parent category
+
+		$lang = null;
+		$cat = Category::GetInstanceByName(null,"Catalog",$lang);
+		$this->assertEquals($this->categories["catalog"]->getId(),$cat->getId());
+		$this->assertEquals("en",$lang);
+
+		$lang = "en";
+		$cat = Category::GetInstanceByName(null,"Catalog",$lang);
+		$this->assertEquals($this->categories["catalog"]->getId(),$cat->getId());
+		$this->assertEquals("en",$lang);
+
+		$lang = null;
+		$cat = Category::GetInstanceByName(null,"Katalog",$lang);
+		$this->assertEquals($this->categories["catalog"]->getId(),$cat->getId());
+		$this->assertEquals("cs",$lang);
+
+		$lang = "en";
+		$cat = Category::GetInstanceByName(null,"Katalog",$lang);
+		$this->assertNull($cat);
+
+		// GetInstancesOnPath with parent category
+
+		$catalog = $this->categories["catalog"];
+
+		$lang = null;
+		$cat = Category::GetInstanceByName($catalog,"Shoes",$lang);
+		$this->assertEquals($this->categories["shoes"]->getId(),$cat->getId());
+		$this->assertEquals("en",$lang);
+
+		$lang = null;
+		$cat = Category::GetInstanceByName($catalog,"Obuv",$lang);
+		$this->assertEquals($this->categories["shoes"]->getId(),$cat->getId());
+		$this->assertEquals("cs",$lang);
+
+		$lang = null;
+		$cat = Category::GetInstanceByName($catalog,"Catalog",$lang); // nonsence
+		$this->assertNull($cat);
+
+		// GetInstanceByNamePath
+
+		$lang = null;
+		$cat = Category::GetInstanceByNamePath("Catalog/Shoes/Kids",$lang);
+		$this->assertEquals($this->categories["kids_shoes"]->getId(),$cat->getId());
+		$this->assertEquals("en",$lang);
+
+		$lang = null;
+		$cat = Category::GetInstanceByNamePath("Katalog/Obuv/Děti",$lang);
+		$this->assertEquals($this->categories["kids_shoes"]->getId(),$cat->getId());
+		$this->assertEquals("cs",$lang);
+
+		$lang = null;
+		$cat = Category::GetInstanceByNamePath("Katalog/Shoes/Děti",$lang); // language mixing
+		$this->assertNull($cat);
+
+		// GetInstancesOnNamePath
+
+		$lang = null;
+		$cats = Category::GetInstancesOnNamePath("Catalog/Shoes/Kids",$lang);
+		$this->assertEquals(3,sizeof($cats));
+		$this->assertEquals("catalog",$cats[0]->getSlug());
+		$this->assertEquals("shoes",$cats[1]->getSlug());
+		$this->assertEquals("kids",$cats[2]->getSlug());
+		$this->assertEquals("en",$lang);
+
+		$lang = null;
+		$cats = Category::GetInstancesOnNamePath("Catalog/Shoes/Kids/Nonsence",$lang);
 		$this->assertEquals(null,$cats);
 	}
 }
