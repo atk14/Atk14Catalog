@@ -70,6 +70,18 @@ class TcCategory extends TcBase {
 		$this->assertEquals($coffee->getId(),$cards[0]->getId());
 		$this->assertEquals($tea->getId(),$cards[1]->getId());
 		$this->assertEquals($apple_cider->getId(),$cards[2]->getId());
+
+		// -- getVisibleCards()
+
+		$cards = $food_drinks->getVisibleCards();
+		$this->assertEquals(3,sizeof($cards));
+
+		$coffee->s("visible",false);
+		$apple_cider->s("deleted",true);
+		Cache::Clear();
+		$cards = $food_drinks->getVisibleCards();
+		$this->assertEquals(1,sizeof($cards));
+		$this->assertEquals($tea->getId(),$cards[0]->getId());
 	}
 
 	function test_names(){

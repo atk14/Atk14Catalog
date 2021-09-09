@@ -317,6 +317,11 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 	function getCards(){
 		return $this->getCardsLister()->getRecords(["preread_data" => false]);
 	}
+
+	function getVisibleCards(){
+		$cards = array_filter($this->getCards(),function($card){ return $card->isVisible() && !$card->isDeleted(); });
+		return array_values($cards);
+	}
 	
 	/**
 	 * Adds a card into this category
