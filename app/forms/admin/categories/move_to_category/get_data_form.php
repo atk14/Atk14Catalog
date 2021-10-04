@@ -1,5 +1,5 @@
 <?php
-class MoveToCategoryForm extends AdminForm {
+class GetDataForm extends AdminForm {
 
 	function set_up() {
 		$this->add_field("parent_category_id", new CategoryField(array(

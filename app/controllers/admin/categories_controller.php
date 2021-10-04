@@ -37,22 +37,78 @@ class CategoriesController extends AdminController{
 	}
 
 	function move_to_category() {
-		if(!$this->category->canBeMoved()){
+		$this->_walk([
+			"get_category",
+			"get_data",
+			"fix_slug_collision",
+			"move",
+		]);
+	}
+
+	function move_to_category__get_category(){
+		if(!$c = $this->_just_find("category")){
+			$this->_execute_action("error404");
+			return;
+		}
+		return $this->_next_step([
+			"category" => $c,
+			"return_uri" => $this->_get_return_uri(),
+		]);
+	}
+
+	function move_to_category__get_data() {
+		$category = $this->tpl_data["category"] = $this->returned_by["get_category"]["category"];
+
+		if(!$category->canBeMoved()){
 			return $this->_execute_action("error404");
 		}
 
-		$this->page_title = sprintf(_("Moving category %s"),strip_tags($this->category->getName()));
-		$this->form->set_initial("parent_category_id", $this->category->getParentCategory());
+		$this->_prepare_breadcrumbs($category,true);
+		$this->page_title = sprintf(_("Moving category %s"),strip_tags($category->getName()));
+		$this->form->set_initial("parent_category_id", $category->getParentCategory());
 		$this->_save_return_uri();
 		if ($this->request->post() && ($d=$this->form->validate($this->params))) {
-			if($d["parent_category_id"] && $d["parent_category_id"]->getId()==$this->category->getId()){
+			if($d["parent_category_id"] && $d["parent_category_id"]->getId()==$category->getId()){
 				$this->form->set_error("parent_category_id",_("The category can not be moved under itself"));
 				return;
 			}
-			$this->category->s("parent_category_id", $d["parent_category_id"]);
-			$this->flash->success(_("The category was moved"));
-			return $this->_redirect_back();
+			return true;
 		}
+	}
+
+	function move_to_category__fix_slug_collision(){
+		global $ATK14_GLOBAL;
+
+		$category = $this->tpl_data["category"] = $this->returned_by["get_category"]["category"];
+		$parent_category = $this->parent_category = $this->tpl_data["parent_category"] = $this->form_data["get_data"]["parent_category_id"];
+
+		$this->_prepare_breadcrumbs($category,true);
+		$this->page_title = sprintf(_("Moving category %s"),strip_tags($category->getName()));
+
+		$this->form->set_initial($category);
+
+		$d = null;
+		if(!$this->request->post()){
+			$d = $this->form->get_initial();
+			$this->form->detect_collision_slug($d,$parent_category);
+			if(!$this->form->has_errors()){
+				return $d;
+			}
+		}
+
+		if($this->request->post() && ($d = $this->form->validate($this->params))){
+			return $d;
+		}
+	}
+
+	function move_to_category__move(){
+		$category = $this->returned_by["get_category"]["category"];
+		$parent_category = $this->form_data["get_data"]["parent_category_id"];
+		$values = $this->returned_by["fix_slug_collision"];
+		$values["parent_category_id"] = $parent_category;
+		$category->s($values);
+		$this->flash->success(_("The category was moved"));
+		$this->_redirect_to($this->returned_by["get_category"]["return_uri"]);
 	}
 
 	function set_rank(){
@@ -157,7 +213,7 @@ class CategoriesController extends AdminController{
 	}
 
 	function _before_filter(){
-		if(in_array($this->action,array("edit","add_card","set_rank","destroy","move_to_category","create_alias"))){
+		if(in_array($this->action,array("edit","add_card","set_rank","destroy","create_alias"))){
 			$c = $this->_find("category");
 			$this->_prepare_breadcrumbs($c,$this->action!="edit");
 		}
