@@ -8,4 +8,12 @@ class EditForm extends CategoriesForm{
 			"add_page_title_and_description_fields" => !$category->isFilter() && !$category->isAlias(),
 		));
 	}
+
+	function clean(){
+		list($err,$d) = parent::clean();
+
+		$this->_clean_slugs($d);
+
+		return array($err,$d);
+	}
 }
