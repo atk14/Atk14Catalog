@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-12 16:50+0200\n"
-"PO-Revision-Date: 2020-03-16 10:18+0100\n"
+"PO-Revision-Date: 2020-05-12 15:27+0200\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: \n"
 "Language: cs_CZ\n"
@@ -104,50 +104,50 @@ msgstr "Ahoj světe!"
 msgid "Hello Another World!"
 msgstr "Ahoj jiný světe!"
 
+msgid "Please enter a valid company registration number"
+msgstr "Zadejte platné IČ"
+
+msgid "Enter the company number as eight digits"
+msgstr "Zadejte IČ ve formátu 8 číslic"
+
+msgid "Enter the company number as seven digits"
+msgstr "Zadejte IČ ve formátu 7 číslic"
+
+msgid "Enter the company number as nine digits"
+msgstr "Zadejte IČ ve formátu 9 číslic"
+
+msgid "Enter the company number as LV and eleven digits"
+msgstr "Zadejte IČ ve formátu LV a 11 číslic"
+
+msgid ""
+"Ensure this number has at most %max% digits (it has %digits% including "
+"allowed decimal places)."
+msgstr ""
+"Zajistěte, aby toto číslo mělo maximálně %max% číslic (teď má %digits% "
+"včetně povolených desetinných míst)."
+
+msgid ""
+"Ensure this number has at most %max% digits in integer-part (it has %integers"
+"%)."
+msgstr ""
+"Zajistěte, aby toto číslo mělo maximálně %max% číslic před desetinnou čárkou "
+"(teď má %integers%)."
+
+msgid ""
+"Ensure this number has at most %max% decimal places (it has %decimal_places"
+"%)."
+msgstr ""
+"Zajistěte, aby toto číslo mělo maximálně %max% desetinných míst (teď má "
+"%decimal_places%)."
+
+msgid "Please enter a valid zip code"
+msgstr "Zadejte prosím platné PSČ"
+
+msgid "Enter the ZIP code as NNN NN"
+msgstr "Zadejte PSČ ve formátu NNN NN"
+
 #~ msgid "Enter valid phone number (+420.605123456)"
 #~ msgstr "Zadejte platné telefonní číslo (+420.605123456)"
 
 #~ msgid "Enter phone number in format +420.605123456"
 #~ msgstr "Zadejte telefonní číslo ve formátu +420.605123456"
-
-#~ msgid "Please enter a valid company registration number"
-#~ msgstr "Zadejte platné IČ"
-
-#~ msgid "Enter the company number as eight digits"
-#~ msgstr "Zadejte IČ ve formátu 8 číslic"
-
-#~ msgid "Enter the company number as seven digits"
-#~ msgstr "Zadejte IČ ve formátu 7 číslic"
-
-#~ msgid "Enter the company number as nine digits"
-#~ msgstr "Zadejte IČ ve formátu 9 číslic"
-
-#~ msgid "Enter the company number as LV and eleven digits"
-#~ msgstr "Zadejte IČ ve formátu LV a 11 číslic"
-
-#~ msgid ""
-#~ "Ensure this number has at most %max% digits (it has %digits% including "
-#~ "allowed decimal places)."
-#~ msgstr ""
-#~ "Zajistěte, aby toto číslo mělo maximálně %max% číslic (teď má %digits% "
-#~ "včetně povolených desetinných míst)."
-
-#~ msgid ""
-#~ "Ensure this number has at most %max% digits in integer-part (it has "
-#~ "%integers%)."
-#~ msgstr ""
-#~ "Zajistěte, aby toto číslo mělo maximálně %max% číslic před desetinnou "
-#~ "čárkou (teď má %integers%)."
-
-#~ msgid ""
-#~ "Ensure this number has at most %max% decimal places (it has "
-#~ "%decimal_places%)."
-#~ msgstr ""
-#~ "Zajistěte, aby toto číslo mělo maximálně %max% desetinných míst (teď má "
-#~ "%decimal_places%)."
-
-#~ msgid "Please enter a valid zip code"
-#~ msgstr "Zadejte prosím platné PSČ"
-
-#~ msgid "Enter the ZIP code as NNN NN"
-#~ msgstr "Zadejte PSČ ve formátu NNN NN"

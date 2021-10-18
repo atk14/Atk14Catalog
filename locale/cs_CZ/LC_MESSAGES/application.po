@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-12 16:50+0200\n"
-"PO-Revision-Date: 2020-04-18 13:43+0200\n"
+"PO-Revision-Date: 2021-10-18 13:22+0200\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: Team <team@email.com>\n"
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 msgid "Nahoru"
 msgstr "Nahoru"
@@ -55,7 +55,7 @@ msgid "Go to the homepage"
 msgstr "Jděte na homepage"
 
 msgid "Currently you are not logged as an admin user."
-msgstr "Momentálně nejste přihlášen jako administrátor"
+msgstr "Momentálně nejste přihlášen jako administrátor."
 
 msgid "or"
 msgstr "nebo"
@@ -70,7 +70,7 @@ msgid "Sign in"
 msgstr "Přihlásit se"
 
 msgid "Error 404: Page not found"
-msgstr "Chyba 404: Stránka nebyla nalezena."
+msgstr "Chyba 404: Stránka nebyla nalezena"
 
 msgid "We are deeply sorry, but the page on the URI <em>%1</em> wasn't found."
 msgstr ""
@@ -91,7 +91,7 @@ msgid "older article"
 msgstr "starší článek"
 
 msgid "At the moment there are no news."
-msgstr "V této chvíli nejsou žádné novinky"
+msgstr "V této chvíli nejsou žádné novinky."
 
 msgid "Accessories"
 msgstr "Příslušenství"
@@ -109,7 +109,7 @@ msgid "Are you interested in this product?"
 msgstr "Zajímá vás tento produkt?"
 
 msgid "catalog number: %1"
-msgstr "Číslo produktu: %1"
+msgstr "číslo produktu: %1"
 
 msgid "Related products"
 msgstr "Související produkty"
@@ -162,7 +162,7 @@ msgid "You are signed in as <em>%1</em>."
 msgstr "Jste přihlášen jako <em>%1</em>."
 
 msgid "Click on the button to sign out."
-msgstr "Pro odhlášení klikněte na tlačítko"
+msgstr "Pro odhlášení klikněte na tlačítko."
 
 msgid "Name"
 msgstr "Jméno"
@@ -385,7 +385,7 @@ msgid "Optional"
 msgstr "Volitelné"
 
 msgid "Examples:"
-msgstr "Příklady"
+msgstr "Příklady:"
 
 msgid "Edit category"
 msgstr "Editovat kategorii"
@@ -412,7 +412,7 @@ msgid "Edit links"
 msgstr "Editovat odkazy"
 
 msgid "Edit page"
-msgstr "Editace stránky"
+msgstr "Upravit stránku"
 
 msgid "Create a subpage"
 msgstr "Vytvořit podstránku"
@@ -472,7 +472,7 @@ msgid ""
 "procedure"
 msgstr ""
 "Pokud ješte nemáte účet na těchto stránkách, měli byste se rozhodně "
-"zaregistrovat "
+"zaregistrovat"
 
 msgid "Sign in to our site"
 msgstr "Přihlaste se na naše stránky"
@@ -603,7 +603,7 @@ msgstr "Přikazy v %s"
 #: ../app/controllers/application_rest_api.php:172
 #, php-format
 msgid "submit using method %s"
-msgstr "Odeslat metodou %s"
+msgstr "odeslat metodou %s"
 
 #: ../app/controllers/application_rest_api.php:219
 msgid "Nothing has been found on this address"
@@ -685,7 +685,7 @@ msgstr "Zůstal jste přihlášen jako <em>%s</em>"
 
 #: ../app/controllers/main_controller.php:11
 msgid "Welcome!"
-msgstr "Vítejte"
+msgstr "Vítejte!"
 
 #: ../app/controllers/password_recoveries_controller.php:10
 msgid "There is no such user with the given login or email"
@@ -806,7 +806,7 @@ msgstr "Toto uživatelské jméno je již zabráno"
 
 #: ../app/fields/login_field.php:20
 msgid "Only letters, numbers, dots and dashes are allowed"
-msgstr "Zadávejte pouze písmena, číslice, tečky a pomlčky."
+msgstr "Zadávejte pouze písmena, číslice, tečky a pomlčky"
 
 #: ../app/fields/object_field.php:30
 msgid "There is no such record"
@@ -843,7 +843,7 @@ msgstr "Takový stránka neexistuje"
 #: ../app/fields/tags_field.php:21
 msgid "Ensure that there are max %max% tags (now there are %count%)"
 msgstr ""
-"Ujistěte se, že je zde nejvýše %max% štítků (nyní je tady %count% štítků) "
+"Ujistěte se, že je zde nejvýše %max% štítků (nyní je tady %count% štítků)"
 
 #: ../app/fields/tags_field.php:22
 #, php-format
@@ -1118,7 +1118,7 @@ msgid "Technical specifications"
 msgstr "Technické specifikace"
 
 msgid "There is no record yet."
-msgstr "Není zde žádný záznam"
+msgstr "Není zde žádný záznam."
 
 msgid "Edit value"
 msgstr "Upravit hodnotu"
@@ -1751,6 +1751,1129 @@ msgstr "ATK14 Katalog je postaven na <em>ATK14 Skeletu</em>"
 
 msgid "Značka"
 msgstr "Brand"
+
+msgid "Zpráva z obchodu %1"
+msgstr "Zpráva z obchodu %1"
+
+msgid "V případě dotazů nás můžete kontaktovat na e-mailu %1"
+msgstr "V případě dotazů nás můžete kontaktovat na e-mailu %1"
+
+msgid "Krásný den přeje<br/>%1"
+msgstr "Krásný den přeje<br/>%1"
+
+msgid "Posted by <!-- she --> <em>%1</em> on <time datetime=\"%2\">%3</time>"
+msgstr "Zaslala <em>%1</em> dne <time datetime=\"%2\">%3</time>"
+
+msgid "Nakupte ještě za %1 a dostanete dopravu zdarma."
+msgstr "Nakupte ještě za %1 a dostanete dopravu zdarma."
+
+msgid "Produkt byl přidán do košíku"
+msgstr "Produkt byl přidán do košíku"
+
+msgid "Slevový kupón"
+msgstr "Slevový kupón"
+
+msgid "slevový kód č."
+msgstr "slevový kód č."
+
+msgid "Opravdu chcete odstranit tento slevový kupón z nákupního košíku?"
+msgstr "Opravdu chcete odstranit tento slevový kupón z nákupního košíku?"
+
+msgid "odstranit z košíku"
+msgstr "odstranit z košíku"
+
+msgid "Kód"
+msgstr "Kód"
+
+msgid "Jedn. cena"
+msgstr "Jedn. cena"
+
+msgid "Množství"
+msgstr "Množství"
+
+msgid "Celkem"
+msgstr "Celkem"
+
+msgid "Košík"
+msgstr "Košík"
+
+msgid "Recalculate basket content"
+msgstr "Přepočítat obsah košíku"
+
+msgid "Back to catalog"
+msgstr "Zpět do katalogu"
+
+msgid "Select shipping and payment"
+msgstr "Vyberte způsob dopravy a platby"
+
+msgid "The shopping basket is empty."
+msgstr "Nákupní košík je prázdný."
+
+msgid "Objednávka nemůže být dokončena"
+msgstr "Objednávka nemůže být dokončena"
+
+msgid "Doprava"
+msgstr "Doprava"
+
+msgid "Zdarma"
+msgstr "Zdarma"
+
+msgid "Cena za zboží<span class=\"text-muted\"> vč. DPH</span>"
+msgstr "Cena za zboží<span class=\"text-muted\"> vč. DPH</span>"
+
+msgid "Slevy celkem"
+msgstr "Slevy celkem"
+
+msgid "Cena zboží celkem"
+msgstr "Cena zboží celkem"
+
+msgid "Cena celkem"
+msgstr "Cena celkem"
+
+msgid "Slevové kupóny / dárkové poukazy"
+msgstr "Slevové kupóny / dárkové poukazy"
+
+msgid "Použít kód"
+msgstr "Použít kód"
+
+msgid "Opravdu chcete odstranit tento produkt z nákupního košíku?"
+msgstr "Opravdu chcete odstranit tento produkt z nákupního košíku?"
+
+msgid "Do košíku jste úspěšně přidali produkt \"%1\"."
+msgstr "Do košíku jste úspěšně přidali produkt \"%1\"."
+
+msgid "Vybrat další produkt"
+msgstr "Vybrat další produkt"
+
+msgid "K pokladně"
+msgstr "K pokladně"
+
+msgid "Sleva"
+msgstr "Sleva"
+
+msgid "Discount"
+msgstr "Sleva"
+
+msgid "This product is not in offer"
+msgstr "Tento produkt není v nabídce"
+
+msgid "Catalog number: %1"
+msgstr "Katalogové číslo: %1"
+
+msgid "incl. VAT"
+msgstr "vč. DPH"
+
+msgid "Běžná cena:"
+msgstr "Běžná cena:"
+
+msgid "Add to cart"
+msgstr "Přidat do košíku"
+
+msgid "Price: %1 <span class=\"dph\">incl. VAT</span>"
+msgstr "Cena: %1 <span class=\"dph\">včetně DPH</span>"
+
+msgid "This product is sold out"
+msgstr "Tento produkt je vyprodán"
+
+msgid "Fakturační údaje"
+msgstr "Fakturační údaje"
+
+msgid "Adresa pro doručení"
+msgstr "Adresa pro doručení"
+
+msgid "zvolit pobočku"
+msgstr "zvolit pobočku"
+
+msgid "Poznámka:"
+msgstr "Poznámka:"
+
+msgid "telefon:"
+msgstr "telefon:"
+
+msgid "Použít"
+msgstr "Použít"
+
+msgid "Smazat adresu"
+msgstr "Smazat adresu"
+
+msgid "Opravdu chcete smazat tuto adresu?"
+msgstr "Opravdu chcete smazat tuto adresu?"
+
+msgid "Smazat"
+msgstr "Smazat"
+
+msgid "(nepovinné)"
+msgstr "(nepovinné)"
+
+msgid "Zpět na dopravu a platbu"
+msgstr "Zpět na dopravu a platbu"
+
+msgid "Back to basket content"
+msgstr "Zpět na obsah košíku"
+
+msgid "Zpět na dodací údaje"
+msgstr "Zpět na dodací údaje"
+
+msgid ""
+"Kliknutím na tlačítko Dokončit objednávku souhlasíte<br>a&nbsp;potvrzujete, "
+"že&nbsp;jste se seznámil s&nbsp;<a href=\"%1\" target=\"_blank"
+"\">obchodními&nbsp;podmínkami.</a>"
+msgstr ""
+"Kliknutím na tlačítko Dokončit objednávku souhlasíte<br>a&nbsp;potvrzujete, "
+"že&nbsp;jste se seznámil s&nbsp;<a href=\"%1\" target=\"_blank"
+"\">obchodními&nbsp;podmínkami.</a>"
+
+msgid "Už mám účet"
+msgstr "Už mám účet"
+
+msgid "Zaregistrujte se"
+msgstr "Zaregistrujte se"
+
+msgid "osobní nastavení a zabezpečený přístup"
+msgstr "osobní nastavení a zabezpečený přístup"
+
+msgid "rychlý a snadný nákup"
+msgstr "rychlý a snadný nákup"
+
+msgid "rozdílná fakturační a dodací adresa"
+msgstr "rozdílná fakturační a dodací adresa"
+
+msgid "Nákup bez registrace"
+msgstr "Nákup bez registrace"
+
+msgid "Pokračovat bez registrace"
+msgstr "Pokračovat bez registrace"
+
+msgid "Nemáte uloženou žádnou doručovací adresu"
+msgstr "Nemáte uloženou žádnou doručovací adresu"
+
+msgid "vytvořte novou"
+msgstr "vytvořte novou"
+
+msgid "Vytvořit novou adresu"
+msgstr "Vytvořit novou adresu"
+
+msgid "Digitální produkty"
+msgstr "Digitální produkty"
+
+msgid "soubor %1"
+msgstr "soubor %1"
+
+msgid "Stáhnout"
+msgstr "Stáhnout"
+
+msgid "Zakoupené digitální produkty stáhnete na adrese:"
+msgstr "Zakoupené digitální produkty stáhnete na adrese:"
+
+msgid "Vážený zákazníku,"
+msgstr "Vážený zákazníku,"
+
+msgid ""
+"V případě osobního odběru vyčkejte na výzvu k vyzvednutí. Pokud jste zvolili "
+"úhradu bankovním převodem, podklady k úhradě objednávky Vám budou zaslány "
+"obratem."
+msgstr ""
+"V případě osobního odběru vyčkejte na výzvu k vyzvednutí. Pokud jste zvolili "
+"úhradu bankovním převodem, podklady k úhradě objednávky Vám budou zaslány "
+"obratem."
+
+msgid ""
+"Objednávka bude expedována do %1 pracovních dní od připsání platby na náš "
+"bankovní účet."
+msgstr ""
+"Objednávka bude expedována do %1 pracovních dní od připsání platby na náš "
+"bankovní účet."
+
+msgid ""
+"Objednávka bude expedována do %1 pracovních dnů od připsání platby na náš "
+"bankovní účet."
+msgstr ""
+"Objednávka bude expedována do %1 pracovních dnů od připsání platby na náš "
+"bankovní účet."
+
+msgid "Detaily objednávky"
+msgstr "Detaily objednávky"
+
+msgid "Objednávka: <strong>č. %1 vytvořená %2</strong>"
+msgstr "Objednávka: <strong>č. %1 vytvořená %2</strong>"
+
+msgid "Platba:"
+msgstr "Platba:"
+
+msgid "Celkem k úhradě"
+msgstr "Celkem k úhradě"
+
+msgid "Uvedená konečná cena neobsahuje poplatek za dopravu."
+msgstr "Uvedená konečná cena neobsahuje poplatek za dopravu."
+
+msgid "Přeprava"
+msgstr "Přeprava"
+
+msgid "Dopravce:"
+msgstr "Dopravce:"
+
+msgid "Dodací adresa"
+msgstr "Dodací adresa"
+
+msgid "Fakturační adresa"
+msgstr "Fakturační adresa"
+
+msgid "Vaše objednávka č.%1"
+msgstr "Vaše objednávka č.%1"
+
+msgid ""
+"V případě, že si chcete Vaši objednávku zkontrolovat,<br/>\n"
+"Vaši objednávku naleznete v sekci <a href=\"%1\" style=\"%2\">\"Historie "
+"objednávek\"</a> Vašeho zákaznického účtu."
+msgstr ""
+"V případě, že si chcete Vaši objednávku zkontrolovat,<br/>\n"
+"Vaši objednávku naleznete v sekci <a href=\"%1\" style=\"%2\">\"Historie "
+"objednávek\"</a> Vašeho zákaznického účtu."
+
+msgid "Vaše objednávka č. %1 byla zrušena."
+msgstr "Vaše objednávka č. %1 byla zrušena."
+
+msgid "Vaše objednávka s označením %1 byla úspěšně doručena."
+msgstr "Vaše objednávka s označením %1 byla úspěšně doručena."
+
+msgid "Vaše objednávka s označením %1 byla úspěšně dokončena."
+msgstr "Vaše objednávka s označením %1 byla úspěšně dokončena."
+
+msgid "Platba za objednávku s označením %1 byla úspěšně přijata."
+msgstr "Platba za objednávku s označením %1 byla úspěšně přijata."
+
+msgid "Platba za objednávku s označením %1 selhala."
+msgstr "Platba za objednávku s označením %1 selhala."
+
+msgid "Začali jsme zpracovávat Vaší objednávku %1."
+msgstr "Začali jsme zpracovávat Vaší objednávku %1."
+
+msgid "Vaše objednávka č. %1 je připravena k vyzvednutí na výdejním místě"
+msgstr "Vaše objednávka č. %1 je připravena k vyzvednutí na výdejním místě"
+
+msgid "Vaše objednávka č. %1 je připravena k odeslání."
+msgstr "Vaše objednávka č. %1 je připravena k odeslání."
+
+msgid ""
+"Doposud jsme nedobdrželi platbu za Vaši objednávku č. %1. Zboží Vám bude "
+"dodáno, <strong>po obdržení Vaší platby</strong>."
+msgstr ""
+"Doposud jsme nedobdrželi platbu za Vaši objednávku č. %1. Zboží Vám bude "
+"dodáno, <strong>po obdržení Vaší platby</strong>."
+
+msgid "Pokud objednávku nezaplatíte do 10 dnů, bude automaticky stornována."
+msgstr "Pokud objednávku nezaplatíte do 10 dnů, bude automaticky stornována."
+
+msgid "Zde je rekapitulace údajů pro platbu bankovním převodem:"
+msgstr "Zde je rekapitulace údajů pro platbu bankovním převodem:"
+
+msgid "Vaše objednávka s označením %1 byla vrácena."
+msgstr "Vaše objednávka s označením %1 byla vrácena."
+
+msgid "Vaše objednávka č. %1 byla předána dopravci."
+msgstr "Vaše objednávka č. %1 byla předána dopravci."
+
+msgid "Číslo zásilky: %1"
+msgstr "Číslo zásilky: %1"
+
+msgid ""
+"Svou zásilku můžete sledovat přes následující odkaz: <a href=\"%1\">%1</a>"
+msgstr ""
+"Svou zásilku můžete sledovat přes následující odkaz: <a href=\"%1\">%1</a>"
+
+msgid ""
+"Vaše objednávka č. %1 byla úspěšně dokončena. Zboží Vám bude dodáno, "
+"<strong>po obdržení Vaší platby</strong>."
+msgstr ""
+"Vaše objednávka č. %1 byla úspěšně dokončena. Zboží Vám bude dodáno, "
+"<strong>po obdržení Vaší platby</strong>."
+
+msgid "Vybrali jste si platbu bankovním převodem."
+msgstr "Vybrali jste si platbu bankovním převodem."
+
+msgid "Zde jsou bankovní údaje pro platbu bankovním převodem:"
+msgstr "Zde jsou bankovní údaje pro platbu bankovním převodem:"
+
+msgid "Částka k úhradě:"
+msgstr "Částka k úhradě:"
+
+msgid "Číslo účtu:"
+msgstr "Číslo účtu:"
+
+msgid "Variabilní symbol:"
+msgstr "Variabilní symbol:"
+
+msgid "Majitel účtu:"
+msgstr "Majitel účtu:"
+
+msgid "Sledujte nás na&nbsp;Facebooku:"
+msgstr "Sledujte nás na&nbsp;Facebooku:"
+
+msgid "Obchodní podmínky"
+msgstr "Obchodní podmínky"
+
+msgid "Děkujeme za nákup v obchodě %1!"
+msgstr "Děkujeme za nákup v obchodě %1!"
+
+msgid "děkujeme za nákup v obchodě %1!"
+msgstr "děkujeme za nákup v obchodě %1!"
+
+msgid "Navštivte naši novou prodejnu"
+msgstr "Navštivte naši novou prodejnu"
+
+msgid "Aktuality"
+msgstr "Aktuality"
+
+msgid "Objednávka vytvořena: %1"
+msgstr "Objednávka vytvořena: %1"
+
+msgid "Stav objednávky:"
+msgstr "Stav objednávky:"
+
+msgid "Stav platby: %1"
+msgstr "Stav platby: %1"
+
+msgid "Stáhnout digitální produkty"
+msgstr "Stáhnout digitální produkty"
+
+msgid "Děkujeme"
+msgstr "Děkujeme"
+
+msgid "…za Váš nákup, vraťte se brzy :)"
+msgstr "…za Váš nákup, vraťte se brzy :)"
+
+msgid "Pochlubte se přátelům s Vaším nákupem."
+msgstr "Pochlubte se přátelům s Vaším nákupem."
+
+msgid "Sdílet"
+msgstr "Sdílet"
+
+msgid "Historie a detaily mých objednávek"
+msgstr "Historie a detaily mých objednávek"
+
+msgid "Číslo objednávky"
+msgstr "Číslo objednávky"
+
+msgid "Cena"
+msgstr "Cena"
+
+msgid "Datum vytvoření"
+msgstr "Datum vytvoření"
+
+msgid "Stav"
+msgstr "Stav"
+
+msgid "Faktura"
+msgstr "Faktura"
+
+msgid "Zatím jste nevytvořili žádnou objednávku"
+msgstr "Zatím jste nevytvořili žádnou objednávku"
+
+msgid "Vyhledávání"
+msgstr "Vyhledávání"
+
+msgid "Hledat"
+msgstr "Hledat"
+
+msgid "Nic nebylo nalezeno."
+msgstr "Nic nebylo nalezeno."
+
+msgid "cena od %1"
+msgstr "cena od %1"
+
+msgid "Doručovací adresa bude smazána. Pokračovat?"
+msgstr "Doručovací adresa bude smazána. Pokračovat?"
+
+msgid "upravit"
+msgstr "upravit"
+
+msgid "smazat"
+msgstr "smazat"
+
+msgid "Vybráno:"
+msgstr "Vybráno:"
+
+msgid "odstranit toto omezení výběru"
+msgstr "odstranit toto omezení výběru"
+
+msgid "Odstranit všechny filtry"
+msgstr "Odstranit všechny filtry"
+
+msgid "Filtrace produktů"
+msgstr "Filtrace produktů"
+
+msgid "Rozšířené vyhledávání"
+msgstr "Rozšířené vyhledávání"
+
+msgid "Copy this product"
+msgstr "Zkopírovat tento produkt"
+
+msgid "Create new product"
+msgstr "Vytvořit nový produkt"
+
+msgid "Products administration"
+msgstr "Administrace produktů"
+
+msgid "Not in stock"
+msgstr "Není skladem"
+
+msgid "In stock"
+msgstr "Skladem"
+
+msgid "In stock > %1 %2"
+msgstr "Skladem > %1 %2"
+
+msgid "In stock %1 %2"
+msgstr "Skladem %1 %2"
+
+msgid "zavřít"
+msgstr "zavřít"
+
+msgid ""
+"K provozování webu %1 využíváme takzvané cookies. Cookies jsou soubory "
+"sloužící k přizpůsobení obsahu webu, k měření jeho funkčnosti a k zajištění "
+"vaší maximální spokojenosti. Používáním tohoto webu souhlasíte s tím, jak "
+"soubory cookies dále používáme."
+msgstr ""
+"K provozování webu %1 využíváme takzvané cookies. Cookies jsou soubory "
+"sloužící k přizpůsobení obsahu webu, k měření jeho funkčnosti a k zajištění "
+"vaší maximální spokojenosti. Používáním tohoto webu souhlasíte s tím, jak "
+"soubory cookies dále používáme."
+
+msgid "Souhlasím"
+msgstr "Souhlasím"
+
+msgid "Více informací"
+msgstr "Více informací"
+
+msgid "Social networks"
+msgstr "Sociální sítě"
+
+msgid "Upravit údaje prodejny"
+msgstr "Upravit údaje prodejny"
+
+msgid "Upravit údaje provozovny"
+msgstr "Upravit údaje provozovny"
+
+msgid "Kontakt"
+msgstr "Kontakt"
+
+msgid "IČ"
+msgstr "IČ"
+
+msgid "DIČ"
+msgstr "DIČ"
+
+msgid "My orders"
+msgstr "Moje objednávky"
+
+msgid "Delivery addresses"
+msgstr "Dodací adresy"
+
+msgid "Telefon:"
+msgstr "Telefon:"
+
+msgid "Pobočka: %1, %2, %3, %4"
+msgstr "Pobočka: %1, %2, %3, %4"
+
+msgid "ID pobočky: %1"
+msgstr "ID pobočky: %1"
+
+msgid "Zákazník"
+msgstr "Zákazník"
+
+msgid "e-mail:"
+msgstr "e-mail:"
+
+msgid "Objednávané zboží"
+msgstr "Objednávané zboží"
+
+msgid "Doprava:"
+msgstr "Doprava:"
+
+msgid "Číslo zásilky"
+msgstr "Číslo zásilky"
+
+msgid "Není zadáno"
+msgstr "Není zadáno"
+
+msgid "Doprava a platba"
+msgstr "Doprava a platba"
+
+msgid "Slevová kampaň"
+msgstr "Slevová kampaň"
+
+msgid "Slevové kupóny"
+msgstr "Slevové kupóny"
+
+msgid "Doručovací adresa:"
+msgstr "Doručovací adresa:"
+
+msgid "Fakturační údaje:"
+msgstr "Fakturační údaje:"
+
+msgid "IČ:"
+msgstr "IČ:"
+
+msgid "DIČ:"
+msgstr "DIČ:"
+
+msgid "Výběru odpovídá:"
+msgstr "Výběru odpovídá:"
+
+msgid "Zavřít"
+msgstr "Zavřít"
+
+msgid "Zobrazování přes celou obrazovka"
+msgstr "Zobrazování přes celou obrazovka"
+
+msgid "Přiblížení"
+msgstr "Přiblížení"
+
+msgid "Předchozí (šipka doleva)"
+msgstr "Předchozí (šipka doleva)"
+
+msgid "Další (šipka doprava)"
+msgstr "Další (šipka doprava)"
+
+msgid "Zveřejněno dne %1"
+msgstr "Zveřejněno dne %1"
+
+msgid "Celý článek"
+msgstr "Celý článek"
+
+msgid "Článek"
+msgstr "Článek"
+
+msgid "Informace o produktu"
+msgstr "Informace o produktu"
+
+msgid "Zobrazit kategorii"
+msgstr "Zobrazit kategorii"
+
+msgid "Kategorie produktů"
+msgstr "Kategorie produktů"
+
+msgid "Zobrazit stránku"
+msgstr "Zobrazit stránku"
+
+msgid "Stránka"
+msgstr "Stránka"
+
+msgid "Právě otevřeno"
+msgstr "Právě otevřeno"
+
+msgid "tel:"
+msgstr "tel:"
+
+msgid "Informace o prodejně"
+msgstr "Informace o prodejně"
+
+msgid "Ukázat na mapě"
+msgstr "Ukázat na mapě"
+
+msgid "Prodejna"
+msgstr "Prodejna"
+
+msgid "Previous"
+msgstr "Předchozí"
+
+msgid "Pondělí"
+msgstr "Pondělí"
+
+msgid "Úterý"
+msgstr "Úterý"
+
+msgid "Středa"
+msgstr "Středa"
+
+msgid "Čtvrtek"
+msgstr "Čtvrtek"
+
+msgid "Pátek"
+msgstr "Pátek"
+
+msgid "Sobota"
+msgstr "Sobota"
+
+msgid "Neděle"
+msgstr "Neděle"
+
+msgid "Velká mapa"
+msgstr "Velká mapa"
+
+msgid "Otevřeno"
+msgstr "Otevřeno"
+
+msgid "Search stores"
+msgstr "Vyhledat prodejny"
+
+msgid "zavřeno"
+msgstr "zavřeno"
+
+msgid "Informace o&nbsp;prodejně"
+msgstr "Informace o&nbsp;prodejně"
+
+msgid "Ukázat na&nbsp;mapě"
+msgstr "Ukázat na&nbsp;mapě"
+
+msgid "Now you can <a href=\"%1\">go to the homepage</a> and enjoy our eshop."
+msgstr ""
+"Nyní můžete přejít na <a href=\"%1\">úvodní stránku</a> a užít si náš e-shop."
+
+msgid "Now you can <a href=\"%1\">sign in</a> and enjoy our eshop."
+msgstr "Nyní se můžete <a href=\"%1\">přihlásit</a> a užít si náš e-shop."
+
+msgid "Order %d"
+msgstr "Objednávka %d"
+
+msgid "Objednávka %s"
+msgstr "Objednávka %s"
+
+msgid "Objednávky"
+msgstr "Objednávky"
+
+msgid "Basket"
+msgstr "Košík"
+
+msgid "Shipping and payment"
+msgstr "Doprava a platba"
+
+msgid "Delivery data"
+msgstr "Doručovací data"
+
+msgid "Summary"
+msgstr "Souhrn"
+
+msgid "Takový slevový kupón neexistuje"
+msgstr "Takový slevový kupón neexistuje"
+
+msgid "Slevový kupón byl přidán"
+msgstr "Slevový kupón byl přidán"
+
+msgid "Shopping basket"
+msgstr "Nákupní košík"
+
+msgid "Slevový kupón byl odebrán"
+msgstr "Slevový kupón byl odebrán"
+
+msgid "Zpět do %s"
+msgstr "Zpět do %s"
+
+msgid "Shipping and payment method"
+msgstr "Způsob dopravy a platby"
+
+msgid "Přihlášení uživatele"
+msgstr "Přihlášení uživatele"
+
+msgid "Odstraňte prosím nedostatky, které brání dokončení objednávky"
+msgstr "Odstraňte prosím nedostatky, které brání dokončení objednávky"
+
+msgid "Celková cena nesmí být záporná. Přihoďte do košíku ještě něco! :)"
+msgstr "Celková cena nesmí být záporná. Přihoďte do košíku ještě něco! :)"
+
+msgid "Rekapitulace objednávky"
+msgstr "Rekapitulace objednávky"
+
+msgid ""
+"Změnil se obsah nákupního košíku. Prohlédněte si rekapitulaci ještě jednou a "
+"dokončete objednávku."
+msgstr ""
+"Změnil se obsah nákupního košíku. Prohlédněte si rekapitulaci ještě jednou a "
+"dokončete objednávku."
+
+msgid "Nákupní košík"
+msgstr "Nákupní košík"
+
+msgid "Seznam doručovacích adres"
+msgstr "Seznam doručovacích adres"
+
+msgid "Nová doručovací adresa"
+msgstr "Nová doručovací adresa"
+
+msgid "Doručovací adresa byla vytvořena"
+msgstr "Doručovací adresa byla vytvořena"
+
+msgid "Úprava adresy"
+msgstr "Úprava adresy"
+
+msgid "Doručovací adresa byla smazána"
+msgstr "Doručovací adresa byla smazána"
+
+msgid "Doručovací adresy"
+msgstr "Doručovací adresy"
+
+msgid "Digitální produkty v objednávce %s"
+msgstr "Digitální produkty v objednávce %s"
+
+msgid ""
+"Pro stažení digitálních souborů z objednávky se prosím přihlaste jako "
+"uživatel <em>%s</em>"
+msgstr ""
+"Pro stažení digitálních souborů z objednávky se prosím přihlaste jako "
+"uživatel <em>%s</em>"
+
+msgid "Archiv objednávek"
+msgstr "Archiv objednávek"
+
+msgid "Objednávka byla dokončena"
+msgstr "Objednávka byla dokončena"
+
+msgid "Vyhledávání: „%s“"
+msgstr "Vyhledávání: „%s“"
+
+msgid "select administrator"
+msgstr "vyberte administrátora"
+
+msgid "od %s do %s dle země doručení"
+msgstr "od %s do %s dle země doručení"
+
+msgid "neaktivní"
+msgstr "neaktivní"
+
+msgid "Toto nevypadá jako zápis hodin. Je očekáván zápis 12:00"
+msgstr "Toto nevypadá jako zápis hodin. Je očekáván zápis 12:00"
+
+msgid "Zadaný počet musí být dělitelný číslem %d"
+msgstr "Zadaný počet musí být dělitelný číslem %d"
+
+msgid "stav objednávky"
+msgstr "stav objednávky"
+
+msgid "DIČ není zadáno správně"
+msgstr "DIČ není zadáno správně"
+
+msgid "Ulice a č.p."
+msgstr "Ulice a č.p."
+
+msgid "Adresa (2. řádek)"
+msgstr "Adresa (2. řádek)"
+
+msgid "City"
+msgstr "Město"
+
+msgid "State / Province / Region"
+msgstr "Stát / Provincie / Kraj"
+
+msgid "PSČ"
+msgstr "PSČ"
+
+msgid "Země"
+msgstr "Země"
+
+msgid "země"
+msgstr "země"
+
+msgid "Poznámka"
+msgstr "Poznámka"
+
+msgid "Např. číslo patra nebo dveří"
+msgstr "Např. číslo patra nebo dveří"
+
+msgid "Společnost"
+msgstr "Společnost"
+
+msgid "Zadejte platné IČ"
+msgstr "Zadejte platné IČ"
+
+msgid "IČ by mělo mít 8 číslic"
+msgstr "IČ by mělo mít 8 číslic"
+
+msgid "Telefon"
+msgstr "Telefon"
+
+msgid "Telefonní číslo zadejte ve formátu %s"
+msgstr "Telefonní číslo zadejte ve formátu %s"
+
+msgid "Země ve fakturační adrese a země v DIČ se musí shodovat"
+msgstr "Země ve fakturační adrese a země v DIČ se musí shodovat"
+
+msgid "Slevový kód"
+msgstr "Slevový kód"
+
+msgid "Poznámka k doručovací adrese"
+msgstr "Poznámka k doručovací adrese"
+
+msgid "Chci zadat fakturační údaje"
+msgstr "Chci zadat fakturační údaje"
+
+msgid "Pokračovat"
+msgstr "Pokračovat"
+
+msgid "Vyplňte všechny důležité údaje fakturační adresy"
+msgstr "Vyplňte všechny důležité údaje fakturační adresy"
+
+msgid "Select shipping method"
+msgstr "Vyberte způsob dopravy"
+
+msgid "Select payment method"
+msgstr "Vyberte způsob platby"
+
+msgid "Continue"
+msgstr "Pokračovat"
+
+msgid "Illegal combination of shipping and payment"
+msgstr "Neplatná kombinace dopravy a platby"
+
+msgid "Poznámka k objednávce"
+msgstr "Poznámka k objednávce"
+
+msgid "Souhlasím s obchodními podmínkami"
+msgstr "Souhlasím s obchodními podmínkami"
+
+msgid "Dokončit objednávku"
+msgstr "Dokončit objednávku"
+
+msgid "Objednávku nelze dokončit bez odsouhlasení našich obchodních podmínek."
+msgstr "Objednávku nelze dokončit bez odsouhlasení našich obchodních podmínek."
+
+msgid "Zatrhněte prosím souhlas s obchodními podmínkami."
+msgstr "Zatrhněte prosím souhlas s obchodními podmínkami."
+
+msgid "Uložit adresu"
+msgstr "Uložit adresu"
+
+msgid "Uložit změny"
+msgstr "Uložit změny"
+
+msgid "Filtrovat"
+msgstr "Filtrovat"
+
+msgid "Oslovení"
+msgstr "Oslovení"
+
+msgid "IČ zadávejte pouze v případě, že je vyplněn název společnosti"
+msgstr "IČ zadávejte pouze v případě, že je vyplněn název společnosti"
+
+msgid "právě teď"
+msgstr "právě teď"
+
+msgid "před minutou"
+msgstr "před minutou"
+
+msgid "před %s minutama"
+msgstr "před %s minutama"
+
+msgid "před hodinou"
+msgstr "před hodinou"
+
+msgid "před %s hodinama"
+msgstr "před %s hodinama"
+
+msgid "Propagace produktu"
+msgstr "Propagace produktu"
+
+msgid "Košík je prázdný"
+msgstr "Košík je prázdný"
+
+msgid "Produkt <em>%s (%s)</em> byl vyřazen z našeho ceníku"
+msgstr "Produkt <em>%s (%s)</em> byl vyřazen z našeho ceníku"
+
+msgid "odebrat z košíku"
+msgstr "odebrat z košíku"
+
+msgid "Produkt <em>%s (%s)</em> není skladem"
+msgstr "Produkt <em>%s (%s)</em> není skladem"
+
+msgid "Produkt <em>%s (%s)</em> lze objednat v počtu nejvýše: %s"
+msgstr "Produkt <em>%s (%s)</em> lze objednat v počtu nejvýše: %s"
+
+msgid "změnit množství na %s"
+msgstr "změnit množství na %s"
+
+msgid "Produkt <em>%s (%s)</em> lze objednat v počtu nejméně: %s"
+msgstr "Produkt <em>%s (%s)</em> lze objednat v počtu nejméně: %s"
+
+msgid "Množství u produktu <em>%s (%s)</em> musí být násobkem čísla %s"
+msgstr "Množství u produktu <em>%s (%s)</em> musí být násobkem čísla %s"
+
+msgid "odstranit voucher"
+msgstr "odstranit voucher"
+
+msgid "Celková cena nesmí být záporná. Přihoďte do košíku ještě něco malého :)"
+msgstr ""
+"Celková cena nesmí být záporná. Přihoďte do košíku ještě něco malého :)"
+
+msgid "přejít do katalogu"
+msgstr "přejít do katalogu"
+
+msgid ""
+"Celková cena musí být alespoň %s. Přihoďte do košíku ještě něco malého :)"
+msgstr ""
+"Celková cena musí být alespoň %s. Přihoďte do košíku ještě něco malého :)"
+
+msgid "Doručovací metoda <em>%s</em> nemůže být vybrána"
+msgstr "Doručovací metoda <em>%s</em> nemůže být vybrána"
+
+msgid "vyberte jinou metodu"
+msgstr "vyberte jinou metodu"
+
+msgid "Platební metoda <em>%s</em> nemůže být vybrána"
+msgstr "Platební metoda <em>%s</em> nemůže být vybrána"
+
+msgid "Musí být vybrána online platební metoda"
+msgstr "Musí být vybrána online platební metoda"
+
+msgid "Pro způsob dodání '%s' nebylo zvoleno doručovací místo"
+msgstr "Pro způsob dodání '%s' nebylo zvoleno doručovací místo"
+
+msgid "Objednávku nelze doručit na danou doručovací adresu"
+msgstr "Objednávku nelze doručit na danou doručovací adresu"
+
+msgid "upravte doručovací adresu"
+msgstr "upravte doručovací adresu"
+
+msgid "Kč"
+msgstr "Kč"
+
+msgid "opening hours: %s"
+msgstr "otevírací doba: %s"
+
+msgid "Poznámka k doručovací adrese: %s"
+msgstr "Poznámka k doručovací adrese: %s"
+
+msgid "Poznámka k fakturační adrese: %s"
+msgstr "Poznámka k fakturační adrese: %s"
+
+msgid "Chybí číslo objednávky"
+msgstr "Chybí číslo objednávky"
+
+msgid "Objednávka nebyla nalezena v systému"
+msgstr "Objednávka nebyla nalezena v systému"
+
+msgid "Chybí číslo zásilky"
+msgstr "Chybí číslo zásilky"
+
+msgid "Hodnota %s nevypadá jako číslo zásilky"
+msgstr "Hodnota %s nevypadá jako číslo zásilky"
+
+msgid "Zásilka již byla importovaná"
+msgstr "Zásilka již byla importovaná"
+
+msgid "Čeká se na dokončení platby"
+msgstr "Čeká se na dokončení platby"
+
+msgid "Zaplaceno"
+msgstr "Zaplaceno"
+
+msgid "Zrušeno"
+msgstr "Zrušeno"
+
+msgid "Voucher %s nelze použít"
+msgstr "Voucher %s nelze použít"
+
+msgid "Voucher nemůže být použit v prázdném košíku"
+msgstr "Voucher nemůže být použit v prázdném košíku"
+
+msgid "Platnost voucheru %s vypršela"
+msgstr "Platnost voucheru %s vypršela"
+
+msgid "Voucher %s už byl použit"
+msgstr "Voucher %s už byl použit"
+
+msgid "Voucher %s lze použít až při minimálním obnosu %s za zboží"
+msgstr "Voucher %s lze použít až při minimálním obnosu %s za zboží"
+
+msgid "Sniž objednané množství"
+msgstr "Sniž objednané množství"
+
+msgid "Zvyš objednané množství"
+msgstr "Zvyš objednané množství"
+
+msgid "Seřadit dle"
+msgstr "Seřadit dle"
+
+msgid "První strana"
+msgstr "První strana"
+
+msgid "Další produkt"
+msgstr "Další produkt"
+
+msgid "Další strana"
+msgstr "Další strana"
+
+msgid "Další %s produkty"
+msgstr "Další %s produkty"
+
+msgid "Dalších %s produktů"
+msgstr "Dalších %s produktů"
+
+msgid "Předchozí strana"
+msgstr "Předchozí strana"
+
+msgid "Zbývá 1 položka z %t"
+msgstr "Zbývá 1 položka z %t"
+
+msgid "Zbývají %s položky z %t"
+msgstr "Zbývají %s položky z %t"
+
+msgid "Zbývá %s položek z %t"
+msgstr "Zbývá %s položek z %t"
+
+msgid "Vyhledáno celkem %t produktů"
+msgstr "Vyhledáno celkem %t produktů"
+
+msgid "produktů"
+msgstr "produktů"
+
+msgid "produkt"
+msgstr "produkt"
+
+msgid "produkty"
+msgstr "produkty"
+
+msgid "Načítám..."
+msgstr "Načítám..."
+
+msgid "Vše"
+msgstr "Vše"
+
+msgid "Ano"
+msgstr "Ano"
+
+msgid "Ne"
+msgstr "Ne"
+
+msgid "from"
+msgstr "od"
+
+msgid "to"
+msgstr "do"
+
+msgid "V případě dotazů nás můžete kontaktovat na emailu %1"
+msgstr "V případě dotazů nás můžete kontaktovat na emailu %1"
+
+msgid ""
+"V příloze naleznete přehled objednaného zboží včetně ošetřovacích symbolů."
+msgstr ""
+"V příloze naleznete přehled objednaného zboží včetně ošetřovacích symbolů."
+
+msgid "products in total"
+msgstr "produktů celkem"
+
+msgid "Navštivte náš showroom v&nbsp;Praze&nbsp;4"
+msgstr "Navštivte náš showroom v&nbsp;Praze&nbsp;4"
+
+msgid "Datum"
+msgstr "Datum"
+
+msgid "My account"
+msgstr "Můj účet"
+
+msgid "Popis"
+msgstr "Popis"
+
+msgid "...za Váš nákup, vraťte se brzy :)"
+msgstr "...za Váš nákup, vraťte se brzy :)"
+
+msgid "more information"
+msgstr "více informací"
+
+msgid "PSČ zadejte ve tvaru 123 45"
+msgstr "PSČ zadejte ve tvaru 123 45"
+
+msgid "Request URL:"
+msgstr "Adresa URL požadavku:"
 
 #~ msgid "Please, write us to %1 if you think this is our mistake."
 #~ msgstr "Napište nám na adresu %1, pokud si myslíte, že je to naše chyba."
@@ -2718,1133 +3841,3 @@ msgstr "Brand"
 
 #~ msgid "Where to go"
 #~ msgstr "Kam zajít"
-
-#~ msgid "Zpráva z obchodu %1"
-#~ msgstr "Zpráva z obchodu %1"
-
-#~ msgid "V případě dotazů nás můžete kontaktovat na e-mailu %1"
-#~ msgstr "V případě dotazů nás můžete kontaktovat na e-mailu %1"
-
-#~ msgid "Krásný den přeje<br/>%1"
-#~ msgstr "Krásný den přeje<br/>%1"
-
-#~ msgid ""
-#~ "Posted by <!-- she --> <em>%1</em> on <time datetime=\"%2\">%3</time>"
-#~ msgstr "Zaslala <em>%1</em> dne <time datetime=\"%2\">%3</time>"
-
-#~ msgid "Nakupte ještě za %1 a dostanete dopravu zdarma."
-#~ msgstr "Nakupte ještě za %1 a dostanete dopravu zdarma."
-
-#~ msgid "Produkt byl přidán do košíku"
-#~ msgstr "Produkt byl přidán do košíku"
-
-#~ msgid "Slevový kupón"
-#~ msgstr "Slevový kupón"
-
-#~ msgid "slevový kód č."
-#~ msgstr "slevový kód č."
-
-#~ msgid "Opravdu chcete odstranit tento slevový kupón z nákupního košíku?"
-#~ msgstr "Opravdu chcete odstranit tento slevový kupón z nákupního košíku?"
-
-#~ msgid "odstranit z košíku"
-#~ msgstr "odstranit z košíku"
-
-#~ msgid "Kód"
-#~ msgstr "Kód"
-
-#~ msgid "Jedn. cena"
-#~ msgstr "Jedn. cena"
-
-#~ msgid "Množství"
-#~ msgstr "Množství"
-
-#~ msgid "Celkem"
-#~ msgstr "Celkem"
-
-#~ msgid "Košík"
-#~ msgstr "Košík"
-
-#~ msgid "Recalculate basket content"
-#~ msgstr "Přepočítat obsah košíku"
-
-#~ msgid "Back to catalog"
-#~ msgstr "Zpět do katalogu"
-
-#~ msgid "Select shipping and payment"
-#~ msgstr "Vyberte způsob dopravy a platby"
-
-#~ msgid "The shopping basket is empty."
-#~ msgstr "Nákupní košík je prázdný."
-
-#~ msgid "Objednávka nemůže být dokončena"
-#~ msgstr "Objednávka nemůže být dokončena"
-
-#~ msgid "Doprava"
-#~ msgstr "Doprava"
-
-#~ msgid "Zdarma"
-#~ msgstr "Zdarma"
-
-#~ msgid "Cena za zboží<span class=\"text-muted\"> vč. DPH</span>"
-#~ msgstr "Cena za zboží<span class=\"text-muted\"> vč. DPH</span>"
-
-#~ msgid "Slevy celkem"
-#~ msgstr "Slevy celkem"
-
-#~ msgid "Cena zboží celkem"
-#~ msgstr "Cena zboží celkem"
-
-#~ msgid "Cena celkem"
-#~ msgstr "Cena celkem"
-
-#~ msgid "Slevové kupóny / dárkové poukazy"
-#~ msgstr "Slevové kupóny / dárkové poukazy"
-
-#~ msgid "Použít kód"
-#~ msgstr "Použít kód"
-
-#~ msgid "Opravdu chcete odstranit tento produkt z nákupního košíku?"
-#~ msgstr "Opravdu chcete odstranit tento produkt z nákupního košíku?"
-
-#~ msgid "Do košíku jste úspěšně přidali produkt \"%1\"."
-#~ msgstr "Do košíku jste úspěšně přidali produkt \"%1\"."
-
-#~ msgid "Vybrat další produkt"
-#~ msgstr "Vybrat další produkt"
-
-#~ msgid "K pokladně"
-#~ msgstr "K pokladně"
-
-#~ msgid "Sleva"
-#~ msgstr "Sleva"
-
-#~ msgid "Discount"
-#~ msgstr "Sleva"
-
-#~ msgid "This product is not in offer"
-#~ msgstr "Tento produkt není v nabídce"
-
-#~ msgid "Catalog number: %1"
-#~ msgstr "Katalogové číslo: %1"
-
-#~ msgid "incl. VAT"
-#~ msgstr "vč. DPH"
-
-#~ msgid "Běžná cena:"
-#~ msgstr "Běžná cena:"
-
-#~ msgid "Add to cart"
-#~ msgstr "Přidat do košíku"
-
-#~ msgid "Price: %1 <span class=\"dph\">incl. VAT</span>"
-#~ msgstr "Cena: %1 <span class=\"dph\">včetně DPH</span>"
-
-#~ msgid "This product is sold out"
-#~ msgstr "Tento produkt je vyprodán"
-
-#~ msgid "Fakturační údaje"
-#~ msgstr "Fakturační údaje"
-
-#~ msgid "Adresa pro doručení"
-#~ msgstr "Adresa pro doručení"
-
-#~ msgid "zvolit pobočku"
-#~ msgstr "zvolit pobočku"
-
-#~ msgid "Poznámka:"
-#~ msgstr "Poznámka:"
-
-#~ msgid "telefon:"
-#~ msgstr "telefon:"
-
-#~ msgid "Použít"
-#~ msgstr "Použít"
-
-#~ msgid "Smazat adresu"
-#~ msgstr "Smazat adresu"
-
-#~ msgid "Opravdu chcete smazat tuto adresu?"
-#~ msgstr "Opravdu chcete smazat tuto adresu?"
-
-#~ msgid "Smazat"
-#~ msgstr "Smazat"
-
-#~ msgid "(nepovinné)"
-#~ msgstr "(nepovinné)"
-
-#~ msgid "Zpět na dopravu a platbu"
-#~ msgstr "Zpět na dopravu a platbu"
-
-#~ msgid "Back to basket content"
-#~ msgstr "Zpět na obsah košíku"
-
-#~ msgid "Zpět na dodací údaje"
-#~ msgstr "Zpět na dodací údaje"
-
-#~ msgid ""
-#~ "Kliknutím na tlačítko Dokončit objednávku souhlasíte<br>a&nbsp;"
-#~ "potvrzujete, že&nbsp;jste se seznámil s&nbsp;<a href=\"%1\" target="
-#~ "\"_blank\">obchodními&nbsp;podmínkami.</a>"
-#~ msgstr ""
-#~ "Kliknutím na tlačítko Dokončit objednávku souhlasíte<br>a&nbsp;"
-#~ "potvrzujete, že&nbsp;jste se seznámil s&nbsp;<a href=\"%1\" target="
-#~ "\"_blank\">obchodními&nbsp;podmínkami.</a>"
-
-#~ msgid "Už mám účet"
-#~ msgstr "Už mám účet"
-
-#~ msgid "Zaregistrujte se"
-#~ msgstr "Zaregistrujte se"
-
-#~ msgid "osobní nastavení a zabezpečený přístup"
-#~ msgstr "osobní nastavení a zabezpečený přístup"
-
-#~ msgid "rychlý a snadný nákup"
-#~ msgstr "rychlý a snadný nákup"
-
-#~ msgid "rozdílná fakturační a dodací adresa"
-#~ msgstr "rozdílná fakturační a dodací adresa"
-
-#~ msgid "Nákup bez registrace"
-#~ msgstr "Nákup bez registrace"
-
-#~ msgid "Pokračovat bez registrace"
-#~ msgstr "Pokračovat bez registrace"
-
-#~ msgid "Nemáte uloženou žádnou doručovací adresu"
-#~ msgstr "Nemáte uloženou žádnou doručovací adresu"
-
-#~ msgid "vytvořte novou"
-#~ msgstr "vytvořte novou"
-
-#~ msgid "Vytvořit novou adresu"
-#~ msgstr "Vytvořit novou adresu"
-
-#~ msgid "Digitální produkty"
-#~ msgstr "Digitální produkty"
-
-#~ msgid "soubor %1"
-#~ msgstr "soubor %1"
-
-#~ msgid "Stáhnout"
-#~ msgstr "Stáhnout"
-
-#~ msgid "Zakoupené digitální produkty stáhnete na adrese:"
-#~ msgstr "Zakoupené digitální produkty stáhnete na adrese:"
-
-#~ msgid "Vážený zákazníku,"
-#~ msgstr "Vážený zákazníku,"
-
-#~ msgid ""
-#~ "V případě osobního odběru vyčkejte na výzvu k vyzvednutí. Pokud jste "
-#~ "zvolili úhradu bankovním převodem, podklady k úhradě objednávky Vám budou "
-#~ "zaslány obratem."
-#~ msgstr ""
-#~ "V případě osobního odběru vyčkejte na výzvu k vyzvednutí. Pokud jste "
-#~ "zvolili úhradu bankovním převodem, podklady k úhradě objednávky Vám budou "
-#~ "zaslány obratem."
-
-#~ msgid ""
-#~ "Objednávka bude expedována do %1 pracovních dní od připsání platby na náš "
-#~ "bankovní účet."
-#~ msgstr ""
-#~ "Objednávka bude expedována do %1 pracovních dní od připsání platby na náš "
-#~ "bankovní účet."
-
-#~ msgid ""
-#~ "Objednávka bude expedována do %1 pracovních dnů od připsání platby na náš "
-#~ "bankovní účet."
-#~ msgstr ""
-#~ "Objednávka bude expedována do %1 pracovních dnů od připsání platby na náš "
-#~ "bankovní účet."
-
-#~ msgid "Detaily objednávky"
-#~ msgstr "Detaily objednávky"
-
-#~ msgid "Objednávka: <strong>č. %1 vytvořená %2</strong>"
-#~ msgstr "Objednávka: <strong>č. %1 vytvořená %2</strong>"
-
-#~ msgid "Platba:"
-#~ msgstr "Platba:"
-
-#~ msgid "Celkem k úhradě"
-#~ msgstr "Celkem k úhradě"
-
-#~ msgid "Uvedená konečná cena neobsahuje poplatek za dopravu."
-#~ msgstr "Uvedená konečná cena neobsahuje poplatek za dopravu."
-
-#~ msgid "Přeprava"
-#~ msgstr "Přeprava"
-
-#~ msgid "Dopravce:"
-#~ msgstr "Dopravce:"
-
-#~ msgid "Dodací adresa"
-#~ msgstr "Dodací adresa"
-
-#~ msgid "Fakturační adresa"
-#~ msgstr "Fakturační adresa"
-
-#~ msgid "Vaše objednávka č.%1"
-#~ msgstr "Vaše objednávka č.%1"
-
-#~ msgid ""
-#~ "V případě, že si chcete Vaši objednávku zkontrolovat,<br/>\n"
-#~ "Vaši objednávku naleznete v sekci <a href=\"%1\" style=\"%2\">\"Historie "
-#~ "objednávek\"</a> Vašeho zákaznického účtu."
-#~ msgstr ""
-#~ "V případě, že si chcete Vaši objednávku zkontrolovat,<br/>\n"
-#~ "Vaši objednávku naleznete v sekci <a href=\"%1\" style=\"%2\">\"Historie "
-#~ "objednávek\"</a> Vašeho zákaznického účtu."
-
-#~ msgid "Vaše objednávka č. %1 byla zrušena."
-#~ msgstr "Vaše objednávka č. %1 byla zrušena."
-
-#~ msgid "Vaše objednávka s označením %1 byla úspěšně doručena."
-#~ msgstr "Vaše objednávka s označením %1 byla úspěšně doručena."
-
-#~ msgid "Vaše objednávka s označením %1 byla úspěšně dokončena."
-#~ msgstr "Vaše objednávka s označením %1 byla úspěšně dokončena."
-
-#~ msgid "Platba za objednávku s označením %1 byla úspěšně přijata."
-#~ msgstr "Platba za objednávku s označením %1 byla úspěšně přijata."
-
-#~ msgid "Platba za objednávku s označením %1 selhala."
-#~ msgstr "Platba za objednávku s označením %1 selhala."
-
-#~ msgid "Začali jsme zpracovávat Vaší objednávku %1."
-#~ msgstr "Začali jsme zpracovávat Vaší objednávku %1."
-
-#~ msgid "Vaše objednávka č. %1 je připravena k vyzvednutí na výdejním místě"
-#~ msgstr "Vaše objednávka č. %1 je připravena k vyzvednutí na výdejním místě"
-
-#~ msgid "Vaše objednávka č. %1 je připravena k odeslání."
-#~ msgstr "Vaše objednávka č. %1 je připravena k odeslání."
-
-#~ msgid ""
-#~ "Doposud jsme nedobdrželi platbu za Vaši objednávku č. %1. Zboží Vám bude "
-#~ "dodáno, <strong>po obdržení Vaší platby</strong>."
-#~ msgstr ""
-#~ "Doposud jsme nedobdrželi platbu za Vaši objednávku č. %1. Zboží Vám bude "
-#~ "dodáno, <strong>po obdržení Vaší platby</strong>."
-
-#~ msgid "Pokud objednávku nezaplatíte do 10 dnů, bude automaticky stornována."
-#~ msgstr ""
-#~ "Pokud objednávku nezaplatíte do 10 dnů, bude automaticky stornována."
-
-#~ msgid "Zde je rekapitulace údajů pro platbu bankovním převodem:"
-#~ msgstr "Zde je rekapitulace údajů pro platbu bankovním převodem:"
-
-#~ msgid "Vaše objednávka s označením %1 byla vrácena."
-#~ msgstr "Vaše objednávka s označením %1 byla vrácena."
-
-#~ msgid "Vaše objednávka č. %1 byla předána dopravci."
-#~ msgstr "Vaše objednávka č. %1 byla předána dopravci."
-
-#~ msgid "Číslo zásilky: %1"
-#~ msgstr "Číslo zásilky: %1"
-
-#~ msgid ""
-#~ "Svou zásilku můžete sledovat přes následující odkaz: <a href=\"%1\">%1</a>"
-#~ msgstr ""
-#~ "Svou zásilku můžete sledovat přes následující odkaz: <a href=\"%1\">%1</a>"
-
-#~ msgid ""
-#~ "Vaše objednávka č. %1 byla úspěšně dokončena. Zboží Vám bude dodáno, "
-#~ "<strong>po obdržení Vaší platby</strong>."
-#~ msgstr ""
-#~ "Vaše objednávka č. %1 byla úspěšně dokončena. Zboží Vám bude dodáno, "
-#~ "<strong>po obdržení Vaší platby</strong>."
-
-#~ msgid "Vybrali jste si platbu bankovním převodem."
-#~ msgstr "Vybrali jste si platbu bankovním převodem."
-
-#~ msgid "Zde jsou bankovní údaje pro platbu bankovním převodem:"
-#~ msgstr "Zde jsou bankovní údaje pro platbu bankovním převodem:"
-
-#~ msgid "Částka k úhradě:"
-#~ msgstr "Částka k úhradě:"
-
-#~ msgid "Číslo účtu:"
-#~ msgstr "Číslo účtu:"
-
-#~ msgid "Variabilní symbol:"
-#~ msgstr "Variabilní symbol:"
-
-#~ msgid "Majitel účtu:"
-#~ msgstr "Majitel účtu:"
-
-#~ msgid "Sledujte nás na&nbsp;Facebooku:"
-#~ msgstr "Sledujte nás na&nbsp;Facebooku:"
-
-#~ msgid "Obchodní podmínky"
-#~ msgstr "Obchodní podmínky"
-
-#~ msgid "Děkujeme za nákup v obchodě %1!"
-#~ msgstr "Děkujeme za nákup v obchodě %1!"
-
-#~ msgid "děkujeme za nákup v obchodě %1!"
-#~ msgstr "děkujeme za nákup v obchodě %1!"
-
-#~ msgid "Navštivte naši novou prodejnu"
-#~ msgstr "Navštivte naši novou prodejnu"
-
-#~ msgid "Aktuality"
-#~ msgstr "Aktuality"
-
-#~ msgid "Objednávka vytvořena: %1"
-#~ msgstr "Objednávka vytvořena: %1"
-
-#~ msgid "Stav objednávky:"
-#~ msgstr "Stav objednávky:"
-
-#~ msgid "Stav platby: %1"
-#~ msgstr "Stav platby: %1"
-
-#~ msgid "Stáhnout digitální produkty"
-#~ msgstr "Stáhnout digitální produkty"
-
-#~ msgid "Děkujeme"
-#~ msgstr "Děkujeme"
-
-#~ msgid "…za Váš nákup, vraťte se brzy :)"
-#~ msgstr "…za Váš nákup, vraťte se brzy :)"
-
-#~ msgid "Pochlubte se přátelům s Vaším nákupem."
-#~ msgstr "Pochlubte se přátelům s Vaším nákupem."
-
-#~ msgid "Sdílet"
-#~ msgstr "Sdílet"
-
-#~ msgid "Historie a detaily mých objednávek"
-#~ msgstr "Historie a detaily mých objednávek"
-
-#~ msgid "Číslo objednávky"
-#~ msgstr "Číslo objednávky"
-
-#~ msgid "Cena"
-#~ msgstr "Cena"
-
-#~ msgid "Datum vytvoření"
-#~ msgstr "Datum vytvoření"
-
-#~ msgid "Stav"
-#~ msgstr "Stav"
-
-#~ msgid "Faktura"
-#~ msgstr "Faktura"
-
-#~ msgid "Zatím jste nevytvořili žádnou objednávku"
-#~ msgstr "Zatím jste nevytvořili žádnou objednávku"
-
-#~ msgid "Vyhledávání"
-#~ msgstr "Vyhledávání"
-
-#~ msgid "Hledat"
-#~ msgstr "Hledat"
-
-#~ msgid "Nic nebylo nalezeno."
-#~ msgstr "Nic nebylo nalezeno."
-
-#~ msgid "cena od %1"
-#~ msgstr "cena od %1"
-
-#~ msgid "Doručovací adresa bude smazána. Pokračovat?"
-#~ msgstr "Doručovací adresa bude smazána. Pokračovat?"
-
-#~ msgid "upravit"
-#~ msgstr "upravit"
-
-#~ msgid "smazat"
-#~ msgstr "smazat"
-
-#~ msgid "Vybráno:"
-#~ msgstr "Vybráno:"
-
-#~ msgid "odstranit toto omezení výběru"
-#~ msgstr "odstranit toto omezení výběru"
-
-#~ msgid "Odstranit všechny filtry"
-#~ msgstr "Odstranit všechny filtry"
-
-#~ msgid "Filtrace produktů"
-#~ msgstr "Filtrace produktů"
-
-#~ msgid "Rozšířené vyhledávání"
-#~ msgstr "Rozšířené vyhledávání"
-
-#~ msgid "Copy this product"
-#~ msgstr "Zkopírovat tento produkt"
-
-#~ msgid "Create new product"
-#~ msgstr "Vytvořit nový produkt"
-
-#~ msgid "Products administration"
-#~ msgstr "Administrace produktů"
-
-#~ msgid "Not in stock"
-#~ msgstr "Není skladem"
-
-#~ msgid "In stock"
-#~ msgstr "Skladem"
-
-#~ msgid "In stock > %1 %2"
-#~ msgstr "Skladem > %1 %2"
-
-#~ msgid "In stock %1 %2"
-#~ msgstr "Skladem %1 %2"
-
-#~ msgid "zavřít"
-#~ msgstr "zavřít"
-
-#~ msgid ""
-#~ "K provozování webu %1 využíváme takzvané cookies. Cookies jsou soubory "
-#~ "sloužící k přizpůsobení obsahu webu, k měření jeho funkčnosti a k "
-#~ "zajištění vaší maximální spokojenosti. Používáním tohoto webu souhlasíte "
-#~ "s tím, jak soubory cookies dále používáme."
-#~ msgstr ""
-#~ "K provozování webu %1 využíváme takzvané cookies. Cookies jsou soubory "
-#~ "sloužící k přizpůsobení obsahu webu, k měření jeho funkčnosti a k "
-#~ "zajištění vaší maximální spokojenosti. Používáním tohoto webu souhlasíte "
-#~ "s tím, jak soubory cookies dále používáme."
-
-#~ msgid "Souhlasím"
-#~ msgstr "Souhlasím"
-
-#~ msgid "Více informací"
-#~ msgstr "Více informací"
-
-#~ msgid "Social networks"
-#~ msgstr "Sociální sítě"
-
-#~ msgid "Upravit údaje prodejny"
-#~ msgstr "Upravit údaje prodejny"
-
-#~ msgid "Upravit údaje provozovny"
-#~ msgstr "Upravit údaje provozovny"
-
-#~ msgid "Kontakt"
-#~ msgstr "Kontakt"
-
-#~ msgid "IČ"
-#~ msgstr "IČ"
-
-#~ msgid "DIČ"
-#~ msgstr "DIČ"
-
-#~ msgid "My orders"
-#~ msgstr "Moje objednávky"
-
-#~ msgid "Delivery addresses"
-#~ msgstr "Dodací adresy"
-
-#~ msgid "Telefon:"
-#~ msgstr "Telefon:"
-
-#~ msgid "Pobočka: %1, %2, %3, %4"
-#~ msgstr "Pobočka: %1, %2, %3, %4"
-
-#~ msgid "ID pobočky: %1"
-#~ msgstr "ID pobočky: %1"
-
-#~ msgid "Zákazník"
-#~ msgstr "Zákazník"
-
-#~ msgid "e-mail:"
-#~ msgstr "e-mail:"
-
-#~ msgid "Objednávané zboží"
-#~ msgstr "Objednávané zboží"
-
-#~ msgid "Doprava:"
-#~ msgstr "Doprava:"
-
-#~ msgid "Číslo zásilky"
-#~ msgstr "Číslo zásilky"
-
-#~ msgid "Není zadáno"
-#~ msgstr "Není zadáno"
-
-#~ msgid "Doprava a platba"
-#~ msgstr "Doprava a platba"
-
-#~ msgid "Slevová kampaň"
-#~ msgstr "Slevová kampaň"
-
-#~ msgid "Slevové kupóny"
-#~ msgstr "Slevové kupóny"
-
-#~ msgid "Doručovací adresa:"
-#~ msgstr "Doručovací adresa:"
-
-#~ msgid "Fakturační údaje:"
-#~ msgstr "Fakturační údaje:"
-
-#~ msgid "IČ:"
-#~ msgstr "IČ:"
-
-#~ msgid "DIČ:"
-#~ msgstr "DIČ:"
-
-#~ msgid "Výběru odpovídá:"
-#~ msgstr "Výběru odpovídá:"
-
-#~ msgid "Zavřít"
-#~ msgstr "Zavřít"
-
-#~ msgid "Zobrazování přes celou obrazovka"
-#~ msgstr "Zobrazování přes celou obrazovka"
-
-#~ msgid "Přiblížení"
-#~ msgstr "Přiblížení"
-
-#~ msgid "Předchozí (šipka doleva)"
-#~ msgstr "Předchozí (šipka doleva)"
-
-#~ msgid "Další (šipka doprava)"
-#~ msgstr "Další (šipka doprava)"
-
-#~ msgid "Zveřejněno dne %1"
-#~ msgstr "Zveřejněno dne %1"
-
-#~ msgid "Celý článek"
-#~ msgstr "Celý článek"
-
-#~ msgid "Článek"
-#~ msgstr "Článek"
-
-#~ msgid "Informace o produktu"
-#~ msgstr "Informace o produktu"
-
-#~ msgid "Zobrazit kategorii"
-#~ msgstr "Zobrazit kategorii"
-
-#~ msgid "Kategorie produktů"
-#~ msgstr "Kategorie produktů"
-
-#~ msgid "Zobrazit stránku"
-#~ msgstr "Zobrazit stránku"
-
-#~ msgid "Stránka"
-#~ msgstr "Stránka"
-
-#~ msgid "Právě otevřeno"
-#~ msgstr "Právě otevřeno"
-
-#~ msgid "tel:"
-#~ msgstr "tel:"
-
-#~ msgid "Informace o prodejně"
-#~ msgstr "Informace o prodejně"
-
-#~ msgid "Ukázat na mapě"
-#~ msgstr "Ukázat na mapě"
-
-#~ msgid "Prodejna"
-#~ msgstr "Prodejna"
-
-#~ msgid "Previous"
-#~ msgstr "Předchozí"
-
-#~ msgid "Pondělí"
-#~ msgstr "Pondělí"
-
-#~ msgid "Úterý"
-#~ msgstr "Úterý"
-
-#~ msgid "Středa"
-#~ msgstr "Středa"
-
-#~ msgid "Čtvrtek"
-#~ msgstr "Čtvrtek"
-
-#~ msgid "Pátek"
-#~ msgstr "Pátek"
-
-#~ msgid "Sobota"
-#~ msgstr "Sobota"
-
-#~ msgid "Neděle"
-#~ msgstr "Neděle"
-
-#~ msgid "Velká mapa"
-#~ msgstr "Velká mapa"
-
-#~ msgid "Otevřeno"
-#~ msgstr "Otevřeno"
-
-#~ msgid "Search stores"
-#~ msgstr "Vyhledat prodejny"
-
-#~ msgid "zavřeno"
-#~ msgstr "zavřeno"
-
-#~ msgid "Informace o&nbsp;prodejně"
-#~ msgstr "Informace o&nbsp;prodejně"
-
-#~ msgid "Ukázat na&nbsp;mapě"
-#~ msgstr "Ukázat na&nbsp;mapě"
-
-#~ msgid ""
-#~ "Now you can <a href=\"%1\">go to the homepage</a> and enjoy our eshop."
-#~ msgstr ""
-#~ "Nyní můžete přejít na <a href=\"%1\">úvodní stránku</a> a užít si náš e-"
-#~ "shop."
-
-#~ msgid "Now you can <a href=\"%1\">sign in</a> and enjoy our eshop."
-#~ msgstr "Nyní se můžete <a href=\"%1\">přihlásit</a> a užít si náš e-shop."
-
-#~ msgid "Order %d"
-#~ msgstr "Objednávka %d"
-
-#~ msgid "Objednávka %s"
-#~ msgstr "Objednávka %s"
-
-#~ msgid "Objednávky"
-#~ msgstr "Objednávky"
-
-#~ msgid "Basket"
-#~ msgstr "Košík"
-
-#~ msgid "Shipping and payment"
-#~ msgstr "Doprava a platba"
-
-#~ msgid "Delivery data"
-#~ msgstr "Doručovací data"
-
-#~ msgid "Summary"
-#~ msgstr "Souhrn"
-
-#~ msgid "Takový slevový kupón neexistuje"
-#~ msgstr "Takový slevový kupón neexistuje"
-
-#~ msgid "Slevový kupón byl přidán"
-#~ msgstr "Slevový kupón byl přidán"
-
-#~ msgid "Shopping basket"
-#~ msgstr "Nákupní košík"
-
-#~ msgid "Slevový kupón byl odebrán"
-#~ msgstr "Slevový kupón byl odebrán"
-
-#~ msgid "Zpět do %s"
-#~ msgstr "Zpět do %s"
-
-#~ msgid "Shipping and payment method"
-#~ msgstr "Způsob dopravy a platby"
-
-#~ msgid "Přihlášení uživatele"
-#~ msgstr "Přihlášení uživatele"
-
-#~ msgid "Odstraňte prosím nedostatky, které brání dokončení objednávky"
-#~ msgstr "Odstraňte prosím nedostatky, které brání dokončení objednávky"
-
-#~ msgid "Celková cena nesmí být záporná. Přihoďte do košíku ještě něco! :)"
-#~ msgstr "Celková cena nesmí být záporná. Přihoďte do košíku ještě něco! :)"
-
-#~ msgid "Rekapitulace objednávky"
-#~ msgstr "Rekapitulace objednávky"
-
-#~ msgid ""
-#~ "Změnil se obsah nákupního košíku. Prohlédněte si rekapitulaci ještě "
-#~ "jednou a dokončete objednávku."
-#~ msgstr ""
-#~ "Změnil se obsah nákupního košíku. Prohlédněte si rekapitulaci ještě "
-#~ "jednou a dokončete objednávku."
-
-#~ msgid "Nákupní košík"
-#~ msgstr "Nákupní košík"
-
-#~ msgid "Seznam doručovacích adres"
-#~ msgstr "Seznam doručovacích adres"
-
-#~ msgid "Nová doručovací adresa"
-#~ msgstr "Nová doručovací adresa"
-
-#~ msgid "Doručovací adresa byla vytvořena"
-#~ msgstr "Doručovací adresa byla vytvořena"
-
-#~ msgid "Úprava adresy"
-#~ msgstr "Úprava adresy"
-
-#~ msgid "Doručovací adresa byla smazána"
-#~ msgstr "Doručovací adresa byla smazána"
-
-#~ msgid "Doručovací adresy"
-#~ msgstr "Doručovací adresy"
-
-#~ msgid "Digitální produkty v objednávce %s"
-#~ msgstr "Digitální produkty v objednávce %s"
-
-#~ msgid ""
-#~ "Pro stažení digitálních souborů z objednávky se prosím přihlaste jako "
-#~ "uživatel <em>%s</em>"
-#~ msgstr ""
-#~ "Pro stažení digitálních souborů z objednávky se prosím přihlaste jako "
-#~ "uživatel <em>%s</em>"
-
-#~ msgid "Archiv objednávek"
-#~ msgstr "Archiv objednávek"
-
-#~ msgid "Objednávka byla dokončena"
-#~ msgstr "Objednávka byla dokončena"
-
-#~ msgid "Vyhledávání: „%s“"
-#~ msgstr "Vyhledávání: „%s“"
-
-#~ msgid "select administrator"
-#~ msgstr "vyberte administrátora"
-
-#~ msgid "od %s do %s dle země doručení"
-#~ msgstr "od %s do %s dle země doručení"
-
-#~ msgid "neaktivní"
-#~ msgstr "neaktivní"
-
-#~ msgid "Toto nevypadá jako zápis hodin. Je očekáván zápis 12:00"
-#~ msgstr "Toto nevypadá jako zápis hodin. Je očekáván zápis 12:00"
-
-#~ msgid "Zadaný počet musí být dělitelný číslem %d"
-#~ msgstr "Zadaný počet musí být dělitelný číslem %d"
-
-#~ msgid "stav objednávky"
-#~ msgstr "stav objednávky"
-
-#~ msgid "DIČ není zadáno správně"
-#~ msgstr "DIČ není zadáno správně"
-
-#~ msgid "Ulice a č.p."
-#~ msgstr "Ulice a č.p."
-
-#~ msgid "Adresa (2. řádek)"
-#~ msgstr "Adresa (2. řádek)"
-
-#~ msgid "City"
-#~ msgstr "Město"
-
-#~ msgid "State / Province / Region"
-#~ msgstr "Stát / Provincie / Kraj"
-
-#~ msgid "PSČ"
-#~ msgstr "PSČ"
-
-#~ msgid "Země"
-#~ msgstr "Země"
-
-#~ msgid "země"
-#~ msgstr "země"
-
-#~ msgid "Poznámka"
-#~ msgstr "Poznámka"
-
-#~ msgid "Např. číslo patra nebo dveří"
-#~ msgstr "Např. číslo patra nebo dveří"
-
-#~ msgid "Společnost"
-#~ msgstr "Společnost"
-
-#~ msgid "Zadejte platné IČ"
-#~ msgstr "Zadejte platné IČ"
-
-#~ msgid "IČ by mělo mít 8 číslic"
-#~ msgstr "IČ by mělo mít 8 číslic"
-
-#~ msgid "Telefon"
-#~ msgstr "Telefon"
-
-#~ msgid "Telefonní číslo zadejte ve formátu %s"
-#~ msgstr "Telefonní číslo zadejte ve formátu %s"
-
-#~ msgid "Země ve fakturační adrese a země v DIČ se musí shodovat"
-#~ msgstr "Země ve fakturační adrese a země v DIČ se musí shodovat"
-
-#~ msgid "Slevový kód"
-#~ msgstr "Slevový kód"
-
-#~ msgid "Poznámka k doručovací adrese"
-#~ msgstr "Poznámka k doručovací adrese"
-
-#~ msgid "Chci zadat fakturační údaje"
-#~ msgstr "Chci zadat fakturační údaje"
-
-#~ msgid "Pokračovat"
-#~ msgstr "Pokračovat"
-
-#~ msgid "Vyplňte všechny důležité údaje fakturační adresy"
-#~ msgstr "Vyplňte všechny důležité údaje fakturační adresy"
-
-#~ msgid "Select shipping method"
-#~ msgstr "Vyberte způsob dopravy"
-
-#~ msgid "Select payment method"
-#~ msgstr "Vyberte způsob platby"
-
-#~ msgid "Continue"
-#~ msgstr "Pokračovat"
-
-#~ msgid "Illegal combination of shipping and payment"
-#~ msgstr "Neplatná kombinace dopravy a platby"
-
-#~ msgid "Poznámka k objednávce"
-#~ msgstr "Poznámka k objednávce"
-
-#~ msgid "Souhlasím s obchodními podmínkami"
-#~ msgstr "Souhlasím s obchodními podmínkami"
-
-#~ msgid "Dokončit objednávku"
-#~ msgstr "Dokončit objednávku"
-
-#~ msgid ""
-#~ "Objednávku nelze dokončit bez odsouhlasení našich obchodních podmínek."
-#~ msgstr ""
-#~ "Objednávku nelze dokončit bez odsouhlasení našich obchodních podmínek."
-
-#~ msgid "Zatrhněte prosím souhlas s obchodními podmínkami."
-#~ msgstr "Zatrhněte prosím souhlas s obchodními podmínkami."
-
-#~ msgid "Uložit adresu"
-#~ msgstr "Uložit adresu"
-
-#~ msgid "Uložit změny"
-#~ msgstr "Uložit změny"
-
-#~ msgid "Filtrovat"
-#~ msgstr "Filtrovat"
-
-#~ msgid "Oslovení"
-#~ msgstr "Oslovení"
-
-#~ msgid "IČ zadávejte pouze v případě, že je vyplněn název společnosti"
-#~ msgstr "IČ zadávejte pouze v případě, že je vyplněn název společnosti"
-
-#~ msgid "právě teď"
-#~ msgstr "právě teď"
-
-#~ msgid "před minutou"
-#~ msgstr "před minutou"
-
-#~ msgid "před %s minutama"
-#~ msgstr "před %s minutama"
-
-#~ msgid "před hodinou"
-#~ msgstr "před hodinou"
-
-#~ msgid "před %s hodinama"
-#~ msgstr "před %s hodinama"
-
-#~ msgid "Propagace produktu"
-#~ msgstr "Propagace produktu"
-
-#~ msgid "Košík je prázdný"
-#~ msgstr "Košík je prázdný"
-
-#~ msgid "Produkt <em>%s (%s)</em> byl vyřazen z našeho ceníku"
-#~ msgstr "Produkt <em>%s (%s)</em> byl vyřazen z našeho ceníku"
-
-#~ msgid "odebrat z košíku"
-#~ msgstr "odebrat z košíku"
-
-#~ msgid "Produkt <em>%s (%s)</em> není skladem"
-#~ msgstr "Produkt <em>%s (%s)</em> není skladem"
-
-#~ msgid "Produkt <em>%s (%s)</em> lze objednat v počtu nejvýše: %s"
-#~ msgstr "Produkt <em>%s (%s)</em> lze objednat v počtu nejvýše: %s"
-
-#~ msgid "změnit množství na %s"
-#~ msgstr "změnit množství na %s"
-
-#~ msgid "Produkt <em>%s (%s)</em> lze objednat v počtu nejméně: %s"
-#~ msgstr "Produkt <em>%s (%s)</em> lze objednat v počtu nejméně: %s"
-
-#~ msgid "Množství u produktu <em>%s (%s)</em> musí být násobkem čísla %s"
-#~ msgstr "Množství u produktu <em>%s (%s)</em> musí být násobkem čísla %s"
-
-#~ msgid "odstranit voucher"
-#~ msgstr "odstranit voucher"
-
-#~ msgid ""
-#~ "Celková cena nesmí být záporná. Přihoďte do košíku ještě něco malého :)"
-#~ msgstr ""
-#~ "Celková cena nesmí být záporná. Přihoďte do košíku ještě něco malého :)"
-
-#~ msgid "přejít do katalogu"
-#~ msgstr "přejít do katalogu"
-
-#~ msgid ""
-#~ "Celková cena musí být alespoň %s. Přihoďte do košíku ještě něco malého :)"
-#~ msgstr ""
-#~ "Celková cena musí být alespoň %s. Přihoďte do košíku ještě něco malého :)"
-
-#~ msgid "Doručovací metoda <em>%s</em> nemůže být vybrána"
-#~ msgstr "Doručovací metoda <em>%s</em> nemůže být vybrána"
-
-#~ msgid "vyberte jinou metodu"
-#~ msgstr "vyberte jinou metodu"
-
-#~ msgid "Platební metoda <em>%s</em> nemůže být vybrána"
-#~ msgstr "Platební metoda <em>%s</em> nemůže být vybrána"
-
-#~ msgid "Musí být vybrána online platební metoda"
-#~ msgstr "Musí být vybrána online platební metoda"
-
-#~ msgid "Pro způsob dodání '%s' nebylo zvoleno doručovací místo"
-#~ msgstr "Pro způsob dodání '%s' nebylo zvoleno doručovací místo"
-
-#~ msgid "Objednávku nelze doručit na danou doručovací adresu"
-#~ msgstr "Objednávku nelze doručit na danou doručovací adresu"
-
-#~ msgid "upravte doručovací adresu"
-#~ msgstr "upravte doručovací adresu"
-
-#~ msgid "Kč"
-#~ msgstr "Kč"
-
-#~ msgid "opening hours: %s"
-#~ msgstr "otevírací doba: %s"
-
-#~ msgid "Poznámka k doručovací adrese: %s"
-#~ msgstr "Poznámka k doručovací adrese: %s"
-
-#~ msgid "Poznámka k fakturační adrese: %s"
-#~ msgstr "Poznámka k fakturační adrese: %s"
-
-#~ msgid "Chybí číslo objednávky"
-#~ msgstr "Chybí číslo objednávky"
-
-#~ msgid "Objednávka nebyla nalezena v systému"
-#~ msgstr "Objednávka nebyla nalezena v systému"
-
-#~ msgid "Chybí číslo zásilky"
-#~ msgstr "Chybí číslo zásilky"
-
-#~ msgid "Hodnota %s nevypadá jako číslo zásilky"
-#~ msgstr "Hodnota %s nevypadá jako číslo zásilky"
-
-#~ msgid "Zásilka již byla importovaná"
-#~ msgstr "Zásilka již byla importovaná"
-
-#~ msgid "Čeká se na dokončení platby"
-#~ msgstr "Čeká se na dokončení platby"
-
-#~ msgid "Zaplaceno"
-#~ msgstr "Zaplaceno"
-
-#~ msgid "Zrušeno"
-#~ msgstr "Zrušeno"
-
-#~ msgid "Voucher %s nelze použít"
-#~ msgstr "Voucher %s nelze použít"
-
-#~ msgid "Voucher nemůže být použit v prázdném košíku"
-#~ msgstr "Voucher nemůže být použit v prázdném košíku"
-
-#~ msgid "Platnost voucheru %s vypršela"
-#~ msgstr "Platnost voucheru %s vypršela"
-
-#~ msgid "Voucher %s už byl použit"
-#~ msgstr "Voucher %s už byl použit"
-
-#~ msgid "Voucher %s lze použít až při minimálním obnosu %s za zboží"
-#~ msgstr "Voucher %s lze použít až při minimálním obnosu %s za zboží"
-
-#~ msgid "Sniž objednané množství"
-#~ msgstr "Sniž objednané množství"
-
-#~ msgid "Zvyš objednané množství"
-#~ msgstr "Zvyš objednané množství"
-
-#~ msgid "Seřadit dle"
-#~ msgstr "Seřadit dle"
-
-#~ msgid "První strana"
-#~ msgstr "První strana"
-
-#~ msgid "Další produkt"
-#~ msgstr "Další produkt"
-
-#~ msgid "Další strana"
-#~ msgstr "Další strana"
-
-#~ msgid "Další %s produkty"
-#~ msgstr "Další %s produkty"
-
-#~ msgid "Dalších %s produktů"
-#~ msgstr "Dalších %s produktů"
-
-#~ msgid "Předchozí strana"
-#~ msgstr "Předchozí strana"
-
-#~ msgid "Zbývá 1 položka z %t"
-#~ msgstr "Zbývá 1 položka z %t"
-
-#~ msgid "Zbývají %s položky z %t"
-#~ msgstr "Zbývají %s položky z %t"
-
-#~ msgid "Zbývá %s položek z %t"
-#~ msgstr "Zbývá %s položek z %t"
-
-#~ msgid "Vyhledáno celkem %t produktů"
-#~ msgstr "Vyhledáno celkem %t produktů"
-
-#~ msgid "produktů"
-#~ msgstr "produktů"
-
-#~ msgid "produkt"
-#~ msgstr "produkt"
-
-#~ msgid "produkty"
-#~ msgstr "produkty"
-
-#~ msgid "Načítám..."
-#~ msgstr "Načítám..."
-
-#~ msgid "Vše"
-#~ msgstr "Vše"
-
-#~ msgid "Ano"
-#~ msgstr "Ano"
-
-#~ msgid "Ne"
-#~ msgstr "Ne"
-
-#~ msgid "from"
-#~ msgstr "od"
-
-#~ msgid "to"
-#~ msgstr "do"
-
-#~ msgid "V případě dotazů nás můžete kontaktovat na emailu %1"
-#~ msgstr "V případě dotazů nás můžete kontaktovat na emailu %1"
-
-#~ msgid ""
-#~ "V příloze naleznete přehled objednaného zboží včetně ošetřovacích symbolů."
-#~ msgstr ""
-#~ "V příloze naleznete přehled objednaného zboží včetně ošetřovacích symbolů."
-
-#~ msgid "products in total"
-#~ msgstr "produktů celkem"
-
-#~ msgid "Navštivte náš showroom v&nbsp;Praze&nbsp;4"
-#~ msgstr "Navštivte náš showroom v&nbsp;Praze&nbsp;4"
-
-#~ msgid "Datum"
-#~ msgstr "Datum"
-
-#~ msgid "My account"
-#~ msgstr "Můj účet"
-
-#~ msgid "Popis"
-#~ msgstr "Popis"
-
-#~ msgid "...za Váš nákup, vraťte se brzy :)"
-#~ msgstr "...za Váš nákup, vraťte se brzy :)"
-
-#~ msgid "more information"
-#~ msgstr "více informací"
-
-#~ msgid "PSČ zadejte ve tvaru 123 45"
-#~ msgstr "PSČ zadejte ve tvaru 123 45"
-
-#~ msgid "Request URL:"
-#~ msgstr "Adresa URL požadavku:"
