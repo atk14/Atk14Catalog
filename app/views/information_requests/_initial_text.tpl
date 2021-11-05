@@ -9,11 +9,11 @@
 
 {elseif $product}
 
-	{t}I would like to know more about the product{/t} {$card->getName()|strip_tags} - {$product->getName()|strip_tags}
+	{t}I would like to know more about the product{/t} {$card->getName()|strip_html} - {$product->getName()|strip_html}
 
 {else}
 
-	{t}I would like to know more about the product{/t} {$card->getName()|strip_tags}
+	{t}I would like to know more about the product{/t} {$card->getName()|strip_html}
 
 {/if}
 
