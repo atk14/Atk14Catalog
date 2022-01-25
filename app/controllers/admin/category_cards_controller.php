@@ -20,6 +20,7 @@ class CategoryCardsController extends AdminController{
 				":category_id" => $this->category
 			),
 			"offset" => $this->params->getInt("offset"),
+			"limit" => 100,
 			"use_cache" => true,
 		));
 	}

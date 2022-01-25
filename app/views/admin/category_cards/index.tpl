@@ -5,6 +5,7 @@
 <thead>
 	<tr>
 		<th></th>
+		<th>{t}Catalog number{/t}</th>
 		<th>{t}Name{/t}</th>
 		<th>{t}Ranking{/t}</th>
 		<th></th>

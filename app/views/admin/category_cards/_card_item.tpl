@@ -1,5 +1,6 @@
 <tr>
 	<td>{render partial="shared/list_thumbnail" image=$card->getImage()}</td>
+	<td>{render partial="shared/product_codes" products=$card->getProducts(["visible" => null])}</td>
 	<td>{$card->getName()}</td>
 	<td>{$finder->getOffset()+$__index__+1}</td>
 	<td>
