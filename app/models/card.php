@@ -3,7 +3,7 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 
 	use TraitTags;
 
-	static function GetTranslatableFields(){ return array("name","teaser"); }
+	static function GetTranslatableFields(){ return array("name","teaser","page_title","page_description"); }
 
 	static function CreateNewRecord($values,$options = array()){
 		$collection_id = null;
@@ -72,6 +72,24 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 
 	function getSlugPattern($lang){
 		return $this->g("name_$lang");
+	}
+
+	function getPageTitle(){
+		$out = parent::getPageTitle();
+		if(strlen($out)){ return $out; }
+		return $this->getName();
+	}
+
+	function getPageDescription(){
+		$out = parent::getPageDescription();
+		if(strlen($out)){ return $out; }
+		$out = $this->getTeaser();
+		if(strlen($out)){
+			Atk14Require::Helper("modifier.markdown");
+			$out = smarty_modifier_markdown($out);
+			$out = String4::ToObject($out)->stripHtml()->toString();
+			return $out;
+		}
 	}
 
 	function getImages($options = array()){

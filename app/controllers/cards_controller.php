@@ -6,7 +6,8 @@ class CardsController extends ApplicationController{
 			return $this->_execute_action("error404");
 		}
 
-		$this->page_title = $card->getName();
+		$this->page_title = $card->getPageTitle();
+		$this->page_description = $card->getPageDescription();
 
 		$this->tpl_data["products"] = $products = $card->getProducts();
 		$this->tpl_data["categories"] = $card->getCategories(array("consider_invisible_categories" => false, "consider_filters" => false, "deduplicate" => true));
