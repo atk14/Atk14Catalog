@@ -196,7 +196,12 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 		$out = parent::getPageDescription($lang);
 		if(strlen($out)){ return $out; }
 		$out = $this->getTeaser($lang);
-		if(strlen($out)){ return strip_tags($out); }
+		if(strlen($out)){
+			Atk14Require::Helper("modifier.markdown");
+			$out = smarty_modifier_markdown($out);
+			$out = String4::ToObject($out)->stripHtml()->toString();
+			return $out;
+		}
 	}
 
 	function isVisible($check_parent_visibility = true){
