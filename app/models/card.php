@@ -85,8 +85,7 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		if(strlen($out)){ return $out; }
 		$out = $this->getTeaser();
 		if(strlen($out)){
-			Atk14Require::Helper("modifier.markdown");
-			$out = smarty_modifier_markdown($out);
+			$out = Markdown($out);
 			$out = String4::ToObject($out)->stripHtml()->toString();
 			return $out;
 		}
