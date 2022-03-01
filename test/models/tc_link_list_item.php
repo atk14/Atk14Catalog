@@ -56,4 +56,20 @@ class TcLinkListItem extends TcBase {
 		$this->assertEquals("/testovaci-stranka/#test",$item->getUrl(["anchor" => "test"]));
 		$this->assertEquals("/testovaci-stranka/",$item->getUrl(["anchor" => ""]));
 	}
+
+	function test_specific_url_for_language(){
+		$item = $this->link_list_items["main_menu__testing_page"];
+
+		$item->s("url_localized_en","/testing-page/?english=1");
+
+		$this->assertEquals("/testing-page/?english=1",$item->getUrl());
+		$this->assertEquals("/testing-page/?english=1",$item->getUrl("en"));
+		$this->assertEquals("/testovaci-stranka/",$item->getUrl("cs"));
+
+		$lang = "cs";
+		Atk14Locale::Initialize($lang);
+		$this->assertEquals("/testovaci-stranka/",$item->getUrl());
+		$this->assertEquals("/testing-page/?english=1",$item->getUrl("en"));
+		$this->assertEquals("/testovaci-stranka/",$item->getUrl("cs"));
+	}
 }
