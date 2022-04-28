@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-31 15:31+0100\n"
-"PO-Revision-Date: 2022-01-31 15:24+0100\n"
+"POT-Creation-Date: 2022-04-28 12:39+0200\n"
+"PO-Revision-Date: 2022-04-25 17:22+0200\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: \n"
 "Language: cs_CZ\n"
@@ -188,3 +188,33 @@ msgstr "Zadejte PSČ ve formátu NNN NN"
 
 #~ msgid "Enter phone number in format +420.605123456"
 #~ msgstr "Zadejte telefonní číslo ve formátu +420.605123456"
+
+#~ msgid "Service Unavailable"
+#~ msgstr "Služba je nedostupná"
+
+#~ msgid "This site is in maintenance. Please come back later."
+#~ msgstr "Probíhá údržba této stránky. Přijďte prosím později."
+
+#~ msgid "The form contains errors, therefore it cannot be processed."
+#~ msgstr "Formulář obsahuje chyby, proto nemůže být zpracován."
+
+#~ msgid "Please, submit the form again"
+#~ msgstr "Prosím, odešlete formulář znovu"
+
+#~ msgid "Sort table by this column"
+#~ msgstr "Třídit tabulku podle tohoto sloupce"
+
+#~ msgid "Are you sure?"
+#~ msgstr "Jste si jistý?"
+
+#~ msgid "items total"
+#~ msgstr "položek celkem"
+
+#~ msgid "Prev"
+#~ msgstr "Předchozí"
+
+#~ msgid "Next"
+#~ msgstr "Následující"
+
+#~ msgid "and"
+#~ msgstr "a"

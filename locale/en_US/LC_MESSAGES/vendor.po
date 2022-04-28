@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-31 15:31+0100\n"
-"PO-Revision-Date: 2022-01-31 15:28+0100\n"
+"PO-Revision-Date: 2022-04-25 16:30+0200\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -147,3 +147,30 @@ msgstr "This doesn't look like an URL"
 
 #~ msgid "Enter phone number in format +420.605123456"
 #~ msgstr "Enter phone number in format +420.605123456"
+
+#~ msgid "Service Unavailable"
+#~ msgstr "Service Unavailable"
+
+#~ msgid "This site is in maintenance. Please come back later."
+#~ msgstr "This site is in maintenance. Please come back later."
+
+#~ msgid "The form contains errors, therefore it cannot be processed."
+#~ msgstr "The form contains errors, therefore it cannot be processed."
+
+#~ msgid "Please, submit the form again"
+#~ msgstr "Please, submit the form again"
+
+#~ msgid "Are you sure?"
+#~ msgstr "Are you sure?"
+
+#~ msgid "items total"
+#~ msgstr "items total"
+
+#~ msgid "Prev"
+#~ msgstr "Prev"
+
+#~ msgid "Next"
+#~ msgstr "Next"
+
+#~ msgid "and"
+#~ msgstr "and"

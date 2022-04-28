@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-31 15:31+0100\n"
-"PO-Revision-Date: 2022-01-31 16:14+0100\n"
+"POT-Creation-Date: 2022-04-28 12:39+0200\n"
+"PO-Revision-Date: 2022-04-25 17:21+0200\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: Team <team@email.com>\n"
 "Language: cs_CZ\n"
@@ -445,6 +445,9 @@ msgstr "Velikost souboru"
 msgid "URL"
 msgstr "URL"
 
+msgid "Upravit fotogalerii"
+msgstr "Upravit fotogalerii"
+
 msgid "bez popisu"
 msgstr "bez popisu"
 
@@ -459,6 +462,9 @@ msgstr "Přidat obrázky do fotogalerie"
 
 msgid "Přidat fotografii"
 msgstr "Přidat fotografii"
+
+msgid "Upravit obrázky fotogalerie"
+msgstr "Upravit obrázky fotogalerie"
 
 msgid "bez titulku nebo popisu"
 msgstr "bez titulku nebo popisu"
@@ -506,6 +512,10 @@ msgstr "Vítejte administrátore!"
 #: ../app/forms/admin/stores/stores_form.php:20
 msgid "Email"
 msgstr "E-mail"
+
+#: ../app/forms/admin/newsletter_subscribers/index_form.php:14
+msgid "Language"
+msgstr ""
 
 msgid "Subscribed since"
 msgstr "Přihlášen od"
@@ -1473,7 +1483,7 @@ msgstr "Stejné katalogové číslo se používá pro jiný produkt"
 #: ../app/forms/admin/categories/categories_form.php:58
 #: ../app/forms/admin/collections/collections_form.php:17
 #: ../app/forms/admin/images/images_form.php:6
-#: ../app/forms/admin/link_list_items/link_list_items_form.php:22
+#: ../app/forms/admin/link_list_items/link_list_items_form.php:29
 #: ../app/forms/admin/pages/pages_form.php:10
 #: ../app/forms/admin/stores/stores_form.php:15
 msgid "Image"
@@ -1797,10 +1807,18 @@ msgstr ""
 "být zadán v úplném tvaru (např. https://example.com/file.pdf)."
 
 #: ../app/forms/admin/link_list_items/link_list_items_form.php:16
+msgid "Specific URL for the given language"
+msgstr "Specifická adresa URL pro daný jazyk"
+
+#: ../app/forms/admin/link_list_items/link_list_items_form.php:19
+msgid "If necessary, a specific URL can be specified for the given language."
+msgstr "V případě potřeby lze zadat specifickou adresu URL pro daný jazyk."
+
+#: ../app/forms/admin/link_list_items/link_list_items_form.php:23
 msgid "CSS class"
 msgstr "Třída CSS"
 
-#: ../app/forms/admin/link_list_items/link_list_items_form.php:24
+#: ../app/forms/admin/link_list_items/link_list_items_form.php:31
 msgid "In some cases the link looks better with an image."
 msgstr "V některých případech vypadá odkaz lépe s obrázkem."
 
@@ -1819,6 +1837,10 @@ msgstr "Zobrazovaný název"
 #: ../app/forms/admin/link_lists/link_lists_form.php:13
 msgid "About us"
 msgstr "O nás"
+
+#: ../app/forms/admin/newsletter_subscribers/index_form.php:9
+msgid "language"
+msgstr ""
 
 #: ../app/forms/admin/pages/create_new_form.php:8
 #: ../app/forms/admin/pages/edit_form.php:21
