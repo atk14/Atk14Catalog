@@ -65,7 +65,15 @@ cold_drinks:
   parent_category_id: 1008
   name_en: Cold drinks
 
+other_drinks:
+  id: 1020
+  parent_category_id: 1008
+  name_en: Other drinks
 
+coffeine_drinks:
+  id: 1021
+  parent_category_id: 1008
+  name_en: Coffeine drinks
 
 
 shoes:
@@ -103,6 +111,14 @@ kids_shoes__boys:
   name_en: "Boys"
   name_cs: "Chlapci"
 
+
+hidden:
+  id: 1022
+  code: "hidden"
+  parent_category_id: 1001
+  name_en: "Hidden category"
+  name_cs: "Skrytá kategorie"
+  visible: false
 
 
 kids:

@@ -135,6 +135,7 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 	function getChildCategories($options = array()){
 		$options += array(
 			"direct_children_only" => true,
+			"visible" => null,
 		);
 		$children = Category::GetCategories($this,$options);
 
@@ -145,6 +146,14 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 				$children = array_merge($children,$ccc);
 			}
 		}
+
+		if(!is_null($options["visible"])){
+			$visible = (bool)$options["visible"];
+			$children = array_filter($children,function($child) use($visible){ return $child->isVisible() ^ !$visible; }); // XOR
+		}
+
+		$children = array_values($children);
+
 		return $children;
 	}
 
@@ -278,6 +287,7 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 			if($p->isFilter()){ $filters[$p->getId()] = $p; }
 			$filters += $p->getAvailableFilters(array("consider_child_categories" => false));
 		}
+
 		return array_values($filters);
 	}
 
