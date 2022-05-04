@@ -48,6 +48,26 @@ usage_indoor:
   parent_category_id: 1005
   name_en: Indoor
 
+odour:
+  id: 1030
+  parent_category_id: 1001
+  name_en: Odour
+  name_cs: Zápach
+  is_filter: true
+  visible: false
+
+odour_fine:
+  id: 1031
+  parent_category_id: 1030
+  name_en: File
+  name_cs: Jemný
+
+odour_intensive:
+  id: 1032
+  parent_category_id: 1030
+  name_en: Intensive
+  name_cs: Intenzivní
+
 food_drinks:
   id: 1008
   code: "food_drinks"

@@ -271,6 +271,7 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 	function getAvailableFilters($options = array()){
 		$options += array(
 			"consider_child_categories" => true,
+			"visible" => null,
 		);
 
 		$filters = array();
@@ -286,6 +287,11 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 		if($p = $this->getParentCategory()){
 			if($p->isFilter()){ $filters[$p->getId()] = $p; }
 			$filters += $p->getAvailableFilters(array("consider_child_categories" => false));
+		}
+
+		if(!is_null($options["visible"])){
+			$visible = (bool)$options["visible"];
+			$filters = array_filter($filters,function($filter) use($visible){ return $filter->isVisible() ^ !$visible; }); // XOR
 		}
 
 		return array_values($filters);
