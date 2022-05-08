@@ -1,19 +1,25 @@
 <ul class="list--tree">
 
+	{if $pages}
 	<li>
 		<h4>{t}Pages{/t}</h4>
 		{render partial="pages" pages=$pages}
 	</li>
+	{/if}
 
+	{if $categories}
 	<li>
 		<h4>{t}Product categories{/t}</h4>
 		{render partial="categories" categories=$categories}
 	</li>
+	{/if}
 
+	{if $cards}
 	<li>
 		<h4>{t}Products{/t}</h4>
 		{render partial="cards" products=$cards}
 	</li>
+	{/if}
 
 	{*
 	<li>
