@@ -191,21 +191,21 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 
 	function getLongName($lang = null){
 		$out = parent::getLongName($lang);
-		if(strlen($out)){ return $out; }
+		if(strlen((string)$out)){ return $out; }
 		return parent::getName($lang);
 	}
 
 	function getPageTitle($lang = null){
 		$out = parent::getPageTitle($lang);
-		if(strlen($out)){ return $out; }
+		if(strlen((string)$out)){ return $out; }
 		return $this->getLongName($lang);
 	}
 
 	function getPageDescription($lang = null){
 		$out = parent::getPageDescription($lang);
-		if(strlen($out)){ return $out; }
+		if(strlen((string)$out)){ return $out; }
 		$out = $this->getTeaser($lang);
-		if(strlen($out)){
+		if(strlen((string)$out)){
 			$out = Markdown($out);
 			$out = String4::ToObject($out)->stripHtml()->toString();
 			return $out;
