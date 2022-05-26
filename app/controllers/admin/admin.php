@@ -406,6 +406,10 @@ class AdminController extends ApplicationBaseController{
 			}
 		}
 
+		if(!$object){
+			return $this->_execute_action("error404");
+		}
+
 		if(method_exists($object,"isDeletable") && !$object->isDeletable()){
 			return $this->_execute_action("error404");
 		}
@@ -414,9 +418,6 @@ class AdminController extends ApplicationBaseController{
 			$fn = $options["destroy_closure"];
 			$record = $fn($object);
 		}else{
-			if(!$object){
-				return $this->_execute_action("error404");
-			}
 			$object->destroy();
 		}
 
