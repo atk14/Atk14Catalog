@@ -8,11 +8,17 @@ class CardsController extends AdminController{
 	function index(){
 		$this->page_title = _("List of Products");
 
-		$q = ($d = $this->form->validate($this->params)) ? $d["search"] : "";
+		($d = $this->form->validate($this->params)) || ($d = $this->form->get_initial());
 
 		$conditions = $bind_ar = array();
 		$conditions = array("deleted='f'");
 
+		if(isset($d["visible"])){
+			$conditions[] = "visible=:visible";
+			$bind_ar[":visible"] = !!$d["visible"];
+		}
+
+		$q = $d["search"];
 		$q_up = Translate::Upper($q);
 
 		if($ft_cond = FullTextSearchQueryLike::GetQuery("UPPER(".join("||' '||",array(
