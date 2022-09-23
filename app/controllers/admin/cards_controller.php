@@ -54,6 +54,7 @@ class CardsController extends AdminController{
 		$this->sorting->add("name", array("order_by" => Translation::BuildOrderSqlForTranslatableField("cards", "name")));
 		$this->sorting->add("updated_at","COALESCE(updated_at,'2000-01-01') DESC, created_at DESC, id DESC","COALESCE(updated_at,'2099-01-01'), created_at, id");
 		$this->sorting->add("has_variants");
+		$this->sorting->add("visible","visible DESC, created_at DESC","visible ASC, created_at DESC");
 
 		$this->tpl_data["finder"] = Card::Finder(array(
 			"conditions" => $conditions,
