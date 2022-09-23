@@ -93,6 +93,8 @@ class TcTranslation extends TcBase{
 		$this->assertEquals("Medicína, která nefunguje!",$brand->getDescription("cs"));
 		$this->assertEquals("",$brand->g("description_en"));
 		$this->assertEquals("Medicína, která nefunguje!",$brand->g("description_cs"));
+
+		$ATK14_GLOBAL->setValue("lang","en");
 	}
 
 
