@@ -75,8 +75,3 @@ git push</code></pre>
 	</section>
 </article>
 
-{if $page  && !$page->isIndexable()}
-	{content for=head}
-		<meta name="robots" content="noindex,noarchive">
-	{/content}
-{/if}
