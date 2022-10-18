@@ -64,8 +64,3 @@
 	{/if}
 </section>
 
-{if $canonical_path}
-	{content for=head}
-		<link rel="canonical" href="{link_to action=detail path=$canonical_path}" />
-	{/content}
-{/if}
