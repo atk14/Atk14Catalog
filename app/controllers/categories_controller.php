@@ -25,7 +25,7 @@ class CategoriesController extends ApplicationController{
 		$this->page_title = $category->getPageTitle();
 		$this->page_description = $category->getPageDescription();
 
-		$this->head_tags->setCanonical($this->_link_to(["path" => $category->getPath()], ["with_hostname" => true]));
+		$this->head_tags->setCanonical($this->_link_to(["path" => $this->tpl_data["category"]->getPath()], ["with_hostname" => true]));
 
 		// parent categories
 		$parent_categories = array();
