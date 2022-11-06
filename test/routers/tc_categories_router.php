@@ -29,6 +29,23 @@ class TcCategoriesRouter extends TcBase {
 		$this->assertEquals("/katalog/obuv/",$uri);
 		$this->assertEquals(array("offset" => 111),$params->toArray());
 
+		// Building link to an alias
+		$uri = $this->assertBuildable(array(
+			"lang" => "en",
+			"controller" => "categories",
+			"action" => "detail",
+			"path" => "kids/shoes",
+		),$params);
+		$this->assertEquals("/kids/shoes/",$uri);
+		//
+		$uri = $this->assertBuildable(array(
+			"lang" => "cs",
+			"controller" => "categories",
+			"action" => "detail",
+			"path" => "kids/shoes",
+		),$params);
+		$this->assertEquals("/deti/obuv/",$uri);
+
  		// path is missing
 		$this->assertNotBuildable(array(
 			"lang" => "en",
