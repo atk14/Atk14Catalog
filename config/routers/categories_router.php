@@ -28,7 +28,8 @@ class CategoriesRouter extends Atk14Router{
 		$category = Category::GetInstanceByPath($path,$l);
 		if($category && ($l!=$this->lang)){
 			$path_ar = array();
-			foreach(Category::GetInstancesOnPath($path) as $c){
+			$l = null;
+			foreach(Category::GetInstancesOnPath($path,$l,null,array("dealias" => false)) as $c){
 				$path_ar[] = $c->getSlug($this->lang);
 			}
 			$path = join("/",$path_ar);
