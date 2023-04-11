@@ -48,7 +48,7 @@ class RemoteTestsController extends ApplicationController{
 	 */
 	function php_errors(){
 		$this->_check_for_files(LOG_DIR,array(
-			"pattern" => '/(php_error\.log|exception|error\.log)/',
+			"pattern" => '/(php_error\.log|exception|error\.log)$/',
 			"min_mtime" => time() - 30 * 60, // not older than 30 minutes
 		));
 	}
@@ -68,7 +68,7 @@ class RemoteTestsController extends ApplicationController{
 	 */
 	function robot_errors(){
 		$this->_check_for_files(LOG_DIR,array(
-			"pattern" => '/(robots_error\.log)/',
+			"pattern" => '/(robots_error\.log)$/',
 			"min_mtime" => time() - 30 * 60, // not older than 30 minutes
 		));
 	}
@@ -123,7 +123,7 @@ class RemoteTestsController extends ApplicationController{
 
 		chdir($directory);
 		$files = Files::FindFiles(".",$check_options);
-		array_filter($files,function($file){ return filesize($file)>0; }); // fresh files with zero size creates log rotate
+		$files = array_filter($files,function($file){ return filesize($file)>1; }); // fresh files with zero size creates log rotate
 
 		if($files){
 			$this->_fail(join("\n",$files));
