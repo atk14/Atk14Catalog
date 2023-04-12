@@ -42,6 +42,8 @@ class LinkListItem extends ApplicationModel implements Rankable, Translatable {
 				return Cache::Get("Page",(int)$params["id"]);
 			case "main/index":
 				return Page::GetInstanceByCode("homepage");
+			case "categories/detail":
+				return Category::GetInstanceByPath($params["path"]);
 		}
 	}
 
@@ -82,6 +84,24 @@ class LinkListItem extends ApplicationModel implements Rankable, Translatable {
 			foreach($target->getVisibleChildPages() as $chi){
 				$item = $menu->addItem($chi->getTitle(),Atk14Url::BuildLink(["namespace" => "", "action" => "pages/detail", "id" => $chi]));
 				$item->setMeta("image_url",$chi->getImageUrl());
+			}
+		}
+
+		if(is_a($target,"Category")){
+			$menu->setMeta("image_url",$target->getImageUrl());
+			foreach($target->getVisibleChildCategories() as $chi){
+				if($chi->isFilter()){ continue; }
+				$path = $target->getPath()."/".$chi->getSlug(); // This must work for aliases
+				$item = $menu->addItem($chi->getName(),Atk14Url::BuildLink(["namespace" => "", "action" => "categories/detail", "path" => $path]));
+				$item->setMeta("image_url",$chi->getImageUrl());
+
+			}
+		}
+
+		if($params && $params["namespace"]==="" && $params["controller"]==="brands" && $params["action"]==="index"){
+			foreach(Brand::FindAll() as $brand){
+				$item = $menu->addItem($brand->getName(),Atk14Url::BuildLink(["namespace" => "", "action" => "brands/detail", "id" => $brand]));
+				$item->setMeta("image_url",$brand->getLogoUrl());
 			}
 		}
 
