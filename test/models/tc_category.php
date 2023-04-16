@@ -172,6 +172,22 @@ class TcCategory extends TcBase {
 		$lang = null;
 		$cats = Category::GetInstancesOnPath("catalog/shoes/kids/nonsence",$lang);
 		$this->assertEquals(null,$cats);
+
+		// Alias category
+
+		$lang = null;
+		$cats = Category::GetInstancesOnPath("kids/shoes",$lang,null);
+		$cats = array_values($cats);
+		$this->assertEquals($this->categories["kids"]->getId(),$cats[0]->getId());
+		$this->assertEquals($this->categories["kids_shoes"]->getId(),$cats[1]->getId());
+
+		// Alias category with option dealias=false
+
+		$lang = null;
+		$cats = Category::GetInstancesOnPath("kids/shoes",$lang,null,array("dealias" => false));
+		$cats = array_values($cats);
+		$this->assertEquals($this->categories["kids"]->getId(),$cats[0]->getId());
+		$this->assertEquals($this->categories["kids__kids_shoes"]->getId(),$cats[1]->getId());
 	}
 
 	function test_GetInstanceByNamePath(){

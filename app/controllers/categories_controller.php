@@ -25,11 +25,7 @@ class CategoriesController extends ApplicationController{
 		$this->page_title = $category->getPageTitle();
 		$this->page_description = $category->getPageDescription();
 
-		// v ceste k teto kategorii je najeky alias ->
-		// vytiskneme do <head></head> element <link rel="canonical">
-		if($path!=($_path = $category->getPath())){
-			$this->tpl_data["canonical_path"] = $_path;
-		}
+		$this->head_tags->setCanonical($this->_link_to(["path" => $this->tpl_data["category"]->getPath()], ["with_hostname" => true]));
 
 		// parent categories
 		$parent_categories = array();

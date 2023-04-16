@@ -45,12 +45,17 @@ class TcLinkListItem extends TcBase {
 		$this->assertEquals("/testing-page/",$items[1]->getUrl());
 		$this->assertEquals("ATK14 Framework",$items[2]->getTitle());
 		$this->assertEquals("https://www.atk14.net/",$items[2]->getUrl());
+		$this->assertEquals("atk14_framework",$items[2]->getMeta("code"));
+		$this->assertEquals("http://www.atk14.net/public/images/atk14.png",$items[2]->getMeta("image_url"));
+
 
 		$lli->s("code","different_code");
 		$this->assertEquals(null,$lli->getSubmenu());
 	}
 
 	function test_changing_url_according_to_language(){
+		// local URI
+
 		$item = $this->link_list_items["main_menu__testing_page"];
 		$this->assertEquals("/testing-page/",$item->getUrl());
 
@@ -70,6 +75,35 @@ class TcLinkListItem extends TcBase {
 		$this->assertEquals("/testovaci-stranka/#anchor",$item->getUrl());
 		$this->assertEquals("/testovaci-stranka/#test",$item->getUrl(["anchor" => "test"]));
 		$this->assertEquals("/testovaci-stranka/",$item->getUrl(["anchor" => ""]));
+
+		// complete local URL
+
+		$item = $this->link_list_items["test_list__testing_subpage"];
+		$http_host = ATK14_HTTP_HOST;
+
+		$this->assertEquals("http://".$http_host."/testing-page/testing-subpage/",$item->g("url"));
+
+		$lang = "en";
+		Atk14Locale::Initialize($lang);
+		$this->assertEquals("http://$http_host/testing-page/testing-subpage/",$item->getUrl());
+		$this->assertEquals("/testing-page/testing-subpage/",$item->getUrl(["with_hostname" => false]));
+
+		$lang = "cs";
+		Atk14Locale::Initialize($lang);
+		$this->assertEquals("http://$http_host/testovaci-stranka/testovaci-podstranka/",$item->getUrl());
+		$this->assertEquals("/testovaci-stranka/testovaci-podstranka/",$item->getUrl(["with_hostname" => false]));
+		
+		// external URL
+
+		$item = $this->link_list_items["main_menu__external"];
+
+		$lang = "en";
+		Atk14Locale::Initialize($lang);
+		$this->assertEquals("https://www.atk14.net/",$item->getUrl());
+
+		$lang = "cs";
+		Atk14Locale::Initialize($lang);
+		$this->assertEquals("https://www.atk14.net/",$item->getUrl());
 	}
 
 	function test_specific_url_for_language(){

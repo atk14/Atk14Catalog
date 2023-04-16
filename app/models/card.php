@@ -76,15 +76,15 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 
 	function getPageTitle(){
 		$out = parent::getPageTitle();
-		if(strlen($out)){ return $out; }
+		if(strlen((string)$out)){ return $out; }
 		return $this->getName();
 	}
 
 	function getPageDescription(){
 		$out = parent::getPageDescription();
-		if(strlen($out)){ return $out; }
+		if(strlen((string)$out)){ return $out; }
 		$out = $this->getTeaser();
-		if(strlen($out)){
+		if(strlen((string)$out)){
 			$out = Markdown($out);
 			$out = String4::ToObject($out)->stripHtml()->toString();
 			return $out;

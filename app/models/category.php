@@ -43,25 +43,33 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 	 * $categories[2]->getSlug(); //stul
 	 * ```
 	 */
-	static function GetInstancesOnPath($path, &$lang = null) {
+	static function GetInstancesOnPath($path, &$lang = null, $start = null, $options = []) {
+		$options += array(
+			"dealias" => true,
+		);
+
+		$dealias = $options["dealias"];
+		unset($options["dealias"]);
+
 		$orig_lang = $lang;
 
 		$path = (string)$path;
-		if(!$path){ return null; }
+		if(!strlen($path)){ return []; }
 
-		$my_path='';
-		$slugs = explode("/",$path);
-		$parent_category_id = null;
-
-		$out = array();
+		if(is_object($start)) {
+			$parent_category_id = $start->getId();
+		} else {
+			$parent_category_id = $start;
+		}
+		$out = [];
 
 		$cpath = '';
-		foreach(explode('/',$path) as $slug){
-			if(!$c = Category::GetInstanceBySlug($slug,$lang,$parent_category_id)){
+		foreach(explode("/",$path) as $slug){
+			if(!$c = static::GetInstanceBySlug($slug,$lang,$parent_category_id,$options)){
 				$lang = $orig_lang; // nenechame nastaveny $lang na nejakou necekanou hodnotu
 				return null;
 			}
-			$c = $c->realMe();
+			$dealias && ($c = $c->realMe());
 			$cpath .= "/$slug";
 			$out[] = $c;
 			$parent_category_id = $c->getId();
