@@ -10,6 +10,8 @@ class Product extends ApplicationModel implements Translatable,Rankable{
 	}
 
 	static function GetInstanceByCatalogId($catalog_id){
+		if(is_null($catalog_id)){ return; }
+		$catalog_id = (string)$catalog_id;
 		($product = Product::FindByCatalogId($catalog_id,array("use_cache" => true))) ||
 		($product = Product::FindFirst(array(
 			"conditions" => "deleted='t' AND catalog_id LIKE :catalog_id||'~%'",
