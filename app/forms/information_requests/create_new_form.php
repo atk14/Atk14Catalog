@@ -16,9 +16,7 @@ class CreateNewForm extends ApplicationForm{
 			"required" => false,
 		)));
 
-		$this->add_field("sign_up_for_newsletter",new BooleanField(array(
-			"label" => _("Sign up for newsletter"),
-			"required" => false,
+		$this->add_sign_up_for_newsletter_field((array(
 			"initial" => true,
 		)));
 
