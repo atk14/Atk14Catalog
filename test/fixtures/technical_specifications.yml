@@ -14,3 +14,8 @@ coffee__acidity:
   technical_specification_key_id: "<?= $technical_specification_keys["acidity"]->getId() ?>"
   content: "Low"
   content_localized_cs: "Nízká"
+
+coffee__producer_code:
+  card_id: "<?= $cards["coffee"]->getId() ?>"
+  technical_specification_key_id: "<?= $technical_specification_keys["producer_code"]->getId() ?>"
+  content: "MARILA"

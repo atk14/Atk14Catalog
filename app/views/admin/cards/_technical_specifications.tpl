@@ -15,6 +15,9 @@
 		{foreach $tech_specs as $ts}
 			<li class="list-group-item" data-id="{$ts->getId()}">
 				<strong>{$ts->getKey()->g("key")}:</strong> {!$ts->getContent()|truncate:50|h}
+				{if !$ts->getKey()->isVisible()}
+					<em class="text-muted">({!"eye-slash"|icon} {t}invisible{/t})</em></em>
+				{/if}
 
 				{dropdown_menu}
 					{a action="technical_specifications/edit" id=$ts return_uri=$return_uri}{icon glyph=edit} {t}Edit value{/t}{/a}

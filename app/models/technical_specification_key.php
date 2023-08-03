@@ -55,6 +55,8 @@ class TechnicalSpecificationKey extends ApplicationModel implements Translatable
 		return $this->g("key");
 	}
 
+	function isVisible(){ return $this->getVisible(); }
+
 	function toString(){
 		return (string)$this->getKey();
 	}

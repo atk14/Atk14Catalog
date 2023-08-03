@@ -22,3 +22,9 @@ weight:
   key: weight
   key_localized_en: Weight
   key_localized_cs: Hmotnost
+
+producer_code:
+  key: producer_code
+  key_localized_en: "Producer code"
+  key_localized_cs: "Kód výrobce"
+  visible: false

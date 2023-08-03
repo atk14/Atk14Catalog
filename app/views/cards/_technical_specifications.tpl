@@ -1,4 +1,4 @@
-{assign technical_specifications $card->getTechnicalSpecifications()}
+{assign technical_specifications $card->getTechnicalSpecifications(["visible" => true])}
 
 {if $technical_specifications}
 	<table class="table table-sm">
