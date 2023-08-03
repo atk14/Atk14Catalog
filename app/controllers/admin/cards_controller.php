@@ -55,7 +55,6 @@ class CardsController extends AdminController{
 			$bind_ar[":search"] = $q;
 		}
 
-		$this->sorting->add("created_at",array("reverse" => true));
 		$this->_initialize_prepared_sorting("created_at");
 		$this->sorting->add("id");
 		$this->sorting->add("name", array("order_by" => Translation::BuildOrderSqlForTranslatableField("cards", "name")));
