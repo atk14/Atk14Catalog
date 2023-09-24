@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-28 12:39+0200\n"
+"POT-Creation-Date: 2023-09-24 11:10+0200\n"
 "PO-Revision-Date: 2022-04-25 17:22+0200\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: \n"
@@ -41,6 +41,10 @@ msgstr "Soubor byl na serveru již smazán, nahrajte jej prosím znovu."
 #: ../vendor/atk14/async-file-field/src/app/fields/async_file_field.php:13
 msgid "The file was not fully uploaded, please upload it again"
 msgstr "Soubor nebyl zcela nahrán, nahrajte jej prosím znovu."
+
+#: ../vendor/atk14/async-file-field/src/app/widgets/async_file_input.php:20
+msgid "Remove file"
+msgstr ""
 
 #: ../vendor/atk14/hcaptcha-field/src/app/fields/hcaptcha_field.php:8
 #: ../vendor/atk14/recaptcha-field/src/app/fields/recaptcha_field.php:11
@@ -80,15 +84,15 @@ msgstr "Prostý text"
 msgid "No mail has been sent"
 msgstr "Žádný e-mail nebyl odeslán"
 
-#: ../vendor/atk14/phone-field/src/phone_field.php:7
+#: ../vendor/atk14/phone-field/src/phone_field.php:52
 msgid "Enter phone number in format %sample_phone_number%"
 msgstr "Zadejte telefonní číslo ve formátu %sample_phone_number%"
 
-#: ../vendor/atk14/phone-field/src/phone_field.php:18
+#: ../vendor/atk14/phone-field/src/phone_field.php:76
 msgid "Enter valid phone number (%sample_phone_number%)"
 msgstr "Zadejte platné telefonní číslo (%sample_phone_number%)"
 
-#: ../vendor/atk14/phone-field/src/phone_field.php:19
+#: ../vendor/atk14/phone-field/src/phone_field.php:77
 msgid "Enter phone number"
 msgstr "Zadejte telefonní číslo"
 
@@ -107,7 +111,7 @@ msgstr "Stáhnout přílohu"
 msgid "Display image"
 msgstr "Zobrazit obrázek"
 
-#: ../vendor/atk14/pupiq-client/src/lib/pupiq.php:115
+#: ../vendor/atk14/pupiq-client/src/lib/pupiq.php:113
 msgid "Unknown error"
 msgstr "Neznámá chyba"
 
@@ -158,15 +162,15 @@ msgstr ""
 "včetně povolených desetinných míst)."
 
 msgid ""
-"Ensure this number has at most %max% digits in integer-part (it has %integers"
-"%)."
+"Ensure this number has at most %max% digits in integer-part (it has "
+"%integers%)."
 msgstr ""
 "Zajistěte, aby toto číslo mělo maximálně %max% číslic před desetinnou čárkou "
 "(teď má %integers%)."
 
 msgid ""
-"Ensure this number has at most %max% decimal places (it has %decimal_places"
-"%)."
+"Ensure this number has at most %max% decimal places (it has "
+"%decimal_places%)."
 msgstr ""
 "Zajistěte, aby toto číslo mělo maximálně %max% desetinných míst (teď má "
 "%decimal_places%)."

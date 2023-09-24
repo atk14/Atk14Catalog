@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-28 12:39+0200\n"
-"PO-Revision-Date: 2023-08-29 13:40+0200\n"
+"POT-Creation-Date: 2023-09-24 11:10+0200\n"
+"PO-Revision-Date: 2022-04-25 17:21+0200\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: Team <team@email.com>\n"
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 msgid ""
 "Are you sure to delete article item\n"
@@ -181,6 +181,10 @@ msgstr "Žádný produkt nebyl nalezen."
 #: ../app/forms/admin/stores/stores_form.php:6
 msgid "Name"
 msgstr "Jméno"
+
+#: ../app/forms/admin/pages/pages_form.php:53
+msgid "Visible?"
+msgstr "Viditelné?"
 
 msgid "Has variants?"
 msgstr "Má varianty?"
@@ -466,6 +470,9 @@ msgstr "Přidat fotografii"
 msgid "Upravit obrázky fotogalerie"
 msgstr "Upravit obrázky fotogalerie"
 
+msgid "Download original image"
+msgstr ""
+
 msgid "bez titulku nebo popisu"
 msgstr "bez titulku nebo popisu"
 
@@ -490,11 +497,17 @@ msgstr "Přidat odkaz do seznamu"
 msgid "There is no link in the list."
 msgstr "V seznamu není žádný odkaz."
 
+msgid "This item has an administrable submenu:"
+msgstr ""
+
 msgid "Edit links"
 msgstr "Editovat odkazy"
 
 msgid "Create new link list"
 msgstr "Vytvořit nový odkaz"
+
+msgid "This is a submenu for:"
+msgstr ""
 
 msgid "Link list"
 msgstr "Seznam odkazů"
@@ -734,7 +747,7 @@ msgstr ""
 "V současné době nikdo nezná skutečné heslo uživatele, protože hesla nejsou "
 "uložena v textové podobě."
 
-#: ../app/controllers/admin/users_controller.php:54
+#: ../app/controllers/admin/users_controller.php:55
 msgid "Create a new user"
 msgstr "Vytvořit nového uživatele"
 
@@ -749,6 +762,9 @@ msgstr "E-mailová adresa"
 msgid "Is admin?"
 msgstr "Je administrátor?"
 
+msgid "deleted user"
+msgstr ""
+
 msgid "inactive user"
 msgstr "neaktivní uživatel"
 
@@ -760,6 +776,9 @@ msgstr "administrátor"
 
 msgid "regular user"
 msgstr "běžný uživatel"
+
+msgid "deleted"
+msgstr ""
 
 msgid "not active"
 msgstr "neaktivní"
@@ -888,11 +907,11 @@ msgstr "Editace objektu typu %s"
 msgid "Ve formuláři nebylo nic změněno"
 msgstr "Nothing has been changed in the form"
 
-#: ../app/controllers/admin/admin.php:428
+#: ../app/controllers/admin/admin.php:429
 msgid "The entry has been deleted"
 msgstr "Záznam byl smazán"
 
-#: ../app/controllers/admin/admin.php:447
+#: ../app/controllers/admin/admin.php:448
 #: ../app/controllers/admin/galleries_controller.php:34
 msgid "Fotogalerie"
 msgstr "Fotogalerie"
@@ -942,7 +961,7 @@ msgid "Editing attachment #%s"
 msgstr "Úprava přílohy #%s"
 
 #: ../app/controllers/admin/attachments_controller.php:38
-#: ../app/controllers/admin/cards_controller.php:173
+#: ../app/controllers/admin/cards_controller.php:180
 #: ../app/controllers/admin/categories_controller.php:29
 #: ../app/controllers/admin/collections_controller.php:27
 #: ../app/controllers/admin/images_controller.php:59
@@ -988,38 +1007,38 @@ msgstr "Nastavení uloženo"
 msgid "List of Products"
 msgstr "Seznam produktů"
 
-#: ../app/controllers/admin/cards_controller.php:67
+#: ../app/controllers/admin/cards_controller.php:74
 msgid "Adding a product"
 msgstr "Přidat produkt"
 
-#: ../app/controllers/admin/cards_controller.php:101
+#: ../app/controllers/admin/cards_controller.php:108
 msgid "The product has been created. Now you can add some extra data to it."
 msgstr "Produkt byl vytvořen. Nyní k němu můžete přidat další údaje."
 
-#: ../app/controllers/admin/cards_controller.php:107
+#: ../app/controllers/admin/cards_controller.php:114
 #, php-format
 msgid "Editing product %s"
 msgstr "Editace produktu %s"
 
-#: ../app/controllers/admin/cards_controller.php:191
+#: ../app/controllers/admin/cards_controller.php:198
 msgid "Variants mode has been activated"
 msgstr "Variantní režim byl aktivován"
 
-#: ../app/controllers/admin/cards_controller.php:209
+#: ../app/controllers/admin/cards_controller.php:216
 msgid "Variants mode has been deactivated"
 msgstr "Variantní režim byl deaktivován"
 
-#: ../app/controllers/admin/cards_controller.php:232
+#: ../app/controllers/admin/cards_controller.php:239
 #: ../app/controllers/admin/technical_specifications_controller.php:12
 #: ../app/controllers/admin/technical_specifications_controller.php:36
 msgid "The product already has this specification"
 msgstr "Tento produkt už má tuto specifikaci"
 
-#: ../app/controllers/admin/cards_controller.php:264
+#: ../app/controllers/admin/cards_controller.php:271
 msgid "Připojení odkazu k produktu"
 msgstr "Připojení odkazu k produktu"
 
-#: ../app/controllers/admin/cards_controller.php:282
+#: ../app/controllers/admin/cards_controller.php:289
 msgid "Odkaz odpojen"
 msgstr "Odkaz odpojen"
 
@@ -1250,7 +1269,7 @@ msgstr "Přidání odkazu do seznamu '%s'"
 msgid "Editing link '%s'"
 msgstr "Editace odkazu '%s'"
 
-#: ../app/controllers/admin/link_list_items_controller.php:48
+#: ../app/controllers/admin/link_list_items_controller.php:52
 msgid "Links"
 msgstr "Odkazy"
 
@@ -1356,7 +1375,7 @@ msgid "The same tag already exists"
 msgstr "Stejný štítek již existuje"
 
 #: ../app/controllers/admin/tags_controller.php:67
-#: ../app/controllers/admin/users_controller.php:73
+#: ../app/controllers/admin/users_controller.php:74
 msgid "Nothing has been changed"
 msgstr "Nic nebylo změněno"
 
@@ -1389,29 +1408,29 @@ msgstr "Ujistěte se, že nemusíte měnit slugy"
 msgid "Users list"
 msgstr "Seznam uživatelů"
 
-#: ../app/controllers/admin/users_controller.php:60
+#: ../app/controllers/admin/users_controller.php:61
 msgid "The user has been created successfully"
 msgstr "Uživatel byl úspěšně vytvořen"
 
-#: ../app/controllers/admin/users_controller.php:66
+#: ../app/controllers/admin/users_controller.php:67
 #, php-format
 msgid "Editing user %s"
 msgstr "Editace uživatele %s"
 
-#: ../app/controllers/admin/users_controller.php:79
+#: ../app/controllers/admin/users_controller.php:80
 msgid "The user entry has been updated"
 msgstr "Záznam o uživateli byl aktualizován"
 
-#: ../app/controllers/admin/users_controller.php:87
+#: ../app/controllers/admin/users_controller.php:88
 #, php-format
 msgid "Setting a new password to the user %s"
 msgstr "Nastavit nové heslo uživateli %s"
 
-#: ../app/controllers/admin/users_controller.php:95
+#: ../app/controllers/admin/users_controller.php:96
 msgid "Nothing needs to be updated"
 msgstr "Není třeba nic aktualizovat"
 
-#: ../app/controllers/admin/users_controller.php:106
+#: ../app/controllers/admin/users_controller.php:107
 msgid ""
 "The new password has been set to the user <em>%user%</em>.<br>Would be nice "
 "to let him know at email address <a href=\"mailto:%email%\">%email%</a>."
@@ -1419,15 +1438,15 @@ msgstr ""
 "Nové heslo bylo nastaveno uživateli <em>%user%</em>.<br>Bude hezké, když mu "
 "o tom napíšete na e-mail <a href=\"mailto:%email%\">%email%</a>."
 
-#: ../app/controllers/admin/users_controller.php:112
+#: ../app/controllers/admin/users_controller.php:113
 msgid "The password for the user <em>%user%</em> has been deleted."
 msgstr "Heslo pro uživatele <em>%user%</em> bylo odstraněno."
 
-#: ../app/controllers/admin/users_controller.php:129
+#: ../app/controllers/admin/users_controller.php:130
 msgid "The user entry has been deleted"
 msgstr "Uživatel byl smazán"
 
-#: ../app/controllers/admin/users_controller.php:140
+#: ../app/controllers/admin/users_controller.php:141
 #, php-format
 msgid "Now you are logged as <em>%s</em>"
 msgstr "Nyní jste přihlášen jako <em>%s</em>"
@@ -1653,9 +1672,25 @@ msgstr "Typ obsahu"
 msgid "Text"
 msgstr "Text"
 
-#: ../app/forms/admin/cards/index_form.php:5
+#: ../app/forms/admin/cards/index_form.php:6
 msgid "Search"
 msgstr "Hledat"
+
+#: ../app/forms/admin/cards/index_form.php:10
+msgid "Visible"
+msgstr ""
+
+#: ../app/forms/admin/cards/index_form.php:12
+msgid "visibility"
+msgstr ""
+
+#: ../app/forms/admin/cards/index_form.php:13
+msgid "only visible products"
+msgstr ""
+
+#: ../app/forms/admin/cards/index_form.php:14
+msgid "only invisible products"
+msgstr ""
 
 #: ../app/forms/admin/categories/categories_form.php:17
 msgid "Long name"
@@ -1770,6 +1805,10 @@ msgstr "Posuvník tmavší a větší"
 msgid "Slider with thumbnails"
 msgstr "Posuvník s náhledy"
 
+#: ../app/forms/admin/galleries/galleries_form.php:13
+msgid "Logo slider"
+msgstr ""
+
 #: ../app/forms/admin/gallery_items/create_new_form.php:7
 msgid "Nahrát fotografii"
 msgstr "Nahrát fotografii"
@@ -1863,10 +1902,6 @@ msgstr "Rodičovské stránka"
 msgid "Show in sitemap?"
 msgstr "Zobrazovat v mapě stránek?"
 
-#: ../app/forms/admin/pages/pages_form.php:53
-msgid "Visible?"
-msgstr "Viditelné?"
-
 #: ../app/forms/admin/pages/pages_form.php:69
 msgid "The page cannot be placed under itself."
 msgstr "Stránku nelze umístit samu pod sebe."
@@ -1886,6 +1921,14 @@ msgstr "Alternativní vzhled"
 #: ../app/forms/admin/pictures/pictures_form.php:13
 msgid "Card"
 msgstr "Karta"
+
+#: ../app/forms/admin/pictures/pictures_form.php:17
+msgid "Alt"
+msgstr ""
+
+#: ../app/forms/admin/pictures/pictures_form.php:18
+msgid "Alternate text for the image, if the image cannot be displayed."
+msgstr ""
 
 #: ../app/forms/admin/products/products_form.php:9
 msgid "Variant name"
@@ -1941,7 +1984,7 @@ msgstr "Pokud štítek není v daném jazyce dobrý, zadejte vhodnější název
 msgid "Key"
 msgstr "Klíč"
 
-#: ../app/forms/admin/technical_specification_keys/technical_specification_keys_form.php:13
+#: ../app/forms/admin/technical_specification_keys/technical_specification_keys_form.php:15
 msgid "Lokalizovaný název"
 msgstr "Lokalizovaný název"
 
