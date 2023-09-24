@@ -320,7 +320,12 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 		return join('/',$slugs);
 	}
 
-	function getNamePath($lang = null, $options=array()){
+	function getNamePath($lang = null, $options = array()){
+		if(is_array($lang)){
+			$options = $lang;
+			$lang = null;
+		}
+
 		$options += array(
 			"glue" => "/",
 		);
