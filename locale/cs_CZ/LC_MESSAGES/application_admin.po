@@ -4324,7 +4324,7 @@ msgstr "Hlavní tvůrce"
 #~ msgstr "Zpráva zaslaná z kontaktní stránky"
 
 #~ msgid "Commands in %s"
-#~ msgstr "Přikazy v %s"
+#~ msgstr "Příkazy v %s"
 
 #~ msgid "submit using method %s"
 #~ msgstr "Odeslat metodou %s"
