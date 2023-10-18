@@ -320,7 +320,12 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 		return join('/',$slugs);
 	}
 
-	function getNamePath($lang = null, $options=array()){
+	function getNamePath($lang = null, $options = array()){
+		if(is_array($lang)){
+			$options = $lang;
+			$lang = null;
+		}
+
 		$options += array(
 			"glue" => "/",
 		);
@@ -346,8 +351,14 @@ class Category extends ApplicationModel implements Translatable, Rankable, iSlug
 		return $this->getCardsLister()->getRecords(["preread_data" => false]);
 	}
 
-	function getVisibleCards(){
+	function getVisibleCards($options = []){
+		$options += [
+			"limit" => null,
+		];
 		$cards = array_filter($this->getCards(),function($card){ return $card->isVisible() && !$card->isDeleted(); });
+		if($options["limit"]){
+			$cards = array_slice($cards,0,$options["limit"]);
+		}
 		return array_values($cards);
 	}
 	

@@ -562,8 +562,20 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		return $alt_cards;
 	}
 
-	function getTechnicalSpecifications(){
-		return TechnicalSpecification::FindAll("card_id",$this);
+	function getTechnicalSpecifications($options = []){
+		$options += [
+			"visible" => null,
+		];
+		$out = TechnicalSpecification::FindAll("card_id",$this);
+		if(!is_null($options["visible"])){
+			$_out = [];
+			foreach($out as $item){
+				if($item->getTechnicalSpecificationKey()->isVisible()!==(bool)$options["visible"]){ continue; }
+				$_out[] = $item;
+			}
+			$out = $_out;
+		}
+		return $out;
 	}
 
 	/**

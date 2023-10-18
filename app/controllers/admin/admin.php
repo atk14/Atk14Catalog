@@ -66,6 +66,12 @@ class AdminController extends ApplicationBaseController{
 		$this->breadcrumbs[] = array($card->getName(),$this->_link_to(array("action" => "cards/edit", "id" => $card)));
 	}
 
+	function _add_product_to_breadcrumbs($product){
+		if(!$product){ return; }
+		$title = $product->getLabel() ? $product->getLabel() : "$product";
+		$this->breadcrumbs[] = array($title,$this->_link_to(array("action" => "products/edit", "id" => $product)));
+	}
+
 	function _add_category_to_breadcrumbs($category){
 		if(!$category){ return; }
 
@@ -505,7 +511,7 @@ class AdminController extends ApplicationBaseController{
 		foreach($keys as $key){
 			switch($key){
 				case "created_at":
-					$this->sorting->add("created_at",array("reverse" => true));
+					$this->sorting->add("created_at","created_at DESC, id DESC","created_at ASC, id ASC");
 					break;
 				case "login":
 				case "name":
@@ -516,7 +522,7 @@ class AdminController extends ApplicationBaseController{
 					$this->sorting->add("updated_at","COALESCE(updated_at,'2000-01-01') DESC, id DESC","COALESCE(updated_at,'2000-01-01') ASC, id ASC");
 					break;
 				case "published_at":
-					$this->sorting->add("published_at",array("reverse" => true));
+					$this->sorting->add("published_at","published_at DESC, id DESC","published_at ASC, id ASC");
 					break;
 				case "is_admin":
 					$this->sorting->add("is_admin","is_admin DESC, UPPER(login)","is_admin ASC, UPPER(login)");

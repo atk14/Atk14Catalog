@@ -9,6 +9,8 @@ class TechnicalSpecificationKeysForm extends AdminForm {
 
 		$this->add_code_field();
 
+		$this->add_visible_field();
+
 		$this->add_translatable_field("key_localized", new CharField(array(
 			"label" => _("Lokalizovaný název"),
 			"required" => false,

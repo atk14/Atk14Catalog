@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-28 12:39+0200\n"
-"PO-Revision-Date: 2022-04-25 17:20+0200\n"
+"POT-Creation-Date: 2023-09-24 11:10+0200\n"
+"PO-Revision-Date: 2023-09-23 12:08+0200\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: Team <team@email.com>\n"
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0.1\n"
 
 msgid "Nahoru"
 msgstr "Nahoru"
@@ -92,6 +92,9 @@ msgstr "starší článek"
 
 msgid "At the moment there are no news."
 msgstr "V této chvíli nejsou žádné novinky."
+
+msgid "articles total"
+msgstr ""
 
 msgid "Accessories"
 msgstr "Příslušenství"
@@ -334,9 +337,6 @@ msgstr "ATK14 Katalog na GitHubu"
 msgid "Table of contents"
 msgstr "Obsah"
 
-msgid "This is not a visible page! It's not available to the public audience."
-msgstr "Toto není viditelná stránka! Není dostupná veřejnosti."
-
 msgid "Subpages"
 msgstr "Podstránky"
 
@@ -460,16 +460,16 @@ msgstr ""
 "Tato aplikace běží na <a href=\"http://www.atk14.net/\">frameworku ATK14</a> "
 "až na věky"
 
+msgid "Administration"
+msgstr "Administrace"
+
 msgid "Profile"
 msgstr "Profil"
 
-#: ../app/controllers/logins_controller.php:33
+#: ../app/controllers/logins_controller.php:35
 #: ../app/forms/logins/destroy_form.php:4
 msgid "Sign out"
 msgstr "Odhlásit se"
-
-msgid "Administration"
-msgstr "Administrace"
 
 #: ../app/forms/users/create_new_form.php:22
 msgid "Register"
@@ -478,29 +478,14 @@ msgstr "Registrovat"
 msgid "Menu"
 msgstr "Nabídka"
 
-msgid "Photo gallery"
-msgstr "Fotogalerie"
-
 msgid "Previous"
 msgstr "Předchozí"
 
 msgid "Next"
 msgstr "Následující"
 
-msgid "Zavřít"
-msgstr "Zavřít"
-
-msgid "Zobrazování přes celou obrazovka"
-msgstr "Zobrazování přes celou obrazovka"
-
-msgid "Přiblížení"
-msgstr "Přiblížení"
-
-msgid "Předchozí (šipka doleva)"
-msgstr "Předchozí (šipka doleva)"
-
-msgid "Další (šipka doprava)"
-msgstr "Další (šipka doprava)"
+msgid "Photo gallery"
+msgstr "Fotogalerie"
 
 msgid "Here you can find the list of all commands in <em>%1</em>."
 msgstr "Zde neleznete seznam příkazů v <em>%1</em>."
@@ -581,11 +566,11 @@ msgstr "Jste administrátor?"
 msgid "Yes, you are"
 msgstr "Ano, jste"
 
-#: ../app/controllers/users_controller.php:48
+#: ../app/controllers/users_controller.php:52
 msgid "Change your account data"
 msgstr "Změnit vaše údaje"
 
-#: ../app/controllers/users_controller.php:76
+#: ../app/controllers/users_controller.php:80
 msgid "Change your password"
 msgstr "Změna vašeho hesla"
 
@@ -620,15 +605,15 @@ msgstr "Chyba 1"
 msgid "Error 2"
 msgstr "Chyba 2"
 
-#: ../app/controllers/application_base.php:28
+#: ../app/controllers/application_base.php:35
 msgid "Page not found"
 msgstr "Stránka nebyla nalezena"
 
-#: ../app/controllers/application_base.php:42
+#: ../app/controllers/application_base.php:49
 msgid "Forbidden"
 msgstr "Zakázáno"
 
-#: ../app/controllers/application_base.php:138
+#: ../app/controllers/application_base.php:149
 msgid "Home"
 msgstr "Domů"
 
@@ -663,7 +648,7 @@ msgstr "Profil uživatele"
 #: ../app/controllers/application_rest_api.php:76
 #, php-format
 msgid "Commands in %s"
-msgstr "Přikazy v %s"
+msgstr "Příkazy v %s"
 
 #: ../app/controllers/application_rest_api.php:172
 #, php-format
@@ -683,7 +668,7 @@ msgid "Sorry, An internal error happened"
 msgstr "Omlouváme se, nastala vnitřní chyba"
 
 #: ../app/controllers/articles_controller.php:11
-#: ../app/controllers/articles_controller.php:58
+#: ../app/controllers/articles_controller.php:60
 msgid "Articles"
 msgstr "Články"
 
@@ -696,7 +681,7 @@ msgstr "Články se štítkem <em>%s</em>"
 msgid "List of Brands"
 msgstr "Seznam značek"
 
-#: ../app/controllers/brands_controller.php:18
+#: ../app/controllers/brands_controller.php:20
 msgid "Brands"
 msgstr "Značky"
 
@@ -721,7 +706,7 @@ msgstr "Kontaktní zpráva"
 msgid "Contact message sent"
 msgstr "Kontaktní zpráva byla odeslána"
 
-#: ../app/controllers/logins_controller.php:16
+#: ../app/controllers/logins_controller.php:18
 #, php-format
 msgid ""
 "Wrong login and password combination. <a href=\"%s\">Have you forgotten your "
@@ -730,20 +715,20 @@ msgstr ""
 "Nesprávna kombinace loginu a hesla. <a href=\"%s\">Zapomněl jste své heslo?</"
 "a>"
 
-#: ../app/controllers/logins_controller.php:18
+#: ../app/controllers/logins_controller.php:20
 msgid "Wrong login and password combination"
 msgstr "Nesprávna kombinace loginu a hesla"
 
-#: ../app/controllers/logins_controller.php:25
+#: ../app/controllers/logins_controller.php:27
 #, php-format
 msgid "You have been successfully logged in as <em>%s</em>"
 msgstr "Byl jste úspěšně přihlášen jako <em>%s</em>"
 
-#: ../app/controllers/logins_controller.php:37
+#: ../app/controllers/logins_controller.php:39
 msgid "You have been successfully logged out"
 msgstr "Byl jste úspěšně odhlášen"
 
-#: ../app/controllers/logins_controller.php:37
+#: ../app/controllers/logins_controller.php:39
 #, php-format
 msgid "You've stayed logged in as <em>%s</em>"
 msgstr "Zůstal jste přihlášen jako <em>%s</em>"
@@ -772,7 +757,7 @@ msgstr ""
 "nastavena."
 
 #: ../app/controllers/password_recoveries_controller.php:65
-#: ../app/controllers/users_controller.php:90
+#: ../app/controllers/users_controller.php:94
 msgid "Your password has been updated successfully"
 msgstr "Vaše heslo bylo úspěšně změněno"
 
@@ -781,7 +766,7 @@ msgid "Password recovery"
 msgstr "Obnovení hesla"
 
 #: ../app/controllers/stores_controller.php:6
-#: ../app/controllers/stores_controller.php:11
+#: ../app/controllers/stores_controller.php:12
 msgid "Stores"
 msgstr "Prodejny"
 
@@ -789,7 +774,7 @@ msgstr "Prodejny"
 msgid "To register as a new user, sign out first"
 msgstr "Abyste se mohl zaregistrovat, napřed se odhlaste"
 
-#: ../app/controllers/users_controller.php:35
+#: ../app/controllers/users_controller.php:37
 #, php-format
 msgid ""
 "You have been successfully registered and now you are logged in as <em>%s</"
@@ -797,19 +782,19 @@ msgid ""
 msgstr ""
 "Byl(a) jste úspěšně zaregistrován(a) a teď jste přihlášen(a) jako <em>%s</em>"
 
-#: ../app/controllers/users_controller.php:44
+#: ../app/controllers/users_controller.php:46
 msgid "Thank you for your registration!"
 msgstr "Děkujeme za vaši registraci!"
 
-#: ../app/controllers/users_controller.php:54
+#: ../app/controllers/users_controller.php:58
 msgid "Nothing has been changed"
 msgstr "Nic nebylo změněno"
 
-#: ../app/controllers/users_controller.php:61
+#: ../app/controllers/users_controller.php:65
 msgid "This email address is used by another user."
 msgstr "Stejná e-mailová adresa je již použita pro jiného uživatele."
 
-#: ../app/controllers/users_controller.php:70
+#: ../app/controllers/users_controller.php:74
 #, php-format
 msgid ""
 "Your account data has been updated. Next time you should sign-in with login "
@@ -818,11 +803,11 @@ msgstr ""
 "Údaje vašeho účtu byly aktualizovány. Příště byste se měl/a přihlásit pomocí "
 "přihlašovacího jména <em>%s</em>."
 
-#: ../app/controllers/users_controller.php:70
+#: ../app/controllers/users_controller.php:74
 msgid "Your account data has been updated"
 msgstr "Údaje vašeho účtu byly změněny"
 
-#: ../app/controllers/users_controller.php:80
+#: ../app/controllers/users_controller.php:84
 msgid "This is not your current password"
 msgstr "Toto neni vaše aktuální heslo"
 
@@ -834,11 +819,11 @@ msgstr "Soubor již byl na serveru smazán, nahrajte jej prosím znovu"
 msgid "The file was not fully uploaded, please upload it again"
 msgstr "Soubor nebyl plně nahrán, nahrajte jej prosím znovu"
 
-#: ../app/fields/boolean_with_select_field.php:7
+#: ../app/fields/boolean_with_select_field.php:11
 msgid "Ano"
 msgstr "Ano"
 
-#: ../app/fields/boolean_with_select_field.php:8
+#: ../app/fields/boolean_with_select_field.php:12
 msgid "Ne"
 msgstr "Ne"
 
@@ -934,15 +919,15 @@ msgstr "stránka"
 msgid "There is no such page"
 msgstr "Takový stránka neexistuje"
 
-#: ../app/fields/phone_field.php:7
+#: ../app/fields/phone_field.php:52
 msgid "Enter phone number in format %sample_phone_number%"
 msgstr "Zadejte telefonní číslo ve formátu %sample_phone_number%"
 
-#: ../app/fields/phone_field.php:18
+#: ../app/fields/phone_field.php:76
 msgid "Enter valid phone number (%sample_phone_number%)"
 msgstr "Zadejte platné telefonní číslo (%sample_phone_number%)"
 
-#: ../app/fields/phone_field.php:19
+#: ../app/fields/phone_field.php:77
 msgid "Enter phone number"
 msgstr "Zadejte telefonní číslo"
 
@@ -1007,23 +992,22 @@ msgstr "Uložit"
 msgid "Search query"
 msgstr "Vyhledávací dotaz"
 
-#: ../app/forms/contact_messages/create_new_form.php:18
-#: ../app/forms/information_requests/create_new_form.php:20
+#: ../app/forms/application_form.php:99
 msgid "Sign up for newsletter"
 msgstr "Přihlásit se k odběru newsletteru"
 
-#: ../app/forms/contact_messages/create_new_form.php:24
-#: ../app/forms/information_requests/create_new_form.php:26
+#: ../app/forms/contact_messages/create_new_form.php:20
+#: ../app/forms/information_requests/create_new_form.php:24
 msgid "Text"
 msgstr "Text"
 
+#: ../app/forms/contact_messages/create_new_form.php:26
 #: ../app/forms/contact_messages/create_new_form.php:30
-#: ../app/forms/contact_messages/create_new_form.php:34
 msgid "Spam protection"
 msgstr "Ochrana proti spamu"
 
-#: ../app/forms/contact_messages/create_new_form.php:40
-#: ../app/forms/information_requests/create_new_form.php:31
+#: ../app/forms/contact_messages/create_new_form.php:36
+#: ../app/forms/information_requests/create_new_form.php:29
 msgid "Send message"
 msgstr "Poslat zprávu"
 
@@ -1086,6 +1070,10 @@ msgstr "Heslo (opakování)"
 msgid "Password doesn't match"
 msgstr "Heslo se neshoduje"
 
+#: ../app/helpers/block.drink_shortcode__person.php:17
+msgid "More"
+msgstr ""
+
 #: ../app/helpers/modifier.display_bool.php:13
 msgid "Yes"
 msgstr "Ano"
@@ -1106,13 +1094,21 @@ msgstr "Galerie"
 msgid "Obrázek"
 msgstr "Obrázek"
 
-#: ../app/models/user.php:82
+#: ../app/models/user.php:113
+msgid "deleted user"
+msgstr ""
+
+#: ../app/models/user.php:115
 msgid "inactive user"
 msgstr "neaktivní uživatel"
 
-#: ../app/models/user.php:85
+#: ../app/models/user.php:118
 msgid "administrator"
 msgstr "administrátor"
+
+#: ../app/widgets/async_file_input.php:20
+msgid "Remove file"
+msgstr ""
 
 #: ../app/widgets/async_pupiq_attachment_input.php:41
 #: ../app/widgets/pupiq_attachment_input.php:41
@@ -1332,8 +1328,8 @@ msgid ""
 "This is a virtual category, which is actually pointing to <a href=\"%1\">/%2/"
 "</a>"
 msgstr ""
-"Jedná se o virtuální kategorii, která ve skutečnosti ukazuje na <a href="
-"\"%1\">/% 2/</a>"
+"Jedná se o virtuální kategorii, která ve skutečnosti ukazuje na <a "
+"href=\"%1\">/% 2/</a>"
 
 msgid "filter"
 msgstr "filtr"
@@ -2058,12 +2054,12 @@ msgstr "Zpět na dodací údaje"
 
 msgid ""
 "Kliknutím na tlačítko Dokončit objednávku souhlasíte<br>a&nbsp;potvrzujete, "
-"že&nbsp;jste se seznámil s&nbsp;<a href=\"%1\" target=\"_blank"
-"\">obchodními&nbsp;podmínkami.</a>"
+"že&nbsp;jste se seznámil s&nbsp;<a href=\"%1\" "
+"target=\"_blank\">obchodními&nbsp;podmínkami.</a>"
 msgstr ""
 "Kliknutím na tlačítko Dokončit objednávku souhlasíte<br>a&nbsp;potvrzujete, "
-"že&nbsp;jste se seznámil s&nbsp;<a href=\"%1\" target=\"_blank"
-"\">obchodními&nbsp;podmínkami.</a>"
+"že&nbsp;jste se seznámil s&nbsp;<a href=\"%1\" "
+"target=\"_blank\">obchodními&nbsp;podmínkami.</a>"
 
 msgid "Už mám účet"
 msgstr "Už mám účet"
@@ -2991,6 +2987,25 @@ msgid "Request URL:"
 msgstr "Adresa URL požadavku:"
 
 #~ msgid ""
+#~ "This is not a visible page! It's not available to the public audience."
+#~ msgstr "Toto není viditelná stránka! Není dostupná veřejnosti."
+
+#~ msgid "Zavřít"
+#~ msgstr "Zavřít"
+
+#~ msgid "Zobrazování přes celou obrazovka"
+#~ msgstr "Zobrazování přes celou obrazovka"
+
+#~ msgid "Přiblížení"
+#~ msgstr "Přiblížení"
+
+#~ msgid "Předchozí (šipka doleva)"
+#~ msgstr "Předchozí (šipka doleva)"
+
+#~ msgid "Další (šipka doprava)"
+#~ msgstr "Další (šipka doprava)"
+
+#~ msgid ""
 #~ "Only letters, numbers, dots and dashes are allowed. Up to 50 characters."
 #~ msgstr ""
 #~ "Zadávejte pouze písmena, číslice, tečky a pomlčky. Max. délka je omezena "
@@ -3525,13 +3540,13 @@ msgstr "Adresa URL požadavku:"
 
 #~ msgid "Ensure this image is at most %max% pixels wide (it is %width%)."
 #~ msgstr ""
-#~ "Ujistěte se, že šířka obrázku nepřekročí %max% bodů (teď je šíroký %width"
-#~ "%)."
+#~ "Ujistěte se, že šířka obrázku nepřekročí %max% bodů (teď je šíroký "
+#~ "%width%)."
 
 #~ msgid "Ensure this image is at most %max% pixels high (it is %height%)."
 #~ msgstr ""
-#~ "Ujistěte se, že výška obrázku nepřekročí %max% bodů (teď je vysoký %height"
-#~ "%)."
+#~ "Ujistěte se, že výška obrázku nepřekročí %max% bodů (teď je vysoký "
+#~ "%height%)."
 
 #~ msgid "Ensure this image is at least %min% pixels wide (it is %width%)."
 #~ msgstr "Obrázek musí mít alespoň %min% bodů na šířku (nyní má %width%). "

@@ -67,14 +67,24 @@ class TcCategory extends TcBase {
 
 		$cards = $food_drinks->getCards();
 		$this->assertEquals(3,sizeof($cards));
-		$this->assertEquals($coffee->getId(),$cards[0]->getId());
-		$this->assertEquals($tea->getId(),$cards[1]->getId());
-		$this->assertEquals($apple_cider->getId(),$cards[2]->getId());
+		$this->assertequals($coffee->getid(),$cards[0]->getid());
+		$this->assertequals($tea->getid(),$cards[1]->getid());
+		$this->assertequals($apple_cider->getid(),$cards[2]->getid());
 
 		// -- getVisibleCards()
 
 		$cards = $food_drinks->getVisibleCards();
 		$this->assertEquals(3,sizeof($cards));
+
+		$this->assertequals($coffee->getid(),$cards[0]->getid());
+		$this->assertequals($tea->getid(),$cards[1]->getid());
+		$this->assertequals($apple_cider->getid(),$cards[2]->getid());
+
+		$cards = $food_drinks->getVisibleCards(["limit" => 2]);
+		$this->assertEquals(2,sizeof($cards));
+
+		$this->assertequals($coffee->getid(),$cards[0]->getid());
+		$this->assertequals($tea->getid(),$cards[1]->getid());
 
 		$coffee->s("visible",false);
 		$apple_cider->s("deleted",true);

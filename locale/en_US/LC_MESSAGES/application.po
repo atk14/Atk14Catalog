@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-28 12:39+0200\n"
+"POT-Creation-Date: 2023-09-24 11:10+0200\n"
 "PO-Revision-Date: 2022-04-25 16:28+0200\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: Team <team@email.com>\n"
@@ -91,6 +91,9 @@ msgstr "older article"
 
 msgid "At the moment there are no news."
 msgstr "At the moment there are no news."
+
+msgid "articles total"
+msgstr ""
 
 msgid "Accessories"
 msgstr "Accessories"
@@ -336,9 +339,6 @@ msgstr "ATK14 Catalog on GitHub"
 msgid "Table of contents"
 msgstr "Table of contents"
 
-msgid "This is not a visible page! It's not available to the public audience."
-msgstr "This is not a visible page! It's not available to the public audience."
-
 msgid "Subpages"
 msgstr "Subpages"
 
@@ -462,16 +462,16 @@ msgstr ""
 "This site runs on <a href=\"http://www.atk14.net/\">ATK14 Framework</a>, for "
 "now and ever after"
 
+msgid "Administration"
+msgstr "Administration"
+
 msgid "Profile"
 msgstr "Profile"
 
-#: ../app/controllers/logins_controller.php:33
+#: ../app/controllers/logins_controller.php:35
 #: ../app/forms/logins/destroy_form.php:4
 msgid "Sign out"
 msgstr "Sign out"
-
-msgid "Administration"
-msgstr "Administration"
 
 #: ../app/forms/users/create_new_form.php:22
 msgid "Register"
@@ -480,29 +480,14 @@ msgstr "Register"
 msgid "Menu"
 msgstr "Menu"
 
-msgid "Photo gallery"
-msgstr "Photo gallery"
-
 msgid "Previous"
 msgstr "Previous"
 
 msgid "Next"
 msgstr "Next"
 
-msgid "Zavřít"
-msgstr "Close"
-
-msgid "Zobrazování přes celou obrazovka"
-msgstr "Full screen display"
-
-msgid "Přiblížení"
-msgstr "Zoom in"
-
-msgid "Předchozí (šipka doleva)"
-msgstr "Previous (left arrow)"
-
-msgid "Další (šipka doprava)"
-msgstr "Next (right arrow)"
+msgid "Photo gallery"
+msgstr "Photo gallery"
 
 msgid "Here you can find the list of all commands in <em>%1</em>."
 msgstr "Here you can find the list of all commands in <em>%1</em>."
@@ -583,11 +568,11 @@ msgstr "Are you admin?"
 msgid "Yes, you are"
 msgstr "Yes, you are"
 
-#: ../app/controllers/users_controller.php:48
+#: ../app/controllers/users_controller.php:52
 msgid "Change your account data"
 msgstr "Change your account data"
 
-#: ../app/controllers/users_controller.php:76
+#: ../app/controllers/users_controller.php:80
 msgid "Change your password"
 msgstr "Change your password"
 
@@ -622,15 +607,15 @@ msgstr "Error 1"
 msgid "Error 2"
 msgstr "Error 2"
 
-#: ../app/controllers/application_base.php:28
+#: ../app/controllers/application_base.php:35
 msgid "Page not found"
 msgstr "Page not found"
 
-#: ../app/controllers/application_base.php:42
+#: ../app/controllers/application_base.php:49
 msgid "Forbidden"
 msgstr "Forbidden"
 
-#: ../app/controllers/application_base.php:138
+#: ../app/controllers/application_base.php:149
 msgid "Home"
 msgstr "Home"
 
@@ -685,7 +670,7 @@ msgid "Sorry, An internal error happened"
 msgstr "Sorry, An internal error happened"
 
 #: ../app/controllers/articles_controller.php:11
-#: ../app/controllers/articles_controller.php:58
+#: ../app/controllers/articles_controller.php:60
 msgid "Articles"
 msgstr "Articles"
 
@@ -698,7 +683,7 @@ msgstr "Articles tagged with <em>%s</em>"
 msgid "List of Brands"
 msgstr "List of Brands"
 
-#: ../app/controllers/brands_controller.php:18
+#: ../app/controllers/brands_controller.php:20
 msgid "Brands"
 msgstr "Brands"
 
@@ -723,7 +708,7 @@ msgstr "Contact message"
 msgid "Contact message sent"
 msgstr "Contact message sent"
 
-#: ../app/controllers/logins_controller.php:16
+#: ../app/controllers/logins_controller.php:18
 #, php-format
 msgid ""
 "Wrong login and password combination. <a href=\"%s\">Have you forgotten your "
@@ -732,20 +717,20 @@ msgstr ""
 "Wrong login and password combination. <a href=\"%s\">Have you forgotten your "
 "password?</a>"
 
-#: ../app/controllers/logins_controller.php:18
+#: ../app/controllers/logins_controller.php:20
 msgid "Wrong login and password combination"
 msgstr "Wrong login and password combination"
 
-#: ../app/controllers/logins_controller.php:25
+#: ../app/controllers/logins_controller.php:27
 #, php-format
 msgid "You have been successfully logged in as <em>%s</em>"
 msgstr "You have been successfully logged in as <em>%s</em>"
 
-#: ../app/controllers/logins_controller.php:37
+#: ../app/controllers/logins_controller.php:39
 msgid "You have been successfully logged out"
 msgstr "You have been successfully logged out"
 
-#: ../app/controllers/logins_controller.php:37
+#: ../app/controllers/logins_controller.php:39
 #, php-format
 msgid "You've stayed logged in as <em>%s</em>"
 msgstr "You've stayed logged in as <em>%s</em>"
@@ -775,7 +760,7 @@ msgstr ""
 "set."
 
 #: ../app/controllers/password_recoveries_controller.php:65
-#: ../app/controllers/users_controller.php:90
+#: ../app/controllers/users_controller.php:94
 msgid "Your password has been updated successfully"
 msgstr "Your password has been updated successfully"
 
@@ -784,7 +769,7 @@ msgid "Password recovery"
 msgstr "Password recovery"
 
 #: ../app/controllers/stores_controller.php:6
-#: ../app/controllers/stores_controller.php:11
+#: ../app/controllers/stores_controller.php:12
 msgid "Stores"
 msgstr "Stores"
 
@@ -792,7 +777,7 @@ msgstr "Stores"
 msgid "To register as a new user, sign out first"
 msgstr "To register as a new user, sign out first"
 
-#: ../app/controllers/users_controller.php:35
+#: ../app/controllers/users_controller.php:37
 #, php-format
 msgid ""
 "You have been successfully registered and now you are logged in as <em>%s</"
@@ -801,19 +786,19 @@ msgstr ""
 "You have been successfully registered and now you are logged in as <em>%s</"
 "em>"
 
-#: ../app/controllers/users_controller.php:44
+#: ../app/controllers/users_controller.php:46
 msgid "Thank you for your registration!"
 msgstr "Thank you for your registration!"
 
-#: ../app/controllers/users_controller.php:54
+#: ../app/controllers/users_controller.php:58
 msgid "Nothing has been changed"
 msgstr "Nothing has been changed"
 
-#: ../app/controllers/users_controller.php:61
+#: ../app/controllers/users_controller.php:65
 msgid "This email address is used by another user."
 msgstr "This email address is used by another user."
 
-#: ../app/controllers/users_controller.php:70
+#: ../app/controllers/users_controller.php:74
 #, php-format
 msgid ""
 "Your account data has been updated. Next time you should sign-in with login "
@@ -822,11 +807,11 @@ msgstr ""
 "Your account data has been updated. Next time you should sign-in with login "
 "name <em>%s</em>."
 
-#: ../app/controllers/users_controller.php:70
+#: ../app/controllers/users_controller.php:74
 msgid "Your account data has been updated"
 msgstr "Your account data has been updated"
 
-#: ../app/controllers/users_controller.php:80
+#: ../app/controllers/users_controller.php:84
 msgid "This is not your current password"
 msgstr "This is not your current password"
 
@@ -839,11 +824,11 @@ msgstr ""
 msgid "The file was not fully uploaded, please upload it again"
 msgstr "The file was not fully uploaded, please upload it again"
 
-#: ../app/fields/boolean_with_select_field.php:7
+#: ../app/fields/boolean_with_select_field.php:11
 msgid "Ano"
 msgstr "Yes"
 
-#: ../app/fields/boolean_with_select_field.php:8
+#: ../app/fields/boolean_with_select_field.php:12
 msgid "Ne"
 msgstr "No"
 
@@ -939,15 +924,15 @@ msgstr "page"
 msgid "There is no such page"
 msgstr "There is no such page"
 
-#: ../app/fields/phone_field.php:7
+#: ../app/fields/phone_field.php:52
 msgid "Enter phone number in format %sample_phone_number%"
 msgstr "Enter phone number in format %sample_phone_number%"
 
-#: ../app/fields/phone_field.php:18
+#: ../app/fields/phone_field.php:76
 msgid "Enter valid phone number (%sample_phone_number%)"
 msgstr "Enter valid phone number (%sample_phone_number%)"
 
-#: ../app/fields/phone_field.php:19
+#: ../app/fields/phone_field.php:77
 msgid "Enter phone number"
 msgstr "Enter phone number"
 
@@ -1011,23 +996,22 @@ msgstr "Save"
 msgid "Search query"
 msgstr "Search query"
 
-#: ../app/forms/contact_messages/create_new_form.php:18
-#: ../app/forms/information_requests/create_new_form.php:20
+#: ../app/forms/application_form.php:99
 msgid "Sign up for newsletter"
 msgstr "Sign up for newsletter"
 
-#: ../app/forms/contact_messages/create_new_form.php:24
-#: ../app/forms/information_requests/create_new_form.php:26
+#: ../app/forms/contact_messages/create_new_form.php:20
+#: ../app/forms/information_requests/create_new_form.php:24
 msgid "Text"
 msgstr "Text"
 
+#: ../app/forms/contact_messages/create_new_form.php:26
 #: ../app/forms/contact_messages/create_new_form.php:30
-#: ../app/forms/contact_messages/create_new_form.php:34
 msgid "Spam protection"
 msgstr "Spam protection"
 
-#: ../app/forms/contact_messages/create_new_form.php:40
-#: ../app/forms/information_requests/create_new_form.php:31
+#: ../app/forms/contact_messages/create_new_form.php:36
+#: ../app/forms/information_requests/create_new_form.php:29
 msgid "Send message"
 msgstr "Send message"
 
@@ -1090,6 +1074,10 @@ msgstr "Password (repeat)"
 msgid "Password doesn't match"
 msgstr "Password doesn't match"
 
+#: ../app/helpers/block.drink_shortcode__person.php:17
+msgid "More"
+msgstr ""
+
 #: ../app/helpers/modifier.display_bool.php:13
 msgid "Yes"
 msgstr "Yes"
@@ -1110,13 +1098,21 @@ msgstr "Gallery"
 msgid "Obrázek"
 msgstr "Picture"
 
-#: ../app/models/user.php:82
+#: ../app/models/user.php:113
+msgid "deleted user"
+msgstr ""
+
+#: ../app/models/user.php:115
 msgid "inactive user"
 msgstr "inactive user"
 
-#: ../app/models/user.php:85
+#: ../app/models/user.php:118
 msgid "administrator"
 msgstr "administrator"
+
+#: ../app/widgets/async_file_input.php:20
+msgid "Remove file"
+msgstr ""
 
 #: ../app/widgets/async_pupiq_attachment_input.php:41
 #: ../app/widgets/pupiq_attachment_input.php:41
@@ -1279,6 +1275,26 @@ msgstr "to"
 
 msgid "V případě dotazů nás můžete kontaktovat na emailu %1"
 msgstr "If you have any questions, you can contact us at %1"
+
+#~ msgid ""
+#~ "This is not a visible page! It's not available to the public audience."
+#~ msgstr ""
+#~ "This is not a visible page! It's not available to the public audience."
+
+#~ msgid "Zavřít"
+#~ msgstr "Close"
+
+#~ msgid "Zobrazování přes celou obrazovka"
+#~ msgstr "Full screen display"
+
+#~ msgid "Přiblížení"
+#~ msgstr "Zoom in"
+
+#~ msgid "Předchozí (šipka doleva)"
+#~ msgstr "Previous (left arrow)"
+
+#~ msgid "Další (šipka doprava)"
+#~ msgstr "Next (right arrow)"
 
 #~ msgid ""
 #~ "Only letters, numbers, dots and dashes are allowed. Up to 50 characters."
