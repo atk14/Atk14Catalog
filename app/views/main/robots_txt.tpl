@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /admin/*
 Disallow: /api/*
 Disallow: /recovery/*
 Disallow: /obnova/*
