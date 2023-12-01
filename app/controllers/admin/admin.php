@@ -92,6 +92,15 @@ class AdminController extends ApplicationBaseController{
 			if($a->isFilter()){ $name = _("filter").": $name"; }
 			if($a->isAlias()){ $name = _("link").": $name"; }
 
+			$flags = [];
+			if(!$a->isVisible(false)){ $flags[] = _("invisible"); }
+			
+			// here is the place for adding custom flags...
+
+			if($flags){
+				$name .= " (".join(", ",$flags).")";
+			}
+
 			$this->breadcrumbs[] = array(
 				$name,
 				$this->_link_to(array("action" => "categories/edit", "id" => $a))
