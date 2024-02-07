@@ -7,7 +7,7 @@
 	$("#technical_specifications").replaceWith({jstring}{render partial="technical_specifications" add_technical_specification_form=$form}{/jstring});
 
 	ADMIN.utils.handleSortables();
-	ADMIN.utils.handleSuggestions();
+	window.UTILS.Suggestions.handleSuggestions();
 
 	$( "#id_technical_specification_key_id" ).focus();
 

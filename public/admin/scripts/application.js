@@ -16,7 +16,7 @@
 				ADMIN.utils.initializeMarkdonEditors();
 				ADMIN.utils.handleXhrImageUpload();
 				ADMIN.utils.handleCopyIobjectCode();
-				ADMIN.utils.handleCategoriesSuggestions();
+				window.UTILS.Suggestions.handleCategoriesSuggestions();
 
 				// Form hints.
 				$( ".help-hint" ).each( function() {
