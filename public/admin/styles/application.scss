@@ -30,9 +30,9 @@
 
 @import "list-groups";
 
-@import "list-categories";
-
 @import "forms"; //bs5 incompatible
+
+@import "list-categories";
 
 @import "nav-login";
 
@@ -42,7 +42,9 @@
 
 @import "drag_and_drop";
 
-@import "dark_mode"; //bs5 incompatible
+@import "dark_mode";
+
+@import "autocomplete";
 
 @import "shared/clearfix";
 @import "shared/loading";

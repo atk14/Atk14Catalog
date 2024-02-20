@@ -12,13 +12,16 @@ const ESLintPlugin = require('eslint-webpack-plugin'); // linter
 // Aplication JS scripts. Vendor scripts referenced inside app JS files.
 var application_scripts = [
   "./node_modules/ace-builds/src/ace.js",
+  "./node_modules/ace-builds/src/mode-markdown.js",
+  "./node_modules/ace-builds/src/theme-tomorrow.js",
   "./public/scripts/utils/utils.js",
 	"./public/scripts/utils/leaving_unsaved_page_checker.js",
 	"./public/scripts/utils/async_file_upload.js",
+	"./public/admin/scripts/utils/async_image_upload.js",
 	"./public/admin/scripts/application.js",
 ];
 
-// Appllication styles incl. Bootstrap
+// Application styles incl. Bootstrap
 var application_styles = ["./public/admin/styles/application.scss"];
 
 // Other vendor styles
