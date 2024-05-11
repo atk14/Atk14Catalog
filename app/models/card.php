@@ -562,11 +562,40 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		return $alt_cards;
 	}
 
+	static $TechnicalSpecificationList;
 	function getTechnicalSpecifications($options = []){
 		$options += [
 			"visible" => null,
 		];
-		$out = TechnicalSpecification::FindAll("card_id",$this);
+
+		if(!self::$TechnicalSpecificationList) {
+			self::$TechnicalSpecificationList = new CacheSomething(
+				function($ids) {
+					$ids += Cache::CachedIds("Card");
+					$dbmole = Card::GetDbmole();
+					$rows = $dbmole->selectRows(
+						"
+							SELECT
+								card_id, id
+							FROM
+								technical_specifications WHERE card_id IN :ids ORDER BY rank, id
+						",
+						[":ids" => $ids]
+					);
+					Cache::Prepare("TechnicalSpecification", array_column($rows, "id"));
+					$out = array_fill_keys($ids, []);
+					foreach($rows as $row){
+						$cid = $row["card_id"];
+						$out[$cid][] = Cache::Get("TechnicalSpecification",$row["id"]);
+					}
+					return $out;
+				},
+				"TechnicalSpecification"
+			);
+		}
+		$out = self::$TechnicalSpecificationList->get($this);
+		//$out = TechnicalSpecification::FindAll("card_id",$this);
+
 		if(!is_null($options["visible"])){
 			$_out = [];
 			foreach($out as $item){

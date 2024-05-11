@@ -3,6 +3,14 @@ class TechnicalSpecification extends ApplicationModel implements Translatable, R
 
 	public static function GetTranslatableFields(){ return array("content_localized"); }
 
+	public static function CreateNewRecord($values,$options = array()){
+		if(Card::$TechnicalSpecificationList){
+			Card::$TechnicalSpecificationList->flushCache();
+		}
+
+		return parent::CreateNewRecord($values,$options);
+	}
+
 	/**
 	 * Saves a technical specification for the given product card
 	 *
@@ -25,10 +33,18 @@ class TechnicalSpecification extends ApplicationModel implements Translatable, R
 		return $this->_setRank($rank,array("card_id" => $this->g("card_id")));
 	}
 
-	function getKey(){
+	function getTechnicalSpecificationKey(){
 		return Cache::Get("TechnicalSpecificationKey",$this->getTechnicalSpecificationKeyId());
 	}
 
+	function getKey(){
+		return $this->getTechnicalSpecificationKey();
+	}
+
+	/**
+	 *
+	 * @return string
+	 */
 	function getContent($lang = null){
 		global $ATK14_GLOBAL;
 
