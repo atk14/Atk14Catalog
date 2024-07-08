@@ -476,6 +476,9 @@ class TcSlug extends TcBase{
 	}
 
 	function test_generic_slugs(){
+		$lang = "en";
+		Atk14Locale::Initialize($lang);
+
 		$article = $this->articles["testing_article"];
 		$id = $article->getId();
 		$article->s("slug_cs",null);
