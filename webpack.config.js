@@ -12,11 +12,12 @@ const ESLintPlugin = require('eslint-webpack-plugin'); // linter
 
 // Aplication JS scripts. Vendor scripts referenced inside app JS files.
 var application_scripts = [
+	"./public/scripts/utils/display_utils.js",
 	"./public/scripts/utils/utils.js",
 	"./public/scripts/application.js",
 ];
 
-// Appllication styles incl. Bootstrap
+// Application styles incl. Bootstrap
 var application_styles = "./public/styles/application.scss";
 
 // Other vendor styles
@@ -161,7 +162,15 @@ var config = {
     ],
     minimize: true
   },
-  cache: true
+  cache: true,
+  stats: {
+    // SASS compiler enable to show @debug
+    loggingDebug: ['sass-loader'],
+  },
+  watchOptions: {
+    aggregateTimeout: 100,
+    poll: 350, // Check for changes every n ms
+  },
 };
 
 module.exports = (env, args) => {

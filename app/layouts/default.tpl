@@ -51,9 +51,7 @@
 			document.documentElement.className = document.documentElement.className.replace( /\bno-js\b/, "js" );
 		{/javascript_tag}
 
-		{*stylesheet_link_tag file="$public/dist/styles/vendor.min.css" hide_when_file_not_found=true*}
-		{*stylesheet_link_tag file="$public/dist/styles/application.min.css"*}
-		{stylesheet_link_tag file="$public/dist/styles/vendor.css"}
+		{stylesheet_link_tag file="$public/dist/styles/vendor.css" hide_when_file_not_found=true}
 		{stylesheet_link_tag file="$public/dist/styles/application_styles.css"}
 
 		
@@ -63,6 +61,7 @@
 	</head>
 
 	<body class="body_{$controller}_{$action}" data-namespace="{$namespace}" data-controller="{$controller}" data-action="{$action}">
+		{render partial="shared/layout/flash_message"}
 		{render partial="shared/layout/header"}
 		<div class="container-fluid{if $section_navigation} has-nav-section{/if}">
 			
@@ -78,7 +77,6 @@
 				{/if}
 
 				<div class="content-main">
-					{render partial="shared/layout/flash_message"}
 					{placeholder}
 				</div>
 			</div>
@@ -87,9 +85,6 @@
 		{if $DEVELOPMENT}<!-- USING_BOOTSTRAP4: {USING_BOOTSTRAP4}, USING_BOOTSTRAP5 {USING_BOOTSTRAP5}/-->{/if}
 		{render partial="shared/layout/devcssinfo"}
 
-		{*javascript_script_tag file="$public/dist/scripts/vendor.min.js"}
-		{javascript_script_tag file="$public/dist/scripts/application.min.js"}
-		{javascript_script_tag file="$public/dist/scripts/modules/application_es6.min.js" type="module"*}
 		{javascript_script_tag file="$public/dist/scripts/vendor.min.js"}
 		{javascript_script_tag file="$public/dist/scripts/application.min.js"}
 		{javascript_script_tag file="$public/dist/scripts/application_es6.min.js" type="module"}

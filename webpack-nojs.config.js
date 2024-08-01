@@ -17,7 +17,7 @@ var application_styles = "./public/styles/application.scss";
 const IgnoreEmitPlugin = require('ignore-emit-webpack-plugin'); // do not output some unnecessary files
 
 
-// Appllication styles incl. Bootstrap
+// Application styles incl. Bootstrap
 var application_styles = "./public/styles/application.scss";
 
 
@@ -104,7 +104,15 @@ var config = {
     },
     minimize: false,
   },
-  cache: true
+  cache: true,
+  stats: {
+    // SASS compiler enable to show @debug
+    loggingDebug: ['sass-loader'],
+  },
+  watchOptions: {
+    aggregateTimeout: 100,
+    poll: 350, // Check for changes every n ms
+  },
 };
 
 module.exports = (env, args) => {

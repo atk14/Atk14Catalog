@@ -20,7 +20,7 @@
 // Other SCSS
 @import "layout";
 
-@import "alerts";
+@import "shared/flash_messages";
 
 @import "admin-object-menu";
 
@@ -51,6 +51,7 @@
 @import "cards";
 
 @import "list-categories";
+@import "photoswipe";
 
 @import "shared/clearfix";
 @import "shared/loading";

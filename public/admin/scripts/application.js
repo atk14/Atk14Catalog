@@ -10,7 +10,7 @@ import "blueimp-file-upload/js/jquery.fileupload.js";
 import "blueimp-file-upload/js/jquery.fileupload-image.js";
 const mde = require ( "bootstrap-markdown-editor-4/dist/js/bootstrap-markdown-editor.min.js" ); // eslint-disable-line
 const ATK14 = require( "atk14js" ); // eslint-disable-line
-import "bootstrap4-notify";
+import Sortable from "sortablejs";
 
 /* global window */
 ( function( window, $, undefined ) {
@@ -32,80 +32,33 @@ import "bootstrap4-notify";
 				}
 
 				ADMIN.utils.handleSortables();
-				ADMIN.utils.handleSuggestions();
-				ADMIN.utils.handleTagsSuggestions();
+				window.UTILS.Suggestions.handleSuggestions();
+				window.UTILS.Suggestions.handleTagsSuggestions();
 				ADMIN.utils.initializeMarkdonEditors();
-				ADMIN.utils.handleXhrImageUpload();
+				UTILS.AsyncImageUploader.init();
 				ADMIN.utils.handleCopyIobjectCode();
-				ADMIN.utils.handleCategoriesSuggestions();
+// HEAD
+				//ADMIN.utils.handleCategoriesSuggestions();
+				window.UTILS.Suggestions.handleCategoriesSuggestions();
+//=======
+				window.UTILS.TagChooser.init();
+//>>>>>>> atk14skelet/feature/webpack
 
 				// Form hints.
-				$( ".help-hint" ).each( function() {
-					var $this = $( this ),
-						$field = $this.closest( ".form-group" ).find( ".form-control" ),
-						title = $this.data( "title" ) || "",
-						content = $this.html(),
-						popoverOptions = {
-							html: true,
-							trigger: "focus",
-							title: title,
-							content: content
-						};
-					if( window.bootstrapVersion === 5 ){
-						new bootstrap.Popover( $field.get(0), popoverOptions );
-					}else{
-						$field.popover( popoverOptions );
-					}
-				} );
+				UTILS.formHints();
 
-				UTILS.leaving_unsaved_page_checker.init(); // TODO zprovoznit
+				UTILS.leaving_unsaved_page_checker.init();
 
 				// Back to top button display and handling
-				$( window ).on( "scroll", function(){
-					var backToTopBtn = $ ( "#js-scroll-to-top" );
-					if( $( window ).scrollTop() > 100 ) {
-						backToTopBtn.addClass( "active" );
-					} else {
-						backToTopBtn.removeClass( "active" );
-					}
-				} );
-				$( window ).trigger( "scroll" );
+				ADMIN.utils.backToTopBtn();
 
-				$ ( "#js-scroll-to-top" ).on( "click", function( e ){
-					e.preventDefault();
-					$( "html, body" ).animate( { scrollTop: 0 }, "fast" );
-				} );
-
-				UTILS.async_file_upload.init(); // TODO zprovoznit
+				UTILS.async_file_upload.init();
 
 				// Admin menu toggle on small devices
-				$( ".nav-section__toggle" ).on( "click", function( e ) {
-					e.preventDefault();
-					$( this ).closest( ".nav-section" ).toggleClass( "expanded" );
-				} );
+				ADMIN.utils.adminMenuToggler();
 
 				// Dark mode toggle 
-				$( "#js--darkmode-switch" ).on( "click", function(){
-					var mode;
-					if( $(this).prop( "checked" ) ) {
-						$( "body" ).addClass( "dark-mode" ); // BS4
-						$( "body" ).attr( "data-bs-theme", "dark" ); // BS5
-						mode = "dark";
-						document.cookie = "dark_mode=1;path=/";
-					} else {
-						$( "body" ).removeClass( "dark-mode" ); // BS4
-						$( "body" ).attr( "data-bs-theme", "light" ); // BS5
-						mode = "light";
-						document.cookie = "dark_mode=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT";
-					}
-
-					$( "body" ).addClass( "dark-mode-transition" );
-					setTimeout( function(){ $( "body" ).removeClass( "dark-mode-transition" ); }, 1000 );
-
-					// darkModeChange event is triggered on dark mode de/activation
-					var evt = new CustomEvent( "darkModeChange", { detail: mode } );
-					document.dispatchEvent(evt);
-				} );
+				ADMIN.utils.darkModeToggler();
 			}
 
 		},
@@ -140,70 +93,6 @@ import "bootstrap4-notify";
 							} );
 						}
 					} );
-				} );
-			},
-
-			handleXhrImageUpload: function() {
-				
-				$( ".js--xhr_upload_image_form" ).each( function() {
-
-					var $form = $( this );
-					var $wrap = $form.closest(".js--image_gallery_wrap");
-					var $dropZone = $form.closest(".drop-zone");
-					var highglightDropZone = function() { $dropZone.addClass("drop-zone-highlight"); };
-					var unhighglightDropZone = function() { $dropZone.removeClass("drop-zone-highlight"); };
-
-					$dropZone.on( "dragenter",  highglightDropZone );
-					$dropZone.on( "dragover",  highglightDropZone );
-					$dropZone.on( "dragleave",  unhighglightDropZone );
-					$dropZone.on( "drop",  unhighglightDropZone );
-
-					var url = $form.attr( "action" ),
-						$progress = $wrap.find( ".progress-bar" ),
-						$list = $wrap.find( ".list-group-images" ),
-						$input = $form.find("input");
-						$input.data("url",url);
-
-					$input.fileupload( {
-						dropZone: $dropZone,
-						dataType: "json",
-						multipart: false,
-						start: function() {
-							$progress.show();
-						},
-						progressall: function( e, data ) {
-							var progress = parseInt( data.loaded / data.total * 100, 10 );
-
-							$progress.css(
-								"width",
-								progress + "%"
-							);
-						},
-						done: function( e, data ) {
-
-							// This is the same grip like in handleSortables
-							var glyph = "<span class='fas fa-grip-vertical text-secondary handle pr-3' " +
-								" title='sorting'></span>";
-
-							$( data.result.image_gallery_item )
-								.addClass( "not-processed" )
-								.prepend( glyph )
-								.appendTo( $list );
-
-							$list.sortable( "refresh" );
-						},
-						stop: function() {
-							$list.find( ".not-processed" )
-								.prepend( "<span class='glyphicon glyphicon-align-justify'></span>" )
-								.removeClass( "not-processed" );
-
-							$progress.hide().css(
-								"width",
-								"0"
-							);
-						}
-					} );
-
 				} );
 			},
 
@@ -256,164 +145,44 @@ import "bootstrap4-notify";
 			// ADMIN.utils.handleFormErrors();
 			// ADMIN.utils.handleFormErrors( ".list-sortable" );
 			// ADMIN.utils.handleFormErrors( $element.find( "ul" ) );
-			handleSortables: function( sortable ) {
 
+			handleSortables: function() {
 				// Sortable lists.
-				if ( sortable === undefined ) {
-					$sortable = $( ".list-sortable" );
-				} else {
-					$sortable = $( sortable );
-				}
 
 				var $sortable = $( ".list-sortable" ),
 					glyph = "<span class='fas fa-grip-vertical text-secondary handle pr-3' " +
-						" title='sorting'></span>",
-					url, $item, data, $list, id;
-
+						" title='sorting'></span>";
+					
 				if ( $sortable.length ) {
 					$sortable.find( ".list-group-item" ).prepend( glyph );
 
-					$sortable.sortable( {
-						cancel: "strong",
-						handle: ".handle",
-						opacity: 0.9,
-						update: function( jqEv, ui ) {
-							$item = $( ui.item );
-							$list = $item.closest( ".list-sortable" );
-							url = $list.data( "sortable-url" );
-							id = $list.data( "sortable-param" ) || "id";
-							data = {
-								rank: $item.index()
-							};
-							data[ id ] = $item.data( "id" );
-
-							$.ajax( {
-								type: "POST",
-								url: url,
-								data: data,
-								success: function() {
-								},
-								error: function() {
-								}
-							} );
-						}
-					} );
-				}
-			},
-
-			// Suggests anything according by an url
-			handleSuggestions: function() {
-				$( document ).on( "keyup.autocomplete", "[data-suggesting='yes']", function(){
-					$( this ).autocomplete( {
-						source: function( request, response ) {
-							var $el = this.element,
-								url = $el.data( "suggesting_url" ),
-								term;
-							term = request.term;
-
-							$.getJSON( url, { q: term }, function( data ) {
-								response( data );
-							} );
-						}
-					} );
-				} );
-			},
-
-			categoriesSuggest: function( selector ) {
-				var $input = $( selector ),
-					url = $input.data( "suggesting_url" ),
-					cache = {},
-					term;
-
-				if ( !$input.length ) {
-					return;
-				}
-
-				$input.autocomplete( {
-					minLength: 1,
-					source: function( request, response ) {
-						term = request.term;
-
-						if ( term in cache ) {
-							response( cache[ term ] );
-						} else {
-							$.getJSON( url + term, function( data ) {
-								cache[ term ] = data;
-								response( data );
-							} );
-						}
-					},
-					search: function() {
-						term = this.value;
-
-						if ( term.length < 1 ) {
-							return false;
-						}
-					},
-					focus: function() {
-						return false;
-					},
-					select: function( event, ui ) {
-						this.value = ui.item.value;
-						return false;
-					}
-				} );
-			},
-
-			// Suggests tags
-			handleTagsSuggestions: function() {
-				$( document ).on( "keyup.autocomplete", "[data-tags_suggesting='yes']", function() {
-					var $input = $( this ),
-						lang = $( "html" ).attr( "lang" ),
-						url = "/api/" + lang + "/tags_suggestions/?format=json&q=",
-						cache = {},
-						term, terms;
-
-					function split( val ) {
-						return val.split( /,\s*/ );
-					}
-					function extractLast( t ) {
-						return split( t ).pop();
-					}
-
-					if ( !$input.length ) {
-						return;
-					}
-
-					$input.autocomplete( {
-						minLength: 1,
-						source: function( request, response ) {
-							term = extractLast( request.term );
-
-							if ( term in cache ) {
-								response( cache[ term ] );
-							} else {
-								$.getJSON( url + term, function( data ) {
-									cache[ term ] = data;
-									response( data );
+					$sortable.each( function( i, el ) {
+						// eslint-disable-next-line no-undef
+						new Sortable( el, {
+							handle: ".handle",
+							onUpdate: function( e ) {
+								var $list = $( e.target );
+								var $item = $( e.item );
+								var url = $list.data( "sortable-url" );
+								var id = $list.data( "sortable-param" ) || "id";
+								var data = {
+									rank: $item.index()
+								};
+								data[ id ] = $item.data( "id" );
+								
+								$.ajax( {
+									type: "POST",
+									url: url,
+									data: data,
+									success: function() {
+									},
+									error: function() {
+									}
 								} );
 							}
-						},
-						search: function() {
-							term = extractLast( this.value );
-
-							if ( term.length < 1 ) {
-								return false;
-							}
-						},
-						focus: function() {
-							return false;
-						},
-						select: function( event, ui ) {
-							terms = split( this.value );
-							terms.pop();
-							terms.push( ui.item.value );
-							terms.push( "" );
-							this.value = terms.join( " , " );
-							return false;
-						}
+						} );
 					} );
-				} );
+				}
 			},
 
 			// Copy iobject to clipboard
@@ -438,9 +207,60 @@ import "bootstrap4-notify";
 				} );
 			},
 
-			handleCategoriesSuggestions: function() {
-				ADMIN.utils.categoriesSuggest( "[data-suggesting_categories='yes']" );
+			// Back to top button display and handling
+			backToTopBtn: function() {
+				window.addEventListener( "scroll", function() {
+					let backToTopBtn = this.document.querySelector( "#js-scroll-to-top" );
+					if( window.scrollY  > 100 ) {
+						backToTopBtn.classList.add( "active" );
+					} else {
+						backToTopBtn.classList.remove( "active" );
+					}
+				} );
+
+				window.dispatchEvent( new Event( "scroll" ) );
+
+				let scrollTopBtn = document.querySelector( "#js-scroll-to-top" );
+				if( scrollTopBtn ){
+					scrollTopBtn.addEventListener( "click", function( e ) {
+						e.preventDefault();
+						let els = document.querySelectorAll( "html,body" );
+						console.log( "els", els );
+						window.scroll( { top: 0, left: 0, behavior: "smooth" } );
+					} );
+				}
+				
+			},
+
+			// Admin menu toggle on small devices
+			adminMenuToggler: function() {
+				let toggler = document.querySelector( ".nav-section__toggle" );
+				if( toggler ) {
+					toggler.addEventListener( "click", function( e ) {
+						e.preventDefault();
+						this.closest( ".nav-section" ).classList.toggle( "expanded" );
+					} );
+				};
+			},
+
+			// Dark mode toggle 
+			darkModeToggler: function() {
+				document.getElementById( "js--darkmode-switch" ).addEventListener( "click", function() {
+					var body = document.querySelector( "body" );
+					if( this.checked ){
+						body.classList.add( "dark-mode" );
+						//$( "body" ).attr( "data-bs-theme", "dark" );
+						body.setAttribute( "data-bs-theme", "dark" );						
+						document.cookie = "dark_mode=1;path=/";
+					} else {
+						body.classList.remove( "dark-mode" );
+						body.setAttribute( "data-bs-theme", "light" );
+						document.cookie = "dark_mode=;path=/";
+					}
+
+				} );
 			}
+
 		}
 	};
 

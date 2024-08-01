@@ -114,7 +114,63 @@ form {
 				@extend .text-muted;
 			}
 		}
+		// file input with thumbnail
+		.form-control-wrap:has( .form-control-file ) {
+			@include media-breakpoint-up(sm) {
+				display: flex;
+				align-items: center;
+				.img-thumbnail {
+					flex-basis: 100px;
+					flex-shrink: 0;
+					max-width: 100px;
+				}
+				input[type="checkbox"] {
+					margin-right: 1ch;
+				}
+				input[type="file"] {
+					margin-left: 2ch;
+				}
+			}
+			@include media-breakpoint-down(sm) {
+				input[type="file"] {
+					margin-top: 0.5em;
+				}
+			}
+		}
 	}
+
+	// File input with thumbnail and removal link
+	.form-control-wrap:has( input[type="file"]  ) {
+		display: grid;
+		grid-template-columns: 112px 1fr;
+		grid-template-rows: 1fr 1fr;
+
+		* {
+			grid-column:  2 / 3;
+		}
+
+		.img-thumbnail, a:has( .img-thumbnail ) {
+			grid-column: 1 / 2;
+			grid-row: 1 / -1;
+		}
+
+		input.form-control-file, input[type="file"] {
+			align-self: start;
+			grid-row: 1/2;
+		}
+
+		@include media-breakpoint-down(sm) {
+			grid-template-columns: 90px 1fr;
+			.img-thumbnail {
+				max-width: 80px;
+			}
+		}
+	}
+}
+
+// Fix file control styling with Bootstrap 5 .form-control[type="file"] styling
+.form-control-file {
+	@extend .form-control;
 }
 
 // Applies CSS grid to .form-group to create horizontal form.
