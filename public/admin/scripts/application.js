@@ -37,12 +37,8 @@ import Sortable from "sortablejs";
 				ADMIN.utils.initializeMarkdonEditors();
 				UTILS.AsyncImageUploader.init();
 				ADMIN.utils.handleCopyIobjectCode();
-// HEAD
-				//ADMIN.utils.handleCategoriesSuggestions();
 				window.UTILS.Suggestions.handleCategoriesSuggestions();
-//=======
 				window.UTILS.TagChooser.init();
-//>>>>>>> atk14skelet/feature/webpack
 
 				// Form hints.
 				UTILS.formHints();
