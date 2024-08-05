@@ -5,8 +5,12 @@
 		{if $category->allowSubcategories()}
 			{a action="create_new" parent_category_id=$category}{icon glyph="plus-circle"} {t}Add a new subcategory{/t}{if $category->isFilter()} ({t}filter option{/t}){/if}{/a}
 		{/if}
-		{if $category->isVisible() && !$category->isFilter() && !$category->isSubcategoryOfFilter()}
-			{a namespace="" action="categories/detail" path=$category->getPath()}{icon glyph="eye-open"} {t}Show on web{/t}{/a}
+		{if !$category->isFilter() && !$category->isSubcategoryOfFilter()}
+			{if $category->isVisible()}
+				{a namespace="" action="categories/detail" path=$category->getPath()}{icon glyph="eye-open"} {t}Show on web{/t}{/a}
+			{else}
+				<a class="text-muted">{icon glyph="eye-slash"} {t}Not visible{/t}</a>
+			{/if}
 		{/if}
 		{if $category->canBeMoved()}
 			{a action=move_to_category id=$category}{icon glyph="arrows-alt"} {t}Move the category{/t}{/a}
