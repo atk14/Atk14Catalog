@@ -157,7 +157,7 @@ class CardsController extends AdminController{
 			$catalog_id = $d["catalog_id"];
 			unset($d["catalog_id"]);
 
-			if(!$this->card->hasVariants() && strlen($catalog_id)){
+			if(!$this->card->hasVariants() && strlen((string)$catalog_id)){
 				if(!$first_product){
 					$first_product = $this->card->createProduct([
 						"catalog_id" => $catalog_id,
