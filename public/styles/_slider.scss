@@ -129,6 +129,10 @@
 	@include media-breakpoint-down(xs){
 		display: none;
 	}
+	// Hide default arrows from swpiper 12+
+	.swiper-navigation-icon {
+		display: none;
+	}
 }
 
 .swiper-button-next {
@@ -221,6 +225,12 @@
 					.gallery-item__description {
 						font-weight: normal;
 					}
+				}
+			}
+			// In case there is only single image in slider, do not show figcaption
+			&:first-child:last-child {
+				figcaption {
+					display: none;	
 				}
 			}
 		}

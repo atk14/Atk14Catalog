@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-24 11:10+0200\n"
-"PO-Revision-Date: 2022-04-25 16:28+0200\n"
+"POT-Creation-Date: 2025-10-01 13:16+0200\n"
+"PO-Revision-Date: 2025-01-28 12:09+0100\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: Team <team@email.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.4.2\n"
 
 msgid "Nahoru"
 msgstr "Top"
@@ -64,7 +64,7 @@ msgid "Sign in as an admin user"
 msgstr "Sign in as an admin user"
 
 #: ../app/controllers/logins_controller.php:7
-#: ../app/controllers/password_recoveries_controller.php:81
+#: ../app/controllers/password_recoveries_controller.php:84
 #: ../app/forms/logins/create_new_form.php:16
 msgid "Sign in"
 msgstr "Sign in"
@@ -77,6 +77,9 @@ msgstr "We are deeply sorry, but the page on the URI <em>%1</em> wasn't found."
 
 msgid "Posted by <em>%1</em> on <time datetime=\"%2\">%3</time>"
 msgstr "Posted by <em>%1</em> on <time datetime=\"%2\">%3</time>"
+
+msgid "Posted on <time datetime=\"%1\">%2</time>"
+msgstr "Posted on <time datetime=\"%1\">%2</time>"
 
 msgid ""
 "This is not a published article! It's not available to the public audience."
@@ -93,7 +96,7 @@ msgid "At the moment there are no news."
 msgstr "At the moment there are no news."
 
 msgid "articles total"
-msgstr ""
+msgstr "articles total"
 
 msgid "Accessories"
 msgstr "Accessories"
@@ -183,6 +186,26 @@ msgstr "IP address"
 
 msgid "Logged user:"
 msgstr "Logged user:"
+
+msgid "Dobrý den,"
+msgstr "Hello,"
+
+msgid "pro zrušení odběru newsletteru navštivte následující odkaz:"
+msgstr "to unsubscribe from the newsletter, please visit the following link:"
+
+msgid "Dobrý den %1,"
+msgstr "Hello %1,"
+
+msgid "děkujeme Vám za registraci k odběru našeho newsletteru."
+msgstr "thank you for signing up for our newsletter."
+
+msgid ""
+"Pokud nadále nechcete dostávat zprávy o našich novinkách, můžete se z odběru "
+"odhlásit na adrese:"
+msgstr "If you no longer wish to receive our news, you can unsubscribe at:"
+
+msgid "pro potvrzení odběru novinek klikněte na následující odkaz:"
+msgstr "click on the following link to confirm your subscription:"
 
 msgid "Hello %1!"
 msgstr "Hello %1!"
@@ -336,8 +359,60 @@ msgstr "ATK14 on GitHub"
 msgid "ATK14 Catalog on GitHub"
 msgstr "ATK14 Catalog on GitHub"
 
-msgid "Table of contents"
-msgstr "Table of contents"
+msgid ""
+"Na zadanou e-mailovou adresu byl odeslán odkaz pro odhlášení z odběru "
+"newsletteru. Navštivte prosím tento odkaz."
+msgstr ""
+"A link to unsubscribe from the newsletter has been sent to the email address "
+"provided. Please visit this link."
+
+msgid "Pro odhlášení od zasílání newsletteru zadejte Vaši e-mailovou adresu."
+msgstr "To unsubscribe from the newsletter, enter your email address."
+
+msgid "Odhlášení od zasílání newsletteru bylo úspěšně provedeno."
+msgstr ""
+"The unsubscription from the newsletter has been successfully completed."
+
+msgid ""
+"Na této stránce můžete odhlásit zasílání našeho newsletteru na e-mailovou "
+"adresu <em>%1</em>."
+msgstr ""
+"On this page you can unsubscribe from our newsletter to the email address "
+"<em>%1</em>."
+
+msgid "Toto potvrzení bylo zrušeno."
+msgstr "This confirmation has been cancelled."
+
+msgid "Toto přihlášení k odběru novinek již bylo potvrzeno."
+msgstr "This newsletter subscription has already been confirmed."
+
+msgid "Pro přihlášení se k odběru novinek klikněte na tlačítko."
+msgstr "To subscribe to our newsletter, click on the button."
+
+msgid "Potvrdit přihlášení"
+msgstr "Confirm subscription"
+
+msgid "Zrušit toto potvrzení"
+msgstr "Cancel this confirmation"
+
+msgid "Zkontrolujte si prosím svou e-mailovou schránku."
+msgstr "Please check your email inbox."
+
+msgid ""
+"Právě jsem Vám poslali e-mail, ve kterém je odkaz pro potvrzení odběru "
+"novinek."
+msgstr ""
+"We have just sent you an email with a link to confirm your newsletter "
+"subscription."
+
+msgid "Zadejte svůj e-mail a my Vám pošleme odkaz pro potvrzení."
+msgstr "Enter your email and we will send you a link to confirm."
+
+msgid "přihlásit k odběru novinek jiný e-mail"
+msgstr "subscribe other email address to newsletter"
+
+msgid "přejděte na úvodní stránku"
+msgstr "go to the home page"
 
 msgid "Subpages"
 msgstr "Subpages"
@@ -364,6 +439,7 @@ msgstr ""
 msgid "Attachments"
 msgstr "Attachments"
 
+#: ../app/widgets/pupiq_image_input.php:45
 msgid "no image"
 msgstr "no image"
 
@@ -449,6 +525,9 @@ msgstr "Create a new record"
 msgid "Show menu"
 msgstr "Show menu"
 
+msgid "Enlarge image"
+msgstr "Enlarge image"
+
 msgid "zavřít"
 msgstr "close"
 
@@ -468,7 +547,7 @@ msgstr "Administration"
 msgid "Profile"
 msgstr "Profile"
 
-#: ../app/controllers/logins_controller.php:35
+#: ../app/controllers/logins_controller.php:43
 #: ../app/forms/logins/destroy_form.php:4
 msgid "Sign out"
 msgstr "Sign out"
@@ -485,6 +564,12 @@ msgstr "Previous"
 
 msgid "Next"
 msgstr "Next"
+
+msgid "Table of contents"
+msgstr "Table of contents"
+
+msgid "Subchapters"
+msgstr "Subchapters"
 
 msgid "Photo gallery"
 msgstr "Photo gallery"
@@ -520,6 +605,11 @@ msgstr "We offer an awesome restful API"
 
 msgid "Recent articles"
 msgstr "Recent articles"
+
+#: ../app/controllers/articles_controller.php:11
+#: ../app/controllers/articles_controller.php:60
+msgid "Articles"
+msgstr "Articles"
 
 msgid "Opening hours"
 msgstr "Opening hours"
@@ -582,11 +672,15 @@ msgstr "Current password"
 msgid "New password"
 msgstr "New password"
 
-#: ../app/controllers/api/logins_controller.php:33
+#: ../app/controllers/api/logins_controller.php:35
+msgid "For security reasons, this function is disabled"
+msgstr "For security reasons, this function is disabled"
+
+#: ../app/controllers/api/logins_controller.php:53
 msgid "Bad password"
 msgstr "Bad password"
 
-#: ../app/controllers/api/logins_controller.php:36
+#: ../app/controllers/api/logins_controller.php:56
 msgid "There is no such user"
 msgstr "There is no such user"
 
@@ -607,36 +701,52 @@ msgstr "Error 1"
 msgid "Error 2"
 msgstr "Error 2"
 
-#: ../app/controllers/application_base.php:35
+#: ../app/controllers/application_base.php:36
 msgid "Page not found"
 msgstr "Page not found"
 
-#: ../app/controllers/application_base.php:49
+#: ../app/controllers/application_base.php:50
 msgid "Forbidden"
 msgstr "Forbidden"
 
-#: ../app/controllers/application_base.php:149
+#: ../app/controllers/application_base.php:150
 msgid "Home"
 msgstr "Home"
 
-#: ../app/controllers/application_mailer.php:42
+#: ../app/controllers/application_mailer.php:43
 msgid "New registration"
 msgstr "New registration"
 
-#: ../app/controllers/application_mailer.php:51
+#: ../app/controllers/application_mailer.php:53
 msgid "Reset Your Password"
 msgstr "Reset Your Password"
 
-#: ../app/controllers/application_mailer.php:60
+#: ../app/controllers/application_mailer.php:63
 msgid "Your password was updated"
 msgstr "Your password was updated"
 
-#: ../app/controllers/application_mailer.php:72
+#: ../app/controllers/application_mailer.php:69
+#: ../app/controllers/newsletter_subscription_requests_controller.php:5
+#: ../app/controllers/newsletter_subscription_requests_controller.php:18
+#: ../app/controllers/newsletter_subscription_requests_controller.php:25
+#: ../app/controllers/newsletter_subscription_requests_controller.php:82
+msgid "Přihlášení k odběru novinek"
+msgstr "Newsletter subscription"
+
+#: ../app/controllers/application_mailer.php:81
+msgid "Potvrzení odhlášení od newsletteru"
+msgstr "Confirmation of newsletter unsubscription"
+
+#: ../app/controllers/application_mailer.php:94
+msgid "Potvrzení odběru novinek"
+msgstr "Newsletter subscription confirmation"
+
+#: ../app/controllers/application_mailer.php:108
 msgid "Message sent from contact page"
 msgstr "Message sent from contact page"
 
-#: ../app/controllers/application_mailer.php:83
-#: ../app/controllers/application_mailer.php:92
+#: ../app/controllers/application_mailer.php:119
+#: ../app/controllers/application_mailer.php:128
 #: ../app/controllers/information_requests_controller.php:5
 #: ../app/controllers/information_requests_controller.php:29
 msgid "Request for information"
@@ -652,27 +762,22 @@ msgstr "User profile"
 msgid "Commands in %s"
 msgstr "Commands in %s"
 
-#: ../app/controllers/application_rest_api.php:172
+#: ../app/controllers/application_rest_api.php:186
 #, php-format
 msgid "submit using method %s"
 msgstr "submit using method %s"
 
-#: ../app/controllers/application_rest_api.php:219
+#: ../app/controllers/application_rest_api.php:233
 msgid "Nothing has been found on this address"
 msgstr "Nothing has been found on this address"
 
-#: ../app/controllers/application_rest_api.php:225
+#: ../app/controllers/application_rest_api.php:239
 msgid "You don't have access to the requested resource"
 msgstr "You don't have access to the requested resource"
 
-#: ../app/controllers/application_rest_api.php:231
+#: ../app/controllers/application_rest_api.php:245
 msgid "Sorry, An internal error happened"
 msgstr "Sorry, An internal error happened"
-
-#: ../app/controllers/articles_controller.php:11
-#: ../app/controllers/articles_controller.php:60
-msgid "Articles"
-msgstr "Articles"
 
 #: ../app/controllers/articles_controller.php:15
 #, php-format
@@ -708,7 +813,7 @@ msgstr "Contact message"
 msgid "Contact message sent"
 msgstr "Contact message sent"
 
-#: ../app/controllers/logins_controller.php:18
+#: ../app/controllers/logins_controller.php:26
 #, php-format
 msgid ""
 "Wrong login and password combination. <a href=\"%s\">Have you forgotten your "
@@ -717,20 +822,20 @@ msgstr ""
 "Wrong login and password combination. <a href=\"%s\">Have you forgotten your "
 "password?</a>"
 
-#: ../app/controllers/logins_controller.php:20
+#: ../app/controllers/logins_controller.php:28
 msgid "Wrong login and password combination"
 msgstr "Wrong login and password combination"
 
-#: ../app/controllers/logins_controller.php:27
+#: ../app/controllers/logins_controller.php:35
 #, php-format
 msgid "You have been successfully logged in as <em>%s</em>"
 msgstr "You have been successfully logged in as <em>%s</em>"
 
-#: ../app/controllers/logins_controller.php:39
+#: ../app/controllers/logins_controller.php:47
 msgid "You have been successfully logged out"
 msgstr "You have been successfully logged out"
 
-#: ../app/controllers/logins_controller.php:39
+#: ../app/controllers/logins_controller.php:47
 #, php-format
 msgid "You've stayed logged in as <em>%s</em>"
 msgstr "You've stayed logged in as <em>%s</em>"
@@ -739,11 +844,37 @@ msgstr "You've stayed logged in as <em>%s</em>"
 msgid "Welcome!"
 msgstr "Welcome!"
 
-#: ../app/controllers/password_recoveries_controller.php:10
+#: ../app/controllers/newsletter_subscribe_deletion_requests_controller.php:8
+msgid "Na takovou adresu newsletter nezasíláme"
+msgstr "We do not send the newsletter to this email address"
+
+#: ../app/controllers/newsletter_subscribe_deletion_requests_controller.php:21
+#: ../app/controllers/newsletter_subscribers_controller.php:26
+#: ../app/controllers/newsletter_subscribers_controller.php:27
+msgid "Odhlášení od newsletteru"
+msgstr "Unsubscribing from the newsletter"
+
+#: ../app/controllers/newsletter_subscribers_controller.php:22
+msgid "Odhlášeno"
+msgstr "Unsubscribed"
+
+#: ../app/controllers/newsletter_subscription_requests_controller.php:19
+msgid "Potvrzení odesláno"
+msgstr "Confirmation has been sent"
+
+#: ../app/controllers/newsletter_subscription_requests_controller.php:49
+msgid "Přihlášení k odběru novinek bylo úspěšně potvrzeno."
+msgstr "Newsletter subscription has been successfully confirmed."
+
+#: ../app/controllers/newsletter_subscription_requests_controller.php:65
+msgid "Přihlášení k odběru novinek bylo zrušeno."
+msgstr "The newsletter subscription has been cancelled."
+
+#: ../app/controllers/password_recoveries_controller.php:13
 msgid "There is no such user with the given login or email"
 msgstr "There is no such user with the given login or email"
 
-#: ../app/controllers/password_recoveries_controller.php:14
+#: ../app/controllers/password_recoveries_controller.php:17
 msgid ""
 "This user account has been deactivated. Password recovery process can not be "
 "started."
@@ -751,7 +882,7 @@ msgstr ""
 "This user account has been deactivated. Password recovery process can not be "
 "started."
 
-#: ../app/controllers/password_recoveries_controller.php:18
+#: ../app/controllers/password_recoveries_controller.php:21
 msgid ""
 "Password recovery can not be initiated for this user. Email address is not "
 "set."
@@ -759,12 +890,12 @@ msgstr ""
 "Password recovery can not be initiated for this user. Email address is not "
 "set."
 
-#: ../app/controllers/password_recoveries_controller.php:65
+#: ../app/controllers/password_recoveries_controller.php:68
 #: ../app/controllers/users_controller.php:94
 msgid "Your password has been updated successfully"
 msgstr "Your password has been updated successfully"
 
-#: ../app/controllers/password_recoveries_controller.php:82
+#: ../app/controllers/password_recoveries_controller.php:85
 msgid "Password recovery"
 msgstr "Password recovery"
 
@@ -816,13 +947,14 @@ msgid "This is not your current password"
 msgstr "This is not your current password"
 
 #: ../app/fields/async_file_field.php:12
-msgid "The file has been already deleted on the server, please upload it again"
+msgid ""
+"The file has been already deleted on the server, please upload it again!"
 msgstr ""
-"The file has been already deleted on the server, please upload it again"
+"The file has been already deleted on the server, please upload it again!"
 
 #: ../app/fields/async_file_field.php:13
-msgid "The file was not fully uploaded, please upload it again"
-msgstr "The file was not fully uploaded, please upload it again"
+msgid "The file was not fully uploaded, please upload it again!"
+msgstr "The file was not fully uploaded, please upload it again!"
 
 #: ../app/fields/boolean_with_select_field.php:11
 msgid "Ano"
@@ -852,20 +984,20 @@ msgstr "Catalog number"
 msgid "This doesn't look like a catalog number"
 msgstr "This doesn't look like a catalog number"
 
-#: ../app/fields/category_field.php:25
+#: ../app/fields/category_field.php:29
 msgid "Start with a slash if you want to search the catalog tree from the root"
 msgstr ""
 "Start with a slash if you want to search the catalog tree from the root"
 
-#: ../app/fields/category_field.php:25
+#: ../app/fields/category_field.php:29
 msgid "A single slash will be considered as root."
 msgstr "A single slash will be considered as root."
 
-#: ../app/fields/category_field.php:35
+#: ../app/fields/category_field.php:39
 msgid "There is no such category"
 msgstr "There is no such category"
 
-#: ../app/fields/category_field.php:36
+#: ../app/fields/category_field.php:40
 msgid "It's a filter. This category cannot be selected."
 msgstr "It's a filter. This category cannot be selected."
 
@@ -877,22 +1009,22 @@ msgstr "collection"
 msgid "There is no such collection"
 msgstr "There is no such collection"
 
-#: ../app/fields/login_field.php:9
+#: ../app/fields/login_field.php:11
 #, php-format
 msgid ""
 "Only letters, numbers, dots and dashes are allowed. Up to %s characters."
 msgstr ""
 "Only letters, numbers, dots and dashes are allowed. Up to %s characters."
 
-#: ../app/fields/login_field.php:21
+#: ../app/fields/login_field.php:23
 msgid "This username has been already taken"
 msgstr "This username has been already taken"
 
-#: ../app/fields/login_field.php:22
+#: ../app/fields/login_field.php:24
 msgid "Only letters, numbers, dots and dashes are allowed"
 msgstr "Only letters, numbers, dots and dashes are allowed"
 
-#: ../app/fields/object_field.php:33
+#: ../app/fields/object_field.php:37
 msgid "There is no such record"
 msgstr "There is no such record"
 
@@ -924,43 +1056,47 @@ msgstr "page"
 msgid "There is no such page"
 msgstr "There is no such page"
 
-#: ../app/fields/phone_field.php:52
+#: ../app/fields/phone_field.php:62
 msgid "Enter phone number in format %sample_phone_number%"
 msgstr "Enter phone number in format %sample_phone_number%"
 
-#: ../app/fields/phone_field.php:76
+#: ../app/fields/phone_field.php:86
 msgid "Enter valid phone number (%sample_phone_number%)"
 msgstr "Enter valid phone number (%sample_phone_number%)"
 
-#: ../app/fields/phone_field.php:77
+#: ../app/fields/phone_field.php:87
 msgid "Enter phone number"
 msgstr "Enter phone number"
 
-#: ../app/fields/slug_field.php:6
+#: ../app/fields/slug_field.php:8
 msgid "Slug"
 msgstr "Slug"
 
-#: ../app/fields/slug_field.php:8
+#: ../app/fields/slug_field.php:10
 msgid "funny-green-mug"
 msgstr "funny-green-mug"
 
-#: ../app/fields/slug_field.php:12
+#: ../app/fields/slug_field.php:14
 msgid "Write something like black-cat-white-cat"
 msgstr "Write something like black-cat-white-cat"
 
-#: ../app/fields/tags_field.php:21
+#: ../app/fields/tags_field.php:26
 msgid "Ensure that there are max %max% tags (now there are %count%)"
 msgstr "Ensure that there are max %max% tags (now there are %count%)"
 
-#: ../app/fields/tags_field.php:22
+#: ../app/fields/tags_field.php:27
 #, php-format
 msgid "There is no tag <em>%s</em>"
 msgstr "There is no tag <em>%s</em>"
 
-#: ../app/fields/tags_field.php:23
+#: ../app/fields/tags_field.php:28
 #, php-format
 msgid "Tag <em>%s</em> is there more than once"
 msgstr "Tag <em>%s</em> is there more than once"
+
+#: ../app/fields/user_field.php:7
+msgid "Takový uživatel neexistuje"
+msgstr "No such user exists"
 
 #: ../app/forms/api/categories_suggestions/index_form.php:5
 #: ../app/forms/api/suggestions/index_form.php:5
@@ -1000,17 +1136,16 @@ msgstr "Search query"
 msgid "Sign up for newsletter"
 msgstr "Sign up for newsletter"
 
-#: ../app/forms/contact_messages/create_new_form.php:20
+#: ../app/forms/application_form.php:116 ../app/forms/application_form.php:120
+msgid "Spam protection"
+msgstr "Spam protection"
+
+#: ../app/forms/contact_messages/create_new_form.php:22
 #: ../app/forms/information_requests/create_new_form.php:24
 msgid "Text"
 msgstr "Text"
 
-#: ../app/forms/contact_messages/create_new_form.php:26
 #: ../app/forms/contact_messages/create_new_form.php:30
-msgid "Spam protection"
-msgstr "Spam protection"
-
-#: ../app/forms/contact_messages/create_new_form.php:36
 #: ../app/forms/information_requests/create_new_form.php:29
 msgid "Send message"
 msgstr "Send message"
@@ -1024,6 +1159,29 @@ msgstr "Login name"
 #: ../app/forms/users/users_form.php:25
 msgid "Password"
 msgstr "Password"
+
+#: ../app/forms/newsletter_subscribe_deletion_requests/create_new_form.php:6
+#: ../app/forms/newsletter_subscription_requests/create_new_form.php:6
+msgid "E-mailová adresa"
+msgstr "Email address"
+
+#: ../app/forms/newsletter_subscribe_deletion_requests/create_new_form.php:11
+#: ../app/forms/newsletter_subscribers/destroy_form.php:12
+msgid "Odhlásit se"
+msgstr "Sign out"
+
+#: ../app/forms/newsletter_subscribers/destroy_form.php:6
+msgid "Odhlásit se z odběru newsletteru"
+msgstr "Unsubscribe from the newsletter"
+
+#: ../app/forms/newsletter_subscribers/destroy_form.php:9
+msgid "Potvrďte svůj záměr odhlásit se z odběru newsletteru zatrhnutím políčka"
+msgstr ""
+"Confirm your intention to unsubscribe from the newsletter by ticking the box"
+
+#: ../app/forms/newsletter_subscription_requests/create_new_form.php:12
+msgid "Ověřit e-mailovou adresu"
+msgstr "Verify email address"
 
 #: ../app/forms/password_recoveries/create_new_form.php:5
 msgid "Login or email address"
@@ -1076,7 +1234,7 @@ msgstr "Password doesn't match"
 
 #: ../app/helpers/block.drink_shortcode__person.php:17
 msgid "More"
-msgstr ""
+msgstr "More"
 
 #: ../app/helpers/modifier.display_bool.php:13
 msgid "Yes"
@@ -1098,9 +1256,38 @@ msgstr "Gallery"
 msgid "Obrázek"
 msgstr "Picture"
 
+#: ../app/models/invalid_login_attempt.php:46
+msgid "Delay the next sign-in attempt for a second"
+msgstr "Delay the next sign-in attempt for a second"
+
+#: ../app/models/invalid_login_attempt.php:53
+#: ../app/models/invalid_login_attempt.php:70
+#, php-format
+msgid "Delay the next sign-in attempt for %s minutes"
+msgstr "Delay the next sign-in attempt for %s minutes"
+
+#: ../app/models/invalid_login_attempt.php:58
+#, php-format
+msgid "Delay the next sign-in attempt for one minute and %s seconds"
+msgstr "Delay the next sign-in attempt for one minute and %s seconds"
+
+#: ../app/models/invalid_login_attempt.php:60
+msgid "Delay the next sign-in attempt for one minute"
+msgstr "Delay the next sign-in attempt for one minute"
+
+#: ../app/models/invalid_login_attempt.php:64
+#, php-format
+msgid "Delay the next sign-in attempt for %s seconds"
+msgstr "Delay the next sign-in attempt for %s seconds"
+
+#: ../app/models/invalid_login_attempt.php:68
+#, php-format
+msgid "Delay the next sign-in attempt for %s minutes and %s seconds"
+msgstr "Delay the next sign-in attempt for %s minutes and %s seconds"
+
 #: ../app/models/user.php:113
 msgid "deleted user"
-msgstr ""
+msgstr "deleted user"
 
 #: ../app/models/user.php:115
 msgid "inactive user"
@@ -1110,13 +1297,13 @@ msgstr "inactive user"
 msgid "administrator"
 msgstr "administrator"
 
-#: ../app/widgets/async_file_input.php:20
+#: ../app/widgets/async_file_input.php:22
 msgid "Remove file"
-msgstr ""
+msgstr "Remove file"
 
 #: ../app/widgets/async_pupiq_attachment_input.php:41
 #: ../app/widgets/pupiq_attachment_input.php:41
-#: ../app/widgets/pupiq_image_input.php:45
+#: ../app/widgets/pupiq_image_input.php:64
 msgid "remove"
 msgstr "remove"
 
@@ -1125,7 +1312,7 @@ msgstr "remove"
 msgid "Download attachment"
 msgstr "Download attachment"
 
-#: ../app/widgets/pupiq_image_input.php:46
+#: ../app/widgets/pupiq_image_input.php:65
 msgid "Display image"
 msgstr "Display image"
 
@@ -1277,6 +1464,17 @@ msgid "V případě dotazů nás můžete kontaktovat na emailu %1"
 msgstr "If you have any questions, you can contact us at %1"
 
 #~ msgid ""
+#~ "The file has been already deleted on the server, please upload it again"
+#~ msgstr ""
+#~ "The file has been already deleted on the server, please upload it again"
+
+#~ msgid "The file was not fully uploaded, please upload it again"
+#~ msgstr "The file was not fully uploaded, please upload it again"
+
+#~ msgid "Potvrdit odběr novinek"
+#~ msgstr "Confirm newsletter subscription"
+
+#~ msgid ""
 #~ "This is not a visible page! It's not available to the public audience."
 #~ msgstr ""
 #~ "This is not a visible page! It's not available to the public audience."
@@ -1354,3 +1552,49 @@ msgstr "If you have any questions, you can contact us at %1"
 
 #~ msgid "ATK14 Skelet on GitHub"
 #~ msgstr "ATK14 Skelet on GitHub"
+
+#~ msgid ""
+#~ "<em>ATK14 Mini Skelet</em> is the <a href=\"https://skelet.atk14.net/"
+#~ "\">ATK14 Skelet</a> on a heavy diet. All the unnecessary meat has been "
+#~ "cut away and what's left would like to be the very basis of your web "
+#~ "application."
+#~ msgstr ""
+#~ "<em>ATK14 Mini Skelet</em> is the <a href=\"https://skelet.atk14.net/"
+#~ "\">ATK14 Skelet</a> on a heavy diet. All the unnecessary meat has been "
+#~ "cut away and what's left would like to be the very basis of your web "
+#~ "application."
+
+#~ msgid "The Mini Skelet contains mainly"
+#~ msgstr "The Mini Skelet contains mainly"
+
+#~ msgid ""
+#~ "Are you planning to kick up a new project from the Atk14MiniSkelet? "
+#~ "Great! Just run the following commands."
+#~ msgstr ""
+#~ "Are you planning to kick up a new project from the Atk14MiniSkelet? "
+#~ "Great! Just run the following commands."
+
+#~ msgid ""
+#~ "You can find more information in <a href=\"https://github.com/atk14/"
+#~ "Atk14MiniSkelet/blob/master/README.md#installation\">the installation "
+#~ "instructions.</a>"
+#~ msgstr ""
+#~ "You can find more information in <a href=\"https://github.com/atk14/"
+#~ "Atk14MiniSkelet/blob/master/README.md#installation\">the installation "
+#~ "instructions.</a>"
+
+#~ msgid ""
+#~ "If you want to help us to improve the Atk14MiniSkelet, <a href=\"https://"
+#~ "github.com/atk14/Atk14MiniSkelet\">fork it on GitHub.</a>"
+#~ msgstr ""
+#~ "If you want to help us to improve the Atk14MiniSkelet, <a href=\"https://"
+#~ "github.com/atk14/Atk14MiniSkelet\">fork it on GitHub.</a>"
+
+#~ msgid "ATK14 Mini Skelet on GitHub"
+#~ msgstr "ATK14 Mini Skelet on GitHub"
+
+#~ msgid "Homepage"
+#~ msgstr "Homepage"
+
+#~ msgid "Welcome at ATK14 Mini Skelet!"
+#~ msgstr "Welcome at ATK14 Mini Skelet!"

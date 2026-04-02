@@ -30,6 +30,7 @@ function smarty_block_modal($params,$content,$template,&$repeat){
 		"close_button" => true,
 		"closable_by_keyboard" => true,
 		"closable_by_clicking_on_backdrop" => true,
+		"class" => "",
 	);
 
 	$smarty = atk14_get_smarty_from_template($template);
@@ -54,8 +55,16 @@ function smarty_block_modal($params,$content,$template,&$repeat){
 	$smarty->assign("close_button",$params["close_button"]);
 	$smarty->assign("closable_by_keyboard",$params["closable_by_keyboard"]);
 	$smarty->assign("closable_by_clicking_on_backdrop",$params["closable_by_clicking_on_backdrop"]);
+	$smarty->assign("class",$params["class"]);
 
-	$out = $smarty->fetch("shared/helpers/modal/".(USING_BOOTSTRAP4 ? "_bootstrap4.tpl" : "_bootstrap3.tpl"));
+	if(USING_BOOTSTRAP3){
+		$template = "_bootstrap3.tpl";
+	}elseif(USING_BOOTSTRAP5){
+		$template = "_bootstrap5.tpl";
+	}else{
+		$template = "_bootstrap4.tpl";
+	}
+	$out = $smarty->fetch("shared/helpers/modal/$template");
 
 	$smarty->clearAllAssign();
 	$smarty->assign($original_smarty_vars);

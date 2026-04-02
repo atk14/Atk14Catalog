@@ -13,9 +13,9 @@ class TcLoginField extends TcBase {
 
 	function test_help_text(){
 		$field = new LoginField();
-		$this->assertContains("Up to 50 characters.",$field->help_text);
+		$this->assertStringContains("Up to 50 characters.",$field->help_text);
 
 		$field = new LoginField(array("max_length" => 32));
-		$this->assertContains("Up to 32 characters.",$field->help_text);
+		$this->assertStringContains("Up to 32 characters.",$field->help_text);
 	}
 }

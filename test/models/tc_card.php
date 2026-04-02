@@ -2,6 +2,7 @@
 /**
  *
  * @fixture cards
+ * @fixture products
  * @fixture categories
  * @fixture category_cards
  * @fixture technical_specification_keys
@@ -95,5 +96,10 @@ class TcCard extends TcBase {
 		$this->assertEquals("200g",(string)$coffee->getTechnicalSpecification($this->technical_specification_keys["weight"]));
 		$this->assertEquals("Low",(string)$coffee->getTechnicalSpecification($this->technical_specification_keys["acidity"]->getId()));
 		$this->assertEquals(null,$coffee->getTechnicalSpecification("width"));
+	}
+
+	function test_toHumanReadableString(){
+		$this->assertEquals("Coffee",$this->cards["coffee"]->toHumanReadableString());
+		$this->assertEquals("PEANUTS, Peanuts",$this->cards["peanuts"]->toHumanReadableString()); // CATALOG_ID, Card name
 	}
 }

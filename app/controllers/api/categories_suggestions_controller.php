@@ -63,7 +63,6 @@ class CategoriesSuggestionsController extends ApiController{
 			$categories = Category::FindAll(array(
 				"conditions" => $conditions,
 				"bind_ar" => $bind_ar,
-				"limit" => 20,
 			));
 
 			$this->api_data = array();
@@ -73,52 +72,4 @@ class CategoriesSuggestionsController extends ApiController{
 			}
 		}
 	}
-
-	/*
-	// Mysakova puvodni funkce
-	//function index(){
-		global $ATK14_GLOBAL;
-
-		if(!$this->params->isEmpty() && ($d = $this->form->validate($this->params))){
-			$this->api_data = array();
-
-			preg_match("/([^\/]+)$/", $d["q"], $m);
-			$levels = preg_split("/\//", $d["q"]);
-			if (sizeof($levels)==0)
-				return;
-
-			if ($m) {
-				$q = $m[1];
-			} else {
-				$q = array_pop($levels);
-				$q = array_pop($levels);
-			}
-			$categories = Category::FindAll(array(
-				"conditions" => "id IN (SELECT record_id FROM translations WHERE table_name='categories' AND key='name' AND lang=:lang AND lower(body) LIKE lower(:q))",
-				"bind_ar" => array(":q" => "%$q%", ":lang" => $ATK14_GLOBAL->getLang()),
-				#"order_by" => "LOWER(tag), tag",
-				"limit" => 20,
-			));
-			foreach($categories as $c){
-				$name_path = new String4($c->getNamePath());
-				$name_path = new String4($name_path->lower());
-				$slug_path = new String4($c->getPath());
-				$slug_path = new String4($slug_path->lower());
-				$q = new String4($d["q"]);
-				$q = new String4($q->lower());
-
-				$levels = preg_split("/\//", $d["q"]);
-				if (sizeof($levels==1) or ((sizeof($levels>1)) && (mb_strpos("$name_path","$q")===0 || mb_strpos("$slug_path","$q")===0 ))) {
-					$this->api_data[] = $c->getNamePath();
-					if (sizeof($levels)>1 && !$m) {
-						foreach($c->getChildCategories() as $cc) {
-							$this->api_data[] = $cc->getNamePath();
-							if (sizeof($this->api_data)>=20) break;
-						}
-					}
-							if (sizeof($this->api_data)>=20) break;
-				}
-			}
-		}
-	}*/
 }

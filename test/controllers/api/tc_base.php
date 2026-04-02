@@ -7,13 +7,13 @@
  */
 class TcBase extends TcAtk14Controller{
 
-	function setUp(){
+	function _setUp(){
 		$this->dbmole->begin();
 		$this->setUpFixtures();
 		$this->client->setRemoteAddr("127.0.0.1");
 	}
 
-	function tearDown(){
+	function _tearDown(){
 		$this->dbmole->rollback();
 	}
 

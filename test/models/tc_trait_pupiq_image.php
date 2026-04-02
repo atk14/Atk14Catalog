@@ -33,7 +33,7 @@ class TcTraitPupiqImage extends TcBase {
 		$url_100 = $image->getUrl("100x");
 
 		$this->assertNotEquals($url,$url_100);
-		$this->assertNotContains("100x72",$url);
-		$this->assertContains("100x72",$url_100);
+		$this->assertStringNotContains("100x72",$url);
+		$this->assertStringContains("100x72",$url_100);
   }
 }

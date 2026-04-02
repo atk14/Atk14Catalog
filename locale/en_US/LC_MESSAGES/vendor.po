@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-24 11:10+0200\n"
+"POT-Creation-Date: 2025-10-01 13:16+0200\n"
 "PO-Revision-Date: 2022-04-25 16:30+0200\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: \n"
@@ -35,17 +35,18 @@ msgid "Error 2"
 msgstr "Error 2"
 
 #: ../vendor/atk14/async-file-field/src/app/fields/async_file_field.php:12
-msgid "The file has been already deleted on the server, please upload it again"
+msgid ""
+"The file has been already deleted on the server, please upload it again!"
 msgstr ""
-"The file has been already deleted on the server, please upload it again"
+"The file has been already deleted on the server, please upload it again!"
 
 #: ../vendor/atk14/async-file-field/src/app/fields/async_file_field.php:13
-msgid "The file was not fully uploaded, please upload it again"
-msgstr "The file was not fully uploaded, please upload it again"
+msgid "The file was not fully uploaded, please upload it again!"
+msgstr "The file was not fully uploaded, please upload it again!"
 
-#: ../vendor/atk14/async-file-field/src/app/widgets/async_file_input.php:20
+#: ../vendor/atk14/async-file-field/src/app/widgets/async_file_input.php:22
 msgid "Remove file"
-msgstr ""
+msgstr "Remove file"
 
 #: ../vendor/atk14/hcaptcha-field/src/app/fields/hcaptcha_field.php:8
 #: ../vendor/atk14/recaptcha-field/src/app/fields/recaptcha_field.php:11
@@ -69,37 +70,37 @@ msgstr ""
 "We are experiencing some technical issue during the communication with an "
 "captcha API. Please try it later."
 
-#: ../vendor/atk14/mail-panel/src/MailPanel.php:44
-msgid "Headers"
-msgstr "Headers"
-
-#: ../vendor/atk14/mail-panel/src/MailPanel.php:55
-msgid "HTML body"
-msgstr "HTML body"
-
-#: ../vendor/atk14/mail-panel/src/MailPanel.php:61
-msgid "Plain text body"
-msgstr "Plain text body"
-
-#: ../vendor/atk14/mail-panel/src/MailPanel.php:71
+#: ../vendor/atk14/mail-panel/src/MailPanel.php:68
 msgid "No mail has been sent"
 msgstr "No mail has been sent"
 
-#: ../vendor/atk14/phone-field/src/phone_field.php:52
+#: ../vendor/atk14/mail-panel/src/MailPanel.php:79
+msgid "Headers"
+msgstr "Headers"
+
+#: ../vendor/atk14/mail-panel/src/MailPanel.php:90
+msgid "Plain text body"
+msgstr "Plain text body"
+
+#: ../vendor/atk14/mail-panel/src/MailPanel.php:98
+msgid "HTML body"
+msgstr "HTML body"
+
+#: ../vendor/atk14/phone-field/src/phone_field.php:62
 msgid "Enter phone number in format %sample_phone_number%"
 msgstr "Enter phone number in format %sample_phone_number%"
 
-#: ../vendor/atk14/phone-field/src/phone_field.php:76
+#: ../vendor/atk14/phone-field/src/phone_field.php:86
 msgid "Enter valid phone number (%sample_phone_number%)"
 msgstr "Enter valid phone number (%sample_phone_number%)"
 
-#: ../vendor/atk14/phone-field/src/phone_field.php:77
+#: ../vendor/atk14/phone-field/src/phone_field.php:87
 msgid "Enter phone number"
 msgstr "Enter phone number"
 
 #: ../vendor/atk14/pupiq-client/src/app/widgets/async_pupiq_attachment_input.php:41
 #: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_attachment_input.php:41
-#: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_image_input.php:45
+#: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_image_input.php:64
 msgid "remove"
 msgstr "remove"
 
@@ -108,11 +109,15 @@ msgstr "remove"
 msgid "Download attachment"
 msgstr "Download attachment"
 
-#: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_image_input.php:46
+#: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_image_input.php:45
+msgid "no image"
+msgstr "no image"
+
+#: ../vendor/atk14/pupiq-client/src/app/widgets/pupiq_image_input.php:65
 msgid "Display image"
 msgstr "Display image"
 
-#: ../vendor/atk14/pupiq-client/src/lib/pupiq.php:113
+#: ../vendor/atk14/pupiq-client/src/lib/pupiq.php:114
 msgid "Unknown error"
 msgstr "Unknown error"
 
@@ -124,21 +129,29 @@ msgstr ""
 "We are experiencing some technical issue during the communication with "
 "Google. Please try it later."
 
-#: ../vendor/atk14/slug-field/src/slug_field.php:6
+#: ../vendor/atk14/slug-field/src/slug_field.php:8
 msgid "Slug"
 msgstr "Slug"
 
-#: ../vendor/atk14/slug-field/src/slug_field.php:8
+#: ../vendor/atk14/slug-field/src/slug_field.php:10
 msgid "funny-green-mug"
 msgstr "funny-green-mug"
 
-#: ../vendor/atk14/slug-field/src/slug_field.php:12
+#: ../vendor/atk14/slug-field/src/slug_field.php:14
 msgid "Write something like black-cat-white-cat"
 msgstr "Write something like black-cat-white-cat"
 
 #: ../vendor/atk14/url-field/src/url_field.php:13
 msgid "This doesn't look like an URL"
 msgstr "This doesn't look like an URL"
+
+#~ msgid ""
+#~ "The file has been already deleted on the server, please upload it again"
+#~ msgstr ""
+#~ "The file has been already deleted on the server, please upload it again"
+
+#~ msgid "The file was not fully uploaded, please upload it again"
+#~ msgstr "The file was not fully uploaded, please upload it again"
 
 #~ msgid "Hello World!"
 #~ msgstr "Hello World!"
@@ -178,3 +191,6 @@ msgstr "This doesn't look like an URL"
 
 #~ msgid "and"
 #~ msgstr "and"
+
+#~ msgid "Sort table by this column"
+#~ msgstr "Sort table by this column"

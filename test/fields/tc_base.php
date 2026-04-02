@@ -1,12 +1,12 @@
 <?php
 class TcBase extends TcAtk14Field{
 
-	function setUp(){
+	function _setUp(){
 		$this->dbmole->begin();
 		$this->setUpFixtures();
 	}
 
-	function tearDown(){
+	function _tearDown(){
 		$this->dbmole->rollback();
 	}
 }

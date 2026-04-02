@@ -16,9 +16,9 @@ class CreateNewForm extends ApplicationForm{
 			"required" => false,
 		)));
 
-		$this->add_sign_up_for_newsletter_field((array(
-			"initial" => true,
-		)));
+		if(!defined("SIGN_UP_FOR_NEWSLETTER_ENABLED") || constant("SIGN_UP_FOR_NEWSLETTER_ENABLED")){
+			$this->add_sign_up_for_newsletter_field();
+		}
 
 		$this->add_field("body",new TextField(array(
 			"label" => _("Text"),

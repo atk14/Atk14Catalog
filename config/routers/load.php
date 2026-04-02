@@ -10,6 +10,7 @@
 Atk14Url::AddRouter("PagesRouter");
 Atk14Url::AddRouter("ArticlesRouter");
 Atk14Url::AddRouter("MarkdownManualRouter");
+Atk14Url::AddRouter("NewsletterSubscriptionsRouter");
 
 // Catalog specific routers
 Atk14Url::AddRouter("CardsRouter");

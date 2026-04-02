@@ -1,6 +1,11 @@
 <?php
 class TagsField extends CharField{
 
+	public $separator;
+	public $unique;
+	public $max_tags;
+	public $create_tag_if_not_found;
+
 	function __construct($options = array()){
 		$options += array(
 			"separator" => ",",

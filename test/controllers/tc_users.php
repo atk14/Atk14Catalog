@@ -21,7 +21,7 @@ class TcUsers extends TcBase{
 		// we are visiting the front page
 		$controller = $this->client->get("main/index");
 		$this->assertEquals(200,$this->client->getStatusCode());
-		$this->assertNotContains("john.doe.tester",$this->client->getContent()); // the front page doesn't contain info about user john.doe.tester, actually this user doesn't exist yet
+		$this->assertStringNotContains("john.doe.tester",$this->client->getContent()); // the front page doesn't contain info about user john.doe.tester, actually this user doesn't exist yet
 		$this->assertEquals(null,$controller->logged_user);
 
 		// we are visiting the page for user registration
@@ -47,18 +47,18 @@ class TcUsers extends TcBase{
 		$controller = $this->client->post("users/create_new",$params);
 		$this->assertEquals(false,$controller->form->has_errors());
 		$this->assertEquals(303,$this->client->getStatusCode()); // redirecting to $params["return_uri"]...
-		$this->assertContains('You have been successfully registered',(string)$controller->flash->success());
+		$this->assertStringContains('You have been successfully registered',(string)$controller->flash->success());
 
 		// testing outgoing email
 		$mailer = $controller->mailer;
 		$this->assertEquals('john@doe.com',$mailer->to);
-		$this->assertContains('Thanks for signing up',$mailer->body_html);
-		$this->assertContains('login: john.doe.tester',$mailer->body_html);
+		$this->assertStringContains('Thanks for signing up',$mailer->body_html);
+		$this->assertStringContains('login: john.doe.tester',$mailer->body_html);
 
 		// we are visiting the front page again
 		$controller = $this->client->get("main/index");
 		$this->assertEquals(200,$this->client->getStatusCode());
-		$this->assertContains("john.doe.tester",$this->client->getContent()); // now the page contains info about user john.doe.tester
+		$this->assertStringContains("john.doe.tester",$this->client->getContent()); // now the page contains info about user john.doe.tester
 		$this->assertEquals("john.doe.tester",$controller->logged_user->getLogin());
 
 		// the new user has hashed password
@@ -83,7 +83,7 @@ class TcUsers extends TcBase{
 
 		$this->assertEquals(false,$controller->form->has_errors());
 		$this->assertEquals(303,$this->client->getStatusCode()); // redirecting to $params["return_uri"]...
-		$this->assertContains('You have been successfully registered',(string)$controller->flash->success());
+		$this->assertStringContains('You have been successfully registered',(string)$controller->flash->success());
 
 		$john = User::FindByLogin("john.doe.tester");
 		$this->assertNotEquals('$2a$12$K9oI83nd6DHKaovZleAxcea3YbEuUmKZISehASGthpMzZweUqOhta',$john->getPassword());

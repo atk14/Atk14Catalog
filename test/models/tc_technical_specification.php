@@ -26,4 +26,31 @@ class TcTechnicalSpecification extends TcBase {
 		$this->assertEquals("Silná",$ts->getContent());
 		$this->assertEquals("Silná","$ts");
 	}
+
+	function test_CreateForCard(){
+		$book = $this->cards["book"];
+		$peanuts = $this->cards["peanuts"];
+
+		$this->assertEquals(null,$book->getTechnicalSpecification("pages"));
+		$this->assertEquals(null,$book->getTechnicalSpecification("isbn"));
+		//
+		$this->assertEquals(null,$peanuts->getTechnicalSpecification("pages"));
+		$this->assertEquals(null,$peanuts->getTechnicalSpecification("isbn"));
+
+		TechnicalSpecification::CreateForCard($book,"pages","222");
+
+		$this->assertEquals("222",$book->getTechnicalSpecification("pages"));
+		$this->assertEquals(null,$book->getTechnicalSpecification("isbn"));
+		//
+		$this->assertEquals(null,$peanuts->getTechnicalSpecification("pages"));
+		$this->assertEquals(null,$peanuts->getTechnicalSpecification("isbn"));
+
+		TechnicalSpecification::CreateForCard($book,"isbn","11-22-33-44");
+
+		$this->assertEquals("222",(string)$book->getTechnicalSpecification("pages"));
+		$this->assertEquals("11-22-33-44",(string)$book->getTechnicalSpecification("isbn"));
+		//
+		$this->assertEquals(null,$peanuts->getTechnicalSpecification("pages"));
+		$this->assertEquals(null,$peanuts->getTechnicalSpecification("isbn"));
+	}
 }

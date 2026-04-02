@@ -58,10 +58,24 @@
 		<![endif]-->
 		
 		{render partial="shared/layout/favicons"}
-		
+
+		{javascript_tag}
+			window.name = window.name || "name_" + Math.round(  Math.random() * 1000000 );
+    	let storageName = "admin_sidebarOpen_" + window.name;
+			
+			let savedSidebarStatus = window.sessionStorage.getItem( storageName ) || null;
+			if( savedSidebarStatus !== true && savedSidebarStatus !== "true" && savedSidebarStatus !== null ) {
+				document.documentElement.classList.add( "sidebar-collapsed" );
+			}
+		{/javascript_tag}
+
+		{placeholder for=head} {* a place for <link rel="canonical" ...>, etc. *}
+
+		<meta name="robots" content="noindex,noarchive">
 	</head>
 
 	<body class="body_{$controller}_{$action}{if $request->getCookieVar("dark_mode")} dark-mode{/if}" data-namespace="{$namespace}" data-controller="{$controller}" data-action="{$action}">
+		{render partial="shared/layout/flash_message"}
 		<div class="body-wrap">
 			{render partial="shared/layout/header"}
 		
@@ -73,10 +87,12 @@
 						<nav class="nav-section">
 							{render partial="shared/layout/section_navigation"}
 						</nav>
+						<div class="sidebar__toggle d-none js--sidebar-toggle">
+							<button class="btn btn-link"><span class="atk_icon atk_icon--sidebar"></span></button>
+						</div>
 					{/if}
 
 					<div class="content-main">
-						{render partial="shared/layout/flash_message"}
 						{placeholder}
 					</div>
 
@@ -85,5 +101,9 @@
 		<a href="#" id="js-scroll-to-top" title="{t}Nahoru{/t}">{!"arrow-up"|icon}</a>
 		{javascript_script_tag file="$public/admin/dist/scripts/vendor.min.js"}
 		{javascript_script_tag file="$public/admin/dist/scripts/application.min.js"}
+
+		{javascript_tag}
+			{placeholder for="js"}
+		{/javascript_tag}
 	</body>
 </html>

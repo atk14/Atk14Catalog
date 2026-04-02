@@ -28,7 +28,7 @@ class TcApplication extends TcBase{
 		$this->_loginUser($user);
 		$client->get("main/index");
 		$this->assertEquals(403,$client->getStatusCode());
-		$this->assertContains("rambo.tester",$client->getContent()); // on the page there must be the user mentioned
+		$this->assertStringContains("rambo.tester",$client->getContent()); // on the page there must be the user mentioned
 
 		// only administrator can access administration
 		$this->_loginUser(1); // admin

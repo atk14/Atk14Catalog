@@ -29,6 +29,7 @@
 		<meta charset="utf-8">
 	
 		{!$head_tags}
+		{render partial="shared/trackers/google/tag_manager_head"}
 		{render partial="shared/trackers/google/analytics"}
 
 		<title>{trim}
@@ -66,6 +67,8 @@
 	</head>
 
 	<body class="body_{$controller}_{$action}" data-namespace="{$namespace}" data-controller="{$controller}" data-action="{$action}">
+		{render partial="shared/trackers/google/tag_manager_body"}
+		{render partial="shared/layout/flash_message"}
 		{render partial="shared/layout/header"}
 		<div class="container-fluid{if $section_navigation} has-nav-section{/if}">
 			
@@ -81,7 +84,6 @@
 				{/if}
 
 				<div class="content-main">
-					{render partial="shared/layout/flash_message"}
 					{placeholder}
 				</div>
 			</div>

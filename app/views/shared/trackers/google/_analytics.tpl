@@ -2,13 +2,13 @@
 {if $analytics_tracking_id}
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={$analytics_tracking_id}"></script>
-<script>
+{javascript_tag}
 {literal}
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 {/literal}
   gtag('config', '{$analytics_tracking_id}');
-</script>
+{/javascript_tag}
 
 {/if}

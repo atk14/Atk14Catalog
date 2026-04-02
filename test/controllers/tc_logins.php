@@ -11,7 +11,7 @@ class TcLogins extends TcBase{
 		// no mention about the user on the front page
 		$client->get("main/index");
 		$this->assertEquals(200,$client->getStatusCode());
-		$this->assertNotContains('rambo.tester',$client->getContent());
+		$this->assertStringNotContains('rambo.tester',$client->getContent());
 
 		// an invalid login
 		$ctrl = $client->post("logins/create_new",array(
@@ -20,7 +20,7 @@ class TcLogins extends TcBase{
 		));
 		$this->assertEquals(200,$client->getStatusCode());
 		$this->assertTrue($ctrl->form->has_errors());
-		$this->assertContains('Wrong login and password combination',$client->getContent());
+		$this->assertStringContains('Wrong login and password combination',$client->getContent());
 
 		// the correct login
 		$ctrl = $client->post("logins/create_new",array(
@@ -33,7 +33,7 @@ class TcLogins extends TcBase{
 		// there is a mention about the user on the front page
 		$client->get("main/index");
 		$this->assertEquals(200,$client->getStatusCode());
-		$this->assertContains('rambo.tester',$client->getContent());
+		$this->assertStringContains('rambo.tester',$client->getContent());
 
 		// logout
 		$client->post("logins/destroy");
@@ -42,7 +42,7 @@ class TcLogins extends TcBase{
 		// there is no mention about the user on the front page
 		$client->get("main/index");
 		$this->assertEquals(200,$client->getStatusCode());
-		$this->assertNotContains('rambo.tester',$client->getContent());
+		$this->assertStringNotContains('rambo.tester',$client->getContent());
 
 		// trying to login with the actual hash must not be successful
 		$rocky = $this->users["rocky"];

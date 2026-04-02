@@ -1,4 +1,5 @@
 <?php
+#[\AllowDynamicProperties]
 class ApplicationBaseController extends Atk14Controller{
 
 	/**
@@ -124,7 +125,7 @@ class ApplicationBaseController extends Atk14Controller{
 		$this->response->setHeader("X-XSS-Protection","1; mode=block");
 		$this->response->setHeader("Referrer-Policy","same-origin"); // "same-origin", "strict-origin", "strict-origin-when-cross-origin"...
 		$this->response->setHeader("X-Content-Type-Options","nosniff");
-		//$this->response->setHeader("Content-Security-Policy","default-src 'self' data: 'unsafe-inline' 'unsafe-eval'");
+		//$this->response->setHeader("Content-Security-Policy","default-src 'self'; script-src 'unsafe-inline' 'unsafe-eval';");
 
 		$this->response->setHeader("X-Powered-By","ATK14 Framework");
 
@@ -137,7 +138,7 @@ class ApplicationBaseController extends Atk14Controller{
 			return $this->_redirect_to("$scheme://".ATK14_HTTP_HOST.$this->request->getUri(),array("moved_permanently" => true));
 		}
 
-		if(!$this->request->ssl() && defined("REDIRECT_TO_SSL_AUTOMATICALLY") && constant("REDIRECT_TO_SSL_AUTOMATICALLY")){
+		if(!$this->request->ssl() && defined("REDIRECT_TO_SSL_AUTOMATICALLY") && constant("REDIRECT_TO_SSL_AUTOMATICALLY") && !in_array("$this->namespace/$this->controller",["/remote_tests"])){
 			return $this->_redirect_to_ssl();
 		}
 
@@ -177,9 +178,9 @@ class ApplicationBaseController extends Atk14Controller{
 		$this->session->changeSecretToken(); // prevent from session fixation
 
 		if($options["fake_login"]){
-			$this->logger->info(sprintf("User#%s (%s) just logged in administratively as User#%s (%s) from %s",$this->logged_user->getId(),"$this->logged_user",$user->getId(),"$user",$this->request->getRemoteAddr()));
+			$this->logger->info(sprintf("User#%s (%s, %s) just logged in administratively as User#%s (%s, %s) from %s",$this->logged_user->getId(),$this->logged_user->getLogin(),"$this->logged_user",$user->getId(),$user->getLogin(),"$user",$this->request->getRemoteAddr()));
 		}else{
-			$this->logger->info(sprintf("User#%s (%s) just logged in from %s",$user->getId(),"$user",$this->request->getRemoteAddr()));
+			$this->logger->info(sprintf("User#%s (%s, %s) just logged in from %s",$user->getId(),$user->getLogin(),"$user",$this->request->getRemoteAddr()));
 			$user->s(array(
 				"last_signed_in_at" => now(),
 				"last_signed_in_from_addr" => $this->request->getRemoteAddr(),
@@ -202,11 +203,11 @@ class ApplicationBaseController extends Atk14Controller{
 		}elseif($logged_user->getId()!=$really_logged_user->getId()){
 			$stayed_logged_as_user = $really_logged_user;
 			$this->session->clear("fake_logged_user_id");
-			$this->logger->info(sprintf("User#%s (%s) logged out administratively as User#%s (%s) from %s",$really_logged_user->getId(),"$really_logged_user",$logged_user->getId(),"$logged_user",$this->request->getRemoteAddr()));
+			$this->logger->info(sprintf("User#%s (%s, %s) logged out administratively as User#%s (%s, %s) from %s",$really_logged_user->getId(),$really_logged_user->getLogin(),"$really_logged_user",$logged_user->getId(),$logged_user->getLogin(),"$logged_user",$this->request->getRemoteAddr()));
 		}else{
 			$this->session->clear("logged_user_id");
 			$this->session->clear("fake_logged_user_id"); // just for sure
-			$this->logger->info(sprintf("User#%s (%s) logged out from %s",$logged_user->getId(),"$logged_user",$this->request->getRemoteAddr()));
+			$this->logger->info(sprintf("User#%s (%s, %s) logged out from %s",$logged_user->getId(),$logged_user->getLogin(),"$logged_user",$this->request->getRemoteAddr()));
 		}
 	}
 
@@ -349,13 +350,13 @@ class ApplicationBaseController extends Atk14Controller{
 			$key = md5($this->request->getRequestUri());
 			if(!isset($return_uris[$key])){
 				if(sizeof($return_uris)>50){ array_shift($return_uris); } // for safety reasons there is a max limit
-				$return_uris[$key] = $this->_get_return_uri();
+				$return_uris[$key] = $this->_get_return_uri(null);
 				$this->session->s("return_uris",$return_uris);
 			}
 		}
 
 		if(!isset($form)){ $form = $this->form; }
-		$return_uri = $this->_get_return_uri();
+		$return_uri = $this->_get_return_uri(null);
 		$form->set_hidden_field("_return_uri_",$return_uri);
 	}
 
@@ -372,7 +373,7 @@ class ApplicationBaseController extends Atk14Controller{
 		($return_uri = isset($return_uris[$key]) ? $return_uris[$key] : null) ||
 		($return_uri = $this->params->getString("return_uri")) ||
 		($return_uri = $this->request->getHttpReferer()) ||
-		($return_uri = $this->_link_to($default));
+		($return_uri = $default ? $this->_link_to($default) : null);
 		return $return_uri;
 	}
 
@@ -391,11 +392,15 @@ class ApplicationBaseController extends Atk14Controller{
 		$key = md5($this->request->getRequestUri());
 		($return_uris = $this->session->g("return_uris")) || ($return_uris = array());
 
+		$return_uri = "";
+
 		if(isset($return_uris[$key])){
-			$return_uri = $return_uris[$key];
+			$return_uri = $return_uris[$key]; // can be an empty string
 			unset($return_uris[$key]);
 			$this->session->s("return_uris",$return_uris);
-		}else{
+		}
+
+		if(!$return_uri){
 			$return_uri = $this->_get_return_uri($default);
 		}
 
@@ -442,6 +447,14 @@ class ApplicationBaseController extends Atk14Controller{
 			}
 			if (defined("GOOGLE_TAG_MANAGER_CONTAINER_ID")) {
 				$gtm_container_id = GOOGLE_TAG_MANAGER_CONTAINER_ID;
+			}
+			if (defined("GOOGLE_SITE_VERIFICATION_META_TAG_CONTENT")) {
+				$_contents = preg_split("/,/", constant("GOOGLE_SITE_VERIFICATION_META_TAG_CONTENT"));
+				$_contents = array_filter($_contents);
+				$_contents = array_unique($_contents);
+				foreach($_contents as $_c) {
+					$this->head_tags->addMetaTag("google-site-verification", $_c);
+				}
 			}
 		}
 		if (isset($analytics_tracking_id)) {
@@ -500,6 +513,50 @@ class ApplicationBaseController extends Atk14Controller{
 		)){
 			$this->template_name = "application/$this->action";
 		}
+	}
+
+	/**
+	 *
+	 *	$this->_create_newsletter_subscription_request("john.doe@example.com");
+	 *	$this->_create_newsletter_subscription_request("john.doe@example.com",["name" => "John Doe", "vocative" => "Dear John"]);
+	 */
+	function _create_newsletter_subscription_request($email,$values = [],$options = []){
+		$values["email"] = $email;
+
+		$options += [
+			"send_notification" => true,
+			"create_request_if_subscription_exists" => false,
+		];
+
+		if(!$options["create_request_if_subscription_exists"] && NewsletterSubscriber::GetInstancesByEmail($email)){
+			return null;
+		}
+
+		$nsr = NewsletterSubscriptionRequest::CreateNewRecord($values);
+
+		if($options["send_notification"]){
+			$this->mailer->notify_newsletter_subscription_request_creation($nsr);
+		}
+
+		return $nsr;
+	}
+
+	function _sign_up_for_newsletter($email,$values = [],$options = []){
+		$values += [
+			// "language" => $this->lang,
+			// "subscribed_at_url" => $this->request->getUrl(),
+		];
+
+		$options += [
+			"send_notification" => true,
+		];
+
+		$subscription_just_created = false;
+		$ns = NewsletterSubscriber::SignUp($email,$values,$subscription_just_created);
+		if($options["send_notification"] && $subscription_just_created){
+			$this->mailer->notify_newsletter_subscription($ns);
+		}
+		return $ns;
 	}
 
 	/**

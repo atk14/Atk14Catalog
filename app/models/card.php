@@ -195,7 +195,12 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 	}
 
 	function toHumanReadableString(){
-		return $this->getName();
+		$products = $this->getProducts();
+
+		$out = [];
+		if(sizeof($products)==1){ $out[] = $products[0]->getCatalogId(); }
+		$out[] = $this->getName();
+		return join(", ",$out);
 	}
 
 	protected function _getProducts($options = array()){
@@ -566,7 +571,9 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 		$options += [
 			"visible" => null,
 		];
-		$out = TechnicalSpecification::FindAll("card_id",$this);
+
+		$out = TechnicalSpecification::GetInstancesForCard($this);
+
 		if(!is_null($options["visible"])){
 			$_out = [];
 			foreach($out as $item){
@@ -575,36 +582,30 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 			}
 			$out = $_out;
 		}
+
 		return $out;
 	}
 
 	/**
 	 * Returns the first occurrence of TechnicalSpecification with the given key
 	 *
-	 *	echo $card->getTechnicalSpecification("weight");
+	 *	echo $card->getTechnicalSpecification("weight"); // code
+	 *	echo $card->getTechnicalSpecification("Weight"); // key
 	 *	echo $card->getTechnicalSpecification(123);
-	 *	echo $card->getTechnicalSpecification($tech_spec_key);
+	 *	echo $card->getTechnicalSpecification($tech_spec_key); // TechnicalSpecificationKey
 	 *
 	 * @return TechnicalSpecification
 	 */
 	function getTechnicalSpecification($key){
-		static $KEYS;
-
 		if(is_numeric($key) && ($obj = Cache::Get("TechnicalSpecificationKey",$key))){
 			$key = $obj;
-		}
-		if(is_string($key) && ($obj = TechnicalSpecificationKey::GetInstanceByKey($key))){
+		}elseif(is_string($key) && ($obj = TechnicalSpecificationKey::GetInstanceByCode($key))){
+			$key = $obj;
+		}elseif(is_string($key) && ($obj = TechnicalSpecificationKey::GetInstanceByKey($key))){
 			$key = $obj;
 		}
-		if(!is_object($key)){
-			return null;
-		}
 
-		foreach($this->getTechnicalSpecifications() as $ts){
-			if($ts->getTechnicalSpecificationKeyId()==$key->getId()){
-				return $ts;
-			}
-		}
+		return TechnicalSpecification::GetForCard($this,$key);
 	}
 
 	function setValues($values,$options=array()) {

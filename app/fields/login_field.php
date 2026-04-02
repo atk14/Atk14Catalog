@@ -1,6 +1,8 @@
 <?php
 class LoginField extends RegexField{
 
+	public $check_for_conflicted_user_existence;
+
 	function __construct($options = array()){
 		$options += array(
 			"max_length" => 50,

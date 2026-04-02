@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-24 11:10+0200\n"
-"PO-Revision-Date: 2022-04-25 17:21+0200\n"
+"POT-Creation-Date: 2025-10-01 13:16+0200\n"
+"PO-Revision-Date: 2025-01-28 12:10+0100\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: Team <team@email.com>\n"
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.4.2\n"
 
 msgid ""
 "Are you sure to delete article item\n"
@@ -95,6 +95,7 @@ msgstr "Nebyl nalezen žádný záznam."
 msgid "The product is not yet placed in a category with a filter."
 msgstr "Produkt zatím nebyl zařazen do kategorie s filtrem."
 
+#: ../app/controllers/admin/admin.php:96
 msgid "invisible"
 msgstr "neviditelné"
 
@@ -278,6 +279,9 @@ msgstr "Přidat podkategorii"
 msgid "filter option"
 msgstr "možnost filtru"
 
+msgid "Not visible"
+msgstr "Neviditelné"
+
 msgid "Move the category"
 msgstr "Přesunout kategorii"
 
@@ -319,11 +323,11 @@ msgstr "Podkategorie"
 msgid "filter options"
 msgstr "možnosti filtru"
 
-#: ../app/controllers/admin/admin.php:86
+#: ../app/controllers/admin/admin.php:92
 msgid "filter"
 msgstr "filtr"
 
-#: ../app/controllers/admin/admin.php:87
+#: ../app/controllers/admin/admin.php:93
 msgid "link"
 msgstr "odkaz"
 
@@ -471,7 +475,7 @@ msgid "Upravit obrázky fotogalerie"
 msgstr "Upravit obrázky fotogalerie"
 
 msgid "Download original image"
-msgstr ""
+msgstr "Stáhnout originální obrázek"
 
 msgid "bez titulku nebo popisu"
 msgstr "bez titulku nebo popisu"
@@ -498,7 +502,7 @@ msgid "There is no link in the list."
 msgstr "V seznamu není žádný odkaz."
 
 msgid "This item has an administrable submenu:"
-msgstr ""
+msgstr "Tato položka má administrovatelné podmenu:"
 
 msgid "Edit links"
 msgstr "Editovat odkazy"
@@ -507,7 +511,7 @@ msgid "Create new link list"
 msgstr "Vytvořit nový odkaz"
 
 msgid "This is a submenu for:"
-msgstr ""
+msgstr "Toto je podmenu pro:"
 
 msgid "Link list"
 msgstr "Seznam odkazů"
@@ -528,7 +532,7 @@ msgstr "E-mail"
 
 #: ../app/forms/admin/newsletter_subscribers/index_form.php:14
 msgid "Language"
-msgstr ""
+msgstr "Jazyk"
 
 msgid "Subscribed since"
 msgstr "Přihlášen od"
@@ -719,7 +723,7 @@ msgstr "Nebyl nalezen žádný štítek."
 msgid "Tag"
 msgstr "Štítek"
 
-#: ../app/forms/admin/admin_form.php:125
+#: ../app/forms/admin/admin_form.php:126
 msgid "Code"
 msgstr "Kód"
 
@@ -763,7 +767,7 @@ msgid "Is admin?"
 msgstr "Je administrátor?"
 
 msgid "deleted user"
-msgstr ""
+msgstr "smazaný uživatel"
 
 msgid "inactive user"
 msgstr "neaktivní uživatel"
@@ -778,7 +782,7 @@ msgid "regular user"
 msgstr "běžný uživatel"
 
 msgid "deleted"
-msgstr ""
+msgstr "smazáno"
 
 msgid "not active"
 msgstr "neaktivní"
@@ -874,44 +878,44 @@ msgstr "Odběratelé newsletteru"
 msgid "404 Redirections"
 msgstr "Přesměrování 404"
 
-#: ../app/controllers/admin/admin.php:73
+#: ../app/controllers/admin/admin.php:79
 #: ../app/controllers/admin/category_trees_controller.php:23
 msgid "Category tree"
 msgstr "Strom kategorií"
 
-#: ../app/controllers/admin/admin.php:137
+#: ../app/controllers/admin/admin.php:152
 #, php-format
 msgid "Seznam objektů typu %s"
 msgstr "Seznam objektů typu %s"
 
-#: ../app/controllers/admin/admin.php:172
+#: ../app/controllers/admin/admin.php:187
 msgid "The record has been created"
 msgstr "Záznam byl vytvořen"
 
-#: ../app/controllers/admin/admin.php:186
+#: ../app/controllers/admin/admin.php:201
 #, php-format
 msgid "Vytvořit objekt typu %s"
 msgstr "Vytvořit objekt typu %s"
 
-#: ../app/controllers/admin/admin.php:238
+#: ../app/controllers/admin/admin.php:253
 #: ../app/controllers/admin/card_sections_controller.php:27
 msgid "Změny byly uloženy"
 msgstr "Změny byly uloženy"
 
-#: ../app/controllers/admin/admin.php:273
+#: ../app/controllers/admin/admin.php:288
 #, php-format
 msgid "Editace objektu typu %s"
 msgstr "Editace objektu typu %s"
 
-#: ../app/controllers/admin/admin.php:307
+#: ../app/controllers/admin/admin.php:322
 msgid "Ve formuláři nebylo nic změněno"
 msgstr "Nothing has been changed in the form"
 
-#: ../app/controllers/admin/admin.php:429
+#: ../app/controllers/admin/admin.php:444
 msgid "The entry has been deleted"
 msgstr "Záznam byl smazán"
 
-#: ../app/controllers/admin/admin.php:448
+#: ../app/controllers/admin/admin.php:463
 #: ../app/controllers/admin/galleries_controller.php:34
 msgid "Fotogalerie"
 msgstr "Fotogalerie"
@@ -961,10 +965,10 @@ msgid "Editing attachment #%s"
 msgstr "Úprava přílohy #%s"
 
 #: ../app/controllers/admin/attachments_controller.php:38
-#: ../app/controllers/admin/cards_controller.php:180
+#: ../app/controllers/admin/cards_controller.php:181
 #: ../app/controllers/admin/categories_controller.php:29
 #: ../app/controllers/admin/collections_controller.php:27
-#: ../app/controllers/admin/images_controller.php:59
+#: ../app/controllers/admin/images_controller.php:68
 #: ../app/controllers/admin/slugs_controller.php:19
 msgid "Changes have been saved"
 msgstr "Změny byly uloženy"
@@ -1007,38 +1011,38 @@ msgstr "Nastavení uloženo"
 msgid "List of Products"
 msgstr "Seznam produktů"
 
-#: ../app/controllers/admin/cards_controller.php:74
+#: ../app/controllers/admin/cards_controller.php:75
 msgid "Adding a product"
 msgstr "Přidat produkt"
 
-#: ../app/controllers/admin/cards_controller.php:108
+#: ../app/controllers/admin/cards_controller.php:109
 msgid "The product has been created. Now you can add some extra data to it."
 msgstr "Produkt byl vytvořen. Nyní k němu můžete přidat další údaje."
 
-#: ../app/controllers/admin/cards_controller.php:114
+#: ../app/controllers/admin/cards_controller.php:115
 #, php-format
 msgid "Editing product %s"
 msgstr "Editace produktu %s"
 
-#: ../app/controllers/admin/cards_controller.php:198
+#: ../app/controllers/admin/cards_controller.php:199
 msgid "Variants mode has been activated"
 msgstr "Variantní režim byl aktivován"
 
-#: ../app/controllers/admin/cards_controller.php:216
+#: ../app/controllers/admin/cards_controller.php:217
 msgid "Variants mode has been deactivated"
 msgstr "Variantní režim byl deaktivován"
 
-#: ../app/controllers/admin/cards_controller.php:239
+#: ../app/controllers/admin/cards_controller.php:240
 #: ../app/controllers/admin/technical_specifications_controller.php:12
 #: ../app/controllers/admin/technical_specifications_controller.php:36
 msgid "The product already has this specification"
 msgstr "Tento produkt už má tuto specifikaci"
 
-#: ../app/controllers/admin/cards_controller.php:271
+#: ../app/controllers/admin/cards_controller.php:272
 msgid "Připojení odkazu k produktu"
 msgstr "Připojení odkazu k produktu"
 
-#: ../app/controllers/admin/cards_controller.php:289
+#: ../app/controllers/admin/cards_controller.php:290
 msgid "Odkaz odpojen"
 msgstr "Odkaz odpojen"
 
@@ -1227,6 +1231,11 @@ msgstr "Přesměrování bylo úspěšně změněno"
 msgid "Nová fotogalerie"
 msgstr "Nová fotogalerie"
 
+#: ../app/controllers/admin/gallery_items_controller.php:8
+#, php-format
+msgid "Nový obrázek do fotogalerie %s"
+msgstr "Nový obrázek do fotogalerie %s"
+
 #: ../app/controllers/admin/images_controller.php:5
 #, php-format
 msgid "Photo gallery of the object %s#%s, section %s"
@@ -1245,12 +1254,12 @@ msgstr "Přidání obrázku do fotogalerie"
 msgid "Image has been created"
 msgstr "Obrázek byl vytvořen"
 
-#: ../app/controllers/admin/images_controller.php:47
+#: ../app/controllers/admin/images_controller.php:56
 #, php-format
 msgid "Editing of the Image #%s"
 msgstr "Editace obrázku #%s"
 
-#: ../app/controllers/admin/images_controller.php:72
+#: ../app/controllers/admin/images_controller.php:81
 msgid "The image has been deleted"
 msgstr "Obrázek byl smazán"
 
@@ -1349,8 +1358,9 @@ msgid "New store"
 msgstr "Nová prodejna"
 
 #: ../app/controllers/admin/stores_controller.php:17
-msgid "Edit store"
-msgstr "Editace prodejny"
+#, php-format
+msgid "Edit store '%s'"
+msgstr "Upravit prodejnu '%s'"
 
 #: ../app/controllers/admin/tags_controller.php:5
 msgid "Listing Tags"
@@ -1459,42 +1469,42 @@ msgstr "Nové video"
 msgid "Vložili jste úspěšně video"
 msgstr "Vložili jste úspěšně video"
 
-#: ../app/forms/admin/admin_form.php:108
+#: ../app/forms/admin/admin_form.php:109
 #: ../app/forms/admin/gallery_items/gallery_items_form.php:10
 msgid "Titulek"
 msgstr "Titulek"
 
-#: ../app/forms/admin/admin_form.php:117
+#: ../app/forms/admin/admin_form.php:118
 #: ../app/forms/admin/gallery_items/gallery_items_form.php:16
 msgid "Popis"
 msgstr "Popis"
 
-#: ../app/forms/admin/admin_form.php:130
+#: ../app/forms/admin/admin_form.php:131
 msgid "An alternative key for system usage."
 msgstr "Alternativní klíč pro systémové potřeby."
 
-#: ../app/forms/admin/admin_form.php:130
+#: ../app/forms/admin/admin_form.php:131
 msgid ""
 "An alternative key for system usage. Leave it unchanged if you are not sure."
 msgstr ""
 "Alternativní klíč pro systémové použití. Pokud si nejste jisti, ponechte "
 "beze změny."
 
-#: ../app/forms/admin/admin_form.php:138
+#: ../app/forms/admin/admin_form.php:139
 #: ../app/forms/admin/categories/categories_form.php:66
 msgid "Is visible?"
 msgstr "Je viditelné?"
 
-#: ../app/forms/admin/admin_form.php:169 ../app/forms/admin/admin_form.php:176
+#: ../app/forms/admin/admin_form.php:170 ../app/forms/admin/admin_form.php:177
 #: ../app/forms/admin/category_trees/create_new_form.php:17
 msgid "Stejný kód je již použit pro jiný záznam"
 msgstr "Stejný kód je již použit pro jiný záznam"
 
-#: ../app/forms/admin/admin_form.php:244
+#: ../app/forms/admin/admin_form.php:245
 msgid "The same slug is used in a different object"
 msgstr "Stejný slug je použit u jiného objektu"
 
-#: ../app/forms/admin/admin_form.php:269 ../app/forms/admin/admin_form.php:274
+#: ../app/forms/admin/admin_form.php:270 ../app/forms/admin/admin_form.php:275
 msgid "The same catalog number is used for another product"
 msgstr "Stejné katalogové číslo se používá pro jiný produkt"
 
@@ -1678,19 +1688,19 @@ msgstr "Hledat"
 
 #: ../app/forms/admin/cards/index_form.php:10
 msgid "Visible"
-msgstr ""
+msgstr "Viditelné"
 
 #: ../app/forms/admin/cards/index_form.php:12
 msgid "visibility"
-msgstr ""
+msgstr "viditelnost"
 
 #: ../app/forms/admin/cards/index_form.php:13
 msgid "only visible products"
-msgstr ""
+msgstr "pouze viditelné produkty"
 
 #: ../app/forms/admin/cards/index_form.php:14
 msgid "only invisible products"
-msgstr ""
+msgstr "pouze neviditelné produkty"
 
 #: ../app/forms/admin/categories/categories_form.php:17
 msgid "Long name"
@@ -1807,7 +1817,7 @@ msgstr "Posuvník s náhledy"
 
 #: ../app/forms/admin/galleries/galleries_form.php:13
 msgid "Logo slider"
-msgstr ""
+msgstr "Posuvník pro loga"
 
 #: ../app/forms/admin/gallery_items/create_new_form.php:7
 msgid "Nahrát fotografii"
@@ -1879,7 +1889,7 @@ msgstr "O nás"
 
 #: ../app/forms/admin/newsletter_subscribers/index_form.php:9
 msgid "language"
-msgstr ""
+msgstr "jazyk"
 
 #: ../app/forms/admin/pages/create_new_form.php:8
 #: ../app/forms/admin/pages/edit_form.php:21
@@ -1924,11 +1934,11 @@ msgstr "Karta"
 
 #: ../app/forms/admin/pictures/pictures_form.php:17
 msgid "Alt"
-msgstr ""
+msgstr "Alt"
 
 #: ../app/forms/admin/pictures/pictures_form.php:18
 msgid "Alternate text for the image, if the image cannot be displayed."
-msgstr ""
+msgstr "Alternativní text pro obrázek, pokud obrázek nelze zobrazit."
 
 #: ../app/forms/admin/products/products_form.php:9
 msgid "Variant name"
@@ -2031,6 +2041,9 @@ msgstr "Automatické spuštění videa"
 #: ../app/forms/admin/videos/videos_form.php:13
 msgid "Po ukončení přehrát znovu"
 msgstr "Po ukončení přehrát znovu"
+
+msgid "Edit store"
+msgstr "Editace prodejny"
 
 msgid "Create an alias"
 msgstr "Vytvořit alias"
@@ -4367,7 +4380,7 @@ msgstr "Hlavní tvůrce"
 #~ msgstr "Zpráva zaslaná z kontaktní stránky"
 
 #~ msgid "Commands in %s"
-#~ msgstr "Příkazy v %s"
+#~ msgstr "Přikazy v %s"
 
 #~ msgid "submit using method %s"
 #~ msgstr "Odeslat metodou %s"

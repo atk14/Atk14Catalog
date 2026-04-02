@@ -15,3 +15,7 @@ peanuts:
   name_en: Peanuts
   name_cs: Arašídy
   has_variants: false
+
+book:
+  name_en: "The Book"
+  name_cs: "Ta kniha"

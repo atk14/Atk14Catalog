@@ -1,5 +1,5 @@
 <div class="iobject iobject--video">
-	<div class="embed-responsive embed-responsive-16by9">
+	<div class="{if USING_BOOTSTRAP5}ratio ratio-16x9{else}embed-responsive embed-responsive-16by9{/if}">
 	{!$video->getHtml()}
 	</div>
 	{if $video->isTitleVisible() && ( $video->getTitle() || $video->getDescription() )}

@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-24 11:10+0200\n"
-"PO-Revision-Date: 2023-09-23 12:08+0200\n"
+"POT-Creation-Date: 2025-10-01 13:16+0200\n"
+"PO-Revision-Date: 2025-10-01 13:10+0200\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: Team <team@email.com>\n"
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 msgid "Nahoru"
 msgstr "Nahoru"
@@ -64,7 +64,7 @@ msgid "Sign in as an admin user"
 msgstr "Přihlaste se jako administrátor"
 
 #: ../app/controllers/logins_controller.php:7
-#: ../app/controllers/password_recoveries_controller.php:81
+#: ../app/controllers/password_recoveries_controller.php:84
 #: ../app/forms/logins/create_new_form.php:16
 msgid "Sign in"
 msgstr "Přihlásit se"
@@ -80,6 +80,9 @@ msgstr ""
 msgid "Posted by <em>%1</em> on <time datetime=\"%2\">%3</time>"
 msgstr "Zaslal <em>%1</em> dne <time datetime=\"%2\">%3</time>"
 
+msgid "Posted on <time datetime=\"%1\">%2</time>"
+msgstr "Publikováno dne <time datetime=\"%1\">%2</time>"
+
 msgid ""
 "This is not a published article! It's not available to the public audience."
 msgstr "Toto není publikovaný článek! Není dostupný veřejnosti."
@@ -94,7 +97,7 @@ msgid "At the moment there are no news."
 msgstr "V této chvíli nejsou žádné novinky."
 
 msgid "articles total"
-msgstr ""
+msgstr "článků celkem"
 
 msgid "Accessories"
 msgstr "Příslušenství"
@@ -184,6 +187,28 @@ msgstr "IP adresa"
 
 msgid "Logged user:"
 msgstr "Přihlášený uživatel:"
+
+msgid "Dobrý den,"
+msgstr "Dobrý den,"
+
+msgid "pro zrušení odběru newsletteru navštivte následující odkaz:"
+msgstr "pro zrušení odběru newsletteru navštivte následující odkaz:"
+
+msgid "Dobrý den %1,"
+msgstr "Dobrý den %1,"
+
+msgid "děkujeme Vám za registraci k odběru našeho newsletteru."
+msgstr "děkujeme Vám za registraci k odběru našeho newsletteru."
+
+msgid ""
+"Pokud nadále nechcete dostávat zprávy o našich novinkách, můžete se z odběru "
+"odhlásit na adrese:"
+msgstr ""
+"Pokud nadále nechcete dostávat zprávy o našich novinkách, můžete se z odběru "
+"odhlásit na adrese:"
+
+msgid "pro potvrzení odběru novinek klikněte na následující odkaz:"
+msgstr "pro potvrzení odběru novinek klikněte na následující odkaz:"
 
 msgid "Hello %1!"
 msgstr "Dobrý den %1!"
@@ -334,8 +359,59 @@ msgstr "ATK14 na GitHubu"
 msgid "ATK14 Catalog on GitHub"
 msgstr "ATK14 Katalog na GitHubu"
 
-msgid "Table of contents"
-msgstr "Obsah"
+msgid ""
+"Na zadanou e-mailovou adresu byl odeslán odkaz pro odhlášení z odběru "
+"newsletteru. Navštivte prosím tento odkaz."
+msgstr ""
+"Na zadanou e-mailovou adresu byl odeslán odkaz pro odhlášení z odběru "
+"newsletteru. Navštivte prosím tento odkaz."
+
+msgid "Pro odhlášení od zasílání newsletteru zadejte Vaši e-mailovou adresu."
+msgstr "Pro odhlášení od zasílání newsletteru zadejte Vaši e-mailovou adresu."
+
+msgid "Odhlášení od zasílání newsletteru bylo úspěšně provedeno."
+msgstr "Odhlášení od zasílání newsletteru bylo úspěšně provedeno."
+
+msgid ""
+"Na této stránce můžete odhlásit zasílání našeho newsletteru na e-mailovou "
+"adresu <em>%1</em>."
+msgstr ""
+"Na této stránce můžete odhlásit zasílání našeho newsletteru na e-mailovou "
+"adresu <em>%1</em>."
+
+msgid "Toto potvrzení bylo zrušeno."
+msgstr "Toto potvrzení bylo zrušeno."
+
+msgid "Toto přihlášení k odběru novinek již bylo potvrzeno."
+msgstr "Toto přihlášení k odběru novinek již bylo potvrzeno."
+
+msgid "Pro přihlášení se k odběru novinek klikněte na tlačítko."
+msgstr "Pro přihlášení se k odběru novinek klikněte na tlačítko."
+
+msgid "Potvrdit přihlášení"
+msgstr "Potvrdit přihlášení"
+
+msgid "Zrušit toto potvrzení"
+msgstr "Zrušit toto potvrzení"
+
+msgid "Zkontrolujte si prosím svou e-mailovou schránku."
+msgstr "Zkontrolujte si prosím svou e-mailovou schránku."
+
+msgid ""
+"Právě jsem Vám poslali e-mail, ve kterém je odkaz pro potvrzení odběru "
+"novinek."
+msgstr ""
+"Právě jsem Vám poslali e-mail, ve kterém je odkaz pro potvrzení odběru "
+"novinek."
+
+msgid "Zadejte svůj e-mail a my Vám pošleme odkaz pro potvrzení."
+msgstr "Zadejte svůj e-mail a my Vám pošleme odkaz pro potvrzení."
+
+msgid "přihlásit k odběru novinek jiný e-mail"
+msgstr "přihlásit k odběru novinek jiný e-mail"
+
+msgid "přejděte na úvodní stránku"
+msgstr "přejděte na úvodní stránku"
 
 msgid "Subpages"
 msgstr "Podstránky"
@@ -362,6 +438,7 @@ msgstr ""
 msgid "Attachments"
 msgstr "Přílohy"
 
+#: ../app/widgets/pupiq_image_input.php:45
 msgid "no image"
 msgstr "bez obrázku"
 
@@ -447,6 +524,9 @@ msgstr "Vytvořit nový záznam"
 msgid "Show menu"
 msgstr "Ukázat nabídku"
 
+msgid "Enlarge image"
+msgstr "Zvětšit obrázek"
+
 msgid "zavřít"
 msgstr "zavřít"
 
@@ -466,7 +546,7 @@ msgstr "Administrace"
 msgid "Profile"
 msgstr "Profil"
 
-#: ../app/controllers/logins_controller.php:35
+#: ../app/controllers/logins_controller.php:43
 #: ../app/forms/logins/destroy_form.php:4
 msgid "Sign out"
 msgstr "Odhlásit se"
@@ -483,6 +563,12 @@ msgstr "Předchozí"
 
 msgid "Next"
 msgstr "Následující"
+
+msgid "Table of contents"
+msgstr "Obsah"
+
+msgid "Subchapters"
+msgstr "Podkapitoly"
 
 msgid "Photo gallery"
 msgstr "Fotogalerie"
@@ -518,6 +604,11 @@ msgstr "Nabízíme skvělé restful API"
 
 msgid "Recent articles"
 msgstr "Nejnovější články"
+
+#: ../app/controllers/articles_controller.php:11
+#: ../app/controllers/articles_controller.php:60
+msgid "Articles"
+msgstr "Články"
 
 msgid "Opening hours"
 msgstr "Otevírací hodiny"
@@ -580,11 +671,15 @@ msgstr "Aktuální heslo"
 msgid "New password"
 msgstr "Nové heslo"
 
-#: ../app/controllers/api/logins_controller.php:33
+#: ../app/controllers/api/logins_controller.php:35
+msgid "For security reasons, this function is disabled"
+msgstr "Z bezpečnostních důvodů je tato funkce vypnutá"
+
+#: ../app/controllers/api/logins_controller.php:53
 msgid "Bad password"
 msgstr "Špatné heslo"
 
-#: ../app/controllers/api/logins_controller.php:36
+#: ../app/controllers/api/logins_controller.php:56
 msgid "There is no such user"
 msgstr "Takový uživatel tady není"
 
@@ -605,36 +700,52 @@ msgstr "Chyba 1"
 msgid "Error 2"
 msgstr "Chyba 2"
 
-#: ../app/controllers/application_base.php:35
+#: ../app/controllers/application_base.php:36
 msgid "Page not found"
 msgstr "Stránka nebyla nalezena"
 
-#: ../app/controllers/application_base.php:49
+#: ../app/controllers/application_base.php:50
 msgid "Forbidden"
 msgstr "Zakázáno"
 
-#: ../app/controllers/application_base.php:149
+#: ../app/controllers/application_base.php:150
 msgid "Home"
 msgstr "Domů"
 
-#: ../app/controllers/application_mailer.php:42
+#: ../app/controllers/application_mailer.php:43
 msgid "New registration"
 msgstr "Nová registrace"
 
-#: ../app/controllers/application_mailer.php:51
+#: ../app/controllers/application_mailer.php:53
 msgid "Reset Your Password"
 msgstr "Obnova vašeho hesla"
 
-#: ../app/controllers/application_mailer.php:60
+#: ../app/controllers/application_mailer.php:63
 msgid "Your password was updated"
 msgstr "Vaše heslo bylo změněno"
 
-#: ../app/controllers/application_mailer.php:72
+#: ../app/controllers/application_mailer.php:69
+#: ../app/controllers/newsletter_subscription_requests_controller.php:5
+#: ../app/controllers/newsletter_subscription_requests_controller.php:18
+#: ../app/controllers/newsletter_subscription_requests_controller.php:25
+#: ../app/controllers/newsletter_subscription_requests_controller.php:82
+msgid "Přihlášení k odběru novinek"
+msgstr "Přihlášení k odběru novinek"
+
+#: ../app/controllers/application_mailer.php:81
+msgid "Potvrzení odhlášení od newsletteru"
+msgstr "Potvrzení odhlášení od newsletteru"
+
+#: ../app/controllers/application_mailer.php:94
+msgid "Potvrzení odběru novinek"
+msgstr "Potvrzení odběru novinek"
+
+#: ../app/controllers/application_mailer.php:108
 msgid "Message sent from contact page"
 msgstr "Zpráva zaslaná z kontaktní stránky"
 
-#: ../app/controllers/application_mailer.php:83
-#: ../app/controllers/application_mailer.php:92
+#: ../app/controllers/application_mailer.php:119
+#: ../app/controllers/application_mailer.php:128
 #: ../app/controllers/information_requests_controller.php:5
 #: ../app/controllers/information_requests_controller.php:29
 msgid "Request for information"
@@ -648,29 +759,24 @@ msgstr "Profil uživatele"
 #: ../app/controllers/application_rest_api.php:76
 #, php-format
 msgid "Commands in %s"
-msgstr "Příkazy v %s"
+msgstr "Přikazy v %s"
 
-#: ../app/controllers/application_rest_api.php:172
+#: ../app/controllers/application_rest_api.php:186
 #, php-format
 msgid "submit using method %s"
 msgstr "odeslat metodou %s"
 
-#: ../app/controllers/application_rest_api.php:219
+#: ../app/controllers/application_rest_api.php:233
 msgid "Nothing has been found on this address"
 msgstr "Na této adrese nebylo nic nalezeno"
 
-#: ../app/controllers/application_rest_api.php:225
+#: ../app/controllers/application_rest_api.php:239
 msgid "You don't have access to the requested resource"
 msgstr "Nemáte přístup k požadovanému zdroji"
 
-#: ../app/controllers/application_rest_api.php:231
+#: ../app/controllers/application_rest_api.php:245
 msgid "Sorry, An internal error happened"
 msgstr "Omlouváme se, nastala vnitřní chyba"
-
-#: ../app/controllers/articles_controller.php:11
-#: ../app/controllers/articles_controller.php:60
-msgid "Articles"
-msgstr "Články"
 
 #: ../app/controllers/articles_controller.php:15
 #, php-format
@@ -706,7 +812,7 @@ msgstr "Kontaktní zpráva"
 msgid "Contact message sent"
 msgstr "Kontaktní zpráva byla odeslána"
 
-#: ../app/controllers/logins_controller.php:18
+#: ../app/controllers/logins_controller.php:26
 #, php-format
 msgid ""
 "Wrong login and password combination. <a href=\"%s\">Have you forgotten your "
@@ -715,20 +821,20 @@ msgstr ""
 "Nesprávna kombinace loginu a hesla. <a href=\"%s\">Zapomněl jste své heslo?</"
 "a>"
 
-#: ../app/controllers/logins_controller.php:20
+#: ../app/controllers/logins_controller.php:28
 msgid "Wrong login and password combination"
 msgstr "Nesprávna kombinace loginu a hesla"
 
-#: ../app/controllers/logins_controller.php:27
+#: ../app/controllers/logins_controller.php:35
 #, php-format
 msgid "You have been successfully logged in as <em>%s</em>"
 msgstr "Byl jste úspěšně přihlášen jako <em>%s</em>"
 
-#: ../app/controllers/logins_controller.php:39
+#: ../app/controllers/logins_controller.php:47
 msgid "You have been successfully logged out"
 msgstr "Byl jste úspěšně odhlášen"
 
-#: ../app/controllers/logins_controller.php:39
+#: ../app/controllers/logins_controller.php:47
 #, php-format
 msgid "You've stayed logged in as <em>%s</em>"
 msgstr "Zůstal jste přihlášen jako <em>%s</em>"
@@ -737,18 +843,44 @@ msgstr "Zůstal jste přihlášen jako <em>%s</em>"
 msgid "Welcome!"
 msgstr "Vítejte!"
 
-#: ../app/controllers/password_recoveries_controller.php:10
+#: ../app/controllers/newsletter_subscribe_deletion_requests_controller.php:8
+msgid "Na takovou adresu newsletter nezasíláme"
+msgstr "Na takovou adresu newsletter nezasíláme"
+
+#: ../app/controllers/newsletter_subscribe_deletion_requests_controller.php:21
+#: ../app/controllers/newsletter_subscribers_controller.php:26
+#: ../app/controllers/newsletter_subscribers_controller.php:27
+msgid "Odhlášení od newsletteru"
+msgstr "Odhlášení od newsletteru"
+
+#: ../app/controllers/newsletter_subscribers_controller.php:22
+msgid "Odhlášeno"
+msgstr "Odhlášeno"
+
+#: ../app/controllers/newsletter_subscription_requests_controller.php:19
+msgid "Potvrzení odesláno"
+msgstr "Potvrzení odesláno"
+
+#: ../app/controllers/newsletter_subscription_requests_controller.php:49
+msgid "Přihlášení k odběru novinek bylo úspěšně potvrzeno."
+msgstr "Přihlášení k odběru novinek bylo úspěšně potvrzeno."
+
+#: ../app/controllers/newsletter_subscription_requests_controller.php:65
+msgid "Přihlášení k odběru novinek bylo zrušeno."
+msgstr "Přihlášení k odběru novinek bylo zrušeno."
+
+#: ../app/controllers/password_recoveries_controller.php:13
 msgid "There is no such user with the given login or email"
 msgstr "Tady není uživatel s tímto loginem nebo e-mailem"
 
-#: ../app/controllers/password_recoveries_controller.php:14
+#: ../app/controllers/password_recoveries_controller.php:17
 msgid ""
 "This user account has been deactivated. Password recovery process can not be "
 "started."
 msgstr ""
 "Tento uživatelský účet byl deaktivován. Nelze zahájit proces obnovení hesla."
 
-#: ../app/controllers/password_recoveries_controller.php:18
+#: ../app/controllers/password_recoveries_controller.php:21
 msgid ""
 "Password recovery can not be initiated for this user. Email address is not "
 "set."
@@ -756,12 +888,12 @@ msgstr ""
 "Obnovení hesla nelze pro tohoto uživatele iniciovat. E-mailová adresa není "
 "nastavena."
 
-#: ../app/controllers/password_recoveries_controller.php:65
+#: ../app/controllers/password_recoveries_controller.php:68
 #: ../app/controllers/users_controller.php:94
 msgid "Your password has been updated successfully"
 msgstr "Vaše heslo bylo úspěšně změněno"
 
-#: ../app/controllers/password_recoveries_controller.php:82
+#: ../app/controllers/password_recoveries_controller.php:85
 msgid "Password recovery"
 msgstr "Obnovení hesla"
 
@@ -812,12 +944,13 @@ msgid "This is not your current password"
 msgstr "Toto neni vaše aktuální heslo"
 
 #: ../app/fields/async_file_field.php:12
-msgid "The file has been already deleted on the server, please upload it again"
-msgstr "Soubor již byl na serveru smazán, nahrajte jej prosím znovu"
+msgid ""
+"The file has been already deleted on the server, please upload it again!"
+msgstr "Soubor již byl na serveru smazán, nahrajte jej prosím znovu!"
 
 #: ../app/fields/async_file_field.php:13
-msgid "The file was not fully uploaded, please upload it again"
-msgstr "Soubor nebyl plně nahrán, nahrajte jej prosím znovu"
+msgid "The file was not fully uploaded, please upload it again!"
+msgstr "Soubor nebyl nahrán úplně, nahrajte jej prosím znovu!"
 
 #: ../app/fields/boolean_with_select_field.php:11
 msgid "Ano"
@@ -847,20 +980,20 @@ msgstr "Katalogové číslo"
 msgid "This doesn't look like a catalog number"
 msgstr "Toto nevypadá jako katalogové číslo"
 
-#: ../app/fields/category_field.php:25
+#: ../app/fields/category_field.php:29
 msgid "Start with a slash if you want to search the catalog tree from the root"
 msgstr ""
 "Začněte psát lomítko, pokud chcete prohledávat katalogový strom od kořene"
 
-#: ../app/fields/category_field.php:25
+#: ../app/fields/category_field.php:29
 msgid "A single slash will be considered as root."
 msgstr "Samotné lomítko bude považováno za kořen."
 
-#: ../app/fields/category_field.php:35
+#: ../app/fields/category_field.php:39
 msgid "There is no such category"
 msgstr "Taková kategorie neexistuje"
 
-#: ../app/fields/category_field.php:36
+#: ../app/fields/category_field.php:40
 msgid "It's a filter. This category cannot be selected."
 msgstr "Toto je filtr. Tato kategorie nemůže být vybrána."
 
@@ -872,22 +1005,22 @@ msgstr "kolekce"
 msgid "There is no such collection"
 msgstr "Taková kolekce neexistuje"
 
-#: ../app/fields/login_field.php:9
+#: ../app/fields/login_field.php:11
 #, php-format
 msgid ""
 "Only letters, numbers, dots and dashes are allowed. Up to %s characters."
 msgstr ""
 "Povolena jsou pouze písmena, číslice, tečky a pomlčky. Maximálně %s znaků."
 
-#: ../app/fields/login_field.php:21
+#: ../app/fields/login_field.php:23
 msgid "This username has been already taken"
 msgstr "Toto uživatelské jméno je již zabráno"
 
-#: ../app/fields/login_field.php:22
+#: ../app/fields/login_field.php:24
 msgid "Only letters, numbers, dots and dashes are allowed"
 msgstr "Zadávejte pouze písmena, číslice, tečky a pomlčky"
 
-#: ../app/fields/object_field.php:33
+#: ../app/fields/object_field.php:37
 msgid "There is no such record"
 msgstr "Takový záznam neexistuje"
 
@@ -919,44 +1052,48 @@ msgstr "stránka"
 msgid "There is no such page"
 msgstr "Takový stránka neexistuje"
 
-#: ../app/fields/phone_field.php:52
+#: ../app/fields/phone_field.php:62
 msgid "Enter phone number in format %sample_phone_number%"
 msgstr "Zadejte telefonní číslo ve formátu %sample_phone_number%"
 
-#: ../app/fields/phone_field.php:76
+#: ../app/fields/phone_field.php:86
 msgid "Enter valid phone number (%sample_phone_number%)"
 msgstr "Zadejte platné telefonní číslo (%sample_phone_number%)"
 
-#: ../app/fields/phone_field.php:77
+#: ../app/fields/phone_field.php:87
 msgid "Enter phone number"
 msgstr "Zadejte telefonní číslo"
 
-#: ../app/fields/slug_field.php:6
+#: ../app/fields/slug_field.php:8
 msgid "Slug"
 msgstr "Slug"
 
-#: ../app/fields/slug_field.php:8
+#: ../app/fields/slug_field.php:10
 msgid "funny-green-mug"
 msgstr "zertovny-zeleny-hrnek"
 
-#: ../app/fields/slug_field.php:12
+#: ../app/fields/slug_field.php:14
 msgid "Write something like black-cat-white-cat"
 msgstr "Napište něco jako cerna-kocka-bily-kocour"
 
-#: ../app/fields/tags_field.php:21
+#: ../app/fields/tags_field.php:26
 msgid "Ensure that there are max %max% tags (now there are %count%)"
 msgstr ""
 "Ujistěte se, že je zde nejvýše %max% štítků (nyní je tady %count% štítků)"
 
-#: ../app/fields/tags_field.php:22
+#: ../app/fields/tags_field.php:27
 #, php-format
 msgid "There is no tag <em>%s</em>"
 msgstr "Štítek <em>%s</em> neexistuje"
 
-#: ../app/fields/tags_field.php:23
+#: ../app/fields/tags_field.php:28
 #, php-format
 msgid "Tag <em>%s</em> is there more than once"
 msgstr "Štítek <em>%s</em> je uveden vícekrát"
+
+#: ../app/fields/user_field.php:7
+msgid "Takový uživatel neexistuje"
+msgstr "Takový uživatel neexistuje"
 
 #: ../app/forms/api/categories_suggestions/index_form.php:5
 #: ../app/forms/api/suggestions/index_form.php:5
@@ -996,17 +1133,16 @@ msgstr "Vyhledávací dotaz"
 msgid "Sign up for newsletter"
 msgstr "Přihlásit se k odběru newsletteru"
 
-#: ../app/forms/contact_messages/create_new_form.php:20
+#: ../app/forms/application_form.php:116 ../app/forms/application_form.php:120
+msgid "Spam protection"
+msgstr "Ochrana proti spamu"
+
+#: ../app/forms/contact_messages/create_new_form.php:22
 #: ../app/forms/information_requests/create_new_form.php:24
 msgid "Text"
 msgstr "Text"
 
-#: ../app/forms/contact_messages/create_new_form.php:26
 #: ../app/forms/contact_messages/create_new_form.php:30
-msgid "Spam protection"
-msgstr "Ochrana proti spamu"
-
-#: ../app/forms/contact_messages/create_new_form.php:36
 #: ../app/forms/information_requests/create_new_form.php:29
 msgid "Send message"
 msgstr "Poslat zprávu"
@@ -1020,6 +1156,29 @@ msgstr "Přihlašovací jméno"
 #: ../app/forms/users/users_form.php:25
 msgid "Password"
 msgstr "Heslo"
+
+#: ../app/forms/newsletter_subscribe_deletion_requests/create_new_form.php:6
+#: ../app/forms/newsletter_subscription_requests/create_new_form.php:6
+msgid "E-mailová adresa"
+msgstr "E-mailová adresa"
+
+#: ../app/forms/newsletter_subscribe_deletion_requests/create_new_form.php:11
+#: ../app/forms/newsletter_subscribers/destroy_form.php:12
+msgid "Odhlásit se"
+msgstr "Odhlásit se"
+
+#: ../app/forms/newsletter_subscribers/destroy_form.php:6
+msgid "Odhlásit se z odběru newsletteru"
+msgstr "Odhlásit se z odběru newsletteru"
+
+#: ../app/forms/newsletter_subscribers/destroy_form.php:9
+msgid "Potvrďte svůj záměr odhlásit se z odběru newsletteru zatrhnutím políčka"
+msgstr ""
+"Potvrďte svůj záměr odhlásit se z odběru newsletteru zatrhnutím políčka"
+
+#: ../app/forms/newsletter_subscription_requests/create_new_form.php:12
+msgid "Ověřit e-mailovou adresu"
+msgstr "Ověřit e-mailovou adresu"
 
 #: ../app/forms/password_recoveries/create_new_form.php:5
 msgid "Login or email address"
@@ -1072,7 +1231,7 @@ msgstr "Heslo se neshoduje"
 
 #: ../app/helpers/block.drink_shortcode__person.php:17
 msgid "More"
-msgstr ""
+msgstr "Více"
 
 #: ../app/helpers/modifier.display_bool.php:13
 msgid "Yes"
@@ -1094,9 +1253,38 @@ msgstr "Galerie"
 msgid "Obrázek"
 msgstr "Obrázek"
 
+#: ../app/models/invalid_login_attempt.php:46
+msgid "Delay the next sign-in attempt for a second"
+msgstr "Odložte další pokus o přihlášení o vteřinku"
+
+#: ../app/models/invalid_login_attempt.php:53
+#: ../app/models/invalid_login_attempt.php:70
+#, php-format
+msgid "Delay the next sign-in attempt for %s minutes"
+msgstr "Odložte další pokus o přihlášení o %s minut"
+
+#: ../app/models/invalid_login_attempt.php:58
+#, php-format
+msgid "Delay the next sign-in attempt for one minute and %s seconds"
+msgstr "Odložte další pokus o přihlášení o jednu minutu a %s vteřin"
+
+#: ../app/models/invalid_login_attempt.php:60
+msgid "Delay the next sign-in attempt for one minute"
+msgstr "Odložte další pokus o přihlášení o jednu minutu"
+
+#: ../app/models/invalid_login_attempt.php:64
+#, php-format
+msgid "Delay the next sign-in attempt for %s seconds"
+msgstr "Odložte další pokus o přihlášení o %s vteřin"
+
+#: ../app/models/invalid_login_attempt.php:68
+#, php-format
+msgid "Delay the next sign-in attempt for %s minutes and %s seconds"
+msgstr "Odložte další pokus o přihlášení o %s minuty a %s vteřin"
+
 #: ../app/models/user.php:113
 msgid "deleted user"
-msgstr ""
+msgstr "smazaný uživatel"
 
 #: ../app/models/user.php:115
 msgid "inactive user"
@@ -1106,13 +1294,13 @@ msgstr "neaktivní uživatel"
 msgid "administrator"
 msgstr "administrátor"
 
-#: ../app/widgets/async_file_input.php:20
+#: ../app/widgets/async_file_input.php:22
 msgid "Remove file"
-msgstr ""
+msgstr "Odstranit soubor"
 
 #: ../app/widgets/async_pupiq_attachment_input.php:41
 #: ../app/widgets/pupiq_attachment_input.php:41
-#: ../app/widgets/pupiq_image_input.php:45
+#: ../app/widgets/pupiq_image_input.php:64
 msgid "remove"
 msgstr "odstranit"
 
@@ -1121,7 +1309,7 @@ msgstr "odstranit"
 msgid "Download attachment"
 msgstr "Stáhnout přílohu"
 
-#: ../app/widgets/pupiq_image_input.php:46
+#: ../app/widgets/pupiq_image_input.php:65
 msgid "Display image"
 msgstr "Zobrazit obrázek"
 
@@ -2987,6 +3175,16 @@ msgid "Request URL:"
 msgstr "Adresa URL požadavku:"
 
 #~ msgid ""
+#~ "The file has been already deleted on the server, please upload it again"
+#~ msgstr "Soubor již byl na serveru smazán, nahrajte jej prosím znovu"
+
+#~ msgid "The file was not fully uploaded, please upload it again"
+#~ msgstr "Soubor nebyl plně nahrán, nahrajte jej prosím znovu"
+
+#~ msgid "Potvrdit odběr novinek"
+#~ msgstr "Potvrdit odběr novinek"
+
+#~ msgid ""
 #~ "This is not a visible page! It's not available to the public audience."
 #~ msgstr "Toto není viditelná stránka! Není dostupná veřejnosti."
 
@@ -3965,3 +4163,45 @@ msgstr "Adresa URL požadavku:"
 
 #~ msgid "Where to go"
 #~ msgstr "Kam zajít"
+
+#~ msgid "The Mini Skelet contains mainly"
+#~ msgstr "Mini Skelet obsahuje především"
+
+#~ msgid ""
+#~ "Are you planning to kick up a new project from the Atk14MiniSkelet? "
+#~ "Great! Just run the following commands."
+#~ msgstr ""
+#~ "Plánujete rozjet nový projekt z Atk14MiniSkelet? Skvělé! Stačí spustit "
+#~ "následující příkazy."
+
+#~ msgid ""
+#~ "You can find more information in <a href=\"https://github.com/atk14/"
+#~ "Atk14MiniSkelet/blob/master/README.md#installation\">the installation "
+#~ "instructions.</a>"
+#~ msgstr ""
+#~ "Více informací najdete v <a href=\"https://github.com/atk14/"
+#~ "Atk14MiniSkelet/blob/master/README.md#installation\">návodu k instalaci.</"
+#~ "a>"
+
+#~ msgid ""
+#~ "If you want to help us to improve the Atk14MiniSkelet, <a href=\"https://"
+#~ "github.com/atk14/Atk14MiniSkelet\">fork it on GitHub.</a>"
+#~ msgstr ""
+#~ "Pokud nám chcete pomoci Atk14MiniSkelet vylepšit, <a href=\"https://"
+#~ "github.com/atk14/Atk14MiniSkelet\">forkněte si jej na GitHubu.</a>"
+
+#~ msgid "ATK14 Mini Skelet on GitHub"
+#~ msgstr "ATK14 Mini Skelet na GitHubu"
+
+#~ msgid "Welcome at ATK14 Mini Skelet!"
+#~ msgstr "Vítejte na ATK14 Mini Skelet!"
+
+#~ msgid ""
+#~ "<em>ATK14 Mini Skelet</em> is the <a href=\"https://skelet.atk14.net/"
+#~ "\">ATK14 Skelet</a> on a heavy diet. All the unnecessary meat has been "
+#~ "cut away and what's left would like to be the very basis of your web "
+#~ "application."
+#~ msgstr ""
+#~ "<em>ATK14 Mini Skelet</em> je <a href=\"https://skelet.atk14.net/\">ATK14 "
+#~ "Skelet</a> na přísné dietě. Veškeré zbytečné maso bylo odstraněno a to, "
+#~ "co zbylo, by mohlo být skutečným základem vaší webové aplikace."

@@ -9,10 +9,10 @@ class InformationRequestsController extends ApplicationController{
 		$this->form->set_initial("body",$this->_prepare_initial_text($this->card,$this->product));
 
 		if($this->request->post() && ($d = $this->form->validate($this->params))){
-			if($d["sign_up_for_newsletter"] && $d["email"]){
-				NewsletterSubscriber::SignUp($d["email"],array(
+			if(isset($d["sign_up_for_newsletter"]) && $d["sign_up_for_newsletter"] && $d["email"]){
+				$this->_create_newsletter_subscription_request($d["email"],[
 					"name" => $d["name"],
-				));
+				],["create_request_if_subscription_exists" => false]);
 			}
 
 			$d["product"] = $this->product;

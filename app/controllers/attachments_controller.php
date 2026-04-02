@@ -60,6 +60,7 @@ class AttachmentsController extends ApplicationController{
 				$this->response->setHeader($header,$value);
 			}
 		}
+		$this->response->setHeader("Link", sprintf("<%s>; rel=\"canonical\"", $attachment->getUrl()));
 
 		$this->response->buffer->addFile($cached_body_filename);
 	}

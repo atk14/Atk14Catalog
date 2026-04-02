@@ -8,6 +8,7 @@
 			<div class="">
 				{dropdown_menu}
 					{a action="edit" id=$store}{!"pencil-alt"|icon} {t}Edit{/t}{/a}
+					{a namespace="" action="stores/detail" id=$store}{!"eye-open"|icon} {t}Visit public link{/t}{/a}
 
 					{capture assign="confirm"}{t 1=$store->getName()|h escape=no}You are about to permanently delete store %1
 		Are you sure about that?{/t}{/capture}

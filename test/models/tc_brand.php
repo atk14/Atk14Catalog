@@ -1,8 +1,8 @@
 <?php
 class TcBrand extends TcBase{
 
-	function setUp(){
-		parent::setUp();
+	function _setUp(){
+		parent::_setUp();
 		DbMole::RegisterErrorHandler(function($dbmole){
 			throw new Exception($dbmole->getErrorMessage());
 		});
@@ -58,7 +58,7 @@ class TcBrand extends TcBase{
 			$this->fail();
 		}catch(Exception $e){
 			$msg = $e->getMessage();
-			$this->assertContains("fk_cards_brands",$msg); // failed to execute SQL query pg_last_error: ERROR:  update or delete on table "brands" violates foreign key constraint "fk_cards_brands" on table "cards"
+			$this->assertStringContains("fk_cards_brands",$msg); // failed to execute SQL query pg_last_error: ERROR:  update or delete on table "brands" violates foreign key constraint "fk_cards_brands" on table "cards"
 		}
 	}
 }
