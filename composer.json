@@ -21,5 +21,8 @@
         "atk14/async-file-field": "^1.0 >=1.0.4",
         "yarri/keywords-highlighter": "^0.1.2",
         "atk14/cache-something": "^1.0"
+    },
+    "require-dev": {
+        "atk14/tester": "^0.6"
     }
 }

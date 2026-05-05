@@ -72,4 +72,8 @@ class CategoriesSuggestionsController extends ApiController{
 			}
 		}
 	}
+
+	function _logged_admin_required(){
+		return true;
+	}
 }
