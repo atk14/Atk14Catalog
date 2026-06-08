@@ -532,6 +532,7 @@ class Card extends ApplicationModel implements Translatable, iSlug {
 	 */
 	function getCategorySiblings($category) {
 		$cards = $category->getCards();
+		$cards = array_filter($cards); // sometimes there are empty elements here (maybe only in tests)
 		$_siblings = array();
 		foreach($cards as $_c) {
 			if ($_c->getId()==$this->getId()) {
