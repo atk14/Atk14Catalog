@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-01 13:16+0200\n"
+"POT-Creation-Date: 2026-08-04 23:22+0200\n"
 "PO-Revision-Date: 2025-01-28 12:09+0100\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: Team <team@email.com>\n"
@@ -64,7 +64,7 @@ msgstr "Author"
 msgid "Date"
 msgstr "Date"
 
-#: ../app/controllers/admin/admin.php:32
+#: ../app/controllers/admin/admin.php:35
 #: ../app/forms/admin/articles/articles_form.php:54
 #: ../app/forms/admin/cards/cards_form.php:58
 msgid "Tags"
@@ -95,7 +95,7 @@ msgstr "No record has been found."
 msgid "The product is not yet placed in a category with a filter."
 msgstr "The product is not yet placed in a category with a filter."
 
-#: ../app/controllers/admin/admin.php:96
+#: ../app/controllers/admin/admin.php:121
 msgid "invisible"
 msgstr "invisible"
 
@@ -323,18 +323,18 @@ msgstr "Subcategories"
 msgid "filter options"
 msgstr "filter options"
 
-#: ../app/controllers/admin/admin.php:92
+#: ../app/controllers/admin/admin.php:117
 msgid "filter"
 msgstr "filter"
 
-#: ../app/controllers/admin/admin.php:93
+#: ../app/controllers/admin/admin.php:118
 msgid "link"
 msgstr "link"
 
 msgid "This category has no subcategories."
 msgstr "This category has no subcategories."
 
-#: ../app/controllers/admin/admin.php:34
+#: ../app/controllers/admin/admin.php:37
 msgid "Products"
 msgstr "Products"
 
@@ -661,6 +661,52 @@ msgstr "Add photogallery"
 msgid "Add video"
 msgstr "Add video"
 
+msgid "XL - Large desktop"
+msgstr "XL - Large desktop"
+
+msgid "LG - Laptop"
+msgstr "LG - Laptop"
+
+msgid "MD - Tablet"
+msgstr "MD - Tablet"
+
+msgid "SM - Small tablet"
+msgstr "SM - Small tablet"
+
+msgid "XS - Phone"
+msgstr "XS - Phone"
+
+msgid ""
+"Cannot paste columns: Number of pasted columns do not match number of "
+"current columns."
+msgstr ""
+"Cannot paste columns: Number of pasted columns do not match number of "
+"current columns."
+
+msgid "Copy widths"
+msgstr "Copy widths"
+
+msgid "Paste widths"
+msgstr "Paste widths"
+
+msgid "Hidden cells: "
+msgstr "Hidden cells: "
+
+msgid "Number of columns"
+msgstr "Number of columns"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Reset"
+msgstr "Reset"
+
+msgid "Copy HTML code to clipboard"
+msgstr "Copy HTML code to clipboard"
+
+msgid "Copy Markdown code to clipboard"
+msgstr "Copy Markdown code to clipboard"
+
 msgid "Localhost"
 msgstr "Localhost"
 
@@ -670,13 +716,16 @@ msgstr "Development server"
 msgid "Production server"
 msgstr "Production server"
 
+msgid "Toggle sidebar"
+msgstr "Toggle sidebar"
+
 msgid "Profile"
 msgstr "Profile"
 
 msgid "Sign out"
 msgstr "Sign out"
 
-#: ../app/controllers/admin/admin.php:9
+#: ../app/controllers/admin/admin.php:12
 #: ../app/controllers/admin/main_controller.php:4
 msgid "Administration"
 msgstr "Administration"
@@ -824,100 +873,68 @@ msgstr "Adding new accessory product"
 msgid "Accessory product has been added"
 msgstr "Accessory product has been added"
 
-#: ../app/controllers/admin/admin.php:28
+#: ../app/controllers/admin/admin.php:31
 msgid "Welcome screen"
 msgstr "Welcome screen"
 
-#: ../app/controllers/admin/admin.php:29
+#: ../app/controllers/admin/admin.php:32
 #: ../app/controllers/admin/iobjects_base.php:106
 msgid "Articles"
 msgstr "Articles"
 
-#: ../app/controllers/admin/admin.php:30
+#: ../app/controllers/admin/admin.php:33
 #: ../app/controllers/admin/iobjects_base.php:111
 #: ../app/controllers/admin/pages_controller.php:5
 msgid "Pages"
 msgstr "Pages"
 
-#: ../app/controllers/admin/admin.php:31
+#: ../app/controllers/admin/admin.php:34
 msgid "Link Lists"
 msgstr "Link Lists"
 
-#: ../app/controllers/admin/admin.php:33
+#: ../app/controllers/admin/admin.php:36
 msgid "Users"
 msgstr "Users"
 
-#: ../app/controllers/admin/admin.php:35
+#: ../app/controllers/admin/admin.php:38
 msgid "Categories"
 msgstr "Categories"
 
-#: ../app/controllers/admin/admin.php:36
+#: ../app/controllers/admin/admin.php:39
 msgid "Brands"
 msgstr "Brands"
 
-#: ../app/controllers/admin/admin.php:37
+#: ../app/controllers/admin/admin.php:40
 msgid "Collections"
 msgstr "Collections"
 
-#: ../app/controllers/admin/admin.php:38
+#: ../app/controllers/admin/admin.php:41
 msgid "Stores"
 msgstr "Stores"
 
-#: ../app/controllers/admin/admin.php:39
+#: ../app/controllers/admin/admin.php:42
 #: ../app/controllers/admin/password_recoveries_controller.php:5
 msgid "Password recoveries"
 msgstr "Password recoveries"
 
-#: ../app/controllers/admin/admin.php:40
+#: ../app/controllers/admin/admin.php:43
 msgid "Newsletter subscribers"
 msgstr "Newsletter subscribers"
 
-#: ../app/controllers/admin/admin.php:41
+#: ../app/controllers/admin/admin.php:44
 #: ../app/controllers/admin/error_redirections_controller.php:5
 msgid "404 Redirections"
 msgstr "404 Redirections"
 
-#: ../app/controllers/admin/admin.php:79
-#: ../app/controllers/admin/category_trees_controller.php:23
-msgid "Category tree"
-msgstr "Category tree"
-
-#: ../app/controllers/admin/admin.php:152
-#, php-format
-msgid "Seznam objektů typu %s"
-msgstr "List of objects of type %s"
-
-#: ../app/controllers/admin/admin.php:187
-msgid "The record has been created"
-msgstr "The record has been created"
-
-#: ../app/controllers/admin/admin.php:201
-#, php-format
-msgid "Vytvořit objekt typu %s"
-msgstr "Create an object of type %s"
-
-#: ../app/controllers/admin/admin.php:253
-#: ../app/controllers/admin/card_sections_controller.php:27
-msgid "Změny byly uloženy"
-msgstr "The changes have been saved"
-
-#: ../app/controllers/admin/admin.php:288
-#, php-format
-msgid "Editace objektu typu %s"
-msgstr "Editing object of type %s"
-
-#: ../app/controllers/admin/admin.php:322
-msgid "Ve formuláři nebylo nic změněno"
-msgstr "Nothing has been changed in the form"
-
-#: ../app/controllers/admin/admin.php:444
-msgid "The entry has been deleted"
-msgstr "The entry has been deleted"
-
-#: ../app/controllers/admin/admin.php:463
+#: ../app/controllers/admin/admin.php:81
 #: ../app/controllers/admin/galleries_controller.php:34
 msgid "Fotogalerie"
 msgstr "Photogallery"
+
+#: ../app/controllers/admin/admin.php:104
+#: ../app/controllers/admin/category_trees_controller.php:23
+msgid "Category tree"
+msgstr "Category tree"
 
 #: ../app/controllers/admin/articles_controller.php:5
 msgid "Listing Articles"
@@ -1061,6 +1078,10 @@ msgstr "It would be nice to add some more information"
 #: ../app/controllers/admin/card_sections_controller.php:18
 msgid "Editace textové sekce"
 msgstr "Text section editing"
+
+#: ../app/controllers/admin/card_sections_controller.php:27
+msgid "Změny byly uloženy"
+msgstr "The changes have been saved"
 
 #: ../app/controllers/admin/categories_controller.php:10
 #, php-format
@@ -1297,20 +1318,20 @@ msgstr "Editing link list"
 msgid "Newsletter Subscribers"
 msgstr "Newsletter Subscribers"
 
-#: ../app/controllers/admin/pages_controller.php:11
+#: ../app/controllers/admin/pages_controller.php:14
 msgid "Create page"
 msgstr "Create page"
 
-#: ../app/controllers/admin/pages_controller.php:12
+#: ../app/controllers/admin/pages_controller.php:15
 msgid "The page has been created successfully"
 msgstr "The page has been created successfully"
 
-#: ../app/controllers/admin/pages_controller.php:17
+#: ../app/controllers/admin/pages_controller.php:20
 #, php-format
 msgid "Editing page %s"
 msgstr "Editing page %s"
 
-#: ../app/controllers/admin/pages_controller.php:28
+#: ../app/controllers/admin/pages_controller.php:31
 msgid "The page has been updated successfully"
 msgstr "The page has been updated successfully"
 
@@ -2058,6 +2079,27 @@ msgstr "alias"
 
 msgid "New alias"
 msgstr "New alias"
+
+#, php-format
+#~ msgid "Seznam objektů typu %s"
+#~ msgstr "List of objects of type %s"
+
+#~ msgid "The record has been created"
+#~ msgstr "The record has been created"
+
+#, php-format
+#~ msgid "Vytvořit objekt typu %s"
+#~ msgstr "Create an object of type %s"
+
+#, php-format
+#~ msgid "Editace objektu typu %s"
+#~ msgstr "Editing object of type %s"
+
+#~ msgid "Ve formuláři nebylo nic změněno"
+#~ msgstr "Nothing has been changed in the form"
+
+#~ msgid "The entry has been deleted"
+#~ msgstr "The entry has been deleted"
 
 #~ msgid "System name"
 #~ msgstr "System name"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-01 13:16+0200\n"
+"POT-Creation-Date: 2026-08-04 23:22+0200\n"
 "PO-Revision-Date: 2025-01-28 12:10+0100\n"
 "Last-Translator: Jaromir Tomek <jaromir.tomek@gmail.com>\n"
 "Language-Team: Team <team@email.com>\n"
@@ -64,7 +64,7 @@ msgstr "Autor"
 msgid "Date"
 msgstr "Datum"
 
-#: ../app/controllers/admin/admin.php:32
+#: ../app/controllers/admin/admin.php:35
 #: ../app/forms/admin/articles/articles_form.php:54
 #: ../app/forms/admin/cards/cards_form.php:58
 msgid "Tags"
@@ -95,7 +95,7 @@ msgstr "Nebyl nalezen žádný záznam."
 msgid "The product is not yet placed in a category with a filter."
 msgstr "Produkt zatím nebyl zařazen do kategorie s filtrem."
 
-#: ../app/controllers/admin/admin.php:96
+#: ../app/controllers/admin/admin.php:121
 msgid "invisible"
 msgstr "neviditelné"
 
@@ -323,18 +323,18 @@ msgstr "Podkategorie"
 msgid "filter options"
 msgstr "možnosti filtru"
 
-#: ../app/controllers/admin/admin.php:92
+#: ../app/controllers/admin/admin.php:117
 msgid "filter"
 msgstr "filtr"
 
-#: ../app/controllers/admin/admin.php:93
+#: ../app/controllers/admin/admin.php:118
 msgid "link"
 msgstr "odkaz"
 
 msgid "This category has no subcategories."
 msgstr "Tato kategorie nemá žádné podkategorie."
 
-#: ../app/controllers/admin/admin.php:34
+#: ../app/controllers/admin/admin.php:37
 msgid "Products"
 msgstr "Produkty"
 
@@ -661,6 +661,52 @@ msgstr "Přidat fotogalerii"
 msgid "Add video"
 msgstr "Přidat video"
 
+msgid "XL - Large desktop"
+msgstr "XL - Stolní počítač"
+
+msgid "LG - Laptop"
+msgstr "LG - Laptop"
+
+msgid "MD - Tablet"
+msgstr "MD - Tablet"
+
+msgid "SM - Small tablet"
+msgstr "SM - Malý tablet"
+
+msgid "XS - Phone"
+msgstr "XS - Telefon"
+
+msgid ""
+"Cannot paste columns: Number of pasted columns do not match number of "
+"current columns."
+msgstr ""
+"Nelze vložit sloupce: Počet vložených sloupců neodpovídá počtu aktuálních "
+"sloupců."
+
+msgid "Copy widths"
+msgstr "Kopírovat šířky"
+
+msgid "Paste widths"
+msgstr "Vložit šířky"
+
+msgid "Hidden cells: "
+msgstr "Skryté buňky: "
+
+msgid "Number of columns"
+msgstr "Počet sloupců"
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "Reset"
+msgstr "Resetovat"
+
+msgid "Copy HTML code to clipboard"
+msgstr "Zkopírovat HTML kód do schránky"
+
+msgid "Copy Markdown code to clipboard"
+msgstr "Zkopírovat Markdown kód do schránky"
+
 msgid "Localhost"
 msgstr "Localhost"
 
@@ -670,13 +716,16 @@ msgstr "Vývojový server"
 msgid "Production server"
 msgstr "Produkční server"
 
+msgid "Toggle sidebar"
+msgstr "Přepnout postranní panel"
+
 msgid "Profile"
 msgstr "Profil"
 
 msgid "Sign out"
 msgstr "Odhlásit se"
 
-#: ../app/controllers/admin/admin.php:9
+#: ../app/controllers/admin/admin.php:12
 #: ../app/controllers/admin/main_controller.php:4
 msgid "Administration"
 msgstr "Administrace"
@@ -825,100 +874,68 @@ msgstr "Přidání nového příslušenství"
 msgid "Accessory product has been added"
 msgstr "Příslušenství bylo přidáno"
 
-#: ../app/controllers/admin/admin.php:28
+#: ../app/controllers/admin/admin.php:31
 msgid "Welcome screen"
 msgstr "Vítací obrazovka"
 
-#: ../app/controllers/admin/admin.php:29
+#: ../app/controllers/admin/admin.php:32
 #: ../app/controllers/admin/iobjects_base.php:106
 msgid "Articles"
 msgstr "Články"
 
-#: ../app/controllers/admin/admin.php:30
+#: ../app/controllers/admin/admin.php:33
 #: ../app/controllers/admin/iobjects_base.php:111
 #: ../app/controllers/admin/pages_controller.php:5
 msgid "Pages"
 msgstr "Stránky"
 
-#: ../app/controllers/admin/admin.php:31
+#: ../app/controllers/admin/admin.php:34
 msgid "Link Lists"
 msgstr "Seznamy odkazů"
 
-#: ../app/controllers/admin/admin.php:33
+#: ../app/controllers/admin/admin.php:36
 msgid "Users"
 msgstr "Uživatelé"
 
-#: ../app/controllers/admin/admin.php:35
+#: ../app/controllers/admin/admin.php:38
 msgid "Categories"
 msgstr "Kategorie"
 
-#: ../app/controllers/admin/admin.php:36
+#: ../app/controllers/admin/admin.php:39
 msgid "Brands"
 msgstr "Značky"
 
-#: ../app/controllers/admin/admin.php:37
+#: ../app/controllers/admin/admin.php:40
 msgid "Collections"
 msgstr "Kolekce"
 
-#: ../app/controllers/admin/admin.php:38
+#: ../app/controllers/admin/admin.php:41
 msgid "Stores"
 msgstr "Prodejny"
 
-#: ../app/controllers/admin/admin.php:39
+#: ../app/controllers/admin/admin.php:42
 #: ../app/controllers/admin/password_recoveries_controller.php:5
 msgid "Password recoveries"
 msgstr "Obnovy hesel"
 
-#: ../app/controllers/admin/admin.php:40
+#: ../app/controllers/admin/admin.php:43
 msgid "Newsletter subscribers"
 msgstr "Odběratelé newsletteru"
 
-#: ../app/controllers/admin/admin.php:41
+#: ../app/controllers/admin/admin.php:44
 #: ../app/controllers/admin/error_redirections_controller.php:5
 msgid "404 Redirections"
 msgstr "Přesměrování 404"
 
-#: ../app/controllers/admin/admin.php:79
-#: ../app/controllers/admin/category_trees_controller.php:23
-msgid "Category tree"
-msgstr "Strom kategorií"
-
-#: ../app/controllers/admin/admin.php:152
-#, php-format
-msgid "Seznam objektů typu %s"
-msgstr "Seznam objektů typu %s"
-
-#: ../app/controllers/admin/admin.php:187
-msgid "The record has been created"
-msgstr "Záznam byl vytvořen"
-
-#: ../app/controllers/admin/admin.php:201
-#, php-format
-msgid "Vytvořit objekt typu %s"
-msgstr "Vytvořit objekt typu %s"
-
-#: ../app/controllers/admin/admin.php:253
-#: ../app/controllers/admin/card_sections_controller.php:27
-msgid "Změny byly uloženy"
-msgstr "Změny byly uloženy"
-
-#: ../app/controllers/admin/admin.php:288
-#, php-format
-msgid "Editace objektu typu %s"
-msgstr "Editace objektu typu %s"
-
-#: ../app/controllers/admin/admin.php:322
-msgid "Ve formuláři nebylo nic změněno"
-msgstr "Nothing has been changed in the form"
-
-#: ../app/controllers/admin/admin.php:444
-msgid "The entry has been deleted"
-msgstr "Záznam byl smazán"
-
-#: ../app/controllers/admin/admin.php:463
+#: ../app/controllers/admin/admin.php:81
 #: ../app/controllers/admin/galleries_controller.php:34
 msgid "Fotogalerie"
 msgstr "Fotogalerie"
+
+#: ../app/controllers/admin/admin.php:104
+#: ../app/controllers/admin/category_trees_controller.php:23
+msgid "Category tree"
+msgstr "Strom kategorií"
 
 #: ../app/controllers/admin/articles_controller.php:5
 msgid "Listing Articles"
@@ -1062,6 +1079,10 @@ msgstr "Bylo by pěkné doplnit nějaké další informace"
 #: ../app/controllers/admin/card_sections_controller.php:18
 msgid "Editace textové sekce"
 msgstr "Editace textové sekce"
+
+#: ../app/controllers/admin/card_sections_controller.php:27
+msgid "Změny byly uloženy"
+msgstr "Změny byly uloženy"
 
 #: ../app/controllers/admin/categories_controller.php:10
 #, php-format
@@ -1298,20 +1319,20 @@ msgstr "Editace seznamu odkazů"
 msgid "Newsletter Subscribers"
 msgstr "Odběratelé newsletteru"
 
-#: ../app/controllers/admin/pages_controller.php:11
+#: ../app/controllers/admin/pages_controller.php:14
 msgid "Create page"
 msgstr "Vytvořit stránku"
 
-#: ../app/controllers/admin/pages_controller.php:12
+#: ../app/controllers/admin/pages_controller.php:15
 msgid "The page has been created successfully"
 msgstr "Stránka byla úspěšně vytvořena"
 
-#: ../app/controllers/admin/pages_controller.php:17
+#: ../app/controllers/admin/pages_controller.php:20
 #, php-format
 msgid "Editing page %s"
 msgstr "Editace stránky %s"
 
-#: ../app/controllers/admin/pages_controller.php:28
+#: ../app/controllers/admin/pages_controller.php:31
 msgid "The page has been updated successfully"
 msgstr "Stránka byla úspěšně aktualizována"
 
@@ -3051,7 +3072,7 @@ msgid "Discounts"
 msgstr "Slevy"
 
 msgid "Delivery methods"
-msgstr "Způsoby doručení"
+msgstr "Způsoby dopravy"
 
 msgid "Payment methods"
 msgstr "Platební metody"
@@ -3069,7 +3090,7 @@ msgid "Order statuses"
 msgstr "Stavy objednávky"
 
 msgid "Selling regions"
-msgstr "Prodejná oblasti"
+msgstr "Prodejní oblasti"
 
 msgid "System preferences"
 msgstr "Nastavení systému"
@@ -3883,6 +3904,27 @@ msgstr "Text ve formuláři"
 
 msgid "Main creator"
 msgstr "Hlavní tvůrce"
+
+#, php-format
+#~ msgid "Seznam objektů typu %s"
+#~ msgstr "Seznam objektů typu %s"
+
+#~ msgid "The record has been created"
+#~ msgstr "Záznam byl vytvořen"
+
+#, php-format
+#~ msgid "Vytvořit objekt typu %s"
+#~ msgstr "Vytvořit objekt typu %s"
+
+#, php-format
+#~ msgid "Editace objektu typu %s"
+#~ msgstr "Editace objektu typu %s"
+
+#~ msgid "Ve formuláři nebylo nic změněno"
+#~ msgstr "Nothing has been changed in the form"
+
+#~ msgid "The entry has been deleted"
+#~ msgstr "Záznam byl smazán"
 
 #~ msgid "System name"
 #~ msgstr "Systémový název"

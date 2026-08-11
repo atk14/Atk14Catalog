@@ -145,7 +145,7 @@ class CategoriesController extends AdminController{
 				return;
 			}
 
-			if($d["is_filter"]){
+			if(isset($d["is_filter"]) && $d["is_filter"]){
 				if($this->parent_category->isFilter()){
 					$this->form->set_error(_("Filter cannot be created when the parent category is also a filter"));
 					return;
