@@ -12,6 +12,7 @@
 				ADMIN.utils.handleSortables();
 				UTILS.AsyncImageUploader.init();
 				ADMIN.utils.handleCopyIobjectCode();
+				UTILS.Suggestions.handleCategoriesSuggestions();
 
 				// Initialize editor forms on page load and after form replacement.
 				ADMIN.utils.initializeEditors();
@@ -213,10 +214,6 @@
 				if( document.getElementById( "layout-designer" ) ) {
 					new UTILS.LayoutDesigner();
 				};
-			},
-
-			handleCategoriesSuggestions: function() {
-				ADMIN.utils.categoriesSuggest( "[data-suggesting_categories='yes']" );
 			}
 		}
 	};
